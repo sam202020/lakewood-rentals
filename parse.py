@@ -86,8 +86,30 @@ _GLUE = ("immediately", "available", "furnished", "unfurnished", "kitchen", "hou
          "parking", "porch", "storage", "shuls", "yeshiva", "near", "large", "spacious",
          "beautiful", "private", "separate", "entrance", "central", "heating", "cooling")
 
+def _fix_spaced_runs(s):
+    """Rejoin runs of 4+ single letters ("E x c e l l e n t" -> "Excellent")
+    that the PDF's kerning splits, without touching normal words."""
+    toks = s.split(" ")
+    out, i = [], 0
+    while i < len(toks):
+        j = i
+        while j < len(toks) and len(toks[j].strip(".,;:")) == 1 and toks[j].strip(".,;:").isalpha():
+            j += 1
+        if j - i >= 4:
+            out.append("".join(toks[i:j]))
+            i = j
+        else:
+            out.append(toks[i])
+            i += 1
+    return " ".join(out)
+
+
 def clean_comment(s):
     s = re.sub(r"\(cid:\d+\)", "", s)
+    s = _fix_spaced_runs(s)
+    toks = s.split()
+    if toks and sum(1 for t in toks if len(t) == 1) / len(toks) > 0.28:
+        return ""  # too fragmented to be trustworthy
     s = re.sub(r"(?<=[a-z.,])(?=[A-Z])", " ", s)
     for w in _GLUE:
         s = re.sub(r"(?<=[a-z])(" + w + r")\b", r" \1", s, flags=re.I)
@@ -95,6 +117,13 @@ def clean_comment(s):
     s = re.sub(r"\s*&\s*", " & ", s)
     s = re.sub(r"\s+", " ", s).strip()
     s = re.sub(r"\s+([.,;:])", r"\1", s)
+    # Cut where a neighbouring display ad has bled into the text.
+    s = re.split(r"\s*(?:\S*@\S+|https?://|www\.\S+|washingtonsquare|"
+                 r"CALL OR TEXT|Visit us|Luxury Living)", s, maxsplit=1, flags=re.I)[0].strip()
+    # Drop a trailing run of very short fragments (kerning garble tail).
+    s = re.sub(r"(?:\b\w{1,2}\b[ ,]*){5,}$", "", s).strip(" ,;:-")
+    if len(s) > 300:
+        s = s[:297].rsplit(" ", 1)[0] + "…"
     return s
 
 
@@ -130,6 +159,11 @@ def parse(fileobj):
             for a_idx, ri in enumerate(anchors):
                 end = anchors[a_idx + 1] if a_idx + 1 < len(anchors) else len(rows)
                 block = rows[ri:end]
+                # A listing is at most ~5 wrapped comment lines tall. Anything
+                # further down belongs to a listing whose anchor row was mangled
+                # (common around the mid-page ad boxes on page 1).
+                atop = block[0]["top"]
+                block = [r for r in block if r["top"] - atop < 46]
                 buckets = {k: [] for k in COL}
                 for br_i, r in enumerate(block):
                     for w in r["words"]:
@@ -164,7 +198,13 @@ def parse(fileobj):
                 accepts_hud = bool(hud_raw) and len(hud_raw) <= 4 and not hud_raw.isdigit()
                 comments = clean_comment(" ".join(buckets["comments"]))
                 br = next((t for t in buckets["br"] if re.search(r"\d", t)), "")
-                baths = next((t for t in buckets["baths"] if re.search(r"[\d½¼¾]", t)), "")
+                br = (re.match(r"\d+", br).group() if re.match(r"\d+", br) else "")
+                baths = ""
+                for t in buckets["baths"]:
+                    mb = re.match(r"(\d+)\s*([½¼¾])?", t)
+                    if mb:
+                        baths = mb.group(1) + (mb.group(2) or "")
+                        break
                 if not loc and not comments and not phones:
                     continue
                 umap = {"G": "Gas", "E": "Electric", "W": "Water", "H": "Heat"}
