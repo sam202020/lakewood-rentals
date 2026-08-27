@@ -1,0 +1,667 @@
+<title>Lakewood Rental List</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap">
+
+<style>
+  :root {
+    --paper: #FBFAF7;
+    --card: #FFFFFF;
+    --ink: #1C1F1D;
+    --muted: #6B7169;
+    --faint: #8E938B;
+    --rule: #E5E3DB;
+    --rule-strong: #D2CFC3;
+    --accent: #1E5C3F;
+    --accent-ink: #16452F;
+    --accent-soft: #E7EFE9;
+    --flag: #9A5B12;
+    --flag-soft: #F5EBDD;
+    --shadow: 0 1px 2px rgba(28, 31, 29, .05), 0 8px 24px -12px rgba(28, 31, 29, .12);
+    --maxw: 1200px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14160F;
+      --card: #1C1F18;
+      --ink: #ECEDE4;
+      --muted: #9DA298;
+      --faint: #7C8175;
+      --rule: #2C3026;
+      --rule-strong: #3B4033;
+      --accent: #6DB78C;
+      --accent-ink: #8FceA9;
+      --accent-soft: #1E3025;
+      --flag: #D79A5A;
+      --flag-soft: #33281A;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -14px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14160F;
+    --card: #1C1F18;
+    --ink: #ECEDE4;
+    --muted: #9DA298;
+    --faint: #7C8175;
+    --rule: #2C3026;
+    --rule-strong: #3B4033;
+    --accent: #6DB78C;
+    --accent-ink: #8FceA9;
+    --accent-soft: #1E3025;
+    --flag: #D79A5A;
+    --flag-soft: #33281A;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -14px rgba(0,0,0,.6);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Libre Franklin", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-ink); }
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+  .tnum { font-variant-numeric: tabular-nums; }
+
+  /* ---- Masthead ---- */
+  .masthead {
+    border-bottom: 2px solid var(--ink);
+    background: var(--paper);
+  }
+  .masthead__inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 22px 20px 16px;
+  }
+  .masthead__kicker {
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+  .masthead h1 {
+    font-size: clamp(30px, 6vw, 52px);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    line-height: 1;
+  }
+  .masthead__sub {
+    margin-top: 8px;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+  .masthead__sub strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- Layout ---- */
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 264px 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  @media (max-width: 860px) {
+    .wrap { grid-template-columns: 1fr; gap: 0; padding: 0; }
+  }
+
+  /* ---- Filter rail ---- */
+  .filters {
+    position: sticky;
+    top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  @media (max-width: 860px) {
+    .filters {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule-strong);
+      padding: 14px 16px;
+      gap: 12px;
+      max-height: 82vh;
+      overflow-y: auto;
+    }
+    .filters[data-collapsed="true"] .fgroup,
+    .filters[data-collapsed="true"] .filters__reset { display: none; }
+  }
+  .fgroup { display: flex; flex-direction: column; gap: 9px; }
+  .fgroup__label {
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--faint);
+    font-weight: 600;
+  }
+  .search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--card);
+    border: 1px solid var(--rule-strong);
+    border-radius: 7px;
+    padding: 9px 11px;
+  }
+  .search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .search svg { flex: none; color: var(--muted); }
+  .search input {
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    width: 100%;
+    outline: none;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font: inherit;
+    font-size: 13px;
+    padding: 6px 11px;
+    border-radius: 999px;
+    border: 1px solid var(--rule-strong);
+    background: var(--card);
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .12s, color .12s, border-color .12s;
+    white-space: nowrap;
+  }
+  .chip:hover { border-color: var(--accent); color: var(--ink); }
+  .chip[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    font-weight: 600;
+  }
+  :root[data-theme="dark"] .chip[aria-pressed="true"],
+  .chip[aria-pressed="true"] { color: #fff; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .chip[aria-pressed="true"] { color: #10231A; }
+  }
+  :root[data-theme="dark"] .chip[aria-pressed="true"] { color: #10231A; }
+
+  .range__val { font-size: 13px; color: var(--muted); }
+  .range__val b { color: var(--ink); font-weight: 600; }
+  input[type="range"] { width: 100%; accent-color: var(--accent); }
+  .check {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13.5px; color: var(--muted); cursor: pointer;
+  }
+  .check input { accent-color: var(--accent); width: 15px; height: 15px; }
+  .filters__reset {
+    font: inherit; font-size: 12.5px;
+    background: none; border: 0; color: var(--accent-ink);
+    text-decoration: underline; cursor: pointer; padding: 0; text-align: left;
+  }
+  .filters__toggle {
+    display: none;
+  }
+  @media (max-width: 860px) {
+    .filters__toggle {
+      display: flex; justify-content: space-between; align-items: center;
+      font: inherit; font-weight: 600; font-size: 13px;
+      background: none; border: 0; color: var(--ink); cursor: pointer; padding: 0;
+      width: 100%;
+    }
+  }
+
+  /* ---- Results ---- */
+  .results { min-width: 0; }
+  @media (max-width: 860px) { .results { padding: 16px; } }
+  .results__bar {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 12px; flex-wrap: wrap; margin-bottom: 14px;
+  }
+  .results__count { font-size: 14px; color: var(--muted); }
+  .results__count b { color: var(--ink); font-weight: 700; font-size: 16px; }
+  .sort { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--muted); }
+  .sort select {
+    font: inherit; font-size: 13px; color: var(--ink);
+    background: var(--card); border: 1px solid var(--rule-strong);
+    border-radius: 6px; padding: 5px 8px;
+  }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; align-items: start; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 15px 15px 13px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: rise .28s ease both;
+  }
+  @keyframes rise { from { opacity: 0; transform: translateY(6px); } }
+  @media (prefers-reduced-motion: reduce) { .card { animation: none; } }
+
+  .card__top { display: flex; justify-content: space-between; align-items: start; gap: 10px; }
+  .card__type {
+    font-size: 11px; letter-spacing: .11em; text-transform: uppercase;
+    font-weight: 700; color: var(--accent-ink);
+  }
+  .card__loc { font-size: 18px; font-weight: 700; letter-spacing: -.01em; margin-top: 2px; }
+  .card__price { text-align: right; flex: none; }
+  .card__price b { font-size: 17px; font-weight: 800; }
+  .card__price.callto b { font-size: 13px; font-weight: 700; color: var(--flag); }
+  .card__price span { display: block; font-size: 11px; color: var(--faint); }
+
+  .stats { display: flex; gap: 14px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 8px 0; }
+  .stats b { color: var(--ink); font-weight: 700; }
+  .stats > span { display: flex; gap: 5px; align-items: baseline; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag {
+    font-size: 11px; font-weight: 600; letter-spacing: .02em;
+    padding: 3px 7px; border-radius: 5px;
+    background: var(--accent-soft); color: var(--accent-ink);
+  }
+  .tag.flag { background: var(--flag-soft); color: var(--flag); }
+
+  .card__desc {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 13.5px; line-height: 1.5; color: var(--ink);
+  }
+  .card__desc:empty { display: none; }
+
+  .card__calls { display: flex; flex-wrap: wrap; gap: 7px; padding-top: 3px; }
+  .call {
+    flex: 1 1 auto;
+    display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+    text-decoration: none;
+    font-weight: 700; font-size: 14px;
+    padding: 9px 12px; border-radius: 7px;
+    background: var(--accent); color: #fff;
+    letter-spacing: .01em;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .call { color: #10231A; }
+  }
+  :root[data-theme="dark"] .call { color: #10231A; }
+  .call:hover { background: var(--accent-ink); }
+  .call svg { flex: none; }
+
+  .empty {
+    text-align: center; padding: 60px 20px; color: var(--muted);
+    border: 1px dashed var(--rule-strong); border-radius: 10px;
+  }
+  .empty b { color: var(--ink); display: block; font-size: 16px; margin-bottom: 4px; }
+
+  /* ---- Footer ---- */
+  footer {
+    max-width: var(--maxw); margin: 10px auto 0; padding: 24px 20px 48px;
+    border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--muted);
+  }
+  footer p { margin: 0 0 8px; max-width: 62ch; }
+  footer a { font-weight: 600; }
+  .attribution {
+    background: var(--accent-soft);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 13px 15px;
+    margin: 14px auto 0;
+    max-width: var(--maxw);
+  }
+  .attribution strong { color: var(--ink); }
+
+  .toprow { display: flex; justify-content: flex-end; max-width: var(--maxw); margin: 0 auto; padding: 8px 20px 0; }
+  .themebtn {
+    font: inherit; font-size: 12px; color: var(--muted);
+    background: none; border: 1px solid var(--rule-strong); border-radius: 6px;
+    padding: 4px 9px; cursor: pointer;
+  }
+</style>
+
+<div class="toprow">
+  <button class="themebtn" id="themebtn" type="button">Theme</button>
+</div>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <div class="masthead__kicker">
+      <span>Lakewood &amp; Jackson, New Jersey</span>
+      <span id="kickerDate"></span>
+    </div>
+    <h1>The Lakewood Rental List</h1>
+    <p class="masthead__sub">
+      A searchable index of <strong id="totalCount">—</strong> homes, apartments, townhouses and rooms for rent,
+      compiled from the <strong>Masa U&rsquo;Matan</strong> weekly rental list
+      (<span id="listDate">—</span>). Refreshed every Wednesday.
+    </p>
+  </div>
+</header>
+
+<div class="attribution">
+  <strong>Source:</strong> All listings are reproduced from the Masa U&rsquo;Matan Lakewood Rental List.
+  This site is an unofficial search tool and is not affiliated with Masa U&rsquo;Matan.
+  Always confirm details with the landlord. &nbsp;
+  <a href="https://masaumatan.com" target="_blank" rel="noopener">masaumatan.com</a> &middot;
+  <a href="https://masaumatan.com/MasaRentals.pdf" target="_blank" rel="noopener">original PDF&nbsp;list</a>
+</div>
+
+<div class="wrap">
+  <aside class="filters" id="filters" data-collapsed="true">
+    <button class="filters__toggle" id="filtersToggle" type="button" aria-expanded="false">
+      <span>Filters &amp; search</span><span id="toggleHint">Show</span>
+    </button>
+
+    <div class="fgroup">
+      <label class="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="q" placeholder="Street, area, or keyword&hellip;" autocomplete="off">
+      </label>
+    </div>
+
+    <div class="fgroup">
+      <span class="fgroup__label">Type</span>
+      <div class="chips" id="typeChips"></div>
+    </div>
+
+    <div class="fgroup">
+      <span class="fgroup__label">Bedrooms (minimum)</span>
+      <div class="chips" id="bedChips"></div>
+    </div>
+
+    <div class="fgroup">
+      <span class="fgroup__label">Max rent</span>
+      <input type="range" id="rent" min="500" max="7000" step="100" value="7000">
+      <div class="range__val">Up to <b id="rentVal">Any</b> <span id="rentNote"></span></div>
+      <label class="check"><input type="checkbox" id="inclCall" checked> Include &ldquo;call to discuss&rdquo; listings</label>
+    </div>
+
+    <div class="fgroup">
+      <span class="fgroup__label">Landlord pays</span>
+      <div class="chips" id="utilChips"></div>
+    </div>
+
+    <div class="fgroup">
+      <label class="check"><input type="checkbox" id="furnished"> Furnished only</label>
+      <label class="check"><input type="checkbox" id="shortterm"> Short-term available</label>
+    </div>
+
+    <button class="filters__reset" id="reset" type="button">Reset all filters</button>
+  </aside>
+
+  <main class="results">
+    <div class="results__bar">
+      <div class="results__count"><b id="count">0</b> <span id="countWord">listings</span></div>
+      <label class="sort">Sort
+        <select id="sort">
+          <option value="default">List order (newest first)</option>
+          <option value="price-asc">Rent: low to high</option>
+          <option value="price-desc">Rent: high to low</option>
+          <option value="beds-desc">Most bedrooms</option>
+          <option value="loc">Location A&ndash;Z</option>
+        </select>
+      </label>
+    </div>
+    <div class="grid" id="grid"></div>
+  </main>
+</div>
+
+<footer>
+  <p>
+    <strong>How this works.</strong> Every Wednesday this page is rebuilt from the current
+    Masa U&rsquo;Matan rental list PDF. Listing text is parsed automatically, so occasional
+    formatting quirks are possible &mdash; the
+    <a href="https://masaumatan.com/MasaRentals.pdf" target="_blank" rel="noopener">original PDF</a>
+    is authoritative.
+  </p>
+  <p>
+    To list your property, or once a unit is rented, contact Masa U&rsquo;Matan directly at
+    732-364-9392. Data on this page generated <span id="genAt">—</span>.
+  </p>
+</footer>
+
+<script id="payload" type="application/json">/*__DATA__*/null</script>
+<script>
+(function () {
+  "use strict";
+  var DATA = JSON.parse(document.getElementById("payload").textContent) || { listings: [] };
+  var L = DATA.listings || [];
+
+  // ---- derive fields ----
+  function bathNum(s) {
+    if (!s) return null;
+    var m = String(s).match(/(\d+)/);
+    var n = m ? +m[1] : 0;
+    if (/[½]/.test(s)) n += 0.5;
+    if (/[¼]/.test(s)) n += 0.25;
+    if (/[¾]/.test(s)) n += 0.75;
+    return n || null;
+  }
+  var TAGRULES = [
+    ["Choson / Kallah", /choson|chosson|chas[sa]n|kalla/i, false],
+    ["Short-term OK", /short[\s-]?term|short\/long|weekly|nightly|per night|\/night/i, false],
+    ["Long-term", /long[\s-]?term|long\/short|\byear\b|10[\s-]?month|annual/i, false],
+    ["Available now", /available imm|av\.? ?imm|immediately|avail\. now/i, false],
+    ["Pool", /\bpool\b/i, false],
+    ["Office use", /\boffice\b/i, false],
+    ["Basement", /basement|bsmt/i, false],
+    ["Backyard", /back ?yard|bkyd|\byard\b/i, false],
+  ];
+  L.forEach(function (x, i) {
+    x._i = i;
+    x._baths = bathNum(x.baths);
+    x._text = [x.location, x.comments, (x.phones || []).join(" "), x.type].join(" ").toLowerCase();
+    x._furnished = !!x.furnished || /furnish/i.test(x.comments || "");
+    x._short = /short[\s-]?term|short\/long|weekly|nightly|\/night|per night/i.test(x.comments || "");
+    x._tags = [];
+    TAGRULES.forEach(function (r) {
+      if (r[1].test(x.comments || "")) x._tags.push([r[0], r[2]]);
+    });
+  });
+
+  var TYPES = ["Apartment", "House", "Townhouse / Attached", "Room"];
+  var UTILS = ["Gas", "Electric", "Water", "Heat"];
+
+  // ---- state ----
+  var S = { q: "", types: new Set(), beds: 0, rent: 7000, inclCall: true,
+            utils: new Set(), furnished: false, shortterm: false, sort: "default" };
+
+  // ---- build filter controls ----
+  var typeChips = document.getElementById("typeChips");
+  TYPES.forEach(function (t) {
+    var b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.textContent = t.replace(" / Attached", "");
+    b.setAttribute("aria-pressed", "false");
+    b.onclick = function () {
+      if (S.types.has(t)) S.types.delete(t); else S.types.add(t);
+      b.setAttribute("aria-pressed", S.types.has(t));
+      render();
+    };
+    typeChips.appendChild(b);
+  });
+
+  var bedChips = document.getElementById("bedChips");
+  [["Any", 0], ["1+", 1], ["2+", 2], ["3+", 3], ["4+", 4], ["5+", 5]].forEach(function (p) {
+    var b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.textContent = p[0];
+    b.setAttribute("aria-pressed", p[1] === 0 ? "true" : "false");
+    b.onclick = function () {
+      S.beds = p[1];
+      [].forEach.call(bedChips.children, function (c) { c.setAttribute("aria-pressed", "false"); });
+      b.setAttribute("aria-pressed", "true");
+      render();
+    };
+    bedChips.appendChild(b);
+  });
+
+  var utilChips = document.getElementById("utilChips");
+  UTILS.forEach(function (u) {
+    var b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.textContent = u;
+    b.setAttribute("aria-pressed", "false");
+    b.onclick = function () {
+      if (S.utils.has(u)) S.utils.delete(u); else S.utils.add(u);
+      b.setAttribute("aria-pressed", S.utils.has(u));
+      render();
+    };
+    utilChips.appendChild(b);
+  });
+
+  var q = document.getElementById("q");
+  q.oninput = function () { S.q = q.value.trim().toLowerCase(); render(); };
+  var rent = document.getElementById("rent"), rentVal = document.getElementById("rentVal"),
+      rentNote = document.getElementById("rentNote");
+  rent.oninput = function () {
+    S.rent = +rent.value;
+    rentVal.textContent = S.rent >= 7000 ? "Any" : "$" + S.rent.toLocaleString() + "/mo";
+    render();
+  };
+  document.getElementById("inclCall").onchange = function (e) { S.inclCall = e.target.checked; render(); };
+  document.getElementById("furnished").onchange = function (e) { S.furnished = e.target.checked; render(); };
+  document.getElementById("shortterm").onchange = function (e) { S.shortterm = e.target.checked; render(); };
+  document.getElementById("sort").onchange = function (e) { S.sort = e.target.value; render(); };
+
+  document.getElementById("reset").onclick = function () {
+    S = { q: "", types: new Set(), beds: 0, rent: 7000, inclCall: true,
+          utils: new Set(), furnished: false, shortterm: false, sort: S.sort };
+    q.value = ""; rent.value = 7000; rentVal.textContent = "Any";
+    document.getElementById("inclCall").checked = true;
+    document.getElementById("furnished").checked = false;
+    document.getElementById("shortterm").checked = false;
+    document.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
+    bedChips.children[0].setAttribute("aria-pressed", "true");
+    render();
+  };
+
+  var ft = document.getElementById("filtersToggle"), fbox = document.getElementById("filters");
+  ft.onclick = function () {
+    var c = fbox.getAttribute("data-collapsed") === "true";
+    fbox.setAttribute("data-collapsed", c ? "false" : "true");
+    ft.setAttribute("aria-expanded", c ? "true" : "false");
+    document.getElementById("toggleHint").textContent = c ? "Hide" : "Show";
+  };
+  if (window.innerWidth > 860) fbox.setAttribute("data-collapsed", "false");
+
+  // ---- theme toggle ----
+  var tb = document.getElementById("themebtn");
+  function curTheme() {
+    return document.documentElement.getAttribute("data-theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  }
+  try { var saved = localStorage.getItem("lr-theme"); if (saved) document.documentElement.setAttribute("data-theme", saved); } catch (e) {}
+  tb.onclick = function () {
+    var next = curTheme() === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("lr-theme", next); } catch (e) {}
+  };
+
+  // ---- filtering ----
+  function match(x) {
+    if (S.q) {
+      var terms = S.q.split(/\s+/);
+      for (var i = 0; i < terms.length; i++) if (x._text.indexOf(terms[i]) === -1) return false;
+    }
+    if (S.types.size && !S.types.has(x.type)) return false;
+    if (S.beds && (x.bedrooms_num || 0) < S.beds) return false;
+    if (S.utils.size) {
+      for (var u of S.utils) if ((x.utilities_included || []).indexOf(u) === -1) return false;
+    }
+    if (S.furnished && !x._furnished) return false;
+    if (S.shortterm && !x._short) return false;
+    if (x.rent == null) { if (!S.inclCall) return false; }
+    else if (S.rent < 7000 && x.rent > S.rent) return false;
+    return true;
+  }
+
+  var grid = document.getElementById("grid");
+  var elCount = document.getElementById("count"), elWord = document.getElementById("countWord");
+
+  function esc(s) { return (s || "").replace(/[&<>"]/g, function (c) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  function telHref(p) { return "tel:+1" + p.replace(/\D/g, ""); }
+
+  function card(x) {
+    var d = document.createElement("article");
+    d.className = "card";
+    var price = x.rent != null
+      ? '<div class="card__price"><b class="tnum">$' + x.rent.toLocaleString() + '</b><span>per month</span></div>'
+      : '<div class="card__price callto"><b>' +
+          (x.rent_display === "Call to discuss" ? "Call to<br>discuss" : "Contact<br>for rent") +
+        '</b></div>';
+
+    var stats = '<span><b>' + esc(x.bedrooms || "?") + '</b> bd</span>' +
+                '<span><b>' + esc(x.baths || "?") + '</b> ba</span>' +
+                (x.utilities_included && x.utilities_included.length
+                  ? '<span><b>' + x.utilities_included.map(function (u) { return u[0]; }).join("") + '</b> incl.</span>'
+                  : "");
+
+    var tags = (x._furnished ? ['<span class="tag">Furnished</span>'] : []);
+    x._tags.forEach(function (t) { tags.push('<span class="tag' + (t[1] ? " flag" : "") + '">' + esc(t[0]) + "</span>"); });
+
+    var calls = (x.phones || []).map(function (p) {
+      return '<a class="call" href="' + telHref(p) + '">' +
+        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"/></svg> ' +
+        esc(p) + "</a>";
+    }).join("");
+    if (!calls) calls = '<span class="range__val">No phone listed &mdash; see PDF</span>';
+
+    d.innerHTML =
+      '<div class="card__top"><div>' +
+        '<div class="card__type">' + esc(x.type) + "</div>" +
+        '<h3 class="card__loc">' + esc(x.location || "Location in PDF") + "</h3>" +
+      "</div>" + price + "</div>" +
+      '<div class="stats">' + stats + "</div>" +
+      (tags.length ? '<div class="tags">' + tags.join("") + "</div>" : "") +
+      '<p class="card__desc">' + esc(x.comments) + "</p>" +
+      '<div class="card__calls">' + calls + "</div>";
+    return d;
+  }
+
+  function render() {
+    var rows = L.filter(match);
+    var s = S.sort;
+    rows.sort(function (a, b) {
+      if (s === "price-asc") return (a.rent == null) - (b.rent == null) || (a.rent || 0) - (b.rent || 0);
+      if (s === "price-desc") return (a.rent == null) - (b.rent == null) || (b.rent || 0) - (a.rent || 0);
+      if (s === "beds-desc") return (b.bedrooms_num || 0) - (a.bedrooms_num || 0);
+      if (s === "loc") return (a.location || "~").localeCompare(b.location || "~");
+      return a._i - b._i;
+    });
+    elCount.textContent = rows.length.toLocaleString();
+    elWord.textContent = rows.length === 1 ? "listing" : "listings";
+    grid.innerHTML = "";
+    if (!rows.length) {
+      grid.innerHTML = '<div class="empty"><b>No matches</b>Try widening the rent range or clearing a filter.</div>';
+      return;
+    }
+    var frag = document.createDocumentFragment();
+    rows.slice(0, 400).forEach(function (x) { frag.appendChild(card(x)); });
+    grid.appendChild(frag);
+  }
+
+  // ---- header meta ----
+  document.getElementById("totalCount").textContent = L.length.toLocaleString();
+  document.getElementById("listDate").textContent = DATA.list_date || "current list";
+  document.getElementById("kickerDate").textContent = DATA.list_date || "";
+  var g = DATA.generated_at ? new Date(DATA.generated_at) : null;
+  document.getElementById("genAt").textContent = g
+    ? g.toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric" }) +
+      " at " + g.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" })
+    : "—";
+  rentVal.textContent = "Any";
+
+  render();
+})();
+</script>

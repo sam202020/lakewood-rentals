@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Lakewood Rental List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A searchable web index of Lakewood / Jackson area rentals, rebuilt every week from
+the **Masa U'Matan** rental list PDF (<https://masaumatan.com/MasaRentals.pdf>).
 
-## Available Scripts
+This is an unofficial search tool. It is not affiliated with Masa U'Matan, and every
+view links back to `masaumatan.com` and the original PDF. The PDF is authoritative.
 
-In the project directory, you can run:
+## How it works
 
-### `npm start`
+```
+MasaRentals.pdf  ──►  parse.py  ──►  listings.json  ──►  build.py  ──►  site/index.html
+   (live, weekly)      (pdfplumber,       (structured        (injects JSON        (self-contained
+                        column-aware)      listing data)       into template)      static page)
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **`parse.py`** — downloads the PDF and turns it into structured records
+  (type, bedrooms, baths, location, rent, utilities included, phone numbers,
+  description). Column boundaries are pinned to the PDF's fixed layout.
+- **`build.py`** — runs the parser against the live PDF (or a local `--pdf`),
+  writes `listings.json`, and injects it into `site/template.html` to produce
+  `site/index.html`. Aborts without overwriting anything if fewer than 60
+  listings parse (guards against a bad fetch).
+- **`site/template.html`** — the page: client-side search, filters (type,
+  bedrooms, max rent, utilities, furnished, short-term), sort, light/dark.
+  All data is embedded; no network calls at runtime.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Rebuild locally
 
-### `npm test`
+```bash
+pip install -r requirements.txt
+python3 build.py                 # fetch the live PDF and rebuild
+python3 build.py --pdf some.pdf  # use a local PDF instead
+open site/index.html
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Weekly auto-refresh
 
-### `npm run build`
+A scheduled Claude Code cloud agent runs every Wednesday just after midnight ET.
+It checks out this repo, runs `build.py`, and republishes the Artifact.
+See [`ROUTINE.md`](ROUTINE.md) for the exact agent prompt and schedule.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Published Artifact: https://claude.ai/code/artifact/b8837b56-6782-4202-b3d7-c8db84ff1014
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Notes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The `src/` and `public/` folders are an unused Create React App scaffold from
+  when the project was first created. The live site is the static `site/` build.
+- Parsing is best-effort against a PDF that is laid out for print. Occasional
+  quirks (a missing location, a run-together word) are expected; the original
+  PDF is the source of truth.

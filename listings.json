@@ -1,0 +1,4684 @@
+{
+  "generated_at": "2026-08-27T06:06:42+00:00",
+  "list_date": "Wednesday, Aug. 26, 2026",
+  "source_url": "https://masaumatan.com/MasaRentals.pdf",
+  "source_site": "https://masaumatan.com",
+  "count": 240,
+  "listings": [
+    {
+      "id": "1A120_947:0",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1",
+      "location": "Regency",
+      "rent": null,
+      "rent_display": "Contact for rent",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "310-299-6214"
+      ],
+      "furnished": false,
+      "comments": ""
+    },
+    {
+      "id": "11A56_1019:19",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Near Elmwood",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-267-1852"
+      ],
+      "furnished": true,
+      "comments": "Beautiful furnished apartment for single. Nice size kitchen. Available immediately."
+    },
+    {
+      "id": "11A56_1019:20",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "The 70",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "848-986-0875"
+      ],
+      "furnished": true,
+      "comments": "Upgraded furnished apt./office + Wifi. Extra soundproofing. On cul-de-sac."
+    },
+    {
+      "id": "1H142_996:15",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "New Central Ave.",
+      "rent": 3500,
+      "rent_display": "$3,500/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "832-309-7714"
+      ],
+      "furnished": true,
+      "comments": "Fully furnished or unfurnished house. Available immediately for long term."
+    },
+    {
+      "id": "U1R156_1019:12",
+      "type": "Room",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1½",
+      "location": "Prospect / Mass.",
+      "rent": 600,
+      "rent_display": "$600/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "213-332-8893"
+      ],
+      "furnished": true,
+      "comments": "Private rm., fully furnished, for workingguys, shared kitchen, WD. Available immediately."
+    },
+    {
+      "id": "1HH074_858:4",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "1½",
+      "location": "Raintree",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-731-1537"
+      ],
+      "furnished": false,
+      "comments": "Great location. Available immediately."
+    },
+    {
+      "id": "U11TT56_1019:13",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "3½",
+      "location": "Sea Point Dr.",
+      "rent": 3300,
+      "rent_display": "$3,300/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-691-5277"
+      ],
+      "furnished": false,
+      "comments": "Large yard, lots of windows. Available September."
+    },
+    {
+      "id": "U1HH157_1020:20",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "2½",
+      "location": "Brookhill",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-618-2073"
+      ],
+      "furnished": true,
+      "comments": "Newly updated & renovated large property. Available immediately. room, share house w/ young learning working bochur. Kitchen, DR/LR., bsmt. Furnished, short and long-term option. Heated in-ground pool with cabana. Large screened-in patio. Gorgeous property. Available immediately. Option to buy."
+    },
+    {
+      "id": "1AA158_1020:9",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-245-7782"
+      ],
+      "furnished": false,
+      "comments": "new small apartment, good for one or two singles or office. Available immediately. us@washingtonsquareapt.com Square o u r a d e d e a t- i n k i t c h e n b o u t a h k a K a l l s, W /D i n e v e r y u n i t, **A s o n / a l ! h os e c i d m u c h m o r e. C s p"
+    },
+    {
+      "id": "1A158_1022:1",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Ridge area",
+      "rent": 1300,
+      "rent_display": "$1,300/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-503-6871"
+      ],
+      "furnished": true,
+      "comments": "Fully-furnished. Full kitchen. Private heating and cooling. Washer/dryer. Av. immediately."
+    },
+    {
+      "id": "1A132_978:14",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "14th Street area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "718-930-3350"
+      ],
+      "furnished": true,
+      "comments": "New upgraded luxury ground-level furnished Choson/Kallah short term apt. Av. imm."
+    },
+    {
+      "id": "1H158_1021:9",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "7",
+      "bedrooms_num": 7,
+      "baths": "7",
+      "location": "Central Lakewood",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "929-549-9319"
+      ],
+      "furnished": true,
+      "comments": "Beautiful large brand new house, furnished summer rental August 6–27."
+    },
+    {
+      "id": "1RR158_1021:6",
+      "type": "Room",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Westgate",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "718-490-0297"
+      ],
+      "furnished": false,
+      "comments": "In 2 BR house of men. Quiet non-smoker 35 & up. Shared kitchen, washer/dryer, etc."
+    },
+    {
+      "id": "11TT59_1022:15",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "7",
+      "bedrooms_num": 7,
+      "baths": "4½",
+      "location": "Henry Street",
+      "rent": 4950,
+      "rent_display": "$4,950/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-312-6077"
+      ],
+      "furnished": true,
+      "comments": "In excellent condition. Beautifully upgraded semi-furnished duplex. Very sp ac i o u s h o u se, h u g e b a ckyard. A v a i la b le i m m e d i a te ly. Excellent condition. Large lot. [Possible for business use.] Beautiful, fully renovated. Available immediately for short or long term."
+    },
+    {
+      "id": "U1HH159_1023:13",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2½",
+      "location": "Chestnut area",
+      "rent": 3500,
+      "rent_display": "$3,500/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-902-3484"
+      ],
+      "furnished": false,
+      "comments": "E x ce lle n t co n di t io n, P o o l. Availabl e im m e d i a te ly f o r lo n g te rm only. 2nd floor apt., newly renovated. Perfect for young couple or small family. Av. imm."
+    },
+    {
+      "id": "11T59_1022:14",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "7",
+      "bedrooms_num": 7,
+      "baths": "4½",
+      "location": "Henry Street",
+      "rent": 3950,
+      "rent_display": "$3,950/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-301-9687"
+      ],
+      "furnished": true,
+      "comments": "Beautiful upgraded furnished duplex, in excellent condition. For 10-month rental."
+    },
+    {
+      "id": "11H59_1022:17",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "1½",
+      "location": "Raintree",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-731-1537"
+      ],
+      "furnished": true,
+      "comments": "Furnished house for summer or short term in highly desirable area. Av. immediately."
+    },
+    {
+      "id": "1H022_763:3",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "3",
+      "location": "Miller / Shady Lane",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-779-4754"
+      ],
+      "furnished": false,
+      "comments": "Gorgeous pool, great deck. Beaut. colonial, prime location. Furn. long/short. Av. Sept."
+    },
+    {
+      "id": "1A082_872:17",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Drake / Serenity",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "848-448-1392"
+      ],
+      "furnished": true,
+      "comments": "Beautiful new furnished Choson/Kalla apartment. Three month minimum."
+    },
+    {
+      "id": "1A114_933:1",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Arlington",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-994-5852",
+        "848-210-6640"
+      ],
+      "furnished": true,
+      "comments": "Beautiful furnished Choson/Kallah apt. Lots of storage space, sunny. St. st. app. Av. im."
+    },
+    {
+      "id": "1A101_909:14",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Carey / Lexington",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-688-0793"
+      ],
+      "furnished": true,
+      "comments": "Short or long term furnished studio apt. for single boy or girl. Kitchen, washer/dryer. SITTING ROOM, TEXT: 732-267-3594"
+    },
+    {
+      "id": "1AA160_1025:6",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "1",
+      "location": "Locust Street",
+      "rent": 1500,
+      "rent_display": "$1,500/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-986-6055"
+      ],
+      "furnished": false,
+      "comments": "Windows in all rooms. Available September 1."
+    },
+    {
+      "id": "1AA093_898:17",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "N.Oakland / Ocean",
+      "rent": 2300,
+      "rent_display": "$2,300/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "908-216-6972"
+      ],
+      "furnished": false,
+      "comments": "Stunning upgraded apartment. Available immediately."
+    },
+    {
+      "id": "1A130_972:15",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "13th & Princeton",
+      "rent": 1900,
+      "rent_display": "$1,900/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-648-8178"
+      ],
+      "furnished": true,
+      "comments": "Beautiful, spacious furnished Chosson/Kallah apt. Excellent location. Av. immediately."
+    },
+    {
+      "id": "1A104_915:8",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Brook Hill",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "848-210-7192"
+      ],
+      "furnished": true,
+      "comments": "see! Bright/airy furnished. Upgr.thru-out. Near Shuls/shopping. Full kitchen. Av. Sept."
+    },
+    {
+      "id": "1A075_858:19",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Albert area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "848-299-6599"
+      ],
+      "furnished": true,
+      "comments": "Spacious new, fully furnished apt. Large living room. Av. imm. short/long term."
+    },
+    {
+      "id": "11A55_1018:17",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Raintree",
+      "rent": 2750,
+      "rent_display": "$2,750/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-597-1894"
+      ],
+      "furnished": false,
+      "comments": "new, beautiful, spacious fully furn. Lg. master BR, high ceilings, WIC. Long term av."
+    },
+    {
+      "id": "U1A160_1024:18",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "South Lake",
+      "rent": 1900,
+      "rent_display": "$1,900/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-540-4050"
+      ],
+      "furnished": false,
+      "comments": "Brand new, backyard. For Chosson/ Kallah or single. 6 month minimum."
+    },
+    {
+      "id": "11TT55_1016:19",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "3½",
+      "location": "Arlington area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-364-4647"
+      ],
+      "furnished": true,
+      "comments": "Furnished house,near Ashkenaz/Sefardi shuls. Beautifullayout. Shorttermuntil January."
+    },
+    {
+      "id": "1HH147_1002:6",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2½",
+      "location": "Jackson",
+      "rent": 3500,
+      "rent_display": "$3,500/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-587-8181"
+      ],
+      "furnished": false,
+      "comments": "Bilevel in great neighborhood. Private backyard. Available immediately long term. Flexible terms (short or long)."
+    },
+    {
+      "id": "11HH60_1023:17",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½",
+      "location": "Jackson",
+      "rent": 3600,
+      "rent_display": "$3,600/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-902-6591"
+      ],
+      "furnished": false,
+      "comments": "Corner lot. Available immediately."
+    },
+    {
+      "id": "11TT60_1023:18",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "3½",
+      "location": "Sunset Grove",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-245-6258"
+      ],
+      "furnished": false,
+      "comments": "Fully upgraded duplex. Beautiful kitchen. Available September 1. Brand new. Available immediately. Newly renovated with new kitchen, heated pool & Lg. bkyd.. near shopping. Av. imm."
+    },
+    {
+      "id": "U1H160_1024:15",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "2½",
+      "location": "Holly Oaks",
+      "rent": 4000,
+      "rent_display": "$4,000/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-806-1519"
+      ],
+      "furnished": false,
+      "comments": "Stunning large private backyard, large bedrooms with oversize master. Av. imm."
+    },
+    {
+      "id": "11HH61_1026:10",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Raintree",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-210-3530"
+      ],
+      "furnished": false,
+      "comments": "Colonial. Redone kitchen,unfin.bsmt.,huge fenced-inyard. Prefersmallfamilylongterm."
+    },
+    {
+      "id": "U1TT161_1027:6",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "6",
+      "bedrooms_num": 6,
+      "baths": "3½",
+      "location": "Cherry Street",
+      "rent": 4500,
+      "rent_display": "$4,500/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-237-5053"
+      ],
+      "furnished": false,
+      "comments": "Beautifully upgraded duplex, 2 years old. Available September for max. 2 years."
+    },
+    {
+      "id": "U1HH161_1027:14",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "3½",
+      "location": "Jksn.,Aisle 9 area",
+      "rent": 4200,
+      "rent_display": "$4,200/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "609-901-1543"
+      ],
+      "furnished": false,
+      "comments": "Great open spaces."
+    },
+    {
+      "id": "11HH61_1025:12",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "2",
+      "location": "Ivy Hill Rd.Lkwd.",
+      "rent": 3000,
+      "rent_display": "$3,000/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-210-3635"
+      ],
+      "furnished": false,
+      "comments": "Only for people 55 of age and older. One month deposit."
+    },
+    {
+      "id": "11HH61_1025:13",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "3",
+      "location": "Howell",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [],
+      "furnished": false,
+      "comments": "Large beautiful house on expansive property. Includes finished basement."
+    },
+    {
+      "id": "11TT61_1026:4",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "3½",
+      "location": "Monmouth Views",
+      "rent": 3200,
+      "rent_display": "$3,200/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-580-1167"
+      ],
+      "furnished": false,
+      "comments": "End unit. Great community. Available immediately. Serious inquiries only."
+    },
+    {
+      "id": "U11TT68_1040:15",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "3½",
+      "location": "Jackson 21",
+      "rent": 3400,
+      "rent_display": "$3,400/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-588-4526"
+      ],
+      "furnished": false,
+      "comments": "Andrew Model. Major upgrades."
+    },
+    {
+      "id": "1A128_967:14",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Arlington / Melville",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-330-6745"
+      ],
+      "furnished": true,
+      "comments": "Furnished Choson/Kallah. Vinyl flooring, WD. Close to everything. Must see. Av. imm."
+    },
+    {
+      "id": "1A125_957:11",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Dewey Avenue",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "845-826-1612"
+      ],
+      "furnished": true,
+      "comments": "Brand new furnished Choson/Kallah apt. [Could be office space.] Av. immediately."
+    },
+    {
+      "id": "1A060_831:18",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "13th & Princeton",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-779-9408"
+      ],
+      "furnished": true,
+      "comments": "Ground-level. Furnished/unfurnished. Prefer elderly or handicapped, no Choson/Kallah."
+    },
+    {
+      "id": "11AA61_1025:19",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Brook / Ridge / E.7th",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "347-585-5020"
+      ],
+      "furnished": false,
+      "comments": "Brand new luxury first floor Choson/Kallah apartment. Available immediately."
+    },
+    {
+      "id": "U1AA162_1028:17",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Cross & Mass.",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "929-377-2039"
+      ],
+      "furnished": false,
+      "comments": "Beautiful, above ground windows, cul-de-sac. Available September."
+    },
+    {
+      "id": "11AA61_1026:18",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1",
+      "location": "Westgate",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-329-1500"
+      ],
+      "furnished": false,
+      "comments": "Vinyl through-out. Airy, freshly painted. Available216-8925"
+    },
+    {
+      "id": "11AA61_1026:192",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "",
+      "bedrooms_num": null,
+      "baths": "1",
+      "location": "Westgate",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-915-4545"
+      ],
+      "furnished": false,
+      "comments": "B ea u t if u l, n e w l y r e n o v a t ed. L a r g e w i n d o w s. O p ti o n a l c lo s e d o ff r o o m /s t u d y. A v. i m m."
+    },
+    {
+      "id": "11AA49_1002:20",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Hearthstone",
+      "rent": 2100,
+      "rent_display": "$2,100/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-806-1385"
+      ],
+      "furnished": false,
+      "comments": "For newlyweds:spacious apt. in priv. home. EIK. Upgraded closets, SP etc. Av. imm."
+    },
+    {
+      "id": "1AA162_1028:6",
+      "type": "Apartment",
+      "utilities_included": [
+        "Water"
+      ],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1",
+      "location": "",
+      "rent": 1750,
+      "rent_display": "$1,750/mo",
+      "landlord_pays": "W",
+      "accepts_hud": false,
+      "phones": [
+        "908-216-8925"
+      ],
+      "furnished": false,
+      "comments": "In private house on private block. Extra SP. High ceiling. Sep. meters. Av. immediately."
+    },
+    {
+      "id": "1AA162_1028:7",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½",
+      "location": "Elmwood Village",
+      "rent": 1750,
+      "rent_display": "$1,750/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-210-1976"
+      ],
+      "furnished": false,
+      "comments": "Beautiful apt., very nice crowd. Preschool Morahs & babysitters ev. age. Av. mid-Aug."
+    },
+    {
+      "id": "U1A162_1028:14",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "So.Lake / Carasaljo",
+      "rent": 1600,
+      "rent_display": "$1,600/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-645-0951"
+      ],
+      "furnished": true,
+      "comments": "Fully furnished, short or long term,walk-in, stunning, perfect for chosson/kallah."
+    },
+    {
+      "id": "1A057_827:8",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "White St. / Lutzk",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-503-6776"
+      ],
+      "furnished": true,
+      "comments": "Beautifulnew furnished apartment. Available immediately for long term."
+    },
+    {
+      "id": "11H62_1026:17",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "7",
+      "bedrooms_num": 7,
+      "baths": "3½",
+      "location": "Buttell Avenue",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-330-6000"
+      ],
+      "furnished": true,
+      "comments": "Winter rental, furnished. Great condition. Available from September until June."
+    },
+    {
+      "id": "11HH61_1026:12",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "6",
+      "bedrooms_num": 6,
+      "baths": "2½",
+      "location": "Brook Hill",
+      "rent": 4000,
+      "rent_display": "$4,000/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-342-9693"
+      ],
+      "furnished": false,
+      "comments": "Beautiful updated house. Available immediately."
+    },
+    {
+      "id": "U1HH162_1028:10",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1",
+      "location": "Chestnut area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-267-7782"
+      ],
+      "furnished": false,
+      "comments": "Available immediately."
+    },
+    {
+      "id": "U11TT57_1020:14",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "6",
+      "bedrooms_num": 6,
+      "baths": "3½",
+      "location": "Ocean Pointe",
+      "rent": 3350,
+      "rent_display": "$3,350/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-691-6416"
+      ],
+      "furnished": false,
+      "comments": "F in i s h e d a t tic, c lo s ed o f f su k k ah p o r ch, pri m e l o c at i o n n e a r O. C. p a rk. A v. S e p t. 1."
+    },
+    {
+      "id": "1TT077_863:3",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "3½StamfordMeadows",
+      "location": "",
+      "rent": 2900,
+      "rent_display": "$2,900/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-220-0587"
+      ],
+      "furnished": false,
+      "comments": "Upgraded, on beautiful, heimishe block. Stainless steel appliances. Av.immediately."
+    },
+    {
+      "id": "U11TT62_1028:18",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "3½",
+      "location": "Toms River",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-992-9785"
+      ],
+      "furnished": false,
+      "comments": "Many Shuls nearby, close to Seasons & the Row, walk in play/guest room, garage. 39 Valley Stream Ln. corner home near 2 Shuls. 55+community. Avail. September."
+    },
+    {
+      "id": "11HH49_1005:11",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "6",
+      "bedrooms_num": 6,
+      "baths": "4",
+      "location": "Monmouth Manor",
+      "rent": 5000,
+      "rent_display": "$5,000/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-567-1420"
+      ],
+      "furnished": false,
+      "comments": "Howell.3650s.f. Finished basement.master suite & nursery. Deck,lg.garage. Appliances."
+    },
+    {
+      "id": "U11TT50_1007:10",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2½",
+      "location": "Lakeview",
+      "rent": 2800,
+      "rent_display": "$2,800/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-676-1347"
+      ],
+      "furnished": false,
+      "comments": "Beautiful spacious, new oak wood flooring; +basement used for playroom/office."
+    },
+    {
+      "id": "U1HH163_1030:19",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2½",
+      "location": "Highland Dr,Jksn.",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-480-3190"
+      ],
+      "furnished": false,
+      "comments": "Great block with Shul on the block."
+    },
+    {
+      "id": "U1H163_1030:14",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "8",
+      "bedrooms_num": 8,
+      "baths": "5½",
+      "location": "Toms River",
+      "rent": 6900,
+      "rent_display": "$6,900/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "240-423-6000"
+      ],
+      "furnished": true,
+      "comments": "Brand new, partially furnished, gorgeous, in established community."
+    },
+    {
+      "id": "1H125_958:1",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2½TomsRvr/Landings",
+      "location": "",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-708-4462"
+      ],
+      "furnished": true,
+      "comments": "Winter rental, from Sept. Furnished home, nearthree shuls. Perfect during renovations."
+    },
+    {
+      "id": "1A159_1022:5",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Apollo Road",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "347-729-2439"
+      ],
+      "furnished": true,
+      "comments": "Fully furnished, on private block. Ideal for Choson/Kallah. Fully upgraded. Av. August."
+    },
+    {
+      "id": "11A63_1029:11",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Raintree",
+      "rent": 1100,
+      "rent_display": "$1,100/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "848-333-6423"
+      ],
+      "furnished": false,
+      "comments": "Brand new in single family house. Available now until end of September."
+    },
+    {
+      "id": "11A63_1029:12",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Water"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "",
+      "rent": 1200,
+      "rent_display": "$1,200/mo",
+      "landlord_pays": "GW",
+      "accepts_hud": false,
+      "phones": [
+        "732-604-7601"
+      ],
+      "furnished": true,
+      "comments": "Brand new beautifully furnished apt. in amazing location. Available immediately."
+    },
+    {
+      "id": "U1A163_1030:15",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Albert Run / Sims",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-512-6747"
+      ],
+      "furnished": true,
+      "comments": "Furnished, brand new, fully upgraded."
+    },
+    {
+      "id": "11AA63_1029:18",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1",
+      "location": "Westgate",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "718-791-5122"
+      ],
+      "furnished": false,
+      "comments": "apartment in private house. New flooring, large windows. Av.immediately."
+    },
+    {
+      "id": "1AA163_1029:4",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1",
+      "location": "Yeshiva area",
+      "rent": 2550,
+      "rent_display": "$2,550/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-598-2976"
+      ],
+      "furnished": false,
+      "comments": "Brand new basement apt. Private driveway. Single private entrance. Great location."
+    },
+    {
+      "id": "1AA073_856:10",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "2",
+      "location": "Williams & James",
+      "rent": 1400,
+      "rent_display": "$1,400/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-423-9379"
+      ],
+      "furnished": false,
+      "comments": "Small kitchen. Private parking spot. Available September 1."
+    },
+    {
+      "id": "11AA64_1031:14",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Caranetta / Sunset",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-600-9872"
+      ],
+      "furnished": false,
+      "comments": "Brand new apt. in highly-desirable area. Available September 1."
+    },
+    {
+      "id": "11AA64_1031:15",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "2",
+      "location": "Brook Hill area",
+      "rent": 2000,
+      "rent_display": "$2,000/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-240-7764"
+      ],
+      "furnished": false,
+      "comments": "Legal apartment, separate meters. Available immediately."
+    },
+    {
+      "id": "1AA164_1031:6",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1",
+      "location": "Prospect Park",
+      "rent": 1675,
+      "rent_display": "$1,675/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "718-633-1324"
+      ],
+      "furnished": false,
+      "comments": "Prospect Square. New flooring. Freshly painted. New LED lighting. Av. imm."
+    },
+    {
+      "id": "1AA164_1031:4",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1½",
+      "location": "Elmwood Village",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-761-4244"
+      ],
+      "furnished": false,
+      "comments": "Spacious apartment. Eat-in kitchen. Wood-look flooring. Available August 15."
+    },
+    {
+      "id": "11A64_1032:17",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "845-274-3536"
+      ],
+      "furnished": true,
+      "comments": "Beautifully furnished apt., walking distance to Yeshiva. 3 month minimum. Av. imm."
+    },
+    {
+      "id": "1A103_913:5",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Arlington",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "646-856-0176"
+      ],
+      "furnished": true,
+      "comments": "Furnished apt. for Choson/Kallah only. For short term. Large bedroom."
+    },
+    {
+      "id": "1A130_972:6",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Ridge / Bergen",
+      "rent": 1300,
+      "rent_display": "$1,300/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "848-210-0274"
+      ],
+      "furnished": true,
+      "comments": "Beautiful furnished apartment in excellent condition. Av. September 10."
+    },
+    {
+      "id": "1A080_869:6",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "",
+      "bedrooms_num": null,
+      "baths": "1",
+      "location": "Pawnee area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-326-8565"
+      ],
+      "furnished": false,
+      "comments": "B e a u ti f u l fu l l y - fu r n is h e d s ho r t te rm re n t a l w it h o u t d o o r / i n d o o r p o o l. A v. i m m e d ia t e ly."
+    },
+    {
+      "id": "11A52_1012:15",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Sunset / James area",
+      "rent": 1500,
+      "rent_display": "$1,500/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-600-8417"
+      ],
+      "furnished": true,
+      "comments": "Bright airy beautiful immaculate furnished, Choson/Kallah only. Available September 1."
+    },
+    {
+      "id": "1R115_935:2",
+      "type": "Room",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "",
+      "location": "14th & Lexington",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "848-373-4552"
+      ],
+      "furnished": true,
+      "comments": "Furnished room in a house of single men. Use of W/D, kitchenette, etc. Av. imm."
+    },
+    {
+      "id": "11R64_1031:18",
+      "type": "Room",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "",
+      "location": "7th & Madison",
+      "rent": 400,
+      "rent_display": "$400/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "367-3933848"
+      ],
+      "furnished": false,
+      "comments": "Ideal for single male or Yeshiva Bochur. No WD. Private entrance. Restrictions apply."
+    },
+    {
+      "id": "U1T164_1032:4",
+      "type": "Townhouse / Attached",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2½",
+      "location": "Westgate",
+      "rent": 3000,
+      "rent_display": "$3,000/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "718-415-6124"
+      ],
+      "furnished": true,
+      "comments": "Fully furnished, for short term: September October and November."
+    },
+    {
+      "id": "1HH164_1031:8",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "7",
+      "bedrooms_num": 7,
+      "baths": "3½Wilkinson,TomsR.",
+      "location": "",
+      "rent": 6000,
+      "rent_display": "$6,000/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-946-3449"
+      ],
+      "furnished": false,
+      "comments": "Furnishedmodern & updatedwithfin.bsmt. Pool,hottub & park-likeyard. Av. Sept.1."
+    },
+    {
+      "id": "11HH64_1031:11",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1½",
+      "location": "Miller Road",
+      "rent": 1800,
+      "rent_display": "$1,800/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-806-5382"
+      ],
+      "furnished": false,
+      "comments": "Newly redone, spacious & open, nursery/ office room. Available immediately. B ea u t i fu l h o m e o n s o u gh t a ft e r b l o c k w it h h u g e b a ck y a r d an d s w i n g s e t. Freshly redone, spacious kitchen, beautiful property, garage, walk able to many Shuls."
+    },
+    {
+      "id": "U11TT64_1032:15",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "7",
+      "bedrooms_num": 7,
+      "baths": "3½Locust/BelzShlav3",
+      "location": "",
+      "rent": 3200,
+      "rent_display": "$3,200/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "929-214-9588"
+      ],
+      "furnished": false,
+      "comments": "Available immediately."
+    },
+    {
+      "id": "10RR64_1032:16",
+      "type": "Room",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "848-223-5004"
+      ],
+      "furnished": false,
+      "comments": "B ig a i r y b a s e m en t n ex t to B M G w / o w n e n t - ra n c e, b a t h r o om & p a r k in g. N o pl a y g ro u p."
+    },
+    {
+      "id": "1R090_890:12",
+      "type": "Room",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "",
+      "location": "Lutzknear Westgt.",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-228-1487"
+      ],
+      "furnished": true,
+      "comments": "Furnished/unfurnished rooms for single learning/earning men in house of singles."
+    },
+    {
+      "id": "U1HH165_1034:13",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2",
+      "location": "Albert area",
+      "rent": 3500,
+      "rent_display": "$3,500/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-589-9548"
+      ],
+      "furnished": false,
+      "comments": "Recently renovated, beautiful block, large lot. Available September."
+    },
+    {
+      "id": "U11TT65_1034:14",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2½",
+      "location": "Riverwood Chase",
+      "rent": 2900,
+      "rent_display": "$2,900/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-262-9521"
+      ],
+      "furnished": false,
+      "comments": "2300 SF., 1 car garage and porch. Available immediately."
+    },
+    {
+      "id": "1HH165_1033:4",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2½",
+      "location": "Daniella Way",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-994-4200"
+      ],
+      "furnished": false,
+      "comments": "Beautiful home Monmouth Riding, Howell. Great block! Hardwood flooring. Av. imm."
+    },
+    {
+      "id": "1HH165_1033:5",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "2½",
+      "location": "Ramtown,Howell",
+      "rent": 4800,
+      "rent_display": "$4,800/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-567-1420"
+      ],
+      "furnished": false,
+      "comments": "2384 sq. ft. colonial. Finished basement, 2-car garage. Available immediately."
+    },
+    {
+      "id": "11TT65_1033:6",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "3½",
+      "location": "Chestnut Gardens",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "908-783-3625"
+      ],
+      "furnished": false,
+      "comments": "Holden Square. Available September 1."
+    },
+    {
+      "id": "U1TT119_946:7",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2½",
+      "location": "",
+      "rent": 2800,
+      "rent_display": "$2,800/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-216-5555"
+      ],
+      "furnished": false,
+      "comments": "Newly renovated. No basement. Available September 1."
+    },
+    {
+      "id": "U1HH163_1030:13",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2",
+      "location": "Brookwood 3",
+      "rent": 3280,
+      "rent_display": "$3,280/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-606-3837"
+      ],
+      "furnished": false,
+      "comments": "Very well kept & up to date."
+    },
+    {
+      "id": "1HH081_871:12",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "2½",
+      "location": "Toms River",
+      "rent": 4500,
+      "rent_display": "$4,500/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-522-9311"
+      ],
+      "furnished": false,
+      "comments": "Gated pool. Huge property near 3 Shuls and Mikva. Available long term. Freshly renovated house. Available immediately. New flooring, new kosher counter top. Av. imm. Open House this Sun. 1:45–3:00."
+    },
+    {
+      "id": "11HH65_1032:19",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2",
+      "location": "",
+      "rent": null,
+      "rent_display": "Contact for rent",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-628-6565"
+      ],
+      "furnished": false,
+      "comments": ""
+    },
+    {
+      "id": "1R165_1033:3",
+      "type": "Room",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "",
+      "location": "Westgate",
+      "rent": 750,
+      "rent_display": "$750/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-604-7138"
+      ],
+      "furnished": true,
+      "comments": "Furnished rooms for women/girls in shared single house. Use of kitchen, WD... Av. Sept."
+    },
+    {
+      "id": "11H65_1033:12",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2½",
+      "location": "Toms River",
+      "rent": 3200,
+      "rent_display": "$3,200/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [],
+      "furnished": false,
+      "comments": "Av. Sept.–June. Hickory/Vermont. Beautiful renovatedlargefurnished house,bigbkyd."
+    },
+    {
+      "id": "1HH168_1040:2",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2½",
+      "location": "Candlewd.Howell",
+      "rent": 3550,
+      "rent_display": "$3,550/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-326-7491"
+      ],
+      "furnished": false,
+      "comments": "Beautiful colonial, very desirable neighborh. Great layout, stunning backyd. Av. Sept. 1."
+    },
+    {
+      "id": "1A101_909:10",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Ocean & Clover",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-853-3085"
+      ],
+      "furnished": true,
+      "comments": "Beautifully furnished apartment. Available immediately."
+    },
+    {
+      "id": "11A65_1033:13",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Emerald Hills",
+      "rent": 1250,
+      "rent_display": "$1,250/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "917-200-4710"
+      ],
+      "furnished": true,
+      "comments": "Nice sunny furnished apartment. Singles preferred. Available immediately."
+    },
+    {
+      "id": "1A071_850:19",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Williams St.area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-267-3286"
+      ],
+      "furnished": true,
+      "comments": "Furnished basement in new condition. Longer term only."
+    },
+    {
+      "id": "1A110_922:16",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "",
+      "bedrooms_num": null,
+      "baths": "1",
+      "location": "Toms River",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "347-583-7783"
+      ],
+      "furnished": true,
+      "comments": "Fully furnished 2-story apt. Great location. Not a basement! Av. imm. short/long term."
+    },
+    {
+      "id": "1A118_942:14",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Ocean Avenue",
+      "rent": 1000,
+      "rent_display": "$1,000/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-534-0839"
+      ],
+      "furnished": true,
+      "comments": "furnished perfect for young couple. Lg. windows. St. steel appl. WD. Min 6 mos."
+    },
+    {
+      "id": "1A165_1033:2",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Glen Avenue area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-278-6077"
+      ],
+      "furnished": true,
+      "comments": "Beautiful tastefully furnished temp apt. W/D, sep. thermostat. Av. imm., 2–3 month min."
+    },
+    {
+      "id": "11A55_1016:20",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Marc Drive",
+      "rent": 1800,
+      "rent_display": "$1,800/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "845-641-5899"
+      ],
+      "furnished": true,
+      "comments": "Brand new upgraded furnished Choson/ Kallah apt. Available immediately."
+    },
+    {
+      "id": "U1AA165_1034:19",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½StamfordMeadows",
+      "location": "",
+      "rent": 1600,
+      "rent_display": "$1,600/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-290-4211"
+      ],
+      "furnished": false,
+      "comments": "End unit, above-ground windows. Freshly painted, new vinyl floor. Av. immediately."
+    },
+    {
+      "id": "U1AA161_1027:20",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Spruce St.area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "718-290-7056"
+      ],
+      "furnished": false,
+      "comments": "Brand new, very large & spacious, large kitchen, LR/DR, upgraded. Available imm."
+    },
+    {
+      "id": "1AA081_871:1",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1",
+      "location": "Brook Hill",
+      "rent": 1850,
+      "rent_display": "$1,850/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-668-8447"
+      ],
+      "furnished": false,
+      "comments": "Beautiful spacious layout in private house. Directly behind the Villas. Av. September."
+    },
+    {
+      "id": "11AA65_1033:17",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½",
+      "location": "High Street area",
+      "rent": 2100,
+      "rent_display": "$2,100/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "201-621-1104"
+      ],
+      "furnished": false,
+      "comments": "Beautiful, in duplex near shuls & mikve. 2 parking spots. Ab.-gr. windows. Av. Sept. 1."
+    },
+    {
+      "id": "1AA113_932:6",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1",
+      "location": "Chateau Park",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-676-1553"
+      ],
+      "furnished": false,
+      "comments": "Very nice condition. Available end of August."
+    },
+    {
+      "id": "1AA165_1033:8",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1",
+      "location": "Brook Hill",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "347-977-0807"
+      ],
+      "furnished": true,
+      "comments": "Newly renovated, beautifully furnished. High ceilings. Available immediately."
+    },
+    {
+      "id": "U1A165_1034:1",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1",
+      "location": "Pine St.area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "908-309-6955"
+      ],
+      "furnished": true,
+      "comments": "Furnished or unfurnished. eat-in-kitchen, Available September 1."
+    },
+    {
+      "id": "1AA076_860:6",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½",
+      "location": "Gardenat Locust",
+      "rent": 1650,
+      "rent_display": "$1,650/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-290-5937"
+      ],
+      "furnished": false,
+      "comments": "Spacious new apartment in Belz area. Available September 1."
+    },
+    {
+      "id": "11AA66_1035:17",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "2",
+      "location": "Oak & Vine",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-993-2350"
+      ],
+      "furnished": false,
+      "comments": "Fresh apartment. Available October 1."
+    },
+    {
+      "id": "U1AA122_952:14",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1",
+      "location": "Forest Park",
+      "rent": 1400,
+      "rent_display": "$1,400/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-797-9835"
+      ],
+      "furnished": false,
+      "comments": "Next to shul, freshly painted, window every room, st. steel fridge, new W/D. Av. imm."
+    },
+    {
+      "id": "11AA66_1033:20",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1",
+      "location": "Vine Park / Belz",
+      "rent": 1400,
+      "rent_display": "$1,400/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-588-1769"
+      ],
+      "furnished": false,
+      "comments": "Nice layout. Airy look. Wood-look floor in dining room. Appliances. Av. September."
+    },
+    {
+      "id": "1AA166_1035:2",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1",
+      "location": "Forest Park",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-525-9675"
+      ],
+      "furnished": false,
+      "comments": "Beautiful recently renovated large apt. Available September 1."
+    },
+    {
+      "id": "1AA063_836:20",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Bourbon Ct. / Ridge",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-915-9410"
+      ],
+      "furnished": false,
+      "comments": "Beautiful new apartment. Spotlights in all rooms. Available end of August."
+    },
+    {
+      "id": "U1AA166_1036:6",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1",
+      "location": "New Central area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-725-5727"
+      ],
+      "furnished": false,
+      "comments": "Beautiful, spacious above ground, private cul-de-sac. Available September."
+    },
+    {
+      "id": "U1AA166_1036:9",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Beaver Crossing",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "845-596-9553"
+      ],
+      "furnished": false,
+      "comments": "Available October."
+    },
+    {
+      "id": "U1AA166_1036:10",
+      "type": "Apartment",
+      "utilities_included": [
+        "Water"
+      ],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½",
+      "location": "Emerald Hills",
+      "rent": 2000,
+      "rent_display": "$2,000/mo",
+      "landlord_pays": "W",
+      "accepts_hud": false,
+      "phones": [
+        "347-432-6685"
+      ],
+      "furnished": false,
+      "comments": "Beautiful apartment. Available September."
+    },
+    {
+      "id": "U1AA166_1036:15",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "3",
+      "location": "The Concord",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-429-5785"
+      ],
+      "furnished": false,
+      "comments": "9th & Madison, first floor, spacious 2 floor unit, study, family rm. & porch."
+    },
+    {
+      "id": "U1AA166_1036:20",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "",
+      "rent": 1900,
+      "rent_display": "$1,900/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-373-6317"
+      ],
+      "furnished": false,
+      "comments": "Nicely upgraded including appliances, fully vinyl. Available September 1."
+    },
+    {
+      "id": "11AA66_1035:10",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-353-6370"
+      ],
+      "furnished": false,
+      "comments": "Spacious apartment in great location. Parking. Available September 1."
+    },
+    {
+      "id": "11AA66_1035:11",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Cross / Massachusts",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-886-1542"
+      ],
+      "furnished": false,
+      "comments": "Beaver Crossing. Above-ground windows. Upgraded soundproofing."
+    },
+    {
+      "id": "11AA66_1035:12",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Chestnut area",
+      "rent": 2200,
+      "rent_display": "$2,200/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-523-5701"
+      ],
+      "furnished": false,
+      "comments": "Holden Square. Newly-available basement apartment. Available immediately."
+    },
+    {
+      "id": "11AA66_1035:13",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1½",
+      "location": "Brook Hill area",
+      "rent": 1850,
+      "rent_display": "$1,850/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "845-729-1949"
+      ],
+      "furnished": false,
+      "comments": "Newly renovated, freshly painted. Available immediately."
+    },
+    {
+      "id": "11AA66_1035:16",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1",
+      "location": "Whispering Pines",
+      "rent": 1900,
+      "rent_display": "$1,900/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-226-0931"
+      ],
+      "furnished": false,
+      "comments": "Newly fully renovated. Freshly painted. Brand new kitchen & appliances. End unit."
+    },
+    {
+      "id": "1AA138_990:3",
+      "type": "Apartment",
+      "utilities_included": [
+        "Water"
+      ],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1",
+      "location": "801 Lexington",
+      "rent": 2195,
+      "rent_display": "$2,195/mo",
+      "landlord_pays": "W",
+      "accepts_hud": false,
+      "phones": [
+        "732-557-1987"
+      ],
+      "furnished": false,
+      "comments": "Spacious apt. in apt. building, great location right near Yeshiva. Available immediately."
+    },
+    {
+      "id": "1A112_928:15",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1",
+      "location": "Hearthstone area",
+      "rent": 2200,
+      "rent_display": "$2,200/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-372-5440"
+      ],
+      "furnished": true,
+      "comments": "Brand new, beautifully furnished for long or short term. Full kitchen. WD. Av. mid-Sept."
+    },
+    {
+      "id": "1A124_955:6",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Jule Court",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "917-544-4364"
+      ],
+      "furnished": true,
+      "comments": "Furnished Choson/Kallah apt. with private entrance. By the month. Av. October 6."
+    },
+    {
+      "id": "1A111_926:14",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1",
+      "location": "Roselle Court",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "848-525-1287"
+      ],
+      "furnished": true,
+      "comments": "Furnished Choson/Kallah apartment. Freshly painted. DW, WD. Av. Sept. 15."
+    },
+    {
+      "id": "1A166_1037:4",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Arlington / Pine St.",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "443-604-6936"
+      ],
+      "furnished": true,
+      "comments": "Beautiful upgraded furnished apt. for Choson/Kallah. Must see. Av. immediately."
+    },
+    {
+      "id": "1A166_1037:5",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "West Spruce Street",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-757-1123"
+      ],
+      "furnished": true,
+      "comments": "Amazing beautiful furnished studio, not in development, perfect for single girl."
+    },
+    {
+      "id": "1A078_865:15",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "James Street",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "917-531-7818"
+      ],
+      "furnished": true,
+      "comments": "New furnished apartment. Available mid-September."
+    },
+    {
+      "id": "1A073_856:9",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1½",
+      "location": "Sunset & James",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "323-559-0691"
+      ],
+      "furnished": true,
+      "comments": "Beautiful bright new upgraded furnished apartment. Available beginning September."
+    },
+    {
+      "id": "11A66_1035:15",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Albert area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "845-558-2190"
+      ],
+      "furnished": true,
+      "comments": "Beautiful spacious furnished Choson/Kallah apt. Lots of closet space. Av. mid-Sept. Beautif ul, fu ll y f u r n is h e d h o m e on lake w i t h g o r g e o u s l a k e vi ew."
+    },
+    {
+      "id": "1H118_943:2",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2",
+      "location": "Raintree",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-219-1395"
+      ],
+      "furnished": false,
+      "comments": "Fully furn., Sept. till June. Comfortable LR/ DR, den/EIK. Lg. priv. lot. Swings, trampol."
+    },
+    {
+      "id": "U1H166_1036:17",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Ridge area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-551-0188"
+      ],
+      "furnished": true,
+      "comments": "Short term furnished rental, flexible terms options for Chosson/Kallah."
+    },
+    {
+      "id": "1HH126_960:9",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "4",
+      "location": "Princeton area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-367-6332"
+      ],
+      "furnished": false,
+      "comments": "Renovatedfencedsinglefamily near Sefardi Shul & Bais Shmuel. Fin.bsmt.sep.entrance."
+    },
+    {
+      "id": "1HH166_1037:6",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1",
+      "location": "",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-587-0144"
+      ],
+      "furnished": false,
+      "comments": "Ranch with picturesque yard."
+    },
+    {
+      "id": "1HH166_1037:7",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2",
+      "location": "Harfield",
+      "rent": 3300,
+      "rent_display": "$3,300/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-367-1746"
+      ],
+      "furnished": false,
+      "comments": "Fully redone bi-level, great block. Short or long term. Available immediately."
+    },
+    {
+      "id": "1HH166_1035:3",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "3½",
+      "location": "",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-860-5192"
+      ],
+      "furnished": false,
+      "comments": "Beautiful. Finished basement, stunning backyard. Short/long term. Av. Sept. 1."
+    },
+    {
+      "id": "11TT66_1035:5",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "7",
+      "bedrooms_num": 7,
+      "baths": "4½",
+      "location": "Laurel Avenue",
+      "rent": 4000,
+      "rent_display": "$4,000/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-559-2932"
+      ],
+      "furnished": false,
+      "comments": "Very spacious duplex! Main level 5 BR, 3½ baths; fin. attic 2 BR, 1 bath. Av. Sept. 15."
+    },
+    {
+      "id": "1HH166_1035:6",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "4",
+      "location": "Jackson",
+      "rent": 4500,
+      "rent_display": "$4,500/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "718-755-4865"
+      ],
+      "furnished": false,
+      "comments": "Beautiful colonial in great neighborhood. Available September. Colonial, minyan on block. Trex deck, study. Available September."
+    },
+    {
+      "id": "U1TT166_1036:5",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2½",
+      "location": "Toms River",
+      "rent": 2700,
+      "rent_display": "$2,700/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-655-4473"
+      ],
+      "furnished": false,
+      "comments": "Cox Cro & Massachusetts area, Toms River Colonial with basement, centrally located, new kitchen & flooring throughout."
+    },
+    {
+      "id": "U1TT166_1036:8",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "3½",
+      "location": "Beaver Crossing",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "845-596-9553"
+      ],
+      "furnished": false,
+      "comments": "Available October."
+    },
+    {
+      "id": "U11TT66_1036:11",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "3½Cross/Massachussets",
+      "location": "",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "929-377-2039"
+      ],
+      "furnished": false,
+      "comments": "Brand new, upgraded, cul-de-sac, private side & backyard. Available mid Sept."
+    },
+    {
+      "id": "U1H166_1036:12",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "2½",
+      "location": "Jksn.,Aumack Rd.",
+      "rent": 4500,
+      "rent_display": "$4,500/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-769-9261"
+      ],
+      "furnished": true,
+      "comments": "Optional Partially Furnished.additinal room on main floor. Prefer 10 month option."
+    },
+    {
+      "id": "U1HH166_1036:18",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "3",
+      "location": "",
+      "rent": 3650,
+      "rent_display": "$3,650/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-575-7361"
+      ],
+      "furnished": false,
+      "comments": "Very well kept, upgraded kitchen, suiteon lower level, close to Shuls. Av. Sept. 15."
+    },
+    {
+      "id": "U11TT66_1036:16",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2½",
+      "location": "Saratoga / T.R.",
+      "rent": 3300,
+      "rent_display": "$3,300/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-377-2614"
+      ],
+      "furnished": false,
+      "comments": "Corner unit, nice community, finished basement. Available end of August. Brand new, secluded fully Private corner unit,last unit indevelopment. Scenic backyard and huge garden. Available immediately."
+    },
+    {
+      "id": "1HH166_1037:3",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2",
+      "location": "Williams / Prospect",
+      "rent": 3200,
+      "rent_display": "$3,200/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "929-510-6000"
+      ],
+      "furnished": false,
+      "comments": "Ranch house. Parking. Available September."
+    },
+    {
+      "id": "1TT115_935:4",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "2½",
+      "location": "High Street area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-756-2656"
+      ],
+      "furnished": false,
+      "comments": "Beautiful end unit. Available immediately."
+    },
+    {
+      "id": "U11TT62_1028:20",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "7",
+      "bedrooms_num": 7,
+      "baths": "4",
+      "location": "536 Ocean Ave.",
+      "rent": 5450,
+      "rent_display": "$5,450/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-853-3466"
+      ],
+      "furnished": false,
+      "comments": "Brand new, central location. Available immediately."
+    },
+    {
+      "id": "11TT66_1037:13",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "3½",
+      "location": "41 Majestic Way",
+      "rent": 4200,
+      "rent_display": "$4,200/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-288-3655"
+      ],
+      "furnished": false,
+      "comments": "Nicely upgraded duplex. Great location."
+    },
+    {
+      "id": "11HH66_1037:10",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Case Road area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-766-3100"
+      ],
+      "furnished": false,
+      "comments": "Gorgeous, spacious private home. Granite kitchen, large yard, finished bsmt. Av. Oct. 1."
+    },
+    {
+      "id": "11HH66_1037:12",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Raintree area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [],
+      "furnished": false,
+      "comments": "Recently redone ranch, located on desirable block. Fully updated, prime area, large backyard. Long term."
+    },
+    {
+      "id": "U1HH166_1038:16",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2½",
+      "location": "Brookwood 4",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-575-6901"
+      ],
+      "furnished": false,
+      "comments": "Spacious, well maintained colonial, finished bsmt., EIK, ig. pool, near Shul, cul-de-sac."
+    },
+    {
+      "id": "U1HH166_1038:18",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2",
+      "location": "Pine Lake Park",
+      "rent": 3300,
+      "rent_display": "$3,300/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-886-4961"
+      ],
+      "furnished": false,
+      "comments": "Great condition, detached garage, near Shuls. Available immediately."
+    },
+    {
+      "id": "11TT66_1037:18",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½",
+      "location": "Cov.:Downing",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-691-6022"
+      ],
+      "furnished": true,
+      "comments": "Clean fresh unit, updated bathrooms. Kosher kitchen. Available immediately. Beautifully furnished home, lg. bkyd., with heatedpool, new appli.,also winter rental. Beautifully redone home, furnished, close to Shuls. Brookwood/Harmony Farms area. Furnished, freshly remodeled,possible 4th room, spotsthroughout, oversized corner lot."
+    },
+    {
+      "id": "1R125_956:20",
+      "type": "Room",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Jackson",
+      "rent": 250,
+      "rent_display": "$250/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "845-499-9099"
+      ],
+      "furnished": false,
+      "comments": "F u r n i s h e d r o o m fo r m a le i n s h a r e d h o u s e o f s in g l es. W i F i, w a s h e r /d r y e r."
+    },
+    {
+      "id": "1R146_1001:5",
+      "type": "Room",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "",
+      "location": "Toms River",
+      "rent": 1000,
+      "rent_display": "$1,000/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "954-899-9427"
+      ],
+      "furnished": true,
+      "comments": "Rooms available in Toms River house for working guys. Fully furnished. Av. imm."
+    },
+    {
+      "id": "1A068_845:3",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "14th Street area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-228-0164"
+      ],
+      "furnished": true,
+      "comments": "New furnished Choson/Kallah apartment. Av. September. 3-month minimum."
+    },
+    {
+      "id": "1A167_1039:1",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-779-9351"
+      ],
+      "furnished": true,
+      "comments": "Nice clean furnished apartment. Washer/dryer. Available immediately."
+    },
+    {
+      "id": "11A54_1013:19",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "845-598-1324"
+      ],
+      "furnished": true,
+      "comments": "New upgraded furnished apt. on cul de sac. 3 month minimum. Available Sept. 1."
+    },
+    {
+      "id": "1A136_987:4",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1",
+      "location": "E.7th & Park",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "848-238-0755"
+      ],
+      "furnished": true,
+      "comments": "Beautiful short term airy furnished apt. (new furniture). Available immediately."
+    },
+    {
+      "id": "1A085_882:9",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Park & County Ln.",
+      "rent": 1450,
+      "rent_display": "$1,450/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-998-1039"
+      ],
+      "furnished": true,
+      "comments": "Choson/Kallah, lg. windows, 9' ceiling. Separate AC, separate entrance. WD. Brand new,furnished, prime location, beautifully designed. Av. immediately."
+    },
+    {
+      "id": "11A52_1012:14",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Oak & Vine",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-995-2312"
+      ],
+      "furnished": false,
+      "comments": "Small studio apartment good for single, office or salon. Six month minimum."
+    },
+    {
+      "id": "1A167_1039:2",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Apple / County Line",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-534-2263"
+      ],
+      "furnished": true,
+      "comments": "Gorgeous spacious furnished apartment. Not a basement!"
+    },
+    {
+      "id": "1A143_999:14",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Kol Shimshon area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-503-2000"
+      ],
+      "furnished": true,
+      "comments": "Beautifulnewtopoftheline furnished. Great locationneareverything. Av.immediately. N e w ly -r e n o v a t e d fu r n i s h ed a p t. La rg e d i n i n g ro o m, k it c h e n, m a st e r B R. A v. i m m e di a t e l y."
+    },
+    {
+      "id": "11AA66_1037:15",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½",
+      "location": "Miller / New Central",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "845-558-8521"
+      ],
+      "furnished": false,
+      "comments": "Fresh and airy. Beautiful layout. Available immediately."
+    },
+    {
+      "id": "U1AA166_1038:3",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Red Oak / Ridge",
+      "rent": 2200,
+      "rent_display": "$2,200/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "908-917-8205"
+      ],
+      "furnished": false,
+      "comments": "Beautiful and spacious apt., living & dining room, full kitchen."
+    },
+    {
+      "id": "U1AA123_954:12",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Albert area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-668-4406"
+      ],
+      "furnished": false,
+      "comments": "Brand new condition."
+    },
+    {
+      "id": "U1AA166_1038:5",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Rt.88 / Congress",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-666-5946"
+      ],
+      "furnished": false,
+      "comments": "Brand new, extra soundproofing, great location, 1 car driveway."
+    },
+    {
+      "id": "1AA167_1039:3",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½",
+      "location": "Linden / Route 88",
+      "rent": 2100,
+      "rent_display": "$2,100/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-585-5957"
+      ],
+      "furnished": false,
+      "comments": "Freshly painted. Parking spot. Windows every room. Av. immediately."
+    },
+    {
+      "id": "U1AA166_1038:10",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½",
+      "location": "Prospect Square",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "323-533-1513"
+      ],
+      "furnished": false,
+      "comments": "Very nice condition, end unit. Available September 1."
+    },
+    {
+      "id": "1AA079_866:8",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "",
+      "bedrooms_num": null,
+      "baths": "1½",
+      "location": "",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [],
+      "furnished": false,
+      "comments": "R e c e n t ly r e d o n e. M o r e: r o o m y, p a rk in g, sto r a g e, b r i g h t, p r i v a c y th a n m o s t a re a a p ts."
+    },
+    {
+      "id": "U1AA166_1038:12",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Bergen / Ridge",
+      "rent": 2300,
+      "rent_display": "$2,300/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "845-558-6462"
+      ],
+      "furnished": false,
+      "comments": "Very nice layout. Available October1."
+    },
+    {
+      "id": "U1AA166_1038:13",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½",
+      "location": "Rockwell / Satmar",
+      "rent": 1750,
+      "rent_display": "$1,750/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "718-249-3090"
+      ],
+      "furnished": false,
+      "comments": "Bright & airy, windows & sunlight in every room including kitchen. Avail. end of Aug."
+    },
+    {
+      "id": "U1AA166_1038:14",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½",
+      "location": "Bergen / Clover",
+      "rent": 2300,
+      "rent_display": "$2,300/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "201-686-0337"
+      ],
+      "furnished": false,
+      "comments": "Freshly painted. Available September 1."
+    },
+    {
+      "id": "1AA167_1039:7",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1",
+      "location": "Whispering Pines",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-338-9751"
+      ],
+      "furnished": false,
+      "comments": "Excellent layout. Dedicated parking spot. Available September."
+    },
+    {
+      "id": "1AA076_862:1",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Cent. / New Central",
+      "rent": 1700,
+      "rent_display": "$1,700/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-825-1443"
+      ],
+      "furnished": false,
+      "comments": "Beautifulaccommodations,undersem.dorm. Greatfor B. Y.girl(s). Boardingoptionav."
+    },
+    {
+      "id": "1AA167_1039:6",
+      "type": "Apartment",
+      "utilities_included": [
+        "Water"
+      ],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "2",
+      "location": "Raintree",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "W",
+      "accepts_hud": false,
+      "phones": [
+        "848-333-6423"
+      ],
+      "furnished": false,
+      "comments": "In single family house. Only one previous tenant. Very nice block. Av. immediately."
+    },
+    {
+      "id": "11AA66_1037:14",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "46 Holden Square",
+      "rent": 2200,
+      "rent_display": "$2,200/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-288-3655"
+      ],
+      "furnished": false,
+      "comments": "Great location!"
+    },
+    {
+      "id": "U1AA168_1040:18",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1",
+      "location": "Pine River",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "617-935-1921"
+      ],
+      "furnished": false,
+      "comments": "Beautiful, centrally located. Available mid-September."
+    },
+    {
+      "id": "AA952_672:9",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "8th & Monmouth",
+      "rent": 2300,
+      "rent_display": "$2,300/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-224-2444"
+      ],
+      "furnished": false,
+      "comments": "Beautiful & spacious. Brand new kitchen. Available mid-September. Spacious with large dining room. Available October 1."
+    },
+    {
+      "id": "U1AA165_1034:9",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "3",
+      "location": "",
+      "rent": 4500,
+      "rent_display": "$4,500/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-523-5391"
+      ],
+      "furnished": false,
+      "comments": "Beautiful new 3 bedroom with 1 bed-bath suite, ground level entrance. Chestnut area. In apartment building in Yeshiva area. Available immediately."
+    },
+    {
+      "id": "U1AA166_1037:20",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½",
+      "location": "Yesodei area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-664-2536"
+      ],
+      "furnished": false,
+      "comments": "Nice, well kept apartment in a wonderful area. In private house. Private entrance, large LR/ DR. EIK. Extra soundproofing. Av. October."
+    },
+    {
+      "id": "1AA020_757:18",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1",
+      "location": "Pine River",
+      "rent": 1850,
+      "rent_display": "$1,850/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [],
+      "furnished": false,
+      "comments": "Beautiful, like-new apt. Full vinyl flooring, modern lighting & upgrades. Av. imm."
+    },
+    {
+      "id": "1AA117_941:1",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-800-2002"
+      ],
+      "furnished": false,
+      "comments": "Upgraded, unfurnished. 2 ovens, WD. Near BMG Bais Shmuel & many shuls. Av. imm. towels, linen. Playroom, kitchen, etc. full baths. Call, text or Whatsapp."
+    },
+    {
+      "id": "11AA68_1039:11",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1",
+      "location": "",
+      "rent": 1100,
+      "rent_display": "$1,100/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-628-6565"
+      ],
+      "furnished": false,
+      "comments": ""
+    },
+    {
+      "id": "11AA68_1039:12",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "2",
+      "location": "4th & Park",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [],
+      "furnished": false,
+      "comments": "New, above-ground apt. Central to Shuls, Yeshiva, grocery. Parking available."
+    },
+    {
+      "id": "11AA68_1039:13",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1½",
+      "location": "Ridge area",
+      "rent": 2000,
+      "rent_display": "$2,000/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-525-2661"
+      ],
+      "furnished": false,
+      "comments": "Beautiful spacious layout. Available November 1."
+    },
+    {
+      "id": "11AA68_1039:14",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1½",
+      "location": "Belvedere Lane",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-299-8423"
+      ],
+      "furnished": false,
+      "comments": "Has study. New flooring. Freshly painted. High ceilings. Available immediately."
+    },
+    {
+      "id": "11AA68_1039:15",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1",
+      "location": "",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "201-562-7844"
+      ],
+      "furnished": false,
+      "comments": "Brand new apartment. Available immediately."
+    },
+    {
+      "id": "U1AA168_1040:7",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Oak & Vine",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-598-7003"
+      ],
+      "furnished": false,
+      "comments": "Available after Succos."
+    },
+    {
+      "id": "U1AA168_1040:10",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½",
+      "location": "Joe Parker area",
+      "rent": 1500,
+      "rent_display": "$1,500/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "845-587-5023"
+      ],
+      "furnished": false,
+      "comments": "Spacious, above ground windows. Available October."
+    },
+    {
+      "id": "U1AA168_1040:14",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "James St. & Rt.9",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-626-3695"
+      ],
+      "furnished": false,
+      "comments": "Nice spacious layout, great location, large EIK. Available immediately."
+    },
+    {
+      "id": "U1AA168_1040:20",
+      "type": "Apartment",
+      "utilities_included": [
+        "Water"
+      ],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "2",
+      "location": "Brook / Ridge area",
+      "rent": 2100,
+      "rent_display": "$2,100/mo",
+      "landlord_pays": "W",
+      "accepts_hud": false,
+      "phones": [
+        "201-844-8605"
+      ],
+      "furnished": false,
+      "comments": "Brand new, upgraded, granite counters. Available immediately."
+    },
+    {
+      "id": "1A118_943:20",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1",
+      "location": "Brook Hill",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-779-7044"
+      ],
+      "furnished": true,
+      "comments": "Beautiful spacious furnished apartment. Available after Sukkos."
+    },
+    {
+      "id": "1A111_924:8",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Somerset Walk",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-886-7444"
+      ],
+      "furnished": true,
+      "comments": "Airy furnished apt. perfect for single. Huge window. Washer/dryer. Available imm."
+    },
+    {
+      "id": "1A151_1008:9",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Ridge area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [],
+      "furnished": false,
+      "comments": "F u r n i sh e d, l on g o r s h o r t t e r m. G re a t lo ca t i o n ! A v. R o sh C h o d e s h C h e sh v a n."
+    },
+    {
+      "id": "1A076_862:5",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Twin Oaks",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-588-3820"
+      ],
+      "furnished": true,
+      "comments": "Furnished newly-renovated Choson/Kallah. High ceiling, many windows. Av. imm."
+    },
+    {
+      "id": "A953_674:1",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "3rd & Forest",
+      "rent": 800,
+      "rent_display": "$800/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-447-8680"
+      ],
+      "furnished": true,
+      "comments": "Nice walk-in furnished apt., ideal for single or office. In heart of town. Available Sept. 1."
+    },
+    {
+      "id": "1A154_1016:9",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "848-240-5577"
+      ],
+      "furnished": true,
+      "comments": "Beautiful upgraded furnished, Heimishe area. 10 ft. ceilings. Av.immediately."
+    },
+    {
+      "id": "1A103_913:10",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "12th & Lexington",
+      "rent": 1200,
+      "rent_display": "$1,200/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-664-1785"
+      ],
+      "furnished": true,
+      "comments": "furnished Choson/Kallah: large room, kitchenette, high ceiling, WD. Av. early Sept."
+    },
+    {
+      "id": "1A097_904:6",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Glen Avenue",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "347-432-3854"
+      ],
+      "furnished": true,
+      "comments": "Beautifully furnished airy new Choson/ Kallah apt., fully upgraded. Short/long term."
+    },
+    {
+      "id": "1A167_1039:9",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "12th & Princeton",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "347-683-5033"
+      ],
+      "furnished": true,
+      "comments": "Beautiful upgraded furnished above-ground apartment."
+    },
+    {
+      "id": "1A155_1017:2",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Chestnut area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "917-946-1450"
+      ],
+      "furnished": true,
+      "comments": "New furnished, very sunny. Kitchenette, W/D. Available short or long term."
+    },
+    {
+      "id": "U1A160_1024:20",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Harvard St.",
+      "rent": 1650,
+      "rent_display": "$1,650/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-243-3827"
+      ],
+      "furnished": true,
+      "comments": "Brand new, furnished upgraded sunlit apt. in prime location. Six month lease OK."
+    },
+    {
+      "id": "1A131_976:13",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Prospect Street",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-330-7308"
+      ],
+      "furnished": true,
+      "comments": "Brand new beautifully furnished Choson/Kallah apartment."
+    },
+    {
+      "id": "11A68_1039:16",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Ridge / East 7th St.",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "917-548-3654"
+      ],
+      "furnished": true,
+      "comments": "Very spacious furnished apartment. Available immediately."
+    },
+    {
+      "id": "11A68_1039:17",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Prospect area",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-597-2861"
+      ],
+      "furnished": true,
+      "comments": "Beautiful, fully furnished, new. All upgrades & painting brand new. Av. for Sept. & Oct."
+    },
+    {
+      "id": "11A68_1039:18",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Sunset & James",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "917-312-1201"
+      ],
+      "furnished": true,
+      "comments": "Impressive & impeccable! Furnished. Up- graded, loaded. Custom closets, lighting etc."
+    },
+    {
+      "id": "11A68_1039:19",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "10th & Lexington",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-503-1934"
+      ],
+      "furnished": true,
+      "comments": "Brand new furnished apartment. Available September."
+    },
+    {
+      "id": "11A68_1039:201",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "",
+      "bedrooms_num": null,
+      "baths": "1",
+      "location": "14th St. / Coventry",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "848-674-9683"
+      ],
+      "furnished": false,
+      "comments": "B e a u t if u l fu r n is h e d. B r a n d ne w d e n, c a n b e t u r n e d i n to 2 n d B R. A v. i m m. s h o r t / lo n g."
+    },
+    {
+      "id": "11R63_1029:20",
+      "type": "Room",
+      "utilities_included": [],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "",
+      "location": "Jackson",
+      "rent": 640,
+      "rent_display": "$640/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-508-0131"
+      ],
+      "furnished": true,
+      "comments": "Private room, fully furnished for working/ learning guys, shared kitchen, WD. Av. imm."
+    },
+    {
+      "id": "11TT30_971:20",
+      "type": "Townhouse / Attached",
+      "utilities_included": [
+        "Heat"
+      ],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2½",
+      "location": "Waterview / Rt.88",
+      "rent": 2200,
+      "rent_display": "$2,200/mo",
+      "landlord_pays": "H",
+      "accepts_hud": false,
+      "phones": [
+        "917-455-5894"
+      ],
+      "furnished": false,
+      "comments": "option. Av.imm.tillsummer'27,orlonger."
+    },
+    {
+      "id": "9TT01_623:4",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "3½",
+      "location": "Oak & Vine",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "718-809-2171"
+      ],
+      "furnished": false,
+      "comments": "Duplex. Island in kitchen. All parquet floors, no carpets. Available October."
+    },
+    {
+      "id": "U1TT165_1034:6",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "3½",
+      "location": "Cherry Street",
+      "rent": 4400,
+      "rent_display": "$4,400/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-691-3289"
+      ],
+      "furnished": false,
+      "comments": "Beautiful duplex. Available immediately."
+    },
+    {
+      "id": "U1HH166_1038:17",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Somerset",
+      "rent": 2850,
+      "rent_display": "$2,850/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-814-0855"
+      ],
+      "furnished": false,
+      "comments": "Newly renovated. Available September."
+    },
+    {
+      "id": "U1TT166_1036:3",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "2½",
+      "location": "Prospect Vines",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "845-587-1029"
+      ],
+      "furnished": true,
+      "comments": "End unit, great condition. Available after Yom Kippur. Split level on beautiful block, private backyard. Available immediately. Beautifully updated ranch. Multiple minyan- im 10 min. walk, low utilities. Opt. furnished."
+    },
+    {
+      "id": "1HH110_923:8",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "1½",
+      "location": "Harfield,Jackson",
+      "rent": 3150,
+      "rent_display": "$3,150/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "216-210-8134"
+      ],
+      "furnished": false,
+      "comments": "Beautifully updated bilevel, frum neighbors, in very desirable area."
+    },
+    {
+      "id": "11HH66_1037:17",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "1½",
+      "location": "",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-998-1688"
+      ],
+      "furnished": false,
+      "comments": "Bilevel in desirable neighborhood, next door to Shul."
+    },
+    {
+      "id": "1HH168_1040:1",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2",
+      "location": "",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-534-1065"
+      ],
+      "furnished": false,
+      "comments": "Well-maintained. Move-in ready. No central air conditioning."
+    },
+    {
+      "id": "1HH168_1040:3",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "4",
+      "location": "Toms River",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [],
+      "furnished": false,
+      "comments": "Beautifully renovated house Pine Lake Park. Stunning bkyd. with pool. Finished basemt."
+    },
+    {
+      "id": "1HH168_1040:4",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2",
+      "location": "Pine Lake Park",
+      "rent": 3800,
+      "rent_display": "$3,800/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-744-8888"
+      ],
+      "furnished": false,
+      "comments": "Beautiful ranch. In-ground pool. Available immediately."
+    },
+    {
+      "id": "11TT68_1040:5",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "3½",
+      "location": "Jackson 21",
+      "rent": 4000,
+      "rent_display": "$4,000/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "646-709-1477"
+      ],
+      "furnished": false,
+      "comments": "Semi-attached Croftonmodel,2943sq.ft. Brandnew,backtowoods. Av.immediately."
+    },
+    {
+      "id": "U1TT168_1040:6",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "3½",
+      "location": "Toms River",
+      "rent": 3200,
+      "rent_display": "$3,200/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-504-5987"
+      ],
+      "furnished": false,
+      "comments": "Brand new, biggest model, many upgrades. Riverwood Chase. Available October 1."
+    },
+    {
+      "id": "U1TT168_1040:8",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½",
+      "location": "Coventry",
+      "rent": 2500,
+      "rent_display": "$2,500/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-525-8411"
+      ],
+      "furnished": false,
+      "comments": "Beautiful condition, freshly painted. Available immediately."
+    },
+    {
+      "id": "U1H168_1040:9",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "3",
+      "location": "Fairways",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "303-903-8787"
+      ],
+      "furnished": false,
+      "comments": "Beautifully remodeled, furn./unfurn. largest model, lg.bkyd., minyan. Av. immediately."
+    },
+    {
+      "id": "U1HH168_1040:11",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2½",
+      "location": "Candlewood / Hwl.",
+      "rent": 3600,
+      "rent_display": "$3,600/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-886-7862"
+      ],
+      "furnished": false,
+      "comments": "Newly renovated colonial, brand nw. kitchen & baths,semi-finished bsmt.lg. bkyd., Shuls."
+    },
+    {
+      "id": "U11TT68_1040:12",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "",
+      "location": "James / Central",
+      "rent": 4200,
+      "rent_display": "$4,200/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-232-8916"
+      ],
+      "furnished": false,
+      "comments": "Brand new duplex. Has additional nursery."
+    },
+    {
+      "id": "U1HH168_1040:13",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1",
+      "location": "",
+      "rent": 3100,
+      "rent_display": "$3,100/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-389-3874"
+      ],
+      "furnished": false,
+      "comments": "Well maintained, 4th bdrm. in playrm., semi finished basement, private bkyd. Av. Oct 8."
+    },
+    {
+      "id": "U1H168_1040:16",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½",
+      "location": "Ford / Kent area",
+      "rent": 2600,
+      "rent_display": "$2,600/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-232-3130"
+      ],
+      "furnished": false,
+      "comments": "Newly renovated with country like yard, furn./unfurn., short or long term."
+    },
+    {
+      "id": "U11TT68_1040:17",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "3½",
+      "location": "Oak & Vine",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-598-7003"
+      ],
+      "furnished": false,
+      "comments": "Finished attic. Available after Succos."
+    },
+    {
+      "id": "U11TT68_1040:19",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "3½",
+      "location": "Park Ave.",
+      "rent": null,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-725-7670"
+      ],
+      "furnished": false,
+      "comments": "New, great condition, freshly painted, upgraded. Available October."
+    },
+    {
+      "id": "1HH168_1041:1",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "3",
+      "location": "",
+      "rent": 3500,
+      "rent_display": "$3,500/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-992-3200"
+      ],
+      "furnished": false,
+      "comments": "Single-family home,freshly renovated. Nice fenced-inyard. Av.imm.till July,10months."
+    },
+    {
+      "id": "11TT68_1039:10",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "7",
+      "bedrooms_num": 7,
+      "baths": "4½",
+      "location": "Locust Grove",
+      "rent": 3200,
+      "rent_display": "$3,200/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-628-6565"
+      ],
+      "furnished": false,
+      "comments": "Finished attic. Hardwood floors, window shades. Pesach kitchen. Av. immediately. it off the List. 732-364-9392"
+    }
+  ]
+}
