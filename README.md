@@ -39,8 +39,15 @@ open docs/index.html
 ## Tests
 
 ```bash
-npm run test:search     # or: node --test tests/search.test.js
+npm run test:all          # everything below
+npm run test:search       # node --test tests/search.test.js
+npm run test:locations    # python3 -m unittest discover -s tests
 ```
+
+Location names are normalised by two tables at the top of `parse.py`
+(`PLACE_NAMES` for whole names like "Club at Jackson 21", `ABBREVIATIONS` for
+things like "TR" -> "Toms River"). Add a line there when a new abbreviation
+shows up, and a case in `tests/test_locations.py`.
 
 The search/filter logic lives in `site/search-core.js` (pure functions, no DOM),
 which `build.py` inlines into the page. `tests/search.test.js` (38 tests, Node's

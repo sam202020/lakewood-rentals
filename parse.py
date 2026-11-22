@@ -74,11 +74,40 @@ def words_by_row(page, ytol=3.5):
     return rows
 
 
+# --- Location naming rules -------------------------------------------------
+# The PDF drops spaces ("ClubatJackson21") and abbreviates ("TR", "Westgt.",
+# "Lkwd.Comm.Area"). These tables turn those into the names people use.
+# Add a line here when a new abbreviation shows up; tests/test_locations.py
+# pins the current behaviour.
+
+# Whole place names. Applied first, to the raw text, and tolerant of missing
+# or extra spaces. (pattern, canonical name)
+PLACE_NAMES = [
+    (r"club\s*at\s*jackson\s*21",                         "Club at Jackson 21"),
+    (r"mackenzie\s*area\s*(?:toms\s*r(?:iver|\.)?|t\.?\s?r\.?)", "Mackenzie Area Toms River"),
+    (r"lkwd\.?\s*comm(?:ons|\.)?\s*area",                   "Lakewood Commons Area"),
+    (r"lkwd\.?\s*comm(?:ons|\.)?",                          "Lakewood Commons"),
+    (r"west\s*gt\.?|west\s*gate",                           "Westgate"),
+]
+
+# Abbreviations inside longer locations. Applied after spacing is repaired.
+# (pattern, replacement, flags); each must end at a word edge. "TR" is
+# case-sensitive so ordinary lowercase text is never touched.
+ABBREVIATIONS = [
+    (r"\bT\.?\s?R\.?(?=\s|/|,|$)",   "Toms River", 0),
+    (r"\bToms\s+R\.?(?=\s|/|,|$)",    "Toms River", re.I),
+    (r"\bJksn\.?(?=\s|/|,|$)",        "Jackson",    re.I),
+    (r"\bLkwd\.?(?=\s|/|,|$)",        "Lakewood",   re.I),
+]
+
+
 def clean_loc(s):
     s = s.strip()
     trailing_phones = PHONE_RE.findall(s.replace(" ", ""))
     s = re.sub(r"[\d\-.\s]*\d{3}[-.\s]?\d{3}[-.\s]?\d{4}[\d\-.\s]*$", "", s)
     s = re.sub(r"\bCall(\s*or)?\b", "", s, flags=re.I)
+    for pat, name in PLACE_NAMES:
+        s = re.sub(r"(?<![A-Za-z])(?:" + pat + r")(?![a-z])", name, s, flags=re.I)
     # PDF drops spaces; re-insert before capitals and around slashes.
     s = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", s)
     s = re.sub(r"\s*/\s*", " / ", s)
@@ -87,17 +116,16 @@ def clean_loc(s):
     s = re.sub(r"\s*&\s*", " & ", s)
     s = re.sub(r"\b(\d+)\s*(st|nd|rd|th)\b", r"\1\2", s)
     s = re.sub(r",(?=\S)", ", ", s)
+    s = re.sub(r"(?<=[a-z]\.)(?=[A-Z][a-z])", " ", s)   # Rd.Lkwd -> Rd. Lkwd
     s = re.sub(r"(?<=[a-z])(near|Near)\b", r" \1", s)
-    s = re.sub(r"\bClub\s*at\b", "Club at", s, flags=re.I)
-    s = re.sub(r"(?<=[a-z])(area)\b", r" \1", s, flags=re.I)   # Mackenziearea -> Mackenzie area
+    s = re.sub(r"(?<=[a-z])(area)\b", r" \1", s, flags=re.I)   # Ridgearea -> Ridge area
     s = re.sub(r"\barea\b", "Area", s, flags=re.I)
-    # Common abbreviations used in the list.
-    s = re.sub(r"\bT\.?\s?R\.?(?=\s|/|,|$)", "Toms River", s)
-    s = re.sub(r"\bToms\s+R\.?(?=\s|/|,|$)", "Toms River", s)
-    s = re.sub(r"\bJksn\.?(?=\s|/|,|$)", "Jackson", s)
-    s = re.sub(r"\bLkwd\.?\s?Comm\.?\s?", "Lakewood Commons ", s, flags=re.I)  # Lkwd.Comm.Area -> Lakewood Commons Area
-    s = re.sub(r"\bLkwd\.?(?=\s|/|,|$)", "Lakewood", s, flags=re.I)
-    s = re.sub(r"\bWestgt\.?(?=\s|/|,|$)", "Westgate", s, flags=re.I)
+    # Second pass: names that were glued to the previous word ("nearWestgt.")
+    # only become matchable once spacing has been repaired.
+    for pat, name in PLACE_NAMES:
+        s = re.sub(r"(?<![A-Za-z])(?:" + pat + r")(?![a-z])", name, s, flags=re.I)
+    for pat, rep, flags in ABBREVIATIONS:
+        s = re.sub(pat, rep, s, flags=flags)
     return re.sub(r"\s+", " ", s).strip(" ,/-"), trailing_phones
 
 
