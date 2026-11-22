@@ -135,7 +135,7 @@ class ShippedPlaces(unittest.TestCase):
                     "yeshiva", "the 70", "the 70 phase i", "the 70 phase ii", "brook hill",
                     "stamford meadows", "sterling place", "beaver crossings", "chateau park", "regency estates",
                     "clearsteam", "957 w county ln", "kol shimshon", "new england village", "bais shalom",
-                    "club 21 jackson", "harmony hills jackson", "ridge", "heart of ridge", "chestnut", "chestnut gardens", "cross", "cross mass", "brook", "evergreen gardens"):
+                    "club 21 jackson", "harmony hills jackson", "ridge", "heart of ridge", "ridge negba st", "brook ridge e 7th", "ridge bergen", "chestnut", "chestnut gardens", "cross", "cross mass", "brook", "evergreen gardens"):
             with self.subTest(place=key):
                 self.assertEqual(self.places[key]["source"], "manual")
                 self.assertIsNotNone(self.places[key]["lat"])
@@ -144,7 +144,8 @@ class ShippedPlaces(unittest.TestCase):
         for text, key in [("Westgate", "westgate"), ("Sunset / James Area", "sunset james"),
                           ("Sunset & James", "sunset james"), ("James & Sunset", "sunset james"),
                           ("Oak & Vine", "oak vine"), ("Villas", "villas"), ("Yeshiva Area", "yeshiva"),
-                          ("The 70", "the 70"), ("Brook Hill", "brook hill"), ("Chestnut Area", "chestnut"), ("Stamford Meadows", "stamford meadows"), ("Bais Shalom Area", "bais shalom"), ("Heart of Ridge", "heart of ridge"), ("Ridge Area", "ridge"),
+                          ("The 70", "the 70"), ("Brook Hill", "brook hill"), ("Chestnut Area", "chestnut"), ("Stamford Meadows", "stamford meadows"), ("Bais Shalom Area", "bais shalom"), ("Heart of Ridge", "heart of ridge"), ("Ridge / Negba St.", "ridge negba st"), ("Negba St. / Ridge", "ridge negba st"),
+                          ("Brook / Ridge / E.7th", "brook ridge e 7th"), ("Ridge / Bergen", "ridge bergen"), ("Ridge Area", "ridge"),
                           ("957 W. County Ln.", "957 w county ln"), ("Club 21 Jackson", "club 21 jackson"), ("Chestnut Gardens", "chestnut gardens"), ("Off Chestnut", "chestnut"),
                           ("Cross & Mass.", "cross mass"), ("Mass. & Cross", "cross mass"), ("Evergreen Gardens", "evergreen gardens"), ("The 70 Phase II", "the 70 phase ii")]:
             with self.subTest(text=text):
@@ -154,9 +155,9 @@ class ShippedPlaces(unittest.TestCase):
 
     def test_brook_hill_is_north_west_of_brook_and_county_line(self):
         e = self.places["brook hill"]
-        self.assertGreater(e["lat"], 40.1039)      # north of the intersection
-        self.assertLess(e["lng"], -74.1878)        # west of it
-        self.assertLess(geo.haversine_miles(e["lat"], e["lng"], 40.1039, -74.1878), 0.6)
+        self.assertGreater(e["lat"], 40.10523)      # north of the intersection
+        self.assertLess(e["lng"], -74.18700)        # west of it
+        self.assertLess(geo.haversine_miles(e["lat"], e["lng"], 40.10523, -74.18700), 0.6)
 
     def test_oak_and_vine_is_east_of_evergreen(self):
         e = self.places["oak vine"]

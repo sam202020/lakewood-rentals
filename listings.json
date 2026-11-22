@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T23:04:48+00:00",
+  "generated_at": "2026-11-22T23:09:12+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -1204,8 +1204,8 @@
       ],
       "furnished": true,
       "comments": "Must see! Bright/airy furnished. Upgr.thru-out. Near Shuls/shopping. Full kitchen.",
-      "lat": 40.1064,
-      "lng": -74.1913,
+      "lat": 40.10773,
+      "lng": -74.1905,
       "geo": "place",
       "geo_unknown": []
     },
@@ -1476,8 +1476,8 @@
       ],
       "furnished": false,
       "comments": "Beautiful, newly-renovated apartment. Available immediately.",
-      "lat": 40.1064,
-      "lng": -74.1913,
+      "lat": 40.10773,
+      "lng": -74.1905,
       "geo": "place",
       "geo_unknown": []
     },
@@ -1677,8 +1677,8 @@
       ],
       "furnished": true,
       "comments": "Beautiful brand new upgraded furnished apartment. Also has sitting room.",
-      "lat": 40.08889,
-      "lng": -74.1947,
+      "lat": 40.08955,
+      "lng": -74.1943,
       "geo": "place",
       "geo_unknown": []
     },
@@ -1704,8 +1704,8 @@
       ],
       "furnished": true,
       "comments": "Beautiful spacious new furnished. Large BR, large EIK. Separate LR. WD. Av. imm.",
-      "lat": 40.1064,
-      "lng": -74.1913,
+      "lat": 40.10773,
+      "lng": -74.1905,
       "geo": "place",
       "geo_unknown": []
     },
@@ -3224,8 +3224,8 @@
       ],
       "furnished": true,
       "comments": "New furnished apartment. Available immediately.",
-      "lat": 40.1064,
-      "lng": -74.1913,
+      "lat": 40.10773,
+      "lng": -74.1905,
       "geo": "place",
       "geo_unknown": []
     },
@@ -3929,8 +3929,8 @@
       ],
       "furnished": true,
       "comments": "Brand new luxury spacious furnished Choson/Kallah apartment.",
-      "lat": 40.10622,
-      "lng": -74.19508,
+      "lat": 40.10688,
+      "lng": -74.19467,
       "geo": "place",
       "geo_unknown": []
     },
@@ -3954,8 +3954,8 @@
       "phones": [],
       "furnished": true,
       "comments": "Temporary furnished apartment, great for Choson/Kalla. Fully furnished. Av. end Nov.",
-      "lat": 40.09788,
-      "lng": -74.20131,
+      "lat": 40.09675,
+      "lng": -74.20283,
       "geo": "place",
       "geo_unknown": []
     },
@@ -4141,8 +4141,8 @@
       ],
       "furnished": true,
       "comments": "Beautiful furnished apartment in excellent condition. Available December 1.",
-      "lat": 40.09495,
-      "lng": -74.20081,
+      "lat": 40.0938,
+      "lng": -74.1976,
       "geo": "place",
       "geo_unknown": []
     },
@@ -5253,8 +5253,8 @@
       ],
       "furnished": false,
       "comments": "Beautiful upgraded apt. in private house, parking spot. Available December.",
-      "lat": 40.09788,
-      "lng": -74.20131,
+      "lat": 40.09675,
+      "lng": -74.20283,
       "geo": "place",
       "geo_unknown": []
     },
@@ -5372,8 +5372,8 @@
       ],
       "furnished": false,
       "comments": "Verynice,largelivingarea,newly renovated. Poss.furnishedmaster bedroom. Av.imm.",
-      "lat": 40.1064,
-      "lng": -74.1913,
+      "lat": 40.10773,
+      "lng": -74.1905,
       "geo": "place",
       "geo_unknown": []
     },
@@ -5399,8 +5399,8 @@
       ],
       "furnished": false,
       "comments": "Brand new fully upgraded first floor Choson/Kallah apartment.",
-      "lat": 40.10009,
-      "lng": -74.19601,
+      "lat": 40.09834,
+      "lng": -74.1895,
       "geo": "place",
       "geo_unknown": []
     },
@@ -5499,14 +5499,19 @@
       "lng": -74.20031
     },
     "brook": {
-      "name": "Brook Rd",
-      "lat": 40.1039,
-      "lng": -74.1875
+      "name": "Brook Rd (at County Line Rd)",
+      "lat": 40.10523,
+      "lng": -74.187
     },
     "brook hill": {
       "name": "Brook Hill",
-      "lat": 40.1064,
-      "lng": -74.1913
+      "lat": 40.10773,
+      "lng": -74.1905
+    },
+    "brook ridge e 7th": {
+      "name": "Brook Rd, Ridge Ave & E 7th St",
+      "lat": 40.09834,
+      "lng": -74.1895
     },
     "brookwood 1": {
       "name": "Brookwood 1",
@@ -5977,6 +5982,16 @@
       "name": "Ridge Ave (middle, at Nowlan Pl)",
       "lat": 40.09788,
       "lng": -74.20131
+    },
+    "ridge bergen": {
+      "name": "Ridge Ave & Bergen Ave",
+      "lat": 40.0938,
+      "lng": -74.1976
+    },
+    "ridge negba st": {
+      "name": "Ridge Ave & Negba St",
+      "lat": 40.09675,
+      "lng": -74.20283
     },
     "rockwell": {
       "name": "Rockwell",

@@ -133,18 +133,25 @@
   "kind": "highway/residential"
  },
  "brook": {
-  "name": "Brook Rd",
-  "lat": 40.1039,
-  "lng": -74.1875,
+  "name": "Brook Rd (at County Line Rd)",
+  "lat": 40.10523,
+  "lng": -74.187,
   "source": "manual",
-  "note": "Owner: Brook = Brook Rd; point is Brook Rd at County Line Rd (interpolated, OSM gap)."
+  "note": "Owner: Brook = Brook Rd; Google Maps E County Line Rd & Brook Rd."
  },
  "brook hill": {
   "name": "Brook Hill",
-  "lat": 40.1064,
-  "lng": -74.1913,
+  "lat": 40.10773,
+  "lng": -74.1905,
   "source": "manual",
-  "note": "Owner: neighbourhood NW of Brook Rd & County Line Rd. That intersection is ~(40.1039,-74.1878) (interpolated; OSM has a gap in County Line Rd); pin ~0.25 mi NW of it."
+  "note": "Owner: NW of Brook Rd & County Line Rd (Google Maps 40.10523,-74.18700); pin ~0.25 mi NW of it."
+ },
+ "brook ridge e 7th": {
+  "name": "Brook Rd, Ridge Ave & E 7th St",
+  "lat": 40.09834,
+  "lng": -74.1895,
+  "source": "manual",
+  "note": "Google Maps: all three streets meet at this one junction."
  },
  "brookwood 1": {
   "name": "Brookwood 1",
@@ -930,6 +937,20 @@
   "lng": -74.20131,
   "source": "manual",
   "note": "Owner: middle of Ridge is approx Ridge Ave & Nowlan Pl (Google Maps)."
+ },
+ "ridge bergen": {
+  "name": "Ridge Ave & Bergen Ave",
+  "lat": 40.0938,
+  "lng": -74.1976,
+  "source": "manual",
+  "note": "APPROXIMATE: Google Maps/OSM have no Ridge & Bergen intersection; midway between Bergen Ave's east end and the nearest Ridge Ave point (~0.15 mi uncertainty)."
+ },
+ "ridge negba st": {
+  "name": "Ridge Ave & Negba St",
+  "lat": 40.09675,
+  "lng": -74.20283,
+  "source": "manual",
+  "note": "Owner asked to find; Google Maps intersection."
  },
  "rockwell": {
   "name": "Rockwell",
