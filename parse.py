@@ -88,8 +88,13 @@ def clean_loc(s):
     s = re.sub(r"\b(\d+)\s*(st|nd|rd|th)\b", r"\1\2", s)
     s = re.sub(r",(?=\S)", ", ", s)
     s = re.sub(r"(?<=[a-z])(near|Near)\b", r" \1", s)
-    s = re.sub(r"(?<=[a-z])(area|Area)$", r" area", s)
-    s = re.sub(r"\barea\b", "area", s)
+    s = re.sub(r"\bClub\s*at\b", "Club at", s, flags=re.I)
+    s = re.sub(r"(?<=[a-z])(area)\b", r" \1", s, flags=re.I)   # Mackenziearea -> Mackenzie area
+    s = re.sub(r"\barea\b", "Area", s, flags=re.I)
+    # Common abbreviations used in the list.
+    s = re.sub(r"\bT\.?\s?R\.?(?=\s|/|,|$)", "Toms River", s)
+    s = re.sub(r"\bToms\s+R\.?(?=\s|/|,|$)", "Toms River", s)
+    s = re.sub(r"\bJksn\.?(?=\s|/|,|$)", "Jackson", s)
     return re.sub(r"\s+", " ", s).strip(" ,/-"), trailing_phones
 
 
