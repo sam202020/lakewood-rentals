@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T19:37:45+00:00",
+  "generated_at": "2026-11-22T19:44:56+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -120,8 +120,8 @@
       ],
       "furnished": false,
       "comments": "Nicely upgraded including appliances, fully vinyl. Available immediately.",
-      "lat": 40.07033,
-      "lng": -74.19917,
+      "lat": 40.0486,
+      "lng": -74.2094,
       "geo": "place",
       "geo_unknown": []
     },
@@ -485,8 +485,8 @@
       ],
       "furnished": true,
       "comments": "New furnished, very sunny. Kitchenette, W/D. Available short or long term.",
-      "lat": 40.0503,
-      "lng": -74.21092,
+      "lat": 40.0528,
+      "lng": -74.2148,
       "geo": "place",
       "geo_unknown": []
     },
@@ -1356,8 +1356,8 @@
       ],
       "furnished": false,
       "comments": "Upgraded apt., in single-family home. Available December 1.",
-      "lat": 40.0503,
-      "lng": -74.21092,
+      "lat": 40.0528,
+      "lng": -74.2148,
       "geo": "place",
       "geo_unknown": []
     },
@@ -1753,8 +1753,8 @@
       ],
       "furnished": true,
       "comments": "Brand new furnished apt., short or long term. Available November.",
-      "lat": 40.0503,
-      "lng": -74.21092,
+      "lat": 40.0528,
+      "lng": -74.2148,
       "geo": "place",
       "geo_unknown": []
     },
@@ -1905,8 +1905,8 @@
       ],
       "furnished": false,
       "comments": "Colonial with semi-finished basement. Available immediately.",
-      "lat": 40.0503,
-      "lng": -74.21092,
+      "lat": 40.0528,
+      "lng": -74.2148,
       "geo": "place",
       "geo_unknown": []
     },
@@ -2103,8 +2103,8 @@
       ],
       "furnished": false,
       "comments": "Brand new, prime entrance location, cul-de-sac, near shul.",
-      "lat": 40.05654,
-      "lng": -74.22546,
+      "lat": 40.0603,
+      "lng": -74.2294,
       "geo": "place",
       "geo_unknown": []
     },
@@ -4873,8 +4873,8 @@
       ],
       "furnished": false,
       "comments": "Brand new duplex. Available immediately.",
-      "lat": 40.07033,
-      "lng": -74.19917,
+      "lat": 40.0486,
+      "lng": -74.2094,
       "geo": "place",
       "geo_unknown": []
     },
@@ -5399,8 +5399,8 @@
       ],
       "furnished": false,
       "comments": "Brand new fully upgraded first floor Choson/Kallah apartment.",
-      "lat": 40.09663,
-      "lng": -74.20002,
+      "lat": 40.10271,
+      "lng": -74.18516,
       "geo": "place",
       "geo_unknown": []
     },
@@ -5484,9 +5484,9 @@
       "lng": -74.20031
     },
     "brook": {
-      "name": "Brook",
-      "lat": 40.08568,
-      "lng": -74.23207
+      "name": "Brook Rd",
+      "lat": 40.1039,
+      "lng": -74.1875
     },
     "brook hill": {
       "name": "Brook Hill",
@@ -5549,9 +5549,9 @@
       "lng": -74.19226
     },
     "chestnut": {
-      "name": "Chestnut",
-      "lat": 40.0503,
-      "lng": -74.21092
+      "name": "Chestnut St",
+      "lat": 40.0528,
+      "lng": -74.2148
     },
     "clifton": {
       "name": "Clifton",
@@ -5589,9 +5589,14 @@
       "lng": -74.23697
     },
     "cross": {
-      "name": "Cross",
-      "lat": 40.05535,
-      "lng": -74.22112
+      "name": "Cross St",
+      "lat": 40.0663,
+      "lng": -74.238
+    },
+    "cross mass": {
+      "name": "Cross St & Massachusetts Ave",
+      "lat": 40.0603,
+      "lng": -74.2294
     },
     "dewey ave": {
       "name": "Dewey Ave",
@@ -5620,8 +5625,8 @@
     },
     "evergreen gardens": {
       "name": "Evergreen Gardens",
-      "lat": 40.07033,
-      "lng": -74.19917
+      "lat": 40.0486,
+      "lng": -74.2094
     },
     "fairways": {
       "name": "Fairways",

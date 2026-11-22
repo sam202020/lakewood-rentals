@@ -130,12 +130,11 @@
   "kind": "highway/residential"
  },
  "brook": {
-  "name": "Brook",
-  "lat": 40.08568,
-  "lng": -74.23207,
-  "source": "osm",
-  "match": "Watering Place Brook, A Country Place, Lakewood Township, Ocean County, New Jersey, 08701,",
-  "kind": "waterway/stream"
+  "name": "Brook Rd",
+  "lat": 40.1039,
+  "lng": -74.1875,
+  "source": "manual",
+  "note": "Owner: Brook = Brook Rd; point is Brook Rd at County Line Rd (interpolated, OSM gap)."
  },
  "brook hill": {
   "name": "Brook Hill",
@@ -239,12 +238,11 @@
   "kind": "highway/residential"
  },
  "chestnut": {
-  "name": "Chestnut",
-  "lat": 40.0503,
-  "lng": -74.21092,
-  "source": "osm",
-  "match": "Chestnut Acres, Lakewood Township, Ocean County, New Jersey, United States",
-  "kind": "landuse/residential"
+  "name": "Chestnut St",
+  "lat": 40.0528,
+  "lng": -74.2148,
+  "source": "manual",
+  "note": "Owner: Chestnut is a street in south Lakewood (Chestnut Estates segment, middle of the street)."
  },
  "chestnut gardens": {
   "name": "Chestnut Gardens",
@@ -321,12 +319,18 @@
   "kind": "highway/residential"
  },
  "cross": {
-  "name": "Cross",
-  "lat": 40.05535,
-  "lng": -74.22112,
-  "source": "osm",
-  "match": "Cross River Mill, Lakewood Township, Ocean County, New Jersey, United States",
-  "kind": "landuse/residential"
+  "name": "Cross St",
+  "lat": 40.0663,
+  "lng": -74.238,
+  "source": "manual",
+  "note": "Owner: Cross is a street in west Lakewood (middle of the long western segment)."
+ },
+ "cross mass": {
+  "name": "Cross St & Massachusetts Ave",
+  "lat": 40.0603,
+  "lng": -74.2294,
+  "source": "manual",
+  "note": "Intersection confirmed in OSM (shared node)."
  },
  "dewey ave": {
   "name": "Dewey Ave",
@@ -370,11 +374,10 @@
  },
  "evergreen gardens": {
   "name": "Evergreen Gardens",
-  "lat": 40.07033,
-  "lng": -74.19917,
-  "source": "osm",
-  "match": "Evergreen Cemetery, Spruce Street, Spruce Gardens, Lakewood Township, Ocean County, New Je",
-  "kind": "amenity/grave_yard"
+  "lat": 40.0486,
+  "lng": -74.2094,
+  "source": "manual",
+  "note": "Owner (Google Maps): near Route 70 and Vermont Ave; OSM shared node of Route 70 & Vermont Ave."
  },
  "fairways": {
   "name": "Fairways",
