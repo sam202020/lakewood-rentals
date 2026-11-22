@@ -72,6 +72,18 @@ class Abbreviations(unittest.TestCase):
         self.assertEqual(loc("W.Cnty. Ln. / Hope"), "W. County Ln. / Hope")
         self.assertEqual(loc("Cnty Line"), "County Line")
 
+    def test_pine_lake_park_manchester(self):
+        for raw in ("PLP / Manchester", "PLP/Manchester", "PLPManchester", "PLP, Manchester",
+                    "PLP Manch.", "Pine Lake Park, Manchester", "Pine Lake Park / Manchester"):
+            with self.subTest(raw=raw):
+                self.assertEqual(loc(raw), "Pine Lake Park, Manchester")
+
+    def test_plp_alone_and_manch(self):
+        self.assertEqual(loc("PLP"), "Pine Lake Park")
+        self.assertEqual(loc("Pine Lake Park"), "Pine Lake Park")
+        self.assertEqual(loc("Holly Oaks, Manch."), "Holly Oaks, Manchester")
+        self.assertEqual(loc("Manchester"), "Manchester")
+
     def test_directional_initials(self):
         self.assertEqual(loc("County Ln/NApple"), "County Ln / N. Apple")
         self.assertEqual(loc("SBrook"), "S. Brook")
@@ -123,7 +135,7 @@ class ShippedData(unittest.TestCase):
         cls.listings = json.loads((ROOT / "listings.json").read_text())["listings"]
 
     def test_no_unexpanded_abbreviations(self):
-        bad = re.compile(r"\bWestgt\b|\bEngl\b|\bCentrl\b|\bCnty\b|\bLkwd\b|\bJksn\b|\bT\.?R\.?\b|\bClubat\b|\bToms R\.?$")
+        bad = re.compile(r"\bWestgt\b|\bPLP\b|\bManch\b|\bEngl\b|\bCentrl\b|\bCnty\b|\bLkwd\b|\bJksn\b|\bT\.?R\.?\b|\bClubat\b|\bToms R\.?$")
         offenders = [(x["id"], x["location"]) for x in self.listings if bad.search(x["location"])]
         self.assertEqual(offenders, [])
 
@@ -133,7 +145,7 @@ class ShippedData(unittest.TestCase):
     def test_the_named_places_appear_in_current_data(self):
         names = {x["location"] for x in self.listings}
         for expected in ("Club at Jackson 21", "Mackenzie Area Toms River",
-                         "Lakewood Commons Area", "Westgate"):
+                         "Lakewood Commons Area", "Westgate", "Pine Lake Park, Manchester"):
             with self.subTest(expected=expected):
                 self.assertIn(expected, names)
 

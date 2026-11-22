@@ -88,6 +88,8 @@ PLACE_NAMES = [
     (r"lkwd\.?\s*comm(?:ons|\.)?\s*area",                   "Lakewood Commons Area"),
     (r"lkwd\.?\s*comm(?:ons|\.)?",                          "Lakewood Commons"),
     (r"west\s*gt\.?|west\s*gate",                           "Westgate"),
+    # PLP = Pine Lake Park, a community in Manchester Township.
+    (r"(?:plp|pine\s*lake\s*park)\s*[/,]?\s*manch(?:ester|\.)", "Pine Lake Park, Manchester"),
 ]
 
 # Abbreviations inside longer locations. Applied after spacing is repaired.
@@ -101,6 +103,8 @@ ABBREVIATIONS = [
     (r"\bEngl\.?(?=\s|/|,|$)",        "England",    re.I),
     (r"\bCentrl\.?(?=\s|/|,|$)",      "Central",    re.I),
     (r"\bCnty\.?(?=\s|/|,|$)",        "County",     re.I),
+    (r"\bManch\.?(?=\s|/|,|$)",       "Manchester", re.I),
+    (r"\bPLP(?![a-z])",                "Pine Lake Park ", 0),   # bare PLP; case-sensitive
 ]
 
 
