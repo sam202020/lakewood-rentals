@@ -427,10 +427,10 @@
  },
  "heart of ridge": {
   "name": "Heart of Ridge",
-  "lat": 40.099,
-  "lng": -74.1822,
+  "lat": 40.09788,
+  "lng": -74.20131,
   "source": "manual",
-  "note": "Owner: 'Heart of Ridge' = center of Ridge. Midpoint along Ridge Ave (OSM, ~2.4 mi from Clifton/Ridge west end to Greenville); replaces the OSM first-hit at the east end."
+  "note": "Owner: middle of Ridge is approx Ridge Ave & Nowlan Pl (Google Maps)."
  },
  "hearthstone": {
   "name": "Hearthstone",
@@ -925,11 +925,11 @@
   "note": "Google Maps: Regency Estates Playground, Hekel Rd (neighbourhood-level)."
  },
  "ridge": {
-  "name": "Ridge Ave (center)",
-  "lat": 40.099,
-  "lng": -74.1822,
+  "name": "Ridge Ave (middle, at Nowlan Pl)",
+  "lat": 40.09788,
+  "lng": -74.20131,
   "source": "manual",
-  "note": "Owner: 'Heart of Ridge' = center of Ridge. Midpoint along Ridge Ave (OSM, ~2.4 mi from Clifton/Ridge west end to Greenville); replaces the OSM first-hit at the east end."
+  "note": "Owner: middle of Ridge is approx Ridge Ave & Nowlan Pl (Google Maps)."
  },
  "rockwell": {
   "name": "Rockwell",

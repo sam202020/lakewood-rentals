@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T23:03:11+00:00",
+  "generated_at": "2026-11-22T23:04:48+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -218,8 +218,8 @@
       ],
       "furnished": true,
       "comments": "Short term furnished rental available daily/weekly, etc. thru December.",
-      "lat": 40.099,
-      "lng": -74.1822,
+      "lat": 40.09788,
+      "lng": -74.20131,
       "geo": "place",
       "geo_unknown": []
     },
@@ -431,8 +431,8 @@
       ],
       "furnished": true,
       "comments": "Furnished, long or short term. Great location (near Park/Princeton)! Av. imm.",
-      "lat": 40.099,
-      "lng": -74.1822,
+      "lat": 40.09788,
+      "lng": -74.20131,
       "geo": "place",
       "geo_unknown": []
     },
@@ -3381,8 +3381,8 @@
       ],
       "furnished": true,
       "comments": "New furnished Choson/Kallah apt. in great location. Available immediately.",
-      "lat": 40.099,
-      "lng": -74.1822,
+      "lat": 40.09788,
+      "lng": -74.20131,
       "geo": "place",
       "geo_unknown": []
     },
@@ -3954,8 +3954,8 @@
       "phones": [],
       "furnished": true,
       "comments": "Temporary furnished apartment, great for Choson/Kalla. Fully furnished. Av. end Nov.",
-      "lat": 40.099,
-      "lng": -74.1822,
+      "lat": 40.09788,
+      "lng": -74.20131,
       "geo": "place",
       "geo_unknown": []
     },
@@ -4141,8 +4141,8 @@
       ],
       "furnished": true,
       "comments": "Beautiful furnished apartment in excellent condition. Available December 1.",
-      "lat": 40.09551,
-      "lng": -74.19125,
+      "lat": 40.09495,
+      "lng": -74.20081,
       "geo": "place",
       "geo_unknown": []
     },
@@ -5253,8 +5253,8 @@
       ],
       "furnished": false,
       "comments": "Beautiful upgraded apt. in private house, parking spot. Available December.",
-      "lat": 40.099,
-      "lng": -74.1822,
+      "lat": 40.09788,
+      "lng": -74.20131,
       "geo": "place",
       "geo_unknown": []
     },
@@ -5399,8 +5399,8 @@
       ],
       "furnished": false,
       "comments": "Brand new fully upgraded first floor Choson/Kallah apartment.",
-      "lat": 40.10047,
-      "lng": -74.18964,
+      "lat": 40.10009,
+      "lng": -74.19601,
       "geo": "place",
       "geo_unknown": []
     },
@@ -5690,8 +5690,8 @@
     },
     "heart of ridge": {
       "name": "Heart of Ridge",
-      "lat": 40.099,
-      "lng": -74.1822
+      "lat": 40.09788,
+      "lng": -74.20131
     },
     "hearthstone": {
       "name": "Hearthstone",
@@ -5974,9 +5974,9 @@
       "lng": -74.22197
     },
     "ridge": {
-      "name": "Ridge Ave (center)",
-      "lat": 40.099,
-      "lng": -74.1822
+      "name": "Ridge Ave (middle, at Nowlan Pl)",
+      "lat": 40.09788,
+      "lng": -74.20131
     },
     "rockwell": {
       "name": "Rockwell",
