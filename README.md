@@ -9,7 +9,7 @@ view links back to `masaumatan.com` and the original PDF. The PDF is authoritati
 ## How it works
 
 ```
-MasaRentals.pdf  ──►  parse.py  ──►  listings.json  ──►  build.py  ──►  site/index.html
+MasaRentals.pdf  ──►  parse.py  ──►  listings.json  ──►  build.py  ──►  docs/index.html
    (live, weekly)      (pdfplumber,       (structured        (injects JSON        (self-contained
                         column-aware)      listing data)       into template)      static page)
 ```
@@ -19,7 +19,7 @@ MasaRentals.pdf  ──►  parse.py  ──►  listings.json  ──►  build
   description). Column boundaries are pinned to the PDF's fixed layout.
 - **`build.py`** — runs the parser against the live PDF (or a local `--pdf`),
   writes `listings.json`, and injects it into `site/template.html` to produce
-  `site/index.html`. Aborts without overwriting anything if fewer than 60
+  `docs/index.html`. Aborts without overwriting anything if fewer than 60
   listings parse (guards against a bad fetch).
 - **`site/template.html`** — the page: client-side search, filters (type,
   bedrooms, max rent, utilities, furnished, short-term), sort, light/dark.
@@ -33,7 +33,7 @@ python3 -m pip install -r requirements.txt  # use -m pip, not a bare `pip`:
                                              # resolve to different interpreters
 python3 build.py                 # fetch the live PDF and rebuild
 python3 build.py --pdf some.pdf  # use a local PDF instead
-open site/index.html
+open docs/index.html
 ```
 
 ## Weekly auto-refresh

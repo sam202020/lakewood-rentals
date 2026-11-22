@@ -24,11 +24,11 @@ You maintain the "Lakewood NJ Area Rentals" website. This repo is your working d
    import the dependency.
 2. Rebuild:       python3 build.py
    build.py downloads the current Masa U'Matan rental PDF, parses it, and
-   regenerates listings.json and site/index.html. If it exits non-zero (fewer
+   regenerates listings.json and docs/index.html. If it exits non-zero (fewer
    than 60 listings parsed, or the download failed), STOP — do not publish or
    commit anything, and report the failure.
 3. If step 2 succeeded, republish the page with the Artifact tool:
-     file_path: site/index.html
+     file_path: docs/index.html
      url:       https://claude.ai/code/artifact/b8837b56-6782-4202-b3d7-c8db84ff1014
    Keep the title "Lakewood NJ Area Rentals" and favicon 🏘️ unchanged.
 4. Commit the regenerated files:

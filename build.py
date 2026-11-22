@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the static Lakewood Rentals site.
 
-  python3 build.py            # fetch live PDF, parse, write site/index.html
+  python3 build.py            # fetch live PDF, parse, write docs/index.html
   python3 build.py --pdf X    # use a local PDF file instead of fetching
 
 Safety: if parsing yields fewer than MIN_LISTINGS, the previous listings.json
@@ -14,7 +14,7 @@ import parse as P
 ROOT = pathlib.Path(__file__).parent
 DATA = ROOT / "listings.json"
 TEMPLATE = ROOT / "site" / "template.html"
-OUT = ROOT / "site" / "index.html"
+OUT = ROOT / "docs" / "index.html"
 MIN_LISTINGS = 60
 
 
