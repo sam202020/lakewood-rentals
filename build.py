@@ -14,6 +14,7 @@ import parse as P
 ROOT = pathlib.Path(__file__).parent
 DATA = ROOT / "listings.json"
 TEMPLATE = ROOT / "site" / "template.html"
+SEARCH_CORE = ROOT / "site" / "search-core.js"
 OUT = ROOT / "docs" / "index.html"
 MIN_LISTINGS = 60
 
@@ -42,6 +43,8 @@ def main():
     DATA.write_text(json.dumps(data, indent=2, ensure_ascii=False))
 
     html = TEMPLATE.read_text().replace(
+        "/*__SEARCH_CORE__*/", SEARCH_CORE.read_text()
+    ).replace(
         "/*__DATA__*/null",
         json.dumps(data, ensure_ascii=False, separators=(",", ":")),
     )

@@ -36,6 +36,17 @@ python3 build.py --pdf some.pdf  # use a local PDF instead
 open docs/index.html
 ```
 
+## Tests
+
+```bash
+npm run test:search     # or: node --test tests/search.test.js
+```
+
+The search/filter logic lives in `site/search-core.js` (pure functions, no DOM),
+which `build.py` inlines into the page. `tests/search.test.js` (38 tests, Node's
+built-in runner, no dependencies) covers text search, every filter, sorting,
+the real `listings.json`, and the code actually shipped in `docs/index.html`.
+
 ## Weekly auto-refresh
 
 A scheduled Claude Code cloud agent runs every Wednesday just after midnight ET.

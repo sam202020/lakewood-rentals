@@ -433,49 +433,19 @@
 
 <script id="payload" type="application/json">/*__DATA__*/null</script>
 <script>
+/*__SEARCH_CORE__*/
+</script>
+<script>
 (function () {
   "use strict";
   var DATA = JSON.parse(document.getElementById("payload").textContent) || { listings: [] };
-  var L = DATA.listings || [];
-
-  // ---- derive fields ----
-  function bathNum(s) {
-    if (!s) return null;
-    var m = String(s).match(/(\d+)/);
-    var n = m ? +m[1] : 0;
-    if (/[½]/.test(s)) n += 0.5;
-    if (/[¼]/.test(s)) n += 0.25;
-    if (/[¾]/.test(s)) n += 0.75;
-    return n || null;
-  }
-  var TAGRULES = [
-    ["Choson / Kallah", /choson|chosson|chas[sa]n|kalla/i, false],
-    ["Short-term OK", /short[\s-]?term|short\/long|weekly|nightly|per night|\/night/i, false],
-    ["Long-term", /long[\s-]?term|long\/short|\byear\b|10[\s-]?month|annual/i, false],
-    ["Available now", /available imm|av\.? ?imm|immediately|avail\. now/i, false],
-    ["Pool", /\bpool\b/i, false],
-    ["Office use", /\boffice\b/i, false],
-    ["Basement", /basement|bsmt/i, false],
-    ["Backyard", /back ?yard|bkyd|\byard\b/i, false],
-  ];
-  L.forEach(function (x, i) {
-    x._i = i;
-    x._baths = bathNum(x.baths);
-    x._text = [x.location, x.comments, (x.phones || []).join(" "), x.type].join(" ").toLowerCase();
-    x._furnished = !!x.furnished || /furnish/i.test(x.comments || "");
-    x._short = /short[\s-]?term|short\/long|weekly|nightly|\/night|per night/i.test(x.comments || "");
-    x._tags = [];
-    TAGRULES.forEach(function (r) {
-      if (r[1].test(x.comments || "")) x._tags.push([r[0], r[2]]);
-    });
-  });
+  var L = LakewoodSearch.enrich(DATA.listings || []);
 
   var TYPES = ["Apartment", "House", "Townhouse / Attached", "Room"];
   var UTILS = ["Gas", "Electric", "Water", "Heat"];
 
   // ---- state ----
-  var S = { q: "", types: new Set(), beds: 0, rent: 7000, inclCall: true,
-            utils: new Set(), furnished: false, shortterm: false, sort: "default" };
+  var S = LakewoodSearch.defaultState();
 
   // ---- build filter controls ----
   var typeChips = document.getElementById("typeChips");
@@ -533,8 +503,9 @@
   document.getElementById("sort").onchange = function (e) { S.sort = e.target.value; render(); };
 
   document.getElementById("reset").onclick = function () {
-    S = { q: "", types: new Set(), beds: 0, rent: 7000, inclCall: true,
-          utils: new Set(), furnished: false, shortterm: false, sort: S.sort };
+    var keepSort = S.sort;
+    S = LakewoodSearch.defaultState();
+    S.sort = keepSort;
     q.value = ""; rent.value = 7000; rentVal.textContent = "Any";
     document.getElementById("inclCall").checked = true;
     document.getElementById("furnished").checked = false;
@@ -567,23 +538,6 @@
   };
 
   // ---- filtering ----
-  function match(x) {
-    if (S.q) {
-      var terms = S.q.split(/\s+/);
-      for (var i = 0; i < terms.length; i++) if (x._text.indexOf(terms[i]) === -1) return false;
-    }
-    if (S.types.size && !S.types.has(x.type)) return false;
-    if (S.beds && (x.bedrooms_num || 0) < S.beds) return false;
-    if (S.utils.size) {
-      for (var u of S.utils) if ((x.utilities_included || []).indexOf(u) === -1) return false;
-    }
-    if (S.furnished && !x._furnished) return false;
-    if (S.shortterm && !x._short) return false;
-    if (x.rent == null) { if (!S.inclCall) return false; }
-    else if (S.rent < 7000 && x.rent > S.rent) return false;
-    return true;
-  }
-
   var grid = document.getElementById("grid");
   var elCount = document.getElementById("count"), elWord = document.getElementById("countWord");
 
@@ -630,15 +584,7 @@
   }
 
   function render() {
-    var rows = L.filter(match);
-    var s = S.sort;
-    rows.sort(function (a, b) {
-      if (s === "price-asc") return (a.rent == null) - (b.rent == null) || (a.rent || 0) - (b.rent || 0);
-      if (s === "price-desc") return (a.rent == null) - (b.rent == null) || (b.rent || 0) - (a.rent || 0);
-      if (s === "beds-desc") return (b.bedrooms_num || 0) - (a.bedrooms_num || 0);
-      if (s === "loc") return (a.location || "~").localeCompare(b.location || "~");
-      return a._i - b._i;
-    });
+    var rows = LakewoodSearch.search(L, S);
     elCount.textContent = rows.length.toLocaleString();
     elWord.textContent = rows.length === 1 ? "listing" : "listings";
     grid.innerHTML = "";
