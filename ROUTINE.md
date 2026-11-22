@@ -14,28 +14,22 @@ the live PDF, and republishes the Artifact.
 
 ## Agent prompt
 
-```
-You maintain the "Lakewood NJ Area Rentals" website. This repo is your working directory.
+The authoritative copy is the routine's saved prompt (claude.ai/code/routines);
+this is a summary of what it does, in order:
 
-1. Install deps:  python3 -m pip install -r requirements.txt
-   Use "python3 -m pip", not a bare "pip" — on some environment images `pip`
-   and `python3` resolve to different Python installs, so a bare `pip install`
-   can land in the wrong interpreter and leave `python3 build.py` unable to
-   import the dependency.
-2. Rebuild:       python3 build.py
-   build.py downloads the current Masa U'Matan rental PDF, parses it, and
-   regenerates listings.json and docs/index.html. If it exits non-zero (fewer
-   than 60 listings parsed, or the download failed), STOP — do not publish or
-   commit anything, and report the failure.
-3. If step 2 succeeded, republish the page with the Artifact tool:
-     file_path: docs/index.html
-     url:       https://claude.ai/code/artifact/b8837b56-6782-4202-b3d7-c8db84ff1014
-   Keep the title "Lakewood NJ Area Rentals" and favicon 🏘️ unchanged.
-4. Commit the regenerated files:
-     git add -A && git commit -m "Weekly refresh" && git push
-   If push fails on auth, skip it — the Artifact update is the important part.
-5. Report the list date, the listing count, and the Artifact URL.
-```
+1. `python3 -m pip install -r requirements.txt`
+2. **Tests first** (`python3 -m unittest discover -s tests`, plus
+   `node --test tests/search.test.js` if Node exists). Any failure stops the run.
+3. `python3 build.py` - downloads the PDF, parses it, runs the data-quality gate
+   in `checks.py`.
+   - `ABORT:` lines (hard failure): stop, write nothing, report them. The public
+     site keeps last week's data.
+   - `WARN:` lines (soft): continue, and include them in the report so the
+     right rules get added to `parse.py`.
+4. `git add -A && git commit && git push` - this updates the public site
+   (GitHub Pages serves `docs/`).
+5. Republish the private Artifact copy.
+6. Report: list date, listing count, tests, every WARN, push result, site URL.
 
 ## Re-create the routine (if deleted)
 
