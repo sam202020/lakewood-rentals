@@ -72,6 +72,15 @@ class Abbreviations(unittest.TestCase):
         self.assertEqual(loc("W.Cnty. Ln. / Hope"), "W. County Ln. / Hope")
         self.assertEqual(loc("Cnty Line"), "County Line")
 
+    def test_directional_initials(self):
+        self.assertEqual(loc("County Ln/NApple"), "County Ln / N. Apple")
+        self.assertEqual(loc("SBrook"), "S. Brook")
+        self.assertEqual(loc("N.Oakland/Ocean"), "N. Oakland / Ocean")
+
+    def test_directional_rule_leaves_other_words_alone(self):
+        for name in ("NJ", "Newark", "Northgate", "East End", "West Park", "Sunset"):
+            self.assertEqual(loc(name), name)
+
     def test_full_words_are_untouched(self):
         for name in ("England", "Central", "County Line", "Central Lakewood", "New England Village"):
             self.assertEqual(loc(name), name)
