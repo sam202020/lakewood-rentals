@@ -224,7 +224,8 @@ def parse(fileobj):
                 # Full-width free-text ads spill description words into this
                 # column; real locations are short phrases of short tokens.
                 lines = [(tp, t) for tp, t in lines
-                         if len(" ".join(t)) <= 36 and max(len(x) for x in t) <= 20]
+                         if len(" ".join(t)) <= 36 and max(len(x) for x in t) <= 20
+                         and not (len(t) >= 4 and max(len(x) for x in t) <= 2)]
                 loc_parts = [clean_loc(" ".join(t))[0] for _, t in lines]
                 loc_ph = [p for _, t in lines for p in clean_loc(" ".join(t))[1]]
                 loc = " / ".join(p for p in loc_parts if p)
