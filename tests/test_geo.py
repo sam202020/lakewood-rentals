@@ -73,6 +73,12 @@ class Resolve(unittest.TestCase):
         r = geo.resolve("Oak & Vine", PLACES)                   # "oak vine" is a manual whole-name entry
         self.assertEqual((r["lat"], r["lng"]), (40.095, -74.22))
 
+    def test_intersection_matches_in_either_order(self):
+        places = {"sunset james": {"lat": 40.08, "lng": -74.225, "source": "manual"}}
+        for text in ("Sunset / James", "James / Sunset", "James & Sunset", "Sunset & James Area"):
+            with self.subTest(text=text):
+                self.assertEqual(geo.resolve(text, places)["lat"], 40.08)
+
     def test_unresolved_and_unknown_are_reported_differently(self):
         r = geo.resolve("Lutzk", PLACES)
         self.assertIsNone(r["lat"])
@@ -122,6 +128,32 @@ class ShippedPlaces(unittest.TestCase):
         far = [k for k, e in self.places.items()
                if e.get("lat") is not None and not geo.plausible(e["lat"], e["lng"])]
         self.assertEqual(far, [])
+
+    def test_owner_confirmed_places(self):
+        """Corrections supplied by the site owner must stay manual (never overwritten)."""
+        for key in ("westgate", "sunset", "sunset james", "oak vine", "villas", "twin oaks",
+                    "yeshiva", "the 70", "the 70 phase i", "the 70 phase ii"):
+            with self.subTest(place=key):
+                self.assertEqual(self.places[key]["source"], "manual")
+                self.assertIsNotNone(self.places[key]["lat"])
+
+    def test_owner_corrections_resolve_for_listing_text(self):
+        for text, key in [("Westgate", "westgate"), ("Sunset / James Area", "sunset james"),
+                          ("Sunset & James", "sunset james"), ("James & Sunset", "sunset james"),
+                          ("Oak & Vine", "oak vine"), ("Villas", "villas"), ("Yeshiva Area", "yeshiva"),
+                          ("The 70", "the 70"), ("The 70 Phase II", "the 70 phase ii")]:
+            with self.subTest(text=text):
+                g = geo.resolve(text, self.places)
+                self.assertEqual((g["lat"], g["lng"]), (self.places[key]["lat"], self.places[key]["lng"]))
+                self.assertEqual(g["precision"], "place")
+
+    def test_villas_is_on_twin_oaks(self):
+        self.assertEqual((self.places["villas"]["lat"], self.places["villas"]["lng"]),
+                         (self.places["twin oaks"]["lat"], self.places["twin oaks"]["lng"]))
+
+    def test_generic_words_are_not_geocoded_on_their_own(self):
+        self.assertNotIn("oak", self.places)
+        self.assertNotIn("vine", self.places)
 
     def test_entries_are_well_formed(self):
         for k, e in self.places.items():

@@ -771,14 +771,6 @@
   "lng": null,
   "source": "unresolved"
  },
- "oak": {
-  "name": "Oak",
-  "lat": 40.08529,
-  "lng": -74.17882,
-  "source": "osm",
-  "match": "Oak Manor, Lakewood Township, Ocean County, New Jersey, United States",
-  "kind": "landuse/residential"
- },
  "oak glen": {
   "name": "Oak Glen",
   "lat": 39.98703,
@@ -792,6 +784,13 @@
   "lat": null,
   "lng": null,
   "source": "unresolved"
+ },
+ "oak vine": {
+  "name": "Oak St & Vine Ave",
+  "lat": 40.0767,
+  "lng": -74.2066,
+  "source": "manual",
+  "note": "APPROXIMATE: intersection; OSM has no shared node, so this is the south end of Vine Ave. Confirm."
  },
  "ocean avenue": {
   "name": "Ocean Avenue",
@@ -1082,32 +1081,39 @@
   "source": "unresolved"
  },
  "sunset": {
-  "name": "Sunset",
-  "lat": 40.08567,
-  "lng": -74.2237,
-  "source": "osm",
-  "match": "Sunset Park, A Country Place, Lakewood Township, Ocean County, New Jersey, United States",
-  "kind": "landuse/recreation_ground"
+  "name": "Sunset Ave",
+  "lat": 40.08299,
+  "lng": -74.22511,
+  "source": "manual",
+  "note": "Sunset Ave (OSM names it Sunset Road)."
+ },
+ "sunset james": {
+  "name": "Sunset Ave & James St",
+  "lat": 40.0798,
+  "lng": -74.225,
+  "source": "manual",
+  "note": "Intersection; James St meets the south end of Sunset Rd."
  },
  "the 70": {
   "name": "The 70",
-  "lat": 40.0793,
-  "lng": -74.18323,
-  "source": "osm",
-  "match": "The Avenue Shoppes, Lakewood Township, Ocean County, New Jersey, United States",
-  "kind": "landuse/retail"
+  "lat": 40.05178,
+  "lng": -74.18794,
+  "source": "manual",
+  "note": "APPROXIMATE: on Route 70 near New Hampshire Ave. Confirm."
  },
  "the 70 phase i": {
   "name": "The 70 Phase I",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "lat": 40.05178,
+  "lng": -74.18794,
+  "source": "manual",
+  "note": "APPROXIMATE: on Route 70 near New Hampshire Ave. Confirm."
  },
  "the 70 phase ii": {
-  "name": "The 70 Phase Ii",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "name": "The 70 Phase II",
+  "lat": 40.05178,
+  "lng": -74.18794,
+  "source": "manual",
+  "note": "APPROXIMATE: on Route 70 near New Hampshire Ave. Confirm."
  },
  "the reserve": {
   "name": "The Reserve",
@@ -1142,10 +1148,9 @@
  "twin oaks": {
   "name": "Twin Oaks",
   "lat": 40.10604,
-  "lng": -74.19886,
-  "source": "osm",
-  "match": "Twin Oaks Drive, Lakewood Township, Ocean County, New Jersey, 07831, United States",
-  "kind": "highway/residential"
+  "lng": -74.19885,
+  "source": "manual",
+  "note": "Twin Oaks Drive."
  },
  "van buren": {
   "name": "Van Buren",
@@ -1156,20 +1161,11 @@
   "kind": "highway/residential"
  },
  "villas": {
-  "name": "Villas",
-  "lat": 39.94862,
-  "lng": -74.07291,
-  "source": "osm",
-  "match": "Seaside Villas, Ortley Beach, Toms River, Ocean County, New Jersey, United States",
-  "kind": "landuse/residential"
- },
- "vine": {
-  "name": "Vine",
-  "lat": 40.04608,
-  "lng": -74.21275,
-  "source": "osm",
-  "match": "Vine Park, Lakewood Township, Ocean County, New Jersey, United States",
-  "kind": "landuse/residential"
+  "name": "The Villas",
+  "lat": 40.10604,
+  "lng": -74.19885,
+  "source": "manual",
+  "note": "Neighborhood directly north of Kosher Village; street is Twin Oaks (Twin Oaks Drive)."
  },
  "w county ln": {
   "name": "W County Ln",
@@ -1191,9 +1187,8 @@
   "name": "Westgate",
   "lat": 40.08734,
   "lng": -74.25544,
-  "source": "osm",
-  "match": "Westgate Pharmacy, Lublin Terrace, Lakewood Township, Ocean County, New Jersey, 08701, Uni",
-  "kind": "amenity/pharmacy"
+  "source": "manual",
+  "note": "Neighborhood incl. Westgate Pharmacy and other stores (owner-confirmed)."
  },
  "whitewater ct": {
   "name": "Whitewater Ct",
@@ -1212,11 +1207,10 @@
   "kind": "landuse/residential"
  },
  "yeshiva": {
-  "name": "Yeshiva",
-  "lat": 40.09461,
-  "lng": -74.21778,
-  "source": "osm",
-  "match": "Bezal-el Yeshiva School, 5th Street, A Country Place, Lakewood Township, Ocean County, New",
-  "kind": "amenity/school"
+  "name": "Yeshiva (BMG)",
+  "lat": 40.09538,
+  "lng": -74.22226,
+  "source": "manual",
+  "note": "BMG, 617 6th St."
  }
 }

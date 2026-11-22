@@ -95,12 +95,18 @@ def resolve(location, places):
     precision: "place" (a named street/neighbourhood), "town" (town-level only)
     or None (nothing resolved). `unknown` lists the parts missing from `places`.
     """
-    whole = _known(places, normalize(location))
+    parts = location_parts(location)
+    # A whole-name entry wins, and an intersection matches in either order
+    # ("Sunset & James" == "James & Sunset").
+    cands = [normalize(location)]
+    if len(parts) == 2:
+        cands += [" ".join(parts), " ".join(reversed(parts))]
+    whole = next((e for e in (_known(places, c) for c in cands) if e), None)
     if whole:
         return {"lat": whole["lat"], "lng": whole["lng"],
                 "precision": "town" if normalize(location) in TOWNS else "place", "unknown": []}
 
-    keys = location_parts(location)
+    keys = parts
     found = [(k, _known(places, k)) for k in keys]
     unknown = [k for k, e in found if e is None and k not in places]
     hits = [(k, e) for k, e in found if e]
