@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T19:48:44+00:00",
+  "generated_at": "2026-11-22T20:37:44+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -512,9 +512,9 @@
       ],
       "furnished": true,
       "comments": "Beautifulnewtopoftheline furnished. Great locationneareverything. Av.immediately.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.10207,
+      "lng": -74.20766,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -840,9 +840,9 @@
       ],
       "furnished": false,
       "comments": "Legal apt. 9-ft. ceiling. Eat-in kitchen. Large dining room/living room. Av. imm.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.0693,
+      "lng": -74.21834,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -1498,9 +1498,9 @@
       ],
       "furnished": false,
       "comments": "Furn. temporary end unit, many upgrades. Nice layout. Large EIK. Av. beginning Dec.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.06443,
+      "lng": -74.21911,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -2766,9 +2766,9 @@
       ],
       "furnished": true,
       "comments": "Furnished Choson/Kallah apt. Driveway parking. Shul across street. Av. imm. SITTING ROOM, TEXT: 732-267-3594",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.10746,
+      "lng": -74.23154,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -2957,9 +2957,9 @@
       ],
       "furnished": false,
       "comments": "Available immediately.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.06667,
+      "lng": -74.22197,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -3094,9 +3094,9 @@
       ],
       "furnished": false,
       "comments": "Beautiful apt. New floors, eat-in kitchen, large living room/dining room. Av. imm.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.0693,
+      "lng": -74.21834,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -3452,9 +3452,9 @@
       ],
       "furnished": false,
       "comments": "",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.07979,
+      "lng": -74.23019,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -3782,9 +3782,9 @@
       ],
       "furnished": false,
       "comments": "1-family beautiful bilevel. Spots, new kitchen, deck, lg. bkyd. WD basemt. Frum neighbors.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.16561,
+      "lng": -74.30564,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -3826,9 +3826,9 @@
       ],
       "furnished": false,
       "comments": "New, 3 floors. All high end appliances, new shades. Ready to move in.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.1353,
+      "lng": -74.34684,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -4114,9 +4114,9 @@
       ],
       "furnished": false,
       "comments": "Available December.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.05373,
+      "lng": -74.20184,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -4347,8 +4347,8 @@
       ],
       "furnished": false,
       "comments": "Stunning brand new duplex for short term one-year rental. Available February.",
-      "lat": 40.09291,
-      "lng": -74.21476,
+      "lat": 40.09605,
+      "lng": -74.21595,
       "geo": "place",
       "geo_unknown": []
     },
@@ -4543,9 +4543,9 @@
       ],
       "furnished": false,
       "comments": "Brand new. Whats App-732-573-8124",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.06652,
+      "lng": -74.23199,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -4609,9 +4609,9 @@
       ],
       "furnished": false,
       "comments": "Colonial with basement, garage, on acre property, prime location. Avail. immediately.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.10756,
+      "lng": -74.26226,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -4741,9 +4741,9 @@
       ],
       "furnished": false,
       "comments": "Brand new, 3600 SF.magnificent house. Upgraded throughout. master suite etc..",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.09919,
+      "lng": -74.21713,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -5182,9 +5182,9 @@
       ],
       "furnished": false,
       "comments": "Off Chestnut Street. No carpet. Available immediately.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.05373,
+      "lng": -74.20184,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -5463,6 +5463,11 @@
       "lat": 40.0985,
       "lng": -74.19921
     },
+    "957 w county ln": {
+      "name": "957 W County Line Rd",
+      "lat": 40.10746,
+      "lng": -74.23154
+    },
     "albert": {
       "name": "Albert",
       "lat": 40.06373,
@@ -5473,10 +5478,20 @@
       "lat": 40.07952,
       "lng": -74.20891
     },
+    "bais shalom": {
+      "name": "Bais Shalom",
+      "lat": 40.09919,
+      "lng": -74.21713
+    },
     "beaver crossing": {
       "name": "Beaver Crossing",
       "lat": 40.06406,
       "lng": -74.2313
+    },
+    "beaver crossings": {
+      "name": "Beaver Crossing",
+      "lat": 40.06652,
+      "lng": -74.23199
     },
     "bergen": {
       "name": "Bergen",
@@ -5543,6 +5558,11 @@
       "lat": 40.06289,
       "lng": -74.22168
     },
+    "chateau park": {
+      "name": "Chateau Park",
+      "lat": 40.06443,
+      "lng": -74.21911
+    },
     "cherry st": {
       "name": "Cherry St",
       "lat": 40.09203,
@@ -5558,6 +5578,11 @@
       "lat": 40.0526,
       "lng": -74.19997
     },
+    "clearsteam": {
+      "name": "Clearstream Rd",
+      "lat": 40.10756,
+      "lng": -74.26226
+    },
     "clifton": {
       "name": "Clifton",
       "lat": 40.09291,
@@ -5567,6 +5592,11 @@
       "name": "Clover",
       "lat": 40.08492,
       "lng": -74.20098
+    },
+    "club 21 jackson": {
+      "name": "The Club at Jackson Twenty-One",
+      "lat": 40.1353,
+      "lng": -74.34684
     },
     "club at jackson 21": {
       "name": "Club At Jackson 21",
@@ -5653,6 +5683,11 @@
       "lat": 40.12995,
       "lng": -74.26051
     },
+    "harmony hills jackson": {
+      "name": "Harmony Hills, Jackson",
+      "lat": 40.16561,
+      "lng": -74.30564
+    },
     "hearthstone": {
       "name": "Hearthstone",
       "lat": 40.0619,
@@ -5732,6 +5767,11 @@
       "name": "Jule Court",
       "lat": 40.0888,
       "lng": -74.24942
+    },
+    "kol shimshon": {
+      "name": "Kol Shimshon",
+      "lat": 40.10207,
+      "lng": -74.20766
     },
     "lakewood": {
       "name": "Lakewood",
@@ -5833,6 +5873,11 @@
       "lat": 40.09419,
       "lng": -74.25307
     },
+    "new england village": {
+      "name": "New England Village",
+      "lat": 40.07979,
+      "lng": -74.23019
+    },
     "new prospect jackson": {
       "name": "New Prospect Jackson",
       "lat": 40.11754,
@@ -5917,6 +5962,11 @@
       "name": "Ramtown",
       "lat": 40.10698,
       "lng": -74.16408
+    },
+    "regency estates": {
+      "name": "Regency Estates",
+      "lat": 40.06667,
+      "lng": -74.22197
     },
     "ridge": {
       "name": "Ridge",
@@ -6013,10 +6063,20 @@
       "lat": 40.08815,
       "lng": -74.23501
     },
+    "stamford meadows": {
+      "name": "Stamford Meadows",
+      "lat": 40.05373,
+      "lng": -74.20184
+    },
     "sterling forest": {
       "name": "Sterling Forest",
       "lat": 40.06846,
       "lng": -74.2205
+    },
+    "sterling place": {
+      "name": "Sterling Place",
+      "lat": 40.0693,
+      "lng": -74.21834
     },
     "sunset": {
       "name": "Sunset Ave",

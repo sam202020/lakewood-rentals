@@ -62,10 +62,11 @@
   "kind": "highway/residential"
  },
  "957 w county ln": {
-  "name": "957 W County Ln",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "name": "957 W County Line Rd",
+  "lat": 40.10746,
+  "lng": -74.23154,
+  "source": "manual",
+  "note": "Google Maps exact address."
  },
  "albert": {
   "name": "Albert",
@@ -97,9 +98,10 @@
  },
  "bais shalom": {
   "name": "Bais Shalom",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "lat": 40.09919,
+  "lng": -74.21713,
+  "source": "manual",
+  "note": "Google Maps: BMG Bais Shalom Building."
  },
  "beaver crossing": {
   "name": "Beaver Crossing",
@@ -110,10 +112,11 @@
   "kind": "landuse/residential"
  },
  "beaver crossings": {
-  "name": "Beaver Crossings",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "name": "Beaver Crossing",
+  "lat": 40.06652,
+  "lng": -74.23199,
+  "source": "manual",
+  "note": "Google Maps place (91 Amsterdam Ave); PDF spells it Crossings."
  },
  "belzshlavalef": {
   "name": "Belzshlavalef",
@@ -225,9 +228,10 @@
  },
  "chateau park": {
   "name": "Chateau Park",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "lat": 40.06443,
+  "lng": -74.21911,
+  "source": "manual",
+  "note": "Google Maps place (Cushman St)."
  },
  "cherry st": {
   "name": "Cherry St",
@@ -252,10 +256,11 @@
   "note": "Owner (Google): residential development just off Chestnut St along Holden Square; OSM Holden Square."
  },
  "clearsteam": {
-  "name": "Clearsteam",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "name": "Clearstream Rd",
+  "lat": 40.10756,
+  "lng": -74.26226,
+  "source": "manual",
+  "note": "Google Maps: Clearstream Rd (PDF typo 'Clearsteam'); street match."
  },
  "clifton": {
   "name": "Clifton",
@@ -274,10 +279,11 @@
   "kind": "highway/tertiary"
  },
  "club 21 jackson": {
-  "name": "Club 21 Jackson",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "name": "The Club at Jackson Twenty-One",
+  "lat": 40.1353,
+  "lng": -74.34684,
+  "source": "manual",
+  "note": "Google Maps place (Freehold Rd, Jackson)."
  },
  "club at jackson 21": {
   "name": "Club At Jackson 21",
@@ -413,10 +419,11 @@
   "kind": "place/neighbourhood"
  },
  "harmony hills jackson": {
-  "name": "Harmony Hills Jackson",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "name": "Harmony Hills, Jackson",
+  "lat": 40.16561,
+  "lng": -74.30564,
+  "source": "manual",
+  "note": "Google Maps: Harmony Hill Ct, Jackson; street match, approximate."
  },
  "hearthstone": {
   "name": "Hearthstone",
@@ -566,9 +573,10 @@
  },
  "kol shimshon": {
   "name": "Kol Shimshon",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "lat": 40.10207,
+  "lng": -74.20766,
+  "source": "manual",
+  "note": "Google Maps place: 323 Squankum Rd."
  },
  "lakewood": {
   "name": "Lakewood",
@@ -744,9 +752,10 @@
  },
  "new england village": {
   "name": "New England Village",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "lat": 40.07979,
+  "lng": -74.23019,
+  "source": "manual",
+  "note": "Google Maps place: 241 James St."
  },
  "new hamp": {
   "name": "New Hamp",
@@ -909,9 +918,10 @@
  },
  "regency estates": {
   "name": "Regency Estates",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "lat": 40.06667,
+  "lng": -74.22197,
+  "source": "manual",
+  "note": "Google Maps: Regency Estates Playground, Hekel Rd (neighbourhood-level)."
  },
  "ridge": {
   "name": "Ridge",
@@ -1067,9 +1077,10 @@
  },
  "stamford meadows": {
   "name": "Stamford Meadows",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "lat": 40.05373,
+  "lng": -74.20184,
+  "source": "manual",
+  "note": "Google Maps place: Stamford Hill Rd."
  },
  "sterling forest": {
   "name": "Sterling Forest",
@@ -1081,9 +1092,10 @@
  },
  "sterling place": {
   "name": "Sterling Place",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "lat": 40.0693,
+  "lng": -74.21834,
+  "source": "manual",
+  "note": "Google Maps place (near Gila Ln)."
  },
  "sunset": {
   "name": "Sunset Ave",
