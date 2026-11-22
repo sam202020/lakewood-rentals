@@ -1,27 +1,41 @@
 {
  "13th": {
-  "name": "13Th",
-  "lat": 40.10421,
-  "lng": -74.20903,
-  "source": "osm",
-  "match": "13th Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/residential"
+  "name": "13th Street",
+  "lat": 40.10409,
+  "lng": -74.21028,
+  "source": "manual",
+  "note": "Representative point: 13th St & Princeton Ave (Google Maps).",
+  "label": "13th Street"
+ },
+ "13th princeton": {
+  "name": "13th St & Princeton Ave",
+  "lat": 40.10409,
+  "lng": -74.21028,
+  "source": "manual",
+  "note": "Google Maps intersection."
  },
  "14th": {
-  "name": "14Th",
-  "lat": 40.10316,
-  "lng": -74.23122,
-  "source": "osm",
-  "match": "14th Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/tertiary"
+  "name": "14th Street",
+  "lat": 40.10516,
+  "lng": -74.21461,
+  "source": "manual",
+  "note": "Representative point: 14th St & Lexington Ave (Google Maps).",
+  "label": "14th Street"
+ },
+ "14th lexington": {
+  "name": "14th St & Lexington Ave",
+  "lat": 40.10516,
+  "lng": -74.21461,
+  "source": "manual",
+  "note": "Google Maps intersection."
  },
  "14th street": {
-  "name": "14Th Street",
-  "lat": 40.10316,
-  "lng": -74.23122,
-  "source": "osm",
-  "match": "14th Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/tertiary"
+  "name": "14th Street",
+  "lat": 40.10516,
+  "lng": -74.21461,
+  "source": "manual",
+  "note": "Representative point: 14th St & Lexington Ave (Google Maps).",
+  "label": "14th Street"
  },
  "22 enclave blvd": {
   "name": "22 Enclave Blvd",
@@ -48,20 +62,34 @@
   "label": "55+ Communities (Fairways / Enclave)"
  },
  "5th": {
-  "name": "5Th",
-  "lat": 40.09553,
-  "lng": -74.2019,
-  "source": "osm",
-  "match": "East 5th Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/residential"
+  "name": "5th Street",
+  "lat": 40.09534,
+  "lng": -74.21275,
+  "source": "manual",
+  "note": "Representative point: 5th St & Lexington Ave (Google Maps).",
+  "label": "5th Street"
+ },
+ "5th lexington": {
+  "name": "5th St & Lexington Ave",
+  "lat": 40.09534,
+  "lng": -74.21275,
+  "source": "manual",
+  "note": "Google Maps intersection."
  },
  "7th": {
-  "name": "7Th",
-  "lat": 40.0985,
-  "lng": -74.19921,
-  "source": "osm",
-  "match": "East 7th Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/residential"
+  "name": "7th Street",
+  "lat": 40.09775,
+  "lng": -74.20907,
+  "source": "manual",
+  "note": "Owner: 7th St is west of the tracks, a different street from E 7th. Point: 7th St & Princeton Ave (Google Maps).",
+  "label": "7th Street"
+ },
+ "7th princeton": {
+  "name": "7th St & Princeton Ave",
+  "lat": 40.09775,
+  "lng": -74.20907,
+  "source": "manual",
+  "note": "Google Maps intersection."
  },
  "957 w county ln": {
   "name": "957 W County Line Rd",
@@ -243,28 +271,28 @@
   "kind": "highway/residential"
  },
  "central": {
-  "name": "Central",
-  "lat": 40.09419,
-  "lng": -74.25307,
-  "source": "osm",
-  "match": "New Central Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/tertiary"
+  "name": "Central Avenue",
+  "lat": 40.0905,
+  "lng": -74.2377,
+  "source": "manual",
+  "note": "Owner: Central = Central Avenue; when unspecific, the junction of Central Ave and New Central Ave (OSM: the two meet near here).",
+  "label": "Central Avenue"
  },
  "central avenue": {
   "name": "Central Avenue",
-  "lat": 40.08939,
-  "lng": -74.23015,
-  "source": "osm",
-  "match": "Central Avenue, A Country Place, Lakewood Township, Ocean County, New Jersey, 08701, Unite",
-  "kind": "highway/primary"
+  "lat": 40.0905,
+  "lng": -74.2377,
+  "source": "manual",
+  "note": "Owner: unspecific Central = junction of Central Ave and New Central Ave.",
+  "label": "Central Avenue"
  },
  "chateau": {
-  "name": "Chateau",
-  "lat": 40.06289,
-  "lng": -74.22168,
-  "source": "osm",
-  "match": "Chateau Drive, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/residential"
+  "name": "Chateau Park",
+  "lat": 40.06443,
+  "lng": -74.21911,
+  "source": "manual",
+  "note": "Owner: Chateau means Chateau Park.",
+  "label": "Chateau Park"
  },
  "chateau park": {
   "name": "Chateau Park",
@@ -398,13 +426,19 @@
   "kind": "highway/residential"
  },
  "e 7th": {
-  "name": "E 7Th",
-  "lat": 40.0985,
-  "lng": -74.19921,
-  "source": "osm",
-  "match": "East 7th Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/residential",
-  "label": "7th Street"
+  "name": "E 7th Street",
+  "lat": 40.09862,
+  "lng": -74.20141,
+  "source": "manual",
+  "note": "Owner: E 7th is a short street east of Park Ave, separate from 7th St. Point: E 7th & Nowlan Pl (Google Maps).",
+  "label": "E 7th Street"
+ },
+ "e 7th nowlan": {
+  "name": "E 7th St & Nowlan Pl",
+  "lat": 40.09862,
+  "lng": -74.20141,
+  "source": "manual",
+  "note": "Google Maps intersection."
  },
  "east end": {
   "name": "East End",
@@ -661,28 +695,27 @@
   "kind": "highway/residential"
  },
  "locust": {
-  "name": "Locust",
-  "lat": 40.04706,
-  "lng": -74.21205,
-  "source": "osm",
-  "match": "Locust Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/tertiary"
+  "name": "Locust Street",
+  "lat": 40.04684,
+  "lng": -74.20966,
+  "source": "manual",
+  "note": "Owner: Locust and Locust St are the same street (Google Maps Locust St).",
+  "label": "Locust Street"
  },
  "locust grove": {
   "name": "Locust Grove",
-  "lat": 40.21393,
-  "lng": -74.09581,
-  "source": "osm",
-  "match": "Locust Grove Road, Tinton Falls, Monmouth County, New Jersey, 07753, United States",
-  "kind": "highway/residential"
+  "lat": 40.04536,
+  "lng": -74.20059,
+  "source": "manual",
+  "note": "Google Maps: Belz - Shlav Gimel / Locust Grove. Replaces a wrong OSM match ~9 mi away (Neptune area)."
  },
  "locust st": {
-  "name": "Locust St",
-  "lat": 40.04627,
-  "lng": -74.20362,
-  "source": "osm",
-  "match": "Locust Street, Pine Acres, Lakewood Township, Ocean County, New Jersey, 08701, United Stat",
-  "kind": "highway/tertiary"
+  "name": "Locust Street",
+  "lat": 40.04684,
+  "lng": -74.20966,
+  "source": "manual",
+  "note": "Owner: Locust and Locust St are the same street (Google Maps Locust St).",
+  "label": "Locust Street"
  },
  "lutzk": {
   "name": "Lutzk",
@@ -830,11 +863,10 @@
  },
  "oak glen": {
   "name": "Oak Glen",
-  "lat": 39.98703,
-  "lng": -74.14995,
-  "source": "osm",
-  "match": "Oak Glen, Toms River, Ocean County, New Jersey, 08753, United States",
-  "kind": "place/neighbourhood"
+  "lat": 40.16928,
+  "lng": -74.19737,
+  "source": "manual",
+  "note": "Google Maps: Oak Glen, Howell Township (listings say Oak Glen, Howell). Replaces an OSM match in Toms River."
  },
  "oak meadows": {
   "name": "Oak Meadows",
@@ -866,20 +898,20 @@
   "kind": "amenity/place_of_worship"
  },
  "park": {
-  "name": "Park",
-  "lat": 40.0525,
-  "lng": -74.18299,
-  "source": "osm",
-  "match": "John Davison Rockefeller Memorial Highway, Lakewood Industrial Park, Lakewood Township, Oc",
-  "kind": "highway/trunk"
+  "name": "Park Avenue",
+  "lat": 40.09916,
+  "lng": -74.2047,
+  "source": "manual",
+  "note": "Owner: Park and Park Ave are the same street (Google Maps Park Ave).",
+  "label": "Park Avenue"
  },
  "park ave": {
-  "name": "Park Ave",
-  "lat": 40.0994,
-  "lng": -74.20452,
-  "source": "osm",
-  "match": "Park Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/residential"
+  "name": "Park Avenue",
+  "lat": 40.09916,
+  "lng": -74.2047,
+  "source": "manual",
+  "note": "Owner: Park and Park Ave are the same street (Google Maps Park Ave).",
+  "label": "Park Avenue"
  },
  "park rt 88": {
   "name": "Park Ave S & Route 88",
@@ -953,11 +985,10 @@
  },
  "raintree": {
   "name": "Raintree",
-  "lat": 40.24439,
-  "lng": -74.31119,
-  "source": "osm",
-  "match": "Raintree, West Freehold, Freehold Township, Monmouth County, New Jersey, 07728, United Sta",
-  "kind": "place/neighbourhood"
+  "lat": 40.0968,
+  "lng": -74.16462,
+  "source": "manual",
+  "note": "Google Maps: Raintree community, east Lakewood (Raintree Community Shul + Rain Tree). Replaces a wrong OSM match in Freehold (11 mi away)."
  },
  "ramtown": {
   "name": "Ramtown",
@@ -998,12 +1029,11 @@
   "note": "Owner asked to find; Google Maps intersection."
  },
  "rockwell": {
-  "name": "Rockwell",
-  "lat": 40.02297,
-  "lng": -74.33471,
-  "source": "osm",
-  "match": "Rockwell Road, Manchester Township, Ocean County, New Jersey, 08733, United States",
-  "kind": "highway/residential"
+  "name": "The Rockwell",
+  "lat": 40.05421,
+  "lng": -74.2224,
+  "source": "manual",
+  "note": "Google Maps: The Rockwell, Lakewood. Replaces a wrong OSM match on Rockwell Rd, Manchester."
  },
  "rose ct": {
   "name": "Rose Ct",
@@ -1095,20 +1125,20 @@
   "kind": "highway/residential"
  },
  "somerset": {
-  "name": "Somerset",
-  "lat": 40.07137,
-  "lng": -74.19811,
-  "source": "osm",
-  "match": "Somerset Walk, Lakewood Township, Ocean County, New Jersey, United States",
-  "kind": "landuse/residential"
+  "name": "Somerset Avenue",
+  "lat": 40.10035,
+  "lng": -74.1955,
+  "source": "manual",
+  "note": "Owner: Somerset and Somerset Ave are the same street (Google Maps Somerset Ave).",
+  "label": "Somerset Avenue"
  },
  "somerset avenue": {
   "name": "Somerset Avenue",
-  "lat": 40.09964,
-  "lng": -74.19536,
-  "source": "osm",
-  "match": "Somerset Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/residential"
+  "lat": 40.10035,
+  "lng": -74.1955,
+  "source": "manual",
+  "note": "Owner: Somerset and Somerset Ave are the same street (Google Maps Somerset Ave).",
+  "label": "Somerset Avenue"
  },
  "somerset walk": {
   "name": "Somerset Walk",
@@ -1217,11 +1247,10 @@
  },
  "the reserve": {
   "name": "The Reserve",
-  "lat": 39.96185,
-  "lng": -74.37833,
-  "source": "osm",
-  "match": "The Reserve at Lake Ridge, Whiting, Manchester Township, Ocean County, New Jersey, United ",
-  "kind": "landuse/residential"
+  "lat": 40.1219,
+  "lng": -74.27709,
+  "source": "manual",
+  "note": "APPROXIMATE: listing says The Reserve, Jackson; Google Maps shows Sixty Acre Reserve (Jackson). Replaces an OSM match in Whiting (Manchester)."
  },
  "the vineyards": {
   "name": "The Vineyards",
@@ -1300,12 +1329,11 @@
   "kind": "highway/residential"
  },
  "wyndham": {
-  "name": "Wyndham",
-  "lat": 40.24436,
-  "lng": -74.31983,
-  "source": "osm",
-  "match": "Wyndham Place, Freehold Township, Monmouth County, New Jersey, United States",
-  "kind": "landuse/residential"
+  "name": "Wyndham Place",
+  "lat": 40.06972,
+  "lng": -74.22742,
+  "source": "manual",
+  "note": "Google Maps: Wyndham Place, Lakewood. Replaces a wrong OSM match in Freehold."
  },
  "yeshiva": {
   "name": "Yeshiva (BMG)",

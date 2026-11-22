@@ -124,6 +124,14 @@ class ShippedPlaces(unittest.TestCase):
     def setUpClass(cls):
         cls.places = geo.load_places()
 
+    def test_places_named_in_listings_are_in_the_right_town(self):
+        """Regression: OSM once put Raintree/Wyndham in Freehold and Locust Grove near Asbury Park."""
+        pl = self.places
+        for key in ("raintree", "wyndham", "rockwell", "locust grove", "central", "chateau"):
+            d = geo.haversine_miles(pl[key]["lat"], pl[key]["lng"], *geo.LAKEWOOD)
+            self.assertLess(d, 5, key)
+        self.assertGreater(pl["oak glen"]["lat"], 40.15)          # Howell, north of Lakewood
+
     def test_every_resolved_place_is_near_lakewood(self):
         far = [k for k, e in self.places.items()
                if e.get("lat") is not None and not geo.plausible(e["lat"], e["lng"])]
@@ -146,7 +154,9 @@ class ShippedPlaces(unittest.TestCase):
         for text, key in [("Westgate", "westgate"), ("Sunset / James Area", "sunset james"),
                           ("Sunset & James", "sunset james"), ("James & Sunset", "sunset james"),
                           ("Oak & Vine", "oak vine"), ("Villas", "villas"), ("Yeshiva Area", "yeshiva"),
-                          ("The 70", "the 70"), ("Brook Hill", "brook hill"), ("Chestnut Area", "chestnut"), ("Stamford Meadows", "stamford meadows"), ("Bais Shalom Area", "bais shalom"), ("Heart of Ridge", "heart of ridge"), ("Ridge / Negba St.", "ridge negba st"), ("Negba St. / Ridge", "ridge negba st"),
+                          ("The 70", "the 70"), ("Brook Hill", "brook hill"), ("Chestnut Area", "chestnut"), ("Stamford Meadows", "stamford meadows"), ("Bais Shalom Area", "bais shalom"), ("Heart of Ridge", "heart of ridge"), ("13th & Princeton", "13th princeton"), ("14th & Lexington", "14th lexington"),
+                          ("5th & Lexington", "5th lexington"), ("7th & Princeton", "7th princeton"), ("E.7th & Nowlan", "e 7th nowlan"),
+                          ("Central Area", "central"), ("Off Locust St.", "locust st"), ("Chateau Park", "chateau park"), ("Ridge / Negba St.", "ridge negba st"), ("Negba St. / Ridge", "ridge negba st"),
                           ("Brook / Ridge / E.7th", "brook ridge e 7th"), ("Ridge / Bergen", "ridge bergen"), ("Belz Shlav Aleph", "belz shlav aleph"), ("Prime Jackson Area", "prime jackson"), ("55+Community", "55+community"), ("Ridge Area", "ridge"),
                           ("957 W. County Ln.", "957 w county ln"), ("Club 21 Jackson", "club 21 jackson"), ("Chestnut Gardens", "chestnut gardens"), ("Off Chestnut", "chestnut"),
                           ("Cross & Mass.", "cross mass"), ("Mass. & Cross", "cross mass"), ("Evergreen Gardens", "evergreen gardens"), ("The 70 Phase II", "the 70 phase ii")]:
@@ -267,6 +277,23 @@ class ShippedPicker(unittest.TestCase):
             self.assertNotRegex(n, r"^R(?:t|te)\b", n)
             self.assertNotIn("avg of", n.lower())
             self.assertNotIn("middle", n.lower())
+
+    def test_seventh_and_east_seventh_are_different_streets(self):
+        pts = {p["name"]: (p["lat"], p["lng"]) for p in self.picker}
+        self.assertIn("7th Street", pts)
+        self.assertIn("E 7th Street", pts)
+        self.assertNotEqual(pts["7th Street"], pts["E 7th Street"])
+        self.assertLess(pts["7th Street"][1], pts["E 7th Street"][1])      # 7th is west of E 7th
+
+    def test_same_street_spellings_are_one_entry(self):
+        for name, bare in (("Central Avenue", "Central"), ("Locust Street", "Locust"), ("Park Avenue", "Park"),
+                           ("Somerset Avenue", "Somerset"), ("Chateau Park", "Chateau")):
+            self.assertEqual(self.names.count(name), 1, name)
+            self.assertNotIn(bare, self.names)
+
+    def test_central_is_where_central_meets_new_central(self):
+        pts = {p["name"]: (p["lat"], p["lng"]) for p in self.picker}
+        self.assertLess(geo.haversine_miles(*pts["Central Avenue"], 40.0905, -74.2377), 0.1)
 
     def test_routes_point_at_different_places(self):
         pts = {p["name"]: (p["lat"], p["lng"]) for p in self.picker}
