@@ -169,6 +169,24 @@ def parse(fileobj):
                     has_phone = any(PHONE_RE.search(w["text"]) for w in r["words"])
                     if has_phone or any(COL["phone"][0] <= w["x0"] < COL["phone"][1] for w in r["words"]):
                         anchors.append(i)
+            # Location text is vertically centred on the listing's first line and
+            # may wrap onto a line ABOVE or BELOW it, so row-block membership is
+            # unreliable. Assign every location-column word to the vertically
+            # nearest listing instead.
+            a_tops = [rows[ri]["top"] for ri in anchors]
+            loc_words = {k: [] for k in range(len(anchors))}
+            lx0, lx1 = COL["loc"]
+            for r in rows:
+                if any(w["text"] == "Telephone" for w in r["words"]) or not a_tops:
+                    continue
+                dists = [abs(r["top"] - t) for t in a_tops]
+                k = min(range(len(dists)), key=dists.__getitem__)
+                if dists[k] > 14:
+                    continue
+                for w in r["words"]:
+                    if lx0 - 6 <= w["x0"] < lx1 and "(cid" not in w["text"] \
+                            and not re.fullmatch(r"[\d,]{3,5}|\d[½¼¾]?", w["text"]):
+                        loc_words[k].append((round(r["top"]), w["x0"], w["text"]))
             for a_idx, ri in enumerate(anchors):
                 end = anchors[a_idx + 1] if a_idx + 1 < len(anchors) else len(rows)
                 block = rows[ri:end]
@@ -196,7 +214,21 @@ def parse(fileobj):
                             continue
                         buckets[c].append(w["text"])
                 code = buckets["code"][0] if buckets["code"] else ""
-                loc, loc_phones = clean_loc(" ".join(buckets["loc"]))
+                lw = sorted(loc_words[a_idx])
+                lines = []
+                for top, _x, text in lw:
+                    if lines and lines[-1][0] == top:
+                        lines[-1][1].append(text)
+                    else:
+                        lines.append((top, [text]))
+                # Full-width free-text ads spill description words into this
+                # column; real locations are short phrases of short tokens.
+                lines = [(tp, t) for tp, t in lines
+                         if len(" ".join(t)) <= 36 and max(len(x) for x in t) <= 20]
+                loc_parts = [clean_loc(" ".join(t))[0] for _, t in lines]
+                loc_ph = [p for _, t in lines for p in clean_loc(" ".join(t))[1]]
+                loc = " / ".join(p for p in loc_parts if p)
+                loc_phones = loc_ph
                 phone_join = " ".join(buckets["phone"])
                 phones = PHONE_RE.findall(phone_join.replace(" ", "")) or PHONE_RE.findall(phone_join)
                 for lp in loc_phones:
