@@ -136,7 +136,8 @@ class ShippedPlaces(unittest.TestCase):
                     "stamford meadows", "sterling place", "beaver crossings", "chateau park", "regency estates",
                     "clearsteam", "957 w county ln", "kol shimshon", "new england village", "bais shalom",
                     "club 21 jackson", "harmony hills jackson", "ridge", "heart of ridge", "ridge negba st", "brook ridge e 7th", "ridge bergen",
-                    "belz shlav aleph", "belz shlav beis", "belz shlav gimel", "chestnut", "chestnut gardens", "cross", "cross mass", "brook", "evergreen gardens"):
+                    "belz shlav aleph", "belz shlav beis", "belz shlav gimel",
+                    "prime jackson", "55+community", "fairways", "enclave", "chestnut", "chestnut gardens", "cross", "cross mass", "brook", "evergreen gardens"):
             with self.subTest(place=key):
                 self.assertEqual(self.places[key]["source"], "manual")
                 self.assertIsNotNone(self.places[key]["lat"])
@@ -146,7 +147,7 @@ class ShippedPlaces(unittest.TestCase):
                           ("Sunset & James", "sunset james"), ("James & Sunset", "sunset james"),
                           ("Oak & Vine", "oak vine"), ("Villas", "villas"), ("Yeshiva Area", "yeshiva"),
                           ("The 70", "the 70"), ("Brook Hill", "brook hill"), ("Chestnut Area", "chestnut"), ("Stamford Meadows", "stamford meadows"), ("Bais Shalom Area", "bais shalom"), ("Heart of Ridge", "heart of ridge"), ("Ridge / Negba St.", "ridge negba st"), ("Negba St. / Ridge", "ridge negba st"),
-                          ("Brook / Ridge / E.7th", "brook ridge e 7th"), ("Ridge / Bergen", "ridge bergen"), ("Belz Shlav Aleph", "belz shlav aleph"), ("Ridge Area", "ridge"),
+                          ("Brook / Ridge / E.7th", "brook ridge e 7th"), ("Ridge / Bergen", "ridge bergen"), ("Belz Shlav Aleph", "belz shlav aleph"), ("Prime Jackson Area", "prime jackson"), ("55+Community", "55+community"), ("Ridge Area", "ridge"),
                           ("957 W. County Ln.", "957 w county ln"), ("Club 21 Jackson", "club 21 jackson"), ("Chestnut Gardens", "chestnut gardens"), ("Off Chestnut", "chestnut"),
                           ("Cross & Mass.", "cross mass"), ("Mass. & Cross", "cross mass"), ("Evergreen Gardens", "evergreen gardens"), ("The 70 Phase II", "the 70 phase ii")]:
             with self.subTest(text=text):
@@ -176,6 +177,16 @@ class ShippedPlaces(unittest.TestCase):
     def test_ridge_bergen_is_between_the_two_streets(self):
         e = self.places["ridge bergen"]
         self.assertTrue(40.0920 < e["lat"] < 40.0979)
+
+    def test_guessed_places_are_averages_of_the_named_places(self):
+        pl = self.places
+        f, e, c = pl["fairways"], pl["enclave"], pl["55+community"]
+        self.assertAlmostEqual(c["lat"], (f["lat"] + e["lat"]) / 2, places=4)
+        self.assertAlmostEqual(c["lng"], (f["lng"] + e["lng"]) / 2, places=4)
+        names = ["brookwood 1", "brookwood 2", "brookwood 4", "harmony farms"]
+        pj = pl["prime jackson"]
+        self.assertAlmostEqual(pj["lat"], sum(pl[n]["lat"] for n in names) / 4, delta=0.0005)
+        self.assertAlmostEqual(pj["lng"], sum(pl[n]["lng"] for n in names) / 4, delta=0.0005)
 
     def test_villas_is_on_twin_oaks(self):
         self.assertEqual((self.places["villas"]["lat"], self.places["villas"]["lng"]),

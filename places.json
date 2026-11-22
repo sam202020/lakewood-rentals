@@ -40,10 +40,11 @@
   "kind": "place/house"
  },
  "55+community": {
-  "name": "55+Community",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "name": "55+ Community (avg of Fairways & Enclave)",
+  "lat": 40.05685,
+  "lng": -74.23106,
+  "source": "manual",
+  "note": "Owner's guess: average of the Fairways and the Enclave, the Lakewood 55+ communities on Massachusetts Ave."
  },
  "5th": {
   "name": "5Th",
@@ -181,6 +182,13 @@
   "source": "osm",
   "match": "1, Brookwood Parkway, Jackson Township, Ocean County, New Jersey, 08527, United States",
   "kind": "place/house"
+ },
+ "brookwood 2": {
+  "name": "Brookwood 2",
+  "lat": 40.11506,
+  "lng": -74.24655,
+  "source": "manual",
+  "note": "Google Maps: 2 Brookwood Pkwy, Jackson."
  },
  "brookwood 3": {
   "name": "Brookwood 3",
@@ -400,12 +408,11 @@
   "kind": "highway/residential"
  },
  "enclave": {
-  "name": "Enclave",
-  "lat": 40.05445,
-  "lng": -74.22769,
-  "source": "osm",
-  "match": "Enclave, Lakewood Township, Ocean County, New Jersey, United States",
-  "kind": "landuse/residential"
+  "name": "Enclave at the Fairways (55+)",
+  "lat": 40.05623,
+  "lng": -74.22761,
+  "source": "manual",
+  "note": "Google Maps: Enclave at the Fairways; across Massachusetts Ave from the Fairways (owner)."
  },
  "evergreen gardens": {
   "name": "Evergreen Gardens",
@@ -415,12 +422,11 @@
   "note": "Owner (Google Maps): near Route 70 and Vermont Ave; OSM shared node of Route 70 & Vermont Ave."
  },
  "fairways": {
-  "name": "Fairways",
-  "lat": 40.05957,
-  "lng": -74.23693,
-  "source": "osm",
-  "match": "Fairways, Lakewood Township, Ocean County, New Jersey, United States",
-  "kind": "landuse/residential"
+  "name": "The Fairways at Lake Ridge (55+)",
+  "lat": 40.05747,
+  "lng": -74.23451,
+  "source": "manual",
+  "note": "Google Maps: Fairways at Lake Ridge; across Massachusetts Ave from the Enclave (owner)."
  },
  "glen avenue": {
   "name": "Glen Avenue",
@@ -440,11 +446,10 @@
  },
  "harmony farms": {
   "name": "Harmony Farms",
-  "lat": 40.12995,
-  "lng": -74.26051,
-  "source": "osm",
-  "match": "Harmony Farms, Jackson Township, Ocean County, New Jersey, 07831, United States",
-  "kind": "place/neighbourhood"
+  "lat": 40.13064,
+  "lng": -74.25709,
+  "source": "manual",
+  "note": "Google Maps: Harmony Farms Ln, Jackson."
  },
  "harmony hills jackson": {
   "name": "Harmony Hills, Jackson",
@@ -900,10 +905,11 @@
   "kind": "highway/tertiary"
  },
  "prime jackson": {
-  "name": "Prime Jackson",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "name": "Prime Jackson Area",
+  "lat": 40.11913,
+  "lng": -74.24929,
+  "source": "manual",
+  "note": "Owner's guess: north of County Line Rd, west of Lakewood; average of Brookwood 1, 2, 4 and Harmony Farms."
  },
  "princeton": {
   "name": "Princeton",
