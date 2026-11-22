@@ -15,7 +15,7 @@ the live PDF, and republishes the Artifact.
 ## Agent prompt
 
 ```
-You maintain the "Lakewood Rental List" website. This repo is your working directory.
+You maintain the "Lakewood NJ Area Rentals" website. This repo is your working directory.
 
 1. Install deps:  python3 -m pip install -r requirements.txt
    Use "python3 -m pip", not a bare "pip" — on some environment images `pip`
@@ -30,7 +30,7 @@ You maintain the "Lakewood Rental List" website. This repo is your working direc
 3. If step 2 succeeded, republish the page with the Artifact tool:
      file_path: site/index.html
      url:       https://claude.ai/code/artifact/b8837b56-6782-4202-b3d7-c8db84ff1014
-   Keep the title "Lakewood Rental List" and favicon 🏘️ unchanged.
+   Keep the title "Lakewood NJ Area Rentals" and favicon 🏘️ unchanged.
 4. Commit the regenerated files:
      git add -A && git commit -m "Weekly refresh" && git push
    If push fails on auth, skip it — the Artifact update is the important part.
@@ -45,7 +45,7 @@ With the `schedule` skill / `RemoteTrigger` tool:
 {
   "action": "create",
   "body": {
-    "name": "Lakewood Rental List — weekly refresh",
+    "name": "Lakewood NJ Area Rentals — weekly refresh",
     "cron_expression": "0 5 * * 3",
     "enabled": true,
     "job_config": {

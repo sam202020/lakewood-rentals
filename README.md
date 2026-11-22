@@ -1,4 +1,4 @@
-# Lakewood Rental List
+# Lakewood NJ Area Rentals
 
 A searchable web index of Lakewood / Jackson area rentals, rebuilt every week from
 the **Masa U'Matan** rental list PDF (<https://masaumatan.com/MasaRentals.pdf>).
