@@ -95,6 +95,8 @@ def clean_loc(s):
     s = re.sub(r"\bT\.?\s?R\.?(?=\s|/|,|$)", "Toms River", s)
     s = re.sub(r"\bToms\s+R\.?(?=\s|/|,|$)", "Toms River", s)
     s = re.sub(r"\bJksn\.?(?=\s|/|,|$)", "Jackson", s)
+    s = re.sub(r"\bLkwd\.?\s?Comm\.?\s?", "Lakewood ", s, flags=re.I)   # "Lkwd.Comm.Area" -> "Lakewood Area"
+    s = re.sub(r"\bLkwd\.?(?=\s|/|,|$)", "Lakewood", s, flags=re.I)
     return re.sub(r"\s+", " ", s).strip(" ,/-"), trailing_phones
 
 
