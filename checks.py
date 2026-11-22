@@ -78,4 +78,17 @@ def check(listings, previous_count=None):
     if _rate(listings, lambda x: x.get("rent")) < 0.25:
         warnings.append("under 25% of listings have a numeric rent")
 
+    # Map coordinates (only if build.py attached them): never a hard failure -
+    # a listing with no coordinates is still shown, it just sorts last by distance.
+    if any("geo_unknown" in x for x in listings):
+        placed = _rate(listings, lambda x: isinstance(x.get("lat"), (int, float)))
+        unknown = sorted({k for x in listings for k in x.get("geo_unknown", [])})
+        if unknown:
+            shown = ", ".join(unknown[:12]) + (f" (+{len(unknown) - 12} more)" if len(unknown) > 12 else "")
+            warnings.append(
+                f"{len(unknown)} place name(s) not in places.json, so those listings are not on the map: "
+                f"{shown} - run tools/geocode_places.py or add them by hand")
+        if placed < 0.70:
+            warnings.append(f"only {placed:.0%} of listings can be placed on the map")
+
     return errors, warnings

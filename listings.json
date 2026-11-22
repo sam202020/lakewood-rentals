@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T07:32:15+00:00",
+  "generated_at": "2026-11-22T07:47:32+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -26,7 +26,11 @@
         "732-228-1487"
       ],
       "furnished": true,
-      "comments": "Furnished/unfurnished rooms for single learning/earning men in house of singles."
+      "comments": "Furnished/unfurnished rooms for single learning/earning men in house of singles.",
+      "lat": 40.08734,
+      "lng": -74.25544,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH165_1033:5",
@@ -44,7 +48,11 @@
         "732-567-1420"
       ],
       "furnished": false,
-      "comments": "2384 sq. ft. colonial. Finished basement, 2-car garage. Available immediately."
+      "comments": "2384 sq. ft. colonial. Finished basement, 2-car garage. Available immediately.",
+      "lat": 40.10698,
+      "lng": -74.16408,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1165_1034:7",
@@ -62,7 +70,11 @@
         "732-276-1786"
       ],
       "furnished": false,
-      "comments": "Freshly renovated house. Available immediately."
+      "comments": "Freshly renovated house. Available immediately.",
+      "lat": 40.09419,
+      "lng": -74.25307,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11A55_1016:20",
@@ -85,7 +97,11 @@
         "845-641-5899"
       ],
       "furnished": true,
-      "comments": "Brand new upgraded furnished Choson/ Kallah apt. Available immediately."
+      "comments": "Brand new upgraded furnished Choson/ Kallah apt. Available immediately.",
+      "lat": 40.07433,
+      "lng": -74.21049,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1AA166_1036:20",
@@ -103,7 +119,11 @@
         "848-373-6317"
       ],
       "furnished": false,
-      "comments": "Nicely upgraded including appliances, fully vinyl. Available immediately."
+      "comments": "Nicely upgraded including appliances, fully vinyl. Available immediately.",
+      "lat": 40.07033,
+      "lng": -74.19917,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A166_1037:4",
@@ -126,7 +146,11 @@
         "443-604-6936"
       ],
       "furnished": true,
-      "comments": "Beautiful upgraded furnished apt. for Choson/Kallah. Must see. Av. immediately."
+      "comments": "Beautiful upgraded furnished apt. for Choson/Kallah. Must see. Av. immediately.",
+      "lat": 40.07685,
+      "lng": -74.20613,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11A66_1035:15",
@@ -149,7 +173,11 @@
         "845-558-2190"
       ],
       "furnished": true,
-      "comments": "Beautiful spacious furnished Choson/Kallah apt. Lots of closet space. Av. immediately."
+      "comments": "Beautiful spacious furnished Choson/Kallah apt. Lots of closet space. Av. immediately.",
+      "lat": 40.06373,
+      "lng": -74.19895,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UH1127_964:15",
@@ -167,7 +195,11 @@
         "732-991-8646"
       ],
       "furnished": true,
-      "comments": "Beautiful, fully furnished home on lake with gorgeous lake view."
+      "comments": "Beautiful, fully furnished home on lake with gorgeous lake view.",
+      "lat": 40.00317,
+      "lng": -74.25653,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1H166_1036:17",
@@ -185,7 +217,11 @@
         "732-551-0188"
       ],
       "furnished": true,
-      "comments": "Short term furnished rental available daily/weekly, etc. thru December."
+      "comments": "Short term furnished rental available daily/weekly, etc. thru December.",
+      "lat": 40.10572,
+      "lng": -74.16878,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH166_1035:3",
@@ -203,7 +239,11 @@
         "347-860-5192"
       ],
       "furnished": false,
-      "comments": "Beautiful. Finished basement, stunning backyard. Short/long term. Av. imm."
+      "comments": "Beautiful. Finished basement, stunning backyard. Short/long term. Av. imm.",
+      "lat": 40.14095,
+      "lng": -74.26653,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1TT166_1036:8",
@@ -221,7 +261,11 @@
         "845-596-9553"
       ],
       "furnished": false,
-      "comments": "Brand new. Many upgrades."
+      "comments": "Brand new. Many upgrades.",
+      "lat": 40.06406,
+      "lng": -74.2313,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1HH166_1036:12",
@@ -239,7 +283,11 @@
         "917-769-9261"
       ],
       "furnished": false,
-      "comments": "Cul-de-sac past Harfield. Beautiful colonial. Kosher kitchen, 2-car garage, unfin. basemt."
+      "comments": "Cul-de-sac past Harfield. Beautiful colonial. Kosher kitchen, 2-car garage, unfin. basemt.",
+      "lat": 40.11754,
+      "lng": -74.25369,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1HH166_1036:18",
@@ -257,7 +305,11 @@
         "732-575-7361"
       ],
       "furnished": false,
-      "comments": "Very well kept, upgraded kitchen, suite on lower level, close to Shuls. Av. Av. imm."
+      "comments": "Very well kept, upgraded kitchen, suite on lower level, close to Shuls. Av. Av. imm.",
+      "lat": 40.1413,
+      "lng": -74.22366,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "U11TT66_1036:16",
@@ -275,7 +327,11 @@
         "347-377-2614"
       ],
       "furnished": false,
-      "comments": "Corner unit, nice community, finished basement. Available immediately. Brand new, secluded fully Private corner unit, last unit in development. Scenic backyard and huge garden. Available immediately."
+      "comments": "Corner unit, nice community, finished basement. Available immediately. Brand new, secluded fully Private corner unit, last unit in development. Scenic backyard and huge garden. Available immediately.",
+      "lat": 40.04319,
+      "lng": -74.24243,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1TT115_935:4",
@@ -293,7 +349,11 @@
         "347-756-2656"
       ],
       "furnished": false,
-      "comments": "Beautiful end unit. Available immediately."
+      "comments": "Beautiful end unit. Available immediately.",
+      "lat": 40.07005,
+      "lng": -74.21677,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UH1166_1038:2",
@@ -316,7 +376,11 @@
         "718-619-6460"
       ],
       "furnished": true,
-      "comments": "Beautifully furnished home, lg. bkyd., with heated pool, new appli., also winter rental."
+      "comments": "Beautifully furnished home, lg. bkyd., with heated pool, new appli., also winter rental.",
+      "lat": 40.00686,
+      "lng": -74.23082,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UH1166_1038:4",
@@ -339,7 +403,11 @@
         "435-203-7182"
       ],
       "furnished": true,
-      "comments": "Beautifully redone home, furnished, close to Shuls. Brookwood/Harmony Farms area."
+      "comments": "Beautifully redone home, furnished, close to Shuls. Brookwood/Harmony Farms area.",
+      "lat": 40.11518,
+      "lng": -74.36478,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "1A151_1008:9",
@@ -362,7 +430,11 @@
         "732-905-7710"
       ],
       "furnished": true,
-      "comments": "Furnished, long or short term. Great location (near Park/Princeton)! Av. imm."
+      "comments": "Furnished, long or short term. Great location (near Park/Princeton)! Av. imm.",
+      "lat": 40.10572,
+      "lng": -74.16878,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A154_1016:9",
@@ -385,7 +457,11 @@
         "848-240-5577"
       ],
       "furnished": true,
-      "comments": "Beautiful upgraded furnished, Heimishe area. 10 ft. ceilings. Av. immediately. towels, linen. Playroom, kitchen, etc. full baths. Call, text or Whatsapp."
+      "comments": "Beautiful upgraded furnished, Heimishe area. 10 ft. ceilings. Av. immediately. towels, linen. Playroom, kitchen, etc. full baths. Call, text or Whatsapp.",
+      "lat": 40.10567,
+      "lng": -74.19664,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A155_1017:2",
@@ -408,7 +484,11 @@
         "917-946-1450"
       ],
       "furnished": true,
-      "comments": "New furnished, very sunny. Kitchenette, W/D. Available short or long term."
+      "comments": "New furnished, very sunny. Kitchenette, W/D. Available short or long term.",
+      "lat": 40.0503,
+      "lng": -74.21092,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A143_999:14",
@@ -431,7 +511,11 @@
         "732-503-2000"
       ],
       "furnished": true,
-      "comments": "Beautifulnewtopoftheline furnished. Great locationneareverything. Av.immediately."
+      "comments": "Beautifulnewtopoftheline furnished. Great locationneareverything. Av.immediately.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "UHH1120_948:15",
@@ -449,7 +533,11 @@
         "848-448-1936"
       ],
       "furnished": true,
-      "comments": "Beautifully updated ranch. Multiple minyan- im 10 min. walk, low utilities. Opt. furnished."
+      "comments": "Beautifully updated ranch. Multiple minyan- im 10 min. walk, low utilities. Opt. furnished.",
+      "lat": 40.10698,
+      "lng": -74.16408,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH168_1040:4",
@@ -467,7 +555,11 @@
         "917-744-8888"
       ],
       "furnished": false,
-      "comments": "Beautiful spacious ranch, freshly painted. In-ground pool. Also office/poss. 5th BR."
+      "comments": "Beautiful spacious ranch, freshly painted. In-ground pool. Also office/poss. 5th BR.",
+      "lat": 40.00317,
+      "lng": -74.25653,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1H168_1040:9",
@@ -485,7 +577,11 @@
         "303-903-8787"
       ],
       "furnished": false,
-      "comments": "Beautifully remodeled, furn./unfurn. largest model, lg. bkyd., minyan. Av. immediately."
+      "comments": "Beautifully remodeled, furn./unfurn. largest model, lg. bkyd., minyan. Av. immediately.",
+      "lat": 40.05957,
+      "lng": -74.23693,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U11TT68_1040:12",
@@ -503,7 +599,11 @@
         "732-232-8916"
       ],
       "furnished": false,
-      "comments": "Brand new duplex. Has additional nursery."
+      "comments": "Brand new duplex. Has additional nursery.",
+      "lat": 40.08661,
+      "lng": -74.245,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH168_1041:1",
@@ -521,7 +621,11 @@
         "732-992-3200"
       ],
       "furnished": false,
-      "comments": "Single-family home,freshly renovated. Nice fenced-inyard. Av.immediatelytill July."
+      "comments": "Single-family home,freshly renovated. Nice fenced-inyard. Av.immediatelytill July.",
+      "lat": 40.10827,
+      "lng": -74.24187,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11TT68_1039:10",
@@ -539,7 +643,11 @@
         "347-628-6565"
       ],
       "furnished": false,
-      "comments": "Finished attic. Hardwood floors, window shades. Pesach kitchen. Av. immediately."
+      "comments": "Finished attic. Hardwood floors, window shades. Pesach kitchen. Av. immediately.",
+      "lat": 40.21393,
+      "lng": -74.09581,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH169_1043:1",
@@ -557,7 +665,11 @@
         "347-661-7300"
       ],
       "furnished": false,
-      "comments": "Great, 55+. 2 floors. LR/Dr, lg. family room & den. Patio. Appliances. All amenities inc."
+      "comments": "Great, 55+. 2 floors. LR/Dr, lg. family room & den. Patio. Appliances. All amenities inc.",
+      "lat": 40.05445,
+      "lng": -74.22769,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11HH66_1037:11",
@@ -573,7 +685,11 @@
       "accepts_hud": false,
       "phones": [],
       "furnished": false,
-      "comments": "Large spacious colonial with finished basement & stunning pool."
+      "comments": "Large spacious colonial with finished basement & stunning pool.",
+      "lat": 39.95284,
+      "lng": -74.19674,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "11HH69_1041:16",
@@ -591,7 +707,11 @@
         "845-842-6153"
       ],
       "furnished": false,
-      "comments": "Split level with playroom. Available immediately."
+      "comments": "Split level with playroom. Available immediately.",
+      "lat": 40.11532,
+      "lng": -74.24687,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1TT129_969:4",
@@ -609,7 +729,11 @@
         "732-567-1420"
       ],
       "furnished": false,
-      "comments": "Howell. Santino model, new construction, approx. 2300 sq. ft. Has deck. Av. imm."
+      "comments": "Howell. Santino model, new construction, approx. 2300 sq. ft. Has deck. Av. imm.",
+      "lat": 40.16382,
+      "lng": -74.25461,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH142_996:15",
@@ -627,7 +751,11 @@
         "832-309-7714"
       ],
       "furnished": false,
-      "comments": "Available immediately for long term."
+      "comments": "Available immediately for long term.",
+      "lat": 40.09419,
+      "lng": -74.25307,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH074_858:4",
@@ -645,7 +773,11 @@
         "917-731-1537"
       ],
       "furnished": true,
-      "comments": "Private house on private lot in great location. Option to be furnished. Av. immediately."
+      "comments": "Private house on private lot in great location. Option to be furnished. Av. immediately.",
+      "lat": 40.24439,
+      "lng": -74.31119,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1169_1042:6",
@@ -663,7 +795,11 @@
         "732-575-7609"
       ],
       "furnished": false,
-      "comments": "Fully renovated home. Shul & Rav."
+      "comments": "Fully renovated home. Shul & Rav.",
+      "lat": 40.11518,
+      "lng": -74.36478,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "1HH136_988:6",
@@ -681,7 +817,11 @@
         "718-223-7472"
       ],
       "furnished": false,
-      "comments": "On nice block. Full unfinished basement. In-ground pool. Freshly painted. Av. Dec. 1."
+      "comments": "On nice block. Full unfinished basement. In-ground pool. Freshly painted. Av. Dec. 1.",
+      "lat": 40.1155,
+      "lng": -74.24666,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1AA096_904:5",
@@ -699,7 +839,11 @@
         "917-373-2324"
       ],
       "furnished": false,
-      "comments": "Legal apt. 9-ft. ceiling. Eat-in kitchen. Large dining room/living room. Av. imm."
+      "comments": "Legal apt. 9-ft. ceiling. Eat-in kitchen. Large dining room/living room. Av. imm.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "1AA085_879:6",
@@ -717,7 +861,11 @@
         "848-986-6954"
       ],
       "furnished": false,
-      "comments": "Beautiful apartment in single home on quiet cul de sac. Available immediately."
+      "comments": "Beautiful apartment in single home on quiet cul de sac. Available immediately.",
+      "lat": 40.07103,
+      "lng": -74.20387,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11A58_1022:18",
@@ -740,7 +888,11 @@
         "732-833-3141"
       ],
       "furnished": true,
-      "comments": "New furnished Choson/Kallah studio apartment. Available immediately."
+      "comments": "New furnished Choson/Kallah studio apartment. Available immediately.",
+      "lat": 40.06373,
+      "lng": -74.19895,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH170_1045:1",
@@ -758,7 +910,11 @@
         "323-500-3755"
       ],
       "furnished": false,
-      "comments": "Private house, well-lit, new carpets/flooring, new appliances. Sukka patio, spacious bkyd."
+      "comments": "Private house, well-lit, new carpets/flooring, new appliances. Sukka patio, spacious bkyd.",
+      "lat": 40.08235,
+      "lng": -74.23032,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH166_1037:9",
@@ -776,7 +932,11 @@
         "732-552-7835"
       ],
       "furnished": false,
-      "comments": "Around corner Etz Chaim shul; frum neigh- bors each side. Brand new 2-sink kitchen."
+      "comments": "Around corner Etz Chaim shul; frum neigh- bors each side. Brand new 2-sink kitchen.",
+      "lat": 40.1155,
+      "lng": -74.24666,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1153_1014:6",
@@ -794,7 +954,11 @@
         "732-569-4271"
       ],
       "furnished": false,
-      "comments": "Part of 2-family house. Additional study. Available immediately. 3000 s.f, Large bedrms, spacious backyard, eat-in kitchen, cul de sac, sidewalks on both sides, many kids on block, very safe environ- ment. In Eruv, 5 minutes to shul. Av. imm."
+      "comments": "Part of 2-family house. Additional study. Available immediately. 3000 s.f, Large bedrms, spacious backyard, eat-in kitchen, cul de sac, sidewalks on both sides, many kids on block, very safe environ- ment. In Eruv, 5 minutes to shul. Av. imm.",
+      "lat": 40.00317,
+      "lng": -74.25653,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1HH170_1044:13",
@@ -812,7 +976,11 @@
         "732-966-4165"
       ],
       "furnished": false,
-      "comments": "Beautifully renovated, near several Shuls, full basement."
+      "comments": "Beautifully renovated, near several Shuls, full basement.",
+      "lat": 40.05957,
+      "lng": -74.23693,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1170_1044:4",
@@ -832,7 +1000,11 @@
         "646-463-4944"
       ],
       "furnished": false,
-      "comments": "One year lease. Available immediately."
+      "comments": "One year lease. Available immediately.",
+      "lat": 40.05865,
+      "lng": -74.22835,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1HH170_1044:10",
@@ -850,7 +1022,11 @@
         "732-644-4277"
       ],
       "furnished": false,
-      "comments": "Beautiful mother daughter with 2nd kitchen & spacious rooms, pool. Avail. immediately."
+      "comments": "Beautiful mother daughter with 2nd kitchen & spacious rooms, pool. Avail. immediately.",
+      "lat": 40.11532,
+      "lng": -74.24687,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1HH170_1044:15",
@@ -868,7 +1044,11 @@
         "732-475-3655"
       ],
       "furnished": false,
-      "comments": "Ideal for young couple with at least 2 kids."
+      "comments": "Ideal for young couple with at least 2 kids.",
+      "lat": 40.24439,
+      "lng": -74.31119,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1171_1045:3",
@@ -886,7 +1066,11 @@
         "732-597-2957"
       ],
       "furnished": false,
-      "comments": "Available immediately."
+      "comments": "Available immediately.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "1HH144_999:3",
@@ -904,7 +1088,11 @@
         "848-240-7631"
       ],
       "furnished": false,
-      "comments": "Split level house. Recently renovated. Available December."
+      "comments": "Split level house. Recently renovated. Available December.",
+      "lat": 40.1155,
+      "lng": -74.24666,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1171_1045:7",
@@ -922,7 +1110,11 @@
         "732-616-9579"
       ],
       "furnished": false,
-      "comments": "Newly renovated, private house with basement & backyard. Av. immediately."
+      "comments": "Newly renovated, private house with basement & backyard. Av. immediately.",
+      "lat": 40.10816,
+      "lng": -74.23164,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH109_921:11",
@@ -940,7 +1132,11 @@
         "917-584-3165"
       ],
       "furnished": false,
-      "comments": "Newly renovated colonial. Large backyard and deck."
+      "comments": "Newly renovated colonial. Large backyard and deck.",
+      "lat": 40.09419,
+      "lng": -74.25307,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1HH171_1045:18",
@@ -958,7 +1154,11 @@
         "805-900-0683"
       ],
       "furnished": false,
-      "comments": "Completely brand new interior, double story kitchen & LR/DR. Avail. November."
+      "comments": "Completely brand new interior, double story kitchen & LR/DR. Avail. November.",
+      "lat": 40.00317,
+      "lng": -74.25653,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11H71_1045:10",
@@ -976,7 +1176,11 @@
         "732-547-7458"
       ],
       "furnished": false,
-      "comments": "Furnishedhousew/priv.heatedpoolonfrum block. Availablethrough June."
+      "comments": "Furnishedhousew/priv.heatedpoolonfrum block. Availablethrough June.",
+      "lat": 40.02598,
+      "lng": -74.23697,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A104_915:8",
@@ -999,7 +1203,11 @@
         "848-210-7192"
       ],
       "furnished": true,
-      "comments": "Must see! Bright/airy furnished. Upgr.thru-out. Near Shuls/shopping. Full kitchen."
+      "comments": "Must see! Bright/airy furnished. Upgr.thru-out. Near Shuls/shopping. Full kitchen.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "1A150_1008:3",
@@ -1022,7 +1230,11 @@
         "718-614-7163"
       ],
       "furnished": true,
-      "comments": "Furnished temporary apartment. No WD. Excellent price. Available immediately."
+      "comments": "Furnished temporary apartment. No WD. Excellent price. Available immediately.",
+      "lat": 40.1035,
+      "lng": -74.20422,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1A136_987:17",
@@ -1045,7 +1257,11 @@
         "732-573-8405"
       ],
       "furnished": true,
-      "comments": "Brand new, furnished, long/short term gorgeous apartment. Available immediately."
+      "comments": "Brand new, furnished, long/short term gorgeous apartment. Available immediately.",
+      "lat": 40.09203,
+      "lng": -74.19226,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11A71_1045:13",
@@ -1068,7 +1284,11 @@
         "347-598-0556"
       ],
       "furnished": true,
-      "comments": "Stunning new beautifully furnished apt. Available immediately."
+      "comments": "Stunning new beautifully furnished apt. Available immediately.",
+      "lat": 40.07952,
+      "lng": -74.20891,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A136_988:5",
@@ -1091,7 +1311,11 @@
         "917-474-5462"
       ],
       "furnished": true,
-      "comments": "Shorttermluxury furnished,week/month. Kosher kitchen,dishes,linen. Availableimm."
+      "comments": "Shorttermluxury furnished,week/month. Kosher kitchen,dishes,linen. Availableimm.",
+      "lat": 40.1147,
+      "lng": -74.2545,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11AA71_1045:12",
@@ -1107,7 +1331,11 @@
       "accepts_hud": false,
       "phones": [],
       "furnished": false,
-      "comments": "Private yard included. Great location!"
+      "comments": "Private yard included. Great location!",
+      "lat": 40.1035,
+      "lng": -74.20422,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1AA058_829:13",
@@ -1127,7 +1355,11 @@
         "732-300-9923"
       ],
       "furnished": false,
-      "comments": "Upgraded apt., in single-family home. Available December 1."
+      "comments": "Upgraded apt., in single-family home. Available December 1.",
+      "lat": 40.0503,
+      "lng": -74.21092,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1AA069_846:15",
@@ -1150,7 +1382,11 @@
         "732-850-0717"
       ],
       "furnished": false,
-      "comments": "New apartment, vinyl floors, suitable for single or office."
+      "comments": "New apartment, vinyl floors, suitable for single or office.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "11AA72_1048:10",
@@ -1168,7 +1404,11 @@
         "917-312-1201"
       ],
       "furnished": false,
-      "comments": "Beautiful apartment. Smart layout. Available immediately."
+      "comments": "Beautiful apartment. Smart layout. Available immediately.",
+      "lat": 40.06979,
+      "lng": -74.23873,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1AA172_1047:8",
@@ -1186,7 +1426,11 @@
         "848-362-1432"
       ],
       "furnished": false,
-      "comments": "Available immediately."
+      "comments": "Available immediately.",
+      "lat": 40.08235,
+      "lng": -74.23032,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1AA035_785:18",
@@ -1209,7 +1453,11 @@
         "732-639-8723"
       ],
       "furnished": true,
-      "comments": "Small newer furnished/unfurn. Full kitchen, 2 sinks, WD. Perf. for single/office. Av. imm."
+      "comments": "Small newer furnished/unfurn. Full kitchen, 2 sinks, WD. Perf. for single/office. Av. imm.",
+      "lat": 40.09183,
+      "lng": -74.20638,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11AA72_1048:12",
@@ -1227,7 +1475,11 @@
         "732-908-0140"
       ],
       "furnished": false,
-      "comments": "Beautiful, newly-renovated apartment. Available immediately."
+      "comments": "Beautiful, newly-renovated apartment. Available immediately.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "11A72_1048:13",
@@ -1245,7 +1497,11 @@
         "732-552-5561"
       ],
       "furnished": false,
-      "comments": "Furn. temporary end unit, many upgrades. Nice layout. Large EIK. Av. beginning Dec."
+      "comments": "Furn. temporary end unit, many upgrades. Nice layout. Large EIK. Av. beginning Dec.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "1A132_980:18",
@@ -1268,7 +1524,11 @@
         "845-641-4961"
       ],
       "furnished": true,
-      "comments": "New fully-furnished apartment. Available immediately."
+      "comments": "New fully-furnished apartment. Available immediately.",
+      "lat": 40.0619,
+      "lng": -74.22684,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A080_869:6",
@@ -1286,7 +1546,11 @@
         "848-326-8565"
       ],
       "furnished": true,
-      "comments": "Beautiful new fully-furnished short term, not far from Mordy's shteibel. Avoid Rt. 9."
+      "comments": "Beautiful new fully-furnished short term, not far from Mordy's shteibel. Avoid Rt. 9.",
+      "lat": 40.1147,
+      "lng": -74.2545,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A131_977:19",
@@ -1309,7 +1573,11 @@
         "848-448-1258"
       ],
       "furnished": true,
-      "comments": "Furnished Choson/Kallah. E. Kennedy area, near Shuls & shopping. Av. immediately."
+      "comments": "Furnished Choson/Kallah. E. Kennedy area, near Shuls & shopping. Av. immediately.",
+      "lat": 39.94862,
+      "lng": -74.07291,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A076_862:5",
@@ -1332,7 +1600,11 @@
         "917-588-3820"
       ],
       "furnished": true,
-      "comments": "Furnished newly-renovated Choson/Kallah. High ceiling, many windows. Av. imm."
+      "comments": "Furnished newly-renovated Choson/Kallah. High ceiling, many windows. Av. imm.",
+      "lat": 40.10604,
+      "lng": -74.19886,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A113_932:2",
@@ -1355,7 +1627,11 @@
         "201-522-7323"
       ],
       "furnished": false,
-      "comments": "Magnificent fully upgraded furn. Choson/ Kallah apt. with custom closets. Av. imm."
+      "comments": "Magnificent fully upgraded furn. Choson/ Kallah apt. with custom closets. Av. imm.",
+      "lat": 40.10996,
+      "lng": -74.20087,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A070_848:15",
@@ -1378,7 +1654,11 @@
         "732-416-4843"
       ],
       "furnished": true,
-      "comments": "Brand new beautiful furnished Choson/ Kallah apt. for short/long term. Av. imm."
+      "comments": "Brand new beautiful furnished Choson/ Kallah apt. for short/long term. Av. imm.",
+      "lat": 40.06835,
+      "lng": -74.19446,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11A52_1009:16",
@@ -1396,7 +1676,11 @@
         "347-893-3755"
       ],
       "furnished": true,
-      "comments": "Beautiful brand new upgraded furnished apartment. Also has sitting room."
+      "comments": "Beautiful brand new upgraded furnished apartment. Also has sitting room.",
+      "lat": 40.07137,
+      "lng": -74.19811,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A172_1049:3",
@@ -1419,7 +1703,11 @@
         "848-220-6157"
       ],
       "furnished": true,
-      "comments": "Beautiful spacious new furnished. Large BR, large EIK. Separate LR. WD. Av. imm."
+      "comments": "Beautiful spacious new furnished. Large BR, large EIK. Separate LR. WD. Av. imm.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "1A172_1049:7",
@@ -1442,7 +1730,11 @@
         "732-278-3040"
       ],
       "furnished": true,
-      "comments": "Beautiful & spacious furnished Choson/ Kallah apt. by the month. Av. immediately."
+      "comments": "Beautiful & spacious furnished Choson/ Kallah apt. by the month. Av. immediately.",
+      "lat": 40.09636,
+      "lng": -74.25607,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A172_1049:8",
@@ -1460,7 +1752,11 @@
         "732-569-2962"
       ],
       "furnished": true,
-      "comments": "Brand new furnished apt., short or long term. Available November."
+      "comments": "Brand new furnished apt., short or long term. Available November.",
+      "lat": 40.0503,
+      "lng": -74.21092,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11A62_1026:15",
@@ -1483,7 +1779,11 @@
         "718-344-8775"
       ],
       "furnished": true,
-      "comments": "Beautiful furnished apartment. Available immediately."
+      "comments": "Beautiful furnished apartment. Available immediately.",
+      "lat": 40.10276,
+      "lng": -74.2007,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A118_942:14",
@@ -1501,7 +1801,11 @@
         "732-534-0839"
       ],
       "furnished": false,
-      "comments": "Beautifulfurnishedapt. Largewindows. St. steel kitchen. WD. Perfectfor Choson/Kallah."
+      "comments": "Beautifulfurnishedapt. Largewindows. St. steel kitchen. WD. Perfectfor Choson/Kallah.",
+      "lat": 40.08921,
+      "lng": -74.18644,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1R130_975:8",
@@ -1524,7 +1828,11 @@
         "732-279-5484"
       ],
       "furnished": false,
-      "comments": "Furn.roomwithbathroomforsinglemale. Fridge,freezer, WD. Priv.entrance. Av.imm."
+      "comments": "Furn.roomwithbathroomforsinglemale. Fridge,freezer, WD. Priv.entrance. Av.imm.",
+      "lat": 40.08235,
+      "lng": -74.23032,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1R105_916:9",
@@ -1547,7 +1855,11 @@
         "347-545-2245"
       ],
       "furnished": false,
-      "comments": "Priv. room, fully furn. house working/learn- ing guys. Shared kitchen, WD. Av. imm."
+      "comments": "Priv. room, fully furn. house working/learn- ing guys. Shared kitchen, WD. Av. imm.",
+      "lat": 40.09128,
+      "lng": -74.2421,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1R172_1049:4",
@@ -1570,7 +1882,11 @@
         "347-443-1149"
       ],
       "furnished": false,
-      "comments": "For Bochur. Separate entrance & bathroom. (Please leave message)"
+      "comments": "For Bochur. Separate entrance & bathroom. (Please leave message)",
+      "lat": 40.09461,
+      "lng": -74.21778,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH172_1049:6",
@@ -1588,7 +1904,11 @@
         "347-786-2126"
       ],
       "furnished": false,
-      "comments": "Colonial with semi-finished basement. Available immediately."
+      "comments": "Colonial with semi-finished basement. Available immediately.",
+      "lat": 40.0503,
+      "lng": -74.21092,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH154_1016:8",
@@ -1606,7 +1926,11 @@
         "201-726-5404"
       ],
       "furnished": false,
-      "comments": "Driveway, large backyard. WD in basement. Near Sephardic & Ashkenaz shul."
+      "comments": "Driveway, large backyard. WD in basement. Near Sephardic & Ashkenaz shul.",
+      "lat": 40.11518,
+      "lng": -74.36478,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "U1HH154_1015:18",
@@ -1624,7 +1948,11 @@
         "848-225-7459"
       ],
       "furnished": false,
-      "comments": "Beautiful freshly redone ranch, brand new SS appliances. Full unfin. bsmt. with bath."
+      "comments": "Beautiful freshly redone ranch, brand new SS appliances. Full unfin. bsmt. with bath.",
+      "lat": 40.14318,
+      "lng": -74.27047,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11TT20_944:20",
@@ -1642,7 +1970,11 @@
         "347-224-5101"
       ],
       "furnished": false,
-      "comments": "Very upgraded end unit. 2 of the BRs are in attic. Appliances, amenities. Av. immediately."
+      "comments": "Very upgraded end unit. 2 of the BRs are in attic. Appliances, amenities. Av. immediately.",
+      "lat": 40.04706,
+      "lng": -74.21205,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11TT72_1046:12",
@@ -1660,7 +1992,11 @@
         "848-488-4232"
       ],
       "furnished": false,
-      "comments": "Brand new. Available immediately. Furn./unfurn, ultra-modern kitchen, master suite, beautiful heated pool, long term."
+      "comments": "Brand new. Available immediately. Furn./unfurn, ultra-modern kitchen, master suite, beautiful heated pool, long term.",
+      "lat": 40.11949,
+      "lng": -74.25708,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1172_1047:7",
@@ -1678,7 +2014,11 @@
         "718-285-2287"
       ],
       "furnished": false,
-      "comments": "Newly renovated colonial, 2500 Sf.,beaut. block, Royal Grove/Vineyard area. Av. imm."
+      "comments": "Newly renovated colonial, 2500 Sf.,beaut. block, Royal Grove/Vineyard area. Av. imm.",
+      "lat": 40.10372,
+      "lng": -74.31907,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1172_1047:9",
@@ -1696,7 +2036,11 @@
         "347-756-2656"
       ],
       "furnished": false,
-      "comments": "Well kept nice bi-level, freshly painted, nice yard. Available immediately."
+      "comments": "Well kept nice bi-level, freshly painted, nice yard. Available immediately.",
+      "lat": 40.09471,
+      "lng": -74.24924,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1HH172_1047:10",
@@ -1714,7 +2058,11 @@
         "347-756-2656"
       ],
       "furnished": false,
-      "comments": "Beautiful colonial, updated kitchen & baths, nice yard. Available immediately."
+      "comments": "Beautiful colonial, updated kitchen & baths, nice yard. Available immediately.",
+      "lat": 40.09471,
+      "lng": -74.24924,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1HH172_1047:11",
@@ -1732,7 +2080,11 @@
         "347-756-2656"
       ],
       "furnished": false,
-      "comments": "Well kept colonial, Nice property with pool, 3 car garage. Available immediately."
+      "comments": "Well kept colonial, Nice property with pool, 3 car garage. Available immediately.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "U1TT172_1048:4",
@@ -1750,7 +2102,11 @@
         "848-210-6502"
       ],
       "furnished": false,
-      "comments": "Brand new, prime entrance location, cul-de-sac, near shul."
+      "comments": "Brand new, prime entrance location, cul-de-sac, near shul.",
+      "lat": 40.05654,
+      "lng": -74.22546,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1HH172_1047:17",
@@ -1768,7 +2124,11 @@
         "917-600-1012"
       ],
       "furnished": false,
-      "comments": "Charming ranch with full finished basement, nice private yard, already HUD approved."
+      "comments": "Charming ranch with full finished basement, nice private yard, already HUD approved.",
+      "lat": 40.11544,
+      "lng": -74.24673,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1HH172_1047:18",
@@ -1786,7 +2146,11 @@
         "216-946-0060"
       ],
       "furnished": false,
-      "comments": "Near Hope Chapel & E. Veterans. Available November."
+      "comments": "Near Hope Chapel & E. Veterans. Available November.",
+      "lat": 40.11518,
+      "lng": -74.36478,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "11TT72_1049:103",
@@ -1804,7 +2168,11 @@
         "917-862-9504"
       ],
       "furnished": false,
-      "comments": "Two sinks, garage, balcony, all appliances. Development includes playground, pool, etc."
+      "comments": "Two sinks, garage, balcony, all appliances. Development includes playground, pool, etc.",
+      "lat": 40.11949,
+      "lng": -74.25708,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11HH72_1049:11",
@@ -1822,7 +2190,11 @@
         "732-334-8173"
       ],
       "furnished": false,
-      "comments": "Very well maintained bilevel. Available January 1."
+      "comments": "Very well maintained bilevel. Available January 1.",
+      "lat": 40.11532,
+      "lng": -74.24687,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH158_1022:2",
@@ -1840,7 +2212,11 @@
         "929-225-4364"
       ],
       "furnished": false,
-      "comments": "55+ neighborhood. Newly-renovated. Available immediately."
+      "comments": "55+ neighborhood. Newly-renovated. Available immediately.",
+      "lat": 40.05957,
+      "lng": -74.23693,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1HH172_1047:19",
@@ -1858,7 +2234,11 @@
         "646-285-4852"
       ],
       "furnished": false,
-      "comments": "Beautiful move in ready. Available immediately"
+      "comments": "Beautiful move in ready. Available immediately",
+      "lat": 40.1413,
+      "lng": -74.22366,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "UHH1172_1048:2",
@@ -1876,7 +2256,11 @@
         "848-226-5920"
       ],
       "furnished": false,
-      "comments": "New kitchen, spacious, frum block, established community. Medium long term."
+      "comments": "New kitchen, spacious, frum block, established community. Medium long term.",
+      "lat": 39.98703,
+      "lng": -74.14995,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH172_1046:8",
@@ -1894,7 +2278,11 @@
         "917-653-4945"
       ],
       "furnished": false,
-      "comments": "3100 sq. feet. High ceiling, in-ground pool. 5-minute walk to Shul. Av. December 1."
+      "comments": "3100 sq. feet. High ceiling, in-ground pool. 5-minute walk to Shul. Av. December 1.",
+      "lat": 39.96185,
+      "lng": -74.37833,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH173_1051:6",
@@ -1912,7 +2300,11 @@
         "201-726-5404"
       ],
       "furnished": false,
-      "comments": "One-family home in Manchester. Large backyard, driveway, garage."
+      "comments": "One-family home in Manchester. Large backyard, driveway, garage.",
+      "lat": 40.00317,
+      "lng": -74.25653,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH173_1051:8",
@@ -1930,7 +2322,11 @@
         "516-855-7224"
       ],
       "furnished": false,
-      "comments": "2000+ sq. ft. Recently fully renovated, quiet cul de sac. Lg lot. Av. mid-Nov. long term."
+      "comments": "2000+ sq. ft. Recently fully renovated, quiet cul de sac. Lg lot. Av. mid-Nov. long term.",
+      "lat": 40.24439,
+      "lng": -74.31119,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1TT173_1050:3",
@@ -1948,7 +2344,11 @@
         "917-275-5248"
       ],
       "furnished": false,
-      "comments": "Semi attached, desirable block, down the block to all shuls."
+      "comments": "Semi attached, desirable block, down the block to all shuls.",
+      "lat": 40.11949,
+      "lng": -74.25708,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1TT173_1050:1",
@@ -1966,7 +2366,11 @@
         "848-986-6055"
       ],
       "furnished": false,
-      "comments": "Brand new, wood flooring, windows in all rooms. Evergreen Gardens."
+      "comments": "Brand new, wood flooring, windows in all rooms. Evergreen Gardens.",
+      "lat": 40.04627,
+      "lng": -74.20362,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1173_1050:5",
@@ -1984,7 +2388,11 @@
         "732-994-8000"
       ],
       "furnished": false,
-      "comments": "Completely remodeled 3600 SF., on acre lot, fenced, full unfinished bsmt., cul-de-sac."
+      "comments": "Completely remodeled 3600 SF., on acre lot, fenced, full unfinished bsmt., cul-de-sac.",
+      "lat": 40.1167,
+      "lng": -74.11088,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1173_1050:6",
@@ -2002,7 +2410,11 @@
         "732-994-8000"
       ],
       "furnished": false,
-      "comments": "Remodeled, high end, 1 acre fenced lot, large patio, 2 car garage, unfinished bsmt."
+      "comments": "Remodeled, high end, 1 acre fenced lot, large patio, 2 car garage, unfinished bsmt.",
+      "lat": 40.04315,
+      "lng": -74.1619,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1173_1050:7",
@@ -2020,7 +2432,11 @@
         "732-503-6464"
       ],
       "furnished": false,
-      "comments": "1 min drive to GG. close minyan, 1 acre, huge high end kitchen, spacious layout."
+      "comments": "1 min drive to GG. close minyan, 1 acre, huge high end kitchen, spacious layout.",
+      "lat": 40.11518,
+      "lng": -74.36478,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "U11TT73_1050:16",
@@ -2038,7 +2454,11 @@
         "732-232-8916"
       ],
       "furnished": false,
-      "comments": "Brand new, beautifully upgraded duplex. Additional nursery. Available immediately."
+      "comments": "Brand new, beautifully upgraded duplex. Additional nursery. Available immediately.",
+      "lat": 40.06541,
+      "lng": -74.21244,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U11TT73_1050:18",
@@ -2056,7 +2476,11 @@
         "917-733-0143"
       ],
       "furnished": false,
-      "comments": "Brand new lg. Crofton model w/ gorgeous lg. bkyd. walkout bsmt. Long term. Av. imm."
+      "comments": "Brand new lg. Crofton model w/ gorgeous lg. bkyd. walkout bsmt. Long term. Av. imm.",
+      "lat": 40.11949,
+      "lng": -74.25708,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11TT73_1049:14",
@@ -2074,7 +2498,11 @@
         "678-595-4179"
       ],
       "furnished": false,
-      "comments": "Beautiful upgraded corner unit, prime loca- tion. Av. December for at least 6 months."
+      "comments": "Beautiful upgraded corner unit, prime loca- tion. Av. December for at least 6 months.",
+      "lat": 40.06569,
+      "lng": -74.19579,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11HH73_1049:12",
@@ -2092,7 +2520,11 @@
         "718-536-4673"
       ],
       "furnished": false,
-      "comments": "Spacious, pristine, lg. priv. property, woods 2 sides. Lg. insulated bsmt. Av. till summer."
+      "comments": "Spacious, pristine, lg. priv. property, woods 2 sides. Lg. insulated bsmt. Av. till summer.",
+      "lat": 40.12995,
+      "lng": -74.26051,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11HH73_1049:16",
@@ -2110,7 +2542,11 @@
         "848-226-2545"
       ],
       "furnished": false,
-      "comments": "Newly renovated Colonial. Nice big backyd. Unfin. basemt. Garage. Av. Nov. long term."
+      "comments": "Newly renovated Colonial. Nice big backyd. Unfin. basemt. Garage. Av. Nov. long term.",
+      "lat": 40.1155,
+      "lng": -74.24666,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1125_958:10",
@@ -2128,7 +2564,11 @@
         "732-567-1287"
       ],
       "furnished": false,
-      "comments": "Long term! Beautiful colonial, finished basement, close to shul & park. Av. imm."
+      "comments": "Long term! Beautiful colonial, finished basement, close to shul & park. Av. imm.",
+      "lat": 40.00317,
+      "lng": -74.25653,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1159_1023:8",
@@ -2146,7 +2586,11 @@
         "732-569-1263"
       ],
       "furnished": false,
-      "comments": "Excellent condition. Nice lot. Pesach kitchen."
+      "comments": "Excellent condition. Nice lot. Pesach kitchen.",
+      "lat": 40.08939,
+      "lng": -74.23015,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH108_920:18",
@@ -2164,7 +2608,11 @@
         "718-635-1399"
       ],
       "furnished": true,
-      "comments": "Partly furnished. Huge backyard. Available immediately for 10 months."
+      "comments": "Partly furnished. Huge backyard. Available immediately for 10 months.",
+      "lat": 40.07433,
+      "lng": -74.21049,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1R173_1050:11",
@@ -2187,7 +2635,11 @@
         "973-494-6166"
       ],
       "furnished": true,
-      "comments": "Male roommate wanted, private bedroom & bathroom. Fully furnished, brand new."
+      "comments": "Male roommate wanted, private bedroom & bathroom. Fully furnished, brand new.",
+      "lat": 40.09628,
+      "lng": -74.24189,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1R174_1052:8",
@@ -2210,7 +2662,11 @@
         "347-786-4671"
       ],
       "furnished": false,
-      "comments": "Partly-furn. room, single working guys apt., quiet block. New, near shopping. Inc. wifi."
+      "comments": "Partly-furn. room, single working guys apt., quiet block. New, near shopping. Inc. wifi.",
+      "lat": 40.06289,
+      "lng": -74.22168,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11A52_1012:15",
@@ -2233,7 +2689,11 @@
         "732-600-8417"
       ],
       "furnished": true,
-      "comments": "Bright airy beautiful immaculate furnished, Choson/Kallah only. Available immediately."
+      "comments": "Bright airy beautiful immaculate furnished, Choson/Kallah only. Available immediately.",
+      "lat": 40.08235,
+      "lng": -74.23032,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11A73_1051:15",
@@ -2251,7 +2711,11 @@
         "845-608-5900"
       ],
       "furnished": true,
-      "comments": "Furnished apartment. Available immediately."
+      "comments": "Furnished apartment. Available immediately.",
+      "lat": 40.07903,
+      "lng": -74.23694,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1A173_1050:9",
@@ -2274,7 +2738,11 @@
         "347-353-6895"
       ],
       "furnished": true,
-      "comments": "Furnished, W/D. Available immediately."
+      "comments": "Furnished, W/D. Available immediately.",
+      "lat": 40.1147,
+      "lng": -74.2545,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11A73_1051:10",
@@ -2297,7 +2765,11 @@
         "732-948-6030"
       ],
       "furnished": true,
-      "comments": "Furnished Choson/Kallah apt. Driveway parking. Shul across street. Av. imm. SITTING ROOM, TEXT: 732-267-3594"
+      "comments": "Furnished Choson/Kallah apt. Driveway parking. Shul across street. Av. imm. SITTING ROOM, TEXT: 732-267-3594",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "1A141_995:4",
@@ -2315,7 +2787,11 @@
         "347-469-3644"
       ],
       "furnished": false,
-      "comments": "Spacious ground-level furn., good for single Laundry room. Gorgeous kitchen. Av. imm."
+      "comments": "Spacious ground-level furn., good for single Laundry room. Gorgeous kitchen. Av. imm.",
+      "lat": 40.11518,
+      "lng": -74.36478,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "11A50_1007:18",
@@ -2333,7 +2809,11 @@
         "848-389-1543"
       ],
       "furnished": false,
-      "comments": "Furnishedapt.near Shul. Solarpower. Private entrance. Av.imm.long/shortterm."
+      "comments": "Furnishedapt.near Shul. Solarpower. Private entrance. Av.imm.long/shortterm.",
+      "lat": 40.0941,
+      "lng": -74.21499,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "1AA138_990:9",
@@ -2356,7 +2836,11 @@
         "347-729-6060"
       ],
       "furnished": true,
-      "comments": "New furnished,short/longterm. Extrasound- proofing. WD. Separate AC. Av.imm."
+      "comments": "New furnished,short/longterm. Extrasound- proofing. WD. Separate AC. Av.imm.",
+      "lat": 40.10242,
+      "lng": -74.20021,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11A73_1049:19",
@@ -2379,7 +2863,11 @@
         "848-525-2721"
       ],
       "furnished": true,
-      "comments": "Brand new fully furnished, washer/dryer. Available immediately."
+      "comments": "Brand new fully furnished, washer/dryer. Available immediately.",
+      "lat": 40.10729,
+      "lng": -74.24202,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1A173_1050:4",
@@ -2397,7 +2885,11 @@
         "845-826-1612"
       ],
       "furnished": false,
-      "comments": "Nice apartment, full kitchen, W/D, furn./unfurn, single girl preferred."
+      "comments": "Nice apartment, full kitchen, W/D, furn./unfurn, single girl preferred.",
+      "lat": 40.09284,
+      "lng": -74.20358,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1AA173_1050:2",
@@ -2420,7 +2912,11 @@
         "848-986-6055"
       ],
       "furnished": false,
-      "comments": "Vinyl flooring, windows in all rooms."
+      "comments": "Vinyl flooring, windows in all rooms.",
+      "lat": 40.04627,
+      "lng": -74.20362,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11AA73_1051:13",
@@ -2438,7 +2934,11 @@
         "347-543-2195"
       ],
       "furnished": false,
-      "comments": "Beautiful. Newfloor,spots. EIK & den. WD, newappliances. Chosson/Kallah. Av.imm."
+      "comments": "Beautiful. Newfloor,spots. EIK & den. WD, newappliances. Chosson/Kallah. Av.imm.",
+      "lat": 40.06846,
+      "lng": -74.2205,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1AA173_1050:13",
@@ -2456,7 +2956,11 @@
         "848-240-6590"
       ],
       "furnished": false,
-      "comments": "Available immediately."
+      "comments": "Available immediately.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "U1AA173_1050:14",
@@ -2479,7 +2983,11 @@
         "206-643-5353"
       ],
       "furnished": false,
-      "comments": "Large windows in bedrooms, vinyl flooring. Available immediately."
+      "comments": "Large windows in bedrooms, vinyl flooring. Available immediately.",
+      "lat": 40.08734,
+      "lng": -74.25544,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11AA73_1051:14",
@@ -2497,7 +3005,11 @@
         "732-678-7273"
       ],
       "furnished": false,
-      "comments": "In duplex. New flooring and lighting. Sub-meters. Available immediately."
+      "comments": "In duplex. New flooring and lighting. Sub-meters. Available immediately.",
+      "lat": 40.06846,
+      "lng": -74.2205,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11AA72_1046:14",
@@ -2515,7 +3027,11 @@
         "732-600-8417"
       ],
       "furnished": false,
-      "comments": "Beautiful apartment, newly renovated vinyl flooring. Available immediately."
+      "comments": "Beautiful apartment, newly renovated vinyl flooring. Available immediately.",
+      "lat": 40.08235,
+      "lng": -74.23032,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1AA174_1053:11",
@@ -2533,7 +3049,11 @@
         "908-783-4324"
       ],
       "furnished": false,
-      "comments": "Updated airy apt. Available December 1."
+      "comments": "Updated airy apt. Available December 1.",
+      "lat": 40.09419,
+      "lng": -74.25307,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1AA174_1052:4",
@@ -2551,7 +3071,11 @@
         "347-563-0558"
       ],
       "furnished": false,
-      "comments": "[No calls] Upgraded apt. Larger model. Priv. entrance. Best soundproofing. Av. Dec."
+      "comments": "[No calls] Upgraded apt. Larger model. Priv. entrance. Best soundproofing. Av. Dec.",
+      "lat": 40.05179,
+      "lng": -74.18794,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1AA174_1052:5",
@@ -2569,7 +3093,11 @@
         "848-525-9355"
       ],
       "furnished": false,
-      "comments": "Beautiful apt. New floors, eat-in kitchen, large living room/dining room. Av. imm."
+      "comments": "Beautiful apt. New floors, eat-in kitchen, large living room/dining room. Av. imm.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "1AA117_939:18",
@@ -2587,7 +3115,11 @@
         "929-388-2747"
       ],
       "furnished": false,
-      "comments": "Sunny, beautiful, upgraded. Tiled bathrms, fully vinyl. Full kitchen. For up to 6 months."
+      "comments": "Sunny, beautiful, upgraded. Tiled bathrms, fully vinyl. Full kitchen. For up to 6 months.",
+      "lat": 40.0793,
+      "lng": -74.18323,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A161_1026:7",
@@ -2610,7 +3142,11 @@
         "732-779-7859"
       ],
       "furnished": true,
-      "comments": "Beautiful brand new furnished Choson/ Kallah apt. for short term, by the week."
+      "comments": "Beautiful brand new furnished Choson/ Kallah apt. for short term, by the week.",
+      "lat": 40.10094,
+      "lng": -74.20775,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A090_890:18",
@@ -2633,7 +3169,11 @@
         "732-597-3983"
       ],
       "furnished": true,
-      "comments": "Furnished apartment for a single. Available immediately."
+      "comments": "Furnished apartment for a single. Available immediately.",
+      "lat": 40.1147,
+      "lng": -74.2545,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A174_1052:7",
@@ -2656,7 +3196,11 @@
         "732-833-3775"
       ],
       "furnished": true,
-      "comments": "New furnished Choson/Kallahapt. Very spacious. Stainlesssteelappliances. Av.imm."
+      "comments": "New furnished Choson/Kallahapt. Very spacious. Stainlesssteelappliances. Av.imm.",
+      "lat": 40.10316,
+      "lng": -74.23122,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A115_936:7",
@@ -2679,7 +3223,11 @@
         "347-564-8087"
       ],
       "furnished": true,
-      "comments": "New furnished apartment. Available immediately."
+      "comments": "New furnished apartment. Available immediately.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "1A174_1052:3",
@@ -2702,7 +3250,11 @@
         "347-514-4293"
       ],
       "furnished": true,
-      "comments": "Upgraded furnished. Sunny, large windows. Sep. kitchen & family room. Multiple closets."
+      "comments": "Upgraded furnished. Sunny, large windows. Sep. kitchen & family room. Multiple closets.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "11A74_1051:18",
@@ -2725,7 +3277,11 @@
         "732-861-4227"
       ],
       "furnished": true,
-      "comments": "Furnished ground floor Choson/Kallah apt."
+      "comments": "Furnished ground floor Choson/Kallah apt.",
+      "lat": 40.07433,
+      "lng": -74.21049,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A124_955:6",
@@ -2748,7 +3304,11 @@
         "917-544-4364"
       ],
       "furnished": true,
-      "comments": "Furnished Choson/Kallah apt. with private entrance. By the month. Av. immediately."
+      "comments": "Furnished Choson/Kallah apt. with private entrance. By the month. Av. immediately.",
+      "lat": 40.0888,
+      "lng": -74.24942,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UA1174_1053:6",
@@ -2771,7 +3331,11 @@
         "347-385-2102"
       ],
       "furnished": true,
-      "comments": "Furnished, short or long term, minimum one month. Great for Choson/Kallah!"
+      "comments": "Furnished, short or long term, minimum one month. Great for Choson/Kallah!",
+      "lat": 40.07952,
+      "lng": -74.20891,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A122_951:14",
@@ -2789,7 +3353,11 @@
         "732-569-4998"
       ],
       "furnished": true,
-      "comments": "Furnished walk-in apartment. Available now through August."
+      "comments": "Furnished walk-in apartment. Available now through August.",
+      "lat": 40.09964,
+      "lng": -74.19536,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A057_828:19",
@@ -2812,7 +3380,11 @@
         "732-877-3613"
       ],
       "furnished": true,
-      "comments": "New furnished Choson/Kallah apt. in great location. Available immediately."
+      "comments": "New furnished Choson/Kallah apt. in great location. Available immediately.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "U1R156_1019:12",
@@ -2835,7 +3407,11 @@
         "213-332-8893"
       ],
       "furnished": true,
-      "comments": "Private rm., fully furnished, for working guys, shared kitchen, etc. Torah-focused, working."
+      "comments": "Private rm., fully furnished, for working guys, shared kitchen, etc. Torah-focused, working.",
+      "lat": 40.06377,
+      "lng": -74.23427,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11T55_1016:19",
@@ -2853,7 +3429,11 @@
         "732-364-4647"
       ],
       "furnished": false,
-      "comments": "Furnishedfor Choson/Kallah,near shuls. Beautifullayout. Shorttermuntil Dec.30. Available weekdays or Shabbosim. in from out of town for a Simcha."
+      "comments": "Furnishedfor Choson/Kallah,near shuls. Beautifullayout. Shorttermuntil Dec.30. Available weekdays or Shabbosim. in from out of town for a Simcha.",
+      "lat": 40.07952,
+      "lng": -74.20891,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH173_1051:7",
@@ -2871,7 +3451,11 @@
         "732-534-1065"
       ],
       "furnished": false,
-      "comments": ""
+      "comments": "",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "UHH1133_982:20",
@@ -2889,7 +3473,11 @@
         "732-600-1284"
       ],
       "furnished": false,
-      "comments": "Fullyrenovatedbilevel. Largesunroom. Lake viewsallaround. Privatedriveway & yard."
+      "comments": "Fullyrenovatedbilevel. Largesunroom. Lake viewsallaround. Privatedriveway & yard.",
+      "lat": 40.09333,
+      "lng": -74.23308,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1174_1053:7",
@@ -2907,7 +3495,11 @@
         "917-559-2493"
       ],
       "furnished": false,
-      "comments": "Huge private property, near R’Lubin’s shul. Option to rent barn."
+      "comments": "Huge private property, near R’Lubin’s shul. Option to rent barn.",
+      "lat": 40.09789,
+      "lng": -74.26554,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1174_1053:9",
@@ -2925,7 +3517,11 @@
         "732-581-6164"
       ],
       "furnished": false,
-      "comments": "Beautiful updated house with finished basement. Available immediately."
+      "comments": "Beautiful updated house with finished basement. Available immediately.",
+      "lat": 40.1413,
+      "lng": -74.22366,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "U11TT74_1053:10",
@@ -2943,7 +3539,11 @@
         "732-856-0027"
       ],
       "furnished": false,
-      "comments": "Updated end unit, very airy. Available immediately."
+      "comments": "Updated end unit, very airy. Available immediately.",
+      "lat": 40.15707,
+      "lng": -74.27928,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1HH174_1053:13",
@@ -2961,7 +3561,11 @@
         "908-910-0714"
       ],
       "furnished": false,
-      "comments": "Nice block. Available immediately."
+      "comments": "Nice block. Available immediately.",
+      "lat": 40.10698,
+      "lng": -74.16408,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11HH74_1051:16",
@@ -2979,7 +3583,11 @@
         "732-534-1065"
       ],
       "furnished": false,
-      "comments": "Freshlyredone. Brandnew kitchen."
+      "comments": "Freshlyredone. Brandnew kitchen.",
+      "lat": 40.0357,
+      "lng": -74.26028,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH174_1052:1",
@@ -2997,7 +3605,11 @@
         "848-210-3635"
       ],
       "furnished": false,
-      "comments": "Single home 3rd Ave. Finished basement, finished attic. Move-in ready. 1 mo. deposit."
+      "comments": "Single home 3rd Ave. Finished basement, finished attic. Move-in ready. 1 mo. deposit.",
+      "lat": 40.00317,
+      "lng": -74.25653,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH096_902:17",
@@ -3015,7 +3627,11 @@
         "347-743-9103"
       ],
       "furnished": false,
-      "comments": "Entire house (not. furn.) New bathroom & kitchen, lg. deck. Short term, 6–12 months."
+      "comments": "Entire house (not. furn.) New bathroom & kitchen, lg. deck. Short term, 6–12 months.",
+      "lat": 40.09307,
+      "lng": -74.2375,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1TT175_1054:5",
@@ -3033,7 +3649,11 @@
         "908-216-8764"
       ],
       "furnished": false,
-      "comments": "Brand new, beautifully upgraded. Available immediately."
+      "comments": "Brand new, beautifully upgraded. Available immediately.",
+      "lat": 40.06406,
+      "lng": -74.2313,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1175_1054:6",
@@ -3051,7 +3671,11 @@
         "347-527-3395"
       ],
       "furnished": false,
-      "comments": "Stunning newer construction, modern open layout, upgraded kitchen, main floor suite."
+      "comments": "Stunning newer construction, modern open layout, upgraded kitchen, main floor suite.",
+      "lat": 40.00317,
+      "lng": -74.25653,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1TT175_1054:7",
@@ -3069,7 +3693,11 @@
         "718-541-4413"
       ],
       "furnished": false,
-      "comments": "Amazing condition with fully finished basement. Move in ready. 55+community. Fully renovated. Pesach kitchen. Appliances. Walking dist. to 2 shuls."
+      "comments": "Amazing condition with fully finished basement. Move in ready. 55+community. Fully renovated. Pesach kitchen. Appliances. Walking dist. to 2 shuls.",
+      "lat": 40.04689,
+      "lng": -74.20229,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11TT75_1053:15",
@@ -3087,7 +3715,11 @@
         "513-301-1330"
       ],
       "furnished": false,
-      "comments": "Andrews model. 2 kitchen sinks, fin. basemt. 2-car garage. Pool, gym, playground, shul."
+      "comments": "Andrews model. 2 kitchen sinks, fin. basemt. 2-car garage. Pool, gym, playground, shul.",
+      "lat": 40.13838,
+      "lng": -74.34935,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11HH75_1053:16",
@@ -3105,7 +3737,11 @@
         "732-634-7357"
       ],
       "furnished": false,
-      "comments": "Oakwood Hollow Lane."
+      "comments": "Oakwood Hollow Lane.",
+      "lat": 39.95284,
+      "lng": -74.19674,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "11TT74_1053:17",
@@ -3123,7 +3759,11 @@
         "848-986-0512"
       ],
       "furnished": false,
-      "comments": "Upper level. Facing park. Huge rooms. Available immediately."
+      "comments": "Upper level. Facing park. Huge rooms. Available immediately.",
+      "lat": 40.08734,
+      "lng": -74.25544,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11HH74_1053:18",
@@ -3141,7 +3781,11 @@
         "646-379-0487"
       ],
       "furnished": false,
-      "comments": "1-family beautiful bilevel. Spots, new kitchen, deck, lg. bkyd. WD basemt. Frum neighbors."
+      "comments": "1-family beautiful bilevel. Spots, new kitchen, deck, lg. bkyd. WD basemt. Frum neighbors.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "11HH74_1053:19",
@@ -3159,7 +3803,11 @@
         "248-943-9632"
       ],
       "furnished": false,
-      "comments": "Great cul de sac in Toms River. Full finished basement. Short term rental (6–12 months)."
+      "comments": "Great cul de sac in Toms River. Full finished basement. Short term rental (6–12 months).",
+      "lat": 40.03247,
+      "lng": -74.24373,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11TT75_1052:15",
@@ -3177,7 +3825,11 @@
         "917-696-1441"
       ],
       "furnished": false,
-      "comments": "New, 3 floors. All high end appliances, new shades. Ready to move in."
+      "comments": "New, 3 floors. All high end appliances, new shades. Ready to move in.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "11H75_1053:20",
@@ -3195,7 +3847,11 @@
         "917-674-4954"
       ],
       "furnished": false,
-      "comments": "Fully-furn.luxurious. Pool,amenities. Till June. Onlyserious!Needincomecredentials."
+      "comments": "Fully-furn.luxurious. Pool,amenities. Till June. Onlyserious!Needincomecredentials.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "UA1123_954:6",
@@ -3218,7 +3874,11 @@
         "732-668-4551"
       ],
       "furnished": true,
-      "comments": "Br. new beautiful spacious furnished in sin- gle family house. Long/short term. Av. imm."
+      "comments": "Br. new beautiful spacious furnished in sin- gle family house. Long/short term. Av. imm.",
+      "lat": 40.07103,
+      "lng": -74.20387,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A105_915:9",
@@ -3241,7 +3901,11 @@
         "917-246-7793"
       ],
       "furnished": true,
-      "comments": "Upgraded, fully tiled. Kitchenette. Furnished [Could also be used as office.]"
+      "comments": "Upgraded, fully tiled. Kitchenette. Furnished [Could also be used as office.]",
+      "lat": 40.06569,
+      "lng": -74.19579,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A121_949:1",
@@ -3264,7 +3928,11 @@
         "732-850-0717"
       ],
       "furnished": true,
-      "comments": "Brand new luxury spacious furnished Choson/Kallah apartment."
+      "comments": "Brand new luxury spacious furnished Choson/Kallah apartment.",
+      "lat": 39.94862,
+      "lng": -74.07291,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11A54_1013:17",
@@ -3285,7 +3953,11 @@
       "accepts_hud": false,
       "phones": [],
       "furnished": true,
-      "comments": "Temporary furnished apartment, great for Choson/Kalla. Fully furnished. Av. end Nov."
+      "comments": "Temporary furnished apartment, great for Choson/Kalla. Fully furnished. Av. end Nov.",
+      "lat": 40.10572,
+      "lng": -74.16878,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1R165_1033:3",
@@ -3308,7 +3980,11 @@
         "732-604-7138"
       ],
       "furnished": true,
-      "comments": "Furnished rooms for women/girls in shared single house. Use of kitchen, WD... Av. imm."
+      "comments": "Furnished rooms for women/girls in shared single house. Use of kitchen, WD... Av. imm.",
+      "lat": 40.08734,
+      "lng": -74.25544,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1AA175_1054:9",
@@ -3326,7 +4002,11 @@
         "718-791-9364"
       ],
       "furnished": false,
-      "comments": "Freshly painted,spacious, nice apt., large windows. Available December."
+      "comments": "Freshly painted,spacious, nice apt., large windows. Available December.",
+      "lat": 40.10242,
+      "lng": -74.20021,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11AA75_1052:13",
@@ -3342,7 +4022,11 @@
       "accepts_hud": false,
       "phones": [],
       "furnished": false,
-      "comments": "Beautiful apartment in great condition. Available immediately."
+      "comments": "Beautiful apartment in great condition. Available immediately.",
+      "lat": 40.08734,
+      "lng": -74.25544,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11AA75_1054:18",
@@ -3358,7 +4042,11 @@
       "accepts_hud": false,
       "phones": [],
       "furnished": false,
-      "comments": "Beautiful small apartment. Available December 1."
+      "comments": "Beautiful small apartment. Available December 1.",
+      "lat": 40.07159,
+      "lng": -74.22007,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1AA176_1055:9",
@@ -3376,7 +4064,11 @@
         "732-674-9281"
       ],
       "furnished": false,
-      "comments": "Centrally located, brand new, single family home. XSP, upgrades,2 spots. Av. Jan.15"
+      "comments": "Centrally located, brand new, single family home. XSP, upgrades,2 spots. Av. Jan.15",
+      "lat": 40.09377,
+      "lng": -74.17316,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1AA176_1055:4",
@@ -3394,7 +4086,11 @@
         "908-839-2176"
       ],
       "furnished": false,
-      "comments": "Beautiful apt., custom closets & lighting, lg. kitchen with SS appliances. Av. imm."
+      "comments": "Beautiful apt., custom closets & lighting, lg. kitchen with SS appliances. Av. imm.",
+      "lat": 40.07005,
+      "lng": -74.21677,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1AA176_1055:7",
@@ -3417,7 +4113,11 @@
         "347-765-8306"
       ],
       "furnished": false,
-      "comments": "Available December."
+      "comments": "Available December.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "1A130_972:6",
@@ -3440,7 +4140,11 @@
         "848-210-0274"
       ],
       "furnished": true,
-      "comments": "Beautiful furnished apartment in excellent condition. Available December 1."
+      "comments": "Beautiful furnished apartment in excellent condition. Available December 1.",
+      "lat": 40.09887,
+      "lng": -74.18454,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A176_1056:1",
@@ -3463,7 +4167,11 @@
         "732-239-6494"
       ],
       "furnished": true,
-      "comments": "Gorgeous fully upgraded furnished Choson Kallah apt. in private home. Av. Dec. 15."
+      "comments": "Gorgeous fully upgraded furnished Choson Kallah apt. in private home. Av. Dec. 15.",
+      "lat": 40.0624,
+      "lng": -74.22426,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11A75_1055:19",
@@ -3486,7 +4194,11 @@
         "732-370-1217"
       ],
       "furnished": true,
-      "comments": "Furnished apt. near everything! For single man. New carpet & paint. Av. immediately."
+      "comments": "Furnished apt. near everything! For single man. New carpet & paint. Av. immediately.",
+      "lat": 40.09709,
+      "lng": -74.20763,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11A75_1055:20",
@@ -3509,7 +4221,11 @@
         "732-616-4137"
       ],
       "furnished": true,
-      "comments": "Beautiful furnished apartment. Available December 1."
+      "comments": "Beautiful furnished apartment. Available December 1.",
+      "lat": 40.09117,
+      "lng": -74.24404,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1A163_1030:15",
@@ -3527,7 +4243,11 @@
         "347-512-6747"
       ],
       "furnished": true,
-      "comments": "Furnished, brand new, fully upgraded."
+      "comments": "Furnished, brand new, fully upgraded.",
+      "lat": 40.069,
+      "lng": -74.19716,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11A75_1054:17",
@@ -3550,7 +4270,11 @@
         "732-779-1014"
       ],
       "furnished": true,
-      "comments": "Furnished studio apartment for single. Separate entrance."
+      "comments": "Furnished studio apartment for single. Separate entrance.",
+      "lat": 40.07692,
+      "lng": -74.21352,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11A75_1054:11",
@@ -3573,7 +4297,11 @@
         "732-551-4977"
       ],
       "furnished": true,
-      "comments": "Beautifully furnished apt. at New Hampshire & Rt. 70. Available immediately."
+      "comments": "Beautifully furnished apt. at New Hampshire & Rt. 70. Available immediately.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "1R159_1021:1",
@@ -3596,7 +4324,11 @@
         "732-503-6729"
       ],
       "furnished": true,
-      "comments": "Furnished room in newly renovated house of working guys. Pool, hot tub."
+      "comments": "Furnished room in newly renovated house of working guys. Pool, hot tub.",
+      "lat": 40.11518,
+      "lng": -74.36478,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "11TT75_1055:17",
@@ -3614,7 +4346,11 @@
         "732-491-5003"
       ],
       "furnished": false,
-      "comments": "Stunning brand new duplex for short term one-year rental. Available February."
+      "comments": "Stunning brand new duplex for short term one-year rental. Available February.",
+      "lat": 40.09291,
+      "lng": -74.21476,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11HH75_1054:12",
@@ -3632,7 +4368,11 @@
         "732-703-5634"
       ],
       "furnished": false,
-      "comments": "In nice neighborhood. Available immediately."
+      "comments": "In nice neighborhood. Available immediately.",
+      "lat": 40.14318,
+      "lng": -74.27047,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11TT75_1054:13",
@@ -3650,7 +4390,11 @@
         "347-414-0343"
       ],
       "furnished": false,
-      "comments": "Andrewmodel,move-incond. Beautifuldeck, 2-sink kitchen,finishedbasemt.2-cargarage."
+      "comments": "Andrewmodel,move-incond. Beautifuldeck, 2-sink kitchen,finishedbasemt.2-cargarage.",
+      "lat": 40.11949,
+      "lng": -74.25708,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11TT75_1054:14",
@@ -3668,7 +4412,11 @@
         "347-578-4165"
       ],
       "furnished": false,
-      "comments": "Perfect condition. Many upgrades: extra soundproofing, parquet flooring. Av. imm."
+      "comments": "Perfect condition. Many upgrades: extra soundproofing, parquet flooring. Av. imm.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "11HH75_1054:15",
@@ -3686,7 +4434,11 @@
         "732-534-1065"
       ],
       "furnished": false,
-      "comments": "Nice spacious house, very private. 5-minute walk to Chabad. Available immediately."
+      "comments": "Nice spacious house, very private. 5-minute walk to Chabad. Available immediately.",
+      "lat": 39.95284,
+      "lng": -74.19674,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "11HH75_1054:16",
@@ -3704,7 +4456,11 @@
         "848-342-9693"
       ],
       "furnished": false,
-      "comments": "House on rent-stabilized program, Laurel Ave./Ocean Ave. Available immediately."
+      "comments": "House on rent-stabilized program, Laurel Ave./Ocean Ave. Available immediately.",
+      "lat": 40.08983,
+      "lng": -74.19996,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11HH75_1054:19",
@@ -3720,7 +4476,11 @@
       "accepts_hud": false,
       "phones": [],
       "furnished": false,
-      "comments": "Beautifully renovated ranch. Great price! Available immediately."
+      "comments": "Beautifully renovated ranch. Great price! Available immediately.",
+      "lat": 40.24439,
+      "lng": -74.31119,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11TT75_1054:20",
@@ -3738,7 +4498,11 @@
         "615-400-1777"
       ],
       "furnished": false,
-      "comments": "Nash house. Full basement. Deck."
+      "comments": "Nash house. Full basement. Deck.",
+      "lat": 40.11949,
+      "lng": -74.25708,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11HH75_1055:16",
@@ -3756,7 +4520,11 @@
         "718-840-8059"
       ],
       "furnished": false,
-      "comments": "Corner house. New kitchen. Finished basement, beautiful new pool. Av. Jan. 1."
+      "comments": "Corner house. New kitchen. Finished basement, beautiful new pool. Av. Jan. 1.",
+      "lat": 40.00317,
+      "lng": -74.25653,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1TT176_1055:1",
@@ -3774,7 +4542,11 @@
         "929-653-4583"
       ],
       "furnished": false,
-      "comments": "Brand new. Whats App-732-573-8124"
+      "comments": "Brand new. Whats App-732-573-8124",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "U1TT176_1055:8",
@@ -3792,7 +4564,11 @@
         "848-525-6674"
       ],
       "furnished": false,
-      "comments": "Beautiful upgraded town house. Available January 1."
+      "comments": "Beautiful upgraded town house. Available January 1.",
+      "lat": 40.08836,
+      "lng": -74.18005,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1TT173_1051:1",
@@ -3810,7 +4586,11 @@
         "347-563-0564"
       ],
       "furnished": false,
-      "comments": "Brand new upgraded duplex. Available mid-November."
+      "comments": "Brand new upgraded duplex. Available mid-November.",
+      "lat": 40.06569,
+      "lng": -74.19579,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1HH176_1055:11",
@@ -3828,7 +4608,11 @@
         "732-600-1755"
       ],
       "furnished": false,
-      "comments": "Colonial with basement, garage, on acre property, prime location. Avail. immediately."
+      "comments": "Colonial with basement, garage, on acre property, prime location. Avail. immediately.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "U1HH176_1055:13",
@@ -3846,7 +4630,11 @@
         "845-304-1885"
       ],
       "furnished": false,
-      "comments": "Large backyard. Available immediately."
+      "comments": "Large backyard. Available immediately.",
+      "lat": 40.10424,
+      "lng": -74.20308,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U11TT76_1055:14",
@@ -3864,7 +4652,11 @@
         "718-541-4413"
       ],
       "furnished": false,
-      "comments": "Modern."
+      "comments": "Modern.",
+      "lat": 40.04627,
+      "lng": -74.20362,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1HH176_1055:15",
@@ -3882,7 +4674,11 @@
         "347-668-6565"
       ],
       "furnished": false,
-      "comments": "Beautifully redone bi-level, 2 kitchens, large backyard with deck, sought after area."
+      "comments": "Beautifully redone bi-level, 2 kitchens, large backyard with deck, sought after area.",
+      "lat": 40.15011,
+      "lng": -74.21348,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1HH177_1056:15",
@@ -3900,7 +4696,11 @@
         "732-766-3100"
       ],
       "furnished": false,
-      "comments": "Yeshiva area, private house & lot, newly renovated, finished basement."
+      "comments": "Yeshiva area, private house & lot, newly renovated, finished basement.",
+      "lat": 40.09825,
+      "lng": -74.21517,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U11TT77_1056:16",
@@ -3918,7 +4718,11 @@
         "732-267-1764"
       ],
       "furnished": false,
-      "comments": "Totally redone, new kitchen & bathrooms, freshly painted. Available immediately."
+      "comments": "Totally redone, new kitchen & bathrooms, freshly painted. Available immediately.",
+      "lat": 40.04698,
+      "lng": -74.20717,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U11TT77_1056:17",
@@ -3936,7 +4740,11 @@
         "848-240-5208"
       ],
       "furnished": false,
-      "comments": "Brand new, 3600 SF.magnificent house. Upgraded throughout. master suite etc.."
+      "comments": "Brand new, 3600 SF.magnificent house. Upgraded throughout. master suite etc..",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "U1HH177_1056:185",
@@ -3954,7 +4762,11 @@
         "732-795-2067"
       ],
       "furnished": false,
-      "comments": "Spacious newly renovated house, 2 floors plus bsmt., many upgrades. Avail Dec.1."
+      "comments": "Spacious newly renovated house, 2 floors plus bsmt., many upgrades. Avail Dec.1.",
+      "lat": 40.11544,
+      "lng": -74.24673,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11TT73_1049:17",
@@ -3972,7 +4784,11 @@
         "732-267-7500"
       ],
       "furnished": false,
-      "comments": "Available immediately. Beautiful large home. Prefersmallerfamily."
+      "comments": "Available immediately. Beautiful large home. Prefersmallerfamily.",
+      "lat": 40.0682,
+      "lng": -74.20488,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11TT73_1051:9",
@@ -3990,7 +4806,11 @@
         "248-416-6792"
       ],
       "furnished": false,
-      "comments": "Brand new Crofton model. Two sinks, deck. Backs up to woods. Available immediately."
+      "comments": "Brand new Crofton model. Two sinks, deck. Backs up to woods. Available immediately.",
+      "lat": 40.10983,
+      "lng": -74.24426,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "UHH1166_1036:1",
@@ -4008,7 +4828,11 @@
         "845-637-0464"
       ],
       "furnished": false,
-      "comments": "Nice private house with nice backyard."
+      "comments": "Nice private house with nice backyard.",
+      "lat": 39.95284,
+      "lng": -74.19674,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "1HH177_1056:4",
@@ -4026,7 +4850,11 @@
         "848-251-4447"
       ],
       "furnished": false,
-      "comments": "10 Yellowstone Lane. Gorgeous, move-in condition. Private backyard. Av. December."
+      "comments": "10 Yellowstone Lane. Gorgeous, move-in condition. Private backyard. Av. December.",
+      "lat": 39.98703,
+      "lng": -74.14995,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11TT77_1056:5",
@@ -4044,7 +4872,11 @@
         "347-628-6565"
       ],
       "furnished": false,
-      "comments": "Brand new duplex. Available immediately."
+      "comments": "Brand new duplex. Available immediately.",
+      "lat": 40.07033,
+      "lng": -74.19917,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1HH177_1056:6",
@@ -4062,7 +4894,11 @@
         "347-628-6565"
       ],
       "furnished": false,
-      "comments": "Off North Maple. Private house on one acre."
+      "comments": "Off North Maple. Private house on one acre.",
+      "lat": 39.95284,
+      "lng": -74.19674,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "1HH177_1056:7",
@@ -4080,7 +4916,11 @@
         "732-551-4480"
       ],
       "furnished": false,
-      "comments": "Has pool. Available immediately."
+      "comments": "Has pool. Available immediately.",
+      "lat": 39.9735,
+      "lng": -74.3817,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "U11TT77_1056:12",
@@ -4098,7 +4938,11 @@
         "732-364-1850"
       ],
       "furnished": false,
-      "comments": "Beautiful Nash model, new and airy. Available January."
+      "comments": "Beautiful Nash model, new and airy. Available January.",
+      "lat": 40.13838,
+      "lng": -74.34935,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A104_915:4",
@@ -4121,7 +4965,11 @@
         "732-864-4219"
       ],
       "furnished": true,
-      "comments": "Luxury Choson/Kallahabove-grnd.furnished, walkto Yeshiva.3mo.minimum. Av. Dec.1."
+      "comments": "Luxury Choson/Kallahabove-grnd.furnished, walkto Yeshiva.3mo.minimum. Av. Dec.1.",
+      "lat": 40.05214,
+      "lng": -74.18546,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "A998_718:3",
@@ -4137,7 +4985,11 @@
       "accepts_hud": false,
       "phones": [],
       "furnished": false,
-      "comments": "Eishel Elisheva apartment. No charge, stay. Ground floor, separate entrance."
+      "comments": "Eishel Elisheva apartment. No charge, stay. Ground floor, separate entrance.",
+      "lat": 40.24439,
+      "lng": -74.31119,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11A53_1012:19",
@@ -4160,7 +5012,11 @@
         "732-228-0146"
       ],
       "furnished": true,
-      "comments": "Short term. Beautiful furnished full apartment. Available immediately."
+      "comments": "Short term. Beautiful furnished full apartment. Available immediately.",
+      "lat": 40.06846,
+      "lng": -74.2205,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A073_856:9",
@@ -4178,7 +5034,11 @@
         "323-559-0691"
       ],
       "furnished": true,
-      "comments": "Beautiful bright new upgraded furnished apartment. Available December 14."
+      "comments": "Beautiful bright new upgraded furnished apartment. Available December 14.",
+      "lat": 40.08235,
+      "lng": -74.23032,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A131_978:1",
@@ -4201,7 +5061,11 @@
         "908-216-8995"
       ],
       "furnished": true,
-      "comments": "Shortterm furnished Choson/Kallah apt.,fullyupgraded,beautifullayout."
+      "comments": "Shortterm furnished Choson/Kallah apt.,fullyupgraded,beautifullayout.",
+      "lat": 40.09566,
+      "lng": -74.24964,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1A131_978:2",
@@ -4224,7 +5088,11 @@
         "908-514-8424"
       ],
       "furnished": true,
-      "comments": "Bright beautiful fully-furnished newer apt. for Chosson/Kallah. Washer/dryer."
+      "comments": "Bright beautiful fully-furnished newer apt. for Chosson/Kallah. Washer/dryer.",
+      "lat": 40.10636,
+      "lng": -74.20913,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1R115_935:2",
@@ -4247,7 +5115,11 @@
         "848-373-4552"
       ],
       "furnished": true,
-      "comments": "Furnished room in a house of single men. Use of W/D, kitchenette, etc. Av. imm."
+      "comments": "Furnished room in a house of single men. Use of W/D, kitchenette, etc. Av. imm.",
+      "lat": 40.1009,
+      "lng": -74.2223,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1RR177_1056:19",
@@ -4265,7 +5137,11 @@
         "732-508-0131"
       ],
       "furnished": false,
-      "comments": "4 rooms avail. by the room, or whole house at a better rate. Internet incl. No contact."
+      "comments": "4 rooms avail. by the room, or whole house at a better rate. Internet incl. No contact.",
+      "lat": 39.95284,
+      "lng": -74.19674,
+      "geo": "town",
+      "geo_unknown": []
     },
     {
       "id": "U1AA177_1056:8",
@@ -4283,7 +5159,11 @@
         "718-637-1560"
       ],
       "furnished": false,
-      "comments": "Available immediately."
+      "comments": "Available immediately.",
+      "lat": 40.09461,
+      "lng": -74.21778,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "1AA177_1056:9",
@@ -4301,7 +5181,11 @@
         "848-342-9693"
       ],
       "furnished": false,
-      "comments": "Off Chestnut Street. No carpet. Available immediately."
+      "comments": "Off Chestnut Street. No carpet. Available immediately.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "U1AA177_1056:10",
@@ -4319,7 +5203,11 @@
         "732-668-8790"
       ],
       "furnished": false,
-      "comments": "Large kitchen & dining room. Cul-de-sac."
+      "comments": "Large kitchen & dining room. Cul-de-sac.",
+      "lat": 40.05179,
+      "lng": -74.18794,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1AA177_1056:11",
@@ -4337,7 +5225,11 @@
         "732-800-1626"
       ],
       "furnished": false,
-      "comments": "Beautiful and spacious with oversized windows."
+      "comments": "Beautiful and spacious with oversized windows.",
+      "lat": 40.07137,
+      "lng": -74.19811,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1AA177_1056:20",
@@ -4360,7 +5252,11 @@
         "347-416-1120"
       ],
       "furnished": false,
-      "comments": "Beautiful upgraded apt. in private house, parking spot. Available December."
+      "comments": "Beautiful upgraded apt. in private house, parking spot. Available December.",
+      "lat": 40.10572,
+      "lng": -74.16878,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1AA177_1056:13",
@@ -4383,7 +5279,11 @@
         "347-585-8625"
       ],
       "furnished": false,
-      "comments": "Available December 1."
+      "comments": "Available December 1.",
+      "lat": 40.02297,
+      "lng": -74.33471,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1AA177_1056:14",
@@ -4401,7 +5301,11 @@
         "732-730-7872"
       ],
       "furnished": false,
-      "comments": "Large, beautifully upgraded, parking spot in driveway."
+      "comments": "Large, beautifully upgraded, parking spot in driveway.",
+      "lat": 40.0994,
+      "lng": -74.20452,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11AA75_1052:14",
@@ -4421,7 +5325,11 @@
         "929-214-7900"
       ],
       "furnished": false,
-      "comments": "Full vinyl flooring. Includes Mezuzos. Washer/dryer, dish washer, etc. Av. Dec. 1."
+      "comments": "Full vinyl flooring. Includes Mezuzos. Washer/dryer, dish washer, etc. Av. Dec. 1.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "9AA52_672:11",
@@ -4439,7 +5347,11 @@
         "848-480-5389"
       ],
       "furnished": false,
-      "comments": "In private home. Well-lit. Separate utilities. WD. Extra parking in back. Av. immediately."
+      "comments": "In private home. Well-lit. Separate utilities. WD. Extra parking in back. Av. immediately.",
+      "lat": 40.07137,
+      "lng": -74.19811,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "11AA75_1052:12",
@@ -4459,7 +5371,11 @@
         "732-600-7022"
       ],
       "furnished": false,
-      "comments": "Verynice,largelivingarea,newly renovated. Poss.furnishedmaster bedroom. Av.imm."
+      "comments": "Verynice,largelivingarea,newly renovated. Poss.furnishedmaster bedroom. Av.imm.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": []
     },
     {
       "id": "11AA61_1025:19",
@@ -4482,7 +5398,11 @@
         "347-585-5020"
       ],
       "furnished": false,
-      "comments": "Brand new fully upgraded first floor Choson/Kallah apartment."
+      "comments": "Brand new fully upgraded first floor Choson/Kallah apartment.",
+      "lat": 40.09663,
+      "lng": -74.20002,
+      "geo": "place",
+      "geo_unknown": []
     },
     {
       "id": "U1AA176_1055:5",
@@ -4500,7 +5420,663 @@
         "646-589-3993"
       ],
       "furnished": false,
-      "comments": "Spacious kitchen, airy, move in condition. Excellent location. Avail. January 1."
+      "comments": "Spacious kitchen, airy, move in condition. Excellent location. Avail. January 1.",
+      "lat": 40.0987,
+      "lng": -74.20033,
+      "geo": "place",
+      "geo_unknown": []
     }
-  ]
+  ],
+  "places": {
+    "13th": {
+      "name": "13Th",
+      "lat": 40.10421,
+      "lng": -74.20903
+    },
+    "14th": {
+      "name": "14Th",
+      "lat": 40.10316,
+      "lng": -74.23122
+    },
+    "14th street": {
+      "name": "14Th Street",
+      "lat": 40.10316,
+      "lng": -74.23122
+    },
+    "22 enclave blvd": {
+      "name": "22 Enclave Blvd",
+      "lat": 40.05865,
+      "lng": -74.22835
+    },
+    "415 laurel ave": {
+      "name": "415 Laurel Ave",
+      "lat": 40.08983,
+      "lng": -74.19996
+    },
+    "5th": {
+      "name": "5Th",
+      "lat": 40.09553,
+      "lng": -74.2019
+    },
+    "7th": {
+      "name": "7Th",
+      "lat": 40.0985,
+      "lng": -74.19921
+    },
+    "albert": {
+      "name": "Albert",
+      "lat": 40.06373,
+      "lng": -74.19895
+    },
+    "arlington": {
+      "name": "Arlington",
+      "lat": 40.07952,
+      "lng": -74.20891
+    },
+    "beaver crossing": {
+      "name": "Beaver Crossing",
+      "lat": 40.06406,
+      "lng": -74.2313
+    },
+    "bergen": {
+      "name": "Bergen",
+      "lat": 40.09202,
+      "lng": -74.20031
+    },
+    "brook": {
+      "name": "Brook",
+      "lat": 40.08568,
+      "lng": -74.23207
+    },
+    "brookwood 1": {
+      "name": "Brookwood 1",
+      "lat": 40.11532,
+      "lng": -74.24687
+    },
+    "brookwood 3": {
+      "name": "Brookwood 3",
+      "lat": 40.11544,
+      "lng": -74.24673
+    },
+    "brookwood 4": {
+      "name": "Brookwood 4",
+      "lat": 40.1155,
+      "lng": -74.24666
+    },
+    "brookwood 4 jackson": {
+      "name": "Brookwood 4 Jackson",
+      "lat": 40.1155,
+      "lng": -74.24666
+    },
+    "candlewood": {
+      "name": "Candlewood",
+      "lat": 40.15011,
+      "lng": -74.21348
+    },
+    "case road": {
+      "name": "Case Road",
+      "lat": 40.10017,
+      "lng": -74.23143
+    },
+    "cedar court": {
+      "name": "Cedar Court",
+      "lat": 40.07159,
+      "lng": -74.22007
+    },
+    "central": {
+      "name": "Central",
+      "lat": 40.09419,
+      "lng": -74.25307
+    },
+    "central avenue": {
+      "name": "Central Avenue",
+      "lat": 40.08939,
+      "lng": -74.23015
+    },
+    "chateau": {
+      "name": "Chateau",
+      "lat": 40.06289,
+      "lng": -74.22168
+    },
+    "cherry st": {
+      "name": "Cherry St",
+      "lat": 40.09203,
+      "lng": -74.19226
+    },
+    "chestnut": {
+      "name": "Chestnut",
+      "lat": 40.0503,
+      "lng": -74.21092
+    },
+    "clifton": {
+      "name": "Clifton",
+      "lat": 40.09291,
+      "lng": -74.21476
+    },
+    "clover": {
+      "name": "Clover",
+      "lat": 40.08492,
+      "lng": -74.20098
+    },
+    "club at jackson 21": {
+      "name": "Club At Jackson 21",
+      "lat": 40.13838,
+      "lng": -74.34935
+    },
+    "congress street": {
+      "name": "Congress Street",
+      "lat": 40.09183,
+      "lng": -74.20638
+    },
+    "county ln": {
+      "name": "County Ln",
+      "lat": 40.10551,
+      "lng": -74.19063
+    },
+    "courtney": {
+      "name": "Courtney",
+      "lat": 40.10359,
+      "lng": -74.21558
+    },
+    "crest hill": {
+      "name": "Crest Hill",
+      "lat": 40.02598,
+      "lng": -74.23697
+    },
+    "cross": {
+      "name": "Cross",
+      "lat": 40.05535,
+      "lng": -74.22112
+    },
+    "dewey ave": {
+      "name": "Dewey Ave",
+      "lat": 40.09284,
+      "lng": -74.20358
+    },
+    "dunhill rd": {
+      "name": "Dunhill Rd",
+      "lat": 40.10372,
+      "lng": -74.31907
+    },
+    "e 7th": {
+      "name": "E 7Th",
+      "lat": 40.0985,
+      "lng": -74.19921
+    },
+    "east end": {
+      "name": "East End",
+      "lat": 40.10242,
+      "lng": -74.20021
+    },
+    "enclave": {
+      "name": "Enclave",
+      "lat": 40.05445,
+      "lng": -74.22769
+    },
+    "evergreen gardens": {
+      "name": "Evergreen Gardens",
+      "lat": 40.07033,
+      "lng": -74.19917
+    },
+    "fairways": {
+      "name": "Fairways",
+      "lat": 40.05957,
+      "lng": -74.23693
+    },
+    "glen avenue": {
+      "name": "Glen Avenue",
+      "lat": 40.09307,
+      "lng": -74.2375
+    },
+    "harfield": {
+      "name": "Harfield",
+      "lat": 40.14318,
+      "lng": -74.27047
+    },
+    "harmony farms": {
+      "name": "Harmony Farms",
+      "lat": 40.12995,
+      "lng": -74.26051
+    },
+    "hearthstone": {
+      "name": "Hearthstone",
+      "lat": 40.0619,
+      "lng": -74.22684
+    },
+    "high st": {
+      "name": "High St",
+      "lat": 40.07005,
+      "lng": -74.21677
+    },
+    "high street": {
+      "name": "High Street",
+      "lat": 40.07005,
+      "lng": -74.21677
+    },
+    "holly oaks": {
+      "name": "Holly Oaks",
+      "lat": 40.0357,
+      "lng": -74.26028
+    },
+    "hope": {
+      "name": "Hope",
+      "lat": 40.10729,
+      "lng": -74.24202
+    },
+    "hope chapel": {
+      "name": "Hope Chapel",
+      "lat": 40.10729,
+      "lng": -74.24202
+    },
+    "howell": {
+      "name": "Howell",
+      "lat": 40.1413,
+      "lng": -74.22366
+    },
+    "hyson": {
+      "name": "Hyson",
+      "lat": 40.14095,
+      "lng": -74.26653
+    },
+    "irene court": {
+      "name": "Irene Court",
+      "lat": 40.09557,
+      "lng": -74.25586
+    },
+    "jackson": {
+      "name": "Jackson",
+      "lat": 40.11518,
+      "lng": -74.36478
+    },
+    "jackson 21": {
+      "name": "Jackson 21",
+      "lat": 40.11949,
+      "lng": -74.25708
+    },
+    "jackson pines rd": {
+      "name": "Jackson Pines Rd",
+      "lat": 40.09789,
+      "lng": -74.26554
+    },
+    "james": {
+      "name": "James",
+      "lat": 40.07903,
+      "lng": -74.23694
+    },
+    "james st": {
+      "name": "James St",
+      "lat": 40.07903,
+      "lng": -74.23694
+    },
+    "james street": {
+      "name": "James Street",
+      "lat": 40.07903,
+      "lng": -74.23694
+    },
+    "jule court": {
+      "name": "Jule Court",
+      "lat": 40.0888,
+      "lng": -74.24942
+    },
+    "lakewood": {
+      "name": "Lakewood",
+      "lat": 40.0941,
+      "lng": -74.21499
+    },
+    "lakewood commons": {
+      "name": "Lakewood Commons",
+      "lat": 40.0682,
+      "lng": -74.20488
+    },
+    "lawrence avenue": {
+      "name": "Lawrence Avenue",
+      "lat": 40.10094,
+      "lng": -74.20775
+    },
+    "leonard": {
+      "name": "Leonard",
+      "lat": 40.10309,
+      "lng": -74.20119
+    },
+    "lexington": {
+      "name": "Lexington",
+      "lat": 40.09865,
+      "lng": -74.21337
+    },
+    "locust": {
+      "name": "Locust",
+      "lat": 40.04706,
+      "lng": -74.21205
+    },
+    "locust grove": {
+      "name": "Locust Grove",
+      "lat": 40.21393,
+      "lng": -74.09581
+    },
+    "locust st": {
+      "name": "Locust St",
+      "lat": 40.04627,
+      "lng": -74.20362
+    },
+    "mackenzie toms river": {
+      "name": "Mackenzie Toms River",
+      "lat": 40.03247,
+      "lng": -74.24373
+    },
+    "manchester": {
+      "name": "Manchester",
+      "lat": 39.9735,
+      "lng": -74.3817
+    },
+    "marc drive": {
+      "name": "Marc Drive",
+      "lat": 40.07433,
+      "lng": -74.21049
+    },
+    "mass": {
+      "name": "Mass",
+      "lat": 40.05774,
+      "lng": -74.22981
+    },
+    "meadow run": {
+      "name": "Meadow Run",
+      "lat": 40.1167,
+      "lng": -74.11088
+    },
+    "medina rd": {
+      "name": "Medina Rd",
+      "lat": 40.09377,
+      "lng": -74.17316
+    },
+    "miller": {
+      "name": "Miller",
+      "lat": 40.09714,
+      "lng": -74.24621
+    },
+    "monmouth views": {
+      "name": "Monmouth Views",
+      "lat": 40.16382,
+      "lng": -74.25461
+    },
+    "monterey": {
+      "name": "Monterey",
+      "lat": 40.08838,
+      "lng": -74.23113
+    },
+    "n apple": {
+      "name": "N Apple",
+      "lat": 40.10582,
+      "lng": -74.20266
+    },
+    "new central": {
+      "name": "New Central",
+      "lat": 40.09419,
+      "lng": -74.25307
+    },
+    "new central ave": {
+      "name": "New Central Ave",
+      "lat": 40.09419,
+      "lng": -74.25307
+    },
+    "new prospect jackson": {
+      "name": "New Prospect Jackson",
+      "lat": 40.11754,
+      "lng": -74.25369
+    },
+    "nowlan": {
+      "name": "Nowlan",
+      "lat": 40.0989,
+      "lng": -74.20146
+    },
+    "oak": {
+      "name": "Oak",
+      "lat": 40.08529,
+      "lng": -74.17882
+    },
+    "oak glen": {
+      "name": "Oak Glen",
+      "lat": 39.98703,
+      "lng": -74.14995
+    },
+    "ocean avenue": {
+      "name": "Ocean Avenue",
+      "lat": 40.08921,
+      "lng": -74.18644
+    },
+    "ocean pointe": {
+      "name": "Ocean Pointe",
+      "lat": 40.08836,
+      "lng": -74.18005
+    },
+    "park": {
+      "name": "Park",
+      "lat": 40.0525,
+      "lng": -74.18299
+    },
+    "park ave": {
+      "name": "Park Ave",
+      "lat": 40.0994,
+      "lng": -74.20452
+    },
+    "pawnee": {
+      "name": "Pawnee",
+      "lat": 40.1147,
+      "lng": -74.2545
+    },
+    "pine lake park": {
+      "name": "Pine Lake Park",
+      "lat": 40.00317,
+      "lng": -74.25653
+    },
+    "pine river": {
+      "name": "Pine River",
+      "lat": 40.07692,
+      "lng": -74.21352
+    },
+    "pine st": {
+      "name": "Pine St",
+      "lat": 40.07418,
+      "lng": -74.20335
+    },
+    "princeton": {
+      "name": "Princeton",
+      "lat": 40.1085,
+      "lng": -74.20923
+    },
+    "prospect": {
+      "name": "Prospect",
+      "lat": 40.06979,
+      "lng": -74.23873
+    },
+    "prospect vines": {
+      "name": "Prospect Vines",
+      "lat": 40.06979,
+      "lng": -74.23873
+    },
+    "raintree": {
+      "name": "Raintree",
+      "lat": 40.24439,
+      "lng": -74.31119
+    },
+    "ramtown": {
+      "name": "Ramtown",
+      "lat": 40.10698,
+      "lng": -74.16408
+    },
+    "ridge": {
+      "name": "Ridge",
+      "lat": 40.10572,
+      "lng": -74.16878
+    },
+    "rockwell": {
+      "name": "Rockwell",
+      "lat": 40.02297,
+      "lng": -74.33471
+    },
+    "rose ct": {
+      "name": "Rose Ct",
+      "lat": 40.04689,
+      "lng": -74.20229
+    },
+    "route 88": {
+      "name": "Route 88",
+      "lat": 40.05179,
+      "lng": -74.18794
+    },
+    "rt 70": {
+      "name": "Rt 70",
+      "lat": 40.05179,
+      "lng": -74.18794
+    },
+    "rt 88": {
+      "name": "Rt 88",
+      "lat": 40.05179,
+      "lng": -74.18794
+    },
+    "rt 9": {
+      "name": "Rt 9",
+      "lat": 40.05179,
+      "lng": -74.18794
+    },
+    "saratoga": {
+      "name": "Saratoga",
+      "lat": 40.04319,
+      "lng": -74.24243
+    },
+    "shady ln": {
+      "name": "Shady Ln",
+      "lat": 40.09628,
+      "lng": -74.24189
+    },
+    "shonny": {
+      "name": "Shonny",
+      "lat": 40.09715,
+      "lng": -74.25628
+    },
+    "sims": {
+      "name": "Sims",
+      "lat": 40.069,
+      "lng": -74.19716
+    },
+    "somerset": {
+      "name": "Somerset",
+      "lat": 40.07137,
+      "lng": -74.19811
+    },
+    "somerset avenue": {
+      "name": "Somerset Avenue",
+      "lat": 40.09964,
+      "lng": -74.19536
+    },
+    "somerset walk": {
+      "name": "Somerset Walk",
+      "lat": 40.07137,
+      "lng": -74.19811
+    },
+    "south lake dr": {
+      "name": "South Lake Dr",
+      "lat": 40.09333,
+      "lng": -74.23308
+    },
+    "spruce st": {
+      "name": "Spruce St",
+      "lat": 40.07103,
+      "lng": -74.20387
+    },
+    "squankum": {
+      "name": "Squankum",
+      "lat": 40.10996,
+      "lng": -74.20087
+    },
+    "st katherine": {
+      "name": "St Katherine",
+      "lat": 40.10926,
+      "lng": -74.24172
+    },
+    "st nicholas": {
+      "name": "St Nicholas",
+      "lat": 40.08815,
+      "lng": -74.23501
+    },
+    "sterling forest": {
+      "name": "Sterling Forest",
+      "lat": 40.06846,
+      "lng": -74.2205
+    },
+    "sunset": {
+      "name": "Sunset",
+      "lat": 40.08567,
+      "lng": -74.2237
+    },
+    "the 70": {
+      "name": "The 70",
+      "lat": 40.0793,
+      "lng": -74.18323
+    },
+    "the reserve": {
+      "name": "The Reserve",
+      "lat": 39.96185,
+      "lng": -74.37833
+    },
+    "toms river": {
+      "name": "Toms River",
+      "lat": 39.95284,
+      "lng": -74.19674
+    },
+    "topaz": {
+      "name": "Topaz",
+      "lat": 40.04315,
+      "lng": -74.1619
+    },
+    "twin oaks": {
+      "name": "Twin Oaks",
+      "lat": 40.10604,
+      "lng": -74.19886
+    },
+    "van buren": {
+      "name": "Van Buren",
+      "lat": 40.09471,
+      "lng": -74.24924
+    },
+    "villas": {
+      "name": "Villas",
+      "lat": 39.94862,
+      "lng": -74.07291
+    },
+    "vine": {
+      "name": "Vine",
+      "lat": 40.04608,
+      "lng": -74.21275
+    },
+    "w county ln": {
+      "name": "W County Ln",
+      "lat": 40.1012,
+      "lng": -74.16414
+    },
+    "w kennedy": {
+      "name": "W Kennedy",
+      "lat": 40.10816,
+      "lng": -74.23164
+    },
+    "westgate": {
+      "name": "Westgate",
+      "lat": 40.08734,
+      "lng": -74.25544
+    },
+    "whitewater ct": {
+      "name": "Whitewater Ct",
+      "lat": 40.00686,
+      "lng": -74.23082
+    },
+    "wyndham": {
+      "name": "Wyndham",
+      "lat": 40.24436,
+      "lng": -74.31983
+    },
+    "yeshiva": {
+      "name": "Yeshiva",
+      "lat": 40.09461,
+      "lng": -74.21778
+    }
+  }
 }

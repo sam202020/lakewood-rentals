@@ -1,0 +1,1222 @@
+{
+ "13th": {
+  "name": "13Th",
+  "lat": 40.10421,
+  "lng": -74.20903,
+  "source": "osm",
+  "match": "13th Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "14th": {
+  "name": "14Th",
+  "lat": 40.10316,
+  "lng": -74.23122,
+  "source": "osm",
+  "match": "14th Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/tertiary"
+ },
+ "14th street": {
+  "name": "14Th Street",
+  "lat": 40.10316,
+  "lng": -74.23122,
+  "source": "osm",
+  "match": "14th Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/tertiary"
+ },
+ "22 enclave blvd": {
+  "name": "22 Enclave Blvd",
+  "lat": 40.05865,
+  "lng": -74.22835,
+  "source": "osm",
+  "match": "22, Enclave Boulevard, Enclave, Lakewood Township, Ocean County, New Jersey, 08701, United",
+  "kind": "place/house"
+ },
+ "415 laurel ave": {
+  "name": "415 Laurel Ave",
+  "lat": 40.08983,
+  "lng": -74.19996,
+  "source": "osm",
+  "match": "415, Laurel Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "place/house"
+ },
+ "55+community": {
+  "name": "55+Community",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "5th": {
+  "name": "5Th",
+  "lat": 40.09553,
+  "lng": -74.2019,
+  "source": "osm",
+  "match": "East 5th Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "7th": {
+  "name": "7Th",
+  "lat": 40.0985,
+  "lng": -74.19921,
+  "source": "osm",
+  "match": "East 7th Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "957 w county ln": {
+  "name": "957 W County Ln",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "albert": {
+  "name": "Albert",
+  "lat": 40.06373,
+  "lng": -74.19895,
+  "source": "osm",
+  "match": "Albert Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "albert run": {
+  "name": "Albert Run",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "appolo": {
+  "name": "Appolo",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "arlington": {
+  "name": "Arlington",
+  "lat": 40.07952,
+  "lng": -74.20891,
+  "source": "osm",
+  "match": "Arlington Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "bais shalom": {
+  "name": "Bais Shalom",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "beaver crossing": {
+  "name": "Beaver Crossing",
+  "lat": 40.06406,
+  "lng": -74.2313,
+  "source": "osm",
+  "match": "Beaver Crossing, Lakewood Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "beaver crossings": {
+  "name": "Beaver Crossings",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "belzshlavalef": {
+  "name": "Belzshlavalef",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "bergen": {
+  "name": "Bergen",
+  "lat": 40.09202,
+  "lng": -74.20031,
+  "source": "osm",
+  "match": "Bergen Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "brook": {
+  "name": "Brook",
+  "lat": 40.08568,
+  "lng": -74.23207,
+  "source": "osm",
+  "match": "Watering Place Brook, A Country Place, Lakewood Township, Ocean County, New Jersey, 08701,",
+  "kind": "waterway/stream"
+ },
+ "brook hill": {
+  "name": "Brook Hill",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "brookwood 1": {
+  "name": "Brookwood 1",
+  "lat": 40.11532,
+  "lng": -74.24687,
+  "source": "osm",
+  "match": "1, Brookwood Parkway, Jackson Township, Ocean County, New Jersey, 08527, United States",
+  "kind": "place/house"
+ },
+ "brookwood 3": {
+  "name": "Brookwood 3",
+  "lat": 40.11544,
+  "lng": -74.24673,
+  "source": "osm",
+  "match": "3, Brookwood Parkway, Jackson Township, Ocean County, New Jersey, 08527, United States",
+  "kind": "place/house"
+ },
+ "brookwood 4": {
+  "name": "Brookwood 4",
+  "lat": 40.1155,
+  "lng": -74.24666,
+  "source": "osm",
+  "match": "4, Brookwood Parkway, Jackson Township, Ocean County, New Jersey, 08527, United States",
+  "kind": "place/house"
+ },
+ "brookwood 4 jackson": {
+  "name": "Brookwood 4 Jackson",
+  "lat": 40.1155,
+  "lng": -74.24666,
+  "source": "osm",
+  "match": "4, Brookwood Parkway, Jackson Township, Ocean County, New Jersey, 08527, United States",
+  "kind": "place/house"
+ },
+ "candlewood": {
+  "name": "Candlewood",
+  "lat": 40.15011,
+  "lng": -74.21348,
+  "source": "osm",
+  "match": "Candlewood, Howell Township, Monmouth County, New Jersey, 07331, United States",
+  "kind": "place/hamlet"
+ },
+ "case road": {
+  "name": "Case Road",
+  "lat": 40.10017,
+  "lng": -74.23143,
+  "source": "osm",
+  "match": "Case Road, A Country Place, Lakewood Township, Ocean County, New Jersey, 08701, United Sta",
+  "kind": "highway/residential"
+ },
+ "cedar court": {
+  "name": "Cedar Court",
+  "lat": 40.07159,
+  "lng": -74.22007,
+  "source": "osm",
+  "match": "Cedar Court, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "central": {
+  "name": "Central",
+  "lat": 40.09419,
+  "lng": -74.25307,
+  "source": "osm",
+  "match": "New Central Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/tertiary"
+ },
+ "central avenue": {
+  "name": "Central Avenue",
+  "lat": 40.08939,
+  "lng": -74.23015,
+  "source": "osm",
+  "match": "Central Avenue, A Country Place, Lakewood Township, Ocean County, New Jersey, 08701, Unite",
+  "kind": "highway/primary"
+ },
+ "chateau": {
+  "name": "Chateau",
+  "lat": 40.06289,
+  "lng": -74.22168,
+  "source": "osm",
+  "match": "Chateau Drive, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "chateau park": {
+  "name": "Chateau Park",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "cherry st": {
+  "name": "Cherry St",
+  "lat": 40.09203,
+  "lng": -74.19226,
+  "source": "osm",
+  "match": "Cherry Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "chestnut": {
+  "name": "Chestnut",
+  "lat": 40.0503,
+  "lng": -74.21092,
+  "source": "osm",
+  "match": "Chestnut Acres, Lakewood Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "chestnut gardens": {
+  "name": "Chestnut Gardens",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "clearsteam": {
+  "name": "Clearsteam",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "clifton": {
+  "name": "Clifton",
+  "lat": 40.09291,
+  "lng": -74.21476,
+  "source": "osm",
+  "match": "Clifton Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/tertiary"
+ },
+ "clover": {
+  "name": "Clover",
+  "lat": 40.08492,
+  "lng": -74.20098,
+  "source": "osm",
+  "match": "Clover Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/tertiary"
+ },
+ "club 21 jackson": {
+  "name": "Club 21 Jackson",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "club at jackson 21": {
+  "name": "Club At Jackson 21",
+  "lat": 40.13838,
+  "lng": -74.34935,
+  "source": "osm",
+  "match": "The Club at Jackson Twenty-One, Jackson Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "congress street": {
+  "name": "Congress Street",
+  "lat": 40.09183,
+  "lng": -74.20638,
+  "source": "osm",
+  "match": "Congress Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "county ln": {
+  "name": "County Ln",
+  "lat": 40.10551,
+  "lng": -74.19063,
+  "source": "osm",
+  "match": "East County Line, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/primary"
+ },
+ "courtney": {
+  "name": "Courtney",
+  "lat": 40.10359,
+  "lng": -74.21558,
+  "source": "osm",
+  "match": "Courtney Road, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "crest hill": {
+  "name": "Crest Hill",
+  "lat": 40.02598,
+  "lng": -74.23697,
+  "source": "osm",
+  "match": "Crest Hill Road, Whitesville Meadows, Toms River, Ocean County, New Jersey, 08755, United ",
+  "kind": "highway/residential"
+ },
+ "cross": {
+  "name": "Cross",
+  "lat": 40.05535,
+  "lng": -74.22112,
+  "source": "osm",
+  "match": "Cross River Mill, Lakewood Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "dewey ave": {
+  "name": "Dewey Ave",
+  "lat": 40.09284,
+  "lng": -74.20358,
+  "source": "osm",
+  "match": "Dewey Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "dunhill rd": {
+  "name": "Dunhill Rd",
+  "lat": 40.10372,
+  "lng": -74.31907,
+  "source": "osm",
+  "match": "Dunhill Road, Holmansville, Jackson Township, Ocean County, New Jersey, 08527, United Stat",
+  "kind": "highway/residential"
+ },
+ "e 7th": {
+  "name": "E 7Th",
+  "lat": 40.0985,
+  "lng": -74.19921,
+  "source": "osm",
+  "match": "East 7th Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "east end": {
+  "name": "East End",
+  "lat": 40.10242,
+  "lng": -74.20021,
+  "source": "osm",
+  "match": "East End Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "enclave": {
+  "name": "Enclave",
+  "lat": 40.05445,
+  "lng": -74.22769,
+  "source": "osm",
+  "match": "Enclave, Lakewood Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "evergreen gardens": {
+  "name": "Evergreen Gardens",
+  "lat": 40.07033,
+  "lng": -74.19917,
+  "source": "osm",
+  "match": "Evergreen Cemetery, Spruce Street, Spruce Gardens, Lakewood Township, Ocean County, New Je",
+  "kind": "amenity/grave_yard"
+ },
+ "fairways": {
+  "name": "Fairways",
+  "lat": 40.05957,
+  "lng": -74.23693,
+  "source": "osm",
+  "match": "Fairways, Lakewood Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "glen avenue": {
+  "name": "Glen Avenue",
+  "lat": 40.09307,
+  "lng": -74.2375,
+  "source": "osm",
+  "match": "Glen Avenue, A Country Place, Lakewood Township, Ocean County, New Jersey, 08701, United S",
+  "kind": "highway/residential"
+ },
+ "harfield": {
+  "name": "Harfield",
+  "lat": 40.14318,
+  "lng": -74.27047,
+  "source": "osm",
+  "match": "Harfield Drive, Hyson, Jackson Township, Ocean County, New Jersey, 08527, United States",
+  "kind": "highway/residential"
+ },
+ "harmony farms": {
+  "name": "Harmony Farms",
+  "lat": 40.12995,
+  "lng": -74.26051,
+  "source": "osm",
+  "match": "Harmony Farms, Jackson Township, Ocean County, New Jersey, 07831, United States",
+  "kind": "place/neighbourhood"
+ },
+ "harmony hills jackson": {
+  "name": "Harmony Hills Jackson",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "hearthstone": {
+  "name": "Hearthstone",
+  "lat": 40.0619,
+  "lng": -74.22684,
+  "source": "osm",
+  "match": "Hearthstone Drive, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "heartof ridge": {
+  "name": "Heartof Ridge",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "heritage pt": {
+  "name": "Heritage Pt",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "high st": {
+  "name": "High St",
+  "lat": 40.07005,
+  "lng": -74.21677,
+  "source": "osm",
+  "match": "High Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "high street": {
+  "name": "High Street",
+  "lat": 40.07005,
+  "lng": -74.21677,
+  "source": "osm",
+  "match": "High Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "holly oaks": {
+  "name": "Holly Oaks",
+  "lat": 40.0357,
+  "lng": -74.26028,
+  "source": "osm",
+  "match": "Holly Oaks Park, Manchester Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/recreation_ground"
+ },
+ "hope": {
+  "name": "Hope",
+  "lat": 40.10729,
+  "lng": -74.24202,
+  "source": "osm",
+  "match": "North Hope Chapel Road, Lakewood Township, Ocean County, New Jersey, 07831, United States",
+  "kind": "highway/secondary"
+ },
+ "hope chapel": {
+  "name": "Hope Chapel",
+  "lat": 40.10729,
+  "lng": -74.24202,
+  "source": "osm",
+  "match": "North Hope Chapel Road, Lakewood Township, Ocean County, New Jersey, 07831, United States",
+  "kind": "highway/secondary"
+ },
+ "howell": {
+  "name": "Howell",
+  "lat": 40.1413,
+  "lng": -74.22366,
+  "source": "osm",
+  "match": "Howell Township, Monmouth County, New Jersey, United States",
+  "kind": "boundary/administrative"
+ },
+ "hyson": {
+  "name": "Hyson",
+  "lat": 40.14095,
+  "lng": -74.26653,
+  "source": "osm",
+  "match": "Hyson, Jackson Township, Ocean County, New Jersey, 07331, United States",
+  "kind": "place/hamlet"
+ },
+ "irene court": {
+  "name": "Irene Court",
+  "lat": 40.09557,
+  "lng": -74.25586,
+  "source": "osm",
+  "match": "Irene Court, Lakewood Township, Ocean County, New Jersey, 07831, United States",
+  "kind": "highway/residential"
+ },
+ "jackson": {
+  "name": "Jackson",
+  "lat": 40.11518,
+  "lng": -74.36478,
+  "source": "osm",
+  "match": "Jackson Township, Ocean County, New Jersey, 08527, United States",
+  "kind": "boundary/administrative"
+ },
+ "jackson 21": {
+  "name": "Jackson 21",
+  "lat": 40.11949,
+  "lng": -74.25708,
+  "source": "osm",
+  "match": "County Line Road, Jackson Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/primary"
+ },
+ "jackson pines rd": {
+  "name": "Jackson Pines Rd",
+  "lat": 40.09789,
+  "lng": -74.26554,
+  "source": "osm",
+  "match": "Jackson Pines Road, Jackson Township, Ocean County, New Jersey, 07831, United States",
+  "kind": "highway/residential"
+ },
+ "james": {
+  "name": "James",
+  "lat": 40.07903,
+  "lng": -74.23694,
+  "source": "osm",
+  "match": "James Street, South Lakewood, A Country Place, Lakewood Township, Ocean County, New Jersey",
+  "kind": "highway/tertiary"
+ },
+ "james st": {
+  "name": "James St",
+  "lat": 40.07903,
+  "lng": -74.23694,
+  "source": "osm",
+  "match": "James Street, South Lakewood, A Country Place, Lakewood Township, Ocean County, New Jersey",
+  "kind": "highway/tertiary"
+ },
+ "james street": {
+  "name": "James Street",
+  "lat": 40.07903,
+  "lng": -74.23694,
+  "source": "osm",
+  "match": "James Street, South Lakewood, A Country Place, Lakewood Township, Ocean County, New Jersey",
+  "kind": "highway/tertiary"
+ },
+ "jule court": {
+  "name": "Jule Court",
+  "lat": 40.0888,
+  "lng": -74.24942,
+  "source": "osm",
+  "match": "Jule Court, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "kitchenette private": {
+  "name": "Kitchenette Private",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "kol shimshon": {
+  "name": "Kol Shimshon",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "lakewood": {
+  "name": "Lakewood",
+  "lat": 40.0941,
+  "lng": -74.21499,
+  "source": "osm",
+  "match": "Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "boundary/administrative"
+ },
+ "lakewood commons": {
+  "name": "Lakewood Commons",
+  "lat": 40.0682,
+  "lng": -74.20488,
+  "source": "osm",
+  "match": "Lakewood Commons, Lakewood Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "lawrence avenue": {
+  "name": "Lawrence Avenue",
+  "lat": 40.10094,
+  "lng": -74.20775,
+  "source": "osm",
+  "match": "Lawrence Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "leonard": {
+  "name": "Leonard",
+  "lat": 40.10309,
+  "lng": -74.20119,
+  "source": "osm",
+  "match": "Leonard Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "lexington": {
+  "name": "Lexington",
+  "lat": 40.09865,
+  "lng": -74.21337,
+  "source": "osm",
+  "match": "Lexington Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "locust": {
+  "name": "Locust",
+  "lat": 40.04706,
+  "lng": -74.21205,
+  "source": "osm",
+  "match": "Locust Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/tertiary"
+ },
+ "locust grove": {
+  "name": "Locust Grove",
+  "lat": 40.21393,
+  "lng": -74.09581,
+  "source": "osm",
+  "match": "Locust Grove Road, Tinton Falls, Monmouth County, New Jersey, 07753, United States",
+  "kind": "highway/residential"
+ },
+ "locust st": {
+  "name": "Locust St",
+  "lat": 40.04627,
+  "lng": -74.20362,
+  "source": "osm",
+  "match": "Locust Street, Pine Acres, Lakewood Township, Ocean County, New Jersey, 08701, United Stat",
+  "kind": "highway/tertiary"
+ },
+ "lutzk": {
+  "name": "Lutzk",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "mackenzie toms river": {
+  "name": "Mackenzie Toms River",
+  "lat": 40.03247,
+  "lng": -74.24373,
+  "source": "osm",
+  "match": "Mackenzie Road, Whitesville Meadows, Toms River, Ocean County, New Jersey, 08701, United S",
+  "kind": "highway/residential"
+ },
+ "manchester": {
+  "name": "Manchester",
+  "lat": 39.9735,
+  "lng": -74.3817,
+  "source": "osm",
+  "match": "Manchester Township, Ocean County, New Jersey, United States",
+  "kind": "boundary/administrative"
+ },
+ "marc drive": {
+  "name": "Marc Drive",
+  "lat": 40.07433,
+  "lng": -74.21049,
+  "source": "osm",
+  "match": "Marc Drive, Spruce Gardens, Lakewood Township, Ocean County, New Jersey, 08701, United Sta",
+  "kind": "highway/residential"
+ },
+ "mass": {
+  "name": "Mass",
+  "lat": 40.05774,
+  "lng": -74.22981,
+  "source": "osm",
+  "match": "Massachusetts Avenue, Fairways, Lakewood Township, Ocean County, New Jersey, 08755, United",
+  "kind": "highway/tertiary"
+ },
+ "meadow run": {
+  "name": "Meadow Run",
+  "lat": 40.1167,
+  "lng": -74.11088,
+  "source": "osm",
+  "match": "Meadow Run, Herbertsville, Brick Township, Ocean County, New Jersey, 08724, United States",
+  "kind": "highway/residential"
+ },
+ "medina rd": {
+  "name": "Medina Rd",
+  "lat": 40.09377,
+  "lng": -74.17316,
+  "source": "osm",
+  "match": "Medina Road, Greenville, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "miller": {
+  "name": "Miller",
+  "lat": 40.09714,
+  "lng": -74.24621,
+  "source": "osm",
+  "match": "Miller Road, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/tertiary"
+ },
+ "monmouth views": {
+  "name": "Monmouth Views",
+  "lat": 40.16382,
+  "lng": -74.25461,
+  "source": "osm",
+  "match": "Monmouth Views, Matthews, Howell Township, Monmouth County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "monterey": {
+  "name": "Monterey",
+  "lat": 40.08838,
+  "lng": -74.23113,
+  "source": "osm",
+  "match": "Monterey Circle, A Country Place, Lakewood Township, Ocean County, New Jersey, 08701, Unit",
+  "kind": "highway/residential"
+ },
+ "n apple": {
+  "name": "N Apple",
+  "lat": 40.10582,
+  "lng": -74.20266,
+  "source": "osm",
+  "match": "North Apple Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "negba st": {
+  "name": "Negba St",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "new central": {
+  "name": "New Central",
+  "lat": 40.09419,
+  "lng": -74.25307,
+  "source": "osm",
+  "match": "New Central Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/tertiary"
+ },
+ "new central ave": {
+  "name": "New Central Ave",
+  "lat": 40.09419,
+  "lng": -74.25307,
+  "source": "osm",
+  "match": "New Central Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/tertiary"
+ },
+ "new england village": {
+  "name": "New England Village",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "new hamp": {
+  "name": "New Hamp",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "new prospect jackson": {
+  "name": "New Prospect Jackson",
+  "lat": 40.11754,
+  "lng": -74.25369,
+  "source": "osm",
+  "match": "CR526 at New Prospect Road, County Line Road, Lakewood Township, Ocean County, New Jersey,",
+  "kind": "highway/bus_stop"
+ },
+ "nowlan": {
+  "name": "Nowlan",
+  "lat": 40.0989,
+  "lng": -74.20146,
+  "source": "osm",
+  "match": "Nowlan Place, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "npgs": {
+  "name": "Npgs",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "oak": {
+  "name": "Oak",
+  "lat": 40.08529,
+  "lng": -74.17882,
+  "source": "osm",
+  "match": "Oak Manor, Lakewood Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "oak glen": {
+  "name": "Oak Glen",
+  "lat": 39.98703,
+  "lng": -74.14995,
+  "source": "osm",
+  "match": "Oak Glen, Toms River, Ocean County, New Jersey, 08753, United States",
+  "kind": "place/neighbourhood"
+ },
+ "oak meadows": {
+  "name": "Oak Meadows",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "ocean avenue": {
+  "name": "Ocean Avenue",
+  "lat": 40.08921,
+  "lng": -74.18644,
+  "source": "osm",
+  "match": "Ocean Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/primary"
+ },
+ "ocean pointe": {
+  "name": "Ocean Pointe",
+  "lat": 40.08836,
+  "lng": -74.18005,
+  "source": "osm",
+  "match": "Ocean Pointe Shul, 15, Oceanside Drive, Lakewood Township, Ocean County, New Jersey, 08701",
+  "kind": "amenity/place_of_worship"
+ },
+ "park": {
+  "name": "Park",
+  "lat": 40.0525,
+  "lng": -74.18299,
+  "source": "osm",
+  "match": "John Davison Rockefeller Memorial Highway, Lakewood Industrial Park, Lakewood Township, Oc",
+  "kind": "highway/trunk"
+ },
+ "park ave": {
+  "name": "Park Ave",
+  "lat": 40.0994,
+  "lng": -74.20452,
+  "source": "osm",
+  "match": "Park Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "pawnee": {
+  "name": "Pawnee",
+  "lat": 40.1147,
+  "lng": -74.2545,
+  "source": "osm",
+  "match": "Pawnee Road, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "pine lake park": {
+  "name": "Pine Lake Park",
+  "lat": 40.00317,
+  "lng": -74.25653,
+  "source": "osm",
+  "match": "Pine Lake Park, Manchester Township, Ocean County, New Jersey, United States",
+  "kind": "place/quarter"
+ },
+ "pine river": {
+  "name": "Pine River",
+  "lat": 40.07692,
+  "lng": -74.21352,
+  "source": "osm",
+  "match": "Pine River, Lakewood Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "pine st": {
+  "name": "Pine St",
+  "lat": 40.07418,
+  "lng": -74.20335,
+  "source": "osm",
+  "match": "Pine Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/tertiary"
+ },
+ "prime jackson": {
+  "name": "Prime Jackson",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "princeton": {
+  "name": "Princeton",
+  "lat": 40.1085,
+  "lng": -74.20923,
+  "source": "osm",
+  "match": "Princeton Avenue, Coventry Square, Lakewood Township, Ocean County, New Jersey, 08701, Uni",
+  "kind": "highway/residential"
+ },
+ "prospect": {
+  "name": "Prospect",
+  "lat": 40.06979,
+  "lng": -74.23873,
+  "source": "osm",
+  "match": "Prospect Vines, South Lakewood, Lakewood Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "prospect vines": {
+  "name": "Prospect Vines",
+  "lat": 40.06979,
+  "lng": -74.23873,
+  "source": "osm",
+  "match": "Prospect Vines, South Lakewood, Lakewood Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "raintree": {
+  "name": "Raintree",
+  "lat": 40.24439,
+  "lng": -74.31119,
+  "source": "osm",
+  "match": "Raintree, West Freehold, Freehold Township, Monmouth County, New Jersey, 07728, United Sta",
+  "kind": "place/neighbourhood"
+ },
+ "ramtown": {
+  "name": "Ramtown",
+  "lat": 40.10698,
+  "lng": -74.16408,
+  "source": "osm",
+  "match": "Ramtown-Greenville Road, Howell Township, Monmouth County, New Jersey, 07731, United State",
+  "kind": "highway/tertiary"
+ },
+ "regency estates": {
+  "name": "Regency Estates",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "ridge": {
+  "name": "Ridge",
+  "lat": 40.10572,
+  "lng": -74.16878,
+  "source": "osm",
+  "match": "Ridge Avenue, Greenville, Lakewood Township, Ocean County, New Jersey, 08701, United State",
+  "kind": "highway/tertiary"
+ },
+ "rockwell": {
+  "name": "Rockwell",
+  "lat": 40.02297,
+  "lng": -74.33471,
+  "source": "osm",
+  "match": "Rockwell Road, Manchester Township, Ocean County, New Jersey, 08733, United States",
+  "kind": "highway/residential"
+ },
+ "rose ct": {
+  "name": "Rose Ct",
+  "lat": 40.04689,
+  "lng": -74.20229,
+  "source": "osm",
+  "match": "Rose Court, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/service"
+ },
+ "route 88": {
+  "name": "Route 88",
+  "lat": 40.05179,
+  "lng": -74.18794,
+  "source": "osm",
+  "match": "John Davison Rockefeller Memorial Highway, Lakewood Township, Ocean County, New Jersey, 08",
+  "kind": "highway/trunk"
+ },
+ "rt 70": {
+  "name": "Rt 70",
+  "lat": 40.05179,
+  "lng": -74.18794,
+  "source": "osm",
+  "match": "John Davison Rockefeller Memorial Highway, Lakewood Township, Ocean County, New Jersey, 08",
+  "kind": "highway/trunk"
+ },
+ "rt 88": {
+  "name": "Rt 88",
+  "lat": 40.05179,
+  "lng": -74.18794,
+  "source": "osm",
+  "match": "John Davison Rockefeller Memorial Highway, Lakewood Township, Ocean County, New Jersey, 08",
+  "kind": "highway/trunk"
+ },
+ "rt 9": {
+  "name": "Rt 9",
+  "lat": 40.05179,
+  "lng": -74.18794,
+  "source": "osm",
+  "match": "John Davison Rockefeller Memorial Highway, Lakewood Township, Ocean County, New Jersey, 08",
+  "kind": "highway/trunk"
+ },
+ "saratoga": {
+  "name": "Saratoga",
+  "lat": 40.04319,
+  "lng": -74.24243,
+  "source": "osm",
+  "match": "Saratoga, Toms River, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "shady ln": {
+  "name": "Shady Ln",
+  "lat": 40.09628,
+  "lng": -74.24189,
+  "source": "osm",
+  "match": "Shady Lane Drive, A Country Place, Lakewood Township, Ocean County, New Jersey, 08701, Uni",
+  "kind": "highway/residential"
+ },
+ "shonny": {
+  "name": "Shonny",
+  "lat": 40.09715,
+  "lng": -74.25628,
+  "source": "osm",
+  "match": "Shonny Court, Lakewood Township, Ocean County, New Jersey, 07831, United States",
+  "kind": "highway/residential"
+ },
+ "sims": {
+  "name": "Sims",
+  "lat": 40.069,
+  "lng": -74.19716,
+  "source": "osm",
+  "match": "Sims Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "somerset": {
+  "name": "Somerset",
+  "lat": 40.07137,
+  "lng": -74.19811,
+  "source": "osm",
+  "match": "Somerset Walk, Lakewood Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "somerset avenue": {
+  "name": "Somerset Avenue",
+  "lat": 40.09964,
+  "lng": -74.19536,
+  "source": "osm",
+  "match": "Somerset Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "somerset walk": {
+  "name": "Somerset Walk",
+  "lat": 40.07137,
+  "lng": -74.19811,
+  "source": "osm",
+  "match": "Somerset Walk, Lakewood Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "south lake dr": {
+  "name": "South Lake Dr",
+  "lat": 40.09333,
+  "lng": -74.23308,
+  "source": "osm",
+  "match": "South Lake Drive, A Country Place, Lakewood Township, Ocean County, New Jersey, 08701, Uni",
+  "kind": "highway/residential"
+ },
+ "spruce st": {
+  "name": "Spruce St",
+  "lat": 40.07103,
+  "lng": -74.20387,
+  "source": "osm",
+  "match": "Spruce Street, Spruce Gardens, Lakewood Township, Ocean County, New Jersey, 08701, United ",
+  "kind": "highway/residential"
+ },
+ "squankum": {
+  "name": "Squankum",
+  "lat": 40.10996,
+  "lng": -74.20087,
+  "source": "osm",
+  "match": "Squankum Road, Lakewood Township, Ocean County, New Jersey, 07831, United States",
+  "kind": "highway/primary"
+ },
+ "st katherine": {
+  "name": "St Katherine",
+  "lat": 40.10926,
+  "lng": -74.24172,
+  "source": "osm",
+  "match": "Saint Katherine Place, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "st nicholas": {
+  "name": "St Nicholas",
+  "lat": 40.08815,
+  "lng": -74.23501,
+  "source": "osm",
+  "match": "Saint Nicholas Avenue, A Country Place, Lakewood Township, Ocean County, New Jersey, 08701",
+  "kind": "highway/residential"
+ },
+ "stamford meadows": {
+  "name": "Stamford Meadows",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "sterling forest": {
+  "name": "Sterling Forest",
+  "lat": 40.06846,
+  "lng": -74.2205,
+  "source": "osm",
+  "match": "Sterling Forest, Lakewood Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "sterling place": {
+  "name": "Sterling Place",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "sunset": {
+  "name": "Sunset",
+  "lat": 40.08567,
+  "lng": -74.2237,
+  "source": "osm",
+  "match": "Sunset Park, A Country Place, Lakewood Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/recreation_ground"
+ },
+ "the 70": {
+  "name": "The 70",
+  "lat": 40.0793,
+  "lng": -74.18323,
+  "source": "osm",
+  "match": "The Avenue Shoppes, Lakewood Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/retail"
+ },
+ "the 70 phase i": {
+  "name": "The 70 Phase I",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "the 70 phase ii": {
+  "name": "The 70 Phase Ii",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "the reserve": {
+  "name": "The Reserve",
+  "lat": 39.96185,
+  "lng": -74.37833,
+  "source": "osm",
+  "match": "The Reserve at Lake Ridge, Whiting, Manchester Township, Ocean County, New Jersey, United ",
+  "kind": "landuse/residential"
+ },
+ "the vineyards": {
+  "name": "The Vineyards",
+  "lat": null,
+  "lng": null,
+  "source": "unresolved"
+ },
+ "toms river": {
+  "name": "Toms River",
+  "lat": 39.95284,
+  "lng": -74.19674,
+  "source": "osm",
+  "match": "Toms River, Ocean County, New Jersey, United States",
+  "kind": "boundary/administrative"
+ },
+ "topaz": {
+  "name": "Topaz",
+  "lat": 40.04315,
+  "lng": -74.1619,
+  "source": "osm",
+  "match": "Topaz Lane, Tiara Estates, Lakewood Township, Ocean County, New Jersey, 08701, United Stat",
+  "kind": "highway/residential"
+ },
+ "twin oaks": {
+  "name": "Twin Oaks",
+  "lat": 40.10604,
+  "lng": -74.19886,
+  "source": "osm",
+  "match": "Twin Oaks Drive, Lakewood Township, Ocean County, New Jersey, 07831, United States",
+  "kind": "highway/residential"
+ },
+ "van buren": {
+  "name": "Van Buren",
+  "lat": 40.09471,
+  "lng": -74.24924,
+  "source": "osm",
+  "match": "Van Buren Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
+  "kind": "highway/residential"
+ },
+ "villas": {
+  "name": "Villas",
+  "lat": 39.94862,
+  "lng": -74.07291,
+  "source": "osm",
+  "match": "Seaside Villas, Ortley Beach, Toms River, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "vine": {
+  "name": "Vine",
+  "lat": 40.04608,
+  "lng": -74.21275,
+  "source": "osm",
+  "match": "Vine Park, Lakewood Township, Ocean County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "w county ln": {
+  "name": "W County Ln",
+  "lat": 40.1012,
+  "lng": -74.16414,
+  "source": "osm",
+  "match": "County Line Road East, Greenville, Lakewood Township, Ocean County, New Jersey, 08701, Uni",
+  "kind": "highway/tertiary"
+ },
+ "w kennedy": {
+  "name": "W Kennedy",
+  "lat": 40.10816,
+  "lng": -74.23164,
+  "source": "osm",
+  "match": "West Kennedy Boulevard, Lakewood Township, Ocean County, New Jersey, 07831, United States",
+  "kind": "highway/residential"
+ },
+ "westgate": {
+  "name": "Westgate",
+  "lat": 40.08734,
+  "lng": -74.25544,
+  "source": "osm",
+  "match": "Westgate Pharmacy, Lublin Terrace, Lakewood Township, Ocean County, New Jersey, 08701, Uni",
+  "kind": "amenity/pharmacy"
+ },
+ "whitewater ct": {
+  "name": "Whitewater Ct",
+  "lat": 40.00686,
+  "lng": -74.23082,
+  "source": "osm",
+  "match": "Whitewater Court, The Landings, Toms River, Ocean County, New Jersey, 08755, United States",
+  "kind": "highway/residential"
+ },
+ "wyndham": {
+  "name": "Wyndham",
+  "lat": 40.24436,
+  "lng": -74.31983,
+  "source": "osm",
+  "match": "Wyndham Place, Freehold Township, Monmouth County, New Jersey, United States",
+  "kind": "landuse/residential"
+ },
+ "yeshiva": {
+  "name": "Yeshiva",
+  "lat": 40.09461,
+  "lng": -74.21778,
+  "source": "osm",
+  "match": "Bezal-el Yeshiva School, 5th Street, A Country Place, Lakewood Township, Ocean County, New",
+  "kind": "amenity/school"
+ }
+}

@@ -41,6 +41,17 @@ python3 build.py --pdf some.pdf  # use a local PDF instead
 open docs/index.html
 ```
 
+## Map coordinates ("Near" / closest-to-me)
+
+Locations are neighborhoods and streets, not addresses, so each listing is placed
+at the middle of the place(s) it names (`geo.py`). Coordinates live in
+`places.json`, which you can edit by hand (set `lat`/`lng` and `"source": "manual"`;
+manual entries are never overwritten). `tools/geocode_places.py` fills in new names
+from OpenStreetMap; run it locally when the weekly report warns that place names
+are missing. Listings that can't be placed still show, but sort last by distance.
+Visitors can sort by distance from a neighborhood or from their browser location
+(which never leaves their device).
+
 ## Tests
 
 ```bash

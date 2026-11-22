@@ -328,6 +328,15 @@
     background: none; border: 1px solid var(--rule-strong); border-radius: 6px;
     padding: 4px 9px; cursor: pointer;
   }
+  .near { display: flex; gap: 6px; }
+  .near input {
+    flex: 1; min-width: 0; font: inherit; color: var(--ink); background: var(--card);
+    border: 1px solid var(--rule-strong); border-radius: 7px; padding: 8px 10px;
+  }
+  .near input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .near__locate { display: inline-flex; align-items: center; gap: 5px; }
+  .sort--stack { justify-content: space-between; }
+  .card__dist { color: var(--accent-ink); font-weight: 600; }
 </style>
 
 <div class="toprow">
@@ -370,6 +379,29 @@
       </label>
     </div>
 
+    <div class="fgroup" id="nearGroup">
+      <span class="fgroup__label">Near</span>
+      <div class="near">
+        <input type="text" id="nearInput" list="placeList" placeholder="Neighborhood or street&hellip;" autocomplete="off" aria-label="Sort by distance from a neighborhood or street">
+        <button type="button" class="chip near__locate" id="locateBtn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+          My location
+        </button>
+      </div>
+      <datalist id="placeList"></datalist>
+      <label class="sort sort--stack" id="withinWrap" hidden>Within
+        <select id="withinSel">
+          <option value="0">Any distance</option>
+          <option value="1">1 mile</option>
+          <option value="2">2 miles</option>
+          <option value="3">3 miles</option>
+          <option value="5">5 miles</option>
+          <option value="10">10 miles</option>
+        </select>
+      </label>
+      <div class="range__val" id="nearStatus">Sort by distance from a neighborhood, or your location (it stays on your device).</div>
+    </div>
+
     <div class="fgroup">
       <span class="fgroup__label">Type</span>
       <div class="chips" id="typeChips"></div>
@@ -410,6 +442,7 @@
           <option value="price-desc">Rent: high to low</option>
           <option value="beds-desc">Most bedrooms</option>
           <option value="loc">Location A&ndash;Z</option>
+          <option value="distance" id="distOpt" disabled>Distance (set &ldquo;Near&rdquo; first)</option>
         </select>
       </label>
     </div>
@@ -507,12 +540,64 @@
     S = LakewoodSearch.defaultState();
     S.sort = keepSort;
     q.value = ""; rent.value = 7000; rentVal.textContent = "Any";
+    nearInput.value = ""; setOrigin(null);
     document.getElementById("inclCall").checked = true;
     document.getElementById("furnished").checked = false;
     document.getElementById("shortterm").checked = false;
     document.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
     bedChips.children[0].setAttribute("aria-pressed", "true");
     render();
+  };
+
+
+  // ---- near / distance ----
+  var PLACES = DATA.places || {};
+  function normPlace(v) {
+    return String(v || "").toLowerCase().replace(/\b(area|near|off)\b/g, " ")
+      .replace(/[^a-z0-9+ ]/g, " ").replace(/\s+/g, " ").trim();
+  }
+  var nearInput = document.getElementById("nearInput"), nearStatus = document.getElementById("nearStatus"),
+      withinWrap = document.getElementById("withinWrap"), withinSel = document.getElementById("withinSel"),
+      distOpt = document.getElementById("distOpt"), sortSel = document.getElementById("sort"),
+      NEAR_HINT = nearStatus.textContent;
+  Object.keys(PLACES).sort().forEach(function (k) {
+    var o = document.createElement("option"); o.value = PLACES[k].name; document.getElementById("placeList").appendChild(o);
+  });
+  function setOrigin(origin, label) {
+    S.origin = origin;
+    var on = !!origin;
+    withinWrap.hidden = !on; distOpt.disabled = !on;
+    distOpt.textContent = on ? "Distance: nearest first" : "Distance (set \u201cNear\u201d first)";
+    if (on) { S.sort = "distance"; sortSel.value = "distance"; }
+    else { S.maxMiles = 0; withinSel.value = "0"; if (S.sort === "distance") { S.sort = "default"; sortSel.value = "default"; } }
+    nearStatus.textContent = on
+      ? "Sorted by distance from " + label + ". Distances are to the middle of each neighborhood, not the exact address."
+      : NEAR_HINT;
+    render();
+  }
+  function placeFromInput() {
+    var v = nearInput.value.trim();
+    if (!v) return setOrigin(null);
+    var key = normPlace(v), hit = PLACES[key];
+    if (!hit) {
+      var low = v.toLowerCase();
+      Object.keys(PLACES).some(function (k) { if (PLACES[k].name.toLowerCase() === low) { hit = PLACES[k]; return true; } });
+    }
+    if (hit) setOrigin({ lat: hit.lat, lng: hit.lng }, hit.name);
+    else { S.origin = null; nearStatus.textContent = "No place called \u201c" + v + "\u201d on this list. Pick one from the suggestions, or use My location."; }
+  }
+  nearInput.addEventListener("change", placeFromInput);
+  nearInput.addEventListener("keydown", function (e) { if (e.key === "Enter") placeFromInput(); });
+  withinSel.onchange = function () { S.maxMiles = +withinSel.value; render(); };
+  document.getElementById("locateBtn").onclick = function () {
+    if (!navigator.geolocation) { nearStatus.textContent = "Your browser can't share a location. Pick a neighborhood instead."; return; }
+    nearStatus.textContent = "Finding your location\u2026";
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      nearInput.value = "";
+      setOrigin({ lat: pos.coords.latitude, lng: pos.coords.longitude }, "your location");
+    }, function () {
+      nearStatus.textContent = "Couldn't get your location (blocked or unavailable). Pick a neighborhood instead.";
+    }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 });
   };
 
   var ft = document.getElementById("filtersToggle"), fbox = document.getElementById("filters");
@@ -557,6 +642,9 @@
 
     var stats = '<span><b>' + esc(x.bedrooms || "?") + '</b> bd</span>' +
                 '<span><b>' + esc(x.baths || "?") + '</b> ba</span>' +
+                (typeof x._dist === "number"
+                  ? (x._dist < 0.15 ? '<span class="card__dist">Right here</span>'
+                     : '<span class="card__dist"><b>' + (x._dist < 10 ? x._dist.toFixed(1) : Math.round(x._dist)) + '</b> mi away</span>') : "") +
                 (x.utilities_included && x.utilities_included.length
                   ? '<span><b>' + x.utilities_included.map(function (u) { return u[0]; }).join("") + '</b> incl.</span>'
                   : "");

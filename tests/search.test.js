@@ -303,3 +303,70 @@ test("built page embeds the search core and the listing data", { skip: !fs.exist
   st.q = "toms river";
   assert.ok(ctx.LS.search(rows, st).length > 0);
 });
+
+// ---- distance ---------------------------------------------------------------
+test("distanceMiles: known distances and symmetry", () => {
+  assert.equal(S.distanceMiles(40.0979, -74.2179, 40.0979, -74.2179), 0);
+  // Lakewood -> Toms River centre is roughly 12-13 miles
+  const d = S.distanceMiles(40.0979, -74.2179, 39.9537, -74.1979);
+  assert.ok(d > 9 && d < 12, String(d));
+  assert.ok(Math.abs(d - S.distanceMiles(39.9537, -74.1979, 40.0979, -74.2179)) < 1e-9);
+});
+
+function geoFixture() {
+  return S.enrich([
+    L({ id: "near", lat: 40.0800, lng: -74.2100 }),
+    L({ id: "far", lat: 40.1400, lng: -74.2200 }),
+    L({ id: "mid", lat: 40.1000, lng: -74.2200 }),
+    L({ id: "nowhere" }),                       // no coordinates
+  ]);
+}
+const ORIGIN = { lat: 40.0790, lng: -74.2090 };
+function runGeo(over) { return S.search(geoFixture(), Object.assign(S.defaultState(), { origin: ORIGIN }, over)); }
+
+test("distance sort: nearest first, unplaced listings last", () => {
+  assert.equal(ids(runGeo({ sort: "distance" })), "nearmidfarnowhere");
+});
+
+test("distance is attached to each listing when an origin is set", () => {
+  const rows = runGeo({ sort: "distance" });
+  assert.ok(rows[0]._dist < 0.3);
+  assert.ok(rows[0]._dist < rows[1]._dist && rows[1]._dist < rows[2]._dist);
+  assert.equal(rows[3]._dist, null);
+});
+
+test("no origin: distance sort falls back to list order", () => {
+  const rows = S.search(geoFixture(), Object.assign(S.defaultState(), { sort: "distance" }));
+  assert.equal(ids(rows), "nearfarmidnowhere");
+  assert.ok(rows.every((r) => r._dist === null));
+});
+
+test("within-miles filter keeps only placed listings inside the radius", () => {
+  assert.equal(ids(runGeo({ maxMiles: 2, sort: "distance" })), "nearmid");
+  assert.equal(ids(runGeo({ maxMiles: 0.1 })), "near");
+  assert.equal(ids(runGeo({ maxMiles: 50, sort: "distance" })), "nearmidfar"); // unplaced never pass a limit
+});
+
+test("maxMiles is ignored when there is no origin", () => {
+  const rows = S.search(geoFixture(), Object.assign(S.defaultState(), { maxMiles: 1 }));
+  assert.equal(rows.length, 4);
+});
+
+test("distance combines with other filters", () => {
+  const rows = S.enrich([
+    L({ id: "a", lat: 40.0800, lng: -74.2100, type: "House" }),
+    L({ id: "b", lat: 40.0801, lng: -74.2101, type: "Room" }),
+  ]);
+  const st = Object.assign(S.defaultState(), { origin: ORIGIN, maxMiles: 2, sort: "distance", types: new Set(["Room"]) });
+  assert.equal(ids(S.search(rows, st)), "b");
+});
+
+test("real listings: with Lakewood as origin, placed listings sort by distance", () => {
+  const rows = S.enrich(data.listings.map((x) => Object.assign({}, x)));
+  const placed = rows.filter((r) => typeof r.lat === "number");
+  if (!placed.length) return; // places.json not built yet
+  const out = S.search(rows, Object.assign(S.defaultState(), { origin: { lat: 40.0979, lng: -74.2179 }, sort: "distance" }));
+  const ds = out.map((r) => r._dist).filter((d) => d !== null);
+  assert.deepEqual(ds, [...ds].sort((a, b) => a - b));
+  assert.equal(out.length, rows.length);
+});

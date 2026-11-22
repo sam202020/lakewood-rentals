@@ -13,6 +13,7 @@ Soft problems are printed as WARN lines; the build still succeeds.
 import argparse, json, pathlib, sys, datetime
 
 import checks
+import geo
 import parse as P
 
 ROOT = pathlib.Path(__file__).parent
@@ -37,6 +38,13 @@ def main():
     src = args.pdf or P.SOURCE_URL
     list_date, listings = P.parse(P.fetch_pdf(src))
 
+    places = geo.load_places()
+    for x in listings:
+        g = geo.resolve(x["location"], places)
+        x["lat"], x["lng"] = g["lat"], g["lng"]
+        x["geo"] = g["precision"]            # "place", "town" or None
+        x["geo_unknown"] = g["unknown"]      # names missing from places.json
+
     errors, warnings = checks.check(listings, previous_count())
     for w in warnings:
         print(f"WARN: {w}")
@@ -53,6 +61,9 @@ def main():
         "source_site": "https://masaumatan.com",
         "count": len(listings),
         "listings": listings,
+        # resolved places only, for the page's "Near" picker
+        "places": {k: {"name": e.get("name") or k.title(), "lat": e["lat"], "lng": e["lng"]}
+                   for k, e in places.items() if e.get("lat") is not None},
     }
     DATA.write_text(json.dumps(data, indent=2, ensure_ascii=False))
 
