@@ -139,9 +139,10 @@
  },
  "brook hill": {
   "name": "Brook Hill",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "lat": 40.1064,
+  "lng": -74.1913,
+  "source": "manual",
+  "note": "Owner: neighbourhood NW of Brook Rd & County Line Rd. That intersection is ~(40.1039,-74.1878) (interpolated; OSM has a gap in County Line Rd); pin ~0.25 mi NW of it."
  },
  "brookwood 1": {
   "name": "Brookwood 1",
@@ -787,10 +788,10 @@
  },
  "oak vine": {
   "name": "Oak St & Vine Ave",
-  "lat": 40.0767,
-  "lng": -74.2066,
+  "lat": 40.066,
+  "lng": -74.2089,
   "source": "manual",
-  "note": "APPROXIMATE: intersection; OSM has no shared node, so this is the south end of Vine Ave. Confirm."
+  "note": "Owner: they meet, east of Evergreen Kosher Market. OSM has Oak St ending at this point and Vine Ave ending ~0.75 mi north on the same line; placed where Vine's southward line meets Oak St."
  },
  "ocean avenue": {
   "name": "Ocean Avenue",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T08:09:51+00:00",
+  "generated_at": "2026-11-22T19:37:45+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -1204,9 +1204,9 @@
       ],
       "furnished": true,
       "comments": "Must see! Bright/airy furnished. Upgr.thru-out. Near Shuls/shopping. Full kitchen.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.1064,
+      "lng": -74.1913,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -1476,9 +1476,9 @@
       ],
       "furnished": false,
       "comments": "Beautiful, newly-renovated apartment. Available immediately.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.1064,
+      "lng": -74.1913,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -1677,8 +1677,8 @@
       ],
       "furnished": true,
       "comments": "Beautiful brand new upgraded furnished apartment. Also has sitting room.",
-      "lat": 40.07137,
-      "lng": -74.19811,
+      "lat": 40.08889,
+      "lng": -74.1947,
       "geo": "place",
       "geo_unknown": []
     },
@@ -1704,9 +1704,9 @@
       ],
       "furnished": true,
       "comments": "Beautiful spacious new furnished. Large BR, large EIK. Separate LR. WD. Av. imm.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.1064,
+      "lng": -74.1913,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -2499,8 +2499,8 @@
       ],
       "furnished": false,
       "comments": "Beautiful upgraded corner unit, prime loca- tion. Av. December for at least 6 months.",
-      "lat": 40.0767,
-      "lng": -74.2066,
+      "lat": 40.066,
+      "lng": -74.2089,
       "geo": "place",
       "geo_unknown": []
     },
@@ -3224,9 +3224,9 @@
       ],
       "furnished": true,
       "comments": "New furnished apartment. Available immediately.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.1064,
+      "lng": -74.1913,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -3902,8 +3902,8 @@
       ],
       "furnished": true,
       "comments": "Upgraded, fully tiled. Kitchenette. Furnished [Could also be used as office.]",
-      "lat": 40.0767,
-      "lng": -74.2066,
+      "lat": 40.066,
+      "lng": -74.2089,
       "geo": "place",
       "geo_unknown": []
     },
@@ -3929,8 +3929,8 @@
       ],
       "furnished": true,
       "comments": "Brand new luxury spacious furnished Choson/Kallah apartment.",
-      "lat": 40.10604,
-      "lng": -74.19885,
+      "lat": 40.10622,
+      "lng": -74.19508,
       "geo": "place",
       "geo_unknown": []
     },
@@ -4587,8 +4587,8 @@
       ],
       "furnished": false,
       "comments": "Brand new upgraded duplex. Available mid-November.",
-      "lat": 40.0767,
-      "lng": -74.2066,
+      "lat": 40.066,
+      "lng": -74.2089,
       "geo": "place",
       "geo_unknown": []
     },
@@ -5372,9 +5372,9 @@
       ],
       "furnished": false,
       "comments": "Verynice,largelivingarea,newly renovated. Poss.furnishedmaster bedroom. Av.imm.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.1064,
+      "lng": -74.1913,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -5487,6 +5487,11 @@
       "name": "Brook",
       "lat": 40.08568,
       "lng": -74.23207
+    },
+    "brook hill": {
+      "name": "Brook Hill",
+      "lat": 40.1064,
+      "lng": -74.1913
     },
     "brookwood 1": {
       "name": "Brookwood 1",
@@ -5835,8 +5840,8 @@
     },
     "oak vine": {
       "name": "Oak St & Vine Ave",
-      "lat": 40.0767,
-      "lng": -74.2066
+      "lat": 40.066,
+      "lng": -74.2089
     },
     "ocean avenue": {
       "name": "Ocean Avenue",
