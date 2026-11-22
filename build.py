@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
-"""Build the static Lakewood Rentals site.
+"""Build the static Lakewood NJ Area Rentals site.
 
   python3 build.py            # fetch live PDF, parse, write docs/index.html
   python3 build.py --pdf X    # use a local PDF file instead of fetching
 
-Safety: if parsing yields fewer than MIN_LISTINGS, the previous listings.json
-is kept and the build aborts, so a bad fetch never wipes a good site.
+Safety: the parsed listings go through checks.py before anything is written.
+If a hard check fails (count collapsed, locations/phones missing, ...) the
+build aborts with exit code 1 and leaves listings.json and docs/index.html
+untouched, so a PDF layout change never replaces a good site with a bad one.
+Soft problems are printed as WARN lines; the build still succeeds.
 """
 import argparse, json, pathlib, sys, datetime
 
+import checks
 import parse as P
 
 ROOT = pathlib.Path(__file__).parent
@@ -16,7 +20,13 @@ DATA = ROOT / "listings.json"
 TEMPLATE = ROOT / "site" / "template.html"
 SEARCH_CORE = ROOT / "site" / "search-core.js"
 OUT = ROOT / "docs" / "index.html"
-MIN_LISTINGS = 60
+
+
+def previous_count():
+    try:
+        return json.loads(DATA.read_text()).get("count")
+    except (OSError, ValueError):
+        return None
 
 
 def main():
@@ -27,9 +37,13 @@ def main():
     src = args.pdf or P.SOURCE_URL
     list_date, listings = P.parse(P.fetch_pdf(src))
 
-    if len(listings) < MIN_LISTINGS:
-        print(f"ABORT: only {len(listings)} listings parsed (< {MIN_LISTINGS}). "
-              f"Keeping existing data.", file=sys.stderr)
+    errors, warnings = checks.check(listings, previous_count())
+    for w in warnings:
+        print(f"WARN: {w}")
+    if errors:
+        for e in errors:
+            print(f"ABORT: {e}", file=sys.stderr)
+        print("Keeping existing listings.json and docs/index.html unchanged.", file=sys.stderr)
         sys.exit(1)
 
     data = {
@@ -49,7 +63,8 @@ def main():
         json.dumps(data, ensure_ascii=False, separators=(",", ":")),
     )
     OUT.write_text(html)
-    print(f"built {OUT}  ({len(listings)} listings, list_date={list_date!r})")
+    print(f"built {OUT}  ({len(listings)} listings, list_date={list_date!r}, "
+          f"{len(warnings)} warning{'s' if len(warnings) != 1 else ''})")
 
 
 if __name__ == "__main__":

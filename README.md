@@ -18,9 +18,14 @@ MasaRentals.pdf  ──►  parse.py  ──►  listings.json  ──►  build
   (type, bedrooms, baths, location, rent, utilities included, phone numbers,
   description). Column boundaries are pinned to the PDF's fixed layout.
 - **`build.py`** — runs the parser against the live PDF (or a local `--pdf`),
-  writes `listings.json`, and injects it into `site/template.html` to produce
-  `docs/index.html`. Aborts without overwriting anything if fewer than 60
-  listings parse (guards against a bad fetch).
+  checks the result with `checks.py`, writes `listings.json`, and injects it
+  into `site/template.html` to produce `docs/index.html`.
+- **`checks.py`** — the weekly data-quality gate. *Hard* failures abort the
+  build without touching any file (fewer than 60 listings, count down >30%
+  from last week, <95% with a location, <90% with a phone, a whole property
+  type missing). *Soft* problems (an unexpanded abbreviation like "Westgt.",
+  run-together words, many empty descriptions) print `WARN:` lines and still
+  publish, so you know which rule to add to `parse.py`.
 - **`site/template.html`** — the page: client-side search, filters (type,
   bedrooms, max rent, utilities, furnished, short-term), sort, light/dark.
   All data is embedded; no network calls at runtime.
