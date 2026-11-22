@@ -304,6 +304,36 @@ class ShippedPicker(unittest.TestCase):
             self.assertTrue(geo.plausible(p["lat"], p["lng"]), p["name"])
 
 
+class AuditedPlaces(unittest.TestCase):
+    def test_resolve_flags_unchecked_osm_pins(self):
+        places = {"raintree": {"lat": 40.1, "lng": -74.2, "source": "osm"},
+                  "sunset": {"lat": 40.09, "lng": -74.21, "source": "manual"},
+                  "jackson": {"lat": 40.1, "lng": -74.35, "source": "osm"}}
+        self.assertEqual(geo.resolve("Raintree", places)["unverified"], ["raintree"])
+        self.assertEqual(geo.resolve("Sunset", places)["unverified"], [])
+        self.assertEqual(geo.resolve("Jackson", places)["unverified"], [])      # town-level is fine
+        self.assertEqual(geo.resolve("Sunset / Raintree", places)["unverified"], ["raintree"])
+
+    def test_checks_warns_about_unverified_pins_but_never_blocks(self):
+        rows = [{"id": f"L{i}", "type": ["Apartment", "House", "Townhouse / Attached"][i % 3],
+                 "location": "Raintree", "phones": ["732-555-0101"], "comments": "x", "rent": 2000,
+                 "lat": 40.1, "lng": -74.2, "geo_unknown": [], "geo_unverified": ["raintree"]} for i in range(100)]
+        errors, warnings = checks.check(rows)
+        self.assertEqual(errors, [])
+        self.assertTrue(any("never checked on Google Maps" in w and "raintree" in w for w in warnings))
+
+    def test_audited_places_regressions(self):
+        """Places the Google Maps audit moved: OSM had them in the wrong town."""
+        pl = geo.load_places()
+        self.assertLess(pl["jackson 21"]["lng"], -74.34)             # west Jackson, not Lakewood's edge
+        self.assertGreater(pl["topaz"]["lat"], 40.15)                # Topaz Dr is in north Jackson
+        self.assertLess(pl["meadow run"]["lng"], -74.27)             # Meadow Run Ct is in west Jackson
+        self.assertGreater(pl["ramtown"]["lat"], 40.115)
+        for k in ("jackson 21", "topaz", "meadow run", "ramtown", "hope", "spruce st", "squankum",
+                  "clifton", "ocean avenue", "pine river", "new prospect jackson"):
+            self.assertEqual(pl[k]["source"], "manual", k)
+
+
 class GeoChecks(unittest.TestCase):
     def listings(self, n, placed):
         return [{"id": f"L{i}", "type": ["Apartment", "House", "Townhouse / Attached"][i % 3],

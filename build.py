@@ -44,6 +44,7 @@ def main():
         x["lat"], x["lng"] = g["lat"], g["lng"]
         x["geo"] = g["precision"]            # "place", "town" or None
         x["geo_unknown"] = g["unknown"]      # names missing from places.json
+        x["geo_unverified"] = g["unverified"]  # names on an unchecked OSM pin
 
     errors, warnings = checks.check(listings, previous_count())
     for w in warnings:

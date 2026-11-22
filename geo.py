@@ -103,8 +103,9 @@ def resolve(location, places):
         cands += [" ".join(parts), " ".join(reversed(parts))]
     whole = next((e for e in (_known(places, c) for c in cands) if e), None)
     if whole:
-        return {"lat": whole["lat"], "lng": whole["lng"],
-                "precision": "town" if normalize(location) in TOWNS else "place", "unknown": []}
+        town = normalize(location) in TOWNS
+        return {"lat": whole["lat"], "lng": whole["lng"], "precision": "town" if town else "place", "unknown": [],
+                "unverified": [] if town or whole.get("source") != "osm" else [normalize(location)]}
 
     keys = parts
     found = [(k, _known(places, k)) for k in keys]
@@ -113,11 +114,13 @@ def resolve(location, places):
     specific = [(k, e) for k, e in hits if k not in TOWNS]
     use = specific or hits
     if not use:
-        return {"lat": None, "lng": None, "precision": None, "unknown": unknown}
+        return {"lat": None, "lng": None, "precision": None, "unknown": unknown, "unverified": []}
     lat = sum(e["lat"] for _, e in use) / len(use)
     lng = sum(e["lng"] for _, e in use) / len(use)
     return {"lat": round(lat, 5), "lng": round(lng, 5),
-            "precision": "place" if specific else "town", "unknown": unknown}
+            "precision": "place" if specific else "town", "unknown": unknown,
+            # still resting on a raw OpenStreetMap pin that nobody has checked on Google Maps
+            "unverified": [k for k, e in use if e.get("source") == "osm" and k not in TOWNS]}
 
 
 def plausible(lat, lng):

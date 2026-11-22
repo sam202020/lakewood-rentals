@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T23:33:20+00:00",
+  "generated_at": "2026-11-22T23:46:07+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -30,7 +30,8 @@
       "lat": 40.08734,
       "lng": -74.25544,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH165_1033:5",
@@ -49,10 +50,11 @@
       ],
       "furnished": false,
       "comments": "2384 sq. ft. colonial. Finished basement, 2-car garage. Available immediately.",
-      "lat": 40.10698,
-      "lng": -74.16408,
+      "lat": 40.12095,
+      "lng": -74.14375,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1165_1034:7",
@@ -71,10 +73,11 @@
       ],
       "furnished": false,
       "comments": "Freshly renovated house. Available immediately.",
-      "lat": 40.09419,
-      "lng": -74.25307,
+      "lat": 40.09412,
+      "lng": -74.25584,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A55_1016:20",
@@ -101,7 +104,8 @@
       "lat": 40.07433,
       "lng": -74.21049,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA166_1036:20",
@@ -123,7 +127,8 @@
       "lat": 40.0486,
       "lng": -74.2094,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A166_1037:4",
@@ -147,10 +152,11 @@
       ],
       "furnished": true,
       "comments": "Beautiful upgraded furnished apt. for Choson/Kallah. Must see. Av. immediately.",
-      "lat": 40.07685,
-      "lng": -74.20613,
+      "lat": 40.07933,
+      "lng": -74.2015,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A66_1035:15",
@@ -177,7 +183,8 @@
       "lat": 40.06373,
       "lng": -74.19895,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UH1127_964:15",
@@ -199,7 +206,8 @@
       "lat": 40.00317,
       "lng": -74.25653,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1H166_1036:17",
@@ -221,7 +229,8 @@
       "lat": 40.09788,
       "lng": -74.20131,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH166_1035:3",
@@ -243,7 +252,8 @@
       "lat": 40.14095,
       "lng": -74.26653,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1TT166_1036:8",
@@ -262,10 +272,11 @@
       ],
       "furnished": false,
       "comments": "Brand new. Many upgrades.",
-      "lat": 40.06406,
-      "lng": -74.2313,
+      "lat": 40.06652,
+      "lng": -74.23199,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH166_1036:12",
@@ -284,10 +295,11 @@
       ],
       "furnished": false,
       "comments": "Cul-de-sac past Harfield. Beautiful colonial. Kosher kitchen, 2-car garage, unfin. basemt.",
-      "lat": 40.11754,
-      "lng": -74.25369,
+      "lat": 40.12983,
+      "lng": -74.25647,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH166_1036:18",
@@ -309,7 +321,8 @@
       "lat": 40.1413,
       "lng": -74.22366,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U11TT66_1036:16",
@@ -328,10 +341,11 @@
       ],
       "furnished": false,
       "comments": "Corner unit, nice community, finished basement. Available immediately. Brand new, secluded fully Private corner unit, last unit in development. Scenic backyard and huge garden. Available immediately.",
-      "lat": 40.04319,
-      "lng": -74.24243,
+      "lat": 40.04615,
+      "lng": -74.24265,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1TT115_935:4",
@@ -353,7 +367,8 @@
       "lat": 40.07005,
       "lng": -74.21677,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UH1166_1038:2",
@@ -380,7 +395,8 @@
       "lat": 40.00686,
       "lng": -74.23082,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UH1166_1038:4",
@@ -407,7 +423,8 @@
       "lat": 40.11518,
       "lng": -74.36478,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A151_1008:9",
@@ -434,7 +451,8 @@
       "lat": 40.09788,
       "lng": -74.20131,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A154_1016:9",
@@ -458,10 +476,11 @@
       ],
       "furnished": true,
       "comments": "Beautiful upgraded furnished, Heimishe area. 10 ft. ceilings. Av. immediately. towels, linen. Playroom, kitchen, etc. full baths. Call, text or Whatsapp.",
-      "lat": 40.10567,
-      "lng": -74.19664,
+      "lat": 40.10551,
+      "lng": -74.19915,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A155_1017:2",
@@ -488,7 +507,8 @@
       "lat": 40.0528,
       "lng": -74.2148,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A143_999:14",
@@ -515,7 +535,8 @@
       "lat": 40.10207,
       "lng": -74.20766,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1120_948:15",
@@ -534,10 +555,11 @@
       ],
       "furnished": true,
       "comments": "Beautifully updated ranch. Multiple minyan- im 10 min. walk, low utilities. Opt. furnished.",
-      "lat": 40.10698,
-      "lng": -74.16408,
+      "lat": 40.12095,
+      "lng": -74.14375,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH168_1040:4",
@@ -559,7 +581,8 @@
       "lat": 40.00317,
       "lng": -74.25653,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1H168_1040:9",
@@ -581,7 +604,8 @@
       "lat": 40.05747,
       "lng": -74.23451,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U11TT68_1040:12",
@@ -600,10 +624,11 @@
       ],
       "furnished": false,
       "comments": "Brand new duplex. Has additional nursery.",
-      "lat": 40.08477,
-      "lng": -74.23732,
+      "lat": 40.08491,
+      "lng": -74.23546,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH168_1041:1",
@@ -622,10 +647,11 @@
       ],
       "furnished": false,
       "comments": "Single-family home,freshly renovated. Nice fenced-inyard. Av.immediatelytill July.",
-      "lat": 40.10827,
-      "lng": -74.24187,
+      "lat": 40.1065,
+      "lng": -74.24334,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11TT68_1039:10",
@@ -647,7 +673,8 @@
       "lat": 40.04536,
       "lng": -74.20059,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH169_1043:1",
@@ -669,7 +696,8 @@
       "lat": 40.05623,
       "lng": -74.22761,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11HH66_1037:11",
@@ -689,7 +717,8 @@
       "lat": 39.95284,
       "lng": -74.19674,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11HH69_1041:16",
@@ -711,7 +740,8 @@
       "lat": 40.11532,
       "lng": -74.24687,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1TT129_969:4",
@@ -733,7 +763,8 @@
       "lat": 40.16382,
       "lng": -74.25461,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH142_996:15",
@@ -752,10 +783,11 @@
       ],
       "furnished": false,
       "comments": "Available immediately for long term.",
-      "lat": 40.09419,
-      "lng": -74.25307,
+      "lat": 40.09412,
+      "lng": -74.25584,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH074_858:4",
@@ -777,7 +809,8 @@
       "lat": 40.0968,
       "lng": -74.16462,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1169_1042:6",
@@ -799,7 +832,8 @@
       "lat": 40.11518,
       "lng": -74.36478,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH136_988:6",
@@ -821,7 +855,8 @@
       "lat": 40.1155,
       "lng": -74.24666,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1AA096_904:5",
@@ -843,7 +878,8 @@
       "lat": 40.0693,
       "lng": -74.21834,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1AA085_879:6",
@@ -862,10 +898,11 @@
       ],
       "furnished": false,
       "comments": "Beautiful apartment in single home on quiet cul de sac. Available immediately.",
-      "lat": 40.07103,
-      "lng": -74.20387,
+      "lat": 40.07152,
+      "lng": -74.20888,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A58_1022:18",
@@ -892,7 +929,8 @@
       "lat": 40.06373,
       "lng": -74.19895,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH170_1045:1",
@@ -914,7 +952,8 @@
       "lat": 40.0798,
       "lng": -74.225,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH166_1037:9",
@@ -936,7 +975,8 @@
       "lat": 40.1155,
       "lng": -74.24666,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1153_1014:6",
@@ -958,7 +998,8 @@
       "lat": 40.00317,
       "lng": -74.25653,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH170_1044:13",
@@ -980,7 +1021,8 @@
       "lat": 40.05747,
       "lng": -74.23451,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1170_1044:4",
@@ -1004,7 +1046,8 @@
       "lat": 40.05865,
       "lng": -74.22835,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH170_1044:10",
@@ -1026,7 +1069,8 @@
       "lat": 40.11532,
       "lng": -74.24687,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH170_1044:15",
@@ -1048,7 +1092,8 @@
       "lat": 40.0968,
       "lng": -74.16462,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1171_1045:3",
@@ -1070,7 +1115,8 @@
       "lat": 40.05685,
       "lng": -74.23106,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH144_999:3",
@@ -1092,7 +1138,8 @@
       "lat": 40.1155,
       "lng": -74.24666,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1171_1045:7",
@@ -1111,10 +1158,11 @@
       ],
       "furnished": false,
       "comments": "Newly renovated, private house with basement & backyard. Av. immediately.",
-      "lat": 40.10816,
-      "lng": -74.23164,
+      "lat": 40.10742,
+      "lng": -74.22668,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH109_921:11",
@@ -1133,10 +1181,11 @@
       ],
       "furnished": false,
       "comments": "Newly renovated colonial. Large backyard and deck.",
-      "lat": 40.09419,
-      "lng": -74.25307,
+      "lat": 40.09412,
+      "lng": -74.25584,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH171_1045:18",
@@ -1158,7 +1207,8 @@
       "lat": 40.00317,
       "lng": -74.25653,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11H71_1045:10",
@@ -1180,7 +1230,8 @@
       "lat": 40.02598,
       "lng": -74.23697,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A104_915:8",
@@ -1207,7 +1258,8 @@
       "lat": 40.10773,
       "lng": -74.1905,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A150_1008:3",
@@ -1234,7 +1286,8 @@
       "lat": 40.09775,
       "lng": -74.20907,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1A136_987:17",
@@ -1261,7 +1314,8 @@
       "lat": 40.09203,
       "lng": -74.19226,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A71_1045:13",
@@ -1285,10 +1339,11 @@
       ],
       "furnished": true,
       "comments": "Stunning new beautifully furnished apt. Available immediately.",
-      "lat": 40.07952,
-      "lng": -74.20891,
+      "lat": 40.08448,
+      "lng": -74.19965,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A136_988:5",
@@ -1315,7 +1370,8 @@
       "lat": 40.1147,
       "lng": -74.2545,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11AA71_1045:12",
@@ -1335,7 +1391,8 @@
       "lat": 40.09775,
       "lng": -74.20907,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1AA058_829:13",
@@ -1359,7 +1416,8 @@
       "lat": 40.0528,
       "lng": -74.2148,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1AA069_846:15",
@@ -1386,7 +1444,8 @@
       "lat": 40.0526,
       "lng": -74.19997,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11AA72_1048:10",
@@ -1405,10 +1464,11 @@
       ],
       "furnished": false,
       "comments": "Beautiful apartment. Smart layout. Available immediately.",
-      "lat": 40.06979,
-      "lng": -74.23873,
+      "lat": 40.07227,
+      "lng": -74.23904,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA172_1047:8",
@@ -1430,7 +1490,8 @@
       "lat": 40.0798,
       "lng": -74.225,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1AA035_785:18",
@@ -1457,7 +1518,8 @@
       "lat": 40.09183,
       "lng": -74.20638,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11AA72_1048:12",
@@ -1479,7 +1541,8 @@
       "lat": 40.10773,
       "lng": -74.1905,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A72_1048:13",
@@ -1501,7 +1564,8 @@
       "lat": 40.06443,
       "lng": -74.21911,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A132_980:18",
@@ -1528,7 +1592,8 @@
       "lat": 40.0619,
       "lng": -74.22684,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A080_869:6",
@@ -1550,7 +1615,8 @@
       "lat": 40.1147,
       "lng": -74.2545,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A131_977:19",
@@ -1577,7 +1643,8 @@
       "lat": 40.10604,
       "lng": -74.19885,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A076_862:5",
@@ -1604,7 +1671,8 @@
       "lat": 40.10604,
       "lng": -74.19885,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A113_932:2",
@@ -1628,10 +1696,11 @@
       ],
       "furnished": false,
       "comments": "Magnificent fully upgraded furn. Choson/ Kallah apt. with custom closets. Av. imm.",
-      "lat": 40.10996,
-      "lng": -74.20087,
+      "lat": 40.10518,
+      "lng": -74.20526,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A070_848:15",
@@ -1658,7 +1727,8 @@
       "lat": 40.09076,
       "lng": -74.20032,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A52_1009:16",
@@ -1680,7 +1750,8 @@
       "lat": 40.10404,
       "lng": -74.193,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A172_1049:3",
@@ -1707,7 +1778,8 @@
       "lat": 40.10773,
       "lng": -74.1905,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A172_1049:7",
@@ -1734,7 +1806,8 @@
       "lat": 40.09636,
       "lng": -74.25607,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A172_1049:8",
@@ -1756,7 +1829,8 @@
       "lat": 40.0528,
       "lng": -74.2148,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A62_1026:15",
@@ -1783,7 +1857,8 @@
       "lat": 40.10276,
       "lng": -74.2007,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A118_942:14",
@@ -1802,10 +1877,11 @@
       ],
       "furnished": false,
       "comments": "Beautifulfurnishedapt. Largewindows. St. steel kitchen. WD. Perfectfor Choson/Kallah.",
-      "lat": 40.08921,
-      "lng": -74.18644,
+      "lat": 40.08734,
+      "lng": -74.18049,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1R130_975:8",
@@ -1832,7 +1908,8 @@
       "lat": 40.0798,
       "lng": -74.225,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1R105_916:9",
@@ -1859,7 +1936,8 @@
       "lat": 40.08944,
       "lng": -74.23441,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1R172_1049:4",
@@ -1886,7 +1964,8 @@
       "lat": 40.09538,
       "lng": -74.22226,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH172_1049:6",
@@ -1908,7 +1987,8 @@
       "lat": 40.0528,
       "lng": -74.2148,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH154_1016:8",
@@ -1930,7 +2010,8 @@
       "lat": 40.11518,
       "lng": -74.36478,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH154_1015:18",
@@ -1952,7 +2033,8 @@
       "lat": 40.14318,
       "lng": -74.27047,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11TT20_944:20",
@@ -1974,7 +2056,8 @@
       "lat": 40.04684,
       "lng": -74.20966,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11TT72_1046:12",
@@ -1993,10 +2076,11 @@
       ],
       "furnished": false,
       "comments": "Brand new. Available immediately. Furn./unfurn, ultra-modern kitchen, master suite, beautiful heated pool, long term.",
-      "lat": 40.11949,
-      "lng": -74.25708,
+      "lat": 40.13763,
+      "lng": -74.35417,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1172_1047:7",
@@ -2018,7 +2102,8 @@
       "lat": 40.10372,
       "lng": -74.31907,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1172_1047:9",
@@ -2040,7 +2125,8 @@
       "lat": 40.09471,
       "lng": -74.24924,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH172_1047:10",
@@ -2062,7 +2148,8 @@
       "lat": 40.09471,
       "lng": -74.24924,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH172_1047:11",
@@ -2084,7 +2171,8 @@
       "lat": null,
       "lng": null,
       "geo": null,
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1TT172_1048:4",
@@ -2106,7 +2194,8 @@
       "lat": 40.0603,
       "lng": -74.2294,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH172_1047:17",
@@ -2128,7 +2217,8 @@
       "lat": 40.11544,
       "lng": -74.24673,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH172_1047:18",
@@ -2150,7 +2240,8 @@
       "lat": 40.11518,
       "lng": -74.36478,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11TT72_1049:103",
@@ -2169,10 +2260,11 @@
       ],
       "furnished": false,
       "comments": "Two sinks, garage, balcony, all appliances. Development includes playground, pool, etc.",
-      "lat": 40.11949,
-      "lng": -74.25708,
+      "lat": 40.13763,
+      "lng": -74.35417,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11HH72_1049:11",
@@ -2194,7 +2286,8 @@
       "lat": 40.11532,
       "lng": -74.24687,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH158_1022:2",
@@ -2216,7 +2309,8 @@
       "lat": 40.05747,
       "lng": -74.23451,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH172_1047:19",
@@ -2238,7 +2332,8 @@
       "lat": 40.1413,
       "lng": -74.22366,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1172_1048:2",
@@ -2260,7 +2355,8 @@
       "lat": 40.16928,
       "lng": -74.19737,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH172_1046:8",
@@ -2282,7 +2378,8 @@
       "lat": 40.1219,
       "lng": -74.27709,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH173_1051:6",
@@ -2304,7 +2401,8 @@
       "lat": 40.00317,
       "lng": -74.25653,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH173_1051:8",
@@ -2326,7 +2424,8 @@
       "lat": 40.0968,
       "lng": -74.16462,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1TT173_1050:3",
@@ -2345,10 +2444,11 @@
       ],
       "furnished": false,
       "comments": "Semi attached, desirable block, down the block to all shuls.",
-      "lat": 40.11949,
-      "lng": -74.25708,
+      "lat": 40.13763,
+      "lng": -74.35417,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1TT173_1050:1",
@@ -2370,7 +2470,8 @@
       "lat": 40.04684,
       "lng": -74.20966,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1173_1050:5",
@@ -2389,10 +2490,11 @@
       ],
       "furnished": false,
       "comments": "Completely remodeled 3600 SF., on acre lot, fenced, full unfinished bsmt., cul-de-sac.",
-      "lat": 40.1167,
-      "lng": -74.11088,
+      "lat": 40.09255,
+      "lng": -74.28115,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1173_1050:6",
@@ -2411,10 +2513,11 @@
       ],
       "furnished": false,
       "comments": "Remodeled, high end, 1 acre fenced lot, large patio, 2 car garage, unfinished bsmt.",
-      "lat": 40.04315,
-      "lng": -74.1619,
+      "lat": 40.16514,
+      "lng": -74.27979,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1173_1050:7",
@@ -2436,7 +2539,8 @@
       "lat": 40.11518,
       "lng": -74.36478,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U11TT73_1050:16",
@@ -2458,7 +2562,8 @@
       "lat": 40.07929,
       "lng": -74.21653,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U11TT73_1050:18",
@@ -2477,10 +2582,11 @@
       ],
       "furnished": false,
       "comments": "Brand new lg. Crofton model w/ gorgeous lg. bkyd. walkout bsmt. Long term. Av. imm.",
-      "lat": 40.11949,
-      "lng": -74.25708,
+      "lat": 40.13763,
+      "lng": -74.35417,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11TT73_1049:14",
@@ -2502,7 +2608,8 @@
       "lat": 40.066,
       "lng": -74.2089,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11HH73_1049:12",
@@ -2524,7 +2631,8 @@
       "lat": 40.13064,
       "lng": -74.25709,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11HH73_1049:16",
@@ -2546,7 +2654,8 @@
       "lat": 40.1155,
       "lng": -74.24666,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1125_958:10",
@@ -2568,7 +2677,8 @@
       "lat": 40.00317,
       "lng": -74.25653,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1159_1023:8",
@@ -2590,7 +2700,8 @@
       "lat": 40.0905,
       "lng": -74.2377,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH108_920:18",
@@ -2612,7 +2723,8 @@
       "lat": 40.07433,
       "lng": -74.21049,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1R173_1050:11",
@@ -2639,7 +2751,8 @@
       "lat": 40.09628,
       "lng": -74.24189,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1R174_1052:8",
@@ -2666,7 +2779,8 @@
       "lat": 40.06443,
       "lng": -74.21911,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A52_1012:15",
@@ -2693,7 +2807,8 @@
       "lat": 40.0798,
       "lng": -74.225,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A73_1051:15",
@@ -2712,10 +2827,11 @@
       ],
       "furnished": true,
       "comments": "Furnished apartment. Available immediately.",
-      "lat": 40.07903,
-      "lng": -74.23694,
+      "lat": 40.07933,
+      "lng": -74.23321,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1A173_1050:9",
@@ -2742,7 +2858,8 @@
       "lat": 40.1147,
       "lng": -74.2545,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A73_1051:10",
@@ -2769,7 +2886,8 @@
       "lat": 40.10746,
       "lng": -74.23154,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A141_995:4",
@@ -2791,7 +2909,8 @@
       "lat": 40.11518,
       "lng": -74.36478,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A50_1007:18",
@@ -2813,7 +2932,8 @@
       "lat": 40.0941,
       "lng": -74.21499,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1AA138_990:9",
@@ -2840,7 +2960,8 @@
       "lat": 40.10242,
       "lng": -74.20021,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A73_1049:19",
@@ -2864,10 +2985,11 @@
       ],
       "furnished": true,
       "comments": "Brand new fully furnished, washer/dryer. Available immediately.",
-      "lat": 40.10729,
-      "lng": -74.24202,
+      "lat": 40.10374,
+      "lng": -74.24495,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1A173_1050:4",
@@ -2889,7 +3011,8 @@
       "lat": 40.09284,
       "lng": -74.20358,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA173_1050:2",
@@ -2916,7 +3039,8 @@
       "lat": 40.04684,
       "lng": -74.20966,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11AA73_1051:13",
@@ -2938,7 +3062,8 @@
       "lat": 40.06846,
       "lng": -74.2205,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA173_1050:13",
@@ -2960,7 +3085,8 @@
       "lat": 40.06667,
       "lng": -74.22197,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA173_1050:14",
@@ -2987,7 +3113,8 @@
       "lat": 40.08734,
       "lng": -74.25544,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11AA73_1051:14",
@@ -3009,7 +3136,8 @@
       "lat": 40.06846,
       "lng": -74.2205,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11AA72_1046:14",
@@ -3031,7 +3159,8 @@
       "lat": 40.0798,
       "lng": -74.225,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA174_1053:11",
@@ -3053,7 +3182,8 @@
       "lat": 40.0905,
       "lng": -74.2377,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1AA174_1052:4",
@@ -3075,7 +3205,8 @@
       "lat": 40.05052,
       "lng": -74.19671,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1AA174_1052:5",
@@ -3097,7 +3228,8 @@
       "lat": 40.0693,
       "lng": -74.21834,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1AA117_939:18",
@@ -3119,7 +3251,8 @@
       "lat": 40.04915,
       "lng": -74.19475,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A161_1026:7",
@@ -3146,7 +3279,8 @@
       "lat": 40.10094,
       "lng": -74.20775,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A090_890:18",
@@ -3173,7 +3307,8 @@
       "lat": 40.1147,
       "lng": -74.2545,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A174_1052:7",
@@ -3200,7 +3335,8 @@
       "lat": 40.10516,
       "lng": -74.21461,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A115_936:7",
@@ -3227,7 +3363,8 @@
       "lat": 40.10773,
       "lng": -74.1905,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A174_1052:3",
@@ -3254,7 +3391,8 @@
       "lat": null,
       "lng": null,
       "geo": null,
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A74_1051:18",
@@ -3281,7 +3419,8 @@
       "lat": 40.07433,
       "lng": -74.21049,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A124_955:6",
@@ -3308,7 +3447,8 @@
       "lat": 40.0888,
       "lng": -74.24942,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UA1174_1053:6",
@@ -3332,10 +3472,11 @@
       ],
       "furnished": true,
       "comments": "Furnished, short or long term, minimum one month. Great for Choson/Kallah!",
-      "lat": 40.07952,
-      "lng": -74.20891,
+      "lat": 40.08448,
+      "lng": -74.19965,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A122_951:14",
@@ -3357,7 +3498,8 @@
       "lat": 40.10035,
       "lng": -74.1955,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A057_828:19",
@@ -3384,7 +3526,8 @@
       "lat": 40.09788,
       "lng": -74.20131,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1R156_1019:12",
@@ -3408,10 +3551,11 @@
       ],
       "furnished": true,
       "comments": "Private rm., fully furnished, for working guys, shared kitchen, etc. Torah-focused, working.",
-      "lat": 40.06377,
-      "lng": -74.23427,
+      "lat": 40.06333,
+      "lng": -74.23117,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11T55_1016:19",
@@ -3430,10 +3574,11 @@
       ],
       "furnished": false,
       "comments": "Furnishedfor Choson/Kallah,near shuls. Beautifullayout. Shorttermuntil Dec.30. Available weekdays or Shabbosim. in from out of town for a Simcha.",
-      "lat": 40.07952,
-      "lng": -74.20891,
+      "lat": 40.08448,
+      "lng": -74.19965,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH173_1051:7",
@@ -3455,7 +3600,8 @@
       "lat": 40.07979,
       "lng": -74.23019,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1133_982:20",
@@ -3477,7 +3623,8 @@
       "lat": 40.09333,
       "lng": -74.23308,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1174_1053:7",
@@ -3499,7 +3646,8 @@
       "lat": 40.09789,
       "lng": -74.26554,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1174_1053:9",
@@ -3521,7 +3669,8 @@
       "lat": 40.1413,
       "lng": -74.22366,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U11TT74_1053:10",
@@ -3540,10 +3689,11 @@
       ],
       "furnished": false,
       "comments": "Updated end unit, very airy. Available immediately.",
-      "lat": 40.06976,
-      "lng": -74.23307,
+      "lat": 40.07137,
+      "lng": -74.22961,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH174_1053:13",
@@ -3562,10 +3712,11 @@
       ],
       "furnished": false,
       "comments": "Nice block. Available immediately.",
-      "lat": 40.10698,
-      "lng": -74.16408,
+      "lat": 40.12095,
+      "lng": -74.14375,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11HH74_1051:16",
@@ -3587,7 +3738,8 @@
       "lat": 40.0357,
       "lng": -74.26028,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH174_1052:1",
@@ -3609,7 +3761,8 @@
       "lat": 40.00317,
       "lng": -74.25653,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH096_902:17",
@@ -3631,7 +3784,8 @@
       "lat": 40.09307,
       "lng": -74.2375,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1TT175_1054:5",
@@ -3650,10 +3804,11 @@
       ],
       "furnished": false,
       "comments": "Brand new, beautifully upgraded. Available immediately.",
-      "lat": 40.06406,
-      "lng": -74.2313,
+      "lat": 40.06652,
+      "lng": -74.23199,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1175_1054:6",
@@ -3675,7 +3830,8 @@
       "lat": 40.00317,
       "lng": -74.25653,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1TT175_1054:7",
@@ -3697,7 +3853,8 @@
       "lat": 40.04689,
       "lng": -74.20229,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11TT75_1053:15",
@@ -3716,10 +3873,11 @@
       ],
       "furnished": false,
       "comments": "Andrews model. 2 kitchen sinks, fin. basemt. 2-car garage. Pool, gym, playground, shul.",
-      "lat": 40.13838,
-      "lng": -74.34935,
+      "lat": 40.1353,
+      "lng": -74.34684,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11HH75_1053:16",
@@ -3741,7 +3899,8 @@
       "lat": 39.95284,
       "lng": -74.19674,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11TT74_1053:17",
@@ -3763,7 +3922,8 @@
       "lat": 40.08734,
       "lng": -74.25544,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11HH74_1053:18",
@@ -3785,7 +3945,8 @@
       "lat": 40.16561,
       "lng": -74.30564,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11HH74_1053:19",
@@ -3807,7 +3968,8 @@
       "lat": 40.03247,
       "lng": -74.24373,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11TT75_1052:15",
@@ -3829,7 +3991,8 @@
       "lat": 40.1353,
       "lng": -74.34684,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11H75_1053:20",
@@ -3851,7 +4014,8 @@
       "lat": 40.11913,
       "lng": -74.24929,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UA1123_954:6",
@@ -3875,10 +4039,11 @@
       ],
       "furnished": true,
       "comments": "Br. new beautiful spacious furnished in sin- gle family house. Long/short term. Av. imm.",
-      "lat": 40.07103,
-      "lng": -74.20387,
+      "lat": 40.07152,
+      "lng": -74.20888,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A105_915:9",
@@ -3905,7 +4070,8 @@
       "lat": 40.066,
       "lng": -74.2089,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A121_949:1",
@@ -3932,7 +4098,8 @@
       "lat": 40.10688,
       "lng": -74.19467,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A54_1013:17",
@@ -3957,7 +4124,8 @@
       "lat": 40.09675,
       "lng": -74.20283,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1R165_1033:3",
@@ -3984,7 +4152,8 @@
       "lat": 40.08734,
       "lng": -74.25544,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA175_1054:9",
@@ -4006,7 +4175,8 @@
       "lat": 40.10242,
       "lng": -74.20021,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11AA75_1052:13",
@@ -4026,7 +4196,8 @@
       "lat": 40.08734,
       "lng": -74.25544,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11AA75_1054:18",
@@ -4046,7 +4217,8 @@
       "lat": 40.07159,
       "lng": -74.22007,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA176_1055:9",
@@ -4068,7 +4240,8 @@
       "lat": 40.09377,
       "lng": -74.17316,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA176_1055:4",
@@ -4090,7 +4263,8 @@
       "lat": 40.07005,
       "lng": -74.21677,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA176_1055:7",
@@ -4117,7 +4291,8 @@
       "lat": 40.05373,
       "lng": -74.20184,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A130_972:6",
@@ -4144,7 +4319,8 @@
       "lat": 40.095,
       "lng": -74.2008,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A176_1056:1",
@@ -4171,7 +4347,8 @@
       "lat": 40.06316,
       "lng": -74.22297,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A75_1055:19",
@@ -4198,7 +4375,8 @@
       "lat": 40.09534,
       "lng": -74.21275,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A75_1055:20",
@@ -4225,7 +4403,8 @@
       "lat": 40.08933,
       "lng": -74.23636,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1A163_1030:15",
@@ -4247,7 +4426,8 @@
       "lat": 40.069,
       "lng": -74.19716,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A75_1054:17",
@@ -4271,10 +4451,11 @@
       ],
       "furnished": true,
       "comments": "Furnished studio apartment for single. Separate entrance.",
-      "lat": 40.07692,
-      "lng": -74.21352,
+      "lat": 40.07275,
+      "lng": -74.20179,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A75_1054:11",
@@ -4301,7 +4482,8 @@
       "lat": 40.04915,
       "lng": -74.19475,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1R159_1021:1",
@@ -4328,7 +4510,8 @@
       "lat": 40.11518,
       "lng": -74.36478,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11TT75_1055:17",
@@ -4347,10 +4530,11 @@
       ],
       "furnished": false,
       "comments": "Stunning brand new duplex for short term one-year rental. Available February.",
-      "lat": 40.09605,
-      "lng": -74.21595,
+      "lat": 40.09909,
+      "lng": -74.21652,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11HH75_1054:12",
@@ -4372,7 +4556,8 @@
       "lat": 40.14318,
       "lng": -74.27047,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11TT75_1054:13",
@@ -4391,10 +4576,11 @@
       ],
       "furnished": false,
       "comments": "Andrewmodel,move-incond. Beautifuldeck, 2-sink kitchen,finishedbasemt.2-cargarage.",
-      "lat": 40.11949,
-      "lng": -74.25708,
+      "lat": 40.13763,
+      "lng": -74.35417,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11TT75_1054:14",
@@ -4416,7 +4602,8 @@
       "lat": 40.04915,
       "lng": -74.19475,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11HH75_1054:15",
@@ -4438,7 +4625,8 @@
       "lat": 39.95284,
       "lng": -74.19674,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11HH75_1054:16",
@@ -4460,7 +4648,8 @@
       "lat": 40.08983,
       "lng": -74.19996,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11HH75_1054:19",
@@ -4480,7 +4669,8 @@
       "lat": 40.0968,
       "lng": -74.16462,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11TT75_1054:20",
@@ -4499,10 +4689,11 @@
       ],
       "furnished": false,
       "comments": "Nash house. Full basement. Deck.",
-      "lat": 40.11949,
-      "lng": -74.25708,
+      "lat": 40.13763,
+      "lng": -74.35417,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11HH75_1055:16",
@@ -4524,7 +4715,8 @@
       "lat": 40.00317,
       "lng": -74.25653,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1TT176_1055:1",
@@ -4546,7 +4738,8 @@
       "lat": 40.06652,
       "lng": -74.23199,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1TT176_1055:8",
@@ -4568,7 +4761,8 @@
       "lat": 40.08836,
       "lng": -74.18005,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1TT173_1051:1",
@@ -4590,7 +4784,8 @@
       "lat": 40.066,
       "lng": -74.2089,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH176_1055:11",
@@ -4612,7 +4807,8 @@
       "lat": 40.10756,
       "lng": -74.26226,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH176_1055:13",
@@ -4631,10 +4827,11 @@
       ],
       "furnished": false,
       "comments": "Large backyard. Available immediately.",
-      "lat": 40.10424,
-      "lng": -74.20308,
+      "lat": 40.10952,
+      "lng": -74.24706,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U11TT76_1055:14",
@@ -4656,7 +4853,8 @@
       "lat": 40.04684,
       "lng": -74.20966,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH176_1055:15",
@@ -4678,7 +4876,8 @@
       "lat": 40.15011,
       "lng": -74.21348,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH177_1056:15",
@@ -4697,10 +4896,11 @@
       ],
       "furnished": false,
       "comments": "Yeshiva area, private house & lot, newly renovated, finished basement.",
-      "lat": 40.09825,
-      "lng": -74.21517,
+      "lat": 40.10128,
+      "lng": -74.21575,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U11TT77_1056:16",
@@ -4722,7 +4922,8 @@
       "lat": 40.04686,
       "lng": -74.20597,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U11TT77_1056:17",
@@ -4744,7 +4945,8 @@
       "lat": 40.09919,
       "lng": -74.21713,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1HH177_1056:185",
@@ -4766,7 +4968,8 @@
       "lat": 40.11544,
       "lng": -74.24673,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11TT73_1049:17",
@@ -4788,7 +4991,8 @@
       "lat": 40.0682,
       "lng": -74.20488,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11TT73_1051:9",
@@ -4807,10 +5011,11 @@
       ],
       "furnished": false,
       "comments": "Brand new Crofton model. Two sinks, deck. Backs up to woods. Available immediately.",
-      "lat": 40.10983,
-      "lng": -74.24426,
+      "lat": 40.1189,
+      "lng": -74.2928,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "UHH1166_1036:1",
@@ -4832,7 +5037,8 @@
       "lat": 39.95284,
       "lng": -74.19674,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH177_1056:4",
@@ -4854,7 +5060,8 @@
       "lat": 40.16928,
       "lng": -74.19737,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11TT77_1056:5",
@@ -4876,7 +5083,8 @@
       "lat": 40.0486,
       "lng": -74.2094,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH177_1056:6",
@@ -4898,7 +5106,8 @@
       "lat": 39.95284,
       "lng": -74.19674,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1HH177_1056:7",
@@ -4920,7 +5129,8 @@
       "lat": 39.9735,
       "lng": -74.3817,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U11TT77_1056:12",
@@ -4939,10 +5149,11 @@
       ],
       "furnished": false,
       "comments": "Beautiful Nash model, new and airy. Available January.",
-      "lat": 40.13838,
-      "lng": -74.34935,
+      "lat": 40.1353,
+      "lng": -74.34684,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A104_915:4",
@@ -4969,7 +5180,8 @@
       "lat": 40.09055,
       "lng": -74.20781,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "A998_718:3",
@@ -4989,7 +5201,8 @@
       "lat": 40.0968,
       "lng": -74.16462,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11A53_1012:19",
@@ -5016,7 +5229,8 @@
       "lat": 40.06846,
       "lng": -74.2205,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A073_856:9",
@@ -5038,7 +5252,8 @@
       "lat": 40.0798,
       "lng": -74.225,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A131_978:1",
@@ -5062,10 +5277,11 @@
       ],
       "furnished": true,
       "comments": "Shortterm furnished Choson/Kallah apt.,fullyupgraded,beautifullayout.",
-      "lat": 40.09566,
-      "lng": -74.24964,
+      "lat": 40.09563,
+      "lng": -74.25102,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1A131_978:2",
@@ -5092,7 +5308,8 @@
       "lat": 40.10409,
       "lng": -74.21028,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1R115_935:2",
@@ -5119,7 +5336,8 @@
       "lat": 40.10516,
       "lng": -74.21461,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1RR177_1056:19",
@@ -5141,7 +5359,8 @@
       "lat": 39.95284,
       "lng": -74.19674,
       "geo": "town",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA177_1056:8",
@@ -5163,7 +5382,8 @@
       "lat": 40.09538,
       "lng": -74.22226,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "1AA177_1056:9",
@@ -5185,7 +5405,8 @@
       "lat": 40.05373,
       "lng": -74.20184,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA177_1056:10",
@@ -5207,7 +5428,8 @@
       "lat": 40.09065,
       "lng": -74.20406,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA177_1056:11",
@@ -5229,7 +5451,8 @@
       "lat": 40.07137,
       "lng": -74.19811,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA177_1056:20",
@@ -5256,7 +5479,8 @@
       "lat": 40.09675,
       "lng": -74.20283,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA177_1056:13",
@@ -5283,7 +5507,8 @@
       "lat": 40.05421,
       "lng": -74.2224,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA177_1056:14",
@@ -5305,7 +5530,8 @@
       "lat": 40.09916,
       "lng": -74.2047,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11AA75_1052:14",
@@ -5329,7 +5555,8 @@
       "lat": 40.0488,
       "lng": -74.2031,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "9AA52_672:11",
@@ -5351,7 +5578,8 @@
       "lat": 40.07137,
       "lng": -74.19811,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11AA75_1052:12",
@@ -5375,7 +5603,8 @@
       "lat": 40.10773,
       "lng": -74.1905,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "11AA61_1025:19",
@@ -5402,7 +5631,8 @@
       "lat": 40.09834,
       "lng": -74.1895,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     },
     {
       "id": "U1AA176_1055:5",
@@ -5424,7 +5654,8 @@
       "lat": 40.09862,
       "lng": -74.20141,
       "geo": "place",
-      "geo_unknown": []
+      "geo_unknown": [],
+      "geo_unverified": []
     }
   ],
   "places": {
@@ -5500,8 +5731,8 @@
     },
     "arlington": {
       "name": "Arlington",
-      "lat": 40.07952,
-      "lng": -74.20891
+      "lat": 40.08448,
+      "lng": -74.19965
     },
     "bais shalom": {
       "name": "Bais Shalom",
@@ -5510,8 +5741,8 @@
     },
     "beaver crossing": {
       "name": "Beaver Crossing",
-      "lat": 40.06406,
-      "lng": -74.2313
+      "lat": 40.06652,
+      "lng": -74.23199
     },
     "beaver crossings": {
       "name": "Beaver Crossing",
@@ -5635,8 +5866,8 @@
     },
     "clifton": {
       "name": "Clifton",
-      "lat": 40.09291,
-      "lng": -74.21476
+      "lat": 40.09898,
+      "lng": -74.21592
     },
     "clover": {
       "name": "Clover",
@@ -5650,8 +5881,8 @@
     },
     "club at jackson 21": {
       "name": "Club At Jackson 21",
-      "lat": 40.13838,
-      "lng": -74.34935
+      "lat": 40.1353,
+      "lng": -74.34684
     },
     "congress street": {
       "name": "Congress Street",
@@ -5660,8 +5891,8 @@
     },
     "county ln": {
       "name": "County Ln",
-      "lat": 40.10551,
-      "lng": -74.19063
+      "lat": 40.10521,
+      "lng": -74.19564
     },
     "courtney": {
       "name": "Courtney",
@@ -5770,13 +6001,13 @@
     },
     "hope": {
       "name": "Hope",
-      "lat": 40.10729,
-      "lng": -74.24202
+      "lat": 40.10374,
+      "lng": -74.24495
     },
     "hope chapel": {
       "name": "Hope Chapel",
-      "lat": 40.10729,
-      "lng": -74.24202
+      "lat": 40.10374,
+      "lng": -74.24495
     },
     "howell": {
       "name": "Howell",
@@ -5800,8 +6031,8 @@
     },
     "jackson 21": {
       "name": "Jackson 21",
-      "lat": 40.11949,
-      "lng": -74.25708
+      "lat": 40.13763,
+      "lng": -74.35417
     },
     "jackson pines rd": {
       "name": "Jackson Pines Rd",
@@ -5810,18 +6041,18 @@
     },
     "james": {
       "name": "James",
-      "lat": 40.07903,
-      "lng": -74.23694
+      "lat": 40.07933,
+      "lng": -74.23321
     },
     "james st": {
       "name": "James St",
-      "lat": 40.07903,
-      "lng": -74.23694
+      "lat": 40.07933,
+      "lng": -74.23321
     },
     "james street": {
       "name": "James Street",
-      "lat": 40.07903,
-      "lng": -74.23694
+      "lat": 40.07933,
+      "lng": -74.23321
     },
     "jule court": {
       "name": "Jule Court",
@@ -5890,13 +6121,13 @@
     },
     "mass": {
       "name": "Mass",
-      "lat": 40.05774,
-      "lng": -74.22981
+      "lat": 40.05365,
+      "lng": -74.23052
     },
     "meadow run": {
       "name": "Meadow Run",
-      "lat": 40.1167,
-      "lng": -74.11088
+      "lat": 40.09255,
+      "lng": -74.28115
     },
     "medina rd": {
       "name": "Medina Rd",
@@ -5925,13 +6156,13 @@
     },
     "new central": {
       "name": "New Central",
-      "lat": 40.09419,
-      "lng": -74.25307
+      "lat": 40.09412,
+      "lng": -74.25584
     },
     "new central ave": {
       "name": "New Central Ave",
-      "lat": 40.09419,
-      "lng": -74.25307
+      "lat": 40.09412,
+      "lng": -74.25584
     },
     "new england village": {
       "name": "New England Village",
@@ -5940,8 +6171,8 @@
     },
     "new prospect jackson": {
       "name": "New Prospect Jackson",
-      "lat": 40.11754,
-      "lng": -74.25369
+      "lat": 40.12983,
+      "lng": -74.25647
     },
     "nowlan": {
       "name": "Nowlan",
@@ -5960,8 +6191,8 @@
     },
     "ocean avenue": {
       "name": "Ocean Avenue",
-      "lat": 40.08921,
-      "lng": -74.18644
+      "lat": 40.08734,
+      "lng": -74.18049
     },
     "ocean pointe": {
       "name": "Ocean Pointe",
@@ -5995,8 +6226,8 @@
     },
     "pine river": {
       "name": "Pine River",
-      "lat": 40.07692,
-      "lng": -74.21352
+      "lat": 40.07275,
+      "lng": -74.20179
     },
     "pine st": {
       "name": "Pine St",
@@ -6015,13 +6246,13 @@
     },
     "prospect": {
       "name": "Prospect",
-      "lat": 40.06979,
-      "lng": -74.23873
+      "lat": 40.07301,
+      "lng": -74.23181
     },
     "prospect vines": {
       "name": "Prospect Vines",
-      "lat": 40.06979,
-      "lng": -74.23873
+      "lat": 40.07227,
+      "lng": -74.23904
     },
     "raintree": {
       "name": "Raintree",
@@ -6030,8 +6261,8 @@
     },
     "ramtown": {
       "name": "Ramtown",
-      "lat": 40.10698,
-      "lng": -74.16408
+      "lat": 40.12095,
+      "lng": -74.14375
     },
     "regency estates": {
       "name": "Regency Estates",
@@ -6100,8 +6331,8 @@
     },
     "saratoga": {
       "name": "Saratoga",
-      "lat": 40.04319,
-      "lng": -74.24243
+      "lat": 40.04615,
+      "lng": -74.24265
     },
     "shady ln": {
       "name": "Shady Ln",
@@ -6140,13 +6371,13 @@
     },
     "spruce st": {
       "name": "Spruce St",
-      "lat": 40.07103,
-      "lng": -74.20387
+      "lat": 40.07152,
+      "lng": -74.20888
     },
     "squankum": {
       "name": "Squankum",
-      "lat": 40.10996,
-      "lng": -74.20087
+      "lat": 40.10518,
+      "lng": -74.20526
     },
     "st katherine": {
       "name": "St Katherine",
@@ -6210,8 +6441,8 @@
     },
     "topaz": {
       "name": "Topaz",
-      "lat": 40.04315,
-      "lng": -74.1619
+      "lat": 40.16514,
+      "lng": -74.27979
     },
     "twin oaks": {
       "name": "Twin Oaks",
@@ -6230,13 +6461,13 @@
     },
     "w county ln": {
       "name": "W County Ln",
-      "lat": 40.1012,
-      "lng": -74.16414
+      "lat": 40.11529,
+      "lng": -74.24917
     },
     "w kennedy": {
       "name": "W Kennedy",
-      "lat": 40.10816,
-      "lng": -74.23164
+      "lat": 40.10742,
+      "lng": -74.22668
     },
     "westgate": {
       "name": "Westgate",
@@ -6327,8 +6558,8 @@
     },
     {
       "name": "Arlington",
-      "lat": 40.07952,
-      "lng": -74.20891
+      "lat": 40.08448,
+      "lng": -74.19965
     },
     {
       "name": "Bais Shalom",
@@ -6442,8 +6673,8 @@
     },
     {
       "name": "Clifton",
-      "lat": 40.09291,
-      "lng": -74.21476
+      "lat": 40.09898,
+      "lng": -74.21592
     },
     {
       "name": "Clover",
@@ -6457,8 +6688,8 @@
     },
     {
       "name": "County Line Road",
-      "lat": 40.10551,
-      "lng": -74.19063
+      "lat": 40.10521,
+      "lng": -74.19564
     },
     {
       "name": "Courtney",
@@ -6557,13 +6788,13 @@
     },
     {
       "name": "Hope",
-      "lat": 40.10729,
-      "lng": -74.24202
+      "lat": 40.10374,
+      "lng": -74.24495
     },
     {
       "name": "Hope Chapel",
-      "lat": 40.10729,
-      "lng": -74.24202
+      "lat": 40.10374,
+      "lng": -74.24495
     },
     {
       "name": "Howell",
@@ -6587,8 +6818,8 @@
     },
     {
       "name": "Jackson 21",
-      "lat": 40.11949,
-      "lng": -74.25708
+      "lat": 40.13763,
+      "lng": -74.35417
     },
     {
       "name": "Jackson Pines Road",
@@ -6597,8 +6828,8 @@
     },
     {
       "name": "James Street",
-      "lat": 40.07903,
-      "lng": -74.23694
+      "lat": 40.07933,
+      "lng": -74.23321
     },
     {
       "name": "Jule Court",
@@ -6662,13 +6893,13 @@
     },
     {
       "name": "Massachusetts Avenue",
-      "lat": 40.05774,
-      "lng": -74.22981
+      "lat": 40.05365,
+      "lng": -74.23052
     },
     {
       "name": "Meadow Run",
-      "lat": 40.1167,
-      "lng": -74.11088
+      "lat": 40.09255,
+      "lng": -74.28115
     },
     {
       "name": "Medina Road",
@@ -6697,8 +6928,8 @@
     },
     {
       "name": "New Central Avenue",
-      "lat": 40.09419,
-      "lng": -74.25307
+      "lat": 40.09412,
+      "lng": -74.25584
     },
     {
       "name": "New England Village",
@@ -6707,8 +6938,8 @@
     },
     {
       "name": "New Prospect Jackson",
-      "lat": 40.11754,
-      "lng": -74.25369
+      "lat": 40.12983,
+      "lng": -74.25647
     },
     {
       "name": "Nowlan",
@@ -6727,8 +6958,8 @@
     },
     {
       "name": "Ocean Avenue",
-      "lat": 40.08921,
-      "lng": -74.18644
+      "lat": 40.08734,
+      "lng": -74.18049
     },
     {
       "name": "Ocean Pointe",
@@ -6757,8 +6988,8 @@
     },
     {
       "name": "Pine River",
-      "lat": 40.07692,
-      "lng": -74.21352
+      "lat": 40.07275,
+      "lng": -74.20179
     },
     {
       "name": "Pine Street",
@@ -6777,13 +7008,13 @@
     },
     {
       "name": "Prospect",
-      "lat": 40.06979,
-      "lng": -74.23873
+      "lat": 40.07301,
+      "lng": -74.23181
     },
     {
       "name": "Prospect Vines",
-      "lat": 40.06979,
-      "lng": -74.23873
+      "lat": 40.07227,
+      "lng": -74.23904
     },
     {
       "name": "Raintree",
@@ -6792,8 +7023,8 @@
     },
     {
       "name": "Ramtown",
-      "lat": 40.10698,
-      "lng": -74.16408
+      "lat": 40.12095,
+      "lng": -74.14375
     },
     {
       "name": "Regency Estates",
@@ -6852,8 +7083,8 @@
     },
     {
       "name": "Saratoga",
-      "lat": 40.04319,
-      "lng": -74.24243
+      "lat": 40.04615,
+      "lng": -74.24265
     },
     {
       "name": "Shady Lane",
@@ -6887,13 +7118,13 @@
     },
     {
       "name": "Spruce Street",
-      "lat": 40.07103,
-      "lng": -74.20387
+      "lat": 40.07152,
+      "lng": -74.20888
     },
     {
       "name": "Squankum",
-      "lat": 40.10996,
-      "lng": -74.20087
+      "lat": 40.10518,
+      "lng": -74.20526
     },
     {
       "name": "St Katherine",
@@ -6977,8 +7208,8 @@
     },
     {
       "name": "Topaz",
-      "lat": 40.04315,
-      "lng": -74.1619
+      "lat": 40.16514,
+      "lng": -74.27979
     },
     {
       "name": "Twin Oaks",
@@ -6992,13 +7223,13 @@
     },
     {
       "name": "W Kennedy",
-      "lat": 40.10816,
-      "lng": -74.23164
+      "lat": 40.10742,
+      "lng": -74.22668
     },
     {
       "name": "W. County Line Road",
-      "lat": 40.1012,
-      "lng": -74.16414
+      "lat": 40.11529,
+      "lng": -74.24917
     },
     {
       "name": "Westgate",

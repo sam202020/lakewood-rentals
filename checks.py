@@ -87,7 +87,12 @@ def check(listings, previous_count=None):
             shown = ", ".join(unknown[:12]) + (f" (+{len(unknown) - 12} more)" if len(unknown) > 12 else "")
             warnings.append(
                 f"{len(unknown)} place name(s) not in places.json, so those listings are not on the map: "
-                f"{shown} - run tools/geocode_places.py or add them by hand")
+                f"{shown} - add them to places.json after checking each on Google Maps (see CLAUDE.md)")
+        unverified = sorted({k for x in listings for k in x.get("geo_unverified", [])})
+        if unverified:
+            warnings.append(
+                f"{len(unverified)} place pin(s) come straight from OpenStreetMap and were never checked on "
+                f"Google Maps: {', '.join(unverified[:12])} - verify them (see CLAUDE.md)")
         if placed < 0.70:
             warnings.append(f"only {placed:.0%} of listings can be placed on the map")
 
