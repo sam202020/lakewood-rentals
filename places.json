@@ -246,9 +246,10 @@
  },
  "chestnut gardens": {
   "name": "Chestnut Gardens",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "lat": 40.0526,
+  "lng": -74.19997,
+  "source": "manual",
+  "note": "Owner (Google): residential development just off Chestnut St along Holden Square; OSM Holden Square."
  },
  "clearsteam": {
   "name": "Clearsteam",

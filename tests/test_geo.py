@@ -133,7 +133,7 @@ class ShippedPlaces(unittest.TestCase):
         """Corrections supplied by the site owner must stay manual (never overwritten)."""
         for key in ("westgate", "sunset", "sunset james", "oak vine", "villas", "twin oaks",
                     "yeshiva", "the 70", "the 70 phase i", "the 70 phase ii", "brook hill",
-                    "chestnut", "cross", "cross mass", "brook", "evergreen gardens"):
+                    "chestnut", "chestnut gardens", "cross", "cross mass", "brook", "evergreen gardens"):
             with self.subTest(place=key):
                 self.assertEqual(self.places[key]["source"], "manual")
                 self.assertIsNotNone(self.places[key]["lat"])
@@ -142,7 +142,7 @@ class ShippedPlaces(unittest.TestCase):
         for text, key in [("Westgate", "westgate"), ("Sunset / James Area", "sunset james"),
                           ("Sunset & James", "sunset james"), ("James & Sunset", "sunset james"),
                           ("Oak & Vine", "oak vine"), ("Villas", "villas"), ("Yeshiva Area", "yeshiva"),
-                          ("The 70", "the 70"), ("Brook Hill", "brook hill"), ("Chestnut Area", "chestnut"), ("Off Chestnut", "chestnut"),
+                          ("The 70", "the 70"), ("Brook Hill", "brook hill"), ("Chestnut Area", "chestnut"), ("Chestnut Gardens", "chestnut gardens"), ("Off Chestnut", "chestnut"),
                           ("Cross & Mass.", "cross mass"), ("Mass. & Cross", "cross mass"), ("Evergreen Gardens", "evergreen gardens"), ("The 70 Phase II", "the 70 phase ii")]:
             with self.subTest(text=text):
                 g = geo.resolve(text, self.places)

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T19:44:56+00:00",
+  "generated_at": "2026-11-22T19:48:44+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -1383,9 +1383,9 @@
       ],
       "furnished": false,
       "comments": "New apartment, vinyl floors, suitable for single or office.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.0526,
+      "lng": -74.19997,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -5552,6 +5552,11 @@
       "name": "Chestnut St",
       "lat": 40.0528,
       "lng": -74.2148
+    },
+    "chestnut gardens": {
+      "name": "Chestnut Gardens",
+      "lat": 40.0526,
+      "lng": -74.19997
     },
     "clifton": {
       "name": "Clifton",
