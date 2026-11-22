@@ -28,7 +28,9 @@ MasaRentals.pdf  ──►  parse.py  ──►  listings.json  ──►  build
 ## Rebuild locally
 
 ```bash
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt  # use -m pip, not a bare `pip`:
+                                             # on some images `pip` and `python3`
+                                             # resolve to different interpreters
 python3 build.py                 # fetch the live PDF and rebuild
 python3 build.py --pdf some.pdf  # use a local PDF instead
 open site/index.html

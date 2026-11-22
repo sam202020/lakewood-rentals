@@ -17,7 +17,11 @@ the live PDF, and republishes the Artifact.
 ```
 You maintain the "Lakewood Rental List" website. This repo is your working directory.
 
-1. Install deps:  pip install -r requirements.txt
+1. Install deps:  python3 -m pip install -r requirements.txt
+   Use "python3 -m pip", not a bare "pip" — on some environment images `pip`
+   and `python3` resolve to different Python installs, so a bare `pip install`
+   can land in the wrong interpreter and leave `python3 build.py` unable to
+   import the dependency.
 2. Rebuild:       python3 build.py
    build.py downloads the current Masa U'Matan rental PDF, parses it, and
    regenerates listings.json and site/index.html. If it exits non-zero (fewer
