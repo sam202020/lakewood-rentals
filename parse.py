@@ -23,7 +23,7 @@ COL = {
     "comments": (383, 552),
 }
 
-CODE_RE = re.compile(r"^[Uu]?\d{0,2}([ATHRathr]{1,3})\d{0,3}_+\d+:?\d*$")
+CODE_RE = re.compile(r"^[Uu]?\d{0,2}([ATHRathr]{1,3})\d{0,5}_+\d+:?\d*$")
 PHONE_RE = re.compile(r"\d{3}[-.\s]?\d{3}[-.\s]?\d{4}")
 
 TYPE_MAP = {"A": "Apartment", "T": "Townhouse / Attached", "H": "House", "R": "Room"}
@@ -44,7 +44,18 @@ def col_of(x):
 
 
 def words_by_row(page, ytol=3.5):
-    words = page.extract_words(keep_blank_chars=False, use_text_flow=False)
+    # Two extraction modes, split at the comments column:
+    #  - left of it (code, BR, baths, location, rent, phone) x-sorted words keep
+    #    the type letter attached to its code (it is drawn as a separate glyph);
+    #  - the comments column uses text-flow order, which keeps words intact on
+    #    rows where the PDF interleaves overlapping text layers (otherwise they
+    #    shatter into 1-2 letter chunks).
+    cx = COL["comments"][0]
+    left = [w for w in page.extract_words(keep_blank_chars=False, use_text_flow=False)
+            if w["x0"] < cx]
+    right = [w for w in page.extract_words(keep_blank_chars=False, use_text_flow=True)
+             if w["x0"] >= cx]
+    words = left + right
     rows = []
     for w in sorted(words, key=lambda w: (round(w["top"], 1), w["x0"])):
         placed = False
@@ -75,6 +86,8 @@ def clean_loc(s):
     s = re.sub(r"(?<=\d)(?=[A-Za-z])", " ", s)
     s = re.sub(r"\s*&\s*", " & ", s)
     s = re.sub(r"\b(\d+)\s*(st|nd|rd|th)\b", r"\1\2", s)
+    s = re.sub(r",(?=\S)", ", ", s)
+    s = re.sub(r"(?<=[a-z])(near|Near)\b", r" \1", s)
     s = re.sub(r"(?<=[a-z])(area|Area)$", r" area", s)
     s = re.sub(r"\barea\b", "area", s)
     return re.sub(r"\s+", " ", s).strip(" ,/-"), trailing_phones
@@ -171,9 +184,14 @@ def parse(fileobj):
                         if c is None:
                             continue
                         if br_i > 0 and c != "comments":
-                            # continuation lines: only comment column is trusted;
-                            # allow a stacked 2nd phone only on the row right below.
-                            if c == "phone" and br_i == 1 and PHONE_RE.search(w["text"]):
+                            # continuation lines: comments are trusted. Location,
+                            # rent and utilities are vertically centred in the cell,
+                            # so on 2-line listings they land on the 2nd row: accept
+                            # them there (row 1 only). A stacked 2nd phone is also
+                            # allowed on the row right below.
+                            if br_i == 1 and c in ("loc", "rent", "wepay"):
+                                buckets[c].append(w["text"])
+                            elif c == "phone" and br_i == 1 and PHONE_RE.search(w["text"]):
                                 buckets["phone"].append(w["text"])
                             continue
                         buckets[c].append(w["text"])
