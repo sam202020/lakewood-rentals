@@ -98,6 +98,9 @@ ABBREVIATIONS = [
     (r"\bToms\s+R\.?(?=\s|/|,|$)",    "Toms River", re.I),
     (r"\bJksn\.?(?=\s|/|,|$)",        "Jackson",    re.I),
     (r"\bLkwd\.?(?=\s|/|,|$)",        "Lakewood",   re.I),
+    (r"\bEngl\.?(?=\s|/|,|$)",        "England",    re.I),
+    (r"\bCentrl\.?(?=\s|/|,|$)",      "Central",    re.I),
+    (r"\bCnty\.?(?=\s|/|,|$)",        "County",     re.I),
 ]
 
 
@@ -116,7 +119,7 @@ def clean_loc(s):
     s = re.sub(r"\s*&\s*", " & ", s)
     s = re.sub(r"\b(\d+)\s*(st|nd|rd|th)\b", r"\1\2", s)
     s = re.sub(r",(?=\S)", ", ", s)
-    s = re.sub(r"(?<=[a-z]\.)(?=[A-Z][a-z])", " ", s)   # Rd.Lkwd -> Rd. Lkwd
+    s = re.sub(r"(?<=[A-Za-z]\.)(?=[A-Z][a-z])", " ", s)   # Rd.Lkwd -> Rd. Lkwd, W.Kennedy -> W. Kennedy
     s = re.sub(r"(?<=[a-z])(near|Near)\b", r" \1", s)
     s = re.sub(r"(?<=[a-z])(area)\b", r" \1", s, flags=re.I)   # Ridgearea -> Ridge area
     s = re.sub(r"\barea\b", "Area", s, flags=re.I)

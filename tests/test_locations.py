@@ -63,6 +63,19 @@ class Abbreviations(unittest.TestCase):
     def test_lakewood(self):
         self.assertEqual(loc("Ivy Hill Rd.Lkwd."), "Ivy Hill Rd. Lakewood")
 
+    def test_england_central_county(self):
+        self.assertEqual(loc("New Engl.Village"), "New England Village")
+        self.assertEqual(loc("New Engl. Village"), "New England Village")
+        self.assertEqual(loc("St.Nicholas/Centrl."), "St. Nicholas / Central")
+        self.assertEqual(loc("Centrl. Ave."), "Central Ave.")
+        self.assertEqual(loc("W.Cnty.Ln."), "W. County Ln.")
+        self.assertEqual(loc("W.Cnty. Ln. / Hope"), "W. County Ln. / Hope")
+        self.assertEqual(loc("Cnty Line"), "County Line")
+
+    def test_full_words_are_untouched(self):
+        for name in ("England", "Central", "County Line", "Central Lakewood", "New England Village"):
+            self.assertEqual(loc(name), name)
+
     def test_tr_is_case_sensitive(self):
         # ordinary words must never be rewritten
         self.assertEqual(loc("Trinity"), "Trinity")
@@ -101,7 +114,7 @@ class ShippedData(unittest.TestCase):
         cls.listings = json.loads((ROOT / "listings.json").read_text())["listings"]
 
     def test_no_unexpanded_abbreviations(self):
-        bad = re.compile(r"\bWestgt\b|\bLkwd\b|\bJksn\b|\bT\.?R\.?\b|\bClubat\b|\bToms R\.?$")
+        bad = re.compile(r"\bWestgt\b|\bEngl\b|\bCentrl\b|\bCnty\b|\bLkwd\b|\bJksn\b|\bT\.?R\.?\b|\bClubat\b|\bToms R\.?$")
         offenders = [(x["id"], x["location"]) for x in self.listings if bad.search(x["location"])]
         self.assertEqual(offenders, [])
 
