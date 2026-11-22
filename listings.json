@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T23:09:12+00:00",
+  "generated_at": "2026-11-22T23:15:07+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -3116,8 +3116,8 @@
       ],
       "furnished": false,
       "comments": "Sunny, beautiful, upgraded. Tiled bathrms, fully vinyl. Full kitchen. For up to 6 months.",
-      "lat": 40.05178,
-      "lng": -74.18794,
+      "lat": 40.04915,
+      "lng": -74.19475,
       "geo": "place",
       "geo_unknown": []
     },
@@ -4141,8 +4141,8 @@
       ],
       "furnished": true,
       "comments": "Beautiful furnished apartment in excellent condition. Available December 1.",
-      "lat": 40.0938,
-      "lng": -74.1976,
+      "lat": 40.095,
+      "lng": -74.2008,
       "geo": "place",
       "geo_unknown": []
     },
@@ -4298,8 +4298,8 @@
       ],
       "furnished": true,
       "comments": "Beautifully furnished apt. at New Hampshire & Rt. 70. Available immediately.",
-      "lat": 40.05178,
-      "lng": -74.18794,
+      "lat": 40.04915,
+      "lng": -74.19475,
       "geo": "place",
       "geo_unknown": []
     },
@@ -4403,7 +4403,7 @@
       "bedrooms": "4",
       "bedrooms_num": 4,
       "baths": "2½",
-      "location": "Belzshlavalef",
+      "location": "Belz Shlav Aleph",
       "rent": null,
       "rent_display": "Reasonable",
       "landlord_pays": "",
@@ -4413,9 +4413,9 @@
       ],
       "furnished": false,
       "comments": "Perfect condition. Many upgrades: extra soundproofing, parquet flooring. Av. imm.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.04915,
+      "lng": -74.19475,
+      "geo": "place",
       "geo_unknown": []
     },
     {
@@ -5326,8 +5326,8 @@
       ],
       "furnished": false,
       "comments": "Full vinyl flooring. Includes Mezuzos. Washer/dryer, dish washer, etc. Av. Dec. 1.",
-      "lat": 40.05178,
-      "lng": -74.18794,
+      "lat": 40.0488,
+      "lng": -74.2031,
       "geo": "place",
       "geo_unknown": []
     },
@@ -5492,6 +5492,21 @@
       "name": "Beaver Crossing",
       "lat": 40.06652,
       "lng": -74.23199
+    },
+    "belz shlav aleph": {
+      "name": "Belz Shlav Aleph (The 70 Phase I)",
+      "lat": 40.04915,
+      "lng": -74.19475
+    },
+    "belz shlav beis": {
+      "name": "Belz Shlav Beis (The 70 Phase II)",
+      "lat": 40.0488,
+      "lng": -74.2031
+    },
+    "belz shlav gimel": {
+      "name": "Belz Shlav Gimel (Locust Grove)",
+      "lat": 40.04536,
+      "lng": -74.20059
     },
     "bergen": {
       "name": "Bergen",
@@ -5984,9 +5999,9 @@
       "lng": -74.20131
     },
     "ridge bergen": {
-      "name": "Ridge Ave & Bergen Ave",
-      "lat": 40.0938,
-      "lng": -74.1976
+      "name": "Between Ridge Ave & Bergen Ave",
+      "lat": 40.095,
+      "lng": -74.2008
     },
     "ridge negba st": {
       "name": "Ridge Ave & Negba St",
@@ -6110,18 +6125,18 @@
     },
     "the 70": {
       "name": "The 70",
-      "lat": 40.05178,
-      "lng": -74.18794
+      "lat": 40.04915,
+      "lng": -74.19475
     },
     "the 70 phase i": {
       "name": "The 70 Phase I",
-      "lat": 40.05178,
-      "lng": -74.18794
+      "lat": 40.04915,
+      "lng": -74.19475
     },
     "the 70 phase ii": {
       "name": "The 70 Phase II",
-      "lat": 40.05178,
-      "lng": -74.18794
+      "lat": 40.0488,
+      "lng": -74.2031
     },
     "the reserve": {
       "name": "The Reserve",

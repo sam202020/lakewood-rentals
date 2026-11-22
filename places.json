@@ -118,6 +118,27 @@
   "source": "manual",
   "note": "Google Maps place (91 Amsterdam Ave); PDF spells it Crossings."
  },
+ "belz shlav aleph": {
+  "name": "Belz Shlav Aleph (The 70 Phase I)",
+  "lat": 40.04915,
+  "lng": -74.19475,
+  "source": "manual",
+  "note": "Owner: Belz Shlav Aleph = The 70 Phase I. Google Maps 'The 70 development' (south side of Route 70, just east of New Hampshire Ave)."
+ },
+ "belz shlav beis": {
+  "name": "Belz Shlav Beis (The 70 Phase II)",
+  "lat": 40.0488,
+  "lng": -74.2031,
+  "source": "manual",
+  "note": "Owner: Shlav Beis = The 70 Phase II, south side of Route 70 between Vermont Ave (40.0486,-74.2094) and New Hampshire Ave (40.0505,-74.1967); APPROXIMATE midpoint."
+ },
+ "belz shlav gimel": {
+  "name": "Belz Shlav Gimel (Locust Grove)",
+  "lat": 40.04536,
+  "lng": -74.20059,
+  "source": "manual",
+  "note": "Google Maps: Belz - Shlav Gimel / Locust Grove."
+ },
  "belzshlavalef": {
   "name": "Belzshlavalef",
   "lat": null,
@@ -939,11 +960,11 @@
   "note": "Owner: middle of Ridge is approx Ridge Ave & Nowlan Pl (Google Maps)."
  },
  "ridge bergen": {
-  "name": "Ridge Ave & Bergen Ave",
-  "lat": 40.0938,
-  "lng": -74.1976,
+  "name": "Between Ridge Ave & Bergen Ave",
+  "lat": 40.095,
+  "lng": -74.2008,
   "source": "manual",
-  "note": "APPROXIMATE: Google Maps/OSM have no Ridge & Bergen intersection; midway between Bergen Ave's east end and the nearest Ridge Ave point (~0.15 mi uncertainty)."
+  "note": "Owner: Ridge and Bergen are parallel; 'Ridge / Bergen' = between them. Midpoint of Ridge Ave (~Nowlan Pl) and Bergen Ave (Google Maps)."
  },
  "ridge negba st": {
   "name": "Ridge Ave & Negba St",
@@ -1134,24 +1155,24 @@
  },
  "the 70": {
   "name": "The 70",
-  "lat": 40.05178,
-  "lng": -74.18794,
+  "lat": 40.04915,
+  "lng": -74.19475,
   "source": "manual",
-  "note": "APPROXIMATE: on Route 70 near New Hampshire Ave. Confirm."
+  "note": "Owner: Belz Shlav Aleph = The 70 Phase I. Google Maps 'The 70 development' (south side of Route 70, just east of New Hampshire Ave)."
  },
  "the 70 phase i": {
   "name": "The 70 Phase I",
-  "lat": 40.05178,
-  "lng": -74.18794,
+  "lat": 40.04915,
+  "lng": -74.19475,
   "source": "manual",
-  "note": "APPROXIMATE: on Route 70 near New Hampshire Ave. Confirm."
+  "note": "Owner: Belz Shlav Aleph = The 70 Phase I. Google Maps 'The 70 development' (south side of Route 70, just east of New Hampshire Ave)."
  },
  "the 70 phase ii": {
   "name": "The 70 Phase II",
-  "lat": 40.05178,
-  "lng": -74.18794,
+  "lat": 40.0488,
+  "lng": -74.2031,
   "source": "manual",
-  "note": "APPROXIMATE: on Route 70 near New Hampshire Ave. Confirm."
+  "note": "Owner: Shlav Beis = The 70 Phase II, south side of Route 70 between Vermont Ave (40.0486,-74.2094) and New Hampshire Ave (40.0505,-74.1967); APPROXIMATE midpoint."
  },
  "the reserve": {
   "name": "The Reserve",
