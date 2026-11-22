@@ -118,8 +118,42 @@ var LakewoodSearch = (function () {
     return sortRows(listings.filter(function (x) { return match(x, S); }), S.sort);
   }
 
+  // ---- neighborhood suggestions for the combined search box ----------------------
+
+  function placeTokens(s) {
+    return String(s || "").toLowerCase().replace(/&/g, " ").replace(/[^a-z0-9+ ]/g, " ")
+      .split(/\s+/).filter(Boolean);
+  }
+
+  /** Up to `limit` places from `picker` ([{name, lat, lng}]) that match what the visitor has typed.
+   *  Best first: the name starts with the text, then every typed word starts a word of the name
+   *  ("e 7" -> "E 7th Street"), then the text appears somewhere inside the name. */
+  function suggestPlaces(picker, text, limit) {
+    var qt = placeTokens(text);
+    if (!qt.length) return [];
+    var qs = qt.join(" "), out = [];
+    (picker || []).forEach(function (p) {
+      var lt = placeTokens(p.name), label = lt.join(" "), score;
+      if (label.indexOf(qs) === 0) score = 0;
+      else if (qt.every(function (t) { return lt.some(function (w) { return w.indexOf(t) === 0; }); })) score = 1;
+      else if (label.indexOf(qs) !== -1) score = 2;
+      else return;
+      out.push({ p: p, score: score, len: label.length });
+    });
+    out.sort(function (a, b) { return a.score - b.score || a.len - b.len || a.p.name.localeCompare(b.p.name); });
+    return out.slice(0, limit || 8).map(function (o) { return o.p; });
+  }
+
+  /** How many filter groups (not counting the search box or the distance chip) are switched on. */
+  function activeFilterCount(S) {
+    return (S.types.size ? 1 : 0) + (S.beds ? 1 : 0) + (S.rent < NO_RENT_CAP ? 1 : 0) +
+      (S.inclCall ? 0 : 1) + (S.utils.size ? 1 : 0) + (S.furnished ? 1 : 0) + (S.shortterm ? 1 : 0);
+  }
+
   return {
     NO_RENT_CAP: NO_RENT_CAP,
+    suggestPlaces: suggestPlaces,
+    activeFilterCount: activeFilterCount,
     TAGRULES: TAGRULES,
     bathNum: bathNum,
     distanceMiles: distanceMiles,

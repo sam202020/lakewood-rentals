@@ -370,3 +370,104 @@ test("real listings: with Lakewood as origin, placed listings sort by distance",
   assert.deepEqual(ds, [...ds].sort((a, b) => a - b));
   assert.equal(out.length, rows.length);
 });
+
+
+// ---- neighborhood suggestions (combined search box) ---------------------------------------
+const PICK = [
+  { name: "13th Street" }, { name: "14th Street" }, { name: "7th Street" }, { name: "E 7th Street" },
+  { name: "Raintree" }, { name: "Ridge Avenue" }, { name: "Ridge Avenue & Negba Street" },
+  { name: "Route 88" }, { name: "Sterling Forest" }, { name: "Sterling Place" },
+  { name: "The Club at Jackson Twenty-One" }, { name: "Westgate" },
+];
+const names = (a) => a.map((p) => p.name);
+
+test("suggestPlaces: nothing for blank input", () => {
+  assert.deepEqual(S.suggestPlaces(PICK, ""), []);
+  assert.deepEqual(S.suggestPlaces(PICK, "   "), []);
+  assert.deepEqual(S.suggestPlaces(PICK, "&&"), []);
+});
+
+test("suggestPlaces: names that start with the text come first, shorter before longer", () => {
+  assert.deepEqual(names(S.suggestPlaces(PICK, "ridge")), ["Ridge Avenue", "Ridge Avenue & Negba Street"]);
+  assert.deepEqual(names(S.suggestPlaces(PICK, "ster")), ["Sterling Place", "Sterling Forest"]);
+});
+
+test("suggestPlaces: is case-insensitive and ignores punctuation", () => {
+  assert.deepEqual(names(S.suggestPlaces(PICK, "RAIN")), ["Raintree"]);
+  assert.deepEqual(names(S.suggestPlaces(PICK, "club, at jackson")), ["The Club at Jackson Twenty-One"]);
+  assert.deepEqual(names(S.suggestPlaces(PICK, "route 88")), ["Route 88"]);
+});
+
+test("suggestPlaces: typed words can each start a different word of the name", () => {
+  assert.deepEqual(names(S.suggestPlaces(PICK, "13 st")), ["13th Street"]);
+  assert.deepEqual(names(S.suggestPlaces(PICK, "e 7")), ["E 7th Street"]);
+  assert.deepEqual(names(S.suggestPlaces(PICK, "club jackson")), ["The Club at Jackson Twenty-One"]);
+});
+
+test("suggestPlaces: finds the text in the middle of a name, after prefix matches", () => {
+  const r = names(S.suggestPlaces(PICK, "7th"));
+  assert.deepEqual(r.slice(0, 1), ["7th Street"]);
+  assert.ok(r.includes("E 7th Street"));
+});
+
+test("suggestPlaces: respects the limit and returns nothing when nothing matches", () => {
+  const many = Array.from({ length: 30 }, (_, i) => ({ name: "Park " + i }));
+  assert.equal(S.suggestPlaces(many, "park", 8).length, 8);
+  assert.equal(S.suggestPlaces(many, "park").length, 8);
+  assert.deepEqual(S.suggestPlaces(PICK, "zzzz"), []);
+  assert.deepEqual(S.suggestPlaces(null, "a"), []);
+});
+
+test("activeFilterCount: counts switched-on filter groups, not search or distance", () => {
+  const st = S.defaultState();
+  assert.equal(S.activeFilterCount(st), 0);
+  st.q = "raintree"; st.origin = { lat: 1, lng: 2 }; st.maxMiles = 3; st.sort = "price-asc";
+  assert.equal(S.activeFilterCount(st), 0);
+  st.types.add("House"); st.types.add("Room"); st.beds = 3; st.rent = 3000;
+  st.inclCall = false; st.utils.add("Gas"); st.furnished = true; st.shortterm = true;
+  assert.equal(S.activeFilterCount(st), 7);
+});
+
+test("real picker: typing a few letters of any suggested place finds that place first or near first", () => {
+  const picker = data.picker || [];
+  if (!picker.length) return;
+  for (const p of picker) {
+    const typed = p.name.slice(0, Math.min(p.name.length, 6));
+    assert.ok(names(S.suggestPlaces(picker, typed, 50)).includes(p.name), p.name);
+  }
+});
+
+// ---- page wiring for the combined search box and the phone filter sheet --------------------
+const templateHtml = fs.readFileSync(path.join(ROOT, "site", "template.html"), "utf8");
+
+test("template: one search box that is an accessible combobox, with the Near chip inside it", () => {
+  assert.match(templateHtml, /<input[^>]*id="q"[^>]*role="combobox"/);
+  assert.match(templateHtml, /aria-controls="sugg"/);
+  assert.match(templateHtml, /id="sugg"[^>]*role="listbox"/);
+  assert.match(templateHtml, /id="nearChip"/);
+  assert.match(templateHtml, /id="nearClear"[^>]*aria-label=/);
+  assert.doesNotMatch(templateHtml, /id="nearInput"/);          // the second box is gone
+  assert.doesNotMatch(templateHtml, /<datalist/);               // native datalist replaced by our list
+});
+
+test("template: removing the neighborhood needs no Enter (Backspace and the chip's x)", () => {
+  assert.match(templateHtml, /e\.key === "Backspace" && !q\.value && S\.origin/);
+  assert.match(templateHtml, /getElementById\("nearClear"\)\.onclick/);
+  assert.doesNotMatch(templateHtml, /addEventListener\("change", placeFromInput\)/);
+});
+
+test("template: phone layout has a search bar outside the filters, and a filters sheet", () => {
+  assert.ok(templateHtml.indexOf('id="searchbar"') < templateHtml.indexOf('class="wrap"'));
+  const filtersAside = templateHtml.slice(templateHtml.indexOf('<aside class="filters"'), templateHtml.indexOf("</aside>"));
+  assert.doesNotMatch(filtersAside, /id="q"/);                   // search is not hidden inside the filters
+  assert.match(templateHtml, /id="filtersToggle"/);
+  assert.match(templateHtml, /id="filtersDone"/);
+  assert.match(templateHtml, /\[hidden\] \{ display: none !important; \}/);   // flex rules must not defeat `hidden`
+});
+
+test("template: attribution to Masa U'Matan stays visible (links and the unofficial notice)", () => {
+  const banner = templateHtml.slice(templateHtml.indexOf('<div class="attribution">'), templateHtml.indexOf('<div class="searchbar"'));
+  assert.match(banner, /href="https:\/\/masaumatan\.com"/);
+  assert.match(banner, /href="https:\/\/masaumatan\.com\/MasaRentals\.pdf"/);
+  assert.match(banner, /not affiliated/);
+});

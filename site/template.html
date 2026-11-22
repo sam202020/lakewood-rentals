@@ -54,6 +54,7 @@
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -14px rgba(0,0,0,.6);
   }
 
+  [hidden] { display: none !important; }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
   body {
@@ -127,20 +128,22 @@
     flex-direction: column;
     gap: 20px;
   }
+  /* Phones: the filters live in a sheet under the search bar, opened by the Filters button. */
   @media (max-width: 860px) {
     .filters {
-      position: sticky;
-      top: 0;
-      z-index: 20;
+      display: none;
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      top: var(--barh, 64px);
+      z-index: 25;
       background: var(--paper);
-      border-bottom: 1px solid var(--rule-strong);
-      padding: 14px 16px;
-      gap: 12px;
-      max-height: 82vh;
+      border-top: 1px solid var(--rule-strong);
+      padding: 16px 16px 0;
+      gap: 18px;
       overflow-y: auto;
+      overscroll-behavior: contain;
     }
-    .filters[data-collapsed="true"] .fgroup,
-    .filters[data-collapsed="true"] .filters__reset { display: none; }
+    .filters[data-open="true"] { display: flex; }
   }
   .fgroup { display: flex; flex-direction: column; gap: 9px; }
   .fgroup__label {
@@ -209,17 +212,18 @@
     background: none; border: 0; color: var(--accent-ink);
     text-decoration: underline; cursor: pointer; padding: 0; text-align: left;
   }
-  .filters__toggle {
-    display: none;
-  }
+  .filters__done { display: none; }
   @media (max-width: 860px) {
-    .filters__toggle {
-      display: flex; justify-content: space-between; align-items: center;
-      font: inherit; font-weight: 600; font-size: 13px;
-      background: none; border: 0; color: var(--ink); cursor: pointer; padding: 0;
-      width: 100%;
+    .filters__done {
+      display: block; position: sticky; bottom: 0; margin: auto -16px 0; width: calc(100% + 32px); flex: none;
+      font: inherit; font-weight: 700; font-size: 15px; padding: 14px;
+      background: var(--accent); color: #fff; border: 0; cursor: pointer;
     }
   }
+  @media (max-width: 860px) and (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .filters__done { color: #10231A; }
+  }
+  :root[data-theme="dark"] .filters__done { color: #10231A; }
 
   /* ---- Results ---- */
   .results { min-width: 0; }
@@ -322,86 +326,155 @@
   }
   .attribution strong { color: var(--ink); }
 
-  .toprow { display: flex; justify-content: flex-end; max-width: var(--maxw); margin: 0 auto; padding: 8px 20px 0; }
   .themebtn {
     font: inherit; font-size: 12px; color: var(--muted);
     background: none; border: 1px solid var(--rule-strong); border-radius: 6px;
     padding: 4px 9px; cursor: pointer;
   }
-  .near { display: flex; gap: 6px; }
-  .near input {
-    flex: 1; min-width: 0; font: inherit; color: var(--ink); background: var(--card);
-    border: 1px solid var(--rule-strong); border-radius: 7px; padding: 8px 10px;
-  }
-  .near input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-  .near__locate { display: inline-flex; align-items: center; gap: 5px; }
+  .near__locate { display: inline-flex; align-items: center; gap: 6px; }
   .sort--stack { justify-content: space-between; }
+
+  /* ---- Search bar: one box for keywords and neighborhoods ---- */
+  .searchbar { background: var(--paper); border-bottom: 1px solid var(--rule-strong); }
+  .searchbar__inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 12px 20px;
+    display: flex; gap: 8px; align-items: center;
+  }
+  .searchbar__sub {
+    max-width: var(--maxw); margin: 0 auto; padding: 0 20px 10px;
+    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+  }
+  .searchbar__sub .range__val { flex: 1 1 220px; }
+  .combo { position: relative; flex: 1; min-width: 0; max-width: 680px; }
+  .searchbar .search { padding: 8px 11px; }
+  .searchbar .search input { font-size: 15px; min-width: 0; flex: 1; }
+  .nearchip {
+    display: inline-flex; align-items: center; gap: 5px; flex: 0 1 auto; min-width: 0; max-width: 70%;
+    background: var(--accent); color: #fff; border-radius: 999px;
+    padding: 2px 4px 2px 9px; font-size: 13px; white-space: nowrap;
+  }
+  .nearchip[hidden] { display: none; }
+  .nearchip span { overflow: hidden; text-overflow: ellipsis; }
+  .nearchip b { font-weight: 700; }
+  .nearchip button {
+    flex: none; width: 22px; height: 22px; border: 0; border-radius: 50%; cursor: pointer;
+    background: rgba(255,255,255,.22); color: inherit; font: inherit; font-size: 16px; line-height: 1; padding: 0;
+  }
+  .nearchip button:hover { background: rgba(255,255,255,.4); }
+  :root[data-theme="dark"] .nearchip { color: #10231A; }
+  :root[data-theme="dark"] .nearchip button { background: rgba(0,0,0,.18); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .nearchip { color: #10231A; }
+    :root:not([data-theme="light"]) .nearchip button { background: rgba(0,0,0,.18); }
+  }
+  .sugg {
+    position: absolute; left: 0; right: 0; top: calc(100% + 4px); z-index: 40;
+    margin: 0; padding: 4px; list-style: none; max-height: min(52vh, 420px); overflow-y: auto;
+    background: var(--card); border: 1px solid var(--rule-strong); border-radius: 9px; box-shadow: var(--shadow);
+  }
+  .sugg[hidden] { display: none; }
+  .sugg li {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+    padding: 9px 10px; border-radius: 6px; cursor: pointer;
+  }
+  .sugg li.on, .sugg li:hover { background: var(--accent-soft); }
+  .sugg::before {
+    content: "Sort by distance from\2026"; display: block; padding: 6px 10px 4px;
+    font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); font-weight: 600;
+  }
+  .sugg__name { font-weight: 600; }
+  .fbtn { display: none; align-items: center; gap: 6px; }
+  .fcount {
+    display: inline-block; min-width: 18px; padding: 0 5px; border-radius: 999px; text-align: center;
+    font-size: 12px; font-weight: 700; background: var(--accent); color: #fff;
+  }
+  .fcount[hidden] { display: none; }
+  :root[data-theme="dark"] .fcount { color: #10231A; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .fcount { color: #10231A; } }
+  .kicker__r { display: flex; align-items: center; gap: 12px; }
+  @media (max-width: 860px) {
+    .hide-sm { display: none !important; }
+    .masthead__inner { padding: 10px 16px 10px; }
+    .masthead__kicker { padding-bottom: 6px; margin-bottom: 8px; }
+    .masthead h1 { font-size: clamp(26px, 7.4vw, 36px); }
+    .masthead__sub { margin-top: 6px; font-size: 13px; }
+    .attribution { margin: 8px 12px 0; padding: 7px 11px; font-size: 12.5px; line-height: 1.4; }
+    .searchbar { position: sticky; top: 0; z-index: 30; margin-top: 10px; }
+    .searchbar__inner { padding: 9px 12px; gap: 6px; }
+    .searchbar__sub { padding: 0 12px 8px; gap: 8px; }
+    .searchbar .search input { font-size: 16px; }          /* 16px stops iOS zooming in on focus */
+    .near__txt { display: none; }
+    .near__locate { padding: 8px 10px; }
+    .fbtn { display: inline-flex; padding: 8px 12px; }
+    .results { padding: 12px; }
+  }
   .card__dist { color: var(--accent-ink); font-weight: 600; }
 </style>
-
-<div class="toprow">
-  <button class="themebtn" id="themebtn" type="button">Theme</button>
-</div>
 
 <header class="masthead">
   <div class="masthead__inner">
     <div class="masthead__kicker">
       <span>Lakewood, NJ Area</span>
-      <span id="kickerDate"></span>
+      <span class="kicker__r"><span id="kickerDate" class="hide-sm"></span>
+        <button class="themebtn" id="themebtn" type="button">Theme</button></span>
     </div>
     <h1>The Lakewood NJ Area Rental List</h1>
     <p class="masthead__sub">
-      A searchable index of <strong id="totalCount">—</strong> homes, apartments, townhouses and rooms for rent,
-      compiled from the <strong>Masa U&rsquo;Matan</strong> weekly rental list
-      (<span id="listDate">—</span>). Refreshed every Wednesday.
+      A searchable index of <strong id="totalCount">—</strong> <span class="hide-sm">homes, apartments, townhouses and rooms for rent,
+      compiled from the</span> <strong>Masa U&rsquo;Matan</strong> weekly rental list
+      (<span id="listDate">—</span>). <span class="hide-sm">Refreshed every Wednesday.</span>
     </p>
   </div>
 </header>
 
 <div class="attribution">
-  <strong>Source:</strong> All listings are reproduced from the Masa U&rsquo;Matan Lakewood Rental List.
-  This site is an unofficial search tool and is not affiliated with Masa U&rsquo;Matan.
-  Always confirm details with the landlord. &nbsp;
+  <strong>Source:</strong> reproduced from the Masa U&rsquo;Matan Lakewood Rental List.
+  An unofficial search tool, not affiliated with Masa U&rsquo;Matan.
+  <span class="hide-sm">Always confirm details with the landlord.</span> &nbsp;
   <a href="https://masaumatan.com" target="_blank" rel="noopener">masaumatan.com</a> &middot;
   <a href="https://masaumatan.com/MasaRentals.pdf" target="_blank" rel="noopener">original PDF&nbsp;list</a>
 </div>
 
-<div class="wrap">
-  <aside class="filters" id="filters" data-collapsed="true">
-    <button class="filters__toggle" id="filtersToggle" type="button" aria-expanded="false">
-      <span>Filters &amp; search</span><span id="toggleHint">Show</span>
-    </button>
-
-    <div class="fgroup">
-      <label class="search">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <input type="search" id="q" placeholder="Street, area, or keyword&hellip;" autocomplete="off">
-      </label>
-    </div>
-
-    <div class="fgroup" id="nearGroup">
-      <span class="fgroup__label">Near</span>
-      <div class="near">
-        <input type="text" id="nearInput" list="placeList" placeholder="Neighborhood or street&hellip;" autocomplete="off" aria-label="Sort by distance from a neighborhood or street">
-        <button type="button" class="chip near__locate" id="locateBtn">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
-          My location
-        </button>
+<div class="searchbar" id="searchbar">
+  <div class="searchbar__inner">
+    <div class="combo">
+      <div class="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span class="nearchip" id="nearChip" hidden>
+          <span>Near <b id="nearLabel"></b></span>
+          <button type="button" id="nearClear" aria-label="Remove distance sort">&times;</button>
+        </span>
+        <input type="search" id="q" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugg"
+               aria-label="Search by neighborhood, street or keyword" placeholder="Neighborhood or keyword&hellip;"
+               autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search">
       </div>
-      <datalist id="placeList"></datalist>
-      <label class="sort sort--stack" id="withinWrap" hidden>Within
-        <select id="withinSel">
-          <option value="0">Any distance</option>
-          <option value="1">1 mile</option>
-          <option value="2">2 miles</option>
-          <option value="3">3 miles</option>
-          <option value="5">5 miles</option>
-          <option value="10">10 miles</option>
-        </select>
-      </label>
-      <div class="range__val" id="nearStatus">Sort by distance from a neighborhood, or your location (it stays on your device).</div>
+      <ul class="sugg" id="sugg" role="listbox" aria-label="Neighborhood suggestions" hidden></ul>
     </div>
+    <button type="button" class="chip near__locate" id="locateBtn" aria-label="Sort by distance from my location">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+      <span class="near__txt">My location</span>
+    </button>
+    <button type="button" class="chip fbtn" id="filtersToggle" aria-expanded="false" aria-controls="filters">
+      Filters <span class="fcount" id="filterCount" hidden></span>
+    </button>
+  </div>
+  <div class="searchbar__sub" id="nearRow" hidden>
+    <label class="sort" id="withinWrap" hidden>Within
+      <select id="withinSel">
+        <option value="0">Any distance</option>
+        <option value="1">1 mile</option>
+        <option value="2">2 miles</option>
+        <option value="3">3 miles</option>
+        <option value="5">5 miles</option>
+        <option value="10">10 miles</option>
+      </select>
+    </label>
+    <span class="range__val" id="nearStatus" aria-live="polite"></span>
+  </div>
+</div>
 
+<div class="wrap">
+  <aside class="filters" id="filters" data-open="false" aria-label="Filters">
     <div class="fgroup">
       <span class="fgroup__label">Type</span>
       <div class="chips" id="typeChips"></div>
@@ -430,6 +503,7 @@
     </div>
 
     <button class="filters__reset" id="reset" type="button">Reset all filters</button>
+    <button class="filters__done" id="filtersDone" type="button">Show listings</button>
   </aside>
 
   <main class="results">
@@ -442,7 +516,7 @@
           <option value="price-desc">Rent: high to low</option>
           <option value="beds-desc">Most bedrooms</option>
           <option value="loc">Location A&ndash;Z</option>
-          <option value="distance" id="distOpt" disabled>Distance (set &ldquo;Near&rdquo; first)</option>
+          <option value="distance" id="distOpt" disabled>Distance (pick a neighborhood first)</option>
         </select>
       </label>
     </div>
@@ -540,7 +614,7 @@
     S = LakewoodSearch.defaultState();
     S.sort = keepSort;
     q.value = ""; rent.value = 7000; rentVal.textContent = "Any";
-    nearInput.value = ""; setOrigin(null);
+    setOrigin(null); closeSugg();
     document.getElementById("inclCall").checked = true;
     document.getElementById("furnished").checked = false;
     document.getElementById("shortterm").checked = false;
@@ -550,64 +624,116 @@
   };
 
 
-  // ---- near / distance ----
+  // ---- search box: keyword filter + neighborhood suggestions ----
+  // Typing filters the listings by text right away. As you type, matching neighborhoods are
+  // offered underneath; picking one adds a "Near ..." chip inside the box and sorts by distance.
+  // Remove the chip with its x, or press Backspace in the empty box: no Enter needed.
   var PLACES = DATA.places || {};
-  function normPlace(v) {
-    return String(v || "").toLowerCase().replace(/\b(area|near|off)\b/g, " ")
-      .replace(/[^a-z0-9+ ]/g, " ").replace(/\s+/g, " ").trim();
-  }
-  var nearInput = document.getElementById("nearInput"), nearStatus = document.getElementById("nearStatus"),
-      withinWrap = document.getElementById("withinWrap"), withinSel = document.getElementById("withinSel"),
-      distOpt = document.getElementById("distOpt"), sortSel = document.getElementById("sort"),
-      NEAR_HINT = nearStatus.textContent;
-  // Tidy, de-duplicated names (built by build.py); fall back to the raw place table.
   var PICKER = DATA.picker || Object.keys(PLACES).sort().map(function (k) { return PLACES[k]; });
-  PICKER.forEach(function (pl) {
-    var o = document.createElement("option"); o.value = pl.name; document.getElementById("placeList").appendChild(o);
-  });
+  var bar = document.getElementById("searchbar"), sugg = document.getElementById("sugg"),
+      nearChip = document.getElementById("nearChip"), nearLabel = document.getElementById("nearLabel"),
+      nearRow = document.getElementById("nearRow"), nearStatus = document.getElementById("nearStatus"),
+      withinWrap = document.getElementById("withinWrap"), withinSel = document.getElementById("withinSel"),
+      distOpt = document.getElementById("distOpt"), sortSel = document.getElementById("sort");
+  var items = [], active = -1;
+  // Phones have room for fewer words in the box.
+  function setPlaceholder() {
+    q.placeholder = window.innerWidth <= 860 ? "Area or keyword\u2026" : "Neighborhood, street or keyword\u2026";
+  }
+  setPlaceholder(); window.addEventListener("resize", setPlaceholder);
+
+  function closeSugg() {
+    sugg.hidden = true; active = -1;
+    q.setAttribute("aria-expanded", "false"); q.removeAttribute("aria-activedescendant");
+  }
+  function paintSugg() {
+    sugg.innerHTML = "";
+    items.forEach(function (pl, i) {
+      var li = document.createElement("li");
+      li.id = "opt" + i; li.setAttribute("role", "option");
+      li.setAttribute("aria-selected", i === active ? "true" : "false");
+      if (i === active) li.className = "on";
+      li.innerHTML = '<span class="sugg__name">' + esc(pl.name) + '</span>';
+      // pointerdown (not click) so the box keeps focus and the list does not close first
+      li.addEventListener("pointerdown", function (e) { e.preventDefault(); pickPlace(pl); });
+      sugg.appendChild(li);
+    });
+    if (active >= 0) q.setAttribute("aria-activedescendant", "opt" + active); else q.removeAttribute("aria-activedescendant");
+  }
+  function updateSugg() {
+    items = LakewoodSearch.suggestPlaces(PICKER, q.value, 8);
+    active = -1;
+    if (!items.length) return closeSugg();
+    paintSugg(); sugg.hidden = false; q.setAttribute("aria-expanded", "true");
+  }
+  function pickPlace(pl) {
+    q.value = ""; S.q = "";
+    closeSugg(); q.blur();
+    setOrigin({ lat: pl.lat, lng: pl.lng }, pl.name);
+  }
   function setOrigin(origin, label) {
     S.origin = origin;
     var on = !!origin;
+    nearChip.hidden = !on; nearLabel.textContent = on ? label : "";
     withinWrap.hidden = !on; distOpt.disabled = !on;
-    distOpt.textContent = on ? "Distance: nearest first" : "Distance (set \u201cNear\u201d first)";
+    distOpt.textContent = on ? "Distance: nearest first" : "Distance (pick a neighborhood first)";
     if (on) { S.sort = "distance"; sortSel.value = "distance"; }
     else { S.maxMiles = 0; withinSel.value = "0"; if (S.sort === "distance") { S.sort = "default"; sortSel.value = "default"; } }
-    nearStatus.textContent = on
-      ? "Sorted by distance from " + label + ". Distances are to the middle of each neighborhood, not the exact address."
-      : NEAR_HINT;
+    nearStatus.textContent = on ? "Nearest first \u00b7 distances are to the middle of each neighborhood" : "";
+    nearRow.hidden = !on;
+    syncBar();
     render();
   }
-  function placeFromInput() {
-    var v = nearInput.value.trim();
-    if (!v) return setOrigin(null);
-    var low = v.toLowerCase(), hit = null;
-    PICKER.some(function (pl) { if (pl.name.toLowerCase() === low) { hit = pl; return true; } });
-    if (!hit) hit = PLACES[normPlace(v)];
-    if (hit) setOrigin({ lat: hit.lat, lng: hit.lng }, hit.name);
-    else { S.origin = null; nearStatus.textContent = "No place called \u201c" + v + "\u201d on this list. Pick one from the suggestions, or use My location."; }
-  }
-  nearInput.addEventListener("change", placeFromInput);
-  nearInput.addEventListener("keydown", function (e) { if (e.key === "Enter") placeFromInput(); });
+  function say(msg) { nearRow.hidden = false; withinWrap.hidden = !S.origin; nearStatus.textContent = msg; syncBar(); }
+
+  q.addEventListener("input", function () { updateSugg(); });
+  q.addEventListener("focus", function () { if (q.value.trim()) updateSugg(); });
+  q.addEventListener("blur", closeSugg);
+  q.addEventListener("keydown", function (e) {
+    var open = !sugg.hidden;
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      if (!open) { updateSugg(); if (sugg.hidden) return; }
+      e.preventDefault();
+      active = e.key === "ArrowDown" ? (active + 1) % items.length : (active <= 0 ? items.length - 1 : active - 1);
+      paintSugg();
+      sugg.children[active].scrollIntoView({ block: "nearest" });
+    } else if (e.key === "Enter") {
+      var hit = open && active >= 0 ? items[active] : null;
+      if (!hit && open && items.length && items[0].name.toLowerCase() === q.value.trim().toLowerCase()) hit = items[0];
+      if (hit) { e.preventDefault(); pickPlace(hit); } else closeSugg();
+    } else if (e.key === "Escape") {
+      if (open) closeSugg(); else if (q.value) { q.value = ""; S.q = ""; render(); }
+    } else if (e.key === "Backspace" && !q.value && S.origin) {
+      setOrigin(null);          // Backspace in the empty box removes the neighborhood
+    }
+  });
+  document.getElementById("nearClear").onclick = function () { setOrigin(null); q.focus(); };
   withinSel.onchange = function () { S.maxMiles = +withinSel.value; render(); };
   document.getElementById("locateBtn").onclick = function () {
-    if (!navigator.geolocation) { nearStatus.textContent = "Your browser can't share a location. Pick a neighborhood instead."; return; }
-    nearStatus.textContent = "Finding your location\u2026";
+    if (!navigator.geolocation) { say("Your browser can\u2019t share a location. Pick a neighborhood instead."); return; }
+    say("Finding your location\u2026");
     navigator.geolocation.getCurrentPosition(function (pos) {
-      nearInput.value = "";
+      q.value = ""; S.q = ""; closeSugg();
       setOrigin({ lat: pos.coords.latitude, lng: pos.coords.longitude }, "your location");
     }, function () {
-      nearStatus.textContent = "Couldn't get your location (blocked or unavailable). Pick a neighborhood instead.";
+      say("Couldn\u2019t get your location (blocked or unavailable). Pick a neighborhood instead.");
     }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 });
   };
 
-  var ft = document.getElementById("filtersToggle"), fbox = document.getElementById("filters");
-  ft.onclick = function () {
-    var c = fbox.getAttribute("data-collapsed") === "true";
-    fbox.setAttribute("data-collapsed", c ? "false" : "true");
-    ft.setAttribute("aria-expanded", c ? "true" : "false");
-    document.getElementById("toggleHint").textContent = c ? "Hide" : "Show";
-  };
-  if (window.innerWidth > 860) fbox.setAttribute("data-collapsed", "false");
+  // ---- phones: filters open in a sheet under the search bar ----
+  var ft = document.getElementById("filtersToggle"), fbox = document.getElementById("filters"),
+      fdone = document.getElementById("filtersDone"), fcount = document.getElementById("filterCount");
+  function syncBar() { document.documentElement.style.setProperty("--barh", bar.offsetHeight + "px"); }
+  function setSheet(open) {
+    fbox.setAttribute("data-open", open ? "true" : "false");
+    ft.setAttribute("aria-expanded", open ? "true" : "false");
+    document.body.style.overflow = open && window.innerWidth <= 860 ? "hidden" : "";
+    if (open) { syncBar(); var y = bar.getBoundingClientRect().top; if (y > 0) window.scrollBy(0, y); }
+  }
+  ft.onclick = function () { setSheet(fbox.getAttribute("data-open") !== "true"); };
+  fdone.onclick = function () { setSheet(false); };
+  window.addEventListener("resize", function () { if (window.innerWidth > 860) setSheet(false); syncBar(); });
+  syncBar();
 
   // ---- theme toggle ----
   var tb = document.getElementById("themebtn");
@@ -673,6 +799,9 @@
 
   function render() {
     var rows = LakewoodSearch.search(L, S);
+    var nf = LakewoodSearch.activeFilterCount(S);
+    fcount.textContent = nf; fcount.hidden = !nf;
+    fdone.textContent = "Show " + rows.length.toLocaleString() + (rows.length === 1 ? " listing" : " listings");
     elCount.textContent = rows.length.toLocaleString();
     elWord.textContent = rows.length === 1 ? "listing" : "listings";
     grid.innerHTML = "";
