@@ -254,11 +254,41 @@ class PickerNames(unittest.TestCase):
         self.assertIn("Central Avenue", names)
 
 
+class Addresses(unittest.TestCase):
+    def test_addresses_are_recognised(self):
+        for a in ("957 W. County Ln.", "22 Enclave Blvd.", "415 Laurel Ave.", "12 Brook St", "957 W County Line Road"):
+            self.assertTrue(geo.looks_like_address(a), a)
+
+    def test_neighbourhoods_are_not_addresses(self):
+        for n in ("13th & Princeton", "5th & Lexington", "7th Street", "14th Street Area", "55+Community",
+                  "55+ Communities (Fairways / Enclave)", "Brookwood 1", "Jackson 21", "The 70", "The 70 Phase II",
+                  "Club at Jackson 21", "Route 88", "E.7th & Nowlan", "", None):
+            self.assertFalse(geo.looks_like_address(n), n)
+
+    def test_picker_never_offers_an_address(self):
+        places = {"957 w county ln": {"name": "957 W County Line Rd", "lat": 40.1, "lng": -74.2, "source": "manual"},
+                  "raintree": {"name": "Raintree", "lat": 40.09, "lng": -74.16, "source": "manual"}}
+        self.assertEqual([p["name"] for p in geo.picker_entries(places)], ["Raintree"])
+
+    def test_checks_flags_address_locations_without_blocking(self):
+        rows = [{"id": f"L{i}", "type": ["Apartment", "House", "Townhouse / Attached"][i % 3],
+                 "location": "957 W. County Ln." if i == 0 else f"Raintree {i}", "phones": ["732-555-0101"],
+                 "comments": "x", "rent": 2000, "lat": 40.1, "lng": -74.2, "geo_unknown": []} for i in range(100)]
+        errors, warnings = checks.check(rows)
+        self.assertEqual(errors, [])
+        self.assertTrue(any("street addresses" in w and "957 W. County Ln." in w for w in warnings))
+        clean = [dict(x, location=f"Raintree {i}") for i, x in enumerate(rows)]
+        self.assertFalse(any("street addresses" in w for w in checks.check(clean)[1]))
+
+
 class ShippedPicker(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.picker = geo.picker_entries(geo.load_places())
         cls.names = [p["name"] for p in cls.picker]
+
+    def test_no_address_in_the_picker(self):
+        self.assertEqual([n for n in self.names if geo.looks_like_address(n)], [])
 
     def test_names_are_unique(self):
         low = [n.lower() for n in self.names]

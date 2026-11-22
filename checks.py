@@ -96,4 +96,11 @@ def check(listings, previous_count=None):
         if placed < 0.70:
             warnings.append(f"only {placed:.0%} of listings can be placed on the map")
 
+    addresses = sorted({x.get("location") for x in listings
+                        if re.match(r"^\d{1,5}[A-Za-z]?\s+(?:[NSEW]\.?\s+)?[A-Za-z]", str(x.get("location") or ""))})
+    if addresses:
+        warnings.append(
+            f"{len(addresses)} listing location(s) are street addresses, not neighbourhoods: {', '.join(addresses[:8])} - "
+            f"map each to the neighbourhood it is in (confirm with the owner); never offer an address as a neighbourhood (see CLAUDE.md)")
+
     return errors, warnings

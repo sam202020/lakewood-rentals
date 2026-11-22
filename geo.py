@@ -160,10 +160,18 @@ def display_name(key, entry):
     return " ".join(out)
 
 
+_ADDRESS = re.compile(r"^\d{1,5}[A-Za-z]?\s+(?:[NSEW]\.?\s+)?[A-Za-z]")
+
+
+def looks_like_address(text):
+    """True for '957 W. County Ln.' or '22 Enclave Blvd', not for '13th & Princeton', '55+Community' or 'Jackson 21'."""
+    return bool(_ADDRESS.match(str(text or "").strip()))
+
+
 def picker_entries(places, merge_miles=0.15):
     """One entry per place name people would recognise, for the "Near" drop-down.
 
-    Names are tidied (display_name), exact duplicates are merged (manual beats OSM),
+    Street addresses are never offered. Names are tidied (display_name), exact duplicates are merged (manual beats OSM),
     and a bare street name is merged into its suffixed twin ("James" + "James Street")
     when they sit within `merge_miles` of each other. Places whose twin is somewhere
     else are left alone, because they may be genuinely different.
@@ -173,6 +181,8 @@ def picker_entries(places, merge_miles=0.15):
         if e.get("lat") is None or e.get("hide"):
             continue
         name = display_name(k, e)
+        if looks_like_address(name):      # an address is not a neighbourhood: never offer it
+            continue
         cur = best.get(name.lower())
         if cur is None or (e.get("source") == "manual" and cur["source"] != "manual"):
             best[name.lower()] = {"name": name, "lat": e["lat"], "lng": e["lng"], "source": e.get("source")}
