@@ -135,7 +135,7 @@ class ShippedPlaces(unittest.TestCase):
                     "yeshiva", "the 70", "the 70 phase i", "the 70 phase ii", "brook hill",
                     "stamford meadows", "sterling place", "beaver crossings", "chateau park", "regency estates",
                     "clearsteam", "957 w county ln", "kol shimshon", "new england village", "bais shalom",
-                    "club 21 jackson", "harmony hills jackson", "chestnut", "chestnut gardens", "cross", "cross mass", "brook", "evergreen gardens"):
+                    "club 21 jackson", "harmony hills jackson", "ridge", "heart of ridge", "chestnut", "chestnut gardens", "cross", "cross mass", "brook", "evergreen gardens"):
             with self.subTest(place=key):
                 self.assertEqual(self.places[key]["source"], "manual")
                 self.assertIsNotNone(self.places[key]["lat"])
@@ -144,7 +144,7 @@ class ShippedPlaces(unittest.TestCase):
         for text, key in [("Westgate", "westgate"), ("Sunset / James Area", "sunset james"),
                           ("Sunset & James", "sunset james"), ("James & Sunset", "sunset james"),
                           ("Oak & Vine", "oak vine"), ("Villas", "villas"), ("Yeshiva Area", "yeshiva"),
-                          ("The 70", "the 70"), ("Brook Hill", "brook hill"), ("Chestnut Area", "chestnut"), ("Stamford Meadows", "stamford meadows"), ("Bais Shalom Area", "bais shalom"),
+                          ("The 70", "the 70"), ("Brook Hill", "brook hill"), ("Chestnut Area", "chestnut"), ("Stamford Meadows", "stamford meadows"), ("Bais Shalom Area", "bais shalom"), ("Heart of Ridge", "heart of ridge"), ("Ridge Area", "ridge"),
                           ("957 W. County Ln.", "957 w county ln"), ("Club 21 Jackson", "club 21 jackson"), ("Chestnut Gardens", "chestnut gardens"), ("Off Chestnut", "chestnut"),
                           ("Cross & Mass.", "cross mass"), ("Mass. & Cross", "cross mass"), ("Evergreen Gardens", "evergreen gardens"), ("The 70 Phase II", "the 70 phase ii")]:
             with self.subTest(text=text):

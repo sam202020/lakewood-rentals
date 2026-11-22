@@ -88,6 +88,7 @@ PLACE_NAMES = [
     (r"lkwd\.?\s*comm(?:ons|\.)?\s*area",                   "Lakewood Commons Area"),
     (r"lkwd\.?\s*comm(?:ons|\.)?",                          "Lakewood Commons"),
     (r"west\s*gt\.?|west\s*gate",                           "Westgate"),
+    (r"heart\s*of\s*ridge",                                 "Heart of Ridge"),
     # PLP = Pine Lake Park, a community in Manchester Township.
     # Always shown with its township, whether or not the PDF says "Manchester".
     (r"(?:plp|pine\s*lake\s*park)(?:\s*[/,]?\s*manch(?:ester|\.))?", "Pine Lake Park, Manchester"),

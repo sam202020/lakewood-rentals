@@ -47,6 +47,9 @@ class PlaceNames(unittest.TestCase):
     def test_westgate(self):
         self.check("Westgate", "Westgt.", "Westgt", "West Gate", "Westgate")
 
+    def test_heart_of_ridge(self):
+        self.check("Heart of Ridge", "Heartof Ridge", "Heart of Ridge", "HeartofRidge")
+
     def test_westgate_glued_to_previous_word(self):
         self.check("Lutzk near Westgate", "LutzknearWestgt.", "Lutzk near Westgt.")
 

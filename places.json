@@ -425,6 +425,13 @@
   "source": "manual",
   "note": "Google Maps: Harmony Hill Ct, Jackson; street match, approximate."
  },
+ "heart of ridge": {
+  "name": "Heart of Ridge",
+  "lat": 40.099,
+  "lng": -74.1822,
+  "source": "manual",
+  "note": "Owner: 'Heart of Ridge' = center of Ridge. Midpoint along Ridge Ave (OSM, ~2.4 mi from Clifton/Ridge west end to Greenville); replaces the OSM first-hit at the east end."
+ },
  "hearthstone": {
   "name": "Hearthstone",
   "lat": 40.0619,
@@ -432,12 +439,6 @@
   "source": "osm",
   "match": "Hearthstone Drive, Lakewood Township, Ocean County, New Jersey, 08701, United States",
   "kind": "highway/residential"
- },
- "heartof ridge": {
-  "name": "Heartof Ridge",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
  },
  "heritage pt": {
   "name": "Heritage Pt",
@@ -924,12 +925,11 @@
   "note": "Google Maps: Regency Estates Playground, Hekel Rd (neighbourhood-level)."
  },
  "ridge": {
-  "name": "Ridge",
-  "lat": 40.10572,
-  "lng": -74.16878,
-  "source": "osm",
-  "match": "Ridge Avenue, Greenville, Lakewood Township, Ocean County, New Jersey, 08701, United State",
-  "kind": "highway/tertiary"
+  "name": "Ridge Ave (center)",
+  "lat": 40.099,
+  "lng": -74.1822,
+  "source": "manual",
+  "note": "Owner: 'Heart of Ridge' = center of Ridge. Midpoint along Ridge Ave (OSM, ~2.4 mi from Clifton/Ridge west end to Greenville); replaces the OSM first-hit at the east end."
  },
  "rockwell": {
   "name": "Rockwell",
