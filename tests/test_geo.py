@@ -205,6 +205,78 @@ class ShippedPlaces(unittest.TestCase):
                     self.assertIsNone(e["lat"])
 
 
+class PickerNames(unittest.TestCase):
+    def name(self, raw, **extra):
+        return geo.display_name("k", {"name": raw, **extra})
+
+    def test_ordinal_streets(self):
+        self.assertEqual(self.name("13Th"), "13th Street")
+        self.assertEqual(self.name("14Th Street"), "14th Street")
+        self.assertEqual(self.name("5Th"), "5th Street")
+        self.assertEqual(self.name("E 7Th"), "E 7th Street")
+
+    def test_street_suffixes(self):
+        self.assertEqual(self.name("Cherry St"), "Cherry Street")
+        self.assertEqual(self.name("Dewey Ave"), "Dewey Avenue")
+        self.assertEqual(self.name("Cross St & Massachusetts Ave"), "Cross Street & Massachusetts Avenue")
+        self.assertEqual(self.name("Rt 70"), "Route 70")
+
+    def test_saints_and_small_words_untouched(self):
+        self.assertEqual(self.name("St Katherine"), "St Katherine")
+        self.assertEqual(self.name("Club At Jackson 21"), "Club at Jackson 21")
+
+    def test_label_overrides_name(self):
+        self.assertEqual(self.name("Brook Rd (at County Line Rd)", label="Brook Road"), "Brook Road")
+
+    def test_duplicates_merge_and_manual_wins(self):
+        places = {"14th": {"name": "14Th", "lat": 40.1, "lng": -74.2, "source": "osm"},
+                  "14th street": {"name": "14Th Street", "lat": 40.1, "lng": -74.2, "source": "manual"},
+                  "james": {"name": "James", "lat": 40.0790, "lng": -74.2369, "source": "osm"},
+                  "james street": {"name": "James Street", "lat": 40.0790, "lng": -74.2369, "source": "osm"},
+                  "central": {"name": "Central", "lat": 40.094, "lng": -74.253, "source": "osm"},
+                  "central avenue": {"name": "Central Avenue", "lat": 40.089, "lng": -74.230, "source": "osm"}}
+        names = [p["name"] for p in geo.picker_entries(places)]
+        self.assertEqual(names.count("14th Street"), 1)
+        self.assertNotIn("James", names)
+        self.assertIn("James Street", names)
+        # far-apart twins are NOT merged: they may be different places
+        self.assertIn("Central", names)
+        self.assertIn("Central Avenue", names)
+
+
+class ShippedPicker(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.picker = geo.picker_entries(geo.load_places())
+        cls.names = [p["name"] for p in cls.picker]
+
+    def test_names_are_unique(self):
+        low = [n.lower() for n in self.names]
+        self.assertEqual(len(low), len(set(low)))
+
+    def test_numbered_streets_are_spelled_out(self):
+        for n in ("5th Street", "7th Street", "13th Street", "14th Street"):
+            self.assertEqual(self.names.count(n), 1, n)
+        for n in self.names:
+            self.assertNotRegex(n, r"\d(St|Nd|Rd|Th)\b")           # "13Th"
+            self.assertNotRegex(n, r"^\d+(st|nd|rd|th)$")            # bare "14th"
+
+    def test_no_abbreviations_or_internal_notes(self):
+        for n in self.names:
+            self.assertNotRegex(n, r"\b(St|Ave|Rd|Ln|Ct|Dr|Blvd)\.?$", n)
+            self.assertNotRegex(n, r"^R(?:t|te)\b", n)
+            self.assertNotIn("avg of", n.lower())
+            self.assertNotIn("middle", n.lower())
+
+    def test_routes_point_at_different_places(self):
+        pts = {p["name"]: (p["lat"], p["lng"]) for p in self.picker}
+        self.assertEqual(len({pts["Route 9"], pts["Route 70"], pts["Route 88"]}), 3)
+
+    def test_every_entry_has_coordinates_near_lakewood(self):
+        for p in self.picker:
+            self.assertTrue(geo.plausible(p["lat"], p["lng"]), p["name"])
+
+
 class GeoChecks(unittest.TestCase):
     def listings(self, n, placed):
         return [{"id": f"L{i}", "type": ["Apartment", "House", "Townhouse / Attached"][i % 3],

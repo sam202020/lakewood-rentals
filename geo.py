@@ -122,3 +122,62 @@ def resolve(location, places):
 
 def plausible(lat, lng):
     return haversine_miles(lat, lng, *LAKEWOOD) <= MAX_MILES_FROM_LAKEWOOD
+
+
+# ---- names shown in the "Near" drop-down ------------------------------------
+_SUFFIX = {"st": "Street", "ave": "Avenue", "rd": "Road", "ln": "Lane", "dr": "Drive", "ct": "Court",
+           "blvd": "Boulevard", "pl": "Place", "pt": "Point", "pkwy": "Parkway"}
+_SMALL = {"at", "of", "the", "and", "in", "on"}
+_ORDINAL_ONLY = re.compile(r"(?:[NSEW]\.? )?\d+(?:st|nd|rd|th)", re.I)
+_STREET_WORDS = set(_SUFFIX.values())
+
+
+def display_name(key, entry):
+    """Tidy label for the drop-down: '13Th' -> '13th Street', 'Cherry St' -> 'Cherry Street',
+    'Rt 70' -> 'Route 70', 'Club At Jackson 21' -> 'Club at Jackson 21'.
+    An entry may set "label" to override the raw name."""
+    name = (entry.get("label") or entry.get("name") or key.title()).strip()
+    name = re.sub(r"\b(\d+)(st|nd|rd|th)\b", lambda m: m.group(1) + m.group(2).lower(), name, flags=re.I)
+    if _ORDINAL_ONLY.fullmatch(name):
+        name += " Street"
+    out = []
+    words = name.split(" ")
+    for i, w in enumerate(words):
+        bare = w.rstrip(".,").lower()
+        tail = w[len(w.rstrip(".,")):]
+        nxt = words[i + 1] if i + 1 < len(words) else None
+        if i == 0 and bare in ("rt", "rte"):
+            out.append("Route" + tail)
+        elif i > 0 and bare in _SUFFIX and (nxt is None or nxt in ("&", "/")):
+            out.append(_SUFFIX[bare] + tail)
+        elif i > 0 and bare in _SMALL:
+            out.append(bare + tail)
+        else:
+            out.append(w)
+    return " ".join(out)
+
+
+def picker_entries(places, merge_miles=0.15):
+    """One entry per place name people would recognise, for the "Near" drop-down.
+
+    Names are tidied (display_name), exact duplicates are merged (manual beats OSM),
+    and a bare street name is merged into its suffixed twin ("James" + "James Street")
+    when they sit within `merge_miles` of each other. Places whose twin is somewhere
+    else are left alone, because they may be genuinely different.
+    """
+    best = {}
+    for k, e in places.items():
+        if e.get("lat") is None or e.get("hide"):
+            continue
+        name = display_name(k, e)
+        cur = best.get(name.lower())
+        if cur is None or (e.get("source") == "manual" and cur["source"] != "manual"):
+            best[name.lower()] = {"name": name, "lat": e["lat"], "lng": e["lng"], "source": e.get("source")}
+    for low, item in list(best.items()):
+        for suffix in _STREET_WORDS:
+            twin = best.get(low + " " + suffix.lower())
+            if twin and haversine_miles(item["lat"], item["lng"], twin["lat"], twin["lng"]) <= merge_miles:
+                best.pop(low, None)
+                break
+    return sorted(({"name": v["name"], "lat": v["lat"], "lng": v["lng"]} for v in best.values()),
+                  key=lambda v: v["name"].lower())

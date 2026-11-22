@@ -560,8 +560,10 @@
       withinWrap = document.getElementById("withinWrap"), withinSel = document.getElementById("withinSel"),
       distOpt = document.getElementById("distOpt"), sortSel = document.getElementById("sort"),
       NEAR_HINT = nearStatus.textContent;
-  Object.keys(PLACES).sort().forEach(function (k) {
-    var o = document.createElement("option"); o.value = PLACES[k].name; document.getElementById("placeList").appendChild(o);
+  // Tidy, de-duplicated names (built by build.py); fall back to the raw place table.
+  var PICKER = DATA.picker || Object.keys(PLACES).sort().map(function (k) { return PLACES[k]; });
+  PICKER.forEach(function (pl) {
+    var o = document.createElement("option"); o.value = pl.name; document.getElementById("placeList").appendChild(o);
   });
   function setOrigin(origin, label) {
     S.origin = origin;
@@ -578,11 +580,9 @@
   function placeFromInput() {
     var v = nearInput.value.trim();
     if (!v) return setOrigin(null);
-    var key = normPlace(v), hit = PLACES[key];
-    if (!hit) {
-      var low = v.toLowerCase();
-      Object.keys(PLACES).some(function (k) { if (PLACES[k].name.toLowerCase() === low) { hit = PLACES[k]; return true; } });
-    }
+    var low = v.toLowerCase(), hit = null;
+    PICKER.some(function (pl) { if (pl.name.toLowerCase() === low) { hit = pl; return true; } });
+    if (!hit) hit = PLACES[normPlace(v)];
     if (hit) setOrigin({ lat: hit.lat, lng: hit.lng }, hit.name);
     else { S.origin = null; nearStatus.textContent = "No place called \u201c" + v + "\u201d on this list. Pick one from the suggestions, or use My location."; }
   }

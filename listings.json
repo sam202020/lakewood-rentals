@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T23:18:13+00:00",
+  "generated_at": "2026-11-22T23:25:25+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -1655,8 +1655,8 @@
       ],
       "furnished": true,
       "comments": "Brand new beautiful furnished Choson/ Kallah apt. for short/long term. Av. imm.",
-      "lat": 40.06835,
-      "lng": -74.19446,
+      "lat": 40.09076,
+      "lng": -74.20032,
       "geo": "place",
       "geo_unknown": []
     },
@@ -2455,8 +2455,8 @@
       ],
       "furnished": false,
       "comments": "Brand new, beautifully upgraded duplex. Additional nursery. Available immediately.",
-      "lat": 40.06541,
-      "lng": -74.21244,
+      "lat": 40.07929,
+      "lng": -74.21653,
       "geo": "place",
       "geo_unknown": []
     },
@@ -3072,8 +3072,8 @@
       ],
       "furnished": false,
       "comments": "[No calls] Upgraded apt. Larger model. Priv. entrance. Best soundproofing. Av. Dec.",
-      "lat": 40.05179,
-      "lng": -74.18794,
+      "lat": 40.05052,
+      "lng": -74.19671,
       "geo": "place",
       "geo_unknown": []
     },
@@ -4966,8 +4966,8 @@
       ],
       "furnished": true,
       "comments": "Luxury Choson/Kallahabove-grnd.furnished, walkto Yeshiva.3mo.minimum. Av. Dec.1.",
-      "lat": 40.05214,
-      "lng": -74.18546,
+      "lat": 40.09055,
+      "lng": -74.20781,
       "geo": "place",
       "geo_unknown": []
     },
@@ -5204,8 +5204,8 @@
       ],
       "furnished": false,
       "comments": "Large kitchen & dining room. Cul-de-sac.",
-      "lat": 40.05179,
-      "lng": -74.18794,
+      "lat": 40.09065,
+      "lng": -74.20406,
       "geo": "place",
       "geo_unknown": []
     },
@@ -5953,6 +5953,11 @@
       "lat": 40.0994,
       "lng": -74.20452
     },
+    "park rt 88": {
+      "name": "Park Ave S & Route 88",
+      "lat": 40.09055,
+      "lng": -74.20781
+    },
     "pawnee": {
       "name": "Pawnee",
       "lat": 40.1147,
@@ -6035,23 +6040,38 @@
     },
     "route 88": {
       "name": "Route 88",
-      "lat": 40.05179,
-      "lng": -74.18794
+      "lat": 40.09065,
+      "lng": -74.20406
+    },
+    "route 88 clover": {
+      "name": "Route 88 & Clover",
+      "lat": 40.09076,
+      "lng": -74.20032
     },
     "rt 70": {
-      "name": "Rt 70",
-      "lat": 40.05179,
-      "lng": -74.18794
+      "name": "Route 70",
+      "lat": 40.05052,
+      "lng": -74.19671
+    },
+    "rt 70 new hamp": {
+      "name": "Route 70 & New Hampshire Ave",
+      "lat": 40.05052,
+      "lng": -74.19671
     },
     "rt 88": {
-      "name": "Rt 88",
-      "lat": 40.05179,
-      "lng": -74.18794
+      "name": "Route 88",
+      "lat": 40.09065,
+      "lng": -74.20406
     },
     "rt 9": {
-      "name": "Rt 9",
-      "lat": 40.05179,
-      "lng": -74.18794
+      "name": "Route 9",
+      "lat": 40.07929,
+      "lng": -74.21653
+    },
+    "rt 9 james st": {
+      "name": "Route 9 & James St",
+      "lat": 40.07929,
+      "lng": -74.21653
     },
     "saratoga": {
       "name": "Saratoga",
@@ -6213,5 +6233,762 @@
       "lat": 40.09538,
       "lng": -74.22226
     }
-  }
+  },
+  "picker": [
+    {
+      "name": "13th Street",
+      "lat": 40.10421,
+      "lng": -74.20903
+    },
+    {
+      "name": "14th Street",
+      "lat": 40.10316,
+      "lng": -74.23122
+    },
+    {
+      "name": "22 Enclave Boulevard",
+      "lat": 40.05865,
+      "lng": -74.22835
+    },
+    {
+      "name": "415 Laurel Avenue",
+      "lat": 40.08983,
+      "lng": -74.19996
+    },
+    {
+      "name": "55+ Communities (Fairways / Enclave)",
+      "lat": 40.05685,
+      "lng": -74.23106
+    },
+    {
+      "name": "5th Street",
+      "lat": 40.09553,
+      "lng": -74.2019
+    },
+    {
+      "name": "7th Street",
+      "lat": 40.0985,
+      "lng": -74.19921
+    },
+    {
+      "name": "957 W County Line Road",
+      "lat": 40.10746,
+      "lng": -74.23154
+    },
+    {
+      "name": "Albert",
+      "lat": 40.06373,
+      "lng": -74.19895
+    },
+    {
+      "name": "Arlington",
+      "lat": 40.07952,
+      "lng": -74.20891
+    },
+    {
+      "name": "Bais Shalom",
+      "lat": 40.09919,
+      "lng": -74.21713
+    },
+    {
+      "name": "Beaver Crossing",
+      "lat": 40.06652,
+      "lng": -74.23199
+    },
+    {
+      "name": "Belz Shlav Aleph (The 70 Phase I)",
+      "lat": 40.04915,
+      "lng": -74.19475
+    },
+    {
+      "name": "Belz Shlav Beis (The 70 Phase II)",
+      "lat": 40.0488,
+      "lng": -74.2031
+    },
+    {
+      "name": "Belz Shlav Gimel (Locust Grove)",
+      "lat": 40.04536,
+      "lng": -74.20059
+    },
+    {
+      "name": "Bergen",
+      "lat": 40.09202,
+      "lng": -74.20031
+    },
+    {
+      "name": "Brook Hill",
+      "lat": 40.10773,
+      "lng": -74.1905
+    },
+    {
+      "name": "Brook Road",
+      "lat": 40.10523,
+      "lng": -74.187
+    },
+    {
+      "name": "Brook Road / Ridge Avenue / E 7th Street",
+      "lat": 40.09834,
+      "lng": -74.1895
+    },
+    {
+      "name": "Brookwood 1",
+      "lat": 40.11532,
+      "lng": -74.24687
+    },
+    {
+      "name": "Brookwood 2",
+      "lat": 40.11506,
+      "lng": -74.24655
+    },
+    {
+      "name": "Brookwood 3",
+      "lat": 40.11544,
+      "lng": -74.24673
+    },
+    {
+      "name": "Brookwood 4",
+      "lat": 40.1155,
+      "lng": -74.24666
+    },
+    {
+      "name": "Candlewood",
+      "lat": 40.15011,
+      "lng": -74.21348
+    },
+    {
+      "name": "Case Road",
+      "lat": 40.10017,
+      "lng": -74.23143
+    },
+    {
+      "name": "Cedar Court",
+      "lat": 40.07159,
+      "lng": -74.22007
+    },
+    {
+      "name": "Central",
+      "lat": 40.09419,
+      "lng": -74.25307
+    },
+    {
+      "name": "Central Avenue",
+      "lat": 40.08939,
+      "lng": -74.23015
+    },
+    {
+      "name": "Chateau",
+      "lat": 40.06289,
+      "lng": -74.22168
+    },
+    {
+      "name": "Chateau Park",
+      "lat": 40.06443,
+      "lng": -74.21911
+    },
+    {
+      "name": "Cherry Street",
+      "lat": 40.09203,
+      "lng": -74.19226
+    },
+    {
+      "name": "Chestnut Gardens",
+      "lat": 40.0526,
+      "lng": -74.19997
+    },
+    {
+      "name": "Chestnut Street",
+      "lat": 40.0528,
+      "lng": -74.2148
+    },
+    {
+      "name": "Clearstream Road",
+      "lat": 40.10756,
+      "lng": -74.26226
+    },
+    {
+      "name": "Clifton",
+      "lat": 40.09291,
+      "lng": -74.21476
+    },
+    {
+      "name": "Clover",
+      "lat": 40.08492,
+      "lng": -74.20098
+    },
+    {
+      "name": "Congress Street",
+      "lat": 40.09183,
+      "lng": -74.20638
+    },
+    {
+      "name": "County Line Road",
+      "lat": 40.10551,
+      "lng": -74.19063
+    },
+    {
+      "name": "Courtney",
+      "lat": 40.10359,
+      "lng": -74.21558
+    },
+    {
+      "name": "Crest Hill",
+      "lat": 40.02598,
+      "lng": -74.23697
+    },
+    {
+      "name": "Cross Street",
+      "lat": 40.0663,
+      "lng": -74.238
+    },
+    {
+      "name": "Cross Street & Massachusetts Avenue",
+      "lat": 40.0603,
+      "lng": -74.2294
+    },
+    {
+      "name": "Dewey Avenue",
+      "lat": 40.09284,
+      "lng": -74.20358
+    },
+    {
+      "name": "Dunhill Road",
+      "lat": 40.10372,
+      "lng": -74.31907
+    },
+    {
+      "name": "East End",
+      "lat": 40.10242,
+      "lng": -74.20021
+    },
+    {
+      "name": "Enclave at the Fairways (55+)",
+      "lat": 40.05623,
+      "lng": -74.22761
+    },
+    {
+      "name": "Evergreen Gardens",
+      "lat": 40.0486,
+      "lng": -74.2094
+    },
+    {
+      "name": "Glen Avenue",
+      "lat": 40.09307,
+      "lng": -74.2375
+    },
+    {
+      "name": "Harfield",
+      "lat": 40.14318,
+      "lng": -74.27047
+    },
+    {
+      "name": "Harmony Farms",
+      "lat": 40.13064,
+      "lng": -74.25709
+    },
+    {
+      "name": "Harmony Hills, Jackson",
+      "lat": 40.16561,
+      "lng": -74.30564
+    },
+    {
+      "name": "Heart of Ridge",
+      "lat": 40.09788,
+      "lng": -74.20131
+    },
+    {
+      "name": "Hearthstone",
+      "lat": 40.0619,
+      "lng": -74.22684
+    },
+    {
+      "name": "High Street",
+      "lat": 40.07005,
+      "lng": -74.21677
+    },
+    {
+      "name": "Holly Oaks",
+      "lat": 40.0357,
+      "lng": -74.26028
+    },
+    {
+      "name": "Hope",
+      "lat": 40.10729,
+      "lng": -74.24202
+    },
+    {
+      "name": "Hope Chapel",
+      "lat": 40.10729,
+      "lng": -74.24202
+    },
+    {
+      "name": "Howell",
+      "lat": 40.1413,
+      "lng": -74.22366
+    },
+    {
+      "name": "Hyson",
+      "lat": 40.14095,
+      "lng": -74.26653
+    },
+    {
+      "name": "Irene Court",
+      "lat": 40.09557,
+      "lng": -74.25586
+    },
+    {
+      "name": "Jackson",
+      "lat": 40.11518,
+      "lng": -74.36478
+    },
+    {
+      "name": "Jackson 21",
+      "lat": 40.11949,
+      "lng": -74.25708
+    },
+    {
+      "name": "Jackson Pines Road",
+      "lat": 40.09789,
+      "lng": -74.26554
+    },
+    {
+      "name": "James Street",
+      "lat": 40.07903,
+      "lng": -74.23694
+    },
+    {
+      "name": "Jule Court",
+      "lat": 40.0888,
+      "lng": -74.24942
+    },
+    {
+      "name": "Kol Shimshon",
+      "lat": 40.10207,
+      "lng": -74.20766
+    },
+    {
+      "name": "Lakewood",
+      "lat": 40.0941,
+      "lng": -74.21499
+    },
+    {
+      "name": "Lakewood Commons",
+      "lat": 40.0682,
+      "lng": -74.20488
+    },
+    {
+      "name": "Lawrence Avenue",
+      "lat": 40.10094,
+      "lng": -74.20775
+    },
+    {
+      "name": "Leonard",
+      "lat": 40.10309,
+      "lng": -74.20119
+    },
+    {
+      "name": "Lexington",
+      "lat": 40.09865,
+      "lng": -74.21337
+    },
+    {
+      "name": "Locust",
+      "lat": 40.04706,
+      "lng": -74.21205
+    },
+    {
+      "name": "Locust Grove",
+      "lat": 40.21393,
+      "lng": -74.09581
+    },
+    {
+      "name": "Locust Street",
+      "lat": 40.04627,
+      "lng": -74.20362
+    },
+    {
+      "name": "Mackenzie Toms River",
+      "lat": 40.03247,
+      "lng": -74.24373
+    },
+    {
+      "name": "Manchester",
+      "lat": 39.9735,
+      "lng": -74.3817
+    },
+    {
+      "name": "Marc Drive",
+      "lat": 40.07433,
+      "lng": -74.21049
+    },
+    {
+      "name": "Massachusetts Avenue",
+      "lat": 40.05774,
+      "lng": -74.22981
+    },
+    {
+      "name": "Meadow Run",
+      "lat": 40.1167,
+      "lng": -74.11088
+    },
+    {
+      "name": "Medina Road",
+      "lat": 40.09377,
+      "lng": -74.17316
+    },
+    {
+      "name": "Miller",
+      "lat": 40.09714,
+      "lng": -74.24621
+    },
+    {
+      "name": "Monmouth Views",
+      "lat": 40.16382,
+      "lng": -74.25461
+    },
+    {
+      "name": "Monterey",
+      "lat": 40.08838,
+      "lng": -74.23113
+    },
+    {
+      "name": "N Apple",
+      "lat": 40.10582,
+      "lng": -74.20266
+    },
+    {
+      "name": "New Central Avenue",
+      "lat": 40.09419,
+      "lng": -74.25307
+    },
+    {
+      "name": "New England Village",
+      "lat": 40.07979,
+      "lng": -74.23019
+    },
+    {
+      "name": "New Prospect Jackson",
+      "lat": 40.11754,
+      "lng": -74.25369
+    },
+    {
+      "name": "Nowlan",
+      "lat": 40.0989,
+      "lng": -74.20146
+    },
+    {
+      "name": "Oak Glen",
+      "lat": 39.98703,
+      "lng": -74.14995
+    },
+    {
+      "name": "Oak Street & Vine Avenue",
+      "lat": 40.066,
+      "lng": -74.2089
+    },
+    {
+      "name": "Ocean Avenue",
+      "lat": 40.08921,
+      "lng": -74.18644
+    },
+    {
+      "name": "Ocean Pointe",
+      "lat": 40.08836,
+      "lng": -74.18005
+    },
+    {
+      "name": "Park",
+      "lat": 40.0525,
+      "lng": -74.18299
+    },
+    {
+      "name": "Park Ave S & Route 88",
+      "lat": 40.09055,
+      "lng": -74.20781
+    },
+    {
+      "name": "Park Avenue",
+      "lat": 40.0994,
+      "lng": -74.20452
+    },
+    {
+      "name": "Pawnee",
+      "lat": 40.1147,
+      "lng": -74.2545
+    },
+    {
+      "name": "Pine Lake Park",
+      "lat": 40.00317,
+      "lng": -74.25653
+    },
+    {
+      "name": "Pine River",
+      "lat": 40.07692,
+      "lng": -74.21352
+    },
+    {
+      "name": "Pine Street",
+      "lat": 40.07418,
+      "lng": -74.20335
+    },
+    {
+      "name": "Prime Jackson Area",
+      "lat": 40.11913,
+      "lng": -74.24929
+    },
+    {
+      "name": "Princeton",
+      "lat": 40.1085,
+      "lng": -74.20923
+    },
+    {
+      "name": "Prospect",
+      "lat": 40.06979,
+      "lng": -74.23873
+    },
+    {
+      "name": "Prospect Vines",
+      "lat": 40.06979,
+      "lng": -74.23873
+    },
+    {
+      "name": "Raintree",
+      "lat": 40.24439,
+      "lng": -74.31119
+    },
+    {
+      "name": "Ramtown",
+      "lat": 40.10698,
+      "lng": -74.16408
+    },
+    {
+      "name": "Regency Estates",
+      "lat": 40.06667,
+      "lng": -74.22197
+    },
+    {
+      "name": "Ridge Avenue",
+      "lat": 40.09788,
+      "lng": -74.20131
+    },
+    {
+      "name": "Ridge Avenue & Negba Street",
+      "lat": 40.09675,
+      "lng": -74.20283
+    },
+    {
+      "name": "Ridge Avenue / Bergen Avenue",
+      "lat": 40.095,
+      "lng": -74.2008
+    },
+    {
+      "name": "Rockwell",
+      "lat": 40.02297,
+      "lng": -74.33471
+    },
+    {
+      "name": "Rose Court",
+      "lat": 40.04689,
+      "lng": -74.20229
+    },
+    {
+      "name": "Route 70",
+      "lat": 40.05052,
+      "lng": -74.19671
+    },
+    {
+      "name": "Route 70 & New Hampshire Avenue",
+      "lat": 40.05052,
+      "lng": -74.19671
+    },
+    {
+      "name": "Route 88",
+      "lat": 40.09065,
+      "lng": -74.20406
+    },
+    {
+      "name": "Route 88 & Clover",
+      "lat": 40.09076,
+      "lng": -74.20032
+    },
+    {
+      "name": "Route 9",
+      "lat": 40.07929,
+      "lng": -74.21653
+    },
+    {
+      "name": "Route 9 & James Street",
+      "lat": 40.07929,
+      "lng": -74.21653
+    },
+    {
+      "name": "Saratoga",
+      "lat": 40.04319,
+      "lng": -74.24243
+    },
+    {
+      "name": "Shady Lane",
+      "lat": 40.09628,
+      "lng": -74.24189
+    },
+    {
+      "name": "Shonny",
+      "lat": 40.09715,
+      "lng": -74.25628
+    },
+    {
+      "name": "Sims",
+      "lat": 40.069,
+      "lng": -74.19716
+    },
+    {
+      "name": "Somerset",
+      "lat": 40.07137,
+      "lng": -74.19811
+    },
+    {
+      "name": "Somerset Avenue",
+      "lat": 40.09964,
+      "lng": -74.19536
+    },
+    {
+      "name": "Somerset Walk",
+      "lat": 40.07137,
+      "lng": -74.19811
+    },
+    {
+      "name": "South Lake Drive",
+      "lat": 40.09333,
+      "lng": -74.23308
+    },
+    {
+      "name": "Spruce Street",
+      "lat": 40.07103,
+      "lng": -74.20387
+    },
+    {
+      "name": "Squankum",
+      "lat": 40.10996,
+      "lng": -74.20087
+    },
+    {
+      "name": "St Katherine",
+      "lat": 40.10926,
+      "lng": -74.24172
+    },
+    {
+      "name": "St Nicholas",
+      "lat": 40.08815,
+      "lng": -74.23501
+    },
+    {
+      "name": "Stamford Meadows",
+      "lat": 40.05373,
+      "lng": -74.20184
+    },
+    {
+      "name": "Sterling Forest",
+      "lat": 40.06846,
+      "lng": -74.2205
+    },
+    {
+      "name": "Sterling Place",
+      "lat": 40.0693,
+      "lng": -74.21834
+    },
+    {
+      "name": "Sunset Avenue",
+      "lat": 40.08299,
+      "lng": -74.22511
+    },
+    {
+      "name": "Sunset Avenue & James Street",
+      "lat": 40.0798,
+      "lng": -74.225
+    },
+    {
+      "name": "The 70",
+      "lat": 40.04915,
+      "lng": -74.19475
+    },
+    {
+      "name": "The 70 Phase I",
+      "lat": 40.04915,
+      "lng": -74.19475
+    },
+    {
+      "name": "The 70 Phase II",
+      "lat": 40.0488,
+      "lng": -74.2031
+    },
+    {
+      "name": "The Club at Jackson Twenty-One",
+      "lat": 40.1353,
+      "lng": -74.34684
+    },
+    {
+      "name": "The Fairways at Lake Ridge (55+)",
+      "lat": 40.05747,
+      "lng": -74.23451
+    },
+    {
+      "name": "The Reserve",
+      "lat": 39.96185,
+      "lng": -74.37833
+    },
+    {
+      "name": "The Villas",
+      "lat": 40.10604,
+      "lng": -74.19885
+    },
+    {
+      "name": "Toms River",
+      "lat": 39.95284,
+      "lng": -74.19674
+    },
+    {
+      "name": "Topaz",
+      "lat": 40.04315,
+      "lng": -74.1619
+    },
+    {
+      "name": "Twin Oaks",
+      "lat": 40.10604,
+      "lng": -74.19885
+    },
+    {
+      "name": "Van Buren",
+      "lat": 40.09471,
+      "lng": -74.24924
+    },
+    {
+      "name": "W Kennedy",
+      "lat": 40.10816,
+      "lng": -74.23164
+    },
+    {
+      "name": "W. County Line Road",
+      "lat": 40.1012,
+      "lng": -74.16414
+    },
+    {
+      "name": "Westgate",
+      "lat": 40.08734,
+      "lng": -74.25544
+    },
+    {
+      "name": "Whitewater Court",
+      "lat": 40.00686,
+      "lng": -74.23082
+    },
+    {
+      "name": "Wyndham",
+      "lat": 40.24436,
+      "lng": -74.31983
+    },
+    {
+      "name": "Yeshiva (BMG)",
+      "lat": 40.09538,
+      "lng": -74.22226
+    }
+  ]
 }

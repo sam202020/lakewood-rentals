@@ -44,7 +44,8 @@
   "lat": 40.05685,
   "lng": -74.23106,
   "source": "manual",
-  "note": "Owner's guess: average of the Fairways and the Enclave, the Lakewood 55+ communities on Massachusetts Ave."
+  "note": "Owner's guess: average of the Fairways and the Enclave, the Lakewood 55+ communities on Massachusetts Ave.",
+  "label": "55+ Communities (Fairways / Enclave)"
  },
  "5th": {
   "name": "5Th",
@@ -159,7 +160,8 @@
   "lat": 40.10523,
   "lng": -74.187,
   "source": "manual",
-  "note": "Owner: Brook = Brook Rd; Google Maps E County Line Rd & Brook Rd."
+  "note": "Owner: Brook = Brook Rd; Google Maps E County Line Rd & Brook Rd.",
+  "label": "Brook Road"
  },
  "brook hill": {
   "name": "Brook Hill",
@@ -173,7 +175,8 @@
   "lat": 40.09834,
   "lng": -74.1895,
   "source": "manual",
-  "note": "Google Maps: all three streets meet at this one junction."
+  "note": "Google Maps: all three streets meet at this one junction.",
+  "label": "Brook Road / Ridge Avenue / E 7th Street"
  },
  "brookwood 1": {
   "name": "Brookwood 1",
@@ -212,7 +215,8 @@
   "lng": -74.24666,
   "source": "osm",
   "match": "4, Brookwood Parkway, Jackson Township, Ocean County, New Jersey, 08527, United States",
-  "kind": "place/house"
+  "kind": "place/house",
+  "label": "Brookwood 4"
  },
  "candlewood": {
   "name": "Candlewood",
@@ -327,7 +331,8 @@
   "lng": -74.34935,
   "source": "osm",
   "match": "The Club at Jackson Twenty-One, Jackson Township, Ocean County, New Jersey, United States",
-  "kind": "landuse/residential"
+  "kind": "landuse/residential",
+  "label": "The Club at Jackson Twenty-One"
  },
  "congress street": {
   "name": "Congress Street",
@@ -343,7 +348,8 @@
   "lng": -74.19063,
   "source": "osm",
   "match": "East County Line, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/primary"
+  "kind": "highway/primary",
+  "label": "County Line Road"
  },
  "courtney": {
   "name": "Courtney",
@@ -397,7 +403,8 @@
   "lng": -74.19921,
   "source": "osm",
   "match": "East 7th Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/residential"
+  "kind": "highway/residential",
+  "label": "7th Street"
  },
  "east end": {
   "name": "East End",
@@ -573,7 +580,8 @@
   "lng": -74.23694,
   "source": "osm",
   "match": "James Street, South Lakewood, A Country Place, Lakewood Township, Ocean County, New Jersey",
-  "kind": "highway/tertiary"
+  "kind": "highway/tertiary",
+  "label": "James Street"
  },
  "james st": {
   "name": "James St",
@@ -712,7 +720,8 @@
   "lng": -74.22981,
   "source": "osm",
   "match": "Massachusetts Avenue, Fairways, Lakewood Township, Ocean County, New Jersey, 08755, United",
-  "kind": "highway/tertiary"
+  "kind": "highway/tertiary",
+  "label": "Massachusetts Avenue"
  },
  "meadow run": {
   "name": "Meadow Run",
@@ -872,6 +881,13 @@
   "match": "Park Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
   "kind": "highway/residential"
  },
+ "park rt 88": {
+  "name": "Park Ave S & Route 88",
+  "lat": 40.09055,
+  "lng": -74.20781,
+  "source": "manual",
+  "note": "Google Maps intersection."
+ },
  "pawnee": {
   "name": "Pawnee",
   "lat": 40.1147,
@@ -963,14 +979,16 @@
   "lat": 40.09788,
   "lng": -74.20131,
   "source": "manual",
-  "note": "Owner: middle of Ridge is approx Ridge Ave & Nowlan Pl (Google Maps)."
+  "note": "Owner: middle of Ridge is approx Ridge Ave & Nowlan Pl (Google Maps).",
+  "label": "Ridge Avenue"
  },
  "ridge bergen": {
   "name": "Between Ridge Ave & Bergen Ave",
   "lat": 40.095,
   "lng": -74.2008,
   "source": "manual",
-  "note": "Owner: Ridge and Bergen are parallel; 'Ridge / Bergen' = between them. Midpoint of Ridge Ave (~Nowlan Pl) and Bergen Ave (Google Maps)."
+  "note": "Owner: Ridge and Bergen are parallel; 'Ridge / Bergen' = between them. Midpoint of Ridge Ave (~Nowlan Pl) and Bergen Ave (Google Maps).",
+  "label": "Ridge Ave / Bergen Ave"
  },
  "ridge negba st": {
   "name": "Ridge Ave & Negba St",
@@ -997,35 +1015,52 @@
  },
  "route 88": {
   "name": "Route 88",
-  "lat": 40.05179,
-  "lng": -74.18794,
-  "source": "osm",
-  "match": "John Davison Rockefeller Memorial Highway, Lakewood Township, Ocean County, New Jersey, 08",
-  "kind": "highway/trunk"
+  "lat": 40.09065,
+  "lng": -74.20406,
+  "source": "manual",
+  "note": "Midpoint of two Google Maps Route 88 intersections in central Lakewood (88 & Clover, 88 & Park Ave S). Replaces a wrong OSM point shared with Routes 9 and 70."
+ },
+ "route 88 clover": {
+  "name": "Route 88 & Clover",
+  "lat": 40.09076,
+  "lng": -74.20032,
+  "source": "manual",
+  "note": "Google Maps intersection."
  },
  "rt 70": {
-  "name": "Rt 70",
-  "lat": 40.05179,
-  "lng": -74.18794,
-  "source": "osm",
-  "match": "John Davison Rockefeller Memorial Highway, Lakewood Township, Ocean County, New Jersey, 08",
-  "kind": "highway/trunk"
+  "name": "Route 70",
+  "lat": 40.05052,
+  "lng": -74.19671,
+  "source": "manual",
+  "note": "Route 70 at New Hampshire Ave (Google Maps). Replaces a wrong OSM point."
+ },
+ "rt 70 new hamp": {
+  "name": "Route 70 & New Hampshire Ave",
+  "lat": 40.05052,
+  "lng": -74.19671,
+  "source": "manual",
+  "note": "Google Maps intersection."
  },
  "rt 88": {
-  "name": "Rt 88",
-  "lat": 40.05179,
-  "lng": -74.18794,
-  "source": "osm",
-  "match": "John Davison Rockefeller Memorial Highway, Lakewood Township, Ocean County, New Jersey, 08",
-  "kind": "highway/trunk"
+  "name": "Route 88",
+  "lat": 40.09065,
+  "lng": -74.20406,
+  "source": "manual",
+  "note": "Midpoint of two Google Maps Route 88 intersections in central Lakewood (88 & Clover, 88 & Park Ave S). Replaces a wrong OSM point shared with Routes 9 and 70."
  },
  "rt 9": {
-  "name": "Rt 9",
-  "lat": 40.05179,
-  "lng": -74.18794,
-  "source": "osm",
-  "match": "John Davison Rockefeller Memorial Highway, Lakewood Township, Ocean County, New Jersey, 08",
-  "kind": "highway/trunk"
+  "name": "Route 9",
+  "lat": 40.07929,
+  "lng": -74.21653,
+  "source": "manual",
+  "note": "Route 9 at James St (Google Maps), central Lakewood. Replaces a wrong OSM point."
+ },
+ "rt 9 james st": {
+  "name": "Route 9 & James St",
+  "lat": 40.07929,
+  "lng": -74.21653,
+  "source": "manual",
+  "note": "Google Maps intersection."
  },
  "saratoga": {
   "name": "Saratoga",
@@ -1238,7 +1273,8 @@
   "lng": -74.16414,
   "source": "osm",
   "match": "County Line Road East, Greenville, Lakewood Township, Ocean County, New Jersey, 08701, Uni",
-  "kind": "highway/tertiary"
+  "kind": "highway/tertiary",
+  "label": "W. County Line Road"
  },
  "w kennedy": {
   "name": "W Kennedy",

@@ -64,6 +64,8 @@ def main():
         # resolved places only, for the page's "Near" picker
         "places": {k: {"name": e.get("name") or k.title(), "lat": e["lat"], "lng": e["lng"]}
                    for k, e in places.items() if e.get("lat") is not None},
+        # tidy, de-duplicated names for the "Near" drop-down
+        "picker": geo.picker_entries(places),
     }
     DATA.write_text(json.dumps(data, indent=2, ensure_ascii=False))
 
