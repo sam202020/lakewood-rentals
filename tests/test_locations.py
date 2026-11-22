@@ -79,8 +79,9 @@ class Abbreviations(unittest.TestCase):
                 self.assertEqual(loc(raw), "Pine Lake Park, Manchester")
 
     def test_plp_alone_and_manch(self):
-        self.assertEqual(loc("PLP"), "Pine Lake Park")
-        self.assertEqual(loc("Pine Lake Park"), "Pine Lake Park")
+        self.assertEqual(loc("PLP"), "Pine Lake Park, Manchester")
+        self.assertEqual(loc("Pine Lake Park"), "Pine Lake Park, Manchester")
+        self.assertEqual(loc("PineLakePark"), "Pine Lake Park, Manchester")
         self.assertEqual(loc("Holly Oaks, Manch."), "Holly Oaks, Manchester")
         self.assertEqual(loc("Manchester"), "Manchester")
 
