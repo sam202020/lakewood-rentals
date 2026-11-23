@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Build streets.json: every named street around Lakewood, as simplified lines, for "sort by nearest this street".
 
-  python3 tools/build_streets.py --fetch      # download from OpenStreetMap (Overpass), then build
+  python3 tools/build_streets.py --fetch      # download town borders + streets from OpenStreetMap (Overpass), then build
   python3 tools/build_streets.py              # rebuild from the cached tiles in tools/.street_cache/
 
-Run it locally now and then (streets rarely change). The weekly routine does not run it.
+Run it locally now and then (streets rarely change). The weekly routine does not run it. Coverage: all of Lakewood,
+plus the streets within 0.9 mile of each place on the site's map that lies outside Lakewood (the Jewish
+neighbourhoods of Jackson, Howell, Toms River, Manchester, ...). Add a place to places.json and rebuild to cover it.
 
 Data: (c) OpenStreetMap contributors, ODbL (the page credits them). One Overpass request per map tile; only
 street names and shapes are requested - nothing about visitors or the site's owner is sent.
@@ -39,9 +41,11 @@ MIRRORS = ["https://overpass-api.de/api/interpreter", "https://lz4.overpass-api.
 UA = "lakewood-rentals-streets/1.0 (open-source rental list)"
 HIGHWAYS = "residential|tertiary|secondary|primary|trunk|unclassified|living_street|primary_link|secondary_link|tertiary_link"
 
-# Streets whose middle is farther than this from the centre of Lakewood are left out (woods, far Brick and Toms River).
-MAX_MILES = 9.5
 CENTER = (40.0979, -74.2179)
+# All of Lakewood Township is covered. In the surrounding towns only the neighbourhoods the site has places for
+# (every pin in places.json that lies outside Lakewood) are covered: streets within NEAR_MILES of one of those pins.
+NEAR_MILES = 0.9
+BOUNDARY_TOWNS = ["Lakewood", "Jackson", "Howell", "Manchester", "Brick"]   # Toms River's border is the fallback
 
 # Rough town centres, only used to label which town a street is in (so two "Central Avenue"s can be told apart).
 TOWNS = {"Lakewood": (40.0979, -74.2179), "Jackson": (40.1000, -74.3550), "Howell": (40.1500, -74.1900),
@@ -78,8 +82,42 @@ def fetch_tile(s, w, n, e):
     raise RuntimeError(last)
 
 
+def fetch_boundaries():
+    fn = CACHE / "boundaries.json"
+    if fn.exists():
+        return
+    q = ('[out:json][timeout:120];rel["boundary"="administrative"]["admin_level"="8"]'
+         f'["name"~"^({"|".join(BOUNDARY_TOWNS)}) Township$"]({SOUTH - 0.1},{WEST - 0.1},{NORTH + 0.1},{EAST + 0.1});out geom;')
+    for url in MIRRORS:
+        try:
+            req = urllib.request.Request(url, data=urllib.parse.urlencode({"data": q}).encode(), headers={"User-Agent": UA})
+            fn.write_bytes(urllib.request.urlopen(req, timeout=180).read())
+            print("town borders downloaded", flush=True)
+            return
+        except Exception as ex:  # noqa: BLE001
+            print(f"town borders failed on {url.split('/')[2]}: {str(ex)[:80]}", flush=True)
+
+
+def fetch_routes():
+    """State and US routes of every road class (Route 70 is a freeway-type road the street query skips)."""
+    fn = CACHE / "routes.json"
+    if fn.exists():
+        return
+    q = (f'[out:json][timeout:120];way["highway"]["ref"~"^(NJ|US) "]({SOUTH},{WEST},{NORTH},{EAST});out geom tags;')
+    for url in MIRRORS:
+        try:
+            req = urllib.request.Request(url, data=urllib.parse.urlencode({"data": q}).encode(), headers={"User-Agent": UA})
+            fn.write_bytes(urllib.request.urlopen(req, timeout=180).read())
+            print("state routes downloaded", flush=True)
+            return
+        except Exception as ex:  # noqa: BLE001
+            print(f"state routes failed on {url.split('/')[2]}: {str(ex)[:80]}", flush=True)
+
+
 def fetch_all():
     CACHE.mkdir(exist_ok=True)
+    fetch_boundaries()
+    fetch_routes()
     for i, t in enumerate(tiles()):
         fn = CACHE / f"tile_{i:02d}.json"
         if fn.exists():
@@ -190,7 +228,82 @@ def join_paths(paths):
     return [p for p in paths if p]
 
 
+# ---- town borders ---------------------------------------------------------------------------------
+
+def _chain(ways):
+    """Join the boundary pieces of a relation (lists of (lat, lng)) end to end into closed rings."""
+    ways = [list(w) for w in ways if len(w) > 1]
+    rings = []
+    while ways:
+        ring = ways.pop(0)
+        grew = True
+        while grew and ring[0] != ring[-1]:
+            grew = False
+            for i, w in enumerate(ways):
+                if w[0] == ring[-1]:
+                    ring += w[1:]
+                elif w[-1] == ring[-1]:
+                    ring += w[::-1][1:]
+                elif w[-1] == ring[0]:
+                    ring = w[:-1] + ring
+                elif w[0] == ring[0]:
+                    ring = w[::-1][:-1] + ring
+                else:
+                    continue
+                ways.pop(i)
+                grew = True
+                break
+        rings.append(ring)
+    return rings
+
+
+BORDERS_FILE = ROOT / "data" / "town_borders.json"
+
+
+def load_boundaries(cache=None):
+    """{'Lakewood': [ring, ...], ...}. Uses the checked-in data/town_borders.json; if it is missing, builds it from
+    the downloaded boundaries.json in the tile cache (simplified to ~50 m, a few KB)."""
+    if BORDERS_FILE.exists():
+        return {k: [[tuple(p) for p in ring] for ring in rings] for k, rings in json.loads(BORDERS_FILE.read_text()).items()}
+    f = (cache or CACHE) / "boundaries.json"
+    if not f.exists():
+        return {}
+    out = {}
+    for rel in json.loads(f.read_text())["elements"]:
+        name = rel.get("tags", {}).get("name", "").replace(" Township", "")
+        ways = [[(g["lat"], g["lon"]) for g in m["geometry"]] for m in rel.get("members", [])
+                if m.get("role") == "outer" and m.get("geometry")]
+        if name in BOUNDARY_TOWNS and ways:
+            out[name] = [simplify(r, 50.0) for r in _chain(ways)]
+    BORDERS_FILE.parent.mkdir(exist_ok=True)
+    BORDERS_FILE.write_text(json.dumps({k: [[[round(a, 5), round(b, 5)] for a, b in r] for r in rings]
+                                        for k, rings in out.items()}, separators=(",", ":")))
+    return out
+
+
+def inside(lat, lng, rings):
+    """Ray casting: is the point inside any of the rings?"""
+    for ring in rings:
+        hit = False
+        j = len(ring) - 1
+        for i in range(len(ring)):
+            (la1, ln1), (la2, ln2) = ring[i], ring[j]
+            if (ln1 > lng) != (ln2 > lng) and lat < (la2 - la1) * (lng - ln1) / (ln2 - ln1) + la1:
+                hit = not hit
+            j = i
+        if hit:
+            return True
+    return False
+
+
+BOUNDARIES = {}
+
+
 def town_of(lat, lng):
+    """The town a point is in: by the real border where we have it, else the nearest town centre."""
+    for name in BOUNDARY_TOWNS:
+        if name in BOUNDARIES and inside(lat, lng, BOUNDARIES[name]):
+            return name
     return min(TOWNS, key=lambda t: miles(lat, lng, *TOWNS[t]))
 
 
@@ -213,12 +326,32 @@ def decode(flat):
     return pts
 
 
-def build():
+def neighbourhood_pins(places_file):
+    """Pins of the neighbourhoods the site knows outside Lakewood (the Jewish neighbourhoods of the surrounding towns)."""
+    pins = []
+    towns_level = {"jackson", "howell", "lakewood", "toms river", "manchester", "brick", "freehold"}
+    for key, e in json.loads(pathlib.Path(places_file).read_text()).items():
+        if e.get("lat") is None or key in towns_level:
+            continue
+        if town_of(e["lat"], e["lng"]) != "Lakewood":
+            pins.append((e["lat"], e["lng"]))
+    return pins
+
+
+def build(places_file=None):
+    global BOUNDARIES
+    BOUNDARIES = load_boundaries()
+    if not BOUNDARIES:
+        print("WARNING: no town borders cached; towns are guessed from the nearest centre (run with --fetch)")
+    pins = neighbourhood_pins(places_file or ROOT / "places.json")
     ways = {}
     files = sorted(CACHE.glob("tile_*.json"))
     if not files:
         sys.exit("no cached tiles: run with --fetch first")
-    for f in files:
+    extra = [CACHE / "routes.json"] if (CACHE / "routes.json").exists() else []
+    if not extra:
+        print("WARNING: no routes.json cached (Route 70 will be missing); run with --fetch")
+    for f in files + extra:
         for el in json.loads(f.read_text())["elements"]:
             if el.get("type") != "way" or not el.get("geometry"):
                 continue
@@ -227,20 +360,20 @@ def build():
     for el in ways.values():
         tags = el.get("tags", {})
         pts = [(g["lat"], g["lon"]) for g in el["geometry"]]
-        for name in [tags["name"]] + route_names(tags):
+        for name in ([tags["name"]] if tags.get("name") else []) + route_names(tags):     # NJ 70 has a ref but no name
             by_name.setdefault(name.strip(), []).append(simplify(pts))
     merged = {}
     for name, ws in sorted(by_name.items()):
         for grp in cluster(ws):
             allpts = [p for w in grp for p in w]
-            lat = sum(p[0] for p in allpts) / len(allpts)
-            lng = sum(p[1] for p in allpts) / len(allpts)
-            if miles(lat, lng, *CENTER) > MAX_MILES:
-                continue
             # label the town by the part of the street nearest Lakewood ("Route 88" runs through several towns)
             nearest = min(allpts, key=lambda p: miles(p[0], p[1], *CENTER))
-            key = (name, town_of(*nearest))
-            merged.setdefault(key, []).extend(join_paths(grp))
+            town = town_of(*nearest)
+            if town != "Lakewood":
+                # outside Lakewood: only the streets of the neighbourhoods the site covers
+                if not any(miles(p[0], p[1], la, ln) <= NEAR_MILES for p in allpts for la, ln in pins):
+                    continue
+            merged.setdefault((name, town), []).extend(join_paths(grp))
     streets = []
     for (name, town), paths in sorted(merged.items()):
         streets.append([name, list(TOWNS).index(town), [encode(p) for p in join_paths(paths)]])
@@ -254,10 +387,11 @@ def build():
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--fetch", action="store_true", help="download tiles first")
-    ap.add_argument("--cache", help="folder with tile_*.json (default tools/.street_cache)")
+    ap.add_argument("--cache", help="folder with tile_*.json and boundaries.json (default tools/.street_cache)")
+    ap.add_argument("--places", help="places.json whose pins say which neighbourhoods outside Lakewood to cover")
     args = ap.parse_args()
     if args.cache:
         CACHE = pathlib.Path(args.cache)
     if args.fetch:
         fetch_all()
-    build()
+    build(args.places)

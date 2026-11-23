@@ -802,3 +802,19 @@ test("real streets: ocean avenue, cedar bridge and an intersection are found in 
   const r = S.suggestCrossings(streets, "ridge and nowlan")[0];
   assert.ok(r && Math.abs(r.lat - 40.0991) < 0.002 && Math.abs(r.lng - -74.2015) < 0.002, JSON.stringify(r));
 });
+
+test("streets: among equally good matches Lakewood's own come first, wherever the other towns' streets are", () => {
+  const data = {
+    base: [40.0, -74.4], unit: 0.0001, towns: ["Lakewood", "Jackson", "Brick"],
+    streets: [
+      ["Birch Court", 2, [enc([[500, 2500], [520, 2500]])]],          // Brick: shorter name, nearest-listed alphabetically
+      ["Birch Street", 1, [enc([[1000, 500], [1010, 500]])]],         // Jackson
+      ["Birchwood Drive", 0, [enc([[950, 2000], [960, 2000]])]],      // Lakewood
+    ],
+  };
+  const streets = S.decodeStreets(data);
+  assert.deepEqual(S.suggestStreets(streets, "birch").map((s) => s.n + "|" + s.t),
+    ["Birchwood Drive|Lakewood", "Birch Court|Brick", "Birch Street|Jackson"]);
+  assert.equal(S.suggestStreets(streets, "birch")[0].t, "Lakewood");
+  assert.equal(S.suggestAll([], streets, "birch")[0].town, "Lakewood");
+});

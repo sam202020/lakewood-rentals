@@ -415,10 +415,13 @@ var LakewoodSearch = (function () {
       var r = rankTokens(s.tokens, qt);
       if (r >= 0) out.push({ s: s, score: r, len: s.tokens.join(" ").length });
     });
-    // same match quality: Lakewood's own streets first, then by name
+    // best match first; among equally good matches Lakewood's own streets come first, then the nearest to Lakewood
     var core = [40.0979, -74.2179];
     function away(s) { return distanceMiles(core[0], core[1], s.lat, s.lng); }
-    out.sort(function (a, b) { return a.score - b.score || a.len - b.len || a.s.n.localeCompare(b.s.n) || away(a.s) - away(b.s); });
+    function home(s) { return s.t === "Lakewood" ? 0 : 1; }
+    out.sort(function (a, b) {
+      return a.score - b.score || home(a.s) - home(b.s) || a.len - b.len || away(a.s) - away(b.s) || a.s.n.localeCompare(b.s.n);
+    });
     return out.slice(0, limit || 8).map(function (o) { return o.s; });
   }
 

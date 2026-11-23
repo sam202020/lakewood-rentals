@@ -56,6 +56,42 @@ class Encoding(unittest.TestCase):
         self.assertEqual(len(B.join_paths([a, b])), 2)
 
 
+class Borders(unittest.TestCase):
+    def test_a_point_in_a_square_and_outside(self):
+        ring = [[(40.0, -74.0), (40.0, -73.9), (40.1, -73.9), (40.1, -74.0), (40.0, -74.0)]]
+        self.assertTrue(B.inside(40.05, -73.95, ring))
+        self.assertFalse(B.inside(40.2, -73.95, ring))
+        self.assertFalse(B.inside(40.05, -74.1, ring))
+
+    def test_pieces_of_a_border_are_chained_into_a_ring(self):
+        a = [(0, 0), (0, 1), (1, 1)]
+        b = [(1, 1), (1, 0), (0, 0)]
+        rings = B._chain([a, b])
+        self.assertEqual(len(rings), 1)
+        self.assertEqual(rings[0][0], rings[0][-1])
+
+    def test_pieces_given_backwards_still_chain(self):
+        a = [(0, 0), (0, 1), (1, 1)]
+        b = [(0, 0), (1, 0), (1, 1)]
+        self.assertEqual(len(B._chain([a, b])), 1)
+
+
+class ShippedBorders(unittest.TestCase):
+    def test_known_places_are_in_the_right_town(self):
+        borders = B.load_boundaries()
+        if not borders:
+            self.skipTest("no town borders")
+        B.BOUNDARIES = borders
+        for name, (la, ln), town in (("Westgate", (40.0873, -74.2554), "Lakewood"), ("Raintree", (40.0968, -74.1646), "Lakewood"),
+                                     ("Pine Lake Park", (40.0032, -74.2565), "Manchester"), ("Jackson 21", (40.1376, -74.3542), "Jackson"),
+                                     ("Ramtown", (40.1210, -74.1438), "Howell"), ("Whitewater Ct", (40.0069, -74.2309), "Toms River")):
+            self.assertEqual(B.town_of(la, ln), town, name)
+
+    def test_the_border_file_is_small(self):
+        if B.BORDERS_FILE.exists():
+            self.assertLess(B.BORDERS_FILE.stat().st_size, 120_000)
+
+
 class Naming(unittest.TestCase):
     def test_route_numbers_become_searchable_names(self):
         self.assertEqual(B.route_names({"ref": "NJ 88"}), ["Route 88"])
@@ -176,14 +212,33 @@ class ShippedStreets(unittest.TestCase):
         self.assertEqual(len(keys), len(set(keys)))        # the same name in the same town is one street
 
     def test_the_file_is_small_enough_to_ship_in_the_page(self):
-        self.assertLess(self.path.stat().st_size, 450_000)
+        self.assertLess(self.path.stat().st_size, 200_000)
 
-    def test_only_streets_near_lakewood_are_kept(self):
+    def test_every_street_outside_lakewood_is_near_a_neighbourhood_the_site_covers(self):
+        """Owner (2026-11-22): in the surrounding towns only the Jewish neighbourhoods; all of Lakewood."""
+        B.BOUNDARIES = B.load_boundaries()
+        pins = B.neighbourhood_pins(ROOT / "places.json")
+        self.assertGreater(len(pins), 20)
+        names = self.data["towns"]
         for s in self.data["streets"]:
+            if names[s[1]] == "Lakewood":
+                continue
             pts = geo._street_points(self.data, s)
-            la = sum(p[0] for p in pts) / len(pts)
-            ln = sum(p[1] for p in pts) / len(pts)
-            self.assertLess(geo.haversine_miles(la, ln, *B.CENTER), B.MAX_MILES + 0.5, s[0])
+            near = min(geo.haversine_miles(la, ln, pla, pln) for la, ln in pts for pla, pln in pins)
+            self.assertLess(near, B.NEAR_MILES + 0.15, f"{s[0]} ({names[s[1]]})")
+
+    def test_lakewood_is_covered_in_full(self):
+        lw = [s for s in self.data["streets"] if self.data["towns"][s[1]] == "Lakewood"]
+        self.assertGreater(len(lw), 900)
+        self.assertLess(len(self.data["streets"]), 3500)       # not every street of every neighbouring town
+
+    def test_the_streets_of_a_far_town_are_not_in_the_file(self):
+        # Brick and the rest of Toms River were dropped: only a handful of streets by the border remain
+        counts = {}
+        for s in self.data["streets"]:
+            counts[self.data["towns"][s[1]]] = counts.get(self.data["towns"][s[1]], 0) + 1
+        self.assertLess(counts.get("Brick", 0), 40)
+        self.assertLess(counts.get("Toms River", 0), 400)
 
     def test_streets_lie_inside_the_mapped_box(self):
         for s in self.data["streets"]:
