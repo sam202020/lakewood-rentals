@@ -1,0 +1,2012 @@
+{
+ "_note": "Synagogues / shuls / batei medrash within ~9 miles of Lakewood, harvested from Google Maps search results on 2026-11-22 (coordinates are Google's place points). Yeshiva and BMG school buildings, churches, halls and shops are left out. Edit by hand: add \"hide\": true to drop one, \"aka\": [...] for other spellings. tools: see CLAUDE.md.",
+ "shuls": [
+  {
+   "name": "Ahavas Tzedakah",
+   "lat": 40.098207,
+   "lng": -74.220372,
+   "town": "Lakewood",
+   "address": "816 Forest Ave",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Aid Nosson Tzvi",
+   "lat": 40.105139,
+   "lng": -74.23887,
+   "town": "Lakewood",
+   "address": "1445 14th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Albert Shul",
+   "lat": 40.062572,
+   "lng": -74.199452,
+   "town": "Lakewood",
+   "address": "699 Albert Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Elimelech",
+   "lat": 40.104305,
+   "lng": -74.201396,
+   "town": "Lakewood",
+   "address": "105 E Harvard St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Halevy",
+   "lat": 40.09003,
+   "lng": -74.225583,
+   "town": "Lakewood",
+   "address": "705 Valley Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Hamedrash Doiver Shulem Strettin Shul",
+   "lat": 40.10708,
+   "lng": -74.203835,
+   "town": "Lakewood",
+   "address": "560 Squankum Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Hamedrash Toldos Mordechai viznitz",
+   "lat": 40.104516,
+   "lng": -74.216618,
+   "town": "Lakewood",
+   "address": "1501 Clifton Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais HaVaad Halacha Center",
+   "lat": 40.080064,
+   "lng": -74.217166,
+   "town": "Lakewood",
+   "address": "290 River Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash Chayei Yisroel",
+   "lat": 40.088917,
+   "lng": -74.246635,
+   "town": "Lakewood",
+   "address": "11 Gudz Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash L'Torah",
+   "lat": 40.096426,
+   "lng": -74.217131,
+   "town": "Lakewood",
+   "address": "613 Madison Ave",
+   "category": "Yeshiva",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash Lutzk",
+   "lat": 40.084187,
+   "lng": -74.254704,
+   "town": "Lakewood",
+   "address": "520 New Egypt Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash Mayan HaTorah",
+   "lat": 40.107408,
+   "lng": -74.204389,
+   "town": "Lakewood",
+   "address": "101 Milton St",
+   "category": "Yeshiva",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash Nachlas Dovid",
+   "lat": 40.099674,
+   "lng": -74.204026,
+   "town": "Lakewood",
+   "address": "715 Park Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash of Arlington",
+   "lat": 40.07751,
+   "lng": -74.208928,
+   "town": "Lakewood",
+   "address": "501 Arlington Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash of Cedarwood Hills",
+   "lat": 40.074825,
+   "lng": -74.180932,
+   "town": "Lakewood",
+   "address": "1 Flannery Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash of Hearthstone",
+   "lat": 40.063674,
+   "lng": -74.226753,
+   "town": "Lakewood",
+   "address": "911 Hearthstone Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash of High Street",
+   "lat": 40.068334,
+   "lng": -74.21565,
+   "town": "Lakewood",
+   "address": "27 Grassmere St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash of Pine River",
+   "lat": 40.075787,
+   "lng": -74.216535,
+   "town": "Lakewood",
+   "address": "501 River Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash of Pine Street",
+   "lat": 40.077753,
+   "lng": -74.211463,
+   "town": "Lakewood",
+   "address": "613 Dr Martin Luther King Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash of Prospect Park",
+   "lat": 40.071849,
+   "lng": -74.229616,
+   "town": "Lakewood",
+   "address": "20 Capital Ln",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash of Sterling Forest",
+   "lat": 40.068877,
+   "lng": -74.221777,
+   "town": "Lakewood",
+   "address": "144 Hadassah Ln",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash of Summit Court",
+   "lat": 40.070967,
+   "lng": -74.222109,
+   "town": "Lakewood",
+   "address": "102 Summit Ct",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash Of Westgate",
+   "lat": 40.087931,
+   "lng": -74.25307,
+   "town": "Lakewood",
+   "address": "100 Ropshitz Ct",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash Ohel Torah",
+   "lat": 40.104691,
+   "lng": -74.191603,
+   "town": "Lakewood",
+   "address": "958 E County Line Rd",
+   "category": "Yeshiva",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash Ohr Gedalia",
+   "lat": 40.052717,
+   "lng": -74.21093,
+   "town": "Lakewood",
+   "address": "1201 Manor Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash Shaarei Orah",
+   "lat": 40.090855,
+   "lng": -74.193259,
+   "town": "Lakewood",
+   "address": "603 Ocean Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash Shaarei Tefilah",
+   "lat": 40.080109,
+   "lng": -74.227013,
+   "town": "Lakewood",
+   "address": "205 James St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash Tiferes Yosef",
+   "lat": 40.076647,
+   "lng": -74.211657,
+   "town": "Lakewood",
+   "address": "2 Forest Park Cir",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Mordechai",
+   "lat": 40.106028,
+   "lng": -74.223431,
+   "town": "Lakewood",
+   "address": "1455 Heathwood Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Naftuly - Belz Lakewood",
+   "lat": 40.046387,
+   "lng": -74.211824,
+   "town": "Lakewood",
+   "address": "44 Grove Springs Ct",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Nuchem",
+   "lat": 40.109888,
+   "lng": -74.189421,
+   "town": "Lakewood",
+   "address": "31 Arosa Hl",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Shabsi",
+   "lat": 40.114879,
+   "lng": -74.25373,
+   "town": "Lakewood",
+   "address": "61 Pawnee Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Yechiel D`Alexander",
+   "lat": 40.070366,
+   "lng": -74.216895,
+   "town": "Lakewood",
+   "address": "23 High St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Yehuda - Stuchein",
+   "lat": 40.104021,
+   "lng": -74.213799,
+   "town": "Lakewood",
+   "address": "127 Courtney Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Yosef Shmuel (Streicher's)",
+   "lat": 40.095695,
+   "lng": -74.2045,
+   "town": "Lakewood",
+   "address": "215 E 5th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Beis Dovid",
+   "lat": 40.097149,
+   "lng": -74.200576,
+   "town": "Lakewood",
+   "address": "322 Ridge Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Beis Elazar - Imrei Kohen",
+   "lat": 40.095385,
+   "lng": -74.243845,
+   "town": "Lakewood",
+   "address": "185 Miller Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Beis Horaah of Lakewood",
+   "lat": 40.094174,
+   "lng": -74.216838,
+   "town": "Lakewood",
+   "address": "401 Madison Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Beis Knesses K'hal Pine River Village",
+   "lat": 40.072752,
+   "lng": -74.201794,
+   "town": "Lakewood",
+   "address": "38 Goldcrest Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Beis Medrash Buchuch / Strulovics",
+   "lat": 40.097563,
+   "lng": -74.218141,
+   "town": "Lakewood",
+   "address": "402 8th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Beis Medrash Nachlas Yaakov (Central Court Shul)",
+   "lat": 40.090954,
+   "lng": -74.238587,
+   "town": "Lakewood",
+   "address": "1600 Central Ct",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Beis Medrash Ner Yisroel",
+   "lat": 40.098136,
+   "lng": -74.190078,
+   "town": "Lakewood",
+   "address": "786 E 7th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Beis Medrash Ohel Yaakov",
+   "lat": 40.088485,
+   "lng": -74.234143,
+   "town": "Lakewood",
+   "address": "142 Hollywood Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Beis Medrash Torah Utfillah of Albert",
+   "lat": 40.061984,
+   "lng": -74.198061,
+   "town": "Lakewood",
+   "address": "1447 Oak St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Beis Medresh D’Gator",
+   "lat": 40.07596,
+   "lng": -74.163539,
+   "town": "Lakewood",
+   "address": "1930 Swarthmore Ave #2",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Beis Medresh K'hal Chasidim",
+   "lat": 40.104735,
+   "lng": -74.237652,
+   "town": "Lakewood",
+   "address": "1401 Cedar Row",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Beit Medrash Torat Chesed",
+   "lat": 40.099773,
+   "lng": -74.211245,
+   "town": "Lakewood",
+   "address": "910 Monmouth Ave",
+   "category": "Yeshiva",
+   "source": "google-maps"
+  },
+  {
+   "name": "Belz - Shlav Gimel / Locust Grove",
+   "lat": 40.045361,
+   "lng": -74.200588,
+   "town": "Lakewood",
+   "address": "18 Prague Pl",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bet Lidya Sephardic Minyan",
+   "lat": 40.094353,
+   "lng": -74.256621,
+   "town": "Lakewood",
+   "address": "1979 New Central Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Beth Am Shalom",
+   "lat": 40.054346,
+   "lng": -74.184757,
+   "town": "Lakewood",
+   "address": "1235 NJ-70",
+   "category": "Reform synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Blue River Shul",
+   "lat": 40.052286,
+   "lng": -74.220535,
+   "town": "Lakewood",
+   "address": "2 Blue River Wy",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "BM Yagdil Torah",
+   "lat": 40.106115,
+   "lng": -74.197455,
+   "town": "Lakewood",
+   "address": "910 E Kennedy Blvd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Breslov Shul",
+   "lat": 40.095999,
+   "lng": -74.218733,
+   "town": "Lakewood",
+   "address": "423 6th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Breslov Shul",
+   "lat": 40.105018,
+   "lng": -74.195822,
+   "town": "Lakewood",
+   "address": "944 E County Line Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Breslov South Lakewood",
+   "lat": 40.063323,
+   "lng": -74.219794,
+   "town": "Lakewood",
+   "address": "189 Chateau Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Chabad of Jackson, NJ",
+   "lat": 40.069493,
+   "lng": -74.242133,
+   "town": "Lakewood",
+   "address": "645 Cross St",
+   "category": "Religious institution",
+   "source": "google-maps"
+  },
+  {
+   "name": "Chabad Of Lakewood",
+   "lat": 40.090511,
+   "lng": -74.233373,
+   "town": "Lakewood",
+   "address": "1303 Central Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Chasidei Bobov of Lakewood",
+   "lat": 40.10628,
+   "lng": -74.205757,
+   "town": "Lakewood",
+   "address": "100 Astor Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Chasidei Skulen D'Lakewood",
+   "lat": 40.096461,
+   "lng": -74.206279,
+   "town": "Lakewood",
+   "address": "547 Park Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Chelek Levi",
+   "lat": 40.105773,
+   "lng": -74.216927,
+   "town": "Lakewood",
+   "address": "1621 Clifton Ave",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Chestnut Shul",
+   "lat": 40.053378,
+   "lng": -74.216172,
+   "town": "Lakewood",
+   "address": "105 Chestnut St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Chevra Lomdei Torah (Yukes)",
+   "lat": 40.094649,
+   "lng": -74.221685,
+   "town": "Lakewood",
+   "address": "617 5th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Columbus Ave Shul",
+   "lat": 40.090696,
+   "lng": -74.234821,
+   "town": "Lakewood",
+   "address": "1395 Central Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong Berditchev / Berditchev Kloiz",
+   "lat": 40.078648,
+   "lng": -74.220674,
+   "town": "Lakewood",
+   "address": "75 Birch St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong County Line / Toldot Yitzchok",
+   "lat": 40.105579,
+   "lng": -74.196348,
+   "town": "Lakewood",
+   "address": "937 E County Line Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong Maplewood Shuel",
+   "lat": 40.058443,
+   "lng": -74.220729,
+   "town": "Lakewood",
+   "address": "65 Elmhurst Blvd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong. Aters Avrohom",
+   "lat": 40.105492,
+   "lng": -74.187551,
+   "town": "Lakewood",
+   "address": "1019 E County Line Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong. Beit T'Filah",
+   "lat": 40.099164,
+   "lng": -74.207297,
+   "town": "Lakewood",
+   "address": "33 E 8th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong. Belz Meadows",
+   "lat": 40.047173,
+   "lng": -74.215571,
+   "town": "Lakewood",
+   "address": "2 Hanover Way",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong. Birchat Eliezer Seret Viznitz",
+   "lat": 40.051961,
+   "lng": -74.208417,
+   "town": "Lakewood",
+   "address": "284 Chestnut St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong. Chakal Yisroel of Koson",
+   "lat": 40.062928,
+   "lng": -74.213671,
+   "town": "Lakewood",
+   "address": "57 Havens Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong. Kehilas Belz Lakewood",
+   "lat": 40.045408,
+   "lng": -74.210255,
+   "town": "Lakewood",
+   "address": "26 Harmony Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong. Kol Yehuda - Brookhill Ashkenaz",
+   "lat": 40.1071,
+   "lng": -74.185408,
+   "town": "Lakewood",
+   "address": "1009 Brook Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong. Nivei Shaanon",
+   "lat": 40.079239,
+   "lng": -74.246674,
+   "town": "Lakewood",
+   "address": "1 Serenity Way",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong. Rachmastrivka",
+   "lat": 40.104642,
+   "lng": -74.204071,
+   "town": "Lakewood",
+   "address": "610 E County Line Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong. Rachmistrivka Oak & Vine",
+   "lat": 40.066336,
+   "lng": -74.2091,
+   "town": "Lakewood",
+   "address": "744 Vine Ave",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong. Shemen L'mincha D'Nodfola",
+   "lat": 40.107662,
+   "lng": -74.193489,
+   "town": "Lakewood",
+   "address": "2 Milano Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong. Stolin Karlin",
+   "lat": 40.0988,
+   "lng": -74.203019,
+   "town": "Lakewood",
+   "address": "153 E 7th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong. Tiferes Pinchas - Rabbi Speigel",
+   "lat": 40.094856,
+   "lng": -74.203631,
+   "town": "Lakewood",
+   "address": "187 E 4th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong. Toldos Yaakov Yosef Skver",
+   "lat": 40.106901,
+   "lng": -74.224577,
+   "town": "Lakewood",
+   "address": "537 W County Line Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Cong. Zichron Yoel",
+   "lat": 40.100764,
+   "lng": -74.207632,
+   "town": "Lakewood",
+   "address": "1014 Lawrence Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Anshei Sfard",
+   "lat": 40.103167,
+   "lng": -74.219191,
+   "town": "Lakewood",
+   "address": "1250 Madison Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Ateres Yeshaya",
+   "lat": 40.104392,
+   "lng": -74.198756,
+   "town": "Lakewood",
+   "address": "908 E County Line Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Birkat Yaakov (\"The Clubhouse\")",
+   "lat": 40.094095,
+   "lng": -74.222097,
+   "town": "Lakewood",
+   "address": "176 Village Path",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Bnai Baruch",
+   "lat": 40.104743,
+   "lng": -74.209537,
+   "town": "Lakewood",
+   "address": "14 14th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Givas Pinchas Szerencs",
+   "lat": 40.071603,
+   "lng": -74.194403,
+   "town": "Lakewood",
+   "address": "400 Boulevard of the Americas Ste 406",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Ishay Yisroel",
+   "lat": 40.092655,
+   "lng": -74.243896,
+   "town": "Lakewood",
+   "address": "110 Miller Rd",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Khal Bais Avrohom",
+   "lat": 40.113242,
+   "lng": -74.243914,
+   "town": "Lakewood",
+   "address": "2 Poplar St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Kol Aryeh",
+   "lat": 40.105786,
+   "lng": -74.242513,
+   "town": "Lakewood",
+   "address": "521 Hope Chapel Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Mesifta Atereth Mordecei",
+   "lat": 40.106028,
+   "lng": -74.223431,
+   "town": "Lakewood",
+   "address": "1455 Heathwood Ave",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Michtav Sofer",
+   "lat": 40.108468,
+   "lng": -74.233724,
+   "town": "Lakewood",
+   "address": "1051 W County Line Rd",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation of North Albert",
+   "lat": 40.068499,
+   "lng": -74.195364,
+   "town": "Lakewood",
+   "address": "300 Albert Ave",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Oheiv Yisroel Apta",
+   "lat": 40.062473,
+   "lng": -74.209615,
+   "town": "Lakewood",
+   "address": "101 Havens Ave",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Ohel Ahron",
+   "lat": 40.07362,
+   "lng": -74.214199,
+   "town": "Lakewood",
+   "address": "9 Sharon Ct",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Ohel Shulamit",
+   "lat": 40.071939,
+   "lng": -74.216024,
+   "town": "Lakewood",
+   "address": "38 Spruce St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Ohr Meir",
+   "lat": 40.095289,
+   "lng": -74.20995,
+   "town": "Lakewood",
+   "address": "30 5th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Ohr Yaakov",
+   "lat": 40.095356,
+   "lng": -74.163482,
+   "town": "Lakewood",
+   "address": "1517 Laguna Ln",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Ohr Yechezkel",
+   "lat": 40.097836,
+   "lng": -74.200716,
+   "town": "Lakewood",
+   "address": "307 Ridge Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Shearis Adas Yisroel",
+   "lat": 40.094448,
+   "lng": -74.218151,
+   "town": "Lakewood",
+   "address": "418 5th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Shvilei Dovid",
+   "lat": 40.061665,
+   "lng": -74.212297,
+   "town": "Lakewood",
+   "address": "74 Broadway",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Sons of Israel - Madison",
+   "lat": 40.095516,
+   "lng": -74.217769,
+   "town": "Lakewood",
+   "address": "590 Madison Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Sons Of Israel - Park Ave.",
+   "lat": 40.094936,
+   "lng": -74.207269,
+   "town": "Lakewood",
+   "address": "400 Park Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Tiferes Yisroel",
+   "lat": 40.098573,
+   "lng": -74.183152,
+   "town": "Lakewood",
+   "address": "11 Remon Ln",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Tiferet Tzvi Yehuda Bluzev",
+   "lat": 40.062968,
+   "lng": -74.211834,
+   "town": "Lakewood",
+   "address": "80 Bradhurst Ave",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Vayoel Moshe - Eizikovitz",
+   "lat": 40.095934,
+   "lng": -74.22305,
+   "town": "Lakewood",
+   "address": "636 7th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Yeshuos Moshe Viznitz",
+   "lat": 40.042919,
+   "lng": -74.19874,
+   "town": "Lakewood",
+   "address": "4 Belgian Hill Rd",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Zichron Chaim",
+   "lat": 40.08572,
+   "lng": -74.217613,
+   "town": "Lakewood",
+   "address": "24 Caranetta Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Zichron Chazon Ish",
+   "lat": 40.075487,
+   "lng": -74.221117,
+   "town": "Lakewood",
+   "address": "91 Williams St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Zichron Dovid",
+   "lat": 40.088894,
+   "lng": -74.226686,
+   "town": "Lakewood",
+   "address": "815 Central Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Zichron Yisroel",
+   "lat": 40.101061,
+   "lng": -74.201908,
+   "town": "Lakewood",
+   "address": "121 E 9th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Coventry Shul",
+   "lat": 40.106439,
+   "lng": -74.207809,
+   "town": "Lakewood",
+   "address": "601 E Kennedy Blvd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Daas Kedoshim (Butschash)",
+   "lat": 40.097573,
+   "lng": -74.21803,
+   "town": "Lakewood",
+   "address": "400 8th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Elmwood Village Shul",
+   "lat": 40.058083,
+   "lng": -74.222517,
+   "town": "Lakewood",
+   "address": "2 Tova Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Emek Halacha",
+   "lat": 40.092075,
+   "lng": -74.245589,
+   "town": "Lakewood",
+   "address": "1 Princess Ct",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Erech Shai",
+   "lat": 40.091448,
+   "lng": -74.216868,
+   "town": "Lakewood",
+   "address": "114 Madison Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Gerrer Shteibel",
+   "lat": 40.10009,
+   "lng": -74.217281,
+   "town": "Lakewood",
+   "address": "325 10th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Hampshire Heights Shul",
+   "lat": 40.078402,
+   "lng": -74.181614,
+   "town": "Lakewood",
+   "address": "7 Hunter Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Hashuk",
+   "lat": 40.08697,
+   "lng": -74.216986,
+   "town": "Lakewood",
+   "address": "16 S Lake Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Heichal Hachassidus",
+   "lat": 40.090866,
+   "lng": -74.198099,
+   "town": "Lakewood",
+   "address": "501 Ocean Ave",
+   "category": "Religious organization",
+   "source": "google-maps"
+  },
+  {
+   "name": "K'hal Bais T'fila",
+   "lat": 40.099163,
+   "lng": -74.20732,
+   "town": "Lakewood",
+   "address": "33 E 8th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "K'hal Chasidei Kosov",
+   "lat": 40.04295,
+   "lng": -74.20169,
+   "town": "Lakewood",
+   "address": "11 Isabella Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "K'hal Sha'arei Tefillah",
+   "lat": 40.061634,
+   "lng": -74.214675,
+   "town": "Lakewood",
+   "address": "51 Turin Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Kehilas Somerset Walk",
+   "lat": 40.071548,
+   "lng": -74.199471,
+   "town": "Lakewood",
+   "address": "58 Canary Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Kehillat Etz Hayim",
+   "lat": 40.078261,
+   "lng": -74.214957,
+   "town": "Lakewood",
+   "address": "21 Cedar St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal beacon ridge",
+   "lat": 40.06603,
+   "lng": -74.228677,
+   "town": "Lakewood",
+   "address": "850 Massachusetts Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Bnei Torah",
+   "lat": 40.093967,
+   "lng": -74.210623,
+   "town": "Lakewood",
+   "address": "304 Monmouth Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Bnei Torah Of Ridge",
+   "lat": 40.097817,
+   "lng": -74.187146,
+   "town": "Lakewood",
+   "address": "828 Ridge Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Chasam Sofer",
+   "lat": 40.096128,
+   "lng": -74.198643,
+   "town": "Lakewood",
+   "address": "490 Manetta Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Ginzei Yosef Mihalowitz",
+   "lat": 40.090328,
+   "lng": -74.193205,
+   "town": "Lakewood",
+   "address": "614 Ocean Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Kol Chaim",
+   "lat": 40.087761,
+   "lng": -74.225613,
+   "town": "Lakewood",
+   "address": "618 Caranetta Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Lev Menachem",
+   "lat": 40.06848,
+   "lng": -74.205854,
+   "town": "Lakewood",
+   "address": "44 Coles Way",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Nachlas Yitzchok",
+   "lat": 40.091954,
+   "lng": -74.251841,
+   "town": "Lakewood",
+   "address": "25 Kelm Woods Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Neustadt",
+   "lat": 40.105375,
+   "lng": -74.203356,
+   "town": "Lakewood",
+   "address": "615 E County Line Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Prospect Heights",
+   "lat": 40.071275,
+   "lng": -74.239889,
+   "town": "Lakewood",
+   "address": "13 King David Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Rizhin",
+   "lat": 40.103593,
+   "lng": -74.176631,
+   "town": "Lakewood",
+   "address": "1132 E County Line Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Shaarai Torah",
+   "lat": 40.07241,
+   "lng": -74.215984,
+   "town": "Lakewood",
+   "address": "31 Spruce St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Yaakov Akiva- Raintree Community Shul",
+   "lat": 40.098677,
+   "lng": -74.165729,
+   "town": "Lakewood",
+   "address": "1371 Alvarado Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Yotzei Ashkenaz",
+   "lat": 40.096338,
+   "lng": -74.219333,
+   "town": "Lakewood",
+   "address": "625 Forest Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Zichron Pinchas",
+   "lat": 40.083723,
+   "lng": -74.227487,
+   "town": "Lakewood",
+   "address": "145 Flintlock Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Zichron Schneur",
+   "lat": 40.101717,
+   "lng": -74.233921,
+   "town": "Lakewood",
+   "address": "280 Oak Knoll Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Zichron Yaakov-Gissingers",
+   "lat": 40.082518,
+   "lng": -74.224923,
+   "town": "Lakewood",
+   "address": "175 Sunset Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Kol Shimshon",
+   "lat": 40.102065,
+   "lng": -74.207659,
+   "town": "Lakewood",
+   "address": "323 Squankum Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Kollel Bnei Torah",
+   "lat": 40.106733,
+   "lng": -74.194315,
+   "town": "Lakewood",
+   "address": "940 E Kennedy Blvd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Kollel Cheshek Shlomo",
+   "lat": 40.084387,
+   "lng": -74.251756,
+   "town": "Lakewood",
+   "address": "506 New Egypt Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Kollel Choshen Mishpat",
+   "lat": 40.096384,
+   "lng": -74.219396,
+   "town": "Lakewood",
+   "address": "625 Forest Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Kollel Mishkan Hatalmud",
+   "lat": 40.077301,
+   "lng": -74.220125,
+   "town": "Lakewood",
+   "address": "37 Buttell Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Kollel Ner Avrohom",
+   "lat": 40.100677,
+   "lng": -74.231526,
+   "town": "Lakewood",
+   "address": "104 Arbutus Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Kollel Zichron Yitzchok",
+   "lat": 40.109048,
+   "lng": -74.234682,
+   "town": "Lakewood",
+   "address": "1143 W County Line Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "K’hal Ohel Elimelech Chust",
+   "lat": 40.093251,
+   "lng": -74.196373,
+   "town": "Lakewood",
+   "address": "75 Linden Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Lakewood Commons Shul",
+   "lat": 40.068447,
+   "lng": -74.205613,
+   "town": "Lakewood",
+   "address": "44 Coles Way",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Lakewood Commons Shul",
+   "lat": 40.06706,
+   "lng": -74.202928,
+   "town": "Lakewood",
+   "address": "347 Coles Way",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Lakewood Courtyard Shul",
+   "lat": 40.0907,
+   "lng": -74.216936,
+   "town": "Lakewood",
+   "address": "52 Madison Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Lakewood Sephardic Congregation",
+   "lat": 40.096449,
+   "lng": -74.216993,
+   "town": "Lakewood",
+   "address": "613 Madison Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Lev Avot Congregation",
+   "lat": 40.100197,
+   "lng": -74.234242,
+   "town": "Lakewood",
+   "address": "232 Iris Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Loitzk Bais Medrash",
+   "lat": 40.10324,
+   "lng": -74.199658,
+   "town": "Lakewood",
+   "address": "975 East End Ave",
+   "category": "Religious destination",
+   "source": "google-maps"
+  },
+  {
+   "name": "Machzik Beracha",
+   "lat": 40.087722,
+   "lng": -74.221362,
+   "town": "Lakewood",
+   "address": "309 Central Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Mayer Menasha",
+   "lat": 40.093677,
+   "lng": -74.20844,
+   "town": "Lakewood",
+   "address": "312 Park Ave",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Minyan Avreichim",
+   "lat": 40.100141,
+   "lng": -74.215873,
+   "town": "Lakewood",
+   "address": "1001 Clifton Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Minyan Shelanu",
+   "lat": 40.090684,
+   "lng": -74.208653,
+   "town": "Lakewood",
+   "address": "145 Ocean Ave",
+   "category": "Youth organization",
+   "source": "google-maps"
+  },
+  {
+   "name": "Mordy's Shtiebel",
+   "lat": 40.118575,
+   "lng": -74.2567,
+   "town": "Lakewood",
+   "address": "15 Delaware Trail",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Neimark Shul Rabbi Meisels",
+   "lat": 40.053153,
+   "lng": -74.25194,
+   "town": "Lakewood",
+   "address": "2461 Whitesville Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Ner Dovid",
+   "lat": 40.103103,
+   "lng": -74.233599,
+   "town": "Lakewood",
+   "address": "1405 Tanglewood Ln",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Noam Hatorah - Prospect Vines",
+   "lat": 40.07098,
+   "lng": -74.239557,
+   "town": "Lakewood",
+   "address": "2 Zinfandel Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Ocean Pointe Shul",
+   "lat": 40.088339,
+   "lng": -74.180067,
+   "town": "Lakewood",
+   "address": "15 Oceanside Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Ohr Mattisyahu",
+   "lat": 40.105904,
+   "lng": -74.193751,
+   "town": "Lakewood",
+   "address": "953 E County Line Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Ohr Tuvia",
+   "lat": 40.103036,
+   "lng": -74.199602,
+   "town": "Lakewood",
+   "address": "969 East End Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Ohr Yehoshua - Kapishnitz",
+   "lat": 40.06101,
+   "lng": -74.222392,
+   "town": "Lakewood",
+   "address": "55 Finchley Blvd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Prospect Park Shul",
+   "lat": 40.071849,
+   "lng": -74.229616,
+   "town": "Lakewood",
+   "address": "20 Capital Ln",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Prospect Square Shul",
+   "lat": 40.071446,
+   "lng": -74.230634,
+   "town": "Lakewood",
+   "address": "317 Blanche St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Sanz klausenberg",
+   "lat": 40.063293,
+   "lng": -74.21697,
+   "town": "Lakewood",
+   "address": "25 Havens Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Satmar Lakewood",
+   "lat": 40.055672,
+   "lng": -74.223983,
+   "town": "Lakewood",
+   "address": "20 Marble Wy",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Satmar Shul",
+   "lat": 40.094092,
+   "lng": -74.218936,
+   "town": "Lakewood",
+   "address": "405 Forest Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Satmar shul",
+   "lat": 40.105826,
+   "lng": -74.207438,
+   "town": "Lakewood",
+   "address": "608 E Kennedy Blvd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Sephardic Kehila of Lakewood",
+   "lat": 40.105078,
+   "lng": -74.200182,
+   "town": "Lakewood",
+   "address": "2 Kew Gardens Dr",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Shaarei Shlomo",
+   "lat": 40.076993,
+   "lng": -74.215961,
+   "town": "Lakewood",
+   "address": "41 Henry St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Shaarei Shushan - Sephardi Synagogue",
+   "lat": 40.094248,
+   "lng": -74.25656,
+   "town": "Lakewood",
+   "address": "1979 New Central Ave",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Sharei Torah U'tefilla",
+   "lat": 40.076804,
+   "lng": -74.209139,
+   "town": "Lakewood",
+   "address": "213 Pine St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Shearis Israel Congregation",
+   "lat": 40.107223,
+   "lng": -74.197549,
+   "town": "Lakewood",
+   "address": "1204 Twin Oaks Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Shefa Chaim Sanz",
+   "lat": 40.052612,
+   "lng": -74.215021,
+   "town": "Lakewood",
+   "address": "112 Chestnut St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Slonim Lakewood",
+   "lat": 40.062279,
+   "lng": -74.21156,
+   "town": "Lakewood",
+   "address": "82 Havens Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Spinka",
+   "lat": 40.091709,
+   "lng": -74.195214,
+   "town": "Lakewood",
+   "address": "615 E Bergen Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Spruce Street Shul",
+   "lat": 40.07211,
+   "lng": -74.209192,
+   "town": "Lakewood",
+   "address": "",
+   "category": "",
+   "source": "google-maps"
+  },
+  {
+   "name": "Stamford Meadows Beis Medrash",
+   "lat": 40.053532,
+   "lng": -74.201302,
+   "town": "Lakewood",
+   "address": "12 Golders Green Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Sterling Place Shul",
+   "lat": 40.069773,
+   "lng": -74.219558,
+   "town": "Lakewood",
+   "address": "1 Gila Pl",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Sunset rd sephardic cong.",
+   "lat": 40.081029,
+   "lng": -74.226143,
+   "town": "Lakewood",
+   "address": "220 Sunset Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Tal lyisrael",
+   "lat": 40.079118,
+   "lng": -74.238859,
+   "town": "Lakewood",
+   "address": "477 James St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "The Woods Shul",
+   "lat": 40.078535,
+   "lng": -74.188141,
+   "town": "Lakewood",
+   "address": "1 Stonewall Ct",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Tiferes Ish Novominsk",
+   "lat": 40.098495,
+   "lng": -74.200558,
+   "town": "Lakewood",
+   "address": "324 E 7th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Tiferes Shulom Nadvorna",
+   "lat": 40.095141,
+   "lng": -74.210426,
+   "town": "Lakewood",
+   "address": "415 Monmouth Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Tiferes Tanchum / Ateres Daniel",
+   "lat": 40.067068,
+   "lng": -74.203018,
+   "town": "Lakewood",
+   "address": "347 Coles Way",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Villpola",
+   "lat": 40.102991,
+   "lng": -74.174658,
+   "town": "Lakewood",
+   "address": "1142-1144 E County Line Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Whispering Pines Ashkenaz",
+   "lat": 40.107057,
+   "lng": -74.200889,
+   "town": "Lakewood",
+   "address": "51 Whispering Pines Ln",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Whispering Pines Sefard",
+   "lat": 40.107057,
+   "lng": -74.200889,
+   "town": "Lakewood",
+   "address": "51 Whispering Pines Ln",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "William Street Shul - K'hal Ohr Yoel Meir",
+   "lat": 40.075783,
+   "lng": -74.221892,
+   "town": "Lakewood",
+   "address": "60 Williams St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Yeshivah Ohr Torah- Bernstein's",
+   "lat": 40.097987,
+   "lng": -74.186227,
+   "town": "Lakewood",
+   "address": "840 Ridge Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Yeshivas Eitz Chaim",
+   "lat": 40.067119,
+   "lng": -74.21807,
+   "town": "Lakewood",
+   "address": "809 River Ave",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "zichron avraham",
+   "lat": 40.097858,
+   "lng": -74.209719,
+   "town": "Lakewood",
+   "address": "11 7th St",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Zichron Binyamin",
+   "lat": 40.09794,
+   "lng": -74.20888,
+   "town": "Lakewood",
+   "address": "701 Princeton Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Zichron Borach Chassdic Center",
+   "lat": 40.100113,
+   "lng": -74.217332,
+   "town": "Lakewood",
+   "address": "325 10th St #108",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "בית הכנסת סאדיגורה",
+   "lat": 40.092873,
+   "lng": -74.197879,
+   "town": "Lakewood",
+   "address": "55 Holly St",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "קהל לימונב",
+   "lat": 40.060609,
+   "lng": -74.226805,
+   "town": "Lakewood",
+   "address": "1012 Hearthstone Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash Be'er Shmuel",
+   "lat": 39.998724,
+   "lng": -74.255616,
+   "town": "Manchester",
+   "address": "1329 Fifth Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash of Flair",
+   "lat": 40.114247,
+   "lng": -74.274596,
+   "town": "Jackson",
+   "address": "4 Winchester Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash of Jackson",
+   "lat": 40.133882,
+   "lng": -74.259746,
+   "town": "Jackson",
+   "address": "146 S New Prospect Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Bais Medrash of Pine Lake Park",
+   "lat": 40.000537,
+   "lng": -74.266387,
+   "town": "Manchester",
+   "address": "840 Eleventh Ave",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Belz Shtibel - Toms River",
+   "lat": 40.034196,
+   "lng": -74.211341,
+   "town": "Toms River",
+   "address": "1206 Hickory St",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Chabad of Toms River",
+   "lat": 40.015716,
+   "lng": -74.168661,
+   "town": "Toms River",
+   "address": "2001 Church Rd",
+   "category": "Religious organization",
+   "source": "google-maps"
+  },
+  {
+   "name": "Chasdei Avos Shul - Stern",
+   "lat": 40.150344,
+   "lng": -74.275521,
+   "town": "Jackson",
+   "address": "922 Hyson Rd",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation Ahavat Olam",
+   "lat": 40.168601,
+   "lng": -74.221765,
+   "town": "Howell",
+   "address": "106 Windeler Rd",
+   "category": "Conservative synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Congregation B'nai Israel",
+   "lat": 40.001396,
+   "lng": -74.201102,
+   "town": "Toms River",
+   "address": "1488 Old Freehold Rd",
+   "category": "Conservative synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Dover Tov",
+   "lat": 40.111739,
+   "lng": -74.336487,
+   "town": "Jackson",
+   "address": "11 Mills Ln",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Grande River Shtibel - Rabbi Schwartzberg",
+   "lat": 40.030478,
+   "lng": -74.239271,
+   "town": "Toms River",
+   "address": "2030 Whitesville Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Bnei Yissaschar - Rabbi Babad",
+   "lat": 40.012649,
+   "lng": -74.228631,
+   "town": "Toms River",
+   "address": "1767 Whitesville Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal D'pitney",
+   "lat": 40.091453,
+   "lng": -74.2701,
+   "town": "Jackson",
+   "address": "45 Pitney Ln",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Hampshire Hills - Jackson",
+   "lat": 40.137878,
+   "lng": -74.291033,
+   "town": "Jackson",
+   "address": "North County Line Road &, Picadilly Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Shaarei Ish - Royal Grove",
+   "lat": 40.091579,
+   "lng": -74.309104,
+   "town": "Jackson",
+   "address": "518 E Veterans Hwy",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Simchas Chaim",
+   "lat": 40.137861,
+   "lng": -74.347997,
+   "town": "Jackson",
+   "address": "1 Club Blvd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal South Whitesville",
+   "lat": 40.011249,
+   "lng": -74.226279,
+   "town": "Toms River",
+   "address": "162 Stevens Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Khal Zichron Yechezkel - Rabbi Rotberg",
+   "lat": 40.023127,
+   "lng": -74.20872,
+   "town": "Toms River",
+   "address": "1871 Old Freehold Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Kollel Oros Chaim VeMoshe",
+   "lat": 40.010394,
+   "lng": -74.214078,
+   "town": "Toms River",
+   "address": "1060 Church Rd",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Moroccan Kollel",
+   "lat": 40.128638,
+   "lng": -74.26277,
+   "town": "Jackson",
+   "address": "48 Hickory Hill Rd",
+   "category": "Synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Oihev Yisroel - Rabbi Rosen",
+   "lat": 39.997649,
+   "lng": -74.192752,
+   "town": "Toms River",
+   "address": "1385 Vincenzo Dr",
+   "category": "Orthodox synagogue",
+   "source": "google-maps"
+  },
+  {
+   "name": "Temple Beth Or",
+   "lat": 40.063727,
+   "lng": -74.137806,
+   "town": "Brick",
+   "address": "109 Pier Ave",
+   "category": "Conservative synagogue",
+   "source": "google-maps"
+  }
+ ]
+}

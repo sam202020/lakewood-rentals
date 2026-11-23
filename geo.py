@@ -316,3 +316,26 @@ def miles_to_street(data, street, lat, lng):
             best = min(best, math.hypot(*cur))
             prev = cur
     return best
+
+
+SHULS_FILE = pathlib.Path(__file__).parent / "shuls.json"
+
+
+def load_shuls(path=SHULS_FILE):
+    """Shuls for the page's "Near" search: [[name, lat, lng, town, address, aka...]], Lakewood first.
+
+    shuls.json is harvested from Google Maps (see CLAUDE.md); "hide": true drops an entry.
+    """
+    try:
+        data = json.loads(pathlib.Path(path).read_text())
+    except (OSError, ValueError):
+        return []
+    out = []
+    for s in data.get("shuls", []):
+        if s.get("hide") or s.get("lat") is None or s.get("lng") is None:
+            continue
+        town = s.get("town") or towns.town_of(s["lat"], s["lng"])
+        out.append({"name": s["name"], "lat": round(s["lat"], 5), "lng": round(s["lng"], 5), "town": town,
+                    "address": s.get("address", ""), "aka": s.get("aka", [])})
+    out.sort(key=lambda s: (s["town"] != "Lakewood", s["name"].lower()))
+    return out

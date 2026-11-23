@@ -89,3 +89,18 @@ mid-sentence, keeps it at a sentence end, and follows the original's capitals). 
 neighbouring words (Sep. 1 / Sep. kitchen, 10 min. walk / 3 mo. min., Inc. wifi / incl.). Add a new abbreviation as a rule
 in `RULES` plus a test in `tests/test_abbrev.py`; check the real descriptions after a change (the weekly build warns on
 odd long words, but not on abbreviations nobody has added yet).
+
+## Shuls ("near this shul")
+
+`shuls.json` lists the synagogues / shuls / batei medrash within ~9 miles of Lakewood (223 on 2026-11-22), harvested from
+Google Maps search results (coordinates are Google's own place points, so they need no extra check). The search box suggests them
+by name, with their street and town ("shul · 958 E County Line Rd · Lakewood"), Lakewood first, and sorts by distance to the shul
+(the "Within" menu goes down to ¼ mile). Spelling variants (bais/beis/beit, medrash/midrash) are folded together in
+`search-core.js` (`SHUL_SPELL`); generic words ("shul", "congregation") are ignored when something specific is typed.
+- Left out on purpose: yeshiva / Beth Medrash Govoha school buildings, churches and messianic "synagogues", halls, shops.
+  A `"hide": true` entry is dropped by `geo.load_shuls`; `"aka": [...]` adds other spellings.
+- To refresh: run the Google Maps searches ("synagogue", "shul", "beis medrash", "minyan") over a grid of map tiles in the built-in
+  browser (a search shows ~120 results, so use zoom-16 tiles; read each result's `!3d<lat>!4d<lng>`), merge by name+point.
+  Not done by the weekly routine.
+- There is deliberately no "closest shul" tag on each listing: pins are neighbourhood-level, and in Lakewood nearly every
+  listing is within a few blocks of a dozen shuls, so the tag would say nothing. Search "near <shul>" instead.

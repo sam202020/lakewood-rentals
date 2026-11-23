@@ -997,3 +997,40 @@ test("typo suggestions appear only when nothing matches properly (ster -> Sterli
   // but with no proper match at all, the near-misses are offered
   assert.ok(names(S.suggestPlaces(picker, "stirling")).includes("Sterling Place"));
 });
+
+// ---- shuls ("near this shul") -----------------------------------------------
+const SHULS = [
+  { name: "Bais Medrash Heichal Hatorah", lat: 40.09, lng: -74.21, town: "Lakewood", address: "10 Main St", aka: [] },
+  { name: "Congregation Heichal Menachem", lat: 40.17, lng: -74.2, town: "Howell", address: "", aka: [] },
+  { name: "Chabad of Jackson, NJ", lat: 40.1, lng: -74.22, town: "Lakewood", address: "645 Cross St", aka: [] },
+  { name: "Spruce Street Shul", lat: 40.08, lng: -74.2, town: "Lakewood", address: "", aka: [] },
+  { name: "Beis Medrash Ohel Torah", lat: 40.07, lng: -74.2, town: "Lakewood", address: "958 E County Line Rd", aka: [] },
+];
+
+test("shuls: found by name, in any spelling of beis/bais/beit medrash/midrash", () => {
+  assert.equal(S.suggestShuls(SHULS, "heichal")[0].name, "Bais Medrash Heichal Hatorah");   // Lakewood before Howell
+  assert.equal(S.suggestShuls(SHULS, "heichal").length, 2);
+  assert.equal(S.suggestShuls(SHULS, "beit midrash ohel")[0].name, "Beis Medrash Ohel Torah");
+  assert.equal(S.suggestShuls(SHULS, "bais medrash ohel torah")[0].name, "Beis Medrash Ohel Torah");
+});
+
+test("shuls: generic words are ignored when something specific is typed", () => {
+  assert.equal(S.suggestShuls(SHULS, "chabad shul")[0].name, "Chabad of Jackson, NJ");
+  assert.equal(S.suggestShuls(SHULS, "spruce")[0].name, "Spruce Street Shul");
+  assert.equal(S.suggestShuls(SHULS, "x").length, 0);
+});
+
+test("shuls: appear in the combined suggestions with their town, ahead of weaker matches", () => {
+  const picker = [{ name: "Heights", town: "Lakewood", lat: 40.09, lng: -74.2 }];
+  const all = S.suggestAll(picker, [], "spruce", 8, SHULS);
+  assert.equal(all[0].kind, "shul");
+  assert.equal(all[0].town, "Lakewood");
+  assert.equal(S.suggestAll(picker, [], "heights", 8, SHULS)[0].kind, "place");
+});
+
+test("shuls: the real list has Lakewood shuls with coordinates near Lakewood", () => {
+  const data = JSON.parse(fs.readFileSync(path.join(ROOT, "shuls.json"), "utf8")).shuls;
+  assert.ok(data.length > 150);
+  assert.ok(data.every((s) => Math.abs(s.lat - 40.1) < 0.2 && Math.abs(s.lng + 74.2) < 0.25));
+  assert.ok(S.suggestShuls(data.map((s) => Object.assign({ aka: [] }, s)), "heichal hachassidus").length >= 1);
+});

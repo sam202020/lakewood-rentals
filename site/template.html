@@ -473,6 +473,8 @@
     <label class="sort" id="withinWrap" hidden>Within
       <select id="withinSel">
         <option value="0">Any distance</option>
+        <option value="0.25">&frac14; mile</option>
+        <option value="0.5">&frac12; mile</option>
         <option value="1">1 mile</option>
         <option value="2">2 miles</option>
         <option value="3">3 miles</option>
@@ -647,6 +649,7 @@
   // Remove the chip with its x, or press Backspace in the empty box: no Enter needed.
   var PLACES = DATA.places || {};
   var PICKER = DATA.picker || Object.keys(PLACES).sort().map(function (k) { return PLACES[k]; });
+  var SHULS = (DATA.shuls || []).map(function (a) { return { name: a[0], lat: a[1], lng: a[2], town: a[3], address: a[4], aka: a[5] || [] }; });
   var STREETS = LakewoodSearch.decodeStreets(DATA.streets);     // every street in the area, as lines
   var lastCount = 0;
   if (STREETS.length) document.getElementById("osmCredit").hidden = false;
@@ -675,7 +678,8 @@
       if (i === active) li.className = "on";
       // every suggestion says which town it is in; an intersection says so too
       var hint = pl.kind === "cross" ? "intersection" + (pl.town ? " \u00b7 " + pl.town : "")
-        : pl.kind === "topic" ? "only 55+ listings" : (pl.town || "");
+        : pl.kind === "topic" ? "only 55+ listings"
+        : pl.kind === "shul" ? "shul \u00b7 " + (pl.address ? pl.address + " \u00b7 " : "") + (pl.town || "") : (pl.town || "");
       li.innerHTML = '<span class="sugg__name">' + esc(pl.name) + '</span>' +
         (hint ? '<span class="sugg__town">' + esc(hint) + '</span>' : "");
       // pointerdown (not click) so the box keeps focus and the list does not close first
@@ -685,7 +689,7 @@
     if (active >= 0) q.setAttribute("aria-activedescendant", "opt" + active); else q.removeAttribute("aria-activedescendant");
   }
   function updateSugg() {
-    items = LakewoodSearch.suggestAll(PICKER, STREETS, q.value, 8);
+    items = LakewoodSearch.suggestAll(PICKER, STREETS, q.value, 8, SHULS);
     active = -1;
     if (!items.length) return closeSugg();
     paintSugg(); sugg.hidden = false; q.setAttribute("aria-expanded", "true");
@@ -695,7 +699,7 @@
     closeSugg(); q.blur();
     if (pl.kind === "topic") { setAge55(true); return; }          // "55+ communities": a filter, not a place
     // a street is sorted by distance to its whole line, a neighborhood or intersection by distance to its point
-    setOrigin({ lat: pl.lat, lng: pl.lng, paths: pl.kind === "street" ? pl.paths : null }, pl.name);
+    setOrigin({ lat: pl.lat, lng: pl.lng, paths: pl.kind === "street" ? pl.paths : null, shul: pl.kind === "shul" }, pl.name);
   }
   function setOrigin(origin, label) {
     S.origin = origin;
@@ -707,6 +711,7 @@
     else { S.maxMiles = 0; withinSel.value = "0"; if (S.sort === "distance") { S.sort = "default"; sortSel.value = "default"; } }
     nearStatus.textContent = on
       ? (origin.paths ? "Nearest first \u00b7 distances are to the closest point on the street"
+                      : origin.shul ? "Nearest first \u00b7 distances are to the shul"
                       : "Nearest first \u00b7 distances are to the middle of each neighborhood") : "";
     nearRow.hidden = !on;
     syncBar();
@@ -849,7 +854,7 @@
     elWord.textContent = rows.length === 1 ? "listing" : "listings";
     grid.innerHTML = "";
     if (!rows.length) {
-      var typed = (S.q || "").trim(), known = typed && LakewoodSearch.suggestAll(PICKER, STREETS, typed, 1).length;
+      var typed = (S.q || "").trim(), known = typed && LakewoodSearch.suggestAll(PICKER, STREETS, typed, 1, SHULS).length;
       grid.innerHTML = known
         ? '<div class="empty"><b>No listing mentions \u201c' + esc(typed) + '\u201d</b>Pick it from the suggestions (or press Enter) to sort every listing by distance from it.</div>'
         : '<div class="empty"><b>No matches</b>Try widening the rent range or clearing a filter.</div>';

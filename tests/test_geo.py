@@ -572,3 +572,23 @@ class GeoChecks(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ShulTests(unittest.TestCase):
+    def test_shuls_file_loads_lakewood_first_with_towns(self):
+        shuls = geo.load_shuls()
+        self.assertGreater(len(shuls), 150)
+        self.assertEqual(shuls[0]["town"], "Lakewood")
+        for s in shuls:
+            self.assertTrue(geo.plausible(s["lat"], s["lng"]), s["name"])
+            self.assertTrue(s["town"], s["name"])
+        names = {s["name"] for s in shuls}
+        self.assertTrue(any("Spruce Street Shul" == n for n in names))
+
+    def test_hidden_shul_is_dropped(self):
+        import json, tempfile, pathlib
+        with tempfile.TemporaryDirectory() as d:
+            f = pathlib.Path(d) / "s.json"
+            f.write_text(json.dumps({"shuls": [{"name": "A", "lat": 40.09, "lng": -74.21, "town": "Lakewood"},
+                                               {"name": "B", "lat": 40.09, "lng": -74.21, "hide": True}]}))
+            self.assertEqual([s["name"] for s in geo.load_shuls(f)], ["A"])

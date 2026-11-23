@@ -75,6 +75,11 @@ def main():
         # tidy, de-duplicated names for the "Near" drop-down
         "picker": geo.picker_entries(places),
     }
+    # shuls (Google Maps), so "near this shul" works
+    shuls = geo.load_shuls()
+    if shuls:
+        data["shuls"] = [[s["name"], s["lat"], s["lng"], s["town"], s["address"]] + ([s["aka"]] if s["aka"] else [])
+                         for s in shuls]
     # every street in the area, so any street can be searched ("nearest this street")
     try:
         streets, data["picker"] = geo.streets_for_page(json.loads(STREETS.read_text()), data["picker"])

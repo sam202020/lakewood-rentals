@@ -379,6 +379,44 @@ var LakewoodSearch = (function () {
     return out.slice(0, limit || 8).map(function (o) { return o.p; });
   }
 
+
+  // ---- shuls ("near this shul"): names come from Google Maps, spelled many ways ----
+  var SHUL_SPELL = { bais: "beis", beit: "beis", bes: "beis", bet: "beis", beth: "beis", medrash: "medrash", midrash: "medrash",
+    medrish: "medrash", midrish: "medrash", hamedrash: "medrash", cong: "congregation", kehilas: "kehillas",
+    kehilla: "kehillas", khal: "kehillas", sinagogue: "synagogue", shule: "shul" };
+  // Words every shul name has; they only help when they are all the visitor typed.
+  var SHUL_GENERIC = { shul: 1, shuls: 1, synagogue: 1, synagogues: 1, minyan: 1, minyanim: 1, congregation: 1, beis: 1,
+    medrash: 1, of: 1, the: 1, and: 1, "d": 1, "l": 1, bnei: 1, bnai: 1 };
+  function shulTokens(s) {
+    return placeTokens(s).map(function (w) { return SHUL_SPELL[w] || w; });
+  }
+
+  /** Shuls ([{name, lat, lng, town, address, aka}]) matching what was typed, Lakewood first.
+   *  "beis medrash" = "bais midrash"; "chabad shul" looks for Chabad. */
+  function rankShuls(shuls, text, limit) {
+    var qt = shulTokens(text);
+    if (!qt.length || qt.join("").length < 2) return [];
+    var core = qt.filter(function (w) { return !SHUL_GENERIC[w]; });
+    var query = core.length ? core : qt, out = [];
+    (shuls || []).forEach(function (sh) {
+      var best = -1;
+      [sh.name].concat(sh.aka || []).forEach(function (n) {
+        var r = rankTokens(shulTokens(n), query);
+        if (r >= 0 && (best < 0 || r < best)) best = r;
+      });
+      if (best >= 0) out.push({ s: sh, score: best });
+    });
+    out.sort(function (a, b) {
+      return a.score - b.score || (a.s.town === "Lakewood" ? 0 : 1) - (b.s.town === "Lakewood" ? 0 : 1) ||
+        a.s.name.length - b.s.name.length || a.s.name.localeCompare(b.s.name);
+    });
+    if (out.length && out[0].score < 3) out = out.filter(function (o) { return o.score < 3; });
+    return out.slice(0, limit || 8);
+  }
+  function suggestShuls(shuls, text, limit) {
+    return rankShuls(shuls, text, limit).map(function (o) { return o.s; });
+  }
+
   // ---- every street in the area (streets.json): decoding, suggestions, intersections ----
 
   /** The point halfway along the longest piece of a street. */
@@ -526,7 +564,7 @@ var LakewoodSearch = (function () {
 
   /** The suggestion list for the search box: [{kind: "place"|"street"|"cross", ...}], best first.
    *  Neighborhoods the owner defined come before streets with an equally good match. */
-  function suggestAll(picker, streets, text, limit) {
+  function suggestAll(picker, streets, text, limit, shuls) {
     limit = limit || 8;
     var items = [];
     // "55", "55+", "55 plus", "senior", "over 55" ... offer the 55+ communities as a topic, not a place
@@ -543,10 +581,13 @@ var LakewoodSearch = (function () {
       if (seen[(s.n + " " + s.t).toLowerCase()]) return;
       items.push({ kind: "street", name: s.n, town: s.t, lat: s.lat, lng: s.lng, paths: s.paths });
     });
+    rankShuls(shuls, text, limit).forEach(function (o) {
+      items.push({ kind: "shul", name: o.s.name, town: o.s.town, address: o.s.address, lat: o.s.lat, lng: o.s.lng, _shulRank: o.score });
+    });
     // keep places ahead of streets only as a tie-break: re-rank everything by match quality
     if (qt.length) {
       items.forEach(function (it, i) {
-        var r = it.kind === "cross" || it.kind === "topic" ? -1 : rankTokens(placeTokens(it.name), qt);
+        var r = it.kind === "cross" || it.kind === "topic" ? -1 : it.kind === "shul" ? it._shulRank : rankTokens(placeTokens(it.name), qt);
         it._r = it.kind === "cross" || it.kind === "topic" ? -1 : (r < 0 ? 3 : r);       // topics and intersections lead
         it._o = i;
       });
@@ -573,6 +614,7 @@ var LakewoodSearch = (function () {
     soundKey: soundKey,
     termMatches: termMatches,
     suggestStreets: suggestStreets,
+    suggestShuls: suggestShuls,
     suggestCrossings: suggestCrossings,
     suggestAll: suggestAll,
     decodeStreets: decodeStreets,
