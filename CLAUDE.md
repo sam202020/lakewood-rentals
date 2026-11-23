@@ -116,7 +116,9 @@ by name, with their street and town ("shul · 958 E County Line Rd · Lakewood")
 ## The map (one per page, not per listing)
 
 Owner, 2026-11-22: **no map on each card** (a per-listing map was built and removed: far too zoomed in, shows nothing around it). One
-map for the whole page, like Zillow: beside the list on a computer, a List / Map toggle on a phone. Leaflet 1.9.4 (script from cdnjs with
+map for the whole page, like Zillow. **Computer layout (owner, 2026-11-22):** search box and filter drop-downs (Type, Bedrooms, Max rent, Landlord pays,
+More) across the top in a sticky bar; the map on the left; listing cards on the right in two columns, squarish (description clamped to
+4 lines, the selected card shows it all). **Phone:** the filters are a sheet, and a List / Map toggle switches between the cards and the map. Leaflet 1.9.4 (script from cdnjs with
 SRI; `site/leaflet.css` is inlined by build.py because artifact pages may only load stylesheets from Google Fonts) + OpenStreetMap tiles.
 - One pin per spot (many listings share their neighbourhood's pin): price on a single listing ("$1.8k", "Call"), a count on a shared spot,
   whose popup lists its listings. Zoomed out, single pins shrink to dots. Filters and search change the pins; "Near ..." adds the chosen
@@ -129,3 +131,9 @@ SRI; `site/leaflet.css` is inlined by build.py because artifact pages may only l
   the public GitHub Pages site gets the real map. Google Maps cannot be embedded with many pins without an API key/billing and cannot be
   embedded at all inside an artifact, so OpenStreetMap is used.
 - The page script uses `L` for the listings, so Leaflet is read as `LF` (set right after the script tag). Don't rename.
+
+## Search box must say it finds shuls
+
+The placeholder reads "Neighborhood, street, shul or keyword..." ("Area or shul..." on a phone), the empty focused box lists what can be
+searched (neighborhood, street/intersection, shul, any word; picking an example types it), and typing just "shul"/"synagogue"/"minyan" shows
+"Type a shul's name". Keep this when the search box changes.

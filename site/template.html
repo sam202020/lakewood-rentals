@@ -332,7 +332,7 @@
     .viewtoggle { display: inline-flex; }
     .mappane { position: relative; top: 0; height: calc(100vh - 190px); min-height: 380px; }
     .results[data-view="list"] .mappane { display: none; }
-    .results[data-view="map"] .split__list { display: none; }
+    .results[data-view="map"] .grid, .results[data-view="map"] .related { display: none; }
   }
   .card--on { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent), var(--shadow); }
   .card[data-id] { cursor: pointer; }
@@ -438,6 +438,7 @@
     padding: 9px 10px; border-radius: 6px; cursor: pointer;
   }
   .sugg li.on, .sugg li:hover { background: var(--accent-soft); }
+  .sugg[data-mode="hints"]::before { content: "You can search by\2026"; }
   .sugg::before {
     content: "Sort by distance from\2026"; display: block; padding: 6px 10px 4px;
     font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); font-weight: 600;
@@ -474,6 +475,65 @@
     .results { padding: 12px; }
   }
   .card__dist { color: var(--accent-ink); font-weight: 600; }
+
+  /* ---- Filters as drop-downs (phone: plain groups in the Filters sheet) ---- */
+  .fdrop__panel { display: flex; flex-direction: column; gap: 9px; }
+  .fdrop__btn {
+    font: inherit; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); font-weight: 600;
+    background: none; border: 0; padding: 0; text-align: left; pointer-events: none; cursor: default;
+  }
+  .fdrop__val { display: none; }
+
+  /* ---- Computer layout (Zillow style): search and filters across the top, map on the left, listing cards in two columns on the right ---- */
+  @media (min-width: 861px) {
+    .masthead__inner { max-width: none; padding: 10px 20px 8px; }
+    .masthead__kicker { padding-bottom: 4px; margin-bottom: 6px; }
+    .masthead h1 { font-size: 30px; }
+    .masthead__sub { margin-top: 4px; }
+    .attribution { margin: 0; max-width: none; border-radius: 0; border-width: 0 0 1px; padding: 5px 20px; font-size: 12px; }
+    .searchbar { position: sticky; top: 0; z-index: 30; }
+    .searchbar__inner, .searchbar__sub { max-width: 1680px; }
+    .searchbar__inner { padding: 10px 20px 8px; }
+    .combo { max-width: 640px; }
+    .filters {
+      position: static; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px;
+      max-width: 1680px; margin: 0 auto; padding: 0 20px 10px;
+    }
+    .fgroup.fdrop { position: relative; gap: 0; }
+    .fdrop__btn {
+      pointer-events: auto; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; letter-spacing: 0; text-transform: none; font-weight: 600; color: var(--ink);
+      background: var(--card); border: 1px solid var(--rule-strong); border-radius: 999px; padding: 6px 12px;
+    }
+    .fdrop__btn::after { content: ""; border: 4px solid transparent; border-top-color: currentColor; margin-top: 4px; }
+    .fdrop__btn:hover { border-color: var(--accent); }
+    .fdrop__btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .fdrop__btn.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-ink); }
+    .fdrop__val { display: inline; font-weight: 700; }
+    .fdrop__val:empty { display: none; }
+    .fdrop__panel {
+      display: none; position: absolute; top: calc(100% + 6px); left: 0; z-index: 50; min-width: 250px;
+      background: var(--card); border: 1px solid var(--rule-strong); border-radius: 10px; box-shadow: var(--shadow); padding: 12px; gap: 10px;
+    }
+    .fdrop[data-open="true"] .fdrop__panel { display: flex; }
+    .filters__reset { margin-left: auto; }
+    .wrap { display: block; max-width: 1680px; padding: 12px 20px 0; }
+    .results__bar { margin-bottom: 10px; }
+    .split { grid-template-columns: minmax(360px, 46%) minmax(0, 1fr); grid-template-areas: "map list"; gap: 16px; }
+    .split__list { grid-area: list; }
+    .mappane { grid-area: map; top: calc(var(--barh, 120px) + 12px); height: calc(100vh - var(--barh, 120px) - 24px); max-height: none; min-height: 380px; }
+    .split .grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+    .card { padding: 13px 13px 12px; gap: 9px; }
+    .card__loc { font-size: 16.5px; }
+    .card__desc {
+      font-size: 14px; line-height: 1.5;
+      display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; line-clamp: 4; overflow: hidden;
+    }
+    .card--on .card__desc { display: block; overflow: visible; }      /* the selected card shows its whole description */
+    .card__calls .call { padding: 8px 10px; font-size: 13px; }
+    .results.nomap .split { grid-template-columns: minmax(0, 1fr); grid-template-areas: "list"; }       /* no map (script blocked): the list takes the width */
+    .results.nomap .split .grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  }
 </style>
 
 <header class="masthead">
@@ -510,7 +570,7 @@
           <button type="button" id="nearClear" aria-label="Remove distance sort">&times;</button>
         </span>
         <input type="search" id="q" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugg"
-               aria-label="Search by neighborhood, street or keyword" placeholder="Neighborhood or keyword&hellip;"
+               aria-label="Search by neighborhood, street, shul or keyword" placeholder="Neighborhood, street, shul or keyword&hellip;"
                autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search">
       </div>
       <ul class="sugg" id="sugg" role="listbox" aria-label="Neighborhood suggestions" hidden></ul>
@@ -525,6 +585,42 @@
       Filters <span class="fcount" id="filterCount" hidden></span>
     </button>
   </div>
+  <aside class="filters" id="filters" data-open="false" aria-label="Filters">
+    <div class="fgroup fdrop" data-drop="type">
+      <button type="button" class="fdrop__btn" aria-expanded="false"><span class="fdrop__name">Type</span><span class="fdrop__val"></span></button>
+      <div class="fdrop__panel"><div class="chips" id="typeChips"></div></div>
+    </div>
+
+    <div class="fgroup fdrop" data-drop="beds">
+      <button type="button" class="fdrop__btn" aria-expanded="false"><span class="fdrop__name">Bedrooms</span><span class="fdrop__val"></span></button>
+      <div class="fdrop__panel"><span class="range__val">At least</span><div class="chips" id="bedChips"></div></div>
+    </div>
+
+    <div class="fgroup fdrop" data-drop="rent">
+      <button type="button" class="fdrop__btn" aria-expanded="false"><span class="fdrop__name">Max rent</span><span class="fdrop__val"></span></button>
+      <div class="fdrop__panel">
+        <input type="range" id="rent" min="500" max="7000" step="100" value="7000" aria-label="Maximum rent per month">
+        <div class="range__val">Up to <b id="rentVal">Any</b> <span id="rentNote"></span></div>
+        <label class="check"><input type="checkbox" id="inclCall" checked> Include &ldquo;call to discuss&rdquo; listings</label>
+      </div>
+    </div>
+
+    <div class="fgroup fdrop" data-drop="utils">
+      <button type="button" class="fdrop__btn" aria-expanded="false"><span class="fdrop__name">Landlord pays</span><span class="fdrop__val"></span></button>
+      <div class="fdrop__panel"><div class="chips" id="utilChips"></div></div>
+    </div>
+
+    <div class="fgroup fdrop" data-drop="more">
+      <button type="button" class="fdrop__btn" aria-expanded="false"><span class="fdrop__name">More</span><span class="fdrop__val"></span></button>
+      <div class="fdrop__panel">
+        <label class="check"><input type="checkbox" id="furnished"> Furnished only</label>
+        <label class="check"><input type="checkbox" id="shortterm"> Short-term available</label>
+      </div>
+    </div>
+
+    <button class="filters__reset" id="reset" type="button">Reset all filters</button>
+    <button class="filters__done" id="filtersDone" type="button">Show listings</button>
+  </aside>
   <div class="searchbar__sub" id="nearRow" hidden>
     <label class="sort" id="withinWrap" hidden>Within
       <select id="withinSel">
@@ -543,59 +639,29 @@
 </div>
 
 <div class="wrap">
-  <aside class="filters" id="filters" data-open="false" aria-label="Filters">
-    <div class="fgroup">
-      <span class="fgroup__label">Type</span>
-      <div class="chips" id="typeChips"></div>
-    </div>
-
-    <div class="fgroup">
-      <span class="fgroup__label">Bedrooms (minimum)</span>
-      <div class="chips" id="bedChips"></div>
-    </div>
-
-    <div class="fgroup">
-      <span class="fgroup__label">Max rent</span>
-      <input type="range" id="rent" min="500" max="7000" step="100" value="7000">
-      <div class="range__val">Up to <b id="rentVal">Any</b> <span id="rentNote"></span></div>
-      <label class="check"><input type="checkbox" id="inclCall" checked> Include &ldquo;call to discuss&rdquo; listings</label>
-    </div>
-
-    <div class="fgroup">
-      <span class="fgroup__label">Landlord pays</span>
-      <div class="chips" id="utilChips"></div>
-    </div>
-
-    <div class="fgroup">
-      <label class="check"><input type="checkbox" id="furnished"> Furnished only</label>
-      <label class="check"><input type="checkbox" id="shortterm"> Short-term available</label>
-    </div>
-
-    <button class="filters__reset" id="reset" type="button">Reset all filters</button>
-    <button class="filters__done" id="filtersDone" type="button">Show listings</button>
-  </aside>
-
   <main class="results" id="results" data-view="list">
-    <div class="results__bar">
-      <div class="results__count"><b id="count">0</b> <span id="countWord">listings</span></div>
-      <div class="viewtoggle" id="viewToggle" role="group" aria-label="Show">
-        <button type="button" data-view="list" aria-pressed="true">List</button>
-        <button type="button" data-view="map" aria-pressed="false">Map</button>
-      </div>
-      <label class="sort">Sort
-        <select id="sort">
-          <option value="default">List order (newest first)</option>
-          <option value="price-asc">Rent: low to high</option>
-          <option value="price-desc">Rent: high to low</option>
-          <option value="beds-desc">Most bedrooms</option>
-          <option value="loc">Location A&ndash;Z</option>
-          <option value="distance" id="distOpt" disabled>Distance (pick a neighborhood first)</option>
-        </select>
-      </label>
-    </div>
-    <div class="related" id="related" hidden></div>
     <div class="split">
-      <div class="split__list"><div class="grid" id="grid"></div></div>
+      <div class="split__list">
+        <div class="results__bar">
+          <div class="results__count"><b id="count">0</b> <span id="countWord">listings</span></div>
+          <div class="viewtoggle" id="viewToggle" role="group" aria-label="Show">
+            <button type="button" data-view="list" aria-pressed="true">List</button>
+            <button type="button" data-view="map" aria-pressed="false">Map</button>
+          </div>
+          <label class="sort">Sort
+            <select id="sort">
+              <option value="default">List order (newest first)</option>
+              <option value="price-asc">Rent: low to high</option>
+              <option value="price-desc">Rent: high to low</option>
+              <option value="beds-desc">Most bedrooms</option>
+              <option value="loc">Location A&ndash;Z</option>
+              <option value="distance" id="distOpt" disabled>Distance (pick a neighborhood first)</option>
+            </select>
+          </label>
+        </div>
+        <div class="related" id="related" hidden></div>
+        <div class="grid" id="grid"></div>
+      </div>
       <aside class="mappane" id="mappane" aria-label="Map of the listings">
         <div id="map"></div>
         <p class="mappane__note"><b>Pins are approximate.</b> The list gives a neighborhood, not an address; the dashed circle shows where the selected listing could be.</p>
@@ -727,7 +793,7 @@
   var items = [], active = -1;
   // Phones have room for fewer words in the box.
   function setPlaceholder() {
-    q.placeholder = window.innerWidth <= 860 ? "Area or keyword\u2026" : "Neighborhood, street or keyword\u2026";
+    q.placeholder = window.innerWidth <= 860 ? "Area or shul\u2026" : "Neighborhood, street, shul or keyword\u2026";
   }
   setPlaceholder(); window.addEventListener("resize", setPlaceholder);
 
@@ -745,6 +811,7 @@
       // every suggestion says which town it is in; an intersection says so too
       var hint = pl.kind === "cross" ? "intersection" + (pl.town ? " \u00b7 " + pl.town : "")
         : pl.kind === "topic" ? "only 55+ listings"
+        : pl.kind === "hint" ? (pl.note || "")
         : pl.kind === "shul" ? "shul \u00b7 " + (pl.address ? pl.address + " \u00b7 " : "") + (pl.town || "")
         : pl.kind === "place" && pl.shul ? "area & shul \u00b7 " + (pl.town || "") : (pl.town || "");
       li.innerHTML = '<span class="sugg__name">' + esc(pl.name) + '</span>' +
@@ -755,13 +822,25 @@
     });
     if (active >= 0) q.setAttribute("aria-activedescendant", "opt" + active); else q.removeAttribute("aria-activedescendant");
   }
+  // an empty box that has focus says what can be searched
+  var HINTS = [
+    { kind: "hint", name: "A neighborhood", note: "e.g. Raintree", fill: "Raintree" },
+    { kind: "hint", name: "A street or intersection", note: "e.g. Clover & Ocean", fill: "Clover & Ocean" },
+    { kind: "hint", name: "A shul", note: "e.g. Kol Aryeh, Chabad, BMG", fill: "Kol Aryeh" },
+    { kind: "hint", name: "Any word in the listings", note: "e.g. pool, furnished, basement", fill: "pool" }
+  ];
   function updateSugg() {
+    sugg.removeAttribute("data-mode");
+    if (!q.value.trim()) { items = HINTS; active = -1; sugg.setAttribute("data-mode", "hints"); paintSugg(); sugg.hidden = false; q.setAttribute("aria-expanded", "true"); return; }
     items = LakewoodSearch.suggestAll(PICKER, STREETS, q.value, 8, SHULS);
     active = -1;
     if (!items.length) return closeSugg();
     paintSugg(); sugg.hidden = false; q.setAttribute("aria-expanded", "true");
   }
   function pickPlace(pl) {
+    if (pl.kind === "hint") {                                     // an example: type it for the visitor
+      q.value = pl.fill; S.q = pl.fill.toLowerCase(); render(); updateSugg(); return;
+    }
     q.value = ""; S.q = "";
     closeSugg(); q.blur();
     if (pl.kind === "topic") { setAge55(true); return; }          // "55+ communities": a filter, not a place
@@ -787,7 +866,7 @@
   function say(msg) { nearRow.hidden = false; withinWrap.hidden = !S.origin; nearStatus.textContent = msg; syncBar(); }
 
   q.addEventListener("input", function () { updateSugg(); });
-  q.addEventListener("focus", function () { if (q.value.trim()) updateSugg(); });
+  q.addEventListener("focus", function () { updateSugg(); });
   q.addEventListener("blur", closeSugg);
   q.addEventListener("keydown", function (e) {
     var open = !sugg.hidden;
@@ -801,7 +880,7 @@
       var hit = open && active >= 0 ? items[active] : null;
       // Enter on an exact name, or when no listing mentions what was typed, takes the best suggestion
       if (!hit && open && items.length &&
-          (items[0].name.toLowerCase() === q.value.trim().toLowerCase() || lastCount === 0)) hit = items[0];
+          items[0].kind !== "hint" && (items[0].name.toLowerCase() === q.value.trim().toLowerCase() || lastCount === 0)) hit = items[0];
       if (hit) { e.preventDefault(); pickPlace(hit); } else closeSugg();
     } else if (e.key === "Escape") {
       if (open) closeSugg(); else if (q.value) { q.value = ""; S.q = ""; render(); }
@@ -822,6 +901,37 @@
     }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 });
   };
 
+
+  // ---- computer layout: filter drop-downs under the search box ----
+  var drops = [].slice.call(document.querySelectorAll(".fdrop"));
+  function closeDrops(except) { drops.forEach(function (d) { if (d !== except) { d.setAttribute("data-open", "false"); d.querySelector(".fdrop__btn").setAttribute("aria-expanded", "false"); } }); }
+  drops.forEach(function (d) {
+    var btn = d.querySelector(".fdrop__btn");
+    btn.addEventListener("click", function () {
+      var open = d.getAttribute("data-open") !== "true";
+      closeDrops(d);
+      d.setAttribute("data-open", open ? "true" : "false"); btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+  document.addEventListener("click", function (e) { if (!e.target.closest(".fdrop")) closeDrops(null); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeDrops(null); });
+  /** What each drop-down button says about its current choice ("Type  House, Room", "Bedrooms  3+"). */
+  function refreshDrops() {
+    var shortType = function (t) { return t.replace(" / Attached", ""); };
+    var v = {
+      type: S.types.size ? Array.from(S.types).map(shortType).join(", ") : "",
+      beds: S.beds ? S.beds + "+" : "",
+      rent: S.rent < 7000 ? "≤ $" + S.rent.toLocaleString() : "",
+      utils: S.utils.size > 2 ? S.utils.size + " selected" : Array.from(S.utils).join(", "),
+      more: [S.furnished ? "Furnished" : "", S.shortterm ? "Short-term" : "", S.inclCall ? "" : "No “call”"].filter(Boolean).join(", ")
+    };
+    drops.forEach(function (d) {
+      var k = d.getAttribute("data-drop"), val = v[k] || "";
+      d.querySelector(".fdrop__val").textContent = val;
+      d.querySelector(".fdrop__btn").classList.toggle("on", !!val);
+    });
+  }
+
   // ---- phones: filters open in a sheet under the search bar ----
   var ft = document.getElementById("filtersToggle"), fbox = document.getElementById("filters"),
       fdone = document.getElementById("filtersDone"), fcount = document.getElementById("filterCount");
@@ -836,6 +946,7 @@
   fdone.onclick = function () { setSheet(false); };
   window.addEventListener("resize", function () { if (window.innerWidth > 860) setSheet(false); syncBar(); });
   syncBar();
+  if (window.ResizeObserver) new ResizeObserver(syncBar).observe(bar);       // the filter row can wrap onto a second line
 
   // ---- theme toggle ----
   var tb = document.getElementById("themebtn");
@@ -915,7 +1026,7 @@
 
   function render() {
     var rows = LakewoodSearch.search(L, S);
-    var nf = LakewoodSearch.activeFilterCount(S);
+    var nf = LakewoodSearch.activeFilterCount(S); refreshDrops();
     fcount.textContent = nf; fcount.hidden = !nf;
     fdone.textContent = "Show " + rows.length.toLocaleString() + (rows.length === 1 ? " listing" : " listings");
     lastCount = rows.length;
@@ -966,7 +1077,7 @@
   }
 
   function initMap() {
-    if (!MAPPED) { mapPane.hidden = true; viewToggle.hidden = true; return; }
+    if (!MAPPED) { mapPane.hidden = true; viewToggle.hidden = true; resultsEl.classList.add("nomap"); return; }
     MAP = LF.map("map", { zoomControl: true, preferCanvas: true, minZoom: 10, maxZoom: 18 }).setView(LAKEWOOD_CENTER, 13);
     var tiles = LF.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'

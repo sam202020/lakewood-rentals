@@ -617,6 +617,10 @@ var LakewoodSearch = (function () {
     if (norm && (/^(55\+?|sen|ret|adu|age)/.test(norm) || norm === "55+")) {
       items.push({ kind: "topic", name: "55+ communities", topic: "age55", note: "show only 55+ listings" });
     }
+    // "shul", "synagogue", "minyan" ... : the visitor has the right idea, tell them to type a shul's name
+    if (/^(shuls?|shules?|synagogues?|minyan(im)?|beis medrash|bais medrash|beit midrash|beis midrash)$/.test(String(text || "").trim().toLowerCase())) {
+      items.push({ kind: "hint", name: "Type a shul\u2019s name", note: "e.g. Kol Aryeh, Chabad, BMG", fill: "Kol Aryeh" });
+    }
     suggestCrossings(streets, text, 2).forEach(function (c) { items.push({ kind: "cross", name: c.name, town: c.town, lat: c.lat, lng: c.lng }); });
     var qt = placeTokens(text), places = suggestPlaces(picker, text, limit);
     places.forEach(function (p) { items.push({ kind: "place", name: p.name, town: p.town, lat: p.lat, lng: p.lng, score: 0, shul: !!p.shul, aka: p.aka || [] }); });
@@ -632,8 +636,8 @@ var LakewoodSearch = (function () {
     // keep places ahead of streets only as a tie-break: re-rank everything by match quality
     if (qt.length) {
       items.forEach(function (it, i) {
-        var r = it.kind === "cross" || it.kind === "topic" ? -1 : it.kind === "shul" ? it._shulRank : bestRank([it.name].concat(it.aka || []), qt);
-        it._r = it.kind === "cross" || it.kind === "topic" ? -1 : (r < 0 ? 3 : r);       // topics and intersections lead
+        var r = it.kind === "cross" || it.kind === "topic" || it.kind === "hint" ? -1 : it.kind === "shul" ? it._shulRank : bestRank([it.name].concat(it.aka || []), qt);
+        it._r = it.kind === "cross" || it.kind === "topic" || it.kind === "hint" ? -1 : (r < 0 ? 3 : r);       // topics and intersections lead
         it._o = i;
       });
       items.sort(function (a, b) { return a._r - b._r || a._o - b._o; });

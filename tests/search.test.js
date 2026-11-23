@@ -1073,3 +1073,12 @@ test("map: pins are grouped by spot, with short prices and an honest circle size
   assert.equal(S.uncertaintyMiles(L({ geo: "town" })), 1);
   assert.ok(S.uncertaintyMiles(L({ geo: "place", geo_spread: 0.8 })) >= 0.5);   // two places averaged: somewhere between
 });
+
+test("search: typing just 'shul' tells the visitor to type a shul's name", () => {
+  const shuls = [{ name: "Spruce Street Shul", lat: 40.08, lng: -74.2, town: "Lakewood", address: "", aka: [] }];
+  for (const w of ["shul", "synagogue", "minyan", "bais medrash"]) {
+    const all = S.suggestAll([], [], w, 8, shuls);
+    assert.equal(all[0].kind, "hint", w);
+  }
+  assert.notEqual(S.suggestAll([], [], "spruce", 8, shuls)[0].kind, "hint");
+});
