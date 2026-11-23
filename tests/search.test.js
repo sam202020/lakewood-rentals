@@ -511,18 +511,21 @@ test("real picker: typing Lutsk or Lutzk offers Lutzk", () => {
 });
 
 // ---- streets: any street in the area, sorted by distance to the street itself -----------------------------
+// compact format: [name, townIndex, [path...]]; a path is the first point (offset from base) then steps, in 1e-4 degrees
+function enc(points) {                       // points as [dlat, dlng] offsets from base
+  const out = []; let pl = 0, pn = 0;
+  for (const [la, ln] of points) { out.push(la - pl, ln - pn); pl = la; pn = ln; }
+  return out;
+}
 const STREET_DATA = {
-  base: [40.0, -74.4], unit: 0.0001,
+  base: [40.0, -74.4], unit: 0.0001, towns: ["Lakewood", "Jackson"],
   streets: [
-    // Ridge Avenue: a long east-west street (lat 40.0990, lng -74.2085 .. -74.1642)
-    { n: "Ridge Avenue", t: "Lakewood", p: [[990, 1915, 990, 2358]] },
-    // Nowlan Place crosses it at lng -74.2013
-    { n: "Nowlan Place", t: "Lakewood", p: [[960, 1987, 1010, 1987]] },
-    // Ocean Avenue in Lakewood and a second, far-away Ocean Avenue in Jackson
-    { n: "Ocean Avenue", t: "Lakewood", p: [[907, 1900, 907, 2100]] },
-    { n: "Ocean Avenue", t: "Jackson", p: [[1200, 400, 1200, 500]] },
-    { n: "Clover Street", t: "Lakewood", p: [[887, 1997, 927, 1997]] },
-    { n: "Route 88", t: "Lakewood", p: [[907, 1700, 907, 2300]] },
+    ["Ridge Avenue", 0, [enc([[990, 1915], [990, 2358]])]],        // long east-west street (lng -74.2085 .. -74.1642)
+    ["Nowlan Place", 0, [enc([[960, 1987], [1010, 1987]])]],        // crosses it at lng -74.2013
+    ["Ocean Avenue", 0, [enc([[907, 1900], [907, 2100]])]],         // Lakewood
+    ["Ocean Avenue", 1, [enc([[1200, 400], [1200, 500]])]],         // a second, far-away one in Jackson
+    ["Clover Street", 0, [enc([[887, 1997], [927, 1997]])]],
+    ["Route 88", 0, [enc([[907, 1700], [907, 2300]])]],
   ],
 };
 const STREETS = S.decodeStreets(STREET_DATA);
@@ -762,4 +765,40 @@ test("template: the page tells the visitor which related words are also being ma
   assert.match(templateHtml, /id="related"/);
   assert.match(templateHtml, /Also matching related words/);
   assert.match(templateHtml, /LakewoodSearch\.relatedWords\(w\)/);
+});
+
+test("a street flagged as a duplicate of a neighborhood is not suggested, but still makes intersections", () => {
+  const data = JSON.parse(JSON.stringify(STREET_DATA));
+  data.streets[4].push(1);                                         // Clover Street duplicates the Clover neighborhood
+  const streets = S.decodeStreets(data);
+  assert.deepEqual(S.suggestStreets(streets, "clover"), []);
+  assert.equal(S.suggestStreets(streets, "clover", 8, true).length, 1);
+  assert.equal(S.suggestCrossings(streets, "clover & ocean").length, 1);
+  assert.ok(S.suggestAll([], streets, "clover").every((i) => i.kind !== "street"));
+  assert.equal(S.suggestAll([], streets, "clover & ocean")[0].kind, "cross");
+});
+
+test("suggestions never treat a number as a typo: 13th is not 10th", () => {
+  const picker = [{ name: "10th Street" }, { name: "13th Street" }, { name: "14th Street" }];
+  assert.deepEqual(names(S.suggestPlaces(picker, "13th")), ["13th Street"]);
+  assert.deepEqual(names(S.suggestPlaces(picker, "12th")), []);
+});
+
+test("template: a street origin says distances are to the street, a neighborhood says to its middle", () => {
+  assert.match(templateHtml, /closest point on the street/);
+  assert.match(templateHtml, /middle of each neighborhood/);
+});
+
+test("real streets: ocean avenue, cedar bridge and an intersection are found in the shipped street data", () => {
+  const fs2 = require("node:fs");
+  const file = path.join(ROOT, "streets.json");
+  if (!fs2.existsSync(file)) return;
+  const streets = S.decodeStreets(JSON.parse(fs2.readFileSync(file, "utf8")));
+  assert.ok(S.suggestStreets(streets, "cedar bridge").some((s) => s.n === "Cedar Bridge Avenue"));
+  assert.ok(S.suggestStreets(streets, "ocean ave", 20).some((s) => s.n === "Ocean Avenue"));
+  assert.ok(S.suggestStreets(streets, "415 laurel ave").some((s) => s.n === "Laurel Avenue" && s.t === "Lakewood"));
+  const x = S.suggestCrossings(streets, "clover & ocean")[0];
+  assert.ok(x && Math.abs(x.lat - 40.0907) < 0.002 && Math.abs(x.lng - -74.2003) < 0.002, JSON.stringify(x));
+  const r = S.suggestCrossings(streets, "ridge and nowlan")[0];
+  assert.ok(r && Math.abs(r.lat - 40.0991) < 0.002 && Math.abs(r.lng - -74.2015) < 0.002, JSON.stringify(r));
 });

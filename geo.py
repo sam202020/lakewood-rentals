@@ -170,10 +170,15 @@ def display_name(key, entry):
     return " ".join(out)
 
 
+_DIRECTIONS = {"e": "east", "w": "west", "n": "north", "s": "south"}
+
+
 def _base(name):
-    """'Clover Street' -> 'clover', 'Ocean Avenue (Route 88)' -> 'ocean', for matching a part to a place."""
+    """'Clover Street' -> 'clover', 'Ocean Avenue (Route 88)' -> 'ocean', 'E 7th Street' -> 'east 7th'
+    (a street's own name, for telling when two lists mean the same place)."""
     n = re.sub(r"\(.*?\)", " ", name.lower())
-    words = [w for w in re.sub(r"[^a-z0-9+ ]", " ", n).split() if w not in {x.lower() for x in _STREET_WORDS}]
+    drop = {x.lower() for x in _STREET_WORDS}
+    words = [_DIRECTIONS.get(w, w) for w in re.sub(r"[^a-z0-9+ ]", " ", n).split() if w not in drop]
     return " ".join(words)
 
 
@@ -236,15 +241,23 @@ def picker_entries(places, merge_miles=0.15, intersection_miles=0.25):
 # ---- streets (streets.json, built by tools/build_streets.py) --------------------------------------
 
 def _street_points(data, street):
+    """Absolute (lat, lng) vertices of a [name, town_index, paths] street (paths are delta-encoded)."""
     b, u = data["base"], data["unit"]
-    return [(b[0] + path[i] * u, b[1] + path[i + 1] * u) for path in street["p"] for i in range(0, len(path) - 1, 2)]
+    pts = []
+    for flat in street[2]:
+        la = ln = 0
+        for i in range(0, len(flat) - 1, 2):
+            la, ln = la + flat[i], ln + flat[i + 1]
+            pts.append((b[0] + la * u, b[1] + ln * u))
+    return pts
 
 
 def streets_for_page(data, picker, near_miles=0.6):
     """-> (streets_data, picker) ready to embed in the page.
 
     * a street that has the same name as a neighbourhood the owner defined, and lies within `near_miles` of it,
-      is dropped: the owner's neighbourhood wins ("Clover" is a place, not just Clover Street)
+      is flagged as a duplicate (4th item = 1): the owner's neighbourhood wins in the suggestions ("Clover" is a
+      place, not just Clover Street), but the street's lines still serve intersections ("Clover & Ocean")
     * the old point-only "Route 88" style entries are dropped when the street data has that route as a line
     """
     if not data or not data.get("streets"):
@@ -252,13 +265,35 @@ def streets_for_page(data, picker, near_miles=0.6):
     names = {_base(p["name"]): p for p in picker if not p["name"].lower().startswith("route ")}
     keep = []
     for s in data["streets"]:
-        place = names.get(_base(s["n"]))
-        if place and any(haversine_miles(place["lat"], place["lng"], la, ln) <= near_miles
-                         for la, ln in _street_points(data, s)):
-            continue
-        keep.append(s)
-    routes = {s["n"].lower() for s in keep if s["n"].lower().startswith("route ")}
+        place = names.get(_base(s[0]))
+        dup = bool(place and any(haversine_miles(place["lat"], place["lng"], la, ln) <= near_miles
+                                 for la, ln in _street_points(data, s)))
+        # a duplicate of an owner-defined neighbourhood is kept (flag 1) so intersections can still use its
+        # lines, but it is not offered as a separate suggestion
+        keep.append(list(s[:3]) + [1] if dup else list(s[:3]))
+    routes = {s[0].lower() for s in keep if s[0].lower().startswith("route ")}
     picker = [p for p in picker if p["name"].lower() not in routes]
     out = dict(data)
     out["streets"] = keep
     return out, picker
+
+
+def miles_to_street(data, street, lat, lng):
+    """Shortest distance in miles from a point to the street's lines (flat-earth maths, fine over a few miles)."""
+    b, u = data["base"], data["unit"]
+    kx, ky = math.cos(math.radians(lat)) * 69.172, 69.0
+    best = float("inf")
+    for flat in street[2]:
+        la = ln = 0
+        prev = None
+        for i in range(0, len(flat) - 1, 2):
+            la, ln = la + flat[i], ln + flat[i + 1]
+            cur = ((b[1] + ln * u - lng) * kx, (b[0] + la * u - lat) * ky)
+            if prev is not None:
+                dx, dy = cur[0] - prev[0], cur[1] - prev[1]
+                L2 = dx * dx + dy * dy
+                t = max(0, min(1, -(prev[0] * dx + prev[1] * dy) / L2)) if L2 else 0
+                best = min(best, math.hypot(prev[0] + t * dx, prev[1] + t * dy))
+            best = min(best, math.hypot(*cur))
+            prev = cur
+    return best

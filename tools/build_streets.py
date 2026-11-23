@@ -10,10 +10,10 @@ Data: (c) OpenStreetMap contributors, ODbL (the page credits them). One Overpass
 street names and shapes are requested - nothing about visitors or the site's owner is sent.
 
 Output streets.json:
-  {"source": ..., "base": [lat0, lng0], "unit": 0.0001,
-   "streets": [{"n": "Ocean Avenue", "t": "Lakewood", "p": [[dlat, dlng, dlat, dlng, ...], ...]}, ...]}
-  Every path is a flat list of integer offsets from `base` in `unit` degrees (11 m), so a street is a few
-  dozen numbers. `p` has one path per piece of the street; the same name in two places (Central Avenue in
+  {"source": ..., "base": [lat0, lng0], "unit": 0.0001, "towns": ["Lakewood", "Jackson", ...],
+   "streets": [["Ocean Avenue", 0, [[dlat, dlng, dlat, dlng, ...], ...]], ...]}   # [name, index into towns, paths]
+  Every path is a flat list of integers in `unit` degrees (11 m): the first point as an offset from `base`,
+  then each next point as a step from the one before, so a street is a few dozen small numbers. `p` has one path per piece of the street; the same name in two places (Central Avenue in
   Lakewood and in Jackson) is two entries.
 """
 import argparse
@@ -38,6 +38,10 @@ MIRRORS = ["https://overpass-api.de/api/interpreter", "https://lz4.overpass-api.
            "https://z.overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"]
 UA = "lakewood-rentals-streets/1.0 (open-source rental list)"
 HIGHWAYS = "residential|tertiary|secondary|primary|trunk|unclassified|living_street|primary_link|secondary_link|tertiary_link"
+
+# Streets whose middle is farther than this from the centre of Lakewood are left out (woods, far Brick and Toms River).
+MAX_MILES = 9.5
+CENTER = (40.0979, -74.2179)
 
 # Rough town centres, only used to label which town a street is in (so two "Central Avenue"s can be told apart).
 TOWNS = {"Lakewood": (40.0979, -74.2179), "Jackson": (40.1000, -74.3550), "Howell": (40.1500, -74.1900),
@@ -160,8 +164,53 @@ def cluster(ways, link_miles=0.3):
     return list(groups.values())
 
 
+def join_paths(paths):
+    """Chain pieces of a street that share an end point into longer lines (fewer points, smoother lines)."""
+    paths = [list(p) for p in paths]
+    changed = True
+    while changed:
+        changed = False
+        for i in range(len(paths)):
+            for j in range(len(paths)):
+                if i == j or not paths[i] or not paths[j]:
+                    continue
+                a, b = paths[i], paths[j]
+                if a[-1] == b[0]:
+                    paths[i] = a + b[1:]
+                elif a[-1] == b[-1]:
+                    paths[i] = a + b[::-1][1:]
+                elif a[0] == b[0]:
+                    paths[i] = a[::-1] + b[1:]
+                elif a[0] == b[-1]:
+                    paths[i] = b + a[1:]
+                else:
+                    continue
+                paths[j] = []
+                changed = True
+    return [p for p in paths if p]
+
+
 def town_of(lat, lng):
     return min(TOWNS, key=lambda t: miles(lat, lng, *TOWNS[t]))
+
+
+def encode(points):
+    """[lat0, lng0, dlat, dlng, ...]: the first point as an offset from the box corner, then small steps."""
+    out, prev = [], (0, 0)
+    for p in points:
+        cur = (round((p[0] - SOUTH) / UNIT), round((p[1] - WEST) / UNIT))
+        out += [cur[0] - prev[0], cur[1] - prev[1]]
+        prev = cur
+    return out
+
+
+def decode(flat):
+    """Inverse of encode: -> [(lat, lng), ...]."""
+    pts, la, ln = [], 0, 0
+    for i in range(0, len(flat) - 1, 2):
+        la, ln = la + flat[i], ln + flat[i + 1]
+        pts.append((SOUTH + la * UNIT, WEST + ln * UNIT))
+    return pts
 
 
 def build():
@@ -180,17 +229,25 @@ def build():
         pts = [(g["lat"], g["lon"]) for g in el["geometry"]]
         for name in [tags["name"]] + route_names(tags):
             by_name.setdefault(name.strip(), []).append(simplify(pts))
-    streets = []
+    merged = {}
     for name, ws in sorted(by_name.items()):
         for grp in cluster(ws):
             allpts = [p for w in grp for p in w]
             lat = sum(p[0] for p in allpts) / len(allpts)
             lng = sum(p[1] for p in allpts) / len(allpts)
-            paths = [[v for p in w for v in (round((p[0] - SOUTH) / UNIT), round((p[1] - WEST) / UNIT))] for w in grp]
-            streets.append({"n": name, "t": town_of(lat, lng), "p": paths})
-    data = {"source": "OpenStreetMap contributors (ODbL)", "base": [SOUTH, WEST], "unit": UNIT, "streets": streets}
+            if miles(lat, lng, *CENTER) > MAX_MILES:
+                continue
+            # label the town by the part of the street nearest Lakewood ("Route 88" runs through several towns)
+            nearest = min(allpts, key=lambda p: miles(p[0], p[1], *CENTER))
+            key = (name, town_of(*nearest))
+            merged.setdefault(key, []).extend(join_paths(grp))
+    streets = []
+    for (name, town), paths in sorted(merged.items()):
+        streets.append([name, list(TOWNS).index(town), [encode(p) for p in join_paths(paths)]])
+    data = {"source": "OpenStreetMap contributors (ODbL)", "base": [SOUTH, WEST], "unit": UNIT,
+            "towns": list(TOWNS), "streets": streets}
     OUT.write_text(json.dumps(data, separators=(",", ":"), ensure_ascii=False))
-    npts = sum(len(p) // 2 for s in streets for p in s["p"])
+    npts = sum(len(p) // 2 for s in streets for p in s[2])
     print(f"{len(streets)} streets, {npts} points, {OUT.stat().st_size // 1024} KB -> {OUT}")
 
 

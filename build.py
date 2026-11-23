@@ -82,7 +82,8 @@ def main():
         streets = None
     if streets:
         data["streets"] = streets
-    DATA.write_text(json.dumps(data, indent=2, ensure_ascii=False))
+    # listings.json stays small and readable: the street lines live in streets.json and only go into the page
+    DATA.write_text(json.dumps({k: v for k, v in data.items() if k != "streets"}, indent=2, ensure_ascii=False))
 
     html = TEMPLATE.read_text().replace(
         "/*__SEARCH_CORE__*/", SEARCH_CORE.read_text()

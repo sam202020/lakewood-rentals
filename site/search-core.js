@@ -364,19 +364,23 @@ var LakewoodSearch = (function () {
     return p[0];
   }
 
-  /** Turn the compact payload ({base, unit, streets:[{n, t, p:[[ints...]]}]}) into
-   *  [{n, t, paths:[[[lat, lng], ...]], lat, lng, tokens}] (lat/lng = a point on the street, near its middle). */
+  /** Turn the compact payload ({base, unit, towns, streets:[[name, townIndex, [path, ...]], ...]}, each path
+   *  a flat list: first point, then steps) into [{n, t, paths:[[[lat, lng], ...]], lat, lng, tokens}]. */
   function decodeStreets(data) {
     if (!data || !data.streets) return [];
     var b = data.base, u = data.unit;
     return data.streets.map(function (s) {
-      var paths = s.p.map(function (flat) {
-        var pts = [];
-        for (var i = 0; i + 1 < flat.length; i += 2) pts.push([b[0] + flat[i] * u, b[1] + flat[i + 1] * u]);
+      var paths = s[2].map(function (flat) {
+        var pts = [], la = 0, ln = 0;
+        for (var i = 0; i + 1 < flat.length; i += 2) {
+          la += flat[i]; ln += flat[i + 1];
+          pts.push([b[0] + la * u, b[1] + ln * u]);
+        }
         return pts;
       });
       var mid = middleOf(paths);
-      return { n: s.n, t: s.t, paths: paths, lat: mid[0], lng: mid[1], tokens: placeTokens(s.n) };
+      return { n: s[0], t: data.towns[s[1]], paths: paths, lat: mid[0], lng: mid[1], tokens: placeTokens(s[0]),
+               dup: s[3] === 1 };
     });
   }
 
@@ -392,7 +396,7 @@ var LakewoodSearch = (function () {
     if (label.indexOf(qs) !== -1) return 2;
     // a small typo or another spelling ("raintre", "luzk", "clifto"): every typed word is close to a word of the name
     if (qt.every(function (t) {
-      var k = t.length >= 7 ? 2 : t.length >= 4 ? 1 : 0;
+      var k = /\d/.test(t) ? 0 : t.length >= 7 ? 2 : t.length >= 4 ? 1 : 0;      // numbers ("13th") are never "corrected"
       return k > 0 && tokens.some(function (w) {
         return w.charAt(0) === t.charAt(0) &&
           (editDistance(t, w.slice(0, t.length + 1), k) <= k || editDistance(t, w, k) <= k);
@@ -402,11 +406,12 @@ var LakewoodSearch = (function () {
   }
 
   /** Streets matching what was typed (a leading house number is ignored: "415 laurel ave" -> laurel ave). */
-  function suggestStreets(streets, text, limit) {
+  function suggestStreets(streets, text, limit, withDuplicates) {
     var qt = placeTokens(stripHouseNumber(text));
     if (!qt.length || qt.join("").length < 2) return [];
     var out = [];
     (streets || []).forEach(function (s) {
+      if (s.dup && !withDuplicates) return;        // already offered as an owner-defined neighborhood
       var r = rankTokens(s.tokens, qt);
       if (r >= 0) out.push({ s: s, score: r, len: s.tokens.join(" ").length });
     });
@@ -458,7 +463,7 @@ var LakewoodSearch = (function () {
   function suggestCrossings(streets, text, limit) {
     var parts = String(text || "").split(/\s*(?:&|\/|@|\band\b)\s*/i).filter(function (p) { return p.trim(); });
     if (parts.length !== 2) return [];
-    var as = suggestStreets(streets, parts[0], 6), bs = suggestStreets(streets, parts[1], 6), out = [];
+    var as = suggestStreets(streets, parts[0], 6, true), bs = suggestStreets(streets, parts[1], 6, true), out = [];
     as.forEach(function (a) {
       bs.forEach(function (b) {
         if (a === b) return;

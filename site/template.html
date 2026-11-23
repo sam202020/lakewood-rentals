@@ -695,7 +695,9 @@
     distOpt.textContent = on ? "Distance: nearest first" : "Distance (pick a neighborhood first)";
     if (on) { S.sort = "distance"; sortSel.value = "distance"; }
     else { S.maxMiles = 0; withinSel.value = "0"; if (S.sort === "distance") { S.sort = "default"; sortSel.value = "default"; } }
-    nearStatus.textContent = on ? "Nearest first \u00b7 distances are to the middle of each neighborhood" : "";
+    nearStatus.textContent = on
+      ? (origin.paths ? "Nearest first \u00b7 distances are to the closest point on the street"
+                      : "Nearest first \u00b7 distances are to the middle of each neighborhood") : "";
     nearRow.hidden = !on;
     syncBar();
     render();

@@ -51,3 +51,15 @@ Rules (owner, 2026-11-22):
   `RENTAL_PDF=/path/to/MasaRentals.pdf python3 -m unittest discover -s tests`
   (every listing must have a phone, a type and bedrooms; ids unique).
 - When the weekly warnings show a new oddity, add the real row as a test in `tests/test_parser.py`.
+
+## Streets ("sort by nearest this street")
+
+`streets.json` holds every named street within ~9.5 miles of Lakewood as simplified lines (OpenStreetMap, ODbL; the
+page credits "OpenStreetMap contributors"). `build.py` embeds it in the page; the search box suggests any street,
+sorts by distance to the street's whole line, and offers intersections ("clover & ocean").
+- Rebuild (streets rarely change; the weekly routine does not do this): `python3 tools/build_streets.py --fetch`
+  (about 25 minutes, one polite request per map tile) or `--cache DIR` to rebuild from saved tiles.
+- Owner-defined neighborhoods win: a street with the same name as one (Clover Street / "Clover") is kept in the
+  data, flagged, so intersections work, but it is not suggested as a second entry.
+- It was spot-checked against Google Maps on 2026-11-22 (six streets within 0.003 mi; tests record it). These are
+  street lines only; the places listings are pinned to still come from `places.json` (Google-checked).
