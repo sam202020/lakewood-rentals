@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
 
 <style>
   :root {
@@ -281,10 +281,13 @@
   }
   .tag.flag { background: var(--flag-soft); color: var(--flag); }
 
+  /* Descriptions: the condensed serif was hard to read at 13.5px. Plain sans at a comfortable size. */
   .card__desc {
-    font-family: "Source Serif 4", Georgia, serif;
-    font-size: 13.5px; line-height: 1.5; color: var(--ink);
+    font-family: "Libre Franklin", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 15px; line-height: 1.55; color: var(--ink); font-weight: 400;
+    letter-spacing: 0; word-spacing: .02em; hyphens: manual; overflow-wrap: anywhere;
   }
+  @media (max-width: 860px) { .card__desc { font-size: 16px; line-height: 1.6; } }
   .card__desc:empty { display: none; }
 
   .card__calls { display: flex; flex-wrap: wrap; gap: 7px; padding-top: 3px; }
@@ -384,6 +387,9 @@
     font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); font-weight: 600;
   }
   .sugg__name { font-weight: 600; }
+  .related { font-size: 13px; color: var(--muted); margin: -4px 0 12px; }
+  .related b { color: var(--ink); font-weight: 600; }
+  .sugg__town { font-size: 12px; color: var(--muted); white-space: nowrap; }
   .fbtn { display: none; align-items: center; gap: 6px; }
   .fcount {
     display: inline-block; min-width: 18px; padding: 0 5px; border-radius: 999px; text-align: center;
@@ -521,6 +527,7 @@
         </select>
       </label>
     </div>
+    <div class="related" id="related" hidden></div>
     <div class="grid" id="grid"></div>
   </main>
 </div>
@@ -534,6 +541,8 @@
     is authoritative.
   </p>
   <p>
+    <span id="osmCredit" hidden>Street shapes for &ldquo;nearest this street&rdquo; &copy;
+    <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>.</span>
     To list your property, or once a unit is rented, contact Masa U&rsquo;Matan directly at
     732-364-9392. Data on this page generated <span id="genAt">—</span>.
   </p>
@@ -631,6 +640,9 @@
   // Remove the chip with its x, or press Backspace in the empty box: no Enter needed.
   var PLACES = DATA.places || {};
   var PICKER = DATA.picker || Object.keys(PLACES).sort().map(function (k) { return PLACES[k]; });
+  var STREETS = LakewoodSearch.decodeStreets(DATA.streets);     // every street in the area, as lines
+  var lastCount = 0;
+  if (STREETS.length) document.getElementById("osmCredit").hidden = false;
   var bar = document.getElementById("searchbar"), sugg = document.getElementById("sugg"),
       nearChip = document.getElementById("nearChip"), nearLabel = document.getElementById("nearLabel"),
       nearRow = document.getElementById("nearRow"), nearStatus = document.getElementById("nearStatus"),
@@ -654,7 +666,9 @@
       li.id = "opt" + i; li.setAttribute("role", "option");
       li.setAttribute("aria-selected", i === active ? "true" : "false");
       if (i === active) li.className = "on";
-      li.innerHTML = '<span class="sugg__name">' + esc(pl.name) + '</span>';
+      li.innerHTML = '<span class="sugg__name">' + esc(pl.name) + '</span>' +
+        (pl.kind === "cross" ? '<span class="sugg__town">intersection</span>'
+         : pl.kind === "street" ? '<span class="sugg__town">' + esc(pl.town) + '</span>' : "");
       // pointerdown (not click) so the box keeps focus and the list does not close first
       li.addEventListener("pointerdown", function (e) { e.preventDefault(); pickPlace(pl); });
       sugg.appendChild(li);
@@ -662,7 +676,7 @@
     if (active >= 0) q.setAttribute("aria-activedescendant", "opt" + active); else q.removeAttribute("aria-activedescendant");
   }
   function updateSugg() {
-    items = LakewoodSearch.suggestPlaces(PICKER, q.value, 8);
+    items = LakewoodSearch.suggestAll(PICKER, STREETS, q.value, 8);
     active = -1;
     if (!items.length) return closeSugg();
     paintSugg(); sugg.hidden = false; q.setAttribute("aria-expanded", "true");
@@ -670,7 +684,8 @@
   function pickPlace(pl) {
     q.value = ""; S.q = "";
     closeSugg(); q.blur();
-    setOrigin({ lat: pl.lat, lng: pl.lng }, pl.name);
+    // a street is sorted by distance to its whole line, a neighborhood or intersection by distance to its point
+    setOrigin({ lat: pl.lat, lng: pl.lng, paths: pl.kind === "street" ? pl.paths : null }, pl.name);
   }
   function setOrigin(origin, label) {
     S.origin = origin;
@@ -700,7 +715,9 @@
       sugg.children[active].scrollIntoView({ block: "nearest" });
     } else if (e.key === "Enter") {
       var hit = open && active >= 0 ? items[active] : null;
-      if (!hit && open && items.length && items[0].name.toLowerCase() === q.value.trim().toLowerCase()) hit = items[0];
+      // Enter on an exact name, or when no listing mentions what was typed, takes the best suggestion
+      if (!hit && open && items.length &&
+          (items[0].name.toLowerCase() === q.value.trim().toLowerCase() || lastCount === 0)) hit = items[0];
       if (hit) { e.preventDefault(); pickPlace(hit); } else closeSugg();
     } else if (e.key === "Escape") {
       if (open) closeSugg(); else if (q.value) { q.value = ""; S.q = ""; render(); }
@@ -807,11 +824,23 @@
     var nf = LakewoodSearch.activeFilterCount(S);
     fcount.textContent = nf; fcount.hidden = !nf;
     fdone.textContent = "Show " + rows.length.toLocaleString() + (rows.length === 1 ? " listing" : " listings");
+    lastCount = rows.length;
+    // tell the visitor when related words are being matched too ("boy" also finds bochur, guys, men ...)
+    var rel = [];
+    (S.q || "").split(/\s+/).forEach(function (w) {
+      LakewoodSearch.relatedWords(w).slice(0, 6).forEach(function (r) { if (rel.indexOf(r) === -1) rel.push(r); });
+    });
+    var relEl = document.getElementById("related");
+    relEl.hidden = !rel.length;
+    if (rel.length) relEl.innerHTML = "Also matching related words: <b>" + rel.slice(0, 6).map(esc).join(", ") + "</b>" + (rel.length > 6 ? "\u2026" : "");
     elCount.textContent = rows.length.toLocaleString();
     elWord.textContent = rows.length === 1 ? "listing" : "listings";
     grid.innerHTML = "";
     if (!rows.length) {
-      grid.innerHTML = '<div class="empty"><b>No matches</b>Try widening the rent range or clearing a filter.</div>';
+      var typed = (S.q || "").trim(), known = typed && LakewoodSearch.suggestAll(PICKER, STREETS, typed, 1).length;
+      grid.innerHTML = known
+        ? '<div class="empty"><b>No listing mentions \u201c' + esc(typed) + '\u201d</b>Pick it from the suggestions (or press Enter) to sort every listing by distance from it.</div>'
+        : '<div class="empty"><b>No matches</b>Try widening the rent range or clearing a filter.</div>';
       return;
     }
     var frag = document.createDocumentFragment();

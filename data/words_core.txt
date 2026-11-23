@@ -1,0 +1,54 @@
+# Words the PDF's descriptions use, most common first. Used by segment.py to put spaces back into words the
+# PDF ran together ("beautifulnewtopoftheline" -> "beautiful new top of the line").
+# A token is only split when EVERY piece is a word on this list, and a token that is itself on the list is
+# never split - so add real words, names and abbreviations here (proper names like "yellowstone" included).
+a an the and or of to in on at by for from with without near next into onto over under above below between
+behind across through throughout around along all any each every some more most much many few other another
+such only own same than too very can will just should now till until if then so as is are was be been am it
+its this that these those there here where when who what which how not no yes up out off down also plus per
+etc av imm inc incl w
+available avail availability immediately beginning begin end last first second third fourth fifth top upper
+lower ground floor floors level levels main
+apartment apartments apt apts house houses home homes room rooms studio unit units duplex colonial ranch
+bilevel bi-level split townhouse townhome condo family single singles male female men women man woman guy guys
+boy boys girl girls couple couples person people adult adults child children kid kids
+bedroom bedrooms bdrm bdrms bedrm bedrms bed beds bath baths bathroom bathrooms kitchen kitchens kitchenette
+kitchenettes dining living family den office sunroom sitting master suite guest closet closets laundry
+basement basements bsmt basemt attic garage garages car cars parking driveway driveways spot spots storage
+shed deck porch patio balcony yard backyard bkyd fenced fence garden lawn property lot acre acres woods
+washer dryer dishwasher appliances appliance microwave stove oven refrigerator fridge stainless steel granite
+quartz counters counter cabinets cabinet hardwood wood vinyl carpet carpeted tile tiles floors flooring
+windows window ceiling ceilings high sink sinks tub shower jacuzzi hot pool heated inground gym playground
+amenities amenity development community neighborhood block street corner quiet nice great good best perfect
+excellent beautiful beautifully gorgeous stunning magnificent luxury luxurious spacious large big small little
+new newly brand old modern ultra upgraded upgrades upgrade renovated renovation remodeled redone fresh freshly
+painted paint clean immaculate condition ready move shopping shops stores store walk walking distance close
+closest location locations located centrally central convenient everything everywhere
+month months monthly year years yearly week weeks weekly day days night nights short long term lease leasing
+rent rental rented deposit security mo mos initial setup additional
+utilities included include includes including heat heating cooling air conditioning gas electric water sewer
+trash wifi internet cable tv
+furnished furnishings furniture unfurnished furn unfurn partly partially fully completely entire whole
+separate private shared share entrance door
+walkout walk-out finished unfinished attached detached semi family-friendly
+need needs income credentials serious only views view all around extra sound soundproofing solar power
+fixtures lighting fireplace elevator wheelchair accessible handicap stairs steps
+sf sq ft feet square foot ceilings tall deep wide
+beautiful newer brand-new gut gutted rebuilt custom design designed layout open concept plan
+tenant tenants landlord owner owners lease references reference required preferred preferrably prefer
+please call text whatsapp message leave contact email phone
+choson chosson chasan chassan kallah kalla kalah shul shuls shule yeshiva yeshivah yeshivas kollel mikvah
+mikveh mikvaos minyan minyanim eruv shabbos shabbosim shabbat sabbath bochur bochurim bachur bachurim bais
+beis medrash beth heimishe frum sephardic ashkenaz torah learning learn earning working work works
+simcha simchas pesach succos sukkah chol hamoed yom tov tzniyus modest seminary
+ensuite en suite walk-in walkin sliders slider skylight skylights sunny bright airy cozy comfy roomy
+bsmnt cellar crawl crawlspace
+holiday weekend weekends overnight guests simchas
+upgraded kitchen with extras extra
+line lines area areas model models andrew andrews nash crofton hampton lincoln washington sterling
+larger smaller prefers preferred prefer bigger better lots lot rooms stone yellowstone
+weekdays weekday weekends weekend monday tuesday wednesday thursday friday saturday sunday january february
+march april may june july august september october november december jan feb mar apr jun jul aug sep sept oct nov dec
+cond lg sm ac dw ref refs fl flr flrs kit kits hw hwf ss exp excl mgmt conv nbhd nr
+maintained neighbors neighbor sidewalks stabilized brookwood princeton manchester hampshire evergreen
+environment learning environ-ment environments

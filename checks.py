@@ -15,6 +15,8 @@ a location) fails.
 """
 import re
 
+import segment
+
 MIN_LISTINGS = 60          # absolute floor
 MAX_DROP = 0.30            # vs. last week's count
 MIN_LOCATION_RATE = 0.95
@@ -79,6 +81,13 @@ def check(listings, previous_count=None):
         elif len(loc_text) > 36 or GLUED_WORD.search(loc_text):
             warnings.append(f"location looks malformed: {loc_text!r} ({where})")
 
+    # words in the descriptions that are neither known words nor split by segment.py: probably two words glued
+    vocab = segment.vocabulary()
+    odd = sorted({t for x in listings for t in re.findall(r"[A-Za-z]{10,}", x.get("comments") or "")
+                  if t.lower() not in vocab})
+    if odd:
+        warnings.append(f"{len(odd)} long word(s) in descriptions may be run together or missing from "
+                        f"data/words_core.txt: {', '.join(odd[:10])}")
     if _rate(listings, lambda x: not x.get("comments")) > 0.15:
         warnings.append("over 15% of listings have no description")
     if _rate(listings, lambda x: GLUED_WORD.search(x.get("comments") or "")) > 0.25:

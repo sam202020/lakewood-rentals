@@ -21,6 +21,7 @@ DATA = ROOT / "listings.json"
 TEMPLATE = ROOT / "site" / "template.html"
 SEARCH_CORE = ROOT / "site" / "search-core.js"
 OUT = ROOT / "docs" / "index.html"
+STREETS = ROOT / "streets.json"      # built by tools/build_streets.py; optional
 
 
 def previous_count():
@@ -74,6 +75,13 @@ def main():
         # tidy, de-duplicated names for the "Near" drop-down
         "picker": geo.picker_entries(places),
     }
+    # every street in the area, so any street can be searched ("nearest this street")
+    try:
+        streets, data["picker"] = geo.streets_for_page(json.loads(STREETS.read_text()), data["picker"])
+    except (OSError, ValueError):
+        streets = None
+    if streets:
+        data["streets"] = streets
     DATA.write_text(json.dumps(data, indent=2, ensure_ascii=False))
 
     html = TEMPLATE.read_text().replace(

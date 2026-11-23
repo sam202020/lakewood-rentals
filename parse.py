@@ -8,6 +8,8 @@ import sys, json, re, io, datetime, urllib.request
 
 import pdfplumber
 
+import segment
+
 SOURCE_URL = "https://masaumatan.com/MasaRentals.pdf"
 
 # Column x-boundaries (points), derived from header + data inspection.
@@ -171,6 +173,9 @@ def clean_comment(s):
     if toks and sum(1 for t in toks if len(t) == 1) / len(toks) > 0.28:
         return ""  # too fragmented to be trustworthy
     s = re.sub(r"(?<=[a-z.,])(?=[A-Z])", " ", s)
+    s = segment.join_hyphenated(s)                            # "learn- ing" -> "learning" (a line break in the PDF)
+    s = segment.fix_glued(s)                                  # "locationneareverything" -> "location near everything"
+    s = re.sub(r"(?<=[A-Za-z]{2}[.,;:])(?=[A-Za-z0-9])", " ", s)   # "Av.imm." -> "Av. imm."
     for w in _GLUE:
         s = re.sub(r"(?<=[a-z])(" + w + r")\b", r" \1", s, flags=re.I)
     s = re.sub(r"\bun furnished\b", "unfurnished", s, flags=re.I)

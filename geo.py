@@ -231,3 +231,34 @@ def picker_entries(places, merge_miles=0.15, intersection_miles=0.25):
             item["aka"] = v["aka"]          # other spellings people type ("Lutsk" for "Lutzk")
         out.append(item)
     return sorted(out, key=lambda v: v["name"].lower())
+
+
+# ---- streets (streets.json, built by tools/build_streets.py) --------------------------------------
+
+def _street_points(data, street):
+    b, u = data["base"], data["unit"]
+    return [(b[0] + path[i] * u, b[1] + path[i + 1] * u) for path in street["p"] for i in range(0, len(path) - 1, 2)]
+
+
+def streets_for_page(data, picker, near_miles=0.6):
+    """-> (streets_data, picker) ready to embed in the page.
+
+    * a street that has the same name as a neighbourhood the owner defined, and lies within `near_miles` of it,
+      is dropped: the owner's neighbourhood wins ("Clover" is a place, not just Clover Street)
+    * the old point-only "Route 88" style entries are dropped when the street data has that route as a line
+    """
+    if not data or not data.get("streets"):
+        return None, picker
+    names = {_base(p["name"]): p for p in picker if not p["name"].lower().startswith("route ")}
+    keep = []
+    for s in data["streets"]:
+        place = names.get(_base(s["n"]))
+        if place and any(haversine_miles(place["lat"], place["lng"], la, ln) <= near_miles
+                         for la, ln in _street_points(data, s)):
+            continue
+        keep.append(s)
+    routes = {s["n"].lower() for s in keep if s["n"].lower().startswith("route ")}
+    picker = [p for p in picker if p["name"].lower() not in routes]
+    out = dict(data)
+    out["streets"] = keep
+    return out, picker

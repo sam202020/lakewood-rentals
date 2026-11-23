@@ -509,3 +509,257 @@ test("real picker: typing Lutsk or Lutzk offers Lutzk", () => {
   assert.equal(names(S.suggestPlaces(picker, "lutsk"))[0], "Lutzk");
   assert.equal(names(S.suggestPlaces(picker, "lutzk"))[0], "Lutzk");
 });
+
+// ---- streets: any street in the area, sorted by distance to the street itself -----------------------------
+const STREET_DATA = {
+  base: [40.0, -74.4], unit: 0.0001,
+  streets: [
+    // Ridge Avenue: a long east-west street (lat 40.0990, lng -74.2085 .. -74.1642)
+    { n: "Ridge Avenue", t: "Lakewood", p: [[990, 1915, 990, 2358]] },
+    // Nowlan Place crosses it at lng -74.2013
+    { n: "Nowlan Place", t: "Lakewood", p: [[960, 1987, 1010, 1987]] },
+    // Ocean Avenue in Lakewood and a second, far-away Ocean Avenue in Jackson
+    { n: "Ocean Avenue", t: "Lakewood", p: [[907, 1900, 907, 2100]] },
+    { n: "Ocean Avenue", t: "Jackson", p: [[1200, 400, 1200, 500]] },
+    { n: "Clover Street", t: "Lakewood", p: [[887, 1997, 927, 1997]] },
+    { n: "Route 88", t: "Lakewood", p: [[907, 1700, 907, 2300]] },
+  ],
+};
+const STREETS = S.decodeStreets(STREET_DATA);
+const sn = (a) => a.map((s) => s.n + (s.t && a.filter((x) => x.n === s.n).length > 1 ? " (" + s.t + ")" : ""));
+
+test("decodeStreets: turns the compact data into lines of [lat, lng]", () => {
+  assert.equal(STREETS.length, 6);
+  assert.deepEqual(STREETS[0].paths[0][0].map((v) => +v.toFixed(4)), [40.099, -74.2085]);
+  assert.ok(STREETS[0].tokens.includes("ridge"));
+  assert.deepEqual(S.decodeStreets(null), []);
+});
+
+test("pathMiles: distance to the street's line, not to its middle", () => {
+  const ridge = STREETS[0].paths;
+  const midLat = 40.099, midLng = -74.18635;
+  assert.ok(S.pathMiles(midLat, midLng, ridge) < 0.001);                       // on the street
+  assert.ok(S.pathMiles(midLat + 0.0145, midLng, ridge) > 0.95);                // 1 mile north of it
+  // 1.1 miles past the east end: distance is to the end, not to the middle
+  const past = S.pathMiles(40.099, -74.1642 + 0.0206, ridge);
+  assert.ok(past > 1.0 && past < 1.2, past);
+});
+
+test("search: a street origin sorts listings by distance to the whole street", () => {
+  const rows = S.enrich([
+    L({ id: "east-end", lat: 40.0992, lng: -74.1650 }),       // beside the east end of Ridge Ave
+    L({ id: "middle-off", lat: 40.1050, lng: -74.1863 }),     // 0.4 mi north of the middle
+    L({ id: "far", lat: 40.0500, lng: -74.2000 }),
+  ]);
+  const street = STREETS[0];
+  const st = Object.assign(S.defaultState(), { origin: { lat: street.lat, lng: street.lng, paths: street.paths }, sort: "distance" });
+  assert.deepEqual(S.search(rows, st).map((r) => r.id), ["east-end", "middle-off", "far"]);
+  // against the street's midpoint alone the east-end listing would have been 1.1 miles away, behind middle-off
+  const pointOnly = Object.assign(S.defaultState(), { origin: { lat: street.lat, lng: street.lng }, sort: "distance" });
+  assert.equal(S.search(S.enrich(rows.map((r) => Object.assign({}, r))), pointOnly)[0].id, "middle-off");
+});
+
+test("search: the within-miles limit also uses distance to the street", () => {
+  const rows = S.enrich([L({ id: "a", lat: 40.0992, lng: -74.1650 }), L({ id: "b", lat: 40.0500, lng: -74.2000 })]);
+  const street = STREETS[0];
+  const st = Object.assign(S.defaultState(), { origin: { lat: street.lat, lng: street.lng, paths: street.paths }, maxMiles: 1 });
+  assert.equal(ids(S.search(rows, st)), "a");
+});
+
+test("suggestStreets: matches typed street names, with abbreviations and a house number ignored", () => {
+  assert.deepEqual(sn(S.suggestStreets(STREETS, "ridge")), ["Ridge Avenue"]);
+  assert.deepEqual(sn(S.suggestStreets(STREETS, "ridge ave")), ["Ridge Avenue"]);
+  assert.deepEqual(sn(S.suggestStreets(STREETS, "415 ridge ave")), ["Ridge Avenue"]);
+  assert.deepEqual(sn(S.suggestStreets(STREETS, "now pl")), ["Nowlan Place"]);
+  assert.deepEqual(sn(S.suggestStreets(STREETS, "RIDGE")), ["Ridge Avenue"]);
+});
+
+test("suggestStreets: one letter is too little; same name in two towns is two suggestions", () => {
+  assert.deepEqual(S.suggestStreets(STREETS, "r"), []);
+  assert.deepEqual(sn(S.suggestStreets(STREETS, "ocean")), ["Ocean Avenue (Lakewood)", "Ocean Avenue (Jackson)"]);
+  assert.deepEqual(S.suggestStreets(STREETS, "zzzz"), []);
+  assert.deepEqual(S.suggestStreets(null, "ridge"), []);
+});
+
+test("suggestCrossings: finds where two streets meet, in either order and with and / & / slash", () => {
+  for (const text of ["clover & ocean", "ocean and clover", "Clover / Ocean Ave", "ocean@clover"]) {
+    const c = S.suggestCrossings(STREETS, text);
+    assert.equal(c.length, 1, text);
+    assert.equal(c[0].name.includes("Clover Street") && c[0].name.includes("Ocean Avenue"), true, text);
+    assert.ok(Math.abs(c[0].lat - 40.0907) < 0.0003 && Math.abs(c[0].lng - -74.2003) < 0.0003, text);
+  }
+});
+
+test("suggestCrossings: streets that do not meet give no intersection, and the far-away namesake is not used", () => {
+  assert.deepEqual(S.suggestCrossings(STREETS, "ridge & clover"), []);
+  assert.deepEqual(S.suggestCrossings(STREETS, "clover"), []);                 // one street is not an intersection
+  const c = S.suggestCrossings(STREETS, "nowlan & ridge");
+  assert.equal(c.length, 1);
+  assert.ok(Math.abs(c[0].lng - -74.2013) < 0.0003);
+  assert.equal(S.suggestCrossings(STREETS, "ocean & route 88").length, 1);
+});
+
+test("suggestAll: an intersection comes first, places and streets are ranked by how well they match", () => {
+  const picker = [{ name: "Clover", lat: 40.0907, lng: -74.2003 }, { name: "Raintree", lat: 40.0968, lng: -74.1646 }];
+  const all = S.suggestAll(picker, STREETS, "clover");
+  assert.deepEqual(all.map((i) => i.kind + ":" + i.name), ["place:Clover", "street:Clover Street"]);
+  const x = S.suggestAll(picker, STREETS, "clover & ocean");
+  assert.equal(x[0].kind, "cross");
+  assert.ok(S.suggestAll(picker, STREETS, "rain").every((i) => i.kind === "place"));
+  assert.equal(S.suggestAll(picker, STREETS, "ridge")[0].kind, "street");
+  assert.deepEqual(S.suggestAll(picker, STREETS, ""), []);
+});
+
+test("suggestAll: a street result carries its lines so the page can sort by them", () => {
+  const r = S.suggestAll([], STREETS, "ridge ave")[0];
+  assert.equal(r.kind, "street");
+  assert.ok(Array.isArray(r.paths) && r.paths[0].length >= 2);
+  assert.equal(r.town, "Lakewood");
+});
+
+test("template: streets are wired into the search box, Enter and the empty state", () => {
+  assert.match(templateHtml, /LakewoodSearch\.decodeStreets\(DATA\.streets\)/);
+  assert.match(templateHtml, /LakewoodSearch\.suggestAll\(PICKER, STREETS/);
+  assert.match(templateHtml, /paths: pl\.kind === "street" \? pl\.paths : null/);
+  assert.match(templateHtml, /lastCount === 0/);                         // Enter takes the best suggestion when nothing matches
+  assert.match(templateHtml, /No listing mentions/);
+  assert.match(templateHtml, /OpenStreetMap contributors/);              // the street data's required credit
+});
+
+test("template: descriptions use a readable sans font at 15px or more (not the small condensed serif)", () => {
+  const css = templateHtml.slice(templateHtml.indexOf(".card__desc {"), templateHtml.indexOf(".card__desc:empty"));
+  assert.doesNotMatch(css, /Source Serif/);
+  const px = +/font-size:\s*(\d+(?:\.\d+)?)px/.exec(css)[1];
+  assert.ok(px >= 15, "font-size " + px);
+  assert.match(css, /line-height:\s*1\.5/);
+});
+
+// ---- related words, other spellings and typos ----------------------------------------------------
+function textRows() {
+  return S.enrich([
+    L({ id: "bochur", type: "Room", location: "Yeshiva Area", comments: "For Bochur. Separate entrance & bathroom." }),
+    L({ id: "men", type: "House", location: "14th & Lexington", comments: "Furnished room in a house of single men. Use of W/D." }),
+    L({ id: "guys", type: "Room", location: "Central", comments: "Priv. room, fully furn. house working guys. Shared kitchen." }),
+    L({ id: "women", type: "Room", location: "Westgate", comments: "Furnished rooms for women/girls in shared house." }),
+    L({ id: "apt", location: "Albert", comments: "Nice apartment with full basement. Available immediately." }),
+    L({ id: "pool", type: "House", location: "Raintree", comments: "Colonial with finished bsmt, backyard and heated pool near the synagogue." }),
+  ]);
+}
+const found = (text) => {
+  const st = S.defaultState(); st.q = text;
+  return S.search(textRows(), st).map((r) => r.id).sort();
+};
+
+test("boy, bachur, bocher and bochurim all find the same listings (single men / yeshiva boys)", () => {
+  const want = ["bochur", "guys", "men"];
+  for (const word of ["boy", "boys", "bochur", "bachur", "bocher", "bochurim", "bachurim", "guys", "yeshiva boy"]) {
+    const got = found(word);
+    if (word === "yeshiva boy") { assert.deepEqual(got, ["bochur"]); continue; }   // both words must match (AND)
+    assert.deepEqual(got, want, word);
+  }
+});
+
+test("related words are whole words: men does not match women, apartment or basement", () => {
+  assert.deepEqual(found("men"), ["bochur", "guys", "men"]);
+  assert.ok(!found("men").includes("women") && !found("men").includes("apt") && !found("men").includes("pool"));
+});
+
+test("girls and women find the women's listing, and not the men's", () => {
+  assert.deepEqual(found("girl"), ["women"]);
+  assert.deepEqual(found("women"), ["women"]);
+});
+
+test("other words for the same thing: synagogue/shul/minyan, bsmt/basement, apt/apartment", () => {
+  assert.deepEqual(found("shul"), ["pool"]);
+  assert.deepEqual(found("synagogue"), ["pool"]);
+  assert.deepEqual(found("basement"), ["apt", "pool"]);
+  assert.deepEqual(found("bsmt"), ["apt", "pool"]);
+  assert.deepEqual(found("apartment"), ["apt"]);
+  assert.deepEqual(found("apt"), ["apt"]);
+});
+
+test("small typos still find the word (needs 6+ letters, same first letter)", () => {
+  assert.deepEqual(found("basment"), ["apt", "pool"]);
+  assert.deepEqual(found("furnshed"), ["guys", "men", "women"]);
+  assert.deepEqual(found("kitchn"), ["guys"]);
+  assert.deepEqual(found("kit"), ["guys"]);                                        // 3 letters: a word beginning only
+  assert.deepEqual(found("colonail"), ["pool"]);
+  assert.deepEqual(found("Raintre"), ["pool"]);
+  assert.deepEqual(found("bacher"), ["bochur", "guys", "men"]);                    // a spelling nobody listed
+});
+
+test("typos do not match unrelated words", () => {
+  assert.deepEqual(found("bridge"), []);
+  assert.deepEqual(found("zebra"), []);
+  assert.deepEqual(found("poolside"), []);
+});
+
+test("exact searches still work exactly: phone numbers, locations and 3-letter words", () => {
+  assert.deepEqual(found("732-555"), ["apt", "bochur", "guys", "men", "pool", "women"]);
+  assert.deepEqual(found("westgate"), ["women"]);
+  assert.deepEqual(found("wd"), ["men"]);
+  assert.deepEqual(found("w/d"), ["men"]);
+});
+
+test("words combine with AND, each using related words and typos", () => {
+  assert.deepEqual(found("boy furnished"), ["guys", "men"]);
+  assert.deepEqual(found("bachur separate"), ["bochur"]);
+  assert.deepEqual(found("synagogue pool"), ["pool"]);
+});
+
+test("editDistance counts one typo or one swap as 1 and gives up early", () => {
+  assert.equal(S.editDistance("basement", "basment", 2), 1);
+  assert.equal(S.editDistance("furnished", "furnished", 2), 0);
+  assert.equal(S.editDistance("kitchen", "kitchne", 2), 1);              // swapped letters
+  assert.equal(S.editDistance("pool", "garage", 2), 3);                  // "more than 2"
+  assert.equal(S.editDistance("abc", "abcdefghi", 2), 3);
+});
+
+test("soundKey makes Hebrew spelling variants meet", () => {
+  const key = S.soundKey;
+  assert.equal(key("bochur"), key("bachur"));
+  assert.equal(key("bochur"), key("bocher"));
+  assert.equal(key("chosson"), key("chasan"));
+  assert.equal(key("chasan"), key("chassan"));
+  assert.notEqual(key("bochur"), key("raintree"));
+});
+
+test("relatedWords lists what a word also stands for", () => {
+  const r = S.relatedWords("boy");
+  assert.ok(r.includes("bochur") && r.includes("guys") && r.includes("men"));
+  assert.ok(!r.includes("boys"));                                        // not the word itself (plural)
+  assert.deepEqual(S.relatedWords("raintree"), []);
+});
+
+test("every concept has at least two words and no word is in two groups of different meaning by accident", () => {
+  const seen = {};
+  S.CONCEPTS.forEach((g, i) => {
+    assert.ok(g.length >= 2, "group " + i);
+    g.forEach((w) => { if (!/\s/.test(w)) { assert.ok(!(w in seen) || seen[w] === i, "'" + w + "' is in groups " + seen[w] + " and " + i); seen[w] = i; } });
+  });
+});
+
+test("suggestions forgive typos: raintre, luzk, clifto", () => {
+  const picker = [{ name: "Raintree" }, { name: "Lutzk" }, { name: "Clifton Avenue" }, { name: "Westgate" }];
+  assert.equal(S.suggestPlaces(picker, "raintre")[0].name, "Raintree");
+  assert.equal(S.suggestPlaces(picker, "luzk")[0].name, "Lutzk");
+  assert.equal(S.suggestPlaces(picker, "clifto")[0].name, "Clifton Avenue");
+  assert.deepEqual(S.suggestPlaces(picker, "qqqq"), []);
+});
+
+test("real listings: boy / bachur / bocher find the same listings, and 'For Bochur' is among them", () => {
+  const rows = (w) => { const st = S.defaultState(); st.q = w; return S.search(S.enrich(data.listings.map((x) => Object.assign({}, x))), st).map((r) => r.id).sort(); };
+  const a = rows("boy");
+  assert.deepEqual(rows("bachur"), a);
+  assert.deepEqual(rows("bocher"), a);
+  assert.ok(a.length >= 1);
+  if (data.listings.some((x) => /bochur/i.test(x.comments))) {
+    assert.ok(data.listings.filter((x) => /bochur/i.test(x.comments)).every((x) => a.includes(x.id)));
+  }
+});
+
+test("template: the page tells the visitor which related words are also being matched", () => {
+  assert.match(templateHtml, /id="related"/);
+  assert.match(templateHtml, /Also matching related words/);
+  assert.match(templateHtml, /LakewoodSearch\.relatedWords\(w\)/);
+});
