@@ -85,23 +85,23 @@ class InDescriptions(unittest.TestCase):
     def test_whole_descriptions(self):
         cases = {
             "Furnishedfor Choson/Kallah,near shuls. Beautifullayout. Shorttermuntil Dec.30.":
-                "Furnished for Choson/Kallah, near shuls. Beautiful layout. Short term until Dec. 30.",
+                "Furnished for Choson/Kallah, near shuls. Beautiful layout. Short term until December 30.",
             "Beautifulnewtopofthelinefurnished.Great locationneareverything.Av.immediately.":
-                "Beautiful new top of the line furnished. Great location near everything. Av. immediately.",
+                "Beautiful new top of the line furnished. Great location near everything. Available immediately.",
             "Beautifuldeck, 2-sinkkitchen,finishedbasemt.2-cargarage. Pool.":
-                "Beautiful deck, 2-sink kitchen, finished basemt. 2-car garage. Pool.",
+                "Beautiful deck, 2-sink kitchen, finished basement. 2-car garage. Pool.",
             "Single-family home,freshly renovated. Nice fenced-inyard. Av.immediatelytill July.":
-                "Single-family home, freshly renovated. Nice fenced-in yard. Av. immediately till July.",
+                "Single-family home, freshly renovated. Nice fenced-in yard. Available immediately till July.",
         }
         for raw, want in cases.items():
             self.assertEqual(P.clean_comment(raw), want)
 
     def test_properly_spaced_text_is_unchanged(self):
-        text = "Brand new. Available immediately. Furn./unfurn, ultra-modern kitchen, master suite."
+        text = "Brand new. Available immediately. Furnished/unfurnished, ultra-modern kitchen, master suite."
         self.assertEqual(P.clean_comment(text), text)
 
     def test_ordinary_abbreviations_and_decimals_keep_their_shape(self):
-        self.assertEqual(P.clean_comment("3000 s.f, 2.5 baths, e.g. A/C."), "3000 s.f, 2.5 baths, e.g. A/C.")
+        self.assertEqual(P.clean_comment("3000 s.f, 2.5 baths, e.g. A/C."), "3000 square feet, 2.5 baths, e.g. A/C.")
 
 
 class Gate(unittest.TestCase):

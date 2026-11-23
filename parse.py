@@ -8,6 +8,7 @@ import sys, json, re, io, datetime, urllib.request
 
 import pdfplumber
 
+import abbrev
 import segment
 
 SOURCE_URL = "https://masaumatan.com/MasaRentals.pdf"
@@ -176,6 +177,7 @@ def clean_comment(s):
     s = segment.join_hyphenated(s)                            # "learn- ing" -> "learning" (a line break in the PDF)
     s = segment.fix_glued(s)                                  # "locationneareverything" -> "location near everything"
     s = re.sub(r"(?<=[A-Za-z]{2}[.,;:])(?=[A-Za-z0-9])", " ", s)   # "Av.imm." -> "Av. imm."
+    s = abbrev.expand(s)                                      # "Av. imm." -> "Available immediately" (Masa U'Matan charges by the word)
     for w in _GLUE:
         s = re.sub(r"(?<=[a-z])(" + w + r")\b", r" \1", s, flags=re.I)
     s = re.sub(r"\bun furnished\b", "unfurnished", s, flags=re.I)
@@ -187,8 +189,8 @@ def clean_comment(s):
                  r"CALL OR TEXT|Visit us|Luxury Living)", s, maxsplit=1, flags=re.I)[0].strip()
     # Drop a trailing run of very short fragments (kerning garble tail).
     s = re.sub(r"(?:\b\w{1,2}\b[ ,]*){5,}$", "", s).strip(" ,;:-")
-    if len(s) > 300:
-        s = s[:297].rsplit(" ", 1)[0] + "…"
+    if len(s) > 420:                                          # spelled-out text is longer than the PDF's shorthand
+        s = s[:417].rsplit(" ", 1)[0] + "…"
     return s
 
 

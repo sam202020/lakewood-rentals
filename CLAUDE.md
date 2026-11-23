@@ -80,3 +80,12 @@ offered in the "Near" suggestions (`geo.picker_entries` skips hidden entries; li
 - **55+ is a search term and a one-tap filter**, not a neighborhood: "55+", "55 plus", "over 55", "senior", "active adult"
   all normalise to `55+` (`normalizeQuery`); the "55+" chip in the search bar sets `S.age55`; typing a 55+ word offers
   "55+ communities" as a topic suggestion. A listing counts as 55+ if it says so or is in the Fairways / Enclave.
+
+## Abbreviations in descriptions (abbrev.py)
+
+Masa U'Matan charges by the word, so descriptions are shorthand ("Av. imm.", "furn. apt.", "lg. bkyd.", "WD", "SS appliances").
+`abbrev.expand` spells them out in `parse.clean_comment` (one left-to-right pass: it drops the abbreviation's own full stop
+mid-sentence, keeps it at a sentence end, and follows the original's capitals). Abbreviations with two meanings look at the
+neighbouring words (Sep. 1 / Sep. kitchen, 10 min. walk / 3 mo. min., Inc. wifi / incl.). Add a new abbreviation as a rule
+in `RULES` plus a test in `tests/test_abbrev.py`; check the real descriptions after a change (the weekly build warns on
+odd long words, but not on abbreviations nobody has added yet).
