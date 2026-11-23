@@ -89,7 +89,28 @@ class ShippedBorders(unittest.TestCase):
 
     def test_the_border_file_is_small(self):
         if B.BORDERS_FILE.exists():
-            self.assertLess(B.BORDERS_FILE.stat().st_size, 120_000)
+            self.assertLess(B.BORDERS_FILE.stat().st_size, 150_000)
+
+
+class StreetTown(unittest.TestCase):
+    def setUp(self):
+        lk = [(40.0, -74.0), (40.0, -73.9), (40.1, -73.9), (40.1, -74.0), (40.0, -74.0)]          # "Lakewood" square
+        jk = [(40.0, -74.1), (40.0, -74.0), (40.1, -74.0), (40.1, -74.1), (40.0, -74.1)]          # "Jackson" next door
+        B.BOUNDARIES = {"Lakewood": [lk], "Jackson": [jk]}
+
+    def tearDown(self):
+        B.BOUNDARIES = {}
+
+    def test_a_street_mostly_in_jackson_is_jackson_even_if_it_touches_lakewood(self):
+        path = [(40.05, -74.05), (40.05, -73.995)]               # 0.2 mi inside Lakewood, 2.8 mi in Jackson
+        self.assertEqual(B.street_town([path]), "Jackson")
+
+    def test_a_street_with_half_a_mile_in_lakewood_is_lakewood(self):
+        path = [(40.05, -74.2), (40.05, -73.985)]                 # mostly outside both, 1 mi in Lakewood
+        self.assertEqual(B.street_town([path]), "Lakewood")
+
+    def test_a_street_wholly_in_lakewood(self):
+        self.assertEqual(B.street_town([[(40.02, -73.95), (40.08, -73.95)]]), "Lakewood")
 
 
 class Naming(unittest.TestCase):
@@ -226,6 +247,20 @@ class ShippedStreets(unittest.TestCase):
             pts = geo._street_points(self.data, s)
             near = min(geo.haversine_miles(la, ln, pla, pln) for la, ln in pts for pla, pln in pins)
             self.assertLess(near, B.NEAR_MILES + 0.15, f"{s[0]} ({names[s[1]]})")
+
+    def test_bartley_road_is_in_jackson(self):
+        """Owner (2026-11-22): Bartley Road was listed as Lakewood; it is in Jackson (Google Maps: Jackson Township)."""
+        towns = {self.data["towns"][s[1]] for s in self.data["streets"] if s[0] == "Bartley Road"}
+        self.assertEqual(towns, {"Jackson"})
+
+    def test_a_border_street_is_labelled_by_where_most_of_it_is(self):
+        by = {}
+        for s in self.data["streets"]:
+            by.setdefault(s[0], set()).add(self.data["towns"][s[1]])
+        self.assertNotIn("Lakewood", by.get("East Veterans Highway", set()))      # runs along Jackson's side of the line
+        self.assertNotIn("Lakewood", by.get("South New Prospect Road", set()))
+        for name in ("Vermont Avenue", "Route 88", "Route 9", "Route 70", "Clifton Avenue", "Madison Avenue"):
+            self.assertIn("Lakewood", by.get(name, set()), name)
 
     def test_lakewood_is_covered_in_full(self):
         lw = [s for s in self.data["streets"] if self.data["towns"][s[1]] == "Lakewood"]

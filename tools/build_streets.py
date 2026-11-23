@@ -202,6 +202,26 @@ def cluster(ways, link_miles=0.3):
     return list(groups.values())
 
 
+def street_town(paths):
+    """The town a street belongs to, from the real borders: Lakewood if at least LAKEWOOD_MIN_MILES of it is inside
+    Lakewood (Vermont Avenue and Route 88 start there and run on), otherwise the town holding most of its length.
+    (Labelling by the point nearest Lakewood put Jackson's Bartley Road in Lakewood.)"""
+    length = {}
+    for p in paths:
+        for a, b in zip(p, p[1:]):
+            seg = miles(a[0], a[1], b[0], b[1])
+            n = max(1, math.ceil(seg / 0.05))                      # test every 0.05 mile: one long segment can cross a border
+            for k in range(n):
+                f = (k + 0.5) / n
+                town = town_of(a[0] + f * (b[0] - a[0]), a[1] + f * (b[1] - a[1]))
+                length[town] = length.get(town, 0.0) + seg / n
+    if not length:
+        return town_of(*paths[0][0])
+    if length.get("Lakewood", 0.0) >= LAKEWOOD_MIN_MILES:
+        return "Lakewood"
+    return max(length, key=length.get)
+
+
 def join_paths(paths):
     """Chain pieces of a street that share an end point into longer lines (fewer points, smoother lines)."""
     paths = [list(p) for p in paths]
@@ -258,11 +278,13 @@ def _chain(ways):
 
 
 BORDERS_FILE = ROOT / "data" / "town_borders.json"
+BORDER_TOLERANCE_M = 20.0            # how much the saved borders are simplified (the fewer metres, the truer the label)
+LAKEWOOD_MIN_MILES = 0.4             # a street with this much of it inside Lakewood counts as a Lakewood street
 
 
 def load_boundaries(cache=None):
     """{'Lakewood': [ring, ...], ...}. Uses the checked-in data/town_borders.json; if it is missing, builds it from
-    the downloaded boundaries.json in the tile cache (simplified to ~50 m, a few KB)."""
+    the downloaded boundaries.json in the tile cache (simplified to ~20 m)."""
     if BORDERS_FILE.exists():
         return {k: [[tuple(p) for p in ring] for ring in rings] for k, rings in json.loads(BORDERS_FILE.read_text()).items()}
     f = (cache or CACHE) / "boundaries.json"
@@ -274,7 +296,7 @@ def load_boundaries(cache=None):
         ways = [[(g["lat"], g["lon"]) for g in m["geometry"]] for m in rel.get("members", [])
                 if m.get("role") == "outer" and m.get("geometry")]
         if name in BOUNDARY_TOWNS and ways:
-            out[name] = [simplify(r, 50.0) for r in _chain(ways)]
+            out[name] = [simplify(r, BORDER_TOLERANCE_M) for r in _chain(ways)]
     BORDERS_FILE.parent.mkdir(exist_ok=True)
     BORDERS_FILE.write_text(json.dumps({k: [[[round(a, 5), round(b, 5)] for a, b in r] for r in rings]
                                         for k, rings in out.items()}, separators=(",", ":")))
@@ -366,9 +388,7 @@ def build(places_file=None):
     for name, ws in sorted(by_name.items()):
         for grp in cluster(ws):
             allpts = [p for w in grp for p in w]
-            # label the town by the part of the street nearest Lakewood ("Route 88" runs through several towns)
-            nearest = min(allpts, key=lambda p: miles(p[0], p[1], *CENTER))
-            town = town_of(*nearest)
+            town = street_town(join_paths(grp))
             if town != "Lakewood":
                 # outside Lakewood: only the streets of the neighbourhoods the site covers
                 if not any(miles(p[0], p[1], la, ln) <= NEAR_MILES for p in allpts for la, ln in pins):
