@@ -304,11 +304,67 @@ class Addresses(unittest.TestCase):
         self.assertFalse(any("street addresses" in w for w in checks.check(clean)[1]))
 
 
+class OneNeighbourhoodOneEntry(unittest.TestCase):
+    """Regression: 'Clover' and 'Route 88 & Clover' were listed as two neighbourhoods (and the Clover pin was
+    0.4 mi off, so Arlington outranked the Clover listing)."""
+
+    def test_intersection_on_top_of_its_street_is_folded_in(self):
+        places = {"clover": {"name": "Clover", "lat": 40.0907, "lng": -74.2003, "source": "manual"},
+                  "route 88 clover": {"name": "Route 88 & Clover", "lat": 40.0907, "lng": -74.2003, "source": "manual"},
+                  "13th": {"name": "13th Street", "lat": 40.1041, "lng": -74.2103, "source": "manual"},
+                  "13th princeton": {"name": "13th Street & Princeton Avenue", "lat": 40.1041, "lng": -74.2103, "source": "manual"},
+                  "cross": {"name": "Cross Street", "lat": 40.0663, "lng": -74.2380, "source": "manual"},
+                  "cross mass": {"name": "Cross Street & Massachusetts Avenue", "lat": 40.0603, "lng": -74.2294, "source": "manual"}}
+        names = [p["name"] for p in geo.picker_entries(places)]
+        self.assertEqual(names, ["13th Street", "Clover", "Cross Street", "Cross Street & Massachusetts Avenue"])
+
+    def test_street_suffix_variants_count_as_the_same_name(self):
+        places = {"clover": {"name": "Clover", "lat": 40.09, "lng": -74.2, "source": "manual"},
+                  "x": {"name": "Ocean Avenue (Route 88) & Clover Street", "lat": 40.09, "lng": -74.2, "source": "manual"}}
+        self.assertEqual([p["name"] for p in geo.picker_entries(places)], ["Clover"])
+
+    def test_resolve_reports_how_far_apart_an_averaged_pin_is(self):
+        places = {"a": {"lat": 40.00, "lng": -74.20, "source": "manual"}, "b": {"lat": 40.00, "lng": -74.30, "source": "manual"}}
+        self.assertGreater(geo.resolve("A / B", places)["spread"], 5)
+        self.assertEqual(geo.resolve("A", places)["spread"], 0)
+
+    def test_checks_warns_when_a_pin_averages_distant_places(self):
+        rows = [{"id": f"L{i}", "type": ["Apartment", "House", "Townhouse / Attached"][i % 3],
+                 "location": "A / B" if i == 0 else f"Raintree {i}", "phones": ["732-555-0101"], "comments": "x",
+                 "rent": 2000, "lat": 40.1, "lng": -74.2, "geo_unknown": [], "geo_spread": 7.0 if i == 0 else 0}
+                for i in range(100)]
+        errors, warnings = checks.check(rows)
+        self.assertEqual(errors, [])
+        self.assertTrue(any("2 miles apart" in w and "A / B" in w for w in warnings))
+
+
 class ShippedPicker(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.picker = geo.picker_entries(geo.load_places())
         cls.names = [p["name"] for p in cls.picker]
+
+    def test_clover_is_one_neighbourhood_at_the_88_corner(self):
+        clover = [p for p in self.picker if "clover" in p["name"].lower()]
+        self.assertEqual([p["name"] for p in clover], ["Clover"])
+        self.assertLess(geo.haversine_miles(clover[0]["lat"], clover[0]["lng"], 40.09076, -74.20032), 0.02)
+
+    def test_no_intersection_duplicates_a_neighbourhood_it_sits_on(self):
+        for p in self.picker:
+            parts = [geo._base(x) for x in __import__("re").split(r"\s+[&/]\s+", p["name"])]
+            if len(parts) < 2:
+                continue
+            for q in self.picker:
+                if q is not p and geo._base(q["name"]) in parts:
+                    self.assertGreater(geo.haversine_miles(p["lat"], p["lng"], q["lat"], q["lng"]), 0.25,
+                                       (p["name"], q["name"]))
+
+    def test_picking_clover_ranks_the_clover_listing_first(self):
+        import json
+        pin = next(p for p in self.picker if p["name"] == "Clover")
+        L = [x for x in json.loads((ROOT / "listings.json").read_text())["listings"] if x.get("lat")]
+        nearest = min(L, key=lambda x: geo.haversine_miles(pin["lat"], pin["lng"], x["lat"], x["lng"]))
+        self.assertIn("clover", nearest["location"].lower())
 
     def test_no_address_in_the_picker(self):
         self.assertEqual([n for n in self.names if geo.looks_like_address(n)], [])

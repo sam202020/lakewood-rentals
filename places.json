@@ -184,12 +184,11 @@
   "source": "unresolved"
  },
  "bergen": {
-  "name": "Bergen",
-  "lat": 40.09202,
-  "lng": -74.20031,
-  "source": "osm",
-  "match": "Bergen Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/residential"
+  "name": "Bergen Ave",
+  "lat": 40.09201,
+  "lng": -74.20026,
+  "source": "manual",
+  "note": "Checked on Google Maps (Bergen Ave)."
  },
  "brook": {
   "name": "Brook Rd (at County Line Rd)",
@@ -357,11 +356,11 @@
  },
  "clover": {
   "name": "Clover",
-  "lat": 40.08492,
-  "lng": -74.20098,
-  "source": "osm",
-  "match": "Clover Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/tertiary"
+  "lat": 40.09076,
+  "lng": -74.20032,
+  "source": "manual",
+  "note": "Owner: Clover is the same as Clover & the 88 (Route 88 / Ocean Ave): that corner is the center of Clover. Google Maps: Ocean Ave & Clover St. Replaces an unchecked OSM pin 0.4 mi south.",
+  "label": "Clover"
  },
  "club 21 jackson": {
   "name": "The Club at Jackson Twenty-One",
@@ -731,12 +730,11 @@
   "note": "Checked on Google Maps: matches the OSM pin."
  },
  "lexington": {
-  "name": "Lexington",
-  "lat": 40.09865,
-  "lng": -74.21337,
-  "source": "osm",
-  "match": "Lexington Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/residential"
+  "name": "Lexington Ave",
+  "lat": 40.10023,
+  "lng": -74.21368,
+  "source": "manual",
+  "note": "Checked on Google Maps (Lexington Ave)."
  },
  "locust": {
   "name": "Locust Street",
@@ -904,12 +902,11 @@
   "note": "Checked on Google Maps (S New Prospect Rd, Jackson); replaced OSM pin 40.11754,-74.25369."
  },
  "nowlan": {
-  "name": "Nowlan",
-  "lat": 40.0989,
-  "lng": -74.20146,
-  "source": "osm",
-  "match": "Nowlan Place, Lakewood Township, Ocean County, New Jersey, 08701, United States",
-  "kind": "highway/residential"
+  "name": "Nowlan Pl",
+  "lat": 40.09912,
+  "lng": -74.20151,
+  "source": "manual",
+  "note": "Checked on Google Maps (Nowlan Pl)."
  },
  "npgs": {
   "name": "Npgs",
@@ -1022,12 +1019,11 @@
   "note": "Owner's guess: north of County Line Rd, west of Lakewood; average of Brookwood 1, 2, 4 and Harmony Farms."
  },
  "princeton": {
-  "name": "Princeton",
-  "lat": 40.1085,
-  "lng": -74.20923,
-  "source": "osm",
-  "match": "Princeton Avenue, Coventry Square, Lakewood Township, Ocean County, New Jersey, 08701, Uni",
-  "kind": "highway/residential"
+  "name": "Princeton Ave",
+  "lat": 40.10167,
+  "lng": -74.20981,
+  "source": "manual",
+  "note": "Checked on Google Maps (Princeton Ave); replaces an OSM pin 0.47 mi north."
  },
  "prospect": {
   "name": "Prospect",
@@ -1121,8 +1117,7 @@
   "lat": 40.09076,
   "lng": -74.20032,
   "source": "manual",
-  "note": "Google Maps intersection.",
-  "label": "Ocean Avenue (Route 88) & Clover Street"
+  "note": "Google Maps intersection."
  },
  "rt 70": {
   "name": "Route 70",

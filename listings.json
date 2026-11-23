@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T00:03:13+00:00",
+  "generated_at": "2026-11-23T00:07:18+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -31,7 +31,8 @@
       "lng": -74.25544,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH165_1033:5",
@@ -54,7 +55,8 @@
       "lng": -74.14375,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1165_1034:7",
@@ -77,7 +79,8 @@
       "lng": -74.25584,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11A55_1016:20",
@@ -105,7 +108,8 @@
       "lng": -74.21049,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA166_1036:20",
@@ -128,7 +132,8 @@
       "lng": -74.2094,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A166_1037:4",
@@ -156,7 +161,8 @@
       "lng": -74.2015,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.7
     },
     {
       "id": "11A66_1035:15",
@@ -184,7 +190,8 @@
       "lng": -74.19895,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UH1127_964:15",
@@ -207,7 +214,8 @@
       "lng": -74.25653,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1H166_1036:17",
@@ -230,7 +238,8 @@
       "lng": -74.20131,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH166_1035:3",
@@ -253,7 +262,8 @@
       "lng": -74.26653,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1TT166_1036:8",
@@ -276,7 +286,8 @@
       "lng": -74.23199,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1HH166_1036:12",
@@ -299,7 +310,8 @@
       "lng": -74.25647,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1HH166_1036:18",
@@ -322,7 +334,8 @@
       "lng": -74.22366,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U11TT66_1036:16",
@@ -345,7 +358,8 @@
       "lng": -74.24265,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1TT115_935:4",
@@ -368,7 +382,8 @@
       "lng": -74.21677,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UH1166_1038:2",
@@ -396,7 +411,8 @@
       "lng": -74.23082,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UH1166_1038:4",
@@ -424,7 +440,8 @@
       "lng": -74.36478,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A151_1008:9",
@@ -452,7 +469,8 @@
       "lng": -74.20131,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A154_1016:9",
@@ -480,7 +498,8 @@
       "lng": -74.19915,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.4
     },
     {
       "id": "1A155_1017:2",
@@ -508,7 +527,8 @@
       "lng": -74.2148,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A143_999:14",
@@ -536,7 +556,8 @@
       "lng": -74.20766,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1120_948:15",
@@ -559,7 +580,8 @@
       "lng": -74.14375,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH168_1040:4",
@@ -582,7 +604,8 @@
       "lng": -74.25653,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1H168_1040:9",
@@ -605,7 +628,8 @@
       "lng": -74.23451,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U11TT68_1040:12",
@@ -628,7 +652,8 @@
       "lng": -74.23546,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.8
     },
     {
       "id": "1HH168_1041:1",
@@ -651,7 +676,8 @@
       "lng": -74.24334,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.4
     },
     {
       "id": "11TT68_1039:10",
@@ -674,7 +700,8 @@
       "lng": -74.20059,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH169_1043:1",
@@ -697,7 +724,8 @@
       "lng": -74.22761,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11HH66_1037:11",
@@ -718,7 +746,8 @@
       "lng": -74.19674,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11HH69_1041:16",
@@ -741,7 +770,8 @@
       "lng": -74.24687,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1TT129_969:4",
@@ -764,7 +794,8 @@
       "lng": -74.25461,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH142_996:15",
@@ -787,7 +818,8 @@
       "lng": -74.25584,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH074_858:4",
@@ -810,7 +842,8 @@
       "lng": -74.16462,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1169_1042:6",
@@ -833,7 +866,8 @@
       "lng": -74.36478,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH136_988:6",
@@ -856,7 +890,8 @@
       "lng": -74.24666,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1AA096_904:5",
@@ -879,7 +914,8 @@
       "lng": -74.21834,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1AA085_879:6",
@@ -902,7 +938,8 @@
       "lng": -74.20888,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11A58_1022:18",
@@ -930,7 +967,8 @@
       "lng": -74.19895,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH170_1045:1",
@@ -953,7 +991,8 @@
       "lng": -74.225,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH166_1037:9",
@@ -976,7 +1015,8 @@
       "lng": -74.24666,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1153_1014:6",
@@ -999,7 +1039,8 @@
       "lng": -74.25653,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1HH170_1044:13",
@@ -1022,7 +1063,8 @@
       "lng": -74.23451,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1170_1044:4",
@@ -1048,6 +1090,7 @@
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
+      "geo_spread": 0,
       "geo_neighborhood": "enclave"
     },
     {
@@ -1071,7 +1114,8 @@
       "lng": -74.24687,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1HH170_1044:15",
@@ -1094,7 +1138,8 @@
       "lng": -74.16462,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1171_1045:3",
@@ -1117,7 +1162,8 @@
       "lng": -74.23106,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH144_999:3",
@@ -1140,7 +1186,8 @@
       "lng": -74.24666,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1171_1045:7",
@@ -1163,7 +1210,8 @@
       "lng": -74.22668,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH109_921:11",
@@ -1186,7 +1234,8 @@
       "lng": -74.25584,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1HH171_1045:18",
@@ -1209,7 +1258,8 @@
       "lng": -74.25653,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11H71_1045:10",
@@ -1232,7 +1282,8 @@
       "lng": -74.23697,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A104_915:8",
@@ -1260,7 +1311,8 @@
       "lng": -74.1905,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A150_1008:3",
@@ -1288,7 +1340,8 @@
       "lng": -74.20907,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1A136_987:17",
@@ -1316,7 +1369,8 @@
       "lng": -74.19226,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11A71_1045:13",
@@ -1344,7 +1398,8 @@
       "lng": -74.19965,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A136_988:5",
@@ -1372,7 +1427,8 @@
       "lng": -74.2545,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11AA71_1045:12",
@@ -1393,7 +1449,8 @@
       "lng": -74.20907,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1AA058_829:13",
@@ -1418,7 +1475,8 @@
       "lng": -74.2148,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1AA069_846:15",
@@ -1446,7 +1504,8 @@
       "lng": -74.19997,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11AA72_1048:10",
@@ -1469,7 +1528,8 @@
       "lng": -74.23904,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA172_1047:8",
@@ -1492,7 +1552,8 @@
       "lng": -74.225,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1AA035_785:18",
@@ -1520,7 +1581,8 @@
       "lng": -74.20638,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11AA72_1048:12",
@@ -1543,7 +1605,8 @@
       "lng": -74.1905,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11A72_1048:13",
@@ -1566,7 +1629,8 @@
       "lng": -74.21911,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A132_980:18",
@@ -1594,7 +1658,8 @@
       "lng": -74.22684,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A080_869:6",
@@ -1617,7 +1682,8 @@
       "lng": -74.2545,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A131_977:19",
@@ -1645,7 +1711,8 @@
       "lng": -74.19885,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A076_862:5",
@@ -1673,7 +1740,8 @@
       "lng": -74.19885,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A113_932:2",
@@ -1701,7 +1769,8 @@
       "lng": -74.20526,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A070_848:15",
@@ -1729,7 +1798,8 @@
       "lng": -74.20032,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11A52_1009:16",
@@ -1752,7 +1822,8 @@
       "lng": -74.193,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.6
     },
     {
       "id": "1A172_1049:3",
@@ -1780,7 +1851,8 @@
       "lng": -74.1905,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A172_1049:7",
@@ -1808,7 +1880,8 @@
       "lng": -74.25607,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.1
     },
     {
       "id": "1A172_1049:8",
@@ -1831,7 +1904,8 @@
       "lng": -74.2148,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11A62_1026:15",
@@ -1859,7 +1933,8 @@
       "lng": -74.2007,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.1
     },
     {
       "id": "1A118_942:14",
@@ -1882,7 +1957,8 @@
       "lng": -74.18049,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1R130_975:8",
@@ -1910,7 +1986,8 @@
       "lng": -74.225,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1R105_916:9",
@@ -1938,7 +2015,8 @@
       "lng": -74.23441,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.4
     },
     {
       "id": "1R172_1049:4",
@@ -1966,7 +2044,8 @@
       "lng": -74.22226,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH172_1049:6",
@@ -1989,7 +2068,8 @@
       "lng": -74.2148,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH154_1016:8",
@@ -2012,7 +2092,8 @@
       "lng": -74.36478,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1HH154_1015:18",
@@ -2035,7 +2116,8 @@
       "lng": -74.27047,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11TT20_944:20",
@@ -2058,7 +2140,8 @@
       "lng": -74.20966,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11TT72_1046:12",
@@ -2081,7 +2164,8 @@
       "lng": -74.35417,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1172_1047:7",
@@ -2104,7 +2188,8 @@
       "lng": -74.31907,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1172_1047:9",
@@ -2127,7 +2212,8 @@
       "lng": -74.24924,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1HH172_1047:10",
@@ -2150,7 +2236,8 @@
       "lng": -74.24924,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1HH172_1047:11",
@@ -2173,7 +2260,8 @@
       "lng": null,
       "geo": null,
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1TT172_1048:4",
@@ -2196,7 +2284,8 @@
       "lng": -74.2294,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1HH172_1047:17",
@@ -2219,7 +2308,8 @@
       "lng": -74.24673,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1HH172_1047:18",
@@ -2242,7 +2332,8 @@
       "lng": -74.36478,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11TT72_1049:103",
@@ -2265,7 +2356,8 @@
       "lng": -74.35417,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11HH72_1049:11",
@@ -2288,7 +2380,8 @@
       "lng": -74.24687,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH158_1022:2",
@@ -2311,7 +2404,8 @@
       "lng": -74.23451,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1HH172_1047:19",
@@ -2334,7 +2428,8 @@
       "lng": -74.22366,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1172_1048:2",
@@ -2357,7 +2452,8 @@
       "lng": -74.19737,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH172_1046:8",
@@ -2380,7 +2476,8 @@
       "lng": -74.27709,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH173_1051:6",
@@ -2403,7 +2500,8 @@
       "lng": -74.25653,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH173_1051:8",
@@ -2426,7 +2524,8 @@
       "lng": -74.16462,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1TT173_1050:3",
@@ -2449,7 +2548,8 @@
       "lng": -74.35417,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1TT173_1050:1",
@@ -2472,7 +2572,8 @@
       "lng": -74.20966,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1173_1050:5",
@@ -2495,7 +2596,8 @@
       "lng": -74.28115,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1173_1050:6",
@@ -2518,7 +2620,8 @@
       "lng": -74.27979,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1173_1050:7",
@@ -2541,7 +2644,8 @@
       "lng": -74.36478,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U11TT73_1050:16",
@@ -2564,7 +2668,8 @@
       "lng": -74.21653,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U11TT73_1050:18",
@@ -2587,7 +2692,8 @@
       "lng": -74.35417,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11TT73_1049:14",
@@ -2610,7 +2716,8 @@
       "lng": -74.2089,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11HH73_1049:12",
@@ -2633,7 +2740,8 @@
       "lng": -74.25709,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11HH73_1049:16",
@@ -2656,7 +2764,8 @@
       "lng": -74.24666,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1125_958:10",
@@ -2679,7 +2788,8 @@
       "lng": -74.25653,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1159_1023:8",
@@ -2702,7 +2812,8 @@
       "lng": -74.2377,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH108_920:18",
@@ -2725,7 +2836,8 @@
       "lng": -74.21049,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1R173_1050:11",
@@ -2753,7 +2865,8 @@
       "lng": -74.24189,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1R174_1052:8",
@@ -2781,7 +2894,8 @@
       "lng": -74.21911,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11A52_1012:15",
@@ -2809,7 +2923,8 @@
       "lng": -74.225,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11A73_1051:15",
@@ -2832,7 +2947,8 @@
       "lng": -74.23321,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1A173_1050:9",
@@ -2860,7 +2976,8 @@
       "lng": -74.2545,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11A73_1051:10",
@@ -2889,6 +3006,7 @@
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
+      "geo_spread": 0,
       "geo_neighborhood": "w kennedy"
     },
     {
@@ -2912,7 +3030,8 @@
       "lng": -74.36478,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11A50_1007:18",
@@ -2935,7 +3054,8 @@
       "lng": -74.21499,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1AA138_990:9",
@@ -2963,7 +3083,8 @@
       "lng": -74.20021,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11A73_1049:19",
@@ -2991,7 +3112,8 @@
       "lng": -74.24495,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1A173_1050:4",
@@ -3014,7 +3136,8 @@
       "lng": -74.20358,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA173_1050:2",
@@ -3042,7 +3165,8 @@
       "lng": -74.20966,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11AA73_1051:13",
@@ -3065,7 +3189,8 @@
       "lng": -74.2205,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA173_1050:13",
@@ -3088,7 +3213,8 @@
       "lng": -74.22197,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA173_1050:14",
@@ -3116,7 +3242,8 @@
       "lng": -74.25544,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11AA73_1051:14",
@@ -3139,7 +3266,8 @@
       "lng": -74.2205,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11AA72_1046:14",
@@ -3162,7 +3290,8 @@
       "lng": -74.225,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA174_1053:11",
@@ -3185,7 +3314,8 @@
       "lng": -74.2377,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1AA174_1052:4",
@@ -3208,7 +3338,8 @@
       "lng": -74.19671,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1AA174_1052:5",
@@ -3231,7 +3362,8 @@
       "lng": -74.21834,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1AA117_939:18",
@@ -3254,7 +3386,8 @@
       "lng": -74.19475,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A161_1026:7",
@@ -3282,7 +3415,8 @@
       "lng": -74.20775,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A090_890:18",
@@ -3310,7 +3444,8 @@
       "lng": -74.2545,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A174_1052:7",
@@ -3338,7 +3473,8 @@
       "lng": -74.21461,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A115_936:7",
@@ -3366,7 +3502,8 @@
       "lng": -74.1905,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A174_1052:3",
@@ -3394,7 +3531,8 @@
       "lng": null,
       "geo": null,
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11A74_1051:18",
@@ -3422,7 +3560,8 @@
       "lng": -74.21049,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A124_955:6",
@@ -3450,7 +3589,8 @@
       "lng": -74.24942,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UA1174_1053:6",
@@ -3478,7 +3618,8 @@
       "lng": -74.19965,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A122_951:14",
@@ -3501,7 +3642,8 @@
       "lng": -74.1955,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A057_828:19",
@@ -3529,7 +3671,8 @@
       "lng": -74.20131,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1R156_1019:12",
@@ -3557,7 +3700,8 @@
       "lng": -74.23117,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 1.3
     },
     {
       "id": "11T55_1016:19",
@@ -3580,7 +3724,8 @@
       "lng": -74.19965,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH173_1051:7",
@@ -3603,7 +3748,8 @@
       "lng": -74.23019,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1133_982:20",
@@ -3626,7 +3772,8 @@
       "lng": -74.23308,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1174_1053:7",
@@ -3649,7 +3796,8 @@
       "lng": -74.26554,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1174_1053:9",
@@ -3672,7 +3820,8 @@
       "lng": -74.22366,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U11TT74_1053:10",
@@ -3695,7 +3844,8 @@
       "lng": -74.22961,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.3
     },
     {
       "id": "U1HH174_1053:13",
@@ -3718,7 +3868,8 @@
       "lng": -74.14375,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11HH74_1051:16",
@@ -3741,7 +3892,8 @@
       "lng": -74.26028,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH174_1052:1",
@@ -3764,7 +3916,8 @@
       "lng": -74.25653,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH096_902:17",
@@ -3787,7 +3940,8 @@
       "lng": -74.2375,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1TT175_1054:5",
@@ -3810,7 +3964,8 @@
       "lng": -74.23199,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UHH1175_1054:6",
@@ -3833,7 +3988,8 @@
       "lng": -74.25653,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1TT175_1054:7",
@@ -3856,7 +4012,8 @@
       "lng": -74.20229,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11TT75_1053:15",
@@ -3879,7 +4036,8 @@
       "lng": -74.34684,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11HH75_1053:16",
@@ -3902,7 +4060,8 @@
       "lng": -74.19674,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11TT74_1053:17",
@@ -3925,7 +4084,8 @@
       "lng": -74.25544,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11HH74_1053:18",
@@ -3948,7 +4108,8 @@
       "lng": -74.30564,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11HH74_1053:19",
@@ -3971,7 +4132,8 @@
       "lng": -74.24373,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11TT75_1052:15",
@@ -3994,7 +4156,8 @@
       "lng": -74.34684,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11H75_1053:20",
@@ -4017,7 +4180,8 @@
       "lng": -74.24929,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "UA1123_954:6",
@@ -4045,7 +4209,8 @@
       "lng": -74.20888,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A105_915:9",
@@ -4073,7 +4238,8 @@
       "lng": -74.2089,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A121_949:1",
@@ -4101,7 +4267,8 @@
       "lng": -74.19467,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.5
     },
     {
       "id": "11A54_1013:17",
@@ -4127,7 +4294,8 @@
       "lng": -74.20283,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1R165_1033:3",
@@ -4155,7 +4323,8 @@
       "lng": -74.25544,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA175_1054:9",
@@ -4178,7 +4347,8 @@
       "lng": -74.20021,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11AA75_1052:13",
@@ -4199,7 +4369,8 @@
       "lng": -74.25544,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11AA75_1054:18",
@@ -4220,7 +4391,8 @@
       "lng": -74.22007,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA176_1055:9",
@@ -4243,7 +4415,8 @@
       "lng": -74.17316,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA176_1055:4",
@@ -4266,7 +4439,8 @@
       "lng": -74.21677,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA176_1055:7",
@@ -4294,7 +4468,8 @@
       "lng": -74.20184,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A130_972:6",
@@ -4322,7 +4497,8 @@
       "lng": -74.2008,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A176_1056:1",
@@ -4350,7 +4526,8 @@
       "lng": -74.22297,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.4
     },
     {
       "id": "11A75_1055:19",
@@ -4378,7 +4555,8 @@
       "lng": -74.21275,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11A75_1055:20",
@@ -4406,7 +4584,8 @@
       "lng": -74.23636,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.2
     },
     {
       "id": "U1A163_1030:15",
@@ -4429,7 +4608,8 @@
       "lng": -74.19716,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11A75_1054:17",
@@ -4457,7 +4637,8 @@
       "lng": -74.20179,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11A75_1054:11",
@@ -4485,7 +4666,8 @@
       "lng": -74.19475,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1R159_1021:1",
@@ -4513,7 +4695,8 @@
       "lng": -74.36478,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11TT75_1055:17",
@@ -4536,7 +4719,8 @@
       "lng": -74.21652,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.1
     },
     {
       "id": "11HH75_1054:12",
@@ -4559,7 +4743,8 @@
       "lng": -74.27047,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11TT75_1054:13",
@@ -4582,7 +4767,8 @@
       "lng": -74.35417,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11TT75_1054:14",
@@ -4605,7 +4791,8 @@
       "lng": -74.19475,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11HH75_1054:15",
@@ -4628,7 +4815,8 @@
       "lng": -74.19674,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11HH75_1054:16",
@@ -4652,6 +4840,7 @@
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
+      "geo_spread": 0,
       "geo_neighborhood": "route 88 clover"
     },
     {
@@ -4673,7 +4862,8 @@
       "lng": -74.16462,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11TT75_1054:20",
@@ -4696,7 +4886,8 @@
       "lng": -74.35417,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11HH75_1055:16",
@@ -4719,7 +4910,8 @@
       "lng": -74.25653,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1TT176_1055:1",
@@ -4742,7 +4934,8 @@
       "lng": -74.23199,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1TT176_1055:8",
@@ -4765,7 +4958,8 @@
       "lng": -74.18005,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1TT173_1051:1",
@@ -4788,7 +4982,8 @@
       "lng": -74.2089,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1HH176_1055:11",
@@ -4811,7 +5006,8 @@
       "lng": -74.26226,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1HH176_1055:13",
@@ -4834,7 +5030,8 @@
       "lng": -74.24706,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.8
     },
     {
       "id": "U11TT76_1055:14",
@@ -4857,7 +5054,8 @@
       "lng": -74.20966,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1HH176_1055:15",
@@ -4880,7 +5078,8 @@
       "lng": -74.21348,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1HH177_1056:15",
@@ -4903,7 +5102,8 @@
       "lng": -74.21575,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.3
     },
     {
       "id": "U11TT77_1056:16",
@@ -4926,7 +5126,8 @@
       "lng": -74.20597,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.4
     },
     {
       "id": "U11TT77_1056:17",
@@ -4949,7 +5150,8 @@
       "lng": -74.21713,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1HH177_1056:185",
@@ -4972,7 +5174,8 @@
       "lng": -74.24673,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11TT73_1049:17",
@@ -4995,7 +5198,8 @@
       "lng": -74.20488,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11TT73_1051:9",
@@ -5018,7 +5222,8 @@
       "lng": -74.2928,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 7.0
     },
     {
       "id": "UHH1166_1036:1",
@@ -5041,7 +5246,8 @@
       "lng": -74.19674,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH177_1056:4",
@@ -5064,7 +5270,8 @@
       "lng": -74.19737,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11TT77_1056:5",
@@ -5087,7 +5294,8 @@
       "lng": -74.2094,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH177_1056:6",
@@ -5110,7 +5318,8 @@
       "lng": -74.19674,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1HH177_1056:7",
@@ -5133,7 +5342,8 @@
       "lng": -74.3817,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U11TT77_1056:12",
@@ -5156,7 +5366,8 @@
       "lng": -74.34684,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A104_915:4",
@@ -5184,7 +5395,8 @@
       "lng": -74.20781,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "A998_718:3",
@@ -5205,7 +5417,8 @@
       "lng": -74.16462,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11A53_1012:19",
@@ -5233,7 +5446,8 @@
       "lng": -74.2205,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A073_856:9",
@@ -5256,7 +5470,8 @@
       "lng": -74.225,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1A131_978:1",
@@ -5284,7 +5499,8 @@
       "lng": -74.25102,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0.6
     },
     {
       "id": "1A131_978:2",
@@ -5312,7 +5528,8 @@
       "lng": -74.21028,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1R115_935:2",
@@ -5340,7 +5557,8 @@
       "lng": -74.21461,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1RR177_1056:19",
@@ -5363,7 +5581,8 @@
       "lng": -74.19674,
       "geo": "town",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA177_1056:8",
@@ -5386,7 +5605,8 @@
       "lng": -74.22226,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "1AA177_1056:9",
@@ -5409,7 +5629,8 @@
       "lng": -74.20184,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA177_1056:10",
@@ -5432,7 +5653,8 @@
       "lng": -74.20406,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA177_1056:11",
@@ -5455,7 +5677,8 @@
       "lng": -74.19811,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA177_1056:20",
@@ -5483,7 +5706,8 @@
       "lng": -74.20283,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA177_1056:13",
@@ -5511,7 +5735,8 @@
       "lng": -74.2224,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA177_1056:14",
@@ -5534,7 +5759,8 @@
       "lng": -74.2047,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11AA75_1052:14",
@@ -5559,7 +5785,8 @@
       "lng": -74.2031,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "9AA52_672:11",
@@ -5582,7 +5809,8 @@
       "lng": -74.19811,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11AA75_1052:12",
@@ -5607,7 +5835,8 @@
       "lng": -74.1905,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "11AA61_1025:19",
@@ -5635,7 +5864,8 @@
       "lng": -74.1895,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     },
     {
       "id": "U1AA176_1055:5",
@@ -5658,7 +5888,8 @@
       "lng": -74.20141,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_spread": 0
     }
   ],
   "places": {
@@ -5768,9 +5999,9 @@
       "lng": -74.20059
     },
     "bergen": {
-      "name": "Bergen",
-      "lat": 40.09202,
-      "lng": -74.20031
+      "name": "Bergen Ave",
+      "lat": 40.09201,
+      "lng": -74.20026
     },
     "brook": {
       "name": "Brook Rd (at County Line Rd)",
@@ -5874,8 +6105,8 @@
     },
     "clover": {
       "name": "Clover",
-      "lat": 40.08492,
-      "lng": -74.20098
+      "lat": 40.09076,
+      "lng": -74.20032
     },
     "club 21 jackson": {
       "name": "The Club at Jackson Twenty-One",
@@ -6088,9 +6319,9 @@
       "lng": -74.20119
     },
     "lexington": {
-      "name": "Lexington",
-      "lat": 40.09865,
-      "lng": -74.21337
+      "name": "Lexington Ave",
+      "lat": 40.10023,
+      "lng": -74.21368
     },
     "locust": {
       "name": "Locust Street",
@@ -6178,9 +6409,9 @@
       "lng": -74.25647
     },
     "nowlan": {
-      "name": "Nowlan",
-      "lat": 40.0989,
-      "lng": -74.20146
+      "name": "Nowlan Pl",
+      "lat": 40.09912,
+      "lng": -74.20151
     },
     "oak glen": {
       "name": "Oak Glen",
@@ -6243,9 +6474,9 @@
       "lng": -74.24929
     },
     "princeton": {
-      "name": "Princeton",
-      "lat": 40.1085,
-      "lng": -74.20923
+      "name": "Princeton Ave",
+      "lat": 40.10167,
+      "lng": -74.20981
     },
     "prospect": {
       "name": "Prospect",
@@ -6500,17 +6731,7 @@
       "lng": -74.21028
     },
     {
-      "name": "13th Street & Princeton Avenue",
-      "lat": 40.10409,
-      "lng": -74.21028
-    },
-    {
       "name": "14th Street",
-      "lat": 40.10516,
-      "lng": -74.21461
-    },
-    {
-      "name": "14th Street & Lexington Avenue",
       "lat": 40.10516,
       "lng": -74.21461
     },
@@ -6525,17 +6746,7 @@
       "lng": -74.21275
     },
     {
-      "name": "5th Street & Lexington Avenue",
-      "lat": 40.09534,
-      "lng": -74.21275
-    },
-    {
       "name": "7th Street",
-      "lat": 40.09775,
-      "lng": -74.20907
-    },
-    {
-      "name": "7th Street & Princeton Avenue",
       "lat": 40.09775,
       "lng": -74.20907
     },
@@ -6575,9 +6786,9 @@
       "lng": -74.20059
     },
     {
-      "name": "Bergen",
-      "lat": 40.09202,
-      "lng": -74.20031
+      "name": "Bergen Avenue",
+      "lat": 40.09201,
+      "lng": -74.20026
     },
     {
       "name": "Brook Hill",
@@ -6666,8 +6877,8 @@
     },
     {
       "name": "Clover",
-      "lat": 40.08492,
-      "lng": -74.20098
+      "lat": 40.09076,
+      "lng": -74.20032
     },
     {
       "name": "Congress Street",
@@ -6711,11 +6922,6 @@
     },
     {
       "name": "E 7th Street",
-      "lat": 40.09862,
-      "lng": -74.20141
-    },
-    {
-      "name": "E 7th Street & Nowlan Place",
       "lat": 40.09862,
       "lng": -74.20141
     },
@@ -6850,9 +7056,9 @@
       "lng": -74.20119
     },
     {
-      "name": "Lexington",
-      "lat": 40.09865,
-      "lng": -74.21337
+      "name": "Lexington Avenue",
+      "lat": 40.10023,
+      "lng": -74.21368
     },
     {
       "name": "Locust Grove",
@@ -6930,9 +7136,9 @@
       "lng": -74.25647
     },
     {
-      "name": "Nowlan",
-      "lat": 40.0989,
-      "lng": -74.20146
+      "name": "Nowlan Place",
+      "lat": 40.09912,
+      "lng": -74.20151
     },
     {
       "name": "Oak Glen",
@@ -6950,19 +7156,9 @@
       "lng": -74.18049
     },
     {
-      "name": "Ocean Avenue (Route 88) & Clover Street",
-      "lat": 40.09076,
-      "lng": -74.20032
-    },
-    {
       "name": "Ocean Pointe",
       "lat": 40.08836,
       "lng": -74.18005
-    },
-    {
-      "name": "Park Ave S & Route 88",
-      "lat": 40.09055,
-      "lng": -74.20781
     },
     {
       "name": "Park Avenue",
@@ -6995,9 +7191,9 @@
       "lng": -74.24929
     },
     {
-      "name": "Princeton",
-      "lat": 40.1085,
-      "lng": -74.20923
+      "name": "Princeton Avenue",
+      "lat": 40.10167,
+      "lng": -74.20981
     },
     {
       "name": "Prospect",
@@ -7030,16 +7226,6 @@
       "lng": -74.20131
     },
     {
-      "name": "Ridge Avenue & Negba Street",
-      "lat": 40.09675,
-      "lng": -74.20283
-    },
-    {
-      "name": "Ridge Avenue / Bergen Avenue",
-      "lat": 40.095,
-      "lng": -74.2008
-    },
-    {
       "name": "Rose Court",
       "lat": 40.04689,
       "lng": -74.20229
@@ -7050,22 +7236,12 @@
       "lng": -74.19671
     },
     {
-      "name": "Route 70 & New Hampshire Avenue",
-      "lat": 40.05052,
-      "lng": -74.19671
-    },
-    {
       "name": "Route 88",
       "lat": 40.09065,
       "lng": -74.20406
     },
     {
       "name": "Route 9",
-      "lat": 40.07929,
-      "lng": -74.21653
-    },
-    {
-      "name": "Route 9 & James Street",
       "lat": 40.07929,
       "lng": -74.21653
     },
@@ -7143,11 +7319,6 @@
       "name": "Sunset Avenue",
       "lat": 40.08299,
       "lng": -74.22511
-    },
-    {
-      "name": "Sunset Avenue & James Street",
-      "lat": 40.0798,
-      "lng": -74.225
     },
     {
       "name": "The 70",

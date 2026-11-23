@@ -93,6 +93,11 @@ def check(listings, previous_count=None):
             warnings.append(
                 f"{len(unverified)} place pin(s) come straight from OpenStreetMap and were never checked on "
                 f"Google Maps: {', '.join(unverified[:12])} - verify them (see CLAUDE.md)")
+        wide = sorted({f"{x.get('location')} ({x['geo_spread']} mi)" for x in listings if x.get("geo_spread", 0) > 2})
+        if wide:
+            warnings.append(
+                f"{len(wide)} listing pin(s) are an average of places more than 2 miles apart, so they point at nowhere: "
+                f"{', '.join(wide[:6])} - ask the owner which place is meant")
         if placed < 0.70:
             warnings.append(f"only {placed:.0%} of listings can be placed on the map")
 

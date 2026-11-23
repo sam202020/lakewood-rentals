@@ -104,7 +104,7 @@ def resolve(location, places):
     whole = next((e for e in (_known(places, c) for c in cands) if e), None)
     if whole:
         town = normalize(location) in TOWNS
-        return {"lat": whole["lat"], "lng": whole["lng"], "precision": "town" if town else "place", "unknown": [],
+        return {"lat": whole["lat"], "lng": whole["lng"], "precision": "town" if town else "place", "unknown": [], "spread": 0,
                 "unverified": [] if town or whole.get("source") != "osm" else [normalize(location)]}
 
     keys = parts
@@ -114,11 +114,14 @@ def resolve(location, places):
     specific = [(k, e) for k, e in hits if k not in TOWNS]
     use = specific or hits
     if not use:
-        return {"lat": None, "lng": None, "precision": None, "unknown": unknown, "unverified": []}
+        return {"lat": None, "lng": None, "precision": None, "unknown": unknown, "unverified": [], "spread": 0}
     lat = sum(e["lat"] for _, e in use) / len(use)
     lng = sum(e["lng"] for _, e in use) / len(use)
+    spread = max((haversine_miles(a["lat"], a["lng"], b["lat"], b["lng"])
+                  for i, (_, a) in enumerate(use) for _, b in use[i + 1:]), default=0)
     return {"lat": round(lat, 5), "lng": round(lng, 5),
             "precision": "place" if specific else "town", "unknown": unknown,
+            "spread": round(spread, 1),     # miles between the places this pin is the average of
             # still resting on a raw OpenStreetMap pin that nobody has checked on Google Maps
             "unverified": [k for k, e in use if e.get("source") == "osm" and k not in TOWNS]}
 
@@ -160,6 +163,13 @@ def display_name(key, entry):
     return " ".join(out)
 
 
+def _base(name):
+    """'Clover Street' -> 'clover', 'Ocean Avenue (Route 88)' -> 'ocean', for matching a part to a place."""
+    n = re.sub(r"\(.*?\)", " ", name.lower())
+    words = [w for w in re.sub(r"[^a-z0-9+ ]", " ", n).split() if w not in {x.lower() for x in _STREET_WORDS}]
+    return " ".join(words)
+
+
 _ADDRESS = re.compile(r"^\d{1,5}[A-Za-z]?\s+(?:[NSEW]\.?\s+)?[A-Za-z]")
 
 
@@ -168,7 +178,7 @@ def looks_like_address(text):
     return bool(_ADDRESS.match(str(text or "").strip()))
 
 
-def picker_entries(places, merge_miles=0.15):
+def picker_entries(places, merge_miles=0.15, intersection_miles=0.25):
     """One entry per place name people would recognise, for the "Near" drop-down.
 
     Street addresses are never offered. Names are tidied (display_name), exact duplicates are merged (manual beats OSM),
@@ -190,6 +200,20 @@ def picker_entries(places, merge_miles=0.15):
         for suffix in _STREET_WORDS:
             twin = best.get(low + " " + suffix.lower())
             if twin and haversine_miles(item["lat"], item["lng"], twin["lat"], twin["lng"]) <= merge_miles:
+                best.pop(low, None)
+                break
+    # An intersection ("13th Street & Princeton Avenue", "Route 88 & Clover") that sits on top of a place named
+    # after one of its parts ("13th Street", "Clover") is the same neighbourhood: keep the simple name only.
+    by_base = {}
+    for item in best.values():
+        by_base.setdefault(_base(item["name"]), item)
+    for low, item in list(best.items()):
+        parts = [_base(x) for x in re.split(r"\s+[&/]\s+", item["name"])]
+        if len(parts) < 2:
+            continue
+        for part in parts:
+            twin = by_base.get(part)
+            if twin and twin is not item and haversine_miles(item["lat"], item["lng"], twin["lat"], twin["lng"]) <= intersection_miles:
                 best.pop(low, None)
                 break
     return sorted(({"name": v["name"], "lat": v["lat"], "lng": v["lng"]} for v in best.values()),

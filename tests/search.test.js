@@ -471,3 +471,23 @@ test("template: attribution to Masa U'Matan stays visible (links and the unoffic
   assert.match(banner, /href="https:\/\/masaumatan\.com\/MasaRentals\.pdf"/);
   assert.match(banner, /not affiliated/);
 });
+
+test("real picker: typing 'clover' offers Clover first, and only one Clover", () => {
+  const picker = data.picker || [];
+  if (!picker.length) return;
+  const r = names(S.suggestPlaces(picker, "clover"));
+  assert.equal(r[0], "Clover");
+  assert.equal(r.filter((n) => /clover/i.test(n)).length, 1);
+});
+
+test("real listings: picking Clover sorts a Clover listing first, before Arlington", () => {
+  const picker = data.picker || [];
+  const pin = picker.find((p) => p.name === "Clover");
+  if (!pin) return;
+  const rows = S.enrich(data.listings.map((x) => Object.assign({}, x)));
+  const out = S.search(rows, Object.assign(S.defaultState(), { origin: { lat: pin.lat, lng: pin.lng }, sort: "distance" }));
+  assert.match(out[0].location, /clover/i);
+  const iClover = out.findIndex((r) => /clover/i.test(r.location));
+  const iArlington = out.findIndex((r) => /^arlington/i.test(r.location));
+  assert.ok(iClover < iArlington);
+});
