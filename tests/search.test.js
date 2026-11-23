@@ -937,3 +937,63 @@ test("real listings: the 55+ filter finds the Fairways, the Enclave and the 55+ 
   const typed = S.defaultState(); typed.q = "55 plus";
   assert.deepEqual(S.search(rows, typed).map((r) => r._i).sort(), got.map((r) => r._i).sort());
 });
+
+// ---- short typos and sounds-like: "jak" for Jackson --------------------------------------------------------------
+test("closeWord: a typo of the start of a word, or something that sounds like it", () => {
+  assert.ok(S.closeWord("jak", "jackson"));        // one letter off the start, and j-k starts j-k-s-n
+  assert.ok(S.closeWord("jaks", "jackson"));
+  assert.ok(S.closeWord("jaksn", "jackson"));
+  assert.ok(S.closeWord("raintre", "raintree"));
+  assert.ok(S.closeWord("luzk", "lutzk"));
+  assert.ok(S.closeWord("brookwod", "brookwood"));
+  assert.ok(!S.closeWord("jak", "raintree"));
+  assert.ok(!S.closeWord("jak", "howell"));
+  assert.ok(!S.closeWord("bak", "jackson"));        // the first letter must be the same
+});
+
+test("suggestions: jak and its misspellings offer Jackson first", () => {
+  const picker = [{ name: "Raintree", town: "Lakewood" }, { name: "Jackson" }, { name: "Jackson 21", town: "Jackson" }, { name: "Howell" }];
+  for (const q of ["jak", "jaks", "jacks", "jaksn", "jackso", "Jak", "JAK"]) {
+    assert.equal(S.suggestPlaces(picker, q)[0].name, "Jackson", q);
+  }
+  assert.deepEqual(S.suggestPlaces(picker, "jak").map((p) => p.name), ["Jackson", "Jackson 21"]);
+  assert.deepEqual(S.suggestPlaces(picker, "qxz"), []);
+});
+
+test("suggestions with streets: jak finds Jackson's streets too, after the town", () => {
+  const data = { base: [40.0, -74.4], unit: 0.0001, towns: ["Lakewood", "Jackson"],
+                 streets: [["Jackson Mills Road", 1, [enc([[1000, 500], [1010, 500]])]], ["Raintree Lane", 0, [enc([[900, 2000], [910, 2000]])]]] };
+  const all = S.suggestAll([{ name: "Jackson" }], S.decodeStreets(data), "jak");
+  assert.deepEqual(all.map((i) => i.name), ["Jackson", "Jackson Mills Road"]);
+});
+
+test("listing text: a short misspelling matches only when nothing matches exactly (jak -> Jacksn, Jackson)", () => {
+  const rows = () => S.enrich([
+    L({ id: "jacksn", location: "Hyson Area, Jacksn", comments: "Nice house." }),
+    L({ id: "jackson", location: "Jackson", comments: "Quiet street." }),
+    L({ id: "rain", location: "Raintree", comments: "Beautiful ranch." }),
+    L({ id: "pool", location: "Westgate", comments: "Heated pool and yard." }),
+    L({ id: "pole", location: "Albert", comments: "Pole barn nearby." }),
+  ]);
+  const f = (t) => { const st = S.defaultState(); st.q = t; return S.search(rows(), st).map((r) => r.id).sort(); };
+  assert.deepEqual(f("jak"), ["jacksn", "jackson"]);
+  assert.deepEqual(f("jaks"), ["jacksn", "jackson"]);
+  assert.deepEqual(f("pool"), ["pool"]);                      // matches exactly, so "pole" is not dragged in
+  assert.deepEqual(f("zqx"), []);
+  assert.deepEqual(f("jak ranch"), []);                       // both words must match
+  assert.deepEqual(f("jak house"), ["jacksn"]);
+});
+
+test("the empty state offers the suggestion when the text matches no listing (jak)", () => {
+  assert.match(templateHtml, /No listing mentions/);
+  const st = S.defaultState(); st.q = "xj";
+  assert.deepEqual(S.search(S.enrich([L({ id: "a" })]), st), []);
+});
+
+test("typo suggestions appear only when nothing matches properly (ster -> Sterling, not every Street)", () => {
+  const picker = [{ name: "Sterling Forest" }, { name: "Sterling Place" }, { name: "7th Street" }, { name: "Ridge Avenue & Negba Street" }];
+  assert.deepEqual(names(S.suggestPlaces(picker, "ster")), ["Sterling Place", "Sterling Forest"]);
+  assert.deepEqual(S.suggestAll(picker, [], "ster").map((i) => i.name), ["Sterling Place", "Sterling Forest"]);
+  // but with no proper match at all, the near-misses are offered
+  assert.ok(names(S.suggestPlaces(picker, "stirling")).includes("Sterling Place"));
+});

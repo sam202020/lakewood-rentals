@@ -217,7 +217,7 @@ var LakewoodSearch = (function () {
 
   /** Does listing `x` (enriched) match the typed word `term`? Exact text first, then related words,
    *  then spelling variants / small typos. */
-  function termMatches(x, term) {
+  function termMatches(x, term, loose) {
     term = glueSlashes(term);
     // a small bare number ("55") is a whole word, not a piece of a phone number like 732-555-0101
     if (/^\d{1,6}$/.test(term)) return x._words.indexOf(term) !== -1;
@@ -227,6 +227,11 @@ var LakewoodSearch = (function () {
     var ids = conceptsOfTerm(term);
     for (var i = 0; i < ids.length; i++) if (x._concepts[ids[i]]) return true;
     if (ids.indexOf(AGE55) !== -1 && x._age55) return true;      // in the Fairways / Enclave counts as 55+
+    // a short word (3-5 letters) that matches nothing anywhere is probably a typo or a spelling variant ("jak"):
+    // only then, accept words that start like it or sound like it
+    if (loose && letters && term.length >= 3 && term.length <= 5) {
+      for (var u = 0; u < x._words.length; u++) if (closeWord(term, x._words[u])) return true;
+    }
     if (letters && term.length >= 6) {
       var k = typoBudget(term.length), key = soundKey(term);
       for (var w = 0; w < x._words.length; w++) {
@@ -291,7 +296,8 @@ var LakewoodSearch = (function () {
     var q = normalizeQuery(S.q).trim();
     if (q) {
       var terms = q.split(/\s+/);
-      for (var i = 0; i < terms.length; i++) if (!termMatches(x, terms[i])) return false;
+      var loose = S._loose || {};
+      for (var i = 0; i < terms.length; i++) if (!termMatches(x, terms[i], loose[terms[i]])) return false;
     }
     if (S.types.size && !S.types.has(x.type)) return false;
     if (S.beds && (x.bedrooms_num || 0) < S.beds) return false;
@@ -329,6 +335,12 @@ var LakewoodSearch = (function () {
 
   /** Filter then sort. Sets `_dist` (miles from S.origin) on every listing first. */
   function search(listings, S) {
+    // short words that match no listing at all get the forgiving (typo / sounds-like) treatment
+    var loose = {};
+    normalizeQuery(S.q).trim().split(/\s+/).forEach(function (t) {
+      if (/^[a-z]{3,5}$/.test(t) && !listings.some(function (x) { return termMatches(x, t, false); })) loose[t] = true;
+    });
+    S._loose = loose;
     listings.forEach(function (x) {
       x._dist = S.origin && hasCoords(x) ? originMiles(S.origin, x) : null;
     });
@@ -363,6 +375,7 @@ var LakewoodSearch = (function () {
       if (r) out.push({ p: p, score: r.score, len: r.len });
     });
     out.sort(function (a, b) { return a.score - b.score || a.len - b.len || a.p.name.localeCompare(b.p.name); });
+    if (out.length && out[0].score < 3) out = out.filter(function (o) { return o.score < 3; });   // typos only when nothing matches properly
     return out.slice(0, limit || 8).map(function (o) { return o.p; });
   }
 
@@ -413,18 +426,26 @@ var LakewoodSearch = (function () {
     return m ? String(text).slice(m[0].length) : text;
   }
 
+  /** Is the typed word `t` (3+ letters) a typo of the start of `w`, or does it sound like the start of `w`?
+   *  "jak" -> jackson (one letter off, and j-k is the start of j-k-s-n), "raintre" -> raintree, "luzk" -> lutzk. */
+  function closeWord(t, w) {
+    if (w.charAt(0) !== t.charAt(0)) return false;
+    var k = t.length >= 7 ? 2 : t.length >= 4 ? 1 : 1;
+    if (editDistance(t, w.slice(0, t.length + 1), k) <= k || editDistance(t, w, k) <= k) return true;
+    var key = soundKey(t);
+    return key.length >= 2 && soundKey(w).indexOf(key) === 0;
+  }
+
   function rankTokens(tokens, qt) {
     var label = tokens.join(" "), qs = qt.join(" ");
     if (label.indexOf(qs) === 0) return 0;
     if (qt.every(function (t) { return tokens.some(function (w) { return w.indexOf(t) === 0; }); })) return 1;
     if (label.indexOf(qs) !== -1) return 2;
-    // a small typo or another spelling ("raintre", "luzk", "clifto"): every typed word is close to a word of the name
+    // a small typo or another spelling ("raintre", "luzk", "clifto", "jak" for Jackson): every typed word is close
+    // to a word of the name, in spelling or in sound. Numbers ("13th") are never "corrected".
     if (qt.every(function (t) {
-      var k = /\d/.test(t) ? 0 : t.length >= 7 ? 2 : t.length >= 4 ? 1 : 0;      // numbers ("13th") are never "corrected"
-      return k > 0 && tokens.some(function (w) {
-        return w.charAt(0) === t.charAt(0) &&
-          (editDistance(t, w.slice(0, t.length + 1), k) <= k || editDistance(t, w, k) <= k);
-      });
+      if (/\d/.test(t) || t.length < 3) return false;
+      return tokens.some(function (w) { return closeWord(t, w); });
     })) return 3;
     return -1;
   }
@@ -446,6 +467,7 @@ var LakewoodSearch = (function () {
     out.sort(function (a, b) {
       return a.score - b.score || home(a.s) - home(b.s) || a.len - b.len || away(a.s) - away(b.s) || a.s.n.localeCompare(b.s.n);
     });
+    if (out.length && out[0].score < 3) out = out.filter(function (o) { return o.score < 3; });
     return out.slice(0, limit || 8).map(function (o) { return o.s; });
   }
 
@@ -529,6 +551,7 @@ var LakewoodSearch = (function () {
         it._o = i;
       });
       items.sort(function (a, b) { return a._r - b._r || a._o - b._o; });
+      if (items.length && items[0]._r < 3) items = items.filter(function (it) { return it._r < 3; });   // typo matches only as a last resort
     }
     return items.slice(0, limit);
   }
@@ -543,6 +566,7 @@ var LakewoodSearch = (function () {
     NO_RENT_CAP: NO_RENT_CAP,
     suggestPlaces: suggestPlaces,
     normalizeQuery: normalizeQuery,
+    closeWord: closeWord,
     CONCEPTS: CONCEPTS,
     relatedWords: relatedWords,
     editDistance: editDistance,
