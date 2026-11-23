@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T23:57:21+00:00",
+  "generated_at": "2026-11-23T00:03:13+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -1043,11 +1043,12 @@
       ],
       "furnished": false,
       "comments": "One year lease. Available immediately.",
-      "lat": 40.05865,
-      "lng": -74.22835,
+      "lat": 40.05623,
+      "lng": -74.22761,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_neighborhood": "enclave"
     },
     {
       "id": "U1HH170_1044:10",
@@ -2883,11 +2884,12 @@
       ],
       "furnished": true,
       "comments": "Furnished Choson/Kallah apt. Driveway parking. Shul across street. Av. imm. SITTING ROOM, TEXT: 732-267-3594",
-      "lat": 40.10746,
-      "lng": -74.23154,
+      "lat": 40.10742,
+      "lng": -74.22668,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_neighborhood": "w kennedy"
     },
     {
       "id": "1A141_995:4",
@@ -4645,11 +4647,12 @@
       ],
       "furnished": false,
       "comments": "House on rent-stabilized program, Laurel Ave./Ocean Ave. Available immediately.",
-      "lat": 40.08983,
-      "lng": -74.19996,
+      "lat": 40.09076,
+      "lng": -74.20032,
       "geo": "place",
       "geo_unknown": [],
-      "geo_unverified": []
+      "geo_unverified": [],
+      "geo_neighborhood": "route 88 clover"
     },
     {
       "id": "11HH75_1054:19",
@@ -5686,13 +5689,13 @@
     },
     "22 enclave blvd": {
       "name": "22 Enclave Blvd",
-      "lat": 40.05865,
-      "lng": -74.22835
+      "lat": 40.05623,
+      "lng": -74.22761
     },
     "415 laurel ave": {
       "name": "415 Laurel Ave",
-      "lat": 40.08983,
-      "lng": -74.19996
+      "lat": 40.09076,
+      "lng": -74.20032
     },
     "55+community": {
       "name": "55+ Community (avg of Fairways & Enclave)",
@@ -5721,8 +5724,8 @@
     },
     "957 w county ln": {
       "name": "957 W County Line Rd",
-      "lat": 40.10746,
-      "lng": -74.23154
+      "lat": 40.10742,
+      "lng": -74.22668
     },
     "albert": {
       "name": "Albert",
@@ -6947,6 +6950,11 @@
       "lng": -74.18049
     },
     {
+      "name": "Ocean Avenue (Route 88) & Clover Street",
+      "lat": 40.09076,
+      "lng": -74.20032
+    },
+    {
       "name": "Ocean Pointe",
       "lat": 40.08836,
       "lng": -74.18005
@@ -7050,11 +7058,6 @@
       "name": "Route 88",
       "lat": 40.09065,
       "lng": -74.20406
-    },
-    {
-      "name": "Route 88 & Clover",
-      "lat": 40.09076,
-      "lng": -74.20032
     },
     {
       "name": "Route 9",

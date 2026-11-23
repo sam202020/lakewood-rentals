@@ -96,8 +96,10 @@ def check(listings, previous_count=None):
         if placed < 0.70:
             warnings.append(f"only {placed:.0%} of listings can be placed on the map")
 
+    # an address is fine once the owner has confirmed which neighbourhood it belongs to (build.py sets geo_neighborhood)
     addresses = sorted({x.get("location") for x in listings
-                        if re.match(r"^\d{1,5}[A-Za-z]?\s+(?:[NSEW]\.?\s+)?[A-Za-z]", str(x.get("location") or ""))})
+                        if re.match(r"^\d{1,5}[A-Za-z]?\s+(?:[NSEW]\.?\s+)?[A-Za-z]", str(x.get("location") or ""))
+                        and not x.get("geo_neighborhood")})
     if addresses:
         warnings.append(
             f"{len(addresses)} listing location(s) are street addresses, not neighbourhoods: {', '.join(addresses[:8])} - "

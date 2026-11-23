@@ -29,4 +29,5 @@ A street address ("957 W. County Ln.", "22 Enclave Blvd.") must never appear in 
 be treated as a place. `geo.picker_entries` drops anything that `geo.looks_like_address`, and the build prints a
 `WARN` for every listing whose location is an address. When one shows up: find the neighbourhood it lies in
 (nearest named neighbourhoods on the map, plus any hint in the listing text), **confirm it with the owner**, then
-give the address entry that neighbourhood's coordinates. The card still shows the address from the PDF.
+give the address entry that neighbourhood's coordinates and set `"neighborhood": "<place key>"` on it (that silences the
+warning). The card still shows the address from the PDF.

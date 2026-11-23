@@ -45,6 +45,9 @@ def main():
         x["geo"] = g["precision"]            # "place", "town" or None
         x["geo_unknown"] = g["unknown"]      # names missing from places.json
         x["geo_unverified"] = g["unverified"]  # names on an unchecked OSM pin
+        if geo.looks_like_address(x["location"]):   # an address is never a neighbourhood: remember where it was mapped
+            e = places.get(geo.normalize(x["location"])) or {}
+            x["geo_neighborhood"] = e.get("neighborhood")
 
     errors, warnings = checks.check(listings, previous_count())
     for w in warnings:

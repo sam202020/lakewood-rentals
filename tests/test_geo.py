@@ -265,6 +265,29 @@ class Addresses(unittest.TestCase):
                   "Club at Jackson 21", "Route 88", "E.7th & Nowlan", "", None):
             self.assertFalse(geo.looks_like_address(n), n)
 
+    def test_confirmed_address_sits_on_its_neighbourhood(self):
+        """Owner-confirmed: each address uses the coordinates of the neighbourhood it lies in."""
+        pl = geo.load_places()
+        for key, hood in (("22 enclave blvd", "enclave"), ("957 w county ln", "w kennedy"),
+                          ("415 laurel ave", "route 88 clover")):
+            self.assertTrue(geo.looks_like_address(key), key)
+            self.assertEqual(pl[key]["neighborhood"], hood)
+            self.assertEqual((pl[key]["lat"], pl[key]["lng"]), (pl[hood]["lat"], pl[hood]["lng"]), key)
+            self.assertEqual(pl[key]["source"], "manual")
+
+    def test_resolved_address_listings_use_the_neighbourhood_point(self):
+        pl = geo.load_places()
+        for text, hood in (("22 Enclave Blvd.", "enclave"), ("957 W. County Ln.", "w kennedy"), ("415 Laurel Ave.", "route 88 clover")):
+            g = geo.resolve(text, pl)
+            self.assertEqual((g["lat"], g["lng"]), (pl[hood]["lat"], pl[hood]["lng"]), text)
+
+    def test_checks_stays_quiet_once_the_neighbourhood_is_confirmed(self):
+        rows = [{"id": f"L{i}", "type": ["Apartment", "House", "Townhouse / Attached"][i % 3],
+                 "location": "957 W. County Ln." if i == 0 else f"Raintree {i}", "phones": ["732-555-0101"],
+                 "comments": "x", "rent": 2000, "lat": 40.1, "lng": -74.2, "geo_unknown": [],
+                 "geo_neighborhood": "w kennedy" if i == 0 else None} for i in range(100)]
+        self.assertFalse(any("street addresses" in w for w in checks.check(rows)[1]))
+
     def test_picker_never_offers_an_address(self):
         places = {"957 w county ln": {"name": "957 W County Line Rd", "lat": 40.1, "lng": -74.2, "source": "manual"},
                   "raintree": {"name": "Raintree", "lat": 40.09, "lng": -74.16, "source": "manual"}}
