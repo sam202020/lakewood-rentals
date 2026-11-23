@@ -104,6 +104,7 @@ by name, with their street and town ("shul · 958 E County Line Rd · Lakewood")
   says "area & shul". A street is never merged (Spruce Street Shul stays a shul).
 - BMG buildings are shuls too (owner: public places used as a shul, and people say them as an area): five entries added by hand, all
   findable by typing "BMG"; the old `bais shalom` and `yeshiva` (BMG) places are the same places and are merged in.
+- Kollels stay in the list (owner, 2026-11-22: keep): Google files them under synagogue and each has a beis medrash.
 - Left out on purpose: yeshiva / Beth Medrash Govoha school buildings, churches and messianic "synagogues", halls, shops.
   A `"hide": true` entry is dropped by `geo.load_shuls`; `"aka": [...]` adds other spellings.
 - To refresh: run the Google Maps searches ("synagogue", "shul", "beis medrash", "minyan") over a grid of map tiles in the built-in
