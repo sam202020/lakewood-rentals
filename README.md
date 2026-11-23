@@ -80,8 +80,7 @@ Published Artifact: https://claude.ai/code/artifact/b8837b56-6782-4202-b3d7-c8db
 
 ## Notes
 
-- The `src/` and `public/` folders are an unused Create React App scaffold from
-  when the project was first created. The live site is the static `site/` build.
+- There are no npm dependencies: `package.json` only names the test scripts (Node's built-in test runner). The live site is the static `site/` build in `docs/`.
 - Parsing is best-effort against a PDF that is laid out for print. Occasional
   quirks (a missing location, a run-together word) are expected; the original
   PDF is the source of truth.
