@@ -307,6 +307,32 @@
   .call:hover { background: var(--accent-ink); }
   .call svg { flex: none; }
 
+
+  /* ---- the little map on a listing (streets drawn from OpenStreetMap data, no map tiles) ---- */
+  .card--map { cursor: pointer; }
+  .card__mapbtn {
+    align-self: flex-start; display: inline-flex; align-items: center; gap: 6px;
+    background: none; border: 1px solid var(--rule-strong); border-radius: 7px; color: var(--accent-ink);
+    font: inherit; font-size: 13px; font-weight: 600; padding: 6px 10px; cursor: pointer;
+  }
+  .card__mapbtn:hover { background: var(--accent-soft); }
+  .card__mapbtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .card__mapbtn svg { transition: transform .15s; }
+  .card__mapbtn[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .map { cursor: default; display: flex; flex-direction: column; gap: 6px; }
+  .map[hidden] { display: none; }
+  .map svg { width: 100%; height: auto; display: block; border: 1px solid var(--rule); border-radius: 8px; background: var(--paper); }
+  .map__st { fill: none; stroke: var(--rule-strong); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .map__area { fill: var(--accent); fill-opacity: .13; stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 5 4; }
+  .map__pin { fill: var(--accent); stroke: var(--card); stroke-width: 2; }
+  .map__t { font-size: 10px; fill: var(--muted); text-anchor: middle; dominant-baseline: central;
+    paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }
+  .map__t--area { font-size: 11px; font-weight: 700; fill: var(--ink); text-anchor: middle; }
+  .map__dot { fill: var(--ink); }
+  .map__note { font-size: 12.5px; color: var(--muted); margin: 0; max-width: 62ch; }
+  .map__note b { color: var(--ink); }
+  .map__note a { font-weight: 600; }
+
   .empty {
     text-align: center; padding: 60px 20px; color: var(--muted);
     border: 1px dashed var(--rule-strong); border-radius: 10px;
@@ -833,8 +859,56 @@
       '<div class="stats">' + stats + "</div>" +
       (tags.length ? '<div class="tags">' + tags.join("") + "</div>" : "") +
       '<p class="card__desc">' + esc(x.comments) + "</p>" +
-      '<div class="card__calls">' + calls + "</div>";
+      '<div class="card__calls">' + calls + "</div>" +
+      (typeof x.lat === "number"
+        ? '<button type="button" class="card__mapbtn" aria-expanded="false">' +
+          '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>' +
+          '<span>Show on map</span></button>' +
+          '<div class="map" hidden></div>'
+        : "");
+    if (typeof x.lat === "number") {
+      d.classList.add("card--map");
+      var btn = d.querySelector(".card__mapbtn"), box = d.querySelector(".map");
+      var toggle = function () {
+        var open = box.hidden;
+        if (open && !box.firstChild) box.innerHTML = mapHtml(x);
+        box.hidden = !open;
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        btn.lastChild.textContent = open ? "Hide map" : "Show on map";
+      };
+      btn.addEventListener("click", function (e) { e.stopPropagation(); toggle(); });
+      // clicking anywhere on the card opens the map, except on a link, the map itself, or while selecting text
+      d.addEventListener("click", function (e) {
+        if (e.target.closest("a, button, .map")) return;
+        var sel = window.getSelection && window.getSelection();
+        if (sel && String(sel).length) return;
+        toggle();
+      });
+    }
     return d;
+  }
+
+  // The listing's point is where its neighbourhood is, not its door: say so, and draw a circle for the doubt.
+  function mapHtml(x) {
+    var sc = LakewoodSearch.mapScene(x, { streets: STREETS, picker: PICKER, width: 360, height: 260 });
+    var svg = '<svg viewBox="0 0 ' + sc.width + ' ' + sc.height + '" role="img" aria-label="Map of the approximate area of ' + esc(x.location) + '">' +
+      '<path class="map__st" d="' + sc.paths.join("") + '"/>' +
+      '<circle class="map__area" cx="' + sc.center[0] + '" cy="' + sc.center[1] + '" r="' + sc.radius.toFixed(1) + '"/>';
+    sc.labels.forEach(function (l) {
+      if (l.kind === "area") {
+        svg += '<circle class="map__dot" cx="' + l.dotX.toFixed(1) + '" cy="' + l.dotY.toFixed(1) + '" r="2.2"/>' +
+               '<text class="map__t map__t--area" x="' + l.x.toFixed(1) + '" y="' + l.y.toFixed(1) + '">' + esc(l.text) + "</text>";
+      } else {
+        svg += '<text class="map__t" x="' + l.x.toFixed(1) + '" y="' + l.y.toFixed(1) + '" transform="rotate(' + l.angle.toFixed(1) + " " + l.x.toFixed(1) + " " + l.y.toFixed(1) + ')">' + esc(l.text) + "</text>";
+      }
+    });
+    svg += '<circle class="map__pin" cx="' + sc.center[0] + '" cy="' + sc.center[1] + '" r="6"/></svg>';
+    var what = x.geo === "town" ? "The list only names the town, so this could be anywhere in it."
+      : "The list gives the area, not the address, so the exact house is not known.";
+    var gm = "https://www.google.com/maps/search/?api=1&query=" + x.lat.toFixed(5) + "," + x.lng.toFixed(5);
+    return svg + '<p class="map__note"><b>Approximate location.</b> ' + what + " The circle (about " +
+      (sc.radiusMiles < 0.95 ? sc.radiusMiles.toFixed(2).replace(/^0/, "") : Math.round(sc.radiusMiles)) + ' mi) shows where it could be. ' +
+      '<a href="' + gm + '" target="_blank" rel="noopener">Open this area in Google Maps</a></p>';
   }
 
   function render() {

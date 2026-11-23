@@ -421,6 +421,90 @@ var LakewoodSearch = (function () {
     return rankShuls(shuls, text, limit).map(function (o) { return o.s; });
   }
 
+
+  // ---- the little map on a listing: streets drawn from streets.json around the approximate point ----
+  var SUFFIX_SHORT = { street: "St", avenue: "Ave", road: "Rd", drive: "Dr", court: "Ct", lane: "Ln", boulevard: "Blvd",
+    place: "Pl", terrace: "Ter", highway: "Hwy", circle: "Cir", parkway: "Pkwy" };
+  function shortStreet(n) {
+    return String(n).split(" ").map(function (w, i, a) { return i === a.length - 1 && SUFFIX_SHORT[w.toLowerCase()] || w; }).join(" ");
+  }
+
+  /** How big the "somewhere around here" circle is, in miles: a listing that only names the town could be anywhere in
+   *  it; one that names two places (averaged) is somewhere between them; a neighbourhood is a few blocks. */
+  function uncertaintyMiles(x) {
+    if (x.geo === "town") return 1;
+    return Math.max(0.15, (x.geo_spread || 0) / 2 + 0.1);
+  }
+
+  /** Everything needed to draw the map for listing `x` (needs x.lat/x.lng): street lines and labels in pixels.
+   *  o = { streets: decodeStreets(...), picker: [...], width, height }. */
+  function mapScene(x, o) {
+    var w = o.width || 360, h = o.height || 260;
+    var rad = uncertaintyMiles(x), half = Math.max(0.5, rad * 1.5);       // miles from the middle to the left/right edge
+    var ppm = (w / 2) / half;
+    var kx = Math.cos(x.lat * Math.PI / 180) * 69.17, ky = 69.0;
+    function px(p) { return [w / 2 + (p[1] - x.lng) * kx * ppm, h / 2 - (p[0] - x.lat) * ky * ppm]; }
+    var margin = 6;
+    function inside(q) { return q[0] >= margin && q[0] <= w - margin && q[1] >= margin && q[1] <= h - margin; }
+    var d = [], cands = [];
+    (o.streets || []).forEach(function (st) {
+      st.paths.forEach(function (path) {
+        var lo0 = 1e9, hi0 = -1e9, lo1 = 1e9, hi1 = -1e9;
+        for (var i = 0; i < path.length; i++) {
+          lo0 = Math.min(lo0, path[i][0]); hi0 = Math.max(hi0, path[i][0]);
+          lo1 = Math.min(lo1, path[i][1]); hi1 = Math.max(hi1, path[i][1]);
+        }
+        var a = px([lo0, lo1]), b = px([hi0, hi1]);
+        if (Math.max(a[0], b[0]) < 0 || Math.min(a[0], b[0]) > w || Math.max(a[1], b[1]) < 0 || Math.min(a[1], b[1]) > h) return;
+        var pts = path.map(px), seg = "";
+        pts.forEach(function (q, i) { seg += (i ? "L" : "M") + q[0].toFixed(1) + " " + q[1].toFixed(1); });
+        d.push(seg);
+        // the longest run of the street that is fully on the map is where its name goes
+        for (var j = 0; j + 1 < pts.length; j++) {
+          if (!inside(pts[j]) || !inside(pts[j + 1])) continue;
+          var dx = pts[j + 1][0] - pts[j][0], dy = pts[j + 1][1] - pts[j][1];
+          cands.push({ name: shortStreet(st.n), len: Math.sqrt(dx * dx + dy * dy), x: (pts[j][0] + pts[j + 1][0]) / 2,
+                       y: (pts[j][1] + pts[j + 1][1]) / 2, angle: Math.atan2(dy, dx) * 180 / Math.PI });
+        }
+      });
+    });
+    var placed = [], labels = [];
+    function free(cx, cy, tw, th) {
+      for (var i = 0; i < placed.length; i++) {
+        var p = placed[i];
+        if (Math.abs(cx - p[0]) < (tw + p[2]) / 2 + 3 && Math.abs(cy - p[1]) < (th + p[3]) / 2 + 2) return false;
+      }
+      return true;
+    }
+    function put(l, tw, th) { placed.push([l.x, l.y, tw, th]); labels.push(l); }
+    // neighbourhoods first (bold), then the streets nearest the middle
+    (o.picker || []).forEach(function (p) {
+      if (typeof p.lat !== "number") return;
+      var q = px([p.lat, p.lng]);
+      if (!inside(q)) return;
+      var tw = p.name.length * 6.2 + 6;
+      if (q[0] + 5 + tw < w && free(q[0] + 5 + tw / 2, q[1], tw, 12)) put({ kind: "area", text: p.name, x: q[0] + 5 + tw / 2, y: q[1], angle: 0, dotX: q[0], dotY: q[1] }, tw, 12);
+    });
+    var cx = w / 2, cy = h / 2;
+    cands.sort(function (a, b) {
+      return Math.hypot(a.x - cx, a.y - cy) - Math.hypot(b.x - cx, b.y - cy);
+    });
+    var named = {}, streetLabels = 0;
+    cands.forEach(function (c) {
+      if (streetLabels >= 9 || named[c.name]) return;
+      var tw = c.name.length * 5.4 + 4;
+      if (c.len < tw) return;
+      var ang = c.angle; if (ang > 90) ang -= 180; if (ang < -90) ang += 180;
+      var r = ang * Math.PI / 180, bw = Math.abs(tw * Math.cos(r)) + 10 * Math.abs(Math.sin(r)), bh = Math.abs(tw * Math.sin(r)) + 10 * Math.abs(Math.cos(r));
+      if (c.x - bw / 2 < 2 || c.x + bw / 2 > w - 2 || c.y - bh / 2 < 2 || c.y + bh / 2 > h - 2) return;
+      if (!free(c.x, c.y, bw, bh)) return;
+      named[c.name] = true; streetLabels++;
+      put({ kind: "street", text: c.name, x: c.x, y: c.y, angle: ang }, bw, bh);
+    });
+    return { width: w, height: h, paths: d, labels: labels, center: [w / 2, h / 2], radius: rad * ppm, radiusMiles: rad,
+             halfMiles: half };
+  }
+
   // ---- every street in the area (streets.json): decoding, suggestions, intersections ----
 
   /** The point halfway along the longest piece of a street. */
@@ -632,6 +716,9 @@ var LakewoodSearch = (function () {
     suggestCrossings: suggestCrossings,
     suggestAll: suggestAll,
     decodeStreets: decodeStreets,
+    mapScene: mapScene,
+    uncertaintyMiles: uncertaintyMiles,
+    shortStreet: shortStreet,
     pathMiles: pathMiles,
     originMiles: originMiles,
     crossing: crossing,

@@ -112,3 +112,13 @@ by name, with their street and town ("shul · 958 E County Line Rd · Lakewood")
   Not done by the weekly routine.
 - There is deliberately no "closest shul" tag on each listing: pins are neighbourhood-level, and in Lakewood nearly every
   listing is within a few blocks of a dozen shuls, so the tag would say nothing. Search "near <shul>" instead.
+
+## The map on a listing
+
+Clicking a card (or "Show on map") opens a small map: the streets of `streets.json` drawn as SVG around the listing's pin (no map tiles, no
+third-party requests), the neighbourhoods and the nearest street names labelled, a dashed circle for how unsure the place is, and the text
+"Approximate location" (owner, 2026-11-22: the real address is not known, so never draw an exact-looking pin). `LakewoodSearch.mapScene` does the
+drawing maths (tested); `mapHtml` in the template builds the SVG. Circle size = `uncertaintyMiles`: a neighbourhood ~0.15 mi, two places
+averaged = half their spread + 0.1, a listing that only names the town = 1 mi. Listings without coordinates (The Vineyards, Oak Meadows) have no map button.
+Outside Lakewood, streets only exist near the places in `places.json`, so a town-only listing in Jackson shows few streets.
+"Open this area in Google Maps" is a plain link to the approximate point.
