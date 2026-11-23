@@ -20,6 +20,7 @@ ROOT = pathlib.Path(__file__).parent
 DATA = ROOT / "listings.json"
 TEMPLATE = ROOT / "site" / "template.html"
 SEARCH_CORE = ROOT / "site" / "search-core.js"
+LEAFLET_CSS = ROOT / "site" / "leaflet.css"     # Leaflet 1.9.4 (BSD-2), inlined because artifact pages may not load stylesheets
 OUT = ROOT / "docs" / "index.html"
 STREETS = ROOT / "streets.json"      # built by tools/build_streets.py; optional
 
@@ -92,6 +93,8 @@ def main():
     DATA.write_text(json.dumps({k: v for k, v in data.items() if k != "streets"}, indent=2, ensure_ascii=False))
 
     html = TEMPLATE.read_text().replace(
+        "/*__LEAFLET_CSS__*/", LEAFLET_CSS.read_text()
+    ).replace(
         "/*__SEARCH_CORE__*/", SEARCH_CORE.read_text()
     ).replace(
         "/*__DATA__*/null",

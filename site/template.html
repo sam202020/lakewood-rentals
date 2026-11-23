@@ -5,6 +5,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>var LF = window.L;  /* Leaflet; the page script below uses L for the listings */</script>
+<style>/*__LEAFLET_CSS__*/</style>
 <style>
   :root {
     --paper: #FBFAF7;
@@ -308,30 +311,57 @@
   .call svg { flex: none; }
 
 
-  /* ---- the little map on a listing (streets drawn from OpenStreetMap data, no map tiles) ---- */
-  .card--map { cursor: pointer; }
-  .card__mapbtn {
-    align-self: flex-start; display: inline-flex; align-items: center; gap: 6px;
-    background: none; border: 1px solid var(--rule-strong); border-radius: 7px; color: var(--accent-ink);
-    font: inherit; font-size: 13px; font-weight: 600; padding: 6px 10px; cursor: pointer;
+  /* ---- The map: one map for the whole page, beside the list (Zillow style) ---- */
+  .split { display: grid; grid-template-columns: minmax(280px, 1fr) minmax(340px, 46%); gap: 16px; align-items: start; }
+  .split__list { min-width: 0; }
+  .split .grid { grid-template-columns: 1fr; }
+  .mappane { position: sticky; top: 16px; z-index: 1; isolation: isolate; display: flex; flex-direction: column; gap: 6px;
+    height: calc(100vh - 32px); min-height: 420px; max-height: 760px; }
+  .mappane[hidden] { display: none; }
+  #map { flex: 1; min-height: 0; border: 1px solid var(--rule-strong); border-radius: 10px; background: var(--rule); overflow: hidden; }
+  .mappane__note { font-size: 12px; color: var(--muted); margin: 0; }
+  .mappane__note b { color: var(--ink); }
+  .viewtoggle { display: none; border: 1px solid var(--rule-strong); border-radius: 8px; overflow: hidden; }
+  .viewtoggle button { font: inherit; font-size: 13px; font-weight: 600; padding: 6px 14px; border: 0; background: var(--card); color: var(--muted); cursor: pointer; }
+  .viewtoggle button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  .viewtoggle button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .viewtoggle button[aria-pressed="true"] { color: #10231A; } }
+  :root[data-theme="dark"] .viewtoggle button[aria-pressed="true"] { color: #10231A; }
+  @media (max-width: 860px) {
+    .split { display: block; }
+    .viewtoggle { display: inline-flex; }
+    .mappane { position: relative; top: 0; height: calc(100vh - 190px); min-height: 380px; }
+    .results[data-view="list"] .mappane { display: none; }
+    .results[data-view="map"] .split__list { display: none; }
   }
-  .card__mapbtn:hover { background: var(--accent-soft); }
-  .card__mapbtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .card__mapbtn svg { transition: transform .15s; }
-  .card__mapbtn[aria-expanded="true"] svg { transform: rotate(180deg); }
-  .map { cursor: default; display: flex; flex-direction: column; gap: 6px; }
-  .map[hidden] { display: none; }
-  .map svg { width: 100%; height: auto; display: block; border: 1px solid var(--rule); border-radius: 8px; background: var(--paper); }
-  .map__st { fill: none; stroke: var(--rule-strong); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-  .map__area { fill: var(--accent); fill-opacity: .13; stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 5 4; }
-  .map__pin { fill: var(--accent); stroke: var(--card); stroke-width: 2; }
-  .map__t { font-size: 10px; fill: var(--muted); text-anchor: middle; dominant-baseline: central;
-    paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }
-  .map__t--area { font-size: 11px; font-weight: 700; fill: var(--ink); text-anchor: middle; }
-  .map__dot { fill: var(--ink); }
-  .map__note { font-size: 12.5px; color: var(--muted); margin: 0; max-width: 62ch; }
-  .map__note b { color: var(--ink); }
-  .map__note a { font-weight: 600; }
+  .card--on { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent), var(--shadow); }
+  .card[data-id] { cursor: pointer; }
+  .card[data-id]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .card--nopin { cursor: default !important; }
+  /* price pins */
+  .pin { background: none; border: 0; }
+  .pin span { position: absolute; transform: translate(-50%, -50%); white-space: nowrap; font: 700 12px/1 system-ui, sans-serif;
+    padding: 5px 8px; border-radius: 999px; background: var(--card); color: var(--ink); border: 1.5px solid var(--accent);
+    box-shadow: 0 1px 4px rgba(0,0,0,.3); }
+  .pin--multi span { background: var(--accent-ink); color: #fff; border-color: #fff; min-width: 24px; text-align: center; }
+  /* zoomed out: single listings shrink to dots so they stay readable; numbers stay on shared spots */
+  .map--far .pin:not(.pin--multi):not(.pin--on) span { font-size: 0; padding: 0; width: 10px; height: 10px; border-width: 2px; background: var(--accent); border-color: #fff; }
+  .map--far .pin--multi span { font-size: 11px; padding: 4px 6px; }
+  .pin--on { z-index: 1000 !important; }
+  .pin--on span { background: var(--accent); color: #fff; border-color: #fff; font-size: 13px; padding: 6px 10px; }
+  .map-label { background: none; border: 0; }
+  .map-label span { position: absolute; transform: translate(-50%, 13px); white-space: nowrap; font: 600 11px/1 system-ui, sans-serif;
+    color: #2b2f2a; text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff; pointer-events: none; }
+  .map-origin { font: 700 12px/1.2 system-ui, sans-serif; }
+  .mpop { font: 13px/1.4 system-ui, sans-serif; color: #1c1f1d; min-width: 170px; }
+  .mpop b { font-size: 14px; }
+  .mpop small { color: #555; display: block; margin-top: 3px; }
+  .mpop button.mpop__row { display: block; width: 100%; text-align: left; font: inherit; padding: 6px 4px; border: 0; border-top: 1px solid #ddd; background: none; color: #16452F; cursor: pointer; }
+  .mpop button.mpop__row.on { font-weight: 700; }
+  .mpop a.mpop__call { display: inline-block; margin-top: 6px; font-weight: 700; color: #16452F; }
+  /* the standard OpenStreetMap tiles are light: dim them in dark mode */
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.9) saturate(.8); } }
+  :root[data-theme="dark"] .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.9) saturate(.8); }
 
   .empty {
     text-align: center; padding: 60px 20px; color: var(--muted);
@@ -545,9 +575,13 @@
     <button class="filters__done" id="filtersDone" type="button">Show listings</button>
   </aside>
 
-  <main class="results">
+  <main class="results" id="results" data-view="list">
     <div class="results__bar">
       <div class="results__count"><b id="count">0</b> <span id="countWord">listings</span></div>
+      <div class="viewtoggle" id="viewToggle" role="group" aria-label="Show">
+        <button type="button" data-view="list" aria-pressed="true">List</button>
+        <button type="button" data-view="map" aria-pressed="false">Map</button>
+      </div>
       <label class="sort">Sort
         <select id="sort">
           <option value="default">List order (newest first)</option>
@@ -560,7 +594,13 @@
       </label>
     </div>
     <div class="related" id="related" hidden></div>
-    <div class="grid" id="grid"></div>
+    <div class="split">
+      <div class="split__list"><div class="grid" id="grid"></div></div>
+      <aside class="mappane" id="mappane" aria-label="Map of the listings">
+        <div id="map"></div>
+        <p class="mappane__note"><b>Pins are approximate.</b> The list gives a neighborhood, not an address; the dashed circle shows where the selected listing could be.</p>
+      </aside>
+    </div>
   </main>
 </div>
 
@@ -729,7 +769,7 @@
     setOrigin({ lat: pl.lat, lng: pl.lng, paths: pl.kind === "street" ? pl.paths : null, shul: pl.kind === "shul" }, pl.name);
   }
   function setOrigin(origin, label) {
-    S.origin = origin;
+    S.origin = origin; if (typeof mapOrigin === "function") mapOrigin(origin, label);
     var on = !!origin;
     nearChip.hidden = !on; nearLabel.textContent = on ? label : "";
     withinWrap.hidden = !on; distOpt.disabled = !on;
@@ -822,6 +862,16 @@
   function card(x) {
     var d = document.createElement("article");
     d.className = "card";
+    if (typeof x.lat === "number" && MAPPED) {
+      d.setAttribute("data-id", x.id); d.tabIndex = 0;
+      d.addEventListener("click", function (e) {
+        if (e.target.closest("a, button")) return;
+        var sel = window.getSelection && window.getSelection();
+        if (sel && String(sel).length) return;            // the visitor is selecting text
+        selectListing(x.id, true);
+      });
+      d.addEventListener("keydown", function (e) { if ((e.key === "Enter" || e.key === " ") && e.target === d) { e.preventDefault(); selectListing(x.id, true); } });
+    } else if (MAPPED) d.className += " card--nopin";
     var wk = /^\$([\d,]+)\/week$/.exec(x.rent_display || "");
     var price = x.rent != null
       ? '<div class="card__price"><b class="tnum">$' + x.rent.toLocaleString() + '</b><span>per month</span></div>'
@@ -859,56 +909,8 @@
       '<div class="stats">' + stats + "</div>" +
       (tags.length ? '<div class="tags">' + tags.join("") + "</div>" : "") +
       '<p class="card__desc">' + esc(x.comments) + "</p>" +
-      '<div class="card__calls">' + calls + "</div>" +
-      (typeof x.lat === "number"
-        ? '<button type="button" class="card__mapbtn" aria-expanded="false">' +
-          '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>' +
-          '<span>Show on map</span></button>' +
-          '<div class="map" hidden></div>'
-        : "");
-    if (typeof x.lat === "number") {
-      d.classList.add("card--map");
-      var btn = d.querySelector(".card__mapbtn"), box = d.querySelector(".map");
-      var toggle = function () {
-        var open = box.hidden;
-        if (open && !box.firstChild) box.innerHTML = mapHtml(x);
-        box.hidden = !open;
-        btn.setAttribute("aria-expanded", open ? "true" : "false");
-        btn.lastChild.textContent = open ? "Hide map" : "Show on map";
-      };
-      btn.addEventListener("click", function (e) { e.stopPropagation(); toggle(); });
-      // clicking anywhere on the card opens the map, except on a link, the map itself, or while selecting text
-      d.addEventListener("click", function (e) {
-        if (e.target.closest("a, button, .map")) return;
-        var sel = window.getSelection && window.getSelection();
-        if (sel && String(sel).length) return;
-        toggle();
-      });
-    }
+      '<div class="card__calls">' + calls + "</div>";
     return d;
-  }
-
-  // The listing's point is where its neighbourhood is, not its door: say so, and draw a circle for the doubt.
-  function mapHtml(x) {
-    var sc = LakewoodSearch.mapScene(x, { streets: STREETS, picker: PICKER, width: 360, height: 260 });
-    var svg = '<svg viewBox="0 0 ' + sc.width + ' ' + sc.height + '" role="img" aria-label="Map of the approximate area of ' + esc(x.location) + '">' +
-      '<path class="map__st" d="' + sc.paths.join("") + '"/>' +
-      '<circle class="map__area" cx="' + sc.center[0] + '" cy="' + sc.center[1] + '" r="' + sc.radius.toFixed(1) + '"/>';
-    sc.labels.forEach(function (l) {
-      if (l.kind === "area") {
-        svg += '<circle class="map__dot" cx="' + l.dotX.toFixed(1) + '" cy="' + l.dotY.toFixed(1) + '" r="2.2"/>' +
-               '<text class="map__t map__t--area" x="' + l.x.toFixed(1) + '" y="' + l.y.toFixed(1) + '">' + esc(l.text) + "</text>";
-      } else {
-        svg += '<text class="map__t" x="' + l.x.toFixed(1) + '" y="' + l.y.toFixed(1) + '" transform="rotate(' + l.angle.toFixed(1) + " " + l.x.toFixed(1) + " " + l.y.toFixed(1) + ')">' + esc(l.text) + "</text>";
-      }
-    });
-    svg += '<circle class="map__pin" cx="' + sc.center[0] + '" cy="' + sc.center[1] + '" r="6"/></svg>';
-    var what = x.geo === "town" ? "The list only names the town, so this could be anywhere in it."
-      : "The list gives the area, not the address, so the exact house is not known.";
-    var gm = "https://www.google.com/maps/search/?api=1&query=" + x.lat.toFixed(5) + "," + x.lng.toFixed(5);
-    return svg + '<p class="map__note"><b>Approximate location.</b> ' + what + " The circle (about " +
-      (sc.radiusMiles < 0.95 ? sc.radiusMiles.toFixed(2).replace(/^0/, "") : Math.round(sc.radiusMiles)) + ' mi) shows where it could be. ' +
-      '<a href="' + gm + '" target="_blank" rel="noopener">Open this area in Google Maps</a></p>';
   }
 
   function render() {
@@ -930,6 +932,7 @@
     grid.innerHTML = "";
     if (!rows.length) {
       var typed = (S.q || "").trim(), known = typed && LakewoodSearch.suggestAll(PICKER, STREETS, typed, 1, SHULS).length;
+      mapRefresh([]);
       grid.innerHTML = known
         ? '<div class="empty"><b>No listing mentions \u201c' + esc(typed) + '\u201d</b>Pick it from the suggestions (or press Enter) to sort every listing by distance from it.</div>'
         : '<div class="empty"><b>No matches</b>Try widening the rent range or clearing a filter.</div>';
@@ -938,7 +941,196 @@
     var frag = document.createDocumentFragment();
     rows.slice(0, 400).forEach(function (x) { frag.appendChild(card(x)); });
     grid.appendChild(frag);
+    mapRefresh(rows);
   }
+
+
+  // ---- one map for the whole page ----
+  // Leaflet + OpenStreetMap tiles (loaded from cdnjs / tile.openstreetmap.org). One pin per spot, because many
+  // listings share their neighborhood's pin. Clicking a listing (or a pin) selects it: the map moves to its
+  // neighborhood and draws a dashed circle for how unsure the place is. If the tiles cannot load (some embedding
+  // pages block them) the streets from streets.json are drawn instead, so the map still shows where things are.
+  var MAPPED = typeof LF !== "undefined" && !!LF;
+  var MAP = null, pinLayer = null, originLayer = null, areaCircle = null, streetLayer = null, labelLayer = null;
+  var pins = [], selectedId = null, lastFitKey = null, canvas = null;
+  var resultsEl = document.getElementById("results"), mapPane = document.getElementById("mappane"),
+      viewToggle = document.getElementById("viewToggle");
+  var LAKEWOOD_CENTER = [40.0979, -74.2179];
+
+  function cssVar(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+
+  function setView(v) {
+    resultsEl.setAttribute("data-view", v);
+    [].forEach.call(viewToggle.querySelectorAll("button"), function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-view") === v ? "true" : "false"); });
+    if (v === "map" && MAP) setTimeout(function () { MAP.invalidateSize(); if (selectedId) selectListing(selectedId, false); }, 30);
+  }
+
+  function initMap() {
+    if (!MAPPED) { mapPane.hidden = true; viewToggle.hidden = true; return; }
+    MAP = LF.map("map", { zoomControl: true, preferCanvas: true, minZoom: 10, maxZoom: 18 }).setView(LAKEWOOD_CENTER, 13);
+    var tiles = LF.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
+    }).addTo(MAP);
+    var far = function () { MAP.getContainer().classList.toggle("map--far", MAP.getZoom() < 14); };
+    MAP.on("zoomend", far); far();
+    pinLayer = LF.layerGroup().addTo(MAP);
+    originLayer = LF.layerGroup().addTo(MAP);
+    var loaded = false, failed = 0;
+    tiles.on("tileload", function () { loaded = true; });
+    tiles.on("tileerror", function () { failed++; if (!loaded && failed >= 3) streetFallback(); });
+    setTimeout(function () { if (!loaded && !streetLayer) streetFallback(); }, 4000);
+    viewToggle.addEventListener("click", function (e) { var b = e.target.closest("button"); if (b) setView(b.getAttribute("data-view")); });
+    window.addEventListener("resize", function () { MAP.invalidateSize(); });
+    MAP.on("popupopen", function (e) {
+      [].forEach.call(e.popup.getElement().querySelectorAll("[data-pick]"), function (b) {
+        b.addEventListener("click", function () { selectListing(b.getAttribute("data-pick"), false, true); });
+      });
+    });
+  }
+
+  // Tiles blocked: draw the streets (and neighborhood names) ourselves, only those in view.
+  function streetFallback() {
+    if (streetLayer || !STREETS.length) return;
+    canvas = LF.canvas({ padding: 0.3 });
+    streetLayer = LF.layerGroup().addTo(MAP); labelLayer = LF.layerGroup().addTo(MAP);
+    var draw = function () {
+      streetLayer.clearLayers(); labelLayer.clearLayers();
+      var b = MAP.getBounds().pad(0.15), n = 0, col = cssVar("--faint") || "#999";
+      STREETS.forEach(function (st) {
+        st.paths.forEach(function (path) {
+          var lo0 = 90, hi0 = -90, lo1 = 0, hi1 = -180;
+          for (var i = 0; i < path.length; i++) {
+            if (path[i][0] < lo0) lo0 = path[i][0]; if (path[i][0] > hi0) hi0 = path[i][0];
+            if (i === 0 || path[i][1] < lo1) lo1 = path[i][1]; if (i === 0 || path[i][1] > hi1) hi1 = path[i][1];
+          }
+          if (hi0 < b.getSouth() || lo0 > b.getNorth() || hi1 < b.getWest() || lo1 > b.getEast()) return;
+          if (n++ > 2500) return;
+          LF.polyline(path, { renderer: canvas, weight: 2, color: col, opacity: 0.6, interactive: false }).addTo(streetLayer);
+        });
+      });
+      if (MAP.getZoom() >= 13) {
+        var shown = 0;
+        PICKER.forEach(function (p) {
+          if (shown > 45 || typeof p.lat !== "number" || !b.contains([p.lat, p.lng])) return;
+          shown++;
+          LF.marker([p.lat, p.lng], { interactive: false, keyboard: false,
+            icon: LF.divIcon({ className: "map-label", html: "<span>" + esc(p.name) + "</span>", iconSize: [0, 0] }) }).addTo(labelLayer);
+        });
+      }
+    };
+    MAP.on("moveend", draw); draw();
+    document.querySelector(".mappane__note").insertAdjacentHTML("beforeend", " Map pictures are blocked on this page, so only streets and neighborhood names are drawn.");
+  }
+
+  function pinIcon(g, on) {
+    var n = g.rows.length, txt = n > 1 ? String(n) : LakewoodSearch.rentLabel(g.rows[0]);
+    return LF.divIcon({ className: "pin" + (n > 1 ? " pin--multi" : "") + (on ? " pin--on" : ""), html: "<span>" + esc(txt) + "</span>", iconSize: [0, 0] });
+  }
+
+  function popupHtml(g, selId) {
+    function line(x) { return esc(x.type) + " · " + esc(x.bedrooms || "?") + " bd · " + (x.rent != null ? "$" + x.rent.toLocaleString() : esc(x.rent_display || "Call")); }
+    if (g.rows.length === 1) {
+      var x = g.rows[0], ph = (x.phones || [])[0];
+      return '<div class="mpop"><b>' + esc(x.location || "Location in PDF") + "</b><br>" + line(x) +
+        (ph ? '<br><a class="mpop__call" href="' + telHref(ph) + '">' + esc(ph) + "</a>" : "") +
+        "<small>Approximate area</small></div>";
+    }
+    return '<div class="mpop"><b>' + g.rows.length + " listings in this area</b>" +
+      g.rows.map(function (x) {
+        return '<button type="button" class="mpop__row' + (x.id === selId ? " on" : "") + '" data-pick="' + esc(x.id) + '">' + esc(x.location) + " – " + line(x) + "</button>";
+      }).join("") + "<small>Approximate area</small></div>";
+  }
+
+  function pinFor(id) {
+    for (var i = 0; i < pins.length; i++) if (pins[i].g.rows.some(function (x) { return x.id === id; })) return pins[i];
+    return null;
+  }
+
+  function mapRefresh(rows) {
+    if (!MAP) return;
+    pinLayer.clearLayers(); pins = [];
+    var groups = LakewoodSearch.groupByPoint(rows);
+    groups.forEach(function (g) {
+      var m = LF.marker([g.lat, g.lng], { icon: pinIcon(g, false), riseOnHover: true, keyboard: true,
+                                         title: g.rows.length > 1 ? g.rows.length + " listings" : g.rows[0].location });
+      m.bindPopup(function () { return popupHtml(g, selectedId); }, { maxWidth: 280, autoPanPadding: [30, 30] });
+      m.on("click", function () { if (g.rows.length === 1) selectListing(g.rows[0].id, false, true); });
+      m.addTo(pinLayer);
+      pins.push({ g: g, m: m });
+    });
+    if (selectedId && !pinFor(selectedId)) clearSelection();
+    else if (selectedId) paintSelection(false);
+    // refit only when the set of listings (or the "near" spot) changed, not when a card is clicked
+    var key = rows.map(function (x) { return x.id; }).join("|") + "@" + (S.origin ? S.origin.lat + "," + S.origin.lng : "");
+    if (key !== lastFitKey) { lastFitKey = key; if (!selectedId) fitAll(groups); }
+  }
+
+  function fitAll(groups) {
+    var pts = [];
+    if (S.origin) pts.push([S.origin.lat, S.origin.lng]);
+    var near = groups.filter(function (g) { return LakewoodSearch.distanceMiles(g.lat, g.lng, LAKEWOOD_CENTER[0], LAKEWOOD_CENTER[1]) < 7; });
+    var use = S.origin ? groups.slice(0, 8) : (near.length ? near : groups);
+    use.forEach(function (g) { pts.push([g.lat, g.lng]); });
+    if (!pts.length) { MAP.setView(LAKEWOOD_CENTER, 13); return; }
+    if (pts.length === 1) { MAP.setView(pts[0], 15); return; }
+    MAP.fitBounds(LF.latLngBounds(pts), { padding: [36, 36], maxZoom: 15 });
+  }
+
+  function paintSelection(fly) {
+    pins.forEach(function (p) {
+      var on = p.g.rows.some(function (x) { return x.id === selectedId; });
+      p.m.setIcon(pinIcon(p.g, on)); p.m.setZIndexOffset(on ? 1000 : 0);
+    });
+    [].forEach.call(grid.querySelectorAll(".card--on"), function (c) { c.classList.remove("card--on"); });
+    var card = grid.querySelector('.card[data-id="' + (window.CSS && CSS.escape ? CSS.escape(selectedId) : selectedId) + '"]');
+    if (card) card.classList.add("card--on");
+    if (areaCircle) { MAP.removeLayer(areaCircle); areaCircle = null; }
+    var p = pinFor(selectedId);
+    if (!p) return null;
+    var x = p.g.rows.filter(function (r) { return r.id === selectedId; })[0];
+    areaCircle = LF.circle([p.g.lat, p.g.lng], { radius: LakewoodSearch.uncertaintyMiles(x) * 1609.34, color: cssVar("--accent") || "#1E5C3F",
+      weight: 2, dashArray: "6 5", fillOpacity: 0.12, interactive: false }).addTo(MAP);
+    // show the neighborhood in its surroundings (landmarks, main roads, borders), never zoomed in on the pin:
+    // at least a mile and a half across, more when the circle is bigger
+    var view = LF.latLng(p.g.lat, p.g.lng).toBounds(Math.max(LakewoodSearch.uncertaintyMiles(x) * 2 * 1609.34 * 1.4, 2400));
+    if (fly) MAP.flyToBounds(view, { padding: [20, 20], maxZoom: 14, duration: 0.6 });
+    return p;
+  }
+
+  /** Select a listing: highlight its card and pin, show where it is. `scroll` brings the card into view (a pin was clicked). */
+  function selectListing(id, fromCard, scroll) {
+    if (!MAP) return;
+    selectedId = id;
+    if (fromCard && resultsEl.getAttribute("data-view") === "list" && window.innerWidth <= 860) {
+      setView("map");                                            // on a phone the map is its own screen
+      return;                                                    // setView re-selects once the map has its size
+    }
+    MAP.invalidateSize();
+    var p = paintSelection(true);
+    if (p) setTimeout(function () { p.m.openPopup(); }, 650);
+    if (scroll && resultsEl.getAttribute("data-view") === "list") {
+      var card = grid.querySelector(".card--on");
+      if (card) card.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }
+  }
+  function clearSelection() {
+    selectedId = null;
+    if (areaCircle) { MAP.removeLayer(areaCircle); areaCircle = null; }
+    [].forEach.call(grid.querySelectorAll(".card--on"), function (c) { c.classList.remove("card--on"); });
+  }
+
+  // the street or place the visitor chose in "Near ...": show it on the map too
+  function mapOrigin(origin, label) {
+    if (!MAP) return;
+    originLayer.clearLayers();
+    if (!origin) return;
+    if (origin.paths) origin.paths.forEach(function (p) { LF.polyline(p, { color: cssVar("--accent") || "#1E5C3F", weight: 5, opacity: 0.8, interactive: false }).addTo(originLayer); });
+    if (!origin.paths || origin.shul) {
+      LF.circleMarker([origin.lat, origin.lng], { radius: 8, color: "#fff", weight: 3, fillColor: "#1C1F1D", fillOpacity: 1, interactive: false })
+        .bindTooltip(esc(label), { permanent: true, direction: "right", offset: [10, 0], className: "map-origin" }).addTo(originLayer);
+    }
+  }
+  initMap();
 
   // ---- header meta ----
   document.getElementById("totalCount").textContent = L.length.toLocaleString();

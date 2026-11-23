@@ -113,12 +113,19 @@ by name, with their street and town ("shul · 958 E County Line Rd · Lakewood")
 - There is deliberately no "closest shul" tag on each listing: pins are neighbourhood-level, and in Lakewood nearly every
   listing is within a few blocks of a dozen shuls, so the tag would say nothing. Search "near <shul>" instead.
 
-## The map on a listing
+## The map (one per page, not per listing)
 
-Clicking a card (or "Show on map") opens a small map: the streets of `streets.json` drawn as SVG around the listing's pin (no map tiles, no
-third-party requests), the neighbourhoods and the nearest street names labelled, a dashed circle for how unsure the place is, and the text
-"Approximate location" (owner, 2026-11-22: the real address is not known, so never draw an exact-looking pin). `LakewoodSearch.mapScene` does the
-drawing maths (tested); `mapHtml` in the template builds the SVG. Circle size = `uncertaintyMiles`: a neighbourhood ~0.15 mi, two places
-averaged = half their spread + 0.1, a listing that only names the town = 1 mi. Listings without coordinates (The Vineyards, Oak Meadows) have no map button.
-Outside Lakewood, streets only exist near the places in `places.json`, so a town-only listing in Jackson shows few streets.
-"Open this area in Google Maps" is a plain link to the approximate point.
+Owner, 2026-11-22: **no map on each card** (a per-listing map was built and removed: far too zoomed in, shows nothing around it). One
+map for the whole page, like Zillow: beside the list on a computer, a List / Map toggle on a phone. Leaflet 1.9.4 (script from cdnjs with
+SRI; `site/leaflet.css` is inlined by build.py because artifact pages may only load stylesheets from Google Fonts) + OpenStreetMap tiles.
+- One pin per spot (many listings share their neighbourhood's pin): price on a single listing ("$1.8k", "Call"), a count on a shared spot,
+  whose popup lists its listings. Zoomed out, single pins shrink to dots. Filters and search change the pins; "Near ..." adds the chosen
+  spot/street to the map.
+- Clicking a card (or a pin) selects it: the card is outlined, the map moves to show its neighbourhood **in its surroundings**
+  (at least ~1.5 mi across, never zoomed in on the pin), and a dashed circle (`uncertaintyMiles`: neighbourhood 0.15 mi, two places
+  averaged = half their spread + 0.1, town only = 1 mi) says the spot is approximate. The page always says the pins are approximate
+  (the real address is not known). On a phone, tapping a card switches to the map.
+- The private Artifact page blocks tile images, so there the map falls back to streets.json lines + neighbourhood names (`streetFallback`);
+  the public GitHub Pages site gets the real map. Google Maps cannot be embedded with many pins without an API key/billing and cannot be
+  embedded at all inside an artifact, so OpenStreetMap is used.
+- The page script uses `L` for the listings, so Leaflet is read as `LF` (set right after the script tag). Don't rename.

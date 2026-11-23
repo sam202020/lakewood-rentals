@@ -1058,28 +1058,18 @@ test("shuls: a whole-word match comes before a longer word that merely starts th
   assert.equal(S.suggestShuls(shuls, "kol")[0].name, "Kol Aryeh");
 });
 
-// ---- the map on a listing -----------------------------------------------------
-test("map: a listing gets street lines, labels inside the map and a circle sized to how unsure its place is", () => {
-  const data = JSON.parse(fs.readFileSync(path.join(ROOT, "docs/index.html"), "utf8")
-    .match(/<script id="payload"[^>]*>([\s\S]*?)<\/script>/)[1]);
-  const streets = S.decodeStreets(data.streets);
-  const raintree = data.listings.find((l) => l.location.startsWith("Raintree"));
-  const sc = S.mapScene(raintree, { streets, picker: data.picker, width: 360, height: 260 });
-  assert.ok(sc.paths.length > 10);
-  assert.ok(sc.labels.length >= 3);
-  sc.labels.forEach((l) => { assert.ok(l.x > 0 && l.x < 360 && l.y > 0 && l.y < 260, l.text); });
-  assert.ok(Math.abs(sc.center[0] - 180) < 1 && Math.abs(sc.center[1] - 130) < 1);
-  const town = S.mapScene(Object.assign({}, raintree, { geo: "town" }), { streets, picker: data.picker });
-  assert.ok(town.radiusMiles > sc.radiusMiles * 3);           // only the town named: much less sure
-  const between = S.uncertaintyMiles(Object.assign({}, raintree, { geo_spread: 0.8 }));
-  assert.ok(between >= 0.5);
-});
-
-test("map: no two labels overlap and long suffixes are shortened", () => {
-  assert.equal(S.shortStreet("Laguna Lane"), "Laguna Ln");
-  assert.equal(S.shortStreet("Park Avenue"), "Park Ave");
-  const streets = [{ n: "Main Street", t: "Lakewood", paths: [[[40.0, -74.004], [40.0, -73.996]]] },
-                   { n: "Main Street", t: "Lakewood", paths: [[[40.0003, -74.004], [40.0003, -73.996]]] }];
-  const sc = S.mapScene({ lat: 40.0, lng: -74.0, geo: "place" }, { streets, picker: [], width: 360, height: 260 });
-  assert.equal(sc.labels.filter((l) => l.text === "Main St").length, 1);
+// ---- the page map -------------------------------------------------------------
+test("map: pins are grouped by spot, with short prices and an honest circle size", () => {
+  const a = L({ id: "a", lat: 40.1, lng: -74.2, rent: 1800 }), b = L({ id: "b", lat: 40.1, lng: -74.2, rent: 950 });
+  const c = L({ id: "c", lat: 40.11, lng: -74.21, rent: null, rent_display: "Call to discuss" }), d = L({ id: "d", rent: 700 });
+  const g = S.groupByPoint([a, b, c, d]);                  // d has no point
+  assert.equal(g.length, 2);
+  assert.deepEqual(g[0].rows.map((x) => x.id), ["a", "b"]);
+  assert.equal(S.rentLabel(a), "$1.8k");
+  assert.equal(S.rentLabel(b), "$950");
+  assert.equal(S.rentLabel(c), "Call");
+  assert.equal(S.rentLabel(L({ rent: null, rent_display: "$450/week" })), "$450/wk");
+  assert.equal(S.uncertaintyMiles(L({ geo: "place" })), 0.15);
+  assert.equal(S.uncertaintyMiles(L({ geo: "town" })), 1);
+  assert.ok(S.uncertaintyMiles(L({ geo: "place", geo_spread: 0.8 })) >= 0.5);   // two places averaged: somewhere between
 });
