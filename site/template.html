@@ -526,13 +526,6 @@
   .topbar { position: sticky; top: 0; z-index: 30; background: var(--card); border-bottom: 1px solid var(--rule-strong); }
   .topbar__main { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 10px 20px; }
   .brand { font-weight: 800; font-size: 18px; letter-spacing: -.02em; margin-right: 6px; white-space: nowrap; }
-  .srcbtn { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; font-weight: 500; }
-  .srcpop {
-    position: absolute; right: 20px; top: calc(100% + 6px); z-index: 60; width: min(440px, calc(100vw - 24px));
-    background: var(--card); border: 1px solid var(--rule-strong); border-radius: 12px; box-shadow: var(--shadow);
-    padding: 12px 16px 14px; font-size: 13px; color: var(--muted); max-height: calc(100vh - 100px); overflow-y: auto;
-  }
-  .srcpop p { margin: 0 0 9px; } .srcpop strong { color: var(--ink); } .srcpop a { font-weight: 600; }
   .pricedbtn { display: none; }
   .chip.pricedbtn[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
   .seg { display: none; border: 1px solid var(--rule-strong); border-radius: 8px; overflow: hidden; }
@@ -619,10 +612,9 @@
   /* ---- phone: the map fills the screen, the listings are a sheet you drag up ---- */
   @media (max-width: 860px) {
     html, body { height: 100%; overflow: hidden; }
-    .brand, .pricedbtn, .srcbtn .src__txt { display: none; }
+    .brand, .pricedbtn { display: none; }
     .topbar__main { flex-wrap: nowrap; padding: 9px 12px; gap: 6px; }
     .combo { flex: 1; max-width: none; }
-    .srcbtn { margin-left: 0; padding: 8px 10px; }
     .srcpop { right: 8px; left: 8px; width: auto; }
     .wrap { position: fixed; left: 0; right: 0; top: var(--barh, 60px); bottom: 0; padding: 0; display: block; max-width: none; }
     .results { padding: 0; height: 100%; }
@@ -649,6 +641,9 @@
     body.nomap .split__list { position: static; height: auto; box-shadow: none; }
     body.nomap .split__list .grid { overflow: visible; }
   }
+  .fineprint { grid-column: 1 / -1; margin-top: 8px; padding: 14px 4px 4px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--muted); }
+  .fineprint p { margin: 0 0 8px; max-width: 70ch; } .fineprint a { font-weight: 600; } .fineprint strong { color: var(--ink); }
+  .fineprint .themebtn { margin-left: 6px; }
 </style>
 
 <header class="searchbar topbar" id="searchbar">
@@ -710,10 +705,6 @@
     <button class="filters__reset" id="reset" type="button">Reset all filters</button>
     <button class="filters__done" id="filtersDone" type="button">Show listings</button>
   </aside>
-    <button type="button" class="chip srcbtn" id="srcBtn" aria-expanded="false" aria-controls="srcPop">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>
-      <span class="src__txt">Source: Masa U&rsquo;Matan, <span id="kickerDate"></span></span>
-    </button>
     <button type="button" class="chip fbtn" id="filtersToggle" aria-expanded="false" aria-controls="filters">
       Filters <span class="fcount" id="filterCount" hidden></span>
     </button>
@@ -732,18 +723,6 @@
       </select>
     </label>
     <span class="range__val" id="nearStatus" aria-live="polite"></span>
-  </div>
-  <div class="srcpop" id="srcPop" hidden>
-    <p><strong>Source.</strong> Reproduced from the Masa U&rsquo;Matan Lakewood Rental List (<span id="listDate">&mdash;</span>), <strong id="totalCount">&mdash;</strong> listings.
-    An unofficial search tool, not affiliated with Masa U&rsquo;Matan. Always confirm details with the landlord.
-    <a href="https://masaumatan.com" target="_blank" rel="noopener">masaumatan.com</a> &middot;
-    <a href="https://masaumatan.com/MasaRentals.pdf" target="_blank" rel="noopener">original PDF&nbsp;list</a></p>
-    <p><strong>How this works.</strong> Every Wednesday this page is rebuilt from the current list. Listing text is parsed automatically, so occasional
-    formatting quirks are possible; the original PDF is authoritative. Locations are neighborhoods, not addresses, so map pins are approximate.</p>
-    <p><span id="osmCredit" hidden>Street shapes &amp; map &copy;
-    <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>.</span>
-    To list your property, or once a unit is rented, contact Masa U&rsquo;Matan directly at 732-364-9392. Data generated <span id="genAt">&mdash;</span>.</p>
-    <button class="themebtn" id="themebtn" type="button">Switch light / dark</button>
   </div>
 </header>
 
@@ -773,6 +752,17 @@
         <div class="related" id="related" hidden></div>
         <div class="grid" id="grid"></div>
         <div class="tablewrap" id="tablewrap" hidden></div>
+        <div class="fineprint" id="fineprint">
+          <p>An unofficial index of the Masa U&rsquo;Matan Lakewood Rental List (<span id="listDate">&mdash;</span>), <strong id="totalCount">&mdash;</strong> listings,
+          not affiliated with Masa U&rsquo;Matan. Always confirm details with the landlord.
+          <a href="https://masaumatan.com" target="_blank" rel="noopener">masaumatan.com</a> &middot;
+          <a href="https://masaumatan.com/MasaRentals.pdf" target="_blank" rel="noopener">original PDF&nbsp;list</a>.
+          Locations are neighborhoods, not addresses, so map pins are approximate.</p>
+          <p><span id="osmCredit" hidden>Street shapes &amp; map &copy;
+          <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>.</span>
+          To list your property, or once a unit is rented, contact Masa U&rsquo;Matan at 732-364-9392. Updated <span id="genAt">&mdash;</span>.
+          <button class="themebtn" id="themebtn" type="button">Light / dark</button><span id="kickerDate" hidden></span></p>
+        </div>
       </div>
       <aside class="mappane" id="mappane" aria-label="Map of the listings">
         <div id="map"></div>
@@ -1148,13 +1138,15 @@
       grid.innerHTML = known
         ? '<div class="empty"><b>No listing mentions \u201c' + esc(typed) + '\u201d</b>Pick it from the suggestions (or press Enter) to sort every listing by distance from it.</div>'
         : '<div class="empty"><b>No matches</b>Try widening the rent range or clearing a filter.</div>';
+      grid.appendChild(fine);
       return;
     }
     lastRows = rows;
-    if (asTable) { tablewrap.innerHTML = tableHtml(rows); refreshIndex(); mapRefresh(rows); return; }
+    if (asTable) { tablewrap.innerHTML = tableHtml(rows); tablewrap.appendChild(fine); refreshIndex(); mapRefresh(rows); return; }
     var frag = document.createDocumentFragment();
     rows.slice(0, 400).forEach(function (x) { frag.appendChild(card(x)); });
     grid.appendChild(frag);
+    grid.appendChild(fine);
     mapRefresh(rows);
   }
 
@@ -1384,7 +1376,7 @@
     var tr = e.target.closest("tr.r");
     if (!tr) return;
     selectedId = selectedId === tr.getAttribute("data-id") ? null : tr.getAttribute("data-id");
-    tablewrap.innerHTML = tableHtml(lastRows);
+    tablewrap.innerHTML = tableHtml(lastRows); tablewrap.appendChild(fine);
     if (selectedId) { var el = tablewrap.querySelector("tr.r.on"); if (el) el.focus({ preventScroll: true }); }
   });
   tablewrap.addEventListener("keydown", function (e) {
@@ -1419,12 +1411,10 @@
     q.value = name; S.q = name.toLowerCase(); render();
   });
 
-  // ---- price pill and source note ----
+  // ---- price pill ----
   pricedBtn.onclick = function () { S.inclCall = !S.inclCall; render(); };
-  var srcBtn = document.getElementById("srcBtn"), srcPop = document.getElementById("srcPop");
-  srcBtn.addEventListener("click", function (e) { e.stopPropagation(); var open = srcPop.hidden; srcPop.hidden = !open; srcBtn.setAttribute("aria-expanded", open ? "true" : "false"); });
-  document.addEventListener("click", function (e) { if (!e.target.closest("#srcPop, #srcBtn")) { srcPop.hidden = true; srcBtn.setAttribute("aria-expanded", "false"); } });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") { srcPop.hidden = true; srcBtn.setAttribute("aria-expanded", "false"); } });
+  // the fine print (source notice, links, light/dark) sits at the end of the cards or the table
+  var fine = document.getElementById("fineprint");
 
   // ---- phone: the listings are a sheet over the map; drag it (or tap the handle) between peek, half and full ----
   var splitEl = document.querySelector(".split"), sheetEl = document.querySelector(".split__list"), handle = document.getElementById("sheetHandle");

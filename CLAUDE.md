@@ -117,8 +117,8 @@ by name, with their street and town ("shul · 958 E County Line Rd · Lakewood")
 
 Design canvas with the options: https://claude.ai/artifact/Aj253LKTFAR3uJnCsaatTq (First version, Current, Options A/B/C, phone).
 - **Computer:** one slim sticky top bar: "Lakewood NJ Area Rentals", the search box, 55+, filter drop-downs (Type, Bedrooms, Max rent,
-  Landlord pays, More), a **Price listed** pill and a "Source: Masa U'Matan, <date>" button (its popover holds the unofficial-site notice,
-  links, "how this works", the OpenStreetMap credit, phone number and the light/dark switch; there is no masthead or footer any more).
+  Landlord pays, More), a **Price listed** pill and no "Source" button (owner removed it, 2026-11-22). The unofficial-site notice, links, OpenStreetMap credit, Masa U'Matan's phone number and the
+  light/dark switch are a small fine-print block at the end of the cards / table (`#fineprint`); there is no masthead or footer.
   Below it the map on the left (sticky) and cards on the right; a **Cards | Table** switch. Table = dense rows (where, type, bd, ba,
   rent, notes, call) with a neighbourhood list with counts on the left; clicking a row opens its full text and a "Show on map" button.
 - **Cards:** big bd/ba numbers, the rent or "Ask for price" (52% of listings give no rent: 123 of 237), neighbourhood + type, a quiet

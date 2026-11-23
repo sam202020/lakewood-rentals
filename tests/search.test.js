@@ -465,12 +465,13 @@ test("template: phone layout has a search bar outside the filters, and a filters
   assert.match(templateHtml, /\[hidden\] \{ display: none !important; \}/);   // flex rules must not defeat `hidden`
 });
 
-test("template: the source of the data is always named in the top bar, with links and the unofficial notice one tap away", () => {
-  const bar = templateHtml.slice(templateHtml.indexOf('<header class="searchbar topbar"'), templateHtml.indexOf("</header>"));
-  assert.match(bar, /Source: Masa U&rsquo;Matan/);                       // the button is visible on a computer, an icon on a phone
-  assert.match(bar, /href="https:\/\/masaumatan\.com"/);
-  assert.match(bar, /href="https:\/\/masaumatan\.com\/MasaRentals\.pdf"/);
-  assert.match(bar, /not affiliated/);
+test("template: the notice that this is an unofficial index of the Masa U'Matan list, with its links, stays on the page", () => {
+  const fine = templateHtml.slice(templateHtml.indexOf('<div class="fineprint"'), templateHtml.indexOf("</main>"));
+  assert.match(fine, /Masa U&rsquo;Matan/);
+  assert.match(fine, /href="https:\/\/masaumatan\.com"/);
+  assert.match(fine, /href="https:\/\/masaumatan\.com\/MasaRentals\.pdf"/);
+  assert.match(fine, /not affiliated/);
+  assert.doesNotMatch(templateHtml, /id="srcBtn"/);              // owner: no "Source" button in the top bar
 });
 
 test("real picker: typing 'clover' offers Clover first, and only one Clover", () => {
