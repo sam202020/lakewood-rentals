@@ -818,3 +818,32 @@ test("streets: among equally good matches Lakewood's own come first, wherever th
   assert.equal(S.suggestStreets(streets, "birch")[0].t, "Lakewood");
   assert.equal(S.suggestAll([], streets, "birch")[0].town, "Lakewood");
 });
+
+test("suggestAll: a neighborhood carries its town, just like a street", () => {
+  const picker = [{ name: "Harfield", town: "Jackson", lat: 40.14, lng: -74.27 }, { name: "Raintree", town: "Lakewood", lat: 40.09, lng: -74.16 },
+                  { name: "Jackson", lat: 40.1, lng: -74.35 }];
+  const h = S.suggestAll(picker, [], "harf")[0];
+  assert.equal(h.kind, "place");
+  assert.equal(h.town, "Jackson");
+  assert.equal(S.suggestAll(picker, [], "rain")[0].town, "Lakewood");
+  assert.equal(S.suggestAll(picker, [], "jackson")[0].town, undefined);      // a town is not in itself
+});
+
+test("template: the suggestion list shows the town for neighborhoods, streets and intersections", () => {
+  assert.match(templateHtml, /var hint = pl\.kind === "cross"/);
+  assert.match(templateHtml, /\(pl\.town \|\| ""\)/);
+});
+
+test("real picker: every neighborhood suggestion has a town, except the towns themselves", () => {
+  const picker = data.picker || [];
+  if (!picker.length) return;
+  const TOWNS = ["Lakewood", "Jackson", "Howell", "Toms River", "Manchester", "Brick"];
+  for (const p of picker) {
+    if (TOWNS.includes(p.name)) assert.equal(p.town, undefined, p.name);
+    else assert.ok(TOWNS.includes(p.town), p.name + " has no town");
+  }
+  const by = Object.fromEntries(picker.map((p) => [p.name, p.town]));
+  assert.equal(by["Harfield"], "Jackson");
+  assert.equal(by["Harmony Farms"], "Jackson");
+  assert.equal(by["Harmony Hills"], "Jackson");
+});

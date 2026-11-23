@@ -485,7 +485,7 @@ var LakewoodSearch = (function () {
     var items = [];
     suggestCrossings(streets, text, 2).forEach(function (c) { items.push({ kind: "cross", name: c.name, town: c.town, lat: c.lat, lng: c.lng }); });
     var qt = placeTokens(text), places = suggestPlaces(picker, text, limit);
-    places.forEach(function (p) { items.push({ kind: "place", name: p.name, lat: p.lat, lng: p.lng, score: 0 }); });
+    places.forEach(function (p) { items.push({ kind: "place", name: p.name, town: p.town, lat: p.lat, lng: p.lng, score: 0 }); });
     var seen = {};
     items.forEach(function (it) { seen[it.name.toLowerCase()] = true; });
     suggestStreets(streets, text, limit).forEach(function (s) {

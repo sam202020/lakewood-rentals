@@ -666,9 +666,10 @@
       li.id = "opt" + i; li.setAttribute("role", "option");
       li.setAttribute("aria-selected", i === active ? "true" : "false");
       if (i === active) li.className = "on";
+      // every suggestion says which town it is in; an intersection says so too
+      var hint = pl.kind === "cross" ? "intersection" + (pl.town ? " \u00b7 " + pl.town : "") : (pl.town || "");
       li.innerHTML = '<span class="sugg__name">' + esc(pl.name) + '</span>' +
-        (pl.kind === "cross" ? '<span class="sugg__town">intersection</span>'
-         : pl.kind === "street" ? '<span class="sugg__town">' + esc(pl.town) + '</span>' : "");
+        (hint ? '<span class="sugg__town">' + esc(hint) + '</span>' : "");
       // pointerdown (not click) so the box keeps focus and the list does not close first
       li.addEventListener("pointerdown", function (e) { e.preventDefault(); pickPlace(pl); });
       sugg.appendChild(li);

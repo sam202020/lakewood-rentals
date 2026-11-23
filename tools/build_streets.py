@@ -15,8 +15,8 @@ Output streets.json:
   {"source": ..., "base": [lat0, lng0], "unit": 0.0001, "towns": ["Lakewood", "Jackson", ...],
    "streets": [["Ocean Avenue", 0, [[dlat, dlng, dlat, dlng, ...], ...]], ...]}   # [name, index into towns, paths]
   Every path is a flat list of integers in `unit` degrees (11 m): the first point as an offset from `base`,
-  then each next point as a step from the one before, so a street is a few dozen small numbers. `p` has one path per piece of the street; the same name in two places (Central Avenue in
-  Lakewood and in Jackson) is two entries.
+  then each next point as a step from the one before, so a street is a few dozen small numbers. A street has one
+  path per piece; the same name in two towns (Central Avenue in Lakewood and in Jackson) is two entries.
 """
 import argparse
 import json
@@ -29,6 +29,7 @@ import urllib.parse
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
 CACHE = pathlib.Path(__file__).resolve().parent / ".street_cache"
 OUT = ROOT / "streets.json"
 
@@ -45,11 +46,11 @@ CENTER = (40.0979, -74.2179)
 # All of Lakewood Township is covered. In the surrounding towns only the neighbourhoods the site has places for
 # (every pin in places.json that lies outside Lakewood) are covered: streets within NEAR_MILES of one of those pins.
 NEAR_MILES = 0.9
-BOUNDARY_TOWNS = ["Lakewood", "Jackson", "Howell", "Manchester", "Brick"]   # Toms River's border is the fallback
 
-# Rough town centres, only used to label which town a street is in (so two "Central Avenue"s can be told apart).
-TOWNS = {"Lakewood": (40.0979, -74.2179), "Jackson": (40.1000, -74.3550), "Howell": (40.1500, -74.1900),
-         "Toms River": (39.9800, -74.2000), "Manchester": (39.9800, -74.3400), "Brick": (40.0600, -74.1100)}
+import towns as TW  # noqa: E402  (the shared town borders)
+
+TOWNS = TW.TOWN_CENTERS
+BOUNDARY_TOWNS = TW.BOUNDARY_TOWNS
 
 
 def miles(lat1, lng1, lat2, lng2):
@@ -277,7 +278,7 @@ def _chain(ways):
     return rings
 
 
-BORDERS_FILE = ROOT / "data" / "town_borders.json"
+BORDERS_FILE = TW.BORDERS_FILE
 BORDER_TOLERANCE_M = 20.0            # how much the saved borders are simplified (the fewer metres, the truer the label)
 LAKEWOOD_MIN_MILES = 0.4             # a street with this much of it inside Lakewood counts as a Lakewood street
 
@@ -303,19 +304,7 @@ def load_boundaries(cache=None):
     return out
 
 
-def inside(lat, lng, rings):
-    """Ray casting: is the point inside any of the rings?"""
-    for ring in rings:
-        hit = False
-        j = len(ring) - 1
-        for i in range(len(ring)):
-            (la1, ln1), (la2, ln2) = ring[i], ring[j]
-            if (ln1 > lng) != (ln2 > lng) and lat < (la2 - la1) * (lng - ln1) / (ln2 - ln1) + la1:
-                hit = not hit
-            j = i
-        if hit:
-            return True
-    return False
+inside = TW.inside
 
 
 BOUNDARIES = {}
@@ -323,10 +312,7 @@ BOUNDARIES = {}
 
 def town_of(lat, lng):
     """The town a point is in: by the real border where we have it, else the nearest town centre."""
-    for name in BOUNDARY_TOWNS:
-        if name in BOUNDARIES and inside(lat, lng, BOUNDARIES[name]):
-            return name
-    return min(TOWNS, key=lambda t: miles(lat, lng, *TOWNS[t]))
+    return TW.town_of(lat, lng, BOUNDARIES)
 
 
 def encode(points):

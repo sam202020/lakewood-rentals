@@ -20,6 +20,8 @@ import math
 import pathlib
 import re
 
+import towns
+
 PLACES_FILE = pathlib.Path(__file__).parent / "places.json"
 
 # Town-level names: a poor guide to where in town a listing is, so they are
@@ -190,6 +192,16 @@ def looks_like_address(text):
     return bool(_ADDRESS.match(str(text or "").strip()))
 
 
+def strip_town(name, town):
+    """'Harmony Hills, Jackson' -> 'Harmony Hills' (the town is shown next to the name instead);
+    'Mackenzie Toms River' -> 'Mackenzie'. Only when something is left, and only the place's own town."""
+    out = re.sub(r",?\s+" + re.escape(town) + r"$", "", name, flags=re.I).strip(" ,")
+    return out if out and out.lower() != name.lower() and len(out) >= 3 else name
+
+
+TOWN_NAMES = {"lakewood", "jackson", "howell", "toms river", "manchester", "brick"}
+
+
 def picker_entries(places, merge_miles=0.15, intersection_miles=0.25):
     """One entry per place name people would recognise, for the "Near" drop-down.
 
@@ -205,37 +217,44 @@ def picker_entries(places, merge_miles=0.15, intersection_miles=0.25):
         name = display_name(k, e)
         if looks_like_address(name):      # an address is not a neighbourhood: never offer it
             continue
-        cur = best.get(name.lower())
+        town = towns.town_of(e["lat"], e["lng"])
+        key = (name.lower(), town)                  # the same name in two towns is two places
+        cur = best.get(key)
         if cur is None or (e.get("source") == "manual" and cur["source"] != "manual"):
-            best[name.lower()] = {"name": name, "lat": e["lat"], "lng": e["lng"], "source": e.get("source"),
-                                  "aka": e.get("aka")}
-    for low, item in list(best.items()):
+            best[key] = {"name": name, "lat": e["lat"], "lng": e["lng"], "source": e.get("source"),
+                         "aka": e.get("aka"), "town": town}
+    for (low, town), item in list(best.items()):
         for suffix in _STREET_WORDS:
-            twin = best.get(low + " " + suffix.lower())
+            twin = best.get((low + " " + suffix.lower(), town))
             if twin and haversine_miles(item["lat"], item["lng"], twin["lat"], twin["lng"]) <= merge_miles:
-                best.pop(low, None)
+                best.pop((low, town), None)
                 break
     # An intersection ("13th Street & Princeton Avenue", "Route 88 & Clover") that sits on top of a place named
     # after one of its parts ("13th Street", "Clover") is the same neighbourhood: keep the simple name only.
     by_base = {}
     for item in best.values():
         by_base.setdefault(_base(item["name"]), item)
-    for low, item in list(best.items()):
+    for key, item in list(best.items()):
         parts = [_base(x) for x in re.split(r"\s+[&/]\s+", item["name"])]
         if len(parts) < 2:
             continue
         for part in parts:
             twin = by_base.get(part)
             if twin and twin is not item and haversine_miles(item["lat"], item["lng"], twin["lat"], twin["lng"]) <= intersection_miles:
-                best.pop(low, None)
+                best.pop(key, None)
                 break
     out = []
     for v in best.values():
-        item = {"name": v["name"], "lat": v["lat"], "lng": v["lng"]}
+        town = v["town"]
+        # a town is not "in" itself: "Jackson" gets no town; "Harmony Hills, Jackson" becomes "Harmony Hills" + Jackson
+        name = v["name"] if v["name"].lower() in TOWN_NAMES else strip_town(v["name"], town)
+        item = {"name": name, "lat": v["lat"], "lng": v["lng"]}
+        if v["name"].lower() not in TOWN_NAMES:
+            item["town"] = town
         if v.get("aka"):
             item["aka"] = v["aka"]          # other spellings people type ("Lutsk" for "Lutzk")
         out.append(item)
-    return sorted(out, key=lambda v: v["name"].lower())
+    return sorted(out, key=lambda v: (v["name"].lower(), v.get("town", "")))
 
 
 # ---- streets (streets.json, built by tools/build_streets.py) --------------------------------------

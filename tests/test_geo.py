@@ -11,6 +11,7 @@ sys.path.insert(0, str(ROOT))
 
 import checks  # noqa: E402
 import geo  # noqa: E402
+import towns  # noqa: E402
 
 PLACES = {
     "raintree": {"lat": 40.1000, "lng": -74.2000, "source": "manual"},
@@ -336,6 +337,53 @@ class OneNeighbourhoodOneEntry(unittest.TestCase):
         errors, warnings = checks.check(rows)
         self.assertEqual(errors, [])
         self.assertTrue(any("2 miles apart" in w and "A / B" in w for w in warnings))
+
+
+class PickerTowns(unittest.TestCase):
+    """Owner (2026-11-22): every place shows its town, like the streets do; Harfield is Jackson, and the
+    neighbourhoods Harmony Farms / Harmony Hills just say Jackson."""
+
+    def test_town_comes_from_the_pin(self):
+        places = {"harfield": {"name": "Harfield", "lat": 40.143, "lng": -74.270, "source": "manual"},
+                  "raintree": {"name": "Raintree", "lat": 40.0968, "lng": -74.1646, "source": "manual"}}
+        by = {p["name"]: p.get("town") for p in geo.picker_entries(places)}
+        self.assertEqual(by, {"Harfield": "Jackson", "Raintree": "Lakewood"})
+
+    def test_a_trailing_town_in_the_name_moves_to_the_town_field(self):
+        places = {"hh": {"name": "Harmony Hills, Jackson", "lat": 40.1656, "lng": -74.3056, "source": "manual"},
+                  "mk": {"name": "Mackenzie Toms River", "lat": 40.0325, "lng": -74.2437, "source": "manual"}}
+        by = {p["name"]: p["town"] for p in geo.picker_entries(places)}
+        self.assertEqual(by, {"Harmony Hills": "Jackson", "Mackenzie": "Toms River"})
+
+    def test_only_the_places_own_town_is_stripped(self):
+        self.assertEqual(geo.strip_town("Club at Jackson 21", "Jackson"), "Club at Jackson 21")
+        self.assertEqual(geo.strip_town("Jackson", "Jackson"), "Jackson")                  # nothing would be left
+        self.assertEqual(geo.strip_town("Pine Lake Park, Manchester", "Lakewood"), "Pine Lake Park, Manchester")
+        self.assertEqual(geo.strip_town("Pine Lake Park, Manchester", "Manchester"), "Pine Lake Park")
+
+    def test_a_town_has_no_town(self):
+        places = {"jackson": {"name": "Jackson", "lat": 40.1, "lng": -74.35, "source": "osm"}}
+        self.assertNotIn("town", geo.picker_entries(places)[0])
+
+    def test_same_name_in_two_towns_stays_two_entries(self):
+        places = {"a": {"name": "Pine Street", "lat": 40.074, "lng": -74.2033, "source": "manual"},
+                  "b": {"name": "Pine Street", "lat": 40.12, "lng": -74.35, "source": "manual"}}
+        self.assertEqual(sorted(p["town"] for p in geo.picker_entries(places)), ["Jackson", "Lakewood"])
+
+
+class ShippedPickerTowns(unittest.TestCase):
+    def test_every_neighbourhood_has_a_town_and_the_known_ones_are_right(self):
+        pk = geo.picker_entries(geo.load_places())
+        by = {p["name"]: p.get("town") for p in pk}
+        for p in pk:
+            if p["name"].lower() in geo.TOWN_NAMES:
+                self.assertNotIn("town", p, p["name"])
+            else:
+                self.assertIn(p["town"], towns.TOWN_CENTERS, p["name"])
+        for name, town in (("Harfield", "Jackson"), ("Harmony Farms", "Jackson"), ("Harmony Hills", "Jackson"),
+                           ("Raintree", "Lakewood"), ("Pine Lake Park", "Manchester"), ("Ramtown", "Howell"),
+                           ("Whitewater Court", "Toms River"), ("Brookwood 1", "Jackson"), ("Westgate", "Lakewood")):
+            self.assertEqual(by[name], town, name)
 
 
 class ShippedPicker(unittest.TestCase):

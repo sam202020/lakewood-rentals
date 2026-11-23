@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T01:18:09+00:00",
+  "generated_at": "2026-11-23T01:21:35+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -7386,277 +7386,332 @@
     {
       "name": "13th Street",
       "lat": 40.10409,
-      "lng": -74.21028
+      "lng": -74.21028,
+      "town": "Lakewood"
     },
     {
       "name": "14th Street",
       "lat": 40.10516,
-      "lng": -74.21461
+      "lng": -74.21461,
+      "town": "Lakewood"
     },
     {
       "name": "55+ Communities (Fairways / Enclave)",
       "lat": 40.05685,
-      "lng": -74.23106
+      "lng": -74.23106,
+      "town": "Lakewood"
     },
     {
       "name": "5th Street",
       "lat": 40.09534,
-      "lng": -74.21275
+      "lng": -74.21275,
+      "town": "Lakewood"
     },
     {
       "name": "7th Street",
       "lat": 40.09775,
-      "lng": -74.20907
+      "lng": -74.20907,
+      "town": "Lakewood"
     },
     {
       "name": "Albert",
       "lat": 40.06373,
-      "lng": -74.19895
+      "lng": -74.19895,
+      "town": "Lakewood"
     },
     {
       "name": "Arlington",
       "lat": 40.08448,
-      "lng": -74.19965
+      "lng": -74.19965,
+      "town": "Lakewood"
     },
     {
       "name": "Bais Shalom",
       "lat": 40.09919,
-      "lng": -74.21713
+      "lng": -74.21713,
+      "town": "Lakewood"
     },
     {
       "name": "Beaver Crossing",
       "lat": 40.06652,
-      "lng": -74.23199
+      "lng": -74.23199,
+      "town": "Lakewood"
     },
     {
       "name": "Belz Shlav Aleph (The 70 Phase I)",
       "lat": 40.04915,
-      "lng": -74.19475
+      "lng": -74.19475,
+      "town": "Lakewood"
     },
     {
       "name": "Belz Shlav Beis (The 70 Phase II)",
       "lat": 40.0488,
-      "lng": -74.2031
+      "lng": -74.2031,
+      "town": "Lakewood"
     },
     {
       "name": "Belz Shlav Gimel (Locust Grove)",
       "lat": 40.04536,
-      "lng": -74.20059
+      "lng": -74.20059,
+      "town": "Lakewood"
     },
     {
       "name": "Bent Hook",
       "lat": 40.02429,
-      "lng": -74.2379
+      "lng": -74.2379,
+      "town": "Toms River"
     },
     {
       "name": "Bergen Avenue",
       "lat": 40.09201,
-      "lng": -74.20026
+      "lng": -74.20026,
+      "town": "Lakewood"
     },
     {
       "name": "Brook Hill",
       "lat": 40.10773,
-      "lng": -74.1905
+      "lng": -74.1905,
+      "town": "Lakewood"
     },
     {
       "name": "Brook Road",
       "lat": 40.10523,
-      "lng": -74.187
+      "lng": -74.187,
+      "town": "Lakewood"
     },
     {
       "name": "Brook Road / Ridge Avenue / E 7th Street",
       "lat": 40.09834,
-      "lng": -74.1895
+      "lng": -74.1895,
+      "town": "Lakewood"
     },
     {
       "name": "Brookwood 1",
       "lat": 40.11532,
-      "lng": -74.24687
+      "lng": -74.24687,
+      "town": "Jackson"
     },
     {
       "name": "Brookwood 2",
       "lat": 40.11506,
-      "lng": -74.24655
+      "lng": -74.24655,
+      "town": "Jackson"
     },
     {
       "name": "Brookwood 3",
       "lat": 40.11544,
-      "lng": -74.24673
+      "lng": -74.24673,
+      "town": "Jackson"
     },
     {
       "name": "Brookwood 4",
       "lat": 40.1155,
-      "lng": -74.24666
+      "lng": -74.24666,
+      "town": "Jackson"
     },
     {
       "name": "Candlewood",
       "lat": 40.15011,
-      "lng": -74.21348
+      "lng": -74.21348,
+      "town": "Howell"
     },
     {
       "name": "Case Road",
       "lat": 40.10017,
-      "lng": -74.23143
+      "lng": -74.23143,
+      "town": "Lakewood"
     },
     {
       "name": "Cedar Court",
       "lat": 40.07159,
-      "lng": -74.22007
+      "lng": -74.22007,
+      "town": "Lakewood"
     },
     {
       "name": "Central Avenue",
       "lat": 40.0905,
-      "lng": -74.2377
+      "lng": -74.2377,
+      "town": "Lakewood"
     },
     {
       "name": "Chateau Park",
       "lat": 40.06443,
-      "lng": -74.21911
+      "lng": -74.21911,
+      "town": "Lakewood"
     },
     {
       "name": "Cherry Street",
       "lat": 40.09203,
-      "lng": -74.19226
+      "lng": -74.19226,
+      "town": "Lakewood"
     },
     {
       "name": "Chestnut Acres",
       "lat": 40.04981,
-      "lng": -74.20925
+      "lng": -74.20925,
+      "town": "Lakewood"
     },
     {
       "name": "Chestnut Gardens",
       "lat": 40.0526,
-      "lng": -74.19997
+      "lng": -74.19997,
+      "town": "Lakewood"
     },
     {
       "name": "Chestnut Street",
       "lat": 40.0528,
-      "lng": -74.2148
+      "lng": -74.2148,
+      "town": "Lakewood"
     },
     {
       "name": "Clearstream Road",
       "lat": 40.10756,
-      "lng": -74.26226
+      "lng": -74.26226,
+      "town": "Jackson"
     },
     {
       "name": "Clifton",
       "lat": 40.09898,
-      "lng": -74.21592
+      "lng": -74.21592,
+      "town": "Lakewood"
     },
     {
       "name": "Clover",
       "lat": 40.09076,
-      "lng": -74.20032
+      "lng": -74.20032,
+      "town": "Lakewood"
     },
     {
       "name": "Congress Street",
       "lat": 40.09183,
-      "lng": -74.20638
+      "lng": -74.20638,
+      "town": "Lakewood"
     },
     {
       "name": "County Line Road",
       "lat": 40.10521,
-      "lng": -74.19564
+      "lng": -74.19564,
+      "town": "Lakewood"
     },
     {
       "name": "Courtney",
       "lat": 40.10359,
-      "lng": -74.21558
+      "lng": -74.21558,
+      "town": "Lakewood"
     },
     {
       "name": "Crest Hill",
       "lat": 40.02598,
-      "lng": -74.23697
+      "lng": -74.23697,
+      "town": "Toms River"
     },
     {
       "name": "Cross Street",
       "lat": 40.0663,
-      "lng": -74.238
+      "lng": -74.238,
+      "town": "Lakewood"
     },
     {
       "name": "Cross Street & Massachusetts Avenue",
       "lat": 40.0603,
-      "lng": -74.2294
+      "lng": -74.2294,
+      "town": "Lakewood"
     },
     {
       "name": "Dewey Avenue",
       "lat": 40.09284,
-      "lng": -74.20358
+      "lng": -74.20358,
+      "town": "Lakewood"
     },
     {
       "name": "Dunhill Road",
       "lat": 40.10372,
-      "lng": -74.31907
+      "lng": -74.31907,
+      "town": "Jackson"
     },
     {
       "name": "E 7th Street",
       "lat": 40.09862,
-      "lng": -74.20141
+      "lng": -74.20141,
+      "town": "Lakewood"
     },
     {
       "name": "East End",
       "lat": 40.10242,
-      "lng": -74.20021
+      "lng": -74.20021,
+      "town": "Lakewood"
     },
     {
       "name": "Enclave at the Fairways (55+)",
       "lat": 40.05623,
-      "lng": -74.22761
+      "lng": -74.22761,
+      "town": "Lakewood"
     },
     {
       "name": "Evergreen Gardens",
       "lat": 40.0486,
-      "lng": -74.2094
+      "lng": -74.2094,
+      "town": "Lakewood"
     },
     {
       "name": "Glen Avenue",
       "lat": 40.09307,
-      "lng": -74.2375
+      "lng": -74.2375,
+      "town": "Lakewood"
     },
     {
       "name": "Harfield",
       "lat": 40.14318,
-      "lng": -74.27047
+      "lng": -74.27047,
+      "town": "Jackson"
     },
     {
       "name": "Harmony Farms",
       "lat": 40.13064,
-      "lng": -74.25709
+      "lng": -74.25709,
+      "town": "Jackson"
     },
     {
-      "name": "Harmony Hills, Jackson",
+      "name": "Harmony Hills",
       "lat": 40.16561,
-      "lng": -74.30564
+      "lng": -74.30564,
+      "town": "Jackson"
     },
     {
       "name": "Heart of Ridge",
       "lat": 40.09788,
-      "lng": -74.20131
+      "lng": -74.20131,
+      "town": "Lakewood"
     },
     {
       "name": "Hearthstone",
       "lat": 40.0619,
-      "lng": -74.22684
+      "lng": -74.22684,
+      "town": "Lakewood"
     },
     {
       "name": "High Street",
       "lat": 40.07005,
-      "lng": -74.21677
+      "lng": -74.21677,
+      "town": "Lakewood"
     },
     {
       "name": "Holly Oaks",
       "lat": 40.0357,
-      "lng": -74.26028
+      "lng": -74.26028,
+      "town": "Manchester"
     },
     {
       "name": "Hope",
       "lat": 40.10374,
-      "lng": -74.24495
+      "lng": -74.24495,
+      "town": "Lakewood"
     },
     {
       "name": "Hope Chapel",
       "lat": 40.10374,
-      "lng": -74.24495
+      "lng": -74.24495,
+      "town": "Lakewood"
     },
     {
       "name": "Howell",
@@ -7666,12 +7721,14 @@
     {
       "name": "Hyson",
       "lat": 40.14095,
-      "lng": -74.26653
+      "lng": -74.26653,
+      "town": "Jackson"
     },
     {
       "name": "Irene Court",
       "lat": 40.09557,
-      "lng": -74.25586
+      "lng": -74.25586,
+      "town": "Lakewood"
     },
     {
       "name": "Jackson",
@@ -7681,27 +7738,32 @@
     {
       "name": "Jackson 21",
       "lat": 40.13763,
-      "lng": -74.35417
+      "lng": -74.35417,
+      "town": "Jackson"
     },
     {
       "name": "Jackson Pines Road",
       "lat": 40.09789,
-      "lng": -74.26554
+      "lng": -74.26554,
+      "town": "Jackson"
     },
     {
       "name": "James Street",
       "lat": 40.07933,
-      "lng": -74.23321
+      "lng": -74.23321,
+      "town": "Lakewood"
     },
     {
       "name": "Jule Court",
       "lat": 40.0888,
-      "lng": -74.24942
+      "lng": -74.24942,
+      "town": "Lakewood"
     },
     {
       "name": "Kol Shimshon",
       "lat": 40.10207,
-      "lng": -74.20766
+      "lng": -74.20766,
+      "town": "Lakewood"
     },
     {
       "name": "Lakewood",
@@ -7711,45 +7773,53 @@
     {
       "name": "Lakewood Commons",
       "lat": 40.0682,
-      "lng": -74.20488
+      "lng": -74.20488,
+      "town": "Lakewood"
     },
     {
       "name": "Lawrence Avenue",
       "lat": 40.10094,
-      "lng": -74.20775
+      "lng": -74.20775,
+      "town": "Lakewood"
     },
     {
       "name": "Leonard",
       "lat": 40.10309,
-      "lng": -74.20119
+      "lng": -74.20119,
+      "town": "Lakewood"
     },
     {
       "name": "Lexington Avenue",
       "lat": 40.10023,
-      "lng": -74.21368
+      "lng": -74.21368,
+      "town": "Lakewood"
     },
     {
       "name": "Locust Grove",
       "lat": 40.04536,
-      "lng": -74.20059
+      "lng": -74.20059,
+      "town": "Lakewood"
     },
     {
       "name": "Locust Street",
       "lat": 40.04684,
-      "lng": -74.20966
+      "lng": -74.20966,
+      "town": "Lakewood"
     },
     {
       "name": "Lutzk",
       "lat": 40.08419,
       "lng": -74.2547,
+      "town": "Lakewood",
       "aka": [
         "Lutsk"
       ]
     },
     {
-      "name": "Mackenzie Toms River",
+      "name": "Mackenzie",
       "lat": 40.03247,
-      "lng": -74.24373
+      "lng": -74.24373,
+      "town": "Toms River"
     },
     {
       "name": "Manchester",
@@ -7759,267 +7829,320 @@
     {
       "name": "Marc Drive",
       "lat": 40.07433,
-      "lng": -74.21049
+      "lng": -74.21049,
+      "town": "Lakewood"
     },
     {
       "name": "Massachusetts Avenue",
       "lat": 40.05365,
-      "lng": -74.23052
+      "lng": -74.23052,
+      "town": "Lakewood"
     },
     {
       "name": "Meadow Run",
       "lat": 40.09255,
-      "lng": -74.28115
+      "lng": -74.28115,
+      "town": "Jackson"
     },
     {
       "name": "Medina Road",
       "lat": 40.09377,
-      "lng": -74.17316
+      "lng": -74.17316,
+      "town": "Lakewood"
     },
     {
       "name": "Miller",
       "lat": 40.09714,
-      "lng": -74.24621
+      "lng": -74.24621,
+      "town": "Lakewood"
     },
     {
       "name": "Monmouth Views",
       "lat": 40.16382,
-      "lng": -74.25461
+      "lng": -74.25461,
+      "town": "Howell"
     },
     {
       "name": "Monterey",
       "lat": 40.08838,
-      "lng": -74.23113
+      "lng": -74.23113,
+      "town": "Lakewood"
     },
     {
       "name": "N Apple",
       "lat": 40.10582,
-      "lng": -74.20266
+      "lng": -74.20266,
+      "town": "Lakewood"
     },
     {
       "name": "New Central Avenue",
       "lat": 40.09412,
-      "lng": -74.25584
+      "lng": -74.25584,
+      "town": "Lakewood"
     },
     {
       "name": "New England Village",
       "lat": 40.07979,
-      "lng": -74.23019
+      "lng": -74.23019,
+      "town": "Lakewood"
     },
     {
-      "name": "New Prospect Jackson",
+      "name": "New Prospect",
       "lat": 40.12983,
-      "lng": -74.25647
+      "lng": -74.25647,
+      "town": "Jackson"
     },
     {
       "name": "Nowlan Place",
       "lat": 40.09912,
-      "lng": -74.20151
+      "lng": -74.20151,
+      "town": "Lakewood"
     },
     {
       "name": "Oak Glen",
       "lat": 40.16928,
-      "lng": -74.19737
+      "lng": -74.19737,
+      "town": "Howell"
     },
     {
       "name": "Oak Street & Vine Avenue",
       "lat": 40.066,
-      "lng": -74.2089
+      "lng": -74.2089,
+      "town": "Lakewood"
     },
     {
       "name": "Ocean Avenue",
       "lat": 40.08734,
-      "lng": -74.18049
+      "lng": -74.18049,
+      "town": "Lakewood"
     },
     {
       "name": "Ocean Pointe",
       "lat": 40.08836,
-      "lng": -74.18005
+      "lng": -74.18005,
+      "town": "Lakewood"
     },
     {
       "name": "Park Avenue",
       "lat": 40.09916,
-      "lng": -74.2047
+      "lng": -74.2047,
+      "town": "Lakewood"
     },
     {
       "name": "Pawnee",
       "lat": 40.1147,
-      "lng": -74.2545
+      "lng": -74.2545,
+      "town": "Lakewood"
     },
     {
       "name": "Pine Lake Park",
       "lat": 40.00317,
-      "lng": -74.25653
+      "lng": -74.25653,
+      "town": "Manchester"
     },
     {
       "name": "Pine River",
       "lat": 40.07275,
-      "lng": -74.20179
+      "lng": -74.20179,
+      "town": "Lakewood"
     },
     {
       "name": "Pine Street",
       "lat": 40.07418,
-      "lng": -74.20335
+      "lng": -74.20335,
+      "town": "Lakewood"
     },
     {
       "name": "Prime Jackson Area",
       "lat": 40.11913,
-      "lng": -74.24929
+      "lng": -74.24929,
+      "town": "Jackson"
     },
     {
       "name": "Princeton Avenue",
       "lat": 40.10167,
-      "lng": -74.20981
+      "lng": -74.20981,
+      "town": "Lakewood"
     },
     {
       "name": "Prospect",
       "lat": 40.07301,
-      "lng": -74.23181
+      "lng": -74.23181,
+      "town": "Lakewood"
     },
     {
       "name": "Prospect Vines",
       "lat": 40.07227,
-      "lng": -74.23904
+      "lng": -74.23904,
+      "town": "Lakewood"
     },
     {
       "name": "Raintree",
       "lat": 40.0968,
-      "lng": -74.16462
+      "lng": -74.16462,
+      "town": "Lakewood"
     },
     {
       "name": "Ramtown",
       "lat": 40.12095,
-      "lng": -74.14375
+      "lng": -74.14375,
+      "town": "Howell"
     },
     {
       "name": "Regency Estates",
       "lat": 40.06667,
-      "lng": -74.22197
+      "lng": -74.22197,
+      "town": "Lakewood"
     },
     {
       "name": "Ridge Avenue",
       "lat": 40.09788,
-      "lng": -74.20131
+      "lng": -74.20131,
+      "town": "Lakewood"
     },
     {
       "name": "Rose Court",
       "lat": 40.04689,
-      "lng": -74.20229
+      "lng": -74.20229,
+      "town": "Lakewood"
     },
     {
       "name": "Saratoga",
       "lat": 40.04615,
-      "lng": -74.24265
+      "lng": -74.24265,
+      "town": "Lakewood"
     },
     {
       "name": "Shady Lane",
       "lat": 40.09628,
-      "lng": -74.24189
+      "lng": -74.24189,
+      "town": "Lakewood"
     },
     {
       "name": "Shonny",
       "lat": 40.09715,
-      "lng": -74.25628
+      "lng": -74.25628,
+      "town": "Lakewood"
     },
     {
       "name": "Sims",
       "lat": 40.069,
-      "lng": -74.19716
+      "lng": -74.19716,
+      "town": "Lakewood"
     },
     {
       "name": "Somerset Avenue",
       "lat": 40.10035,
-      "lng": -74.1955
+      "lng": -74.1955,
+      "town": "Lakewood"
     },
     {
       "name": "Somerset Walk",
       "lat": 40.07137,
-      "lng": -74.19811
+      "lng": -74.19811,
+      "town": "Lakewood"
     },
     {
       "name": "South Lake Drive",
       "lat": 40.09333,
-      "lng": -74.23308
+      "lng": -74.23308,
+      "town": "Lakewood"
     },
     {
       "name": "Spruce Street",
       "lat": 40.07152,
-      "lng": -74.20888
+      "lng": -74.20888,
+      "town": "Lakewood"
     },
     {
       "name": "Squankum",
       "lat": 40.10518,
-      "lng": -74.20526
+      "lng": -74.20526,
+      "town": "Lakewood"
     },
     {
       "name": "St Katherine",
       "lat": 40.10926,
-      "lng": -74.24172
+      "lng": -74.24172,
+      "town": "Lakewood"
     },
     {
       "name": "St Nicholas",
       "lat": 40.08815,
-      "lng": -74.23501
+      "lng": -74.23501,
+      "town": "Lakewood"
     },
     {
       "name": "Stamford Meadows",
       "lat": 40.05373,
-      "lng": -74.20184
+      "lng": -74.20184,
+      "town": "Lakewood"
     },
     {
       "name": "Sterling Forest",
       "lat": 40.06846,
-      "lng": -74.2205
+      "lng": -74.2205,
+      "town": "Lakewood"
     },
     {
       "name": "Sterling Place",
       "lat": 40.0693,
-      "lng": -74.21834
+      "lng": -74.21834,
+      "town": "Lakewood"
     },
     {
       "name": "Sunset Avenue",
       "lat": 40.08299,
-      "lng": -74.22511
+      "lng": -74.22511,
+      "town": "Lakewood"
     },
     {
       "name": "The 70",
       "lat": 40.04915,
-      "lng": -74.19475
+      "lng": -74.19475,
+      "town": "Lakewood"
     },
     {
       "name": "The 70 Phase I",
       "lat": 40.04915,
-      "lng": -74.19475
+      "lng": -74.19475,
+      "town": "Lakewood"
     },
     {
       "name": "The 70 Phase II",
       "lat": 40.0488,
-      "lng": -74.2031
+      "lng": -74.2031,
+      "town": "Lakewood"
     },
     {
       "name": "The Club at Jackson Twenty-One",
       "lat": 40.1353,
-      "lng": -74.34684
+      "lng": -74.34684,
+      "town": "Jackson"
     },
     {
       "name": "The Fairways at Lake Ridge (55+)",
       "lat": 40.05747,
-      "lng": -74.23451
+      "lng": -74.23451,
+      "town": "Lakewood"
     },
     {
       "name": "The Reserve",
       "lat": 40.1219,
-      "lng": -74.27709
+      "lng": -74.27709,
+      "town": "Jackson"
     },
     {
       "name": "The Rockwell",
       "lat": 40.05421,
-      "lng": -74.2224
+      "lng": -74.2224,
+      "town": "Lakewood"
     },
     {
       "name": "The Villas",
       "lat": 40.10604,
-      "lng": -74.19885
+      "lng": -74.19885,
+      "town": "Lakewood"
     },
     {
       "name": "Toms River",
@@ -8029,47 +8152,56 @@
     {
       "name": "Topaz",
       "lat": 40.16514,
-      "lng": -74.27979
+      "lng": -74.27979,
+      "town": "Jackson"
     },
     {
       "name": "Twin Oaks",
       "lat": 40.10604,
-      "lng": -74.19885
+      "lng": -74.19885,
+      "town": "Lakewood"
     },
     {
       "name": "Van Buren",
       "lat": 40.09471,
-      "lng": -74.24924
+      "lng": -74.24924,
+      "town": "Lakewood"
     },
     {
       "name": "W Kennedy",
       "lat": 40.10742,
-      "lng": -74.22668
+      "lng": -74.22668,
+      "town": "Lakewood"
     },
     {
       "name": "W. County Line Road",
       "lat": 40.11529,
-      "lng": -74.24917
+      "lng": -74.24917,
+      "town": "Jackson"
     },
     {
       "name": "Westgate",
       "lat": 40.08734,
-      "lng": -74.25544
+      "lng": -74.25544,
+      "town": "Lakewood"
     },
     {
       "name": "Whitewater Court",
       "lat": 40.00686,
-      "lng": -74.23082
+      "lng": -74.23082,
+      "town": "Toms River"
     },
     {
       "name": "Wyndham Place",
       "lat": 40.06972,
-      "lng": -74.22742
+      "lng": -74.22742,
+      "town": "Lakewood"
     },
     {
       "name": "Yeshiva (BMG)",
       "lat": 40.09538,
-      "lng": -74.22226
+      "lng": -74.22226,
+      "town": "Lakewood"
     }
   ]
 }
