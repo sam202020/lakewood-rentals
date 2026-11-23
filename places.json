@@ -62,8 +62,9 @@
   "lat": 40.05685,
   "lng": -74.23106,
   "source": "manual",
-  "note": "Owner's guess: average of the Fairways and the Enclave, the Lakewood 55+ communities on Massachusetts Ave.",
-  "label": "55+ Communities (Fairways / Enclave)"
+  "note": "Owner's guess: average of the Fairways and the Enclave, the Lakewood 55+ communities on Massachusetts Ave. Not a neighbourhood: a vague listing phrase ('55+Community'). Kept only so the listing has a guessed pin; the real neighbourhoods (Fairways, Enclave) are offered instead.",
+  "label": "55+ Communities (Fairways / Enclave)",
+  "hide": true
  },
  "5th": {
   "name": "5th Street",
@@ -1034,7 +1035,8 @@
   "lat": 40.11913,
   "lng": -74.24929,
   "source": "manual",
-  "note": "Owner's guess: north of County Line Rd, west of Lakewood; average of Brookwood 1, 2, 4 and Harmony Farms."
+  "note": "Owner's guess: north of County Line Rd, west of Lakewood; average of Brookwood 1, 2, 4 and Harmony Farms. Not a neighbourhood (owner): a vague listing phrase. Kept only so the listing has a guessed pin; never offered in the Near suggestions.",
+  "hide": true
  },
  "princeton": {
   "name": "Princeton Ave",

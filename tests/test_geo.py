@@ -371,6 +371,32 @@ class PickerTowns(unittest.TestCase):
         self.assertEqual(sorted(p["town"] for p in geo.picker_entries(places)), ["Jackson", "Lakewood"])
 
 
+class NotNeighbourhoods(unittest.TestCase):
+    """Owner (2026-11-22): 'Prime Jackson Area' is not a neighbourhood. Vague listing phrases may get a guessed pin
+    (so the listing still sorts by distance) but are never offered as places in the Near suggestions."""
+
+    def test_hidden_entries_keep_their_pin_but_are_not_offered(self):
+        places = {"prime jackson": {"name": "Prime Jackson Area", "lat": 40.119, "lng": -74.249, "source": "manual", "hide": True},
+                  "raintree": {"name": "Raintree", "lat": 40.0968, "lng": -74.1646, "source": "manual"}}
+        self.assertEqual([p["name"] for p in geo.picker_entries(places)], ["Raintree"])
+        self.assertEqual(geo.resolve("Prime Jackson Area", places)["lat"], 40.119)      # the listing still has a pin
+
+    def test_the_shipped_vague_phrases_are_hidden_but_still_placed(self):
+        places = geo.load_places()
+        names = [p["name"] for p in geo.picker_entries(places)]
+        for key, shown in (("prime jackson", "Prime Jackson Area"), ("55+community", "55+ Communities (Fairways / Enclave)")):
+            self.assertTrue(places[key].get("hide"), key)
+            self.assertNotIn(shown, names)
+            self.assertIsNotNone(places[key]["lat"])                                   # listings keep their pin
+        self.assertIn("Enclave at the Fairways (55+)", names)                          # the real neighbourhoods stay
+        self.assertIn("The Fairways at Lake Ridge (55+)", names)
+
+    def test_no_picker_name_is_a_vague_area(self):
+        for p in geo.picker_entries(geo.load_places()):
+            self.assertFalse(p["name"].lower().endswith(" area"), p["name"])
+            self.assertNotIn("communities", p["name"].lower().replace("55+ communities", ""))
+
+
 class ShippedPickerTowns(unittest.TestCase):
     def test_every_neighbourhood_has_a_town_and_the_known_ones_are_right(self):
         pk = geo.picker_entries(geo.load_places())

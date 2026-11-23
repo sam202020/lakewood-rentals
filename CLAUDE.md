@@ -66,3 +66,9 @@ sorts by distance to the street's whole line, and offers intersections ("clover 
   data, flagged, so intersections work, but it is not suggested as a second entry.
 - It was spot-checked against Google Maps on 2026-11-22 (six streets within 0.003 mi; tests record it). These are
   street lines only; the places listings are pinned to still come from `places.json` (Google-checked).
+
+## Not every listing location is a neighbourhood
+
+A vague phrase in a listing ("Prime Jackson Area", "55+Community", "Lakewood Area") is not a neighbourhood. It may get a
+guessed pin in `places.json` so its listing still sorts by distance, but set `"hide": true` on that entry so it is never
+offered in the "Near" suggestions (`geo.picker_entries` skips hidden entries; listings still resolve to the pin).
