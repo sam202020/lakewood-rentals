@@ -1090,3 +1090,11 @@ test("hasPrice: a listing shows a price when it has a monthly or weekly rent", (
   assert.equal(S.hasPrice(L({ rent: null, rent_display: "$450/week" })), true);
   assert.equal(S.hasPrice(L({ rent: null, rent_display: "Call to discuss" })), false);
 });
+
+test("map: every shul in shuls.json is a marker on the page, with a town", () => {
+  const pins = data.shulpins || [];
+  const file = JSON.parse(fs.readFileSync(path.join(ROOT, "shuls.json"), "utf8")).shuls.filter((s) => !s.hide);
+  assert.equal(pins.length, file.length);
+  assert.ok(pins.length > 200);
+  assert.ok(pins.every((p) => typeof p[1] === "number" && typeof p[2] === "number" && p[3]));
+});

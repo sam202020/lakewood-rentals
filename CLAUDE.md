@@ -129,6 +129,11 @@ Design canvas with the options: https://claude.ai/artifact/Aj253LKTFAR3uJnCsaatT
 - **Phone:** no masthead; the map fills the screen under the search row and the listings are a bottom sheet (peek / half / full; drag
   the handle or tap it). Tapping a card shows it on the map (the map is padded so the pin is above the sheet).
 - **Never a map per card** (tried, too zoomed in). Selecting a card moves the map to its neighbourhood in its surroundings (at least ~1.5 mi).
+- **Shuls are markers on the map** (owner, 2026-11-23): all of `shuls.json` (payload field `shulpins`, including shuls merged into a neighbourhood in the
+  drop-down) as small star markers from zoom 14, names from zoom 16; tapping one offers "Rentals within ½ mile" (sets the Near chip and the radius). They are
+  our own data, so they do not depend on the basemap showing landmarks. Legend says "✡ shul".
+- Basemap: standard OpenStreetMap tiles. CARTO's free Voyager/Dark Matter tiles were tried and now stamp "API KEY REQUIRED" on the map (needs an account key);
+  Google/Mapbox/MapTiler/Stadia also need a key. A keyed provider (e.g. MapTiler or Stadia free tier) is the way to a Google-like look later.
 - Leaflet 1.9.4 (script from cdnjs with SRI; `site/leaflet.css` inlined by build.py because artifact pages may only load stylesheets from
   Google Fonts) + OpenStreetMap tiles. The private Artifact page blocks tile images, so there the map falls back to streets.json lines +
   neighbourhood names (`streetFallback`); the public GitHub Pages site gets the real map. Google Maps cannot show many pins without an

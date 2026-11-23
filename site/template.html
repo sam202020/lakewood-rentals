@@ -346,9 +346,6 @@
   .mpop button.mpop__row { display: block; width: 100%; text-align: left; font: inherit; padding: 6px 4px; border: 0; border-top: 1px solid #ddd; background: none; color: #16452F; cursor: pointer; }
   .mpop button.mpop__row.on { font-weight: 700; }
   .mpop a.mpop__call { display: inline-block; margin-top: 6px; font-weight: 700; color: #16452F; }
-  /* the standard OpenStreetMap tiles are light: dim them in dark mode */
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.9) saturate(.8); } }
-  :root[data-theme="dark"] .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.9) saturate(.8); }
 
   .empty {
     text-align: center; padding: 60px 20px; color: var(--muted);
@@ -644,6 +641,19 @@
   .fineprint { grid-column: 1 / -1; margin-top: 8px; padding: 14px 4px 4px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--muted); }
   .fineprint p { margin: 0 0 8px; max-width: 70ch; } .fineprint a { font-weight: 600; } .fineprint strong { color: var(--ink); }
   .fineprint .themebtn { margin-left: 6px; }
+  /* the standard OpenStreetMap tiles are light: dim them in dark mode */
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.9) saturate(.8); } }
+  :root[data-theme="dark"] .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.9) saturate(.8); }
+  /* shuls on the map: a star marker from zoom 14, names from zoom 16 */
+  .shulpin { background: none; border: 0; }
+  .shulpin span { position: absolute; white-space: nowrap; }
+  .shulpin .shul__i { transform: translate(-50%, -50%); width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 1.5px solid #5b4a8a;
+    color: #5b4a8a; font: 700 12px/17px system-ui, sans-serif; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,.35); }
+  .shulpin .shul__n { display: none; left: 13px; top: 0; transform: translateY(-50%); font: 600 11px/1.1 system-ui, sans-serif; color: #3d3163;
+    text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff; }
+  .map--close .shulpin .shul__n { display: block; }
+  .legend__star { color: #5b4a8a; font-weight: 700; }
+  .mpop button.mpop__near { display: block; margin-top: 8px; font: inherit; font-weight: 700; color: #16452F; background: #fff; border: 1px solid #1E5C3F; border-radius: 8px; padding: 6px 10px; cursor: pointer; }
 </style>
 
 <header class="searchbar topbar" id="searchbar">
@@ -766,7 +776,7 @@
       </div>
       <aside class="mappane" id="mappane" aria-label="Map of the listings">
         <div id="map"></div>
-        <p class="mappane__note"><span class="legend__dot"></span> price not listed &middot; <b>pins are approximate</b></p>
+        <p class="mappane__note"><span class="legend__dot"></span> price not listed &middot; <span class="legend__star">&#10017;</span> shul &middot; <b>pins are approximate</b></p>
       </aside>
     </div>
   </main>
@@ -1152,7 +1162,7 @@
 
 
   // ---- one map for the whole page ----
-  // Leaflet + OpenStreetMap tiles (loaded from cdnjs / tile.openstreetmap.org). One pin per spot, because many
+  // Leaflet + OpenStreetMap tiles (script from cdnjs, tiles from tile.openstreetmap.org). One pin per spot, because many
   // listings share their neighborhood's pin. Clicking a listing (or a pin) selects it: the map moves to its
   // neighborhood and draws a dashed circle for how unsure the place is. If the tiles cannot load (some embedding
   // pages block them) the streets from streets.json are drawn instead, so the map still shows where things are.
@@ -1167,6 +1177,8 @@
   function initMap() {
     if (!MAPPED) { mapPane.hidden = true; resultsEl.classList.add("nomap"); document.body.classList.add("nomap"); return; }
     MAP = LF.map("map", { zoomControl: true, preferCanvas: true, minZoom: 10, maxZoom: 18 }).setView(LAKEWOOD_CENTER, 13);
+    // OpenStreetMap's standard tiles (CARTO's free styles now need an API key and stamp "API KEY REQUIRED" across the map).
+    // Light tiles; dark mode dims them with a CSS filter.
     var tiles = LF.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
     }).addTo(MAP);
@@ -1457,7 +1469,40 @@
   window.addEventListener("resize", function () { setSheetState(sheetState); if (MAP) MAP.invalidateSize(); });
   setSheetState("half");
 
+
+  // shuls as landmarks: our own markers (from shuls.json, so more complete than any basemap), shown from zoom 14
+  var SHULPINS = (DATA.shulpins || []).map(function (a) { return { name: a[0], lat: a[1], lng: a[2], town: a[3], address: a[4] }; });
+  var shulLayer = null;
+  function initShulPins() {
+    if (!MAP || !SHULPINS.length) return;
+    shulLayer = LF.layerGroup();
+    SHULPINS.forEach(function (sh, i) {
+      var m = LF.marker([sh.lat, sh.lng], { zIndexOffset: -500, keyboard: false, title: sh.name,
+        icon: LF.divIcon({ className: "shulpin", html: '<span class="shul__i" aria-hidden="true">✡</span><span class="shul__n">' + esc(sh.name) + "</span>", iconSize: [0, 0] }) });
+      m.bindPopup('<div class="mpop"><b>' + esc(sh.name) + "</b><br>" + esc(sh.address ? sh.address + ", " : "") + esc(sh.town || "") +
+        '<button type="button" class="mpop__near" data-shul="' + i + '">Rentals within ½ mile</button></div>', { maxWidth: 260 });
+      m.addTo(shulLayer);
+    });
+    var show = function () {
+      var z = MAP.getZoom();
+      MAP.getContainer().classList.toggle("map--close", z >= 16);
+      if (z >= 14) { if (!MAP.hasLayer(shulLayer)) shulLayer.addTo(MAP); } else if (MAP.hasLayer(shulLayer)) MAP.removeLayer(shulLayer);
+    };
+    MAP.on("zoomend", show); show();
+    MAP.on("popupopen", function (e) {
+      [].forEach.call(e.popup.getElement().querySelectorAll("[data-shul]"), function (b) {
+        b.addEventListener("click", function () {
+          var sh = SHULPINS[+b.getAttribute("data-shul")];
+          MAP.closePopup(); q.value = ""; S.q = "";
+          setOrigin({ lat: sh.lat, lng: sh.lng, paths: null, shul: true }, sh.name);
+          S.maxMiles = 0.5; withinSel.value = "0.5"; render();
+        });
+      });
+    });
+  }
+
   initMap();
+  initShulPins();
 
   // ---- header meta ----
   document.getElementById("totalCount").textContent = L.length.toLocaleString();

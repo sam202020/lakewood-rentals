@@ -85,7 +85,10 @@ def main():
         data["streets"] = streets
     # shuls (Google Maps), so "near this shul" works. A shul that is also a neighbourhood ("Kol Shimshon",
     # "Bais Medrash Lutzk"/"Lutzk", BMG) is listed once, as the neighbourhood.
-    shuls, data["picker"] = geo.merge_shuls(geo.load_shuls(), data["picker"])
+    all_shuls = geo.load_shuls()
+    # every shul as a marker on the map (also the ones merged into a neighbourhood in the drop-down)
+    data["shulpins"] = [[x["name"], x["lat"], x["lng"], x["town"], x["address"]] for x in all_shuls]
+    shuls, data["picker"] = geo.merge_shuls(all_shuls, data["picker"])
     if shuls:
         data["shuls"] = [[s["name"], s["lat"], s["lng"], s["town"], s["address"]] + ([s["aka"]] if s["aka"] else [])
                          for s in shuls]
