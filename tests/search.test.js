@@ -465,11 +465,12 @@ test("template: phone layout has a search bar outside the filters, and a filters
   assert.match(templateHtml, /\[hidden\] \{ display: none !important; \}/);   // flex rules must not defeat `hidden`
 });
 
-test("template: attribution to Masa U'Matan stays visible (links and the unofficial notice)", () => {
-  const banner = templateHtml.slice(templateHtml.indexOf('<div class="attribution">'), templateHtml.indexOf('<div class="searchbar"'));
-  assert.match(banner, /href="https:\/\/masaumatan\.com"/);
-  assert.match(banner, /href="https:\/\/masaumatan\.com\/MasaRentals\.pdf"/);
-  assert.match(banner, /not affiliated/);
+test("template: the source of the data is always named in the top bar, with links and the unofficial notice one tap away", () => {
+  const bar = templateHtml.slice(templateHtml.indexOf('<header class="searchbar topbar"'), templateHtml.indexOf("</header>"));
+  assert.match(bar, /Source: Masa U&rsquo;Matan/);                       // the button is visible on a computer, an icon on a phone
+  assert.match(bar, /href="https:\/\/masaumatan\.com"/);
+  assert.match(bar, /href="https:\/\/masaumatan\.com\/MasaRentals\.pdf"/);
+  assert.match(bar, /not affiliated/);
 });
 
 test("real picker: typing 'clover' offers Clover first, and only one Clover", () => {
@@ -1081,4 +1082,10 @@ test("search: typing just 'shul' tells the visitor to type a shul's name", () =>
     assert.equal(all[0].kind, "hint", w);
   }
   assert.notEqual(S.suggestAll([], [], "spruce", 8, shuls)[0].kind, "hint");
+});
+
+test("hasPrice: a listing shows a price when it has a monthly or weekly rent", () => {
+  assert.equal(S.hasPrice(L({ rent: 1800 })), true);
+  assert.equal(S.hasPrice(L({ rent: null, rent_display: "$450/week" })), true);
+  assert.equal(S.hasPrice(L({ rent: null, rent_display: "Call to discuss" })), false);
 });

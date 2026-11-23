@@ -430,6 +430,11 @@ var LakewoodSearch = (function () {
     return Math.max(0.15, (x.geo_spread || 0) / 2 + 0.1);
   }
 
+  /** Does the list show a rent (a monthly or weekly figure) rather than "call to discuss"? */
+  function hasPrice(x) {
+    return x.rent != null || /^\$[\d,]+\/week$/.test(x.rent_display || "");
+  }
+
   /** "$1,800" -> "$1.8k", "$450/week" -> "$450/wk", call-for-price -> "Call". */
   function rentLabel(x) {
     if (x.rent != null) {
@@ -669,6 +674,7 @@ var LakewoodSearch = (function () {
     decodeStreets: decodeStreets,
     uncertaintyMiles: uncertaintyMiles,
     rentLabel: rentLabel,
+    hasPrice: hasPrice,
     groupByPoint: groupByPoint,
     pathMiles: pathMiles,
     originMiles: originMiles,

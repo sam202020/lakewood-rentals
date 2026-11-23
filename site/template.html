@@ -321,19 +321,6 @@
   #map { flex: 1; min-height: 0; border: 1px solid var(--rule-strong); border-radius: 10px; background: var(--rule); overflow: hidden; }
   .mappane__note { font-size: 12px; color: var(--muted); margin: 0; }
   .mappane__note b { color: var(--ink); }
-  .viewtoggle { display: none; border: 1px solid var(--rule-strong); border-radius: 8px; overflow: hidden; }
-  .viewtoggle button { font: inherit; font-size: 13px; font-weight: 600; padding: 6px 14px; border: 0; background: var(--card); color: var(--muted); cursor: pointer; }
-  .viewtoggle button[aria-pressed="true"] { background: var(--accent); color: #fff; }
-  .viewtoggle button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .viewtoggle button[aria-pressed="true"] { color: #10231A; } }
-  :root[data-theme="dark"] .viewtoggle button[aria-pressed="true"] { color: #10231A; }
-  @media (max-width: 860px) {
-    .split { display: block; }
-    .viewtoggle { display: inline-flex; }
-    .mappane { position: relative; top: 0; height: calc(100vh - 190px); min-height: 380px; }
-    .results[data-view="list"] .mappane { display: none; }
-    .results[data-view="map"] .grid, .results[data-view="map"] .related { display: none; }
-  }
   .card--on { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent), var(--shadow); }
   .card[data-id] { cursor: pointer; }
   .card[data-id]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -534,34 +521,139 @@
     .results.nomap .split { grid-template-columns: minmax(0, 1fr); grid-template-areas: "list"; }       /* no map (script blocked): the list takes the width */
     .results.nomap .split .grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
   }
+
+  /* ============ Layout v3 (owner picked design option A + Table view + phone sheet, 2026-11-22) ============ */
+  .topbar { position: sticky; top: 0; z-index: 30; background: var(--card); border-bottom: 1px solid var(--rule-strong); }
+  .topbar__main { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 10px 20px; }
+  .brand { font-weight: 800; font-size: 18px; letter-spacing: -.02em; margin-right: 6px; white-space: nowrap; }
+  .srcbtn { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; font-weight: 500; }
+  .srcpop {
+    position: absolute; right: 20px; top: calc(100% + 6px); z-index: 60; width: min(440px, calc(100vw - 24px));
+    background: var(--card); border: 1px solid var(--rule-strong); border-radius: 12px; box-shadow: var(--shadow);
+    padding: 12px 16px 14px; font-size: 13px; color: var(--muted); max-height: calc(100vh - 100px); overflow-y: auto;
+  }
+  .srcpop p { margin: 0 0 9px; } .srcpop strong { color: var(--ink); } .srcpop a { font-weight: 600; }
+  .pricedbtn { display: none; }
+  .chip.pricedbtn[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+  .seg { display: none; border: 1px solid var(--rule-strong); border-radius: 8px; overflow: hidden; }
+  .seg button { font: inherit; font-size: 13px; font-weight: 600; padding: 5px 13px; border: 0; background: var(--card); color: var(--muted); cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  .seg button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .seg button[aria-pressed="true"] { color: #10231A; } }
+  :root[data-theme="dark"] .seg button[aria-pressed="true"] { color: #10231A; }
+  .results__priced { color: var(--muted); }
+  .sheet__handle { display: none; }
+  .nbindex { display: none; }
+  .tablewrap[hidden] { display: none; }
+  .mappane__note {
+    position: absolute; left: 10px; bottom: 10px; z-index: 900; margin: 0; max-width: calc(100% - 120px);
+    background: var(--card); border: 1px solid var(--rule-strong); border-radius: 8px; padding: 5px 10px; font-size: 12px; color: var(--muted);
+    box-shadow: 0 1px 4px rgba(0,0,0,.2);
+  }
+  .mappane__note b { color: var(--ink); }
+  .legend__dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #fff; border: 2px solid var(--accent); vertical-align: -1px; margin-right: 3px; }
+  /* cards (option A): big bed/bath numbers, price or "Ask for price", a quiet outline call button */
+  .card { border-radius: 12px; box-shadow: none; }
+  .card__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+  .big { font-size: 22px; font-weight: 800; letter-spacing: -.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+  .big small { font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: 0; margin: 0 8px 0 2px; }
+  .card__ask { font-size: 13px; font-weight: 600; color: var(--muted); }
+  .card .card__price { text-align: right; }
+  .card__nb { font-size: 13.5px; font-weight: 600; color: var(--accent-ink); }
+  .card__nb .card__loc { display: inline; font-size: inherit; font-weight: 700; margin: 0; letter-spacing: 0; }
+  .card__meta { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 12.5px; color: var(--muted); }
+  .card .call { background: none; color: var(--accent-ink); border: 1px solid var(--accent); padding: 7px 12px; flex: 0 0 auto; }
+  .card .call:hover { background: var(--accent-soft); }
+  :root:root .card .call { color: var(--accent-ink); }
+  .card__calls { padding-top: 0; }
+  /* map pins: a rent pill, or a hollow dot when the list gives no rent */
+  .pin--dot span { font-size: 0; padding: 0; width: 13px; height: 13px; border-width: 2px; background: var(--card); border-color: var(--accent); }
+  .pin--dot.pin--on span { width: 20px; height: 20px; background: var(--accent); border-color: #fff; border-width: 3px; }
+  /* table view (option C) */
+  .tbl { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--rule); border-radius: 10px; font-size: 14px; }
+  .tbl th { text-align: left; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 700; background: var(--paper); padding: 9px 10px; border-bottom: 1px solid var(--rule-strong); position: sticky; top: var(--barh, 60px); z-index: 2; }
+  .tbl td { padding: 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  .tbl tr.r { cursor: pointer; }
+  .tbl tr.r:hover td { background: var(--accent-soft); }
+  .tbl tr.r.on td { background: var(--accent-soft); }
+  .tbl tr.r:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .tbl .n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tbl .ask { color: var(--muted); }
+  .tbl .note { max-width: 46ch; color: var(--ink); }
+  .tbl .note span { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden; }
+  .tbl tr.detail td { background: var(--accent-soft); padding: 12px 14px; }
+  .tbl .detail__in { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }
+  .tbl .detail__txt { flex: 1 1 360px; max-width: 70ch; }
+  .tbl .call { white-space: nowrap; font-weight: 700; text-decoration: none; background: none; border: 0; padding: 0; display: inline; flex: none; font-size: 13px; }
+  :root:root .tbl .call { color: var(--accent-ink); }
+  .tbl .call:hover { text-decoration: underline; background: none; }
+  .tbl .showmap { font: inherit; font-size: 13px; font-weight: 600; border: 1px solid var(--accent); color: var(--accent-ink); background: var(--card); border-radius: 8px; padding: 6px 11px; cursor: pointer; }
+  .nbindex button { display: flex; justify-content: space-between; gap: 8px; width: 100%; text-align: left; font: inherit; font-size: 14px; padding: 7px 10px; border: 0; border-radius: 7px; background: none; color: var(--ink); cursor: pointer; }
+  .nbindex button:hover { background: var(--accent-soft); }
+  .nbindex button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent-ink); font-weight: 700; }
+  .nbindex button span:last-child { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .nbindex .k { display: block; padding: 0 10px 6px; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .nbindex .more { color: var(--accent-ink); font-weight: 600; font-size: 13px; }
+
+  /* ---- computer ---- */
+  @media (min-width: 861px) {
+    .filters { display: contents; }
+    .searchbar__sub { max-width: none; padding: 0 20px 8px; }
+    .pricedbtn { display: inline-flex; }
+    .seg { display: inline-flex; }
+    .combo { flex: 0 1 380px; min-width: 240px; max-width: none; }
+    .filters__reset { margin-left: 4px; }
+    .fbtn { display: none; }
+    .near__txt { display: none; }
+    .near__locate { padding: 7px 10px; }
+    .wrap { max-width: none; padding: 12px 20px 24px; }
+    .results[data-mode="table"] .mappane { display: none; }
+    .results[data-mode="table"] .split { grid-template-columns: 230px minmax(0, 1fr); grid-template-areas: "idx list"; }
+    .results[data-mode="table"] .nbindex { display: block; grid-area: idx; position: sticky; top: calc(var(--barh, 60px) + 12px); max-height: calc(100vh - var(--barh, 60px) - 24px); overflow-y: auto; }
+    .results[data-mode="table"] .grid { display: none; }
+    .card__desc { -webkit-line-clamp: 3; line-clamp: 3; font-size: 13.5px; }
+    .card--on .card__desc { -webkit-line-clamp: unset; line-clamp: unset; display: block; overflow: visible; }
+    .mappane { top: calc(var(--barh, 60px) + 12px); height: calc(100vh - var(--barh, 60px) - 24px); }
+  }
+
+  /* ---- phone: the map fills the screen, the listings are a sheet you drag up ---- */
+  @media (max-width: 860px) {
+    html, body { height: 100%; overflow: hidden; }
+    .brand, .pricedbtn, .srcbtn .src__txt { display: none; }
+    .topbar__main { flex-wrap: nowrap; padding: 9px 12px; gap: 6px; }
+    .combo { flex: 1; max-width: none; }
+    .srcbtn { margin-left: 0; padding: 8px 10px; }
+    .srcpop { right: 8px; left: 8px; width: auto; }
+    .wrap { position: fixed; left: 0; right: 0; top: var(--barh, 60px); bottom: 0; padding: 0; display: block; max-width: none; }
+    .results { padding: 0; height: 100%; }
+    .split { display: block; position: relative; height: 100%; }
+    .mappane { position: absolute; inset: 0; height: auto; min-height: 0; max-height: none; gap: 0; }
+    #map { border: 0; border-radius: 0; }
+    .mappane__note { bottom: calc(var(--sheet, 300px) + 10px); }
+    .split__list {
+      position: absolute; left: 0; right: 0; bottom: 0; height: var(--sheet, 300px); z-index: 20;
+      display: flex; flex-direction: column; background: var(--paper); border-radius: 18px 18px 0 0;
+      box-shadow: 0 -6px 24px rgba(28,31,29,.22); transition: height .22s ease;
+    }
+    .split__list.dragging { transition: none; }
+    .sheet__handle { display: flex; justify-content: center; padding: 9px 0 4px; cursor: grab; touch-action: none; flex: none; }
+    .sheet__handle span { width: 40px; height: 5px; border-radius: 3px; background: var(--rule-strong); }
+    .results__bar { margin: 0; padding: 0 16px 8px; flex: none; touch-action: none; flex-wrap: nowrap; align-items: center; }
+    .seg { display: none; }
+    .related { padding: 0 16px; }
+    .split__list .grid { flex: 1; min-height: 0; overflow-y: auto; padding: 0 12px 16px; grid-template-columns: 1fr; overscroll-behavior: contain; }
+    .split__list .tablewrap { display: none; }
+    .card__desc { font-size: 15px; line-height: 1.55; display: block; }
+    body.nomap { overflow: auto; height: auto; }
+    body.nomap .wrap { position: static; }
+    body.nomap .split__list { position: static; height: auto; box-shadow: none; }
+    body.nomap .split__list .grid { overflow: visible; }
+  }
 </style>
 
-<header class="masthead">
-  <div class="masthead__inner">
-    <div class="masthead__kicker">
-      <span>Lakewood, NJ Area</span>
-      <span class="kicker__r"><span id="kickerDate" class="hide-sm"></span>
-        <button class="themebtn" id="themebtn" type="button">Theme</button></span>
-    </div>
-    <h1>The Lakewood NJ Area Rental List</h1>
-    <p class="masthead__sub">
-      A searchable index of <strong id="totalCount">—</strong> <span class="hide-sm">homes, apartments, townhouses and rooms for rent,
-      compiled from the</span> <strong>Masa U&rsquo;Matan</strong> weekly rental list
-      (<span id="listDate">—</span>). <span class="hide-sm">Refreshed every Wednesday.</span>
-    </p>
-  </div>
-</header>
-
-<div class="attribution">
-  <strong>Source:</strong> reproduced from the Masa U&rsquo;Matan Lakewood Rental List.
-  An unofficial search tool, not affiliated with Masa U&rsquo;Matan.
-  <span class="hide-sm">Always confirm details with the landlord.</span> &nbsp;
-  <a href="https://masaumatan.com" target="_blank" rel="noopener">masaumatan.com</a> &middot;
-  <a href="https://masaumatan.com/MasaRentals.pdf" target="_blank" rel="noopener">original PDF&nbsp;list</a>
-</div>
-
-<div class="searchbar" id="searchbar">
-  <div class="searchbar__inner">
+<header class="searchbar topbar" id="searchbar">
+  <div class="topbar__main">
+    <div class="brand">Lakewood NJ Area Rentals</div>
     <div class="combo">
       <div class="search">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
@@ -581,10 +673,6 @@
     </button>
     <button type="button" class="chip age55" id="age55Btn" aria-pressed="false"
             title="Only listings in 55+ communities (age-restricted)">55+<span class="age55__long"> communities</span></button>
-    <button type="button" class="chip fbtn" id="filtersToggle" aria-expanded="false" aria-controls="filters">
-      Filters <span class="fcount" id="filterCount" hidden></span>
-    </button>
-  </div>
   <aside class="filters" id="filters" data-open="false" aria-label="Filters">
     <div class="fgroup fdrop" data-drop="type">
       <button type="button" class="fdrop__btn" aria-expanded="false"><span class="fdrop__name">Type</span><span class="fdrop__val"></span></button>
@@ -618,9 +706,18 @@
       </div>
     </div>
 
+    <button type="button" class="chip pricedbtn" id="pricedBtn" aria-pressed="false" title="Hide listings that do not show a rent">Price listed</button>
     <button class="filters__reset" id="reset" type="button">Reset all filters</button>
     <button class="filters__done" id="filtersDone" type="button">Show listings</button>
   </aside>
+    <button type="button" class="chip srcbtn" id="srcBtn" aria-expanded="false" aria-controls="srcPop">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>
+      <span class="src__txt">Source: Masa U&rsquo;Matan, <span id="kickerDate"></span></span>
+    </button>
+    <button type="button" class="chip fbtn" id="filtersToggle" aria-expanded="false" aria-controls="filters">
+      Filters <span class="fcount" id="filterCount" hidden></span>
+    </button>
+  </div>
   <div class="searchbar__sub" id="nearRow" hidden>
     <label class="sort" id="withinWrap" hidden>Within
       <select id="withinSel">
@@ -636,17 +733,31 @@
     </label>
     <span class="range__val" id="nearStatus" aria-live="polite"></span>
   </div>
-</div>
+  <div class="srcpop" id="srcPop" hidden>
+    <p><strong>Source.</strong> Reproduced from the Masa U&rsquo;Matan Lakewood Rental List (<span id="listDate">&mdash;</span>), <strong id="totalCount">&mdash;</strong> listings.
+    An unofficial search tool, not affiliated with Masa U&rsquo;Matan. Always confirm details with the landlord.
+    <a href="https://masaumatan.com" target="_blank" rel="noopener">masaumatan.com</a> &middot;
+    <a href="https://masaumatan.com/MasaRentals.pdf" target="_blank" rel="noopener">original PDF&nbsp;list</a></p>
+    <p><strong>How this works.</strong> Every Wednesday this page is rebuilt from the current list. Listing text is parsed automatically, so occasional
+    formatting quirks are possible; the original PDF is authoritative. Locations are neighborhoods, not addresses, so map pins are approximate.</p>
+    <p><span id="osmCredit" hidden>Street shapes &amp; map &copy;
+    <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>.</span>
+    To list your property, or once a unit is rented, contact Masa U&rsquo;Matan directly at 732-364-9392. Data generated <span id="genAt">&mdash;</span>.</p>
+    <button class="themebtn" id="themebtn" type="button">Switch light / dark</button>
+  </div>
+</header>
 
 <div class="wrap">
-  <main class="results" id="results" data-view="list">
+  <main class="results" id="results" data-mode="cards">
     <div class="split">
+      <nav class="nbindex" id="nbindex" aria-label="Neighborhoods" hidden></nav>
       <div class="split__list">
+        <div class="sheet__handle" id="sheetHandle" role="button" tabindex="0" aria-label="Drag to show more or fewer listings"><span></span></div>
         <div class="results__bar">
-          <div class="results__count"><b id="count">0</b> <span id="countWord">listings</span></div>
-          <div class="viewtoggle" id="viewToggle" role="group" aria-label="Show">
-            <button type="button" data-view="list" aria-pressed="true">List</button>
-            <button type="button" data-view="map" aria-pressed="false">Map</button>
+          <div class="results__count"><b id="count">0</b> <span id="countWord">listings</span><span class="results__priced" id="pricedCount"></span></div>
+          <div class="seg" id="modeToggle" role="group" aria-label="Show listings as">
+            <button type="button" data-mode="cards" aria-pressed="true">Cards</button>
+            <button type="button" data-mode="table" aria-pressed="false">Table</button>
           </div>
           <label class="sort">Sort
             <select id="sort">
@@ -661,30 +772,16 @@
         </div>
         <div class="related" id="related" hidden></div>
         <div class="grid" id="grid"></div>
+        <div class="tablewrap" id="tablewrap" hidden></div>
       </div>
       <aside class="mappane" id="mappane" aria-label="Map of the listings">
         <div id="map"></div>
-        <p class="mappane__note"><b>Pins are approximate.</b> The list gives a neighborhood, not an address; the dashed circle shows where the selected listing could be.</p>
+        <p class="mappane__note"><span class="legend__dot"></span> price not listed &middot; <b>pins are approximate</b></p>
       </aside>
     </div>
   </main>
 </div>
 
-<footer>
-  <p>
-    <strong>How this works.</strong> Every Wednesday this page is rebuilt from the current
-    Masa U&rsquo;Matan rental list PDF. Listing text is parsed automatically, so occasional
-    formatting quirks are possible &mdash; the
-    <a href="https://masaumatan.com/MasaRentals.pdf" target="_blank" rel="noopener">original PDF</a>
-    is authoritative.
-  </p>
-  <p>
-    <span id="osmCredit" hidden>Street shapes for &ldquo;nearest this street&rdquo; &copy;
-    <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>.</span>
-    To list your property, or once a unit is rented, contact Masa U&rsquo;Matan directly at
-    732-364-9392. Data on this page generated <span id="genAt">—</span>.
-  </p>
-</footer>
 
 <script id="payload" type="application/json">/*__DATA__*/null</script>
 <script>
@@ -988,18 +1085,16 @@
       ? '<div class="card__price"><b class="tnum">$' + x.rent.toLocaleString() + '</b><span>per month</span></div>'
       : wk
       ? '<div class="card__price"><b class="tnum">$' + wk[1] + '</b><span>per week</span></div>'
-      : '<div class="card__price callto"><b>' +
-          (x.rent_display === "Call to discuss" ? "Call to<br>discuss" : "Contact<br>for rent") +
-        '</b></div>';
+      : '<span class="card__ask">' + (x.rent_display === "Call to discuss" ? "Ask for price" : "Contact for rent") + "</span>";
 
-    var stats = '<span><b>' + esc(x.bedrooms || "?") + '</b> bd</span>' +
-                '<span><b>' + esc(x.baths || "?") + '</b> ba</span>' +
-                (typeof x._dist === "number"
-                  ? (x._dist < 0.15 ? '<span class="card__dist">Right here</span>'
-                     : '<span class="card__dist"><b>' + (x._dist < 10 ? x._dist.toFixed(1) : Math.round(x._dist)) + '</b> mi away</span>') : "") +
-                (x.utilities_included && x.utilities_included.length
-                  ? '<span><b>' + x.utilities_included.map(function (u) { return u[0]; }).join("") + '</b> incl.</span>'
-                  : "");
+    var big = '<div class="big">' + esc(x.bedrooms || "?") + "<small>bd</small>" +
+              (x.baths ? esc(x.baths) + "<small>ba</small>" : "") + "</div>";
+    var meta = [];
+    if (typeof x._dist === "number")
+      meta.push(x._dist < 0.15 ? '<span class="card__dist">Right here</span>'
+        : '<span class="card__dist"><b>' + (x._dist < 10 ? x._dist.toFixed(1) : Math.round(x._dist)) + "</b> mi away</span>");
+    if (x.utilities_included && x.utilities_included.length)
+      meta.push("<span><b>" + x.utilities_included.map(function (u) { return u[0]; }).join("") + "</b> included</span>");
 
     var tags = (x._furnished ? ['<span class="tag">Furnished</span>'] : []);
     if (x.negotiable) tags.push('<span class="tag">Negotiable</span>');
@@ -1007,17 +1102,15 @@
 
     var calls = (x.phones || []).map(function (p) {
       return '<a class="call" href="' + telHref(p) + '">' +
-        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"/></svg> ' +
+        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"/></svg> ' +
         esc(p) + "</a>";
     }).join("");
     if (!calls) calls = '<span class="range__val">No phone listed &mdash; see PDF</span>';
 
     d.innerHTML =
-      '<div class="card__top"><div>' +
-        '<div class="card__type">' + esc(x.type) + "</div>" +
-        '<h3 class="card__loc">' + esc(x.location || "Location in PDF") + "</h3>" +
-      "</div>" + price + "</div>" +
-      '<div class="stats">' + stats + "</div>" +
+      '<div class="card__top">' + big + price + "</div>" +
+      '<div class="card__nb"><h3 class="card__loc">' + esc(x.location || "Location in PDF") + "</h3> · " + esc(x.type.replace(" / Attached", "")) + "</div>" +
+      (meta.length ? '<div class="card__meta">' + meta.join("") + "</div>" : "") +
       (tags.length ? '<div class="tags">' + tags.join("") + "</div>" : "") +
       '<p class="card__desc">' + esc(x.comments) + "</p>" +
       '<div class="card__calls">' + calls + "</div>";
@@ -1028,6 +1121,7 @@
     var rows = LakewoodSearch.search(L, S);
     var nf = LakewoodSearch.activeFilterCount(S); refreshDrops();
     fcount.textContent = nf; fcount.hidden = !nf;
+    document.getElementById("reset").hidden = !(nf || S.q || S.origin || S.age55);
     fdone.textContent = "Show " + rows.length.toLocaleString() + (rows.length === 1 ? " listing" : " listings");
     lastCount = rows.length;
     // tell the visitor when related words are being matched too ("boy" also finds bochur, guys, men ...)
@@ -1040,15 +1134,24 @@
     if (rel.length) relEl.innerHTML = "Also matching related words: <b>" + rel.slice(0, 6).map(esc).join(", ") + "</b>" + (rel.length > 6 ? "\u2026" : "");
     elCount.textContent = rows.length.toLocaleString();
     elWord.textContent = rows.length === 1 ? "listing" : "listings";
+    var nPriced = rows.filter(LakewoodSearch.hasPrice).length;
+    document.getElementById("pricedCount").textContent = rows.length && nPriced < rows.length ? " \u00b7 " + nPriced + " with a price" : "";
+    pricedBtn.setAttribute("aria-pressed", S.inclCall ? "false" : "true");
+    document.getElementById("inclCall").checked = S.inclCall;
+    var asTable = MODE === "table" && !isPhone();
+    tablewrap.hidden = !asTable;
     grid.innerHTML = "";
     if (!rows.length) {
       var typed = (S.q || "").trim(), known = typed && LakewoodSearch.suggestAll(PICKER, STREETS, typed, 1, SHULS).length;
       mapRefresh([]);
+      tablewrap.hidden = true;
       grid.innerHTML = known
         ? '<div class="empty"><b>No listing mentions \u201c' + esc(typed) + '\u201d</b>Pick it from the suggestions (or press Enter) to sort every listing by distance from it.</div>'
         : '<div class="empty"><b>No matches</b>Try widening the rent range or clearing a filter.</div>';
       return;
     }
+    lastRows = rows;
+    if (asTable) { tablewrap.innerHTML = tableHtml(rows); refreshIndex(); mapRefresh(rows); return; }
     var frag = document.createDocumentFragment();
     rows.slice(0, 400).forEach(function (x) { frag.appendChild(card(x)); });
     grid.appendChild(frag);
@@ -1063,34 +1166,33 @@
   // pages block them) the streets from streets.json are drawn instead, so the map still shows where things are.
   var MAPPED = typeof LF !== "undefined" && !!LF;
   var MAP = null, pinLayer = null, originLayer = null, areaCircle = null, streetLayer = null, labelLayer = null;
-  var pins = [], selectedId = null, lastFitKey = null, canvas = null;
-  var resultsEl = document.getElementById("results"), mapPane = document.getElementById("mappane"),
-      viewToggle = document.getElementById("viewToggle");
+  var pins = [], selectedId = null, lastFitKey = null, canvas = null, touched = false, lastGroups = null;
+  var resultsEl = document.getElementById("results"), mapPane = document.getElementById("mappane");
   var LAKEWOOD_CENTER = [40.0979, -74.2179];
 
   function cssVar(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
 
-  function setView(v) {
-    resultsEl.setAttribute("data-view", v);
-    [].forEach.call(viewToggle.querySelectorAll("button"), function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-view") === v ? "true" : "false"); });
-    if (v === "map" && MAP) setTimeout(function () { MAP.invalidateSize(); if (selectedId) selectListing(selectedId, false); }, 30);
-  }
-
   function initMap() {
-    if (!MAPPED) { mapPane.hidden = true; viewToggle.hidden = true; resultsEl.classList.add("nomap"); return; }
+    if (!MAPPED) { mapPane.hidden = true; resultsEl.classList.add("nomap"); document.body.classList.add("nomap"); return; }
     MAP = LF.map("map", { zoomControl: true, preferCanvas: true, minZoom: 10, maxZoom: 18 }).setView(LAKEWOOD_CENTER, 13);
     var tiles = LF.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
     }).addTo(MAP);
     var far = function () { MAP.getContainer().classList.toggle("map--far", MAP.getZoom() < 14); };
     MAP.on("zoomend", far); far();
+    var mapEl = document.getElementById("map");
+    ["pointerdown", "wheel", "keydown"].forEach(function (ev) { mapEl.addEventListener(ev, function () { touched = true; }, { passive: true }); });
+    if (window.ResizeObserver) new ResizeObserver(function () {
+      if (!mapEl.offsetWidth) return;
+      MAP.invalidateSize();
+      if (!touched && !selectedId && lastGroups) fitAll(lastGroups);
+    }).observe(mapEl);
     pinLayer = LF.layerGroup().addTo(MAP);
     originLayer = LF.layerGroup().addTo(MAP);
     var loaded = false, failed = 0;
     tiles.on("tileload", function () { loaded = true; });
     tiles.on("tileerror", function () { failed++; if (!loaded && failed >= 3) streetFallback(); });
     setTimeout(function () { if (!loaded && !streetLayer) streetFallback(); }, 4000);
-    viewToggle.addEventListener("click", function (e) { var b = e.target.closest("button"); if (b) setView(b.getAttribute("data-view")); });
     window.addEventListener("resize", function () { MAP.invalidateSize(); });
     MAP.on("popupopen", function (e) {
       [].forEach.call(e.popup.getElement().querySelectorAll("[data-pick]"), function (b) {
@@ -1134,8 +1236,10 @@
   }
 
   function pinIcon(g, on) {
-    var n = g.rows.length, txt = n > 1 ? String(n) : LakewoodSearch.rentLabel(g.rows[0]);
-    return LF.divIcon({ className: "pin" + (n > 1 ? " pin--multi" : "") + (on ? " pin--on" : ""), html: "<span>" + esc(txt) + "</span>", iconSize: [0, 0] });
+    var n = g.rows.length, one = g.rows[0], dot = n === 1 && !LakewoodSearch.hasPrice(one);
+    var txt = n > 1 ? String(n) : LakewoodSearch.rentLabel(one);
+    return LF.divIcon({ className: "pin" + (n > 1 ? " pin--multi" : "") + (dot ? " pin--dot" : "") + (on ? " pin--on" : ""),
+                        html: "<span>" + esc(txt) + "</span>", iconSize: [0, 0] });
   }
 
   function popupHtml(g, selId) {
@@ -1161,6 +1265,7 @@
     if (!MAP) return;
     pinLayer.clearLayers(); pins = [];
     var groups = LakewoodSearch.groupByPoint(rows);
+    lastGroups = groups;
     groups.forEach(function (g) {
       var m = LF.marker([g.lat, g.lng], { icon: pinIcon(g, false), riseOnHover: true, keyboard: true,
                                          title: g.rows.length > 1 ? g.rows.length + " listings" : g.rows[0].location });
@@ -1173,18 +1278,18 @@
     else if (selectedId) paintSelection(false);
     // refit only when the set of listings (or the "near" spot) changed, not when a card is clicked
     var key = rows.map(function (x) { return x.id; }).join("|") + "@" + (S.origin ? S.origin.lat + "," + S.origin.lng : "");
-    if (key !== lastFitKey) { lastFitKey = key; if (!selectedId) fitAll(groups); }
+    if (key !== lastFitKey && mapPane.offsetWidth > 0) { lastFitKey = key; touched = false; if (!selectedId) fitAll(groups); }
   }
 
   function fitAll(groups) {
     var pts = [];
     if (S.origin) pts.push([S.origin.lat, S.origin.lng]);
-    var near = groups.filter(function (g) { return LakewoodSearch.distanceMiles(g.lat, g.lng, LAKEWOOD_CENTER[0], LAKEWOOD_CENTER[1]) < 7; });
+    var near = groups.filter(function (g) { return LakewoodSearch.distanceMiles(g.lat, g.lng, LAKEWOOD_CENTER[0], LAKEWOOD_CENTER[1]) < 5; });
     var use = S.origin ? groups.slice(0, 8) : (near.length ? near : groups);
     use.forEach(function (g) { pts.push([g.lat, g.lng]); });
     if (!pts.length) { MAP.setView(LAKEWOOD_CENTER, 13); return; }
     if (pts.length === 1) { MAP.setView(pts[0], 15); return; }
-    MAP.fitBounds(LF.latLngBounds(pts), { padding: [36, 36], maxZoom: 15 });
+    MAP.fitBounds(LF.latLngBounds(pts), { paddingTopLeft: [36, 36], paddingBottomRight: [36, 36 + sheetCover()], maxZoom: 15 });
   }
 
   function paintSelection(fly) {
@@ -1204,22 +1309,19 @@
     // show the neighborhood in its surroundings (landmarks, main roads, borders), never zoomed in on the pin:
     // at least a mile and a half across, more when the circle is bigger
     var view = LF.latLng(p.g.lat, p.g.lng).toBounds(Math.max(LakewoodSearch.uncertaintyMiles(x) * 2 * 1609.34 * 1.4, 2400));
-    if (fly) MAP.flyToBounds(view, { padding: [20, 20], maxZoom: 14, duration: 0.6 });
+    if (fly) MAP.flyToBounds(view, { paddingTopLeft: [20, 20], paddingBottomRight: [20, 20 + sheetCover()], maxZoom: 14, duration: 0.6 });
     return p;
   }
 
   /** Select a listing: highlight its card and pin, show where it is. `scroll` brings the card into view (a pin was clicked). */
   function selectListing(id, fromCard, scroll) {
-    if (!MAP) return;
     selectedId = id;
-    if (fromCard && resultsEl.getAttribute("data-view") === "list" && window.innerWidth <= 860) {
-      setView("map");                                            // on a phone the map is its own screen
-      return;                                                    // setView re-selects once the map has its size
-    }
+    if (!MAP || (MODE === "table" && !isPhone())) return;
+    if (isPhone() && (sheetState === "full" || (scroll && sheetState === "peek"))) setSheetState("half");
     MAP.invalidateSize();
     var p = paintSelection(true);
     if (p) setTimeout(function () { p.m.openPopup(); }, 650);
-    if (scroll && resultsEl.getAttribute("data-view") === "list") {
+    if (scroll) {
       var card = grid.querySelector(".card--on");
       if (card) card.scrollIntoView({ block: "nearest", behavior: "smooth" });
     }
@@ -1241,6 +1343,130 @@
         .bindTooltip(esc(label), { permanent: true, direction: "right", offset: [10, 0], className: "map-origin" }).addTo(originLayer);
     }
   }
+
+  // ---- view mode (computer): Cards beside the map, or a dense Table ----
+  var MODE = "cards", lastRows = [];
+  var tablewrap = document.getElementById("tablewrap"), nbindex = document.getElementById("nbindex"),
+      modeToggle = document.getElementById("modeToggle"), pricedBtn = document.getElementById("pricedBtn");
+  function isPhone() { return window.innerWidth <= 860; }
+  function setMode(m) {
+    MODE = m; resultsEl.setAttribute("data-mode", m);
+    [].forEach.call(modeToggle.querySelectorAll("button"), function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-mode") === m ? "true" : "false"); });
+    lastFitKey = null;
+    render();
+    if (m === "cards" && MAP) setTimeout(function () { MAP.invalidateSize(); if (selectedId) selectListing(selectedId, false); }, 40);
+  }
+  modeToggle.addEventListener("click", function (e) { var b = e.target.closest("button"); if (b) setMode(b.getAttribute("data-mode")); });
+  window.addEventListener("resize", function () { if (MODE === "table") render(); });
+
+  function tableHtml(rows) {
+    var h = '<table class="tbl"><thead><tr><th>Where</th><th>Type</th><th>Bd</th><th>Ba</th><th>Rent</th><th>Notes</th><th>Call</th></tr></thead><tbody>';
+    rows.slice(0, 400).forEach(function (x) {
+      var wk = /^\$([\d,]+)\/week$/.exec(x.rent_display || ""), on = x.id === selectedId;
+      var rent = x.rent != null ? "<b>$" + x.rent.toLocaleString() + "</b>" : wk ? "$" + wk[1] + "/wk" : '<span class="ask">Ask</span>';
+      var phones = (x.phones || []).map(function (p) { return '<a class="call" href="' + telHref(p) + '">' + esc(p) + "</a>"; }).join("<br>") || "&ndash;";
+      h += '<tr class="r' + (on ? " on" : "") + '" tabindex="0" data-id="' + esc(x.id) + '"><td><b>' + esc(x.location || "") + "</b></td><td>" +
+        esc(x.type.replace(" / Attached", "")) + '</td><td class="n">' + esc(x.bedrooms || "–") + '</td><td class="n">' + esc(x.baths || "–") +
+        '</td><td class="n">' + rent + '</td><td class="note"><span>' + esc(x.comments) + "</span></td><td>" + phones + "</td></tr>";
+      if (on) {
+        var tg = (x._furnished ? ["Furnished"] : []).concat(x._tags.map(function (t) { return t[0]; })).join(" · ");
+        h += '<tr class="detail"><td colspan="7"><div class="detail__in"><div class="detail__txt">' + esc(x.comments) +
+          (tg ? '<div class="range__val">' + esc(tg) + "</div>" : "") + '</div>' +
+          (typeof x.lat === "number" && MAPPED ? '<button type="button" class="showmap" data-showmap="' + esc(x.id) + '">Show on map</button>' : "") + "</div></td></tr>";
+      }
+    });
+    return h + "</tbody></table>";
+  }
+  tablewrap.addEventListener("click", function (e) {
+    var sm = e.target.closest("[data-showmap]");
+    if (sm) { var id = sm.getAttribute("data-showmap"); selectedId = id; setMode("cards"); return; }
+    if (e.target.closest("a")) return;
+    var tr = e.target.closest("tr.r");
+    if (!tr) return;
+    selectedId = selectedId === tr.getAttribute("data-id") ? null : tr.getAttribute("data-id");
+    tablewrap.innerHTML = tableHtml(lastRows);
+    if (selectedId) { var el = tablewrap.querySelector("tr.r.on"); if (el) el.focus({ preventScroll: true }); }
+  });
+  tablewrap.addEventListener("keydown", function (e) {
+    if ((e.key === "Enter" || e.key === " ") && e.target.matches("tr.r")) { e.preventDefault(); e.target.click(); }
+  });
+
+  // neighborhood list beside the table: counts of the listings' first place name; click to filter by it
+  var NB = (function () {
+    var c = {};
+    L.forEach(function (x) {
+      var k = (x.location || "").split(/\s*\/\s*|,\s*/)[0].replace(/\s+Area$/i, "").trim();
+      if (k) c[k] = (c[k] || 0) + 1;
+    });
+    return Object.keys(c).map(function (k) { return { name: k, n: c[k] }; }).sort(function (a, b) { return b.n - a.n || a.name.localeCompare(b.name); });
+  })();
+  var nbAll = false;
+  function refreshIndex() {
+    var cur = (S.q || "").toLowerCase(), list = nbAll ? NB : NB.slice(0, 12);
+    nbindex.hidden = false;
+    nbindex.innerHTML = '<span class="k">Neighborhoods</span><button type="button" data-nb="" aria-pressed="' + (cur ? "false" : "true") + '"><span>All</span><span>' + L.length + "</span></button>" +
+      list.map(function (n) {
+        return '<button type="button" data-nb="' + esc(n.name) + '" aria-pressed="' + (cur === n.name.toLowerCase() ? "true" : "false") + '"><span>' + esc(n.name) + "</span><span>" + n.n + "</span></button>";
+      }).join("") +
+      (NB.length > 12 ? '<button type="button" class="more" data-nbmore="1"><span>' + (nbAll ? "Show fewer" : "Show all " + NB.length) + "</span><span></span></button>" : "") +
+      '<span class="k" style="padding-top:12px">Or by shul</span><span class="range__val" style="padding:0 10px">Type a shul’s name in the search box.</span>';
+  }
+  nbindex.addEventListener("click", function (e) {
+    var b = e.target.closest("button");
+    if (!b) return;
+    if (b.hasAttribute("data-nbmore")) { nbAll = !nbAll; refreshIndex(); return; }
+    var name = b.getAttribute("data-nb");
+    q.value = name; S.q = name.toLowerCase(); render();
+  });
+
+  // ---- price pill and source note ----
+  pricedBtn.onclick = function () { S.inclCall = !S.inclCall; render(); };
+  var srcBtn = document.getElementById("srcBtn"), srcPop = document.getElementById("srcPop");
+  srcBtn.addEventListener("click", function (e) { e.stopPropagation(); var open = srcPop.hidden; srcPop.hidden = !open; srcBtn.setAttribute("aria-expanded", open ? "true" : "false"); });
+  document.addEventListener("click", function (e) { if (!e.target.closest("#srcPop, #srcBtn")) { srcPop.hidden = true; srcBtn.setAttribute("aria-expanded", "false"); } });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") { srcPop.hidden = true; srcBtn.setAttribute("aria-expanded", "false"); } });
+
+  // ---- phone: the listings are a sheet over the map; drag it (or tap the handle) between peek, half and full ----
+  var splitEl = document.querySelector(".split"), sheetEl = document.querySelector(".split__list"), handle = document.getElementById("sheetHandle");
+  var sheetState = "half", sheetNow = 0;
+  function sheetPx(st) { var H = splitEl.clientHeight || 600; return st === "peek" ? 104 : st === "half" ? Math.round(H * 0.46) : H - 6; }
+  function sheetCover() { return isPhone() ? sheetNow : 0; }            // pixels of map hidden behind the sheet
+  function paintSheet(px) {
+    sheetNow = px; document.documentElement.style.setProperty("--sheet", px + "px");
+  }
+  function setSheetState(st) { sheetState = st; paintSheet(sheetPx(st)); }
+  function snapSheet() {
+    var best = "half", bd = 1e9;
+    ["peek", "half", "full"].forEach(function (st) { var d = Math.abs(sheetPx(st) - sheetNow); if (d < bd) { bd = d; best = st; } });
+    setSheetState(best);
+  }
+  (function () {
+    var startY = 0, startH = 0, moved = 0, dragging = false;
+    function down(e) {
+      if (!isPhone() || e.target.closest("select, button, a")) return;
+      dragging = true; moved = 0; startY = e.clientY; startH = sheetNow; sheetEl.classList.add("dragging");
+      try { e.currentTarget.setPointerCapture(e.pointerId); } catch (x) {}
+    }
+    function move(e) {
+      if (!dragging) return;
+      moved = Math.max(moved, Math.abs(e.clientY - startY));
+      var H = splitEl.clientHeight;
+      paintSheet(Math.max(84, Math.min(H - 6, startH + (startY - e.clientY))));
+    }
+    function up(e) {
+      if (!dragging) return;
+      dragging = false; sheetEl.classList.remove("dragging");
+      if (moved < 6 && e.currentTarget === handle) setSheetState(sheetState === "peek" ? "half" : sheetState === "half" ? "full" : "peek"); else snapSheet();
+    }
+    [handle, document.querySelector(".results__bar")].forEach(function (el) {
+      el.addEventListener("pointerdown", down); el.addEventListener("pointermove", move);
+      el.addEventListener("pointerup", up); el.addEventListener("pointercancel", up);
+    });
+    handle.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSheetState(sheetState === "peek" ? "half" : sheetState === "half" ? "full" : "peek"); } });
+  })();
+  window.addEventListener("resize", function () { setSheetState(sheetState); if (MAP) MAP.invalidateSize(); });
+  setSheetState("half");
+
   initMap();
 
   // ---- header meta ----

@@ -164,7 +164,7 @@ class SiteTitle(unittest.TestCase):
     def test_page_says_lakewood_nj_area(self):
         page = (ROOT / "docs" / "index.html").read_text()
         self.assertIn("<title>Lakewood NJ Area Rentals</title>", page)
-        self.assertIn("The Lakewood NJ Area Rental List", page)
+        self.assertIn('<div class="brand">Lakewood NJ Area Rentals</div>', page)
         self.assertNotIn("Lakewood &amp; Jackson", page)
 
 

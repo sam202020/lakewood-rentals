@@ -113,24 +113,28 @@ by name, with their street and town ("shul · 958 E County Line Rd · Lakewood")
 - There is deliberately no "closest shul" tag on each listing: pins are neighbourhood-level, and in Lakewood nearly every
   listing is within a few blocks of a dozen shuls, so the tag would say nothing. Search "near <shul>" instead.
 
-## The map (one per page, not per listing)
+## The layout and the map (owner picked design option A + Table + phone sheet, 2026-11-22)
 
-Owner, 2026-11-22: **no map on each card** (a per-listing map was built and removed: far too zoomed in, shows nothing around it). One
-map for the whole page, like Zillow. **Computer layout (owner, 2026-11-22):** search box and filter drop-downs (Type, Bedrooms, Max rent, Landlord pays,
-More) across the top in a sticky bar; the map on the left; listing cards on the right in two columns, squarish (description clamped to
-4 lines, the selected card shows it all). **Phone:** the filters are a sheet, and a List / Map toggle switches between the cards and the map. Leaflet 1.9.4 (script from cdnjs with
-SRI; `site/leaflet.css` is inlined by build.py because artifact pages may only load stylesheets from Google Fonts) + OpenStreetMap tiles.
-- One pin per spot (many listings share their neighbourhood's pin): price on a single listing ("$1.8k", "Call"), a count on a shared spot,
-  whose popup lists its listings. Zoomed out, single pins shrink to dots. Filters and search change the pins; "Near ..." adds the chosen
-  spot/street to the map.
-- Clicking a card (or a pin) selects it: the card is outlined, the map moves to show its neighbourhood **in its surroundings**
-  (at least ~1.5 mi across, never zoomed in on the pin), and a dashed circle (`uncertaintyMiles`: neighbourhood 0.15 mi, two places
-  averaged = half their spread + 0.1, town only = 1 mi) says the spot is approximate. The page always says the pins are approximate
-  (the real address is not known). On a phone, tapping a card switches to the map.
-- The private Artifact page blocks tile images, so there the map falls back to streets.json lines + neighbourhood names (`streetFallback`);
-  the public GitHub Pages site gets the real map. Google Maps cannot be embedded with many pins without an API key/billing and cannot be
-  embedded at all inside an artifact, so OpenStreetMap is used.
+Design canvas with the options: https://claude.ai/artifact/Aj253LKTFAR3uJnCsaatTq (First version, Current, Options A/B/C, phone).
+- **Computer:** one slim sticky top bar: "Lakewood NJ Area Rentals", the search box, 55+, filter drop-downs (Type, Bedrooms, Max rent,
+  Landlord pays, More), a **Price listed** pill and a "Source: Masa U'Matan, <date>" button (its popover holds the unofficial-site notice,
+  links, "how this works", the OpenStreetMap credit, phone number and the light/dark switch; there is no masthead or footer any more).
+  Below it the map on the left (sticky) and cards on the right; a **Cards | Table** switch. Table = dense rows (where, type, bd, ba,
+  rent, notes, call) with a neighbourhood list with counts on the left; clicking a row opens its full text and a "Show on map" button.
+- **Cards:** big bd/ba numbers, the rent or "Ask for price" (52% of listings give no rent: 123 of 237), neighbourhood + type, a quiet
+  outline call button (not a green block). The selected card shows its whole description.
+- **Map pins:** a rent pill ("$1.8k") for a priced listing, a hollow dot when no rent is listed, a number where several listings share a spot
+  (popup lists them); zoomed out, pills shrink to dots. Always labelled "pins are approximate"; the dashed circle (`uncertaintyMiles`:
+  neighbourhood 0.15 mi, two places averaged = half their spread + 0.1, town only = 1 mi) shows how unsure the selected spot is.
+- **Phone:** no masthead; the map fills the screen under the search row and the listings are a bottom sheet (peek / half / full; drag
+  the handle or tap it). Tapping a card shows it on the map (the map is padded so the pin is above the sheet).
+- **Never a map per card** (tried, too zoomed in). Selecting a card moves the map to its neighbourhood in its surroundings (at least ~1.5 mi).
+- Leaflet 1.9.4 (script from cdnjs with SRI; `site/leaflet.css` inlined by build.py because artifact pages may only load stylesheets from
+  Google Fonts) + OpenStreetMap tiles. The private Artifact page blocks tile images, so there the map falls back to streets.json lines +
+  neighbourhood names (`streetFallback`); the public GitHub Pages site gets the real map. Google Maps cannot show many pins without an
+  API key and billing, and cannot be embedded inside an artifact.
 - The page script uses `L` for the listings, so Leaflet is read as `LF` (set right after the script tag). Don't rename.
+- If the map script is blocked the list takes the full width (`nomap`).
 
 ## Search box must say it finds shuls
 
