@@ -50,6 +50,9 @@ class PlaceNames(unittest.TestCase):
     def test_heart_of_ridge(self):
         self.check("Heart of Ridge", "Heartof Ridge", "Heart of Ridge", "HeartofRidge")
 
+    def test_bent_hook_toms_river(self):
+        self.check("Bent Hook, Toms River", "BentHook.T.R.", "Bent Hook T.R.", "Bent Hook, Toms River", "Bent Hook")
+
     def test_belz_shlav_aleph(self):
         self.check("Belz Shlav Aleph", "Belzshlavalef", "Belz Shlav Alef", "Belz Shlav Aleph")
 

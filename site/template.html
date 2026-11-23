@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Lakewood NJ Area Rentals</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -760,8 +761,13 @@
   function card(x) {
     var d = document.createElement("article");
     d.className = "card";
+    var wk = /^\$([\d,]+)\/week$/.exec(x.rent_display || "");
     var price = x.rent != null
       ? '<div class="card__price"><b class="tnum">$' + x.rent.toLocaleString() + '</b><span>per month</span></div>'
+      : wk
+      ? '<div class="card__price"><b class="tnum">$' + wk[1] + '</b><span>per week</span></div>'
+      : x.rent_display === "Free"
+      ? '<div class="card__price"><b>Free</b><span>no charge</span></div>'
       : '<div class="card__price callto"><b>' +
           (x.rent_display === "Call to discuss" ? "Call to<br>discuss" : "Contact<br>for rent") +
         '</b></div>';
@@ -776,6 +782,7 @@
                   : "");
 
     var tags = (x._furnished ? ['<span class="tag">Furnished</span>'] : []);
+    if (x.negotiable) tags.push('<span class="tag">Negotiable</span>');
     x._tags.forEach(function (t) { tags.push('<span class="tag' + (t[1] ? " flag" : "") + '">' + esc(t[0]) + "</span>"); });
 
     var calls = (x.phones || []).map(function (p) {

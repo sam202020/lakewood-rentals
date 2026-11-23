@@ -183,6 +183,13 @@
   "lng": null,
   "source": "unresolved"
  },
+ "bent hook": {
+  "name": "Bent Hook",
+  "lat": 40.02429,
+  "lng": -74.2379,
+  "source": "manual",
+  "note": "Checked on Google Maps (Bent Hook Rd, Toms River)."
+ },
  "bergen": {
   "name": "Bergen Ave",
   "lat": 40.09201,
@@ -330,6 +337,13 @@
   "lng": -74.2148,
   "source": "manual",
   "note": "Owner: Chestnut is a street in south Lakewood (Chestnut Estates segment, middle of the street)."
+ },
+ "chestnut acres": {
+  "name": "Chestnut Acres",
+  "lat": 40.04981,
+  "lng": -74.20925,
+  "source": "manual",
+  "note": "Checked on Google Maps (Chestnut Acres, Lakewood)."
  },
  "chestnut gardens": {
   "name": "Chestnut Gardens",

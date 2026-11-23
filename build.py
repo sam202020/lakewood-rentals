@@ -37,6 +37,8 @@ def main():
 
     src = args.pdf or P.SOURCE_URL
     list_date, listings = P.parse(P.fetch_pdf(src))
+    for page_no, text in P.SKIPPED:
+        print(f"NOTE: left out an ad banner on page {page_no}: {text}")
 
     places = geo.load_places()
     for x in listings:

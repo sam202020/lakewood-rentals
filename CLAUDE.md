@@ -31,3 +31,23 @@ be treated as a place. `geo.picker_entries` drops anything that `geo.looks_like_
 (nearest named neighbourhoods on the map, plus any hint in the listing text), **confirm it with the owner**, then
 give the address entry that neighbourhood's coordinates and set `"neighborhood": "<place key>"` on it (that silences the
 warning). The card still shows the address from the PDF.
+
+## The PDF parser (parse.py)
+
+The PDF is a table of ruled cells. `parse()` finds each listing's row from the drawn cell rectangles
+(`row_cells`) and takes every word whose vertical centre lies inside that row (`parse_row`). Do not go back to
+guessing listing boundaries from the code text: codes come with the type letters missing or a junk prefix
+("CfHH1114_932:15"), the bedroom digit glued on ("..._1049:103"), type letters on a separate line, phone numbers
+shattered into single characters or glued to the next word, and ad banners that carry phantom codes.
+`_parse_page_by_text` is only a fallback for a page with no cell rectangles.
+
+Rules (owner, 2026-11-22):
+- **Every listing in the PDF has a phone number. A listing without one is always a parser bug**, never a
+  property of the listing. `checks.py` warns by name and fails the build under 98%. 7-digit local numbers
+  ("905-0200") are stored as `732-905-0200`.
+- Row count check: `python3 build.py` prints a `NOTE` for every ad banner it leaves out, so a missing listing
+  shows up as a missing row, not silence. Nov. 18, 2026 PDF: 244 row bands = 238 listings + 6 ad banners.
+- After changing the parser run it on the real PDF too:
+  `RENTAL_PDF=/path/to/MasaRentals.pdf python3 -m unittest discover -s tests`
+  (every listing must have a phone, a type and bedrooms; ids unique).
+- When the weekly warnings show a new oddity, add the real row as a test in `tests/test_parser.py`.

@@ -67,12 +67,22 @@ class Hard(unittest.TestCase):
         errors, _ = checks.check(rows)
         self.assertTrue(any("phone" in e for e in errors))
 
-    def test_a_few_gaps_are_tolerated(self):
+    def test_a_few_gaps_are_tolerated_but_a_missing_phone_is_always_named(self):
         rows = make()
-        for x in rows[:6]:           # 97% still have both
+        for x in rows[:2]:           # 2 of ~200 locations blank: tolerated
             x["location"] = ""
-            x["phones"] = []
-        self.assertEqual(checks.check(rows)[0], [])
+        rows[3]["phones"] = []       # 1 phone missing: not a hard failure, but never silent
+        errors, warnings = checks.check(rows)
+        self.assertEqual(errors, [])
+        self.assertTrue(any("no phone number" in w and rows[3]["id"] in w for w in warnings))
+
+    def test_every_listing_has_a_phone_is_the_clean_case(self):
+        self.assertFalse(any("no phone number" in w for w in checks.check(make())[1]))
+
+    def test_unrecognised_type_is_flagged(self):
+        rows = make()
+        rows[5]["type"] = "Other"
+        self.assertTrue(any("no recognised type" in w for w in checks.check(rows)[1]))
 
     def test_a_whole_type_missing(self):
         rows = [x for x in make() if x["type"] != "House"]

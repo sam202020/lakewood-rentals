@@ -491,3 +491,7 @@ test("real listings: picking Clover sorts a Clover listing first, before Arlingt
   const iArlington = out.findIndex((r) => /^arlington/i.test(r.location));
   assert.ok(iClover < iArlington);
 });
+
+test("template: declares UTF-8 so fractions like 3\u00bd render correctly (not 3\u00c2\u00bd)", () => {
+  assert.match(templateHtml.slice(0, 200), /<meta charset="utf-8">/i);
+});

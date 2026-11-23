@@ -18,7 +18,7 @@ import re
 MIN_LISTINGS = 60          # absolute floor
 MAX_DROP = 0.30            # vs. last week's count
 MIN_LOCATION_RATE = 0.95
-MIN_PHONE_RATE = 0.90
+MIN_PHONE_RATE = 0.98   # the PDF prints a phone for every listing, so this is a safety net, not a target
 REQUIRED_TYPES = ("Apartment", "House", "Townhouse / Attached")
 
 # Short forms we have rules for (parse.py PLACE_NAMES / ABBREVIATIONS). If one
@@ -63,6 +63,14 @@ def check(listings, previous_count=None):
             errors.append(f"no '{t}' listings at all")
 
     # ---- soft checks ----
+    # Every listing in the PDF carries a phone number, so a missing one is a parsing bug: name each one.
+    nophone = [f"{x.get('id', '?')} ({x.get('location') or 'no location'})" for x in listings if not x.get("phones")]
+    if nophone:
+        warnings.append(f"{len(nophone)} listing(s) have no phone number, but every listing in the PDF has one - "
+                        f"fix parse.py: {', '.join(nophone[:8])}")
+    notype = [f"{x.get('id', '?')} ({x.get('location') or '?'})" for x in listings if x.get("type") == "Other"]
+    if notype:
+        warnings.append(f"{len(notype)} listing(s) have no recognised type letter: {', '.join(notype[:6])}")
     for x in listings:
         where = f"{x.get('id', '?')}"
         loc_text = x.get("location") or ""
