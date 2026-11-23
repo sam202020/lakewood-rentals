@@ -100,8 +100,12 @@ var LakewoodSearch = (function () {
     ["porch", "deck", "patio", "balcony", "terrace"],
     ["renovated", "renovation", "remodeled", "remodelled", "redone"],
     ["quiet", "peaceful", "tranquil"],
-    ["tenant", "tenants", "renter", "renters"]
+    ["tenant", "tenants", "renter", "renters"],
+    // 55+ communities (age-restricted): "55+", "55 plus", "over 55", "senior", ...
+    ["55+", "55plus", "55 plus", "over 55", "55 and over", "55 and older", "senior", "seniors", "retirement", "retired",
+     "active adult", "adult community", "age restricted"]
   ];
+  var AGE55 = CONCEPTS.length - 1;               // the id of that group
 
   /** Lower-case word with a plural "s" removed ("shuls" -> "shul", "ladies" -> "lady"). */
   function stem(w) {
@@ -117,7 +121,10 @@ var LakewoodSearch = (function () {
   CONCEPTS.forEach(function (group, id) {
     group.forEach(function (item) {
       item = glueSlashes(item);
-      if (item.indexOf(" ") !== -1) PHRASES.push({ concept: id, text: item });
+      if (item.indexOf("+") !== -1) {                // "55+": found by its text, and typed as a word
+        PHRASES.push({ concept: id, text: item });
+        (WORD_CONCEPTS[item] = WORD_CONCEPTS[item] || []).push(id);
+      } else if (item.indexOf(" ") !== -1) PHRASES.push({ concept: id, text: item });
       else {
         (WORD_CONCEPTS[stem(item)] = WORD_CONCEPTS[stem(item)] || []).push(id);
         CONCEPT_WORDS.push({ w: stem(item), id: id });
@@ -129,6 +136,17 @@ var LakewoodSearch = (function () {
   function glueSlashes(s) { return String(s || "").toLowerCase().replace(/\b([a-z])\/([a-z])\b/g, "$1$2"); }
 
   function wordsOf(text) { return glueSlashes(text).match(/[a-z0-9]+/g) || []; }
+
+  /** Say the same thing the same way before searching: "55 plus", "over 55", "55 and over", "senior community"
+   *  all become "55+". */
+  function normalizeQuery(q) {
+    return String(q || "").toLowerCase()
+      .replace(/\b(?:over\s*)?55\s*(?:\+|plus\b|and\s+(?:over|older|up)\b)/g, "55+")
+      .replace(/\bover\s*55\b/g, "55+")
+      .replace(/\bfifty[\s-]*five\s*(?:\+|plus\b)?/g, "55+")
+      .replace(/\b(?:active|adult|senior|retirement|age[\s-]*restricted)\s+(?:communit(?:y|ies)|living|housing)\b/g, "55+")
+      .replace(/\bactive\s+adults?\b/g, "55+");
+  }
 
   var termConceptCache = {};
   /** Concept ids a typed word belongs to: by its exact word, or (6+ letters) a typo / another spelling of one
@@ -201,11 +219,14 @@ var LakewoodSearch = (function () {
    *  then spelling variants / small typos. */
   function termMatches(x, term) {
     term = glueSlashes(term);
+    // a small bare number ("55") is a whole word, not a piece of a phone number like 732-555-0101
+    if (/^\d{1,6}$/.test(term)) return x._words.indexOf(term) !== -1;
     if (x._text.indexOf(term) !== -1 && (term.length > 3 || !/^[a-z]+$/.test(term))) return true;   // as before
     var letters = /^[a-z]+$/.test(term);
     if (letters && term.length <= 3 && x._words.some(function (w) { return w.indexOf(term) === 0; })) return true;
     var ids = conceptsOfTerm(term);
     for (var i = 0; i < ids.length; i++) if (x._concepts[ids[i]]) return true;
+    if (ids.indexOf(AGE55) !== -1 && x._age55) return true;      // in the Fairways / Enclave counts as 55+
     if (letters && term.length >= 6) {
       var k = typoBudget(term.length), key = soundKey(term);
       for (var w = 0; w < x._words.length; w++) {
@@ -244,6 +265,8 @@ var LakewoodSearch = (function () {
       x._concepts = {};
       Object.keys(stems).forEach(function (s) { (WORD_CONCEPTS[s] || []).forEach(function (id) { x._concepts[id] = true; }); });
       PHRASES.forEach(function (p) { if (x._text.indexOf(p.text) !== -1) x._concepts[p.concept] = true; });
+      // a listing is a 55+ one if it says so, or if it is in one of the 55+ communities (Fairways, Enclave)
+      x._age55 = !!x._concepts[AGE55] || /\b(fairways|enclave)\b/.test(x._text);
       x._furnished = !!x.furnished || /furnish/i.test(x.comments || "");
       x._short = SHORT_RE.test(x.comments || "");
       x._tags = [];
@@ -257,7 +280,7 @@ var LakewoodSearch = (function () {
   function defaultState() {
     return {
       q: "", types: new Set(), beds: 0, rent: NO_RENT_CAP, inclCall: true,
-      utils: new Set(), furnished: false, shortterm: false, sort: "default",
+      utils: new Set(), furnished: false, shortterm: false, age55: false, sort: "default",
       origin: null,   // {lat, lng}: where the visitor is, or a place they picked
       maxMiles: 0     // 0 = no distance limit
     };
@@ -265,7 +288,7 @@ var LakewoodSearch = (function () {
 
   /** True when listing `x` passes every active filter in state `S`. */
   function match(x, S) {
-    var q = String(S.q || "").toLowerCase().trim();
+    var q = normalizeQuery(S.q).trim();
     if (q) {
       var terms = q.split(/\s+/);
       for (var i = 0; i < terms.length; i++) if (!termMatches(x, terms[i])) return false;
@@ -277,6 +300,7 @@ var LakewoodSearch = (function () {
     }
     if (S.furnished && !x._furnished) return false;
     if (S.shortterm && !x._short) return false;
+    if (S.age55 && !x._age55) return false;
     if (x.rent == null) { if (!S.inclCall) return false; }
     else if (S.rent < NO_RENT_CAP && x.rent > S.rent) return false;
     // Distance limit: needs search() to have set _dist; listings we could not
@@ -483,6 +507,11 @@ var LakewoodSearch = (function () {
   function suggestAll(picker, streets, text, limit) {
     limit = limit || 8;
     var items = [];
+    // "55", "55+", "55 plus", "senior", "over 55" ... offer the 55+ communities as a topic, not a place
+    var norm = normalizeQuery(text).trim();
+    if (norm && (/^(55\+?|sen|ret|adu|age)/.test(norm) || norm === "55+")) {
+      items.push({ kind: "topic", name: "55+ communities", topic: "age55", note: "show only 55+ listings" });
+    }
     suggestCrossings(streets, text, 2).forEach(function (c) { items.push({ kind: "cross", name: c.name, town: c.town, lat: c.lat, lng: c.lng }); });
     var qt = placeTokens(text), places = suggestPlaces(picker, text, limit);
     places.forEach(function (p) { items.push({ kind: "place", name: p.name, town: p.town, lat: p.lat, lng: p.lng, score: 0 }); });
@@ -495,8 +524,8 @@ var LakewoodSearch = (function () {
     // keep places ahead of streets only as a tie-break: re-rank everything by match quality
     if (qt.length) {
       items.forEach(function (it, i) {
-        var r = it.kind === "cross" ? -1 : rankTokens(placeTokens(it.name), qt);
-        it._r = r < 0 ? 3 : r;
+        var r = it.kind === "cross" || it.kind === "topic" ? -1 : rankTokens(placeTokens(it.name), qt);
+        it._r = it.kind === "cross" || it.kind === "topic" ? -1 : (r < 0 ? 3 : r);       // topics and intersections lead
         it._o = i;
       });
       items.sort(function (a, b) { return a._r - b._r || a._o - b._o; });
@@ -504,7 +533,7 @@ var LakewoodSearch = (function () {
     return items.slice(0, limit);
   }
 
-  /** How many filter groups (not counting the search box or the distance chip) are switched on. */
+  /** How many filter groups (not counting the search box, the distance chip or the visible 55+ chip) are switched on. */
   function activeFilterCount(S) {
     return (S.types.size ? 1 : 0) + (S.beds ? 1 : 0) + (S.rent < NO_RENT_CAP ? 1 : 0) +
       (S.inclCall ? 0 : 1) + (S.utils.size ? 1 : 0) + (S.furnished ? 1 : 0) + (S.shortterm ? 1 : 0);
@@ -513,6 +542,7 @@ var LakewoodSearch = (function () {
   return {
     NO_RENT_CAP: NO_RENT_CAP,
     suggestPlaces: suggestPlaces,
+    normalizeQuery: normalizeQuery,
     CONCEPTS: CONCEPTS,
     relatedWords: relatedWords,
     editDistance: editDistance,

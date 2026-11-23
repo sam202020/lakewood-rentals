@@ -391,6 +391,8 @@
   .related b { color: var(--ink); font-weight: 600; }
   .sugg__town { font-size: 12px; color: var(--muted); white-space: nowrap; }
   .fbtn { display: none; align-items: center; gap: 6px; }
+  .age55 { font-weight: 600; }
+  @media (max-width: 860px) { .age55__long { display: none; } .age55 { padding: 8px 10px; } }
   .fcount {
     display: inline-block; min-width: 18px; padding: 0 5px; border-radius: 999px; text-align: center;
     font-size: 12px; font-weight: 700; background: var(--accent); color: #fff;
@@ -461,6 +463,8 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
       <span class="near__txt">My location</span>
     </button>
+    <button type="button" class="chip age55" id="age55Btn" aria-pressed="false"
+            title="Only listings in 55+ communities (age-restricted)">55+<span class="age55__long"> communities</span></button>
     <button type="button" class="chip fbtn" id="filtersToggle" aria-expanded="false" aria-controls="filters">
       Filters <span class="fcount" id="filterCount" hidden></span>
     </button>
@@ -617,6 +621,9 @@
   document.getElementById("inclCall").onchange = function (e) { S.inclCall = e.target.checked; render(); };
   document.getElementById("furnished").onchange = function (e) { S.furnished = e.target.checked; render(); };
   document.getElementById("shortterm").onchange = function (e) { S.shortterm = e.target.checked; render(); };
+  var age55Btn = document.getElementById("age55Btn");
+  function setAge55(on) { S.age55 = on; age55Btn.setAttribute("aria-pressed", on ? "true" : "false"); render(); }
+  age55Btn.onclick = function () { setAge55(!S.age55); };
   document.getElementById("sort").onchange = function (e) { S.sort = e.target.value; render(); };
 
   document.getElementById("reset").onclick = function () {
@@ -667,7 +674,8 @@
       li.setAttribute("aria-selected", i === active ? "true" : "false");
       if (i === active) li.className = "on";
       // every suggestion says which town it is in; an intersection says so too
-      var hint = pl.kind === "cross" ? "intersection" + (pl.town ? " \u00b7 " + pl.town : "") : (pl.town || "");
+      var hint = pl.kind === "cross" ? "intersection" + (pl.town ? " \u00b7 " + pl.town : "")
+        : pl.kind === "topic" ? "only 55+ listings" : (pl.town || "");
       li.innerHTML = '<span class="sugg__name">' + esc(pl.name) + '</span>' +
         (hint ? '<span class="sugg__town">' + esc(hint) + '</span>' : "");
       // pointerdown (not click) so the box keeps focus and the list does not close first
@@ -685,6 +693,7 @@
   function pickPlace(pl) {
     q.value = ""; S.q = "";
     closeSugg(); q.blur();
+    if (pl.kind === "topic") { setAge55(true); return; }          // "55+ communities": a filter, not a place
     // a street is sorted by distance to its whole line, a neighborhood or intersection by distance to its point
     setOrigin({ lat: pl.lat, lng: pl.lng, paths: pl.kind === "street" ? pl.paths : null }, pl.name);
   }
@@ -830,7 +839,7 @@
     lastCount = rows.length;
     // tell the visitor when related words are being matched too ("boy" also finds bochur, guys, men ...)
     var rel = [];
-    (S.q || "").split(/\s+/).forEach(function (w) {
+    LakewoodSearch.normalizeQuery(S.q).split(/\s+/).forEach(function (w) {
       LakewoodSearch.relatedWords(w).slice(0, 6).forEach(function (r) { if (rel.indexOf(r) === -1) rel.push(r); });
     });
     var relEl = document.getElementById("related");

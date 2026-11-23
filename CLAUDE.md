@@ -72,3 +72,11 @@ sorts by distance to the street's whole line, and offers intersections ("clover 
 A vague phrase in a listing ("Prime Jackson Area", "55+Community", "Lakewood Area") is not a neighbourhood. It may get a
 guessed pin in `places.json` so its listing still sorts by distance, but set `"hide": true` on that entry so it is never
 offered in the "Near" suggestions (`geo.picker_entries` skips hidden entries; listings still resolve to the pin).
+
+## Search words (site/search-core.js)
+
+- `CONCEPTS` are groups of words that mean the same in these listings (boy = bochur = bachur = guys = men ...). Add a
+  line to teach the search a new group; words match as whole words, and typos/spellings (6+ letters) are forgiven.
+- **55+ is a search term and a one-tap filter**, not a neighborhood: "55+", "55 plus", "over 55", "senior", "active adult"
+  all normalise to `55+` (`normalizeQuery`); the "55+" chip in the search bar sets `S.age55`; typing a 55+ word offers
+  "55+ communities" as a topic suggestion. A listing counts as 55+ if it says so or is in the Fairways / Enclave.

@@ -847,3 +847,93 @@ test("real picker: every neighborhood suggestion has a town, except the towns th
   assert.equal(by["Harmony Farms"], "Jackson");
   assert.equal(by["Harmony Hills"], "Jackson");
 });
+
+// ---- 55+ communities: a search term, a one-tap filter, and a suggestion ------------------------------------
+function ageRows() {
+  return S.enrich([
+    L({ id: "text", location: "Westgate", comments: "55+community. Fully renovated. Pesach kitchen." }),
+    L({ id: "place", location: "Fairways", comments: "Beautifully renovated, near several Shuls, full basement." }),
+    L({ id: "enc", location: "22 Enclave Blvd.", comments: "One year lease. Available immediately." }),
+    L({ id: "word", location: "55+Community", comments: "Available immediately." }),
+    L({ id: "senior", location: "Albert", comments: "Quiet senior community, 55 plus." }),
+    L({ id: "phone", location: "Raintree", comments: "Nice house.", phones: ["732-555-0101"] }),
+    L({ id: "plain", location: "Pawnee", comments: "Brand new apartment." }),
+  ]);
+}
+const age = (text) => { const st = S.defaultState(); st.q = text; return S.search(ageRows(), st).map((r) => r.id).sort(); };
+
+test("normalizeQuery: every way of saying 55+ becomes 55+", () => {
+  for (const q of ["55+", "55 plus", "55plus", "55 Plus", "over 55", "Over 55", "55 and over", "55 and older", "fifty five plus", "fifty-five+",
+                   "senior community", "active adult", "adult living", "age restricted community", "retirement community"]) {
+    assert.equal(S.normalizeQuery(q), "55+", q);
+  }
+  assert.equal(S.normalizeQuery("Raintree 55 plus furnished"), "raintree 55+ furnished");
+  assert.equal(S.normalizeQuery("2 bedroom"), "2 bedroom");
+  assert.equal(S.normalizeQuery("555"), "555");
+});
+
+test("55+ is searchable: 55+, 55 plus, over 55, senior all find the 55+ listings", () => {
+  const want = ["enc", "place", "senior", "text", "word"];
+  for (const q of ["55+", "55 plus", "55plus", "over 55", "55 and over", "senior", "seniors", "senior community", "active adult"]) {
+    assert.deepEqual(age(q), want, q);
+  }
+});
+
+test("a listing is a 55+ one if it says so OR is in the Fairways or the Enclave", () => {
+  assert.ok(age("55+").includes("place"));          // Fairways: no mention of 55+ in its text
+  assert.ok(age("55+").includes("enc"));            // 22 Enclave Blvd.: nor here
+});
+
+test("searching the neighborhood name finds only that neighborhood, not every 55+ listing", () => {
+  assert.deepEqual(age("fairways"), ["place"]);
+  assert.deepEqual(age("enclave"), ["enc"]);
+});
+
+test("a bare number is a whole word: 55 does not match the phone number 732-555-0101", () => {
+  assert.ok(!age("55").includes("phone"));
+  assert.deepEqual(age("55"), ["senior", "text", "word"]);       // the word "55" in "55+community", "55+Community", "55 plus"
+  assert.deepEqual(age("732"), ["enc", "phone", "place", "plain", "senior", "text", "word"].sort());
+  assert.equal(age("732-555").length, 7);                        // phone searches still match as text (every fixture row has it)
+  assert.equal(age("732-555-0101").length, 7);
+});
+
+test("the 55+ filter keeps only those listings, and combines with the other filters", () => {
+  const st = S.defaultState(); st.age55 = true;
+  assert.deepEqual(S.search(ageRows(), st).map((r) => r.id).sort(), ["enc", "place", "senior", "text", "word"]);
+  st.q = "renovated";
+  assert.deepEqual(S.search(ageRows(), st).map((r) => r.id).sort(), ["place", "text"]);
+  assert.equal(S.defaultState().age55, false);
+});
+
+test("the visible 55+ chip is not counted in the Filters badge", () => {
+  const st = S.defaultState(); st.age55 = true;
+  assert.equal(S.activeFilterCount(st), 0);
+});
+
+test("suggestions offer 55+ communities as a topic first, and only for 55+ words", () => {
+  for (const q of ["55", "55+", "55 plus", "over 55", "senior", "seniors", "active adult", "retire"]) {
+    const first = S.suggestAll([], [], q)[0];
+    assert.ok(first && first.kind === "topic" && first.topic === "age55", q);
+  }
+  for (const q of ["rain", "fairways", "ocean", "13th", "furnished"]) {
+    assert.ok(S.suggestAll([{ name: "Fairways", lat: 1, lng: 2 }, { name: "Raintree", lat: 1, lng: 2 }], [], q).every((i) => i.kind !== "topic"), q);
+  }
+});
+
+test("template: a 55+ chip in the search bar, wired to the filter and to the topic suggestion", () => {
+  assert.match(templateHtml, /id="age55Btn"/);
+  assert.match(templateHtml, /function setAge55\(on\)/);
+  assert.match(templateHtml, /pl\.kind === "topic"\) \{ setAge55\(true\)/);
+  assert.match(templateHtml, /only 55\+ listings/);
+  assert.match(templateHtml, /LakewoodSearch\.normalizeQuery\(S\.q\)/);
+});
+
+test("real listings: the 55+ filter finds the Fairways, the Enclave and the 55+ listing", () => {
+  const rows = S.enrich(data.listings.map((x) => Object.assign({}, x)));
+  const st = S.defaultState(); st.age55 = true;
+  const got = S.search(rows, st);
+  assert.ok(got.length >= 1);
+  assert.ok(got.every((r) => /fairways|enclave|55/i.test(r.location + " " + r.comments)));
+  const typed = S.defaultState(); typed.q = "55 plus";
+  assert.deepEqual(S.search(rows, typed).map((r) => r._i).sort(), got.map((r) => r._i).sort());
+});
