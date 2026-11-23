@@ -1034,3 +1034,26 @@ test("shuls: the real list has Lakewood shuls with coordinates near Lakewood", (
   assert.ok(data.every((s) => Math.abs(s.lat - 40.1) < 0.2 && Math.abs(s.lng + 74.2) < 0.25));
   assert.ok(S.suggestShuls(data.map((s) => Object.assign({ aka: [] }, s)), "heichal hachassidus").length >= 1);
 });
+
+test("shuls: a neighborhood that is also a shul shows once, and BMG finds every BMG building", () => {
+  const picker = [{ name: "Kol Shimshon", town: "Lakewood", lat: 40.1, lng: -74.2, shul: true },
+                  { name: "BMG (Main Building, 6th St)", town: "Lakewood", lat: 40.095, lng: -74.222, shul: true, aka: ["BMG"] }];
+  const shuls = [{ name: "BMG - Bais Aharon (10th St)", lat: 40.099, lng: -74.217, town: "Lakewood", address: "350 10th St", aka: ["BMG"] },
+                 { name: "Kol Aryeh", lat: 40.105, lng: -74.242, town: "Lakewood", address: "521 Hope Chapel Rd", aka: [] }];
+  const kol = S.suggestAll(picker, [], "kol", 8, shuls);
+  assert.deepEqual(kol.map((i) => i.name + ":" + i.kind), ["Kol Shimshon:place", "Kol Aryeh:shul"]);
+  assert.equal(kol[0].shul, true);
+  const bmg = S.suggestAll(picker, [], "bmg", 8, shuls).map((i) => i.name);
+  assert.ok(bmg.includes("BMG - Bais Aharon (10th St)") && bmg.includes("BMG (Main Building, 6th St)"));
+});
+
+test("suggestions: another spelling of a place ('BMG', 'Yeshiva') finds it even when its own name does not match", () => {
+  const picker = [{ name: "Bais Shalom", town: "Lakewood", lat: 40.099, lng: -74.217, aka: ["BMG"], shul: true }];
+  assert.equal(S.suggestAll(picker, [], "bmg", 8, [])[0].name, "Bais Shalom");
+});
+
+test("shuls: a whole-word match comes before a longer word that merely starts the same", () => {
+  const shuls = [{ name: "Kollel Ner Avrohom", lat: 40.1, lng: -74.2, town: "Lakewood", address: "", aka: [] },
+                 { name: "Kol Aryeh", lat: 40.1, lng: -74.2, town: "Lakewood", address: "", aka: [] }];
+  assert.equal(S.suggestShuls(shuls, "kol")[0].name, "Kol Aryeh");
+});

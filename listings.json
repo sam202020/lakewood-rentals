@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T02:02:24+00:00",
+  "generated_at": "2026-11-23T02:18:26+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -7377,7 +7377,7 @@
       "lng": -74.22742
     },
     "yeshiva": {
-      "name": "Yeshiva (BMG)",
+      "name": "BMG (Main Building, 6th St)",
       "lat": 40.09538,
       "lng": -74.22226
     }
@@ -7411,7 +7411,11 @@
       "name": "Albert",
       "lat": 40.06373,
       "lng": -74.19895,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "shul": true,
+      "aka": [
+        "Albert Shul"
+      ]
     },
     {
       "name": "Arlington",
@@ -7423,7 +7427,13 @@
       "name": "Bais Shalom",
       "lat": 40.09919,
       "lng": -74.21713,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "shul": true,
+      "aka": [
+        "BMG - Bais Shalom (9th St)",
+        "BMG",
+        "Beth Medrash Govoha"
+      ]
     },
     {
       "name": "Beaver Crossing",
@@ -7447,7 +7457,11 @@
       "name": "Belz Shlav Gimel (Locust Grove)",
       "lat": 40.04536,
       "lng": -74.20059,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "shul": true,
+      "aka": [
+        "Belz - Shlav Gimel / Locust Grove"
+      ]
     },
     {
       "name": "Bent Hook",
@@ -7460,6 +7474,19 @@
       "lat": 40.09201,
       "lng": -74.20026,
       "town": "Lakewood"
+    },
+    {
+      "name": "BMG (Main Building, 6th St)",
+      "lat": 40.09538,
+      "lng": -74.22226,
+      "town": "Lakewood",
+      "aka": [
+        "Yeshiva",
+        "Beth Medrash Govoha",
+        "BMG",
+        "BMG - Main Building (6th St)"
+      ],
+      "shul": true
     },
     {
       "name": "Brook Hill",
@@ -7681,7 +7708,11 @@
       "name": "Hearthstone",
       "lat": 40.0619,
       "lng": -74.22684,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "shul": true,
+      "aka": [
+        "Bais Medrash of Hearthstone"
+      ]
     },
     {
       "name": "High Street",
@@ -7757,7 +7788,9 @@
       "name": "Kol Shimshon",
       "lat": 40.10207,
       "lng": -74.20766,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "shul": true,
+      "aka": []
     },
     {
       "name": "Lakewood",
@@ -7768,7 +7801,11 @@
       "name": "Lakewood Commons",
       "lat": 40.0682,
       "lng": -74.20488,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "shul": true,
+      "aka": [
+        "Lakewood Commons Shul"
+      ]
     },
     {
       "name": "Lawrence Avenue",
@@ -7806,8 +7843,10 @@
       "lng": -74.2547,
       "town": "Lakewood",
       "aka": [
-        "Lutsk"
-      ]
+        "Lutsk",
+        "Bais Medrash Lutzk"
+      ],
+      "shul": true
     },
     {
       "name": "Mackenzie",
@@ -7914,7 +7953,11 @@
       "name": "Ocean Pointe",
       "lat": 40.08836,
       "lng": -74.18005,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "shul": true,
+      "aka": [
+        "Ocean Pointe Shul"
+      ]
     },
     {
       "name": "Park Avenue",
@@ -8028,7 +8071,11 @@
       "name": "Somerset Walk",
       "lat": 40.07137,
       "lng": -74.19811,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "shul": true,
+      "aka": [
+        "Kehilas Somerset Walk"
+      ]
     },
     {
       "name": "South Lake Drive",
@@ -8064,13 +8111,21 @@
       "name": "Stamford Meadows",
       "lat": 40.05373,
       "lng": -74.20184,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "shul": true,
+      "aka": [
+        "Stamford Meadows Beis Medrash"
+      ]
     },
     {
       "name": "Sterling Forest",
       "lat": 40.06846,
       "lng": -74.2205,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "shul": true,
+      "aka": [
+        "Bais Medrash of Sterling Forest"
+      ]
     },
     {
       "name": "Sterling Place",
@@ -8171,7 +8226,11 @@
       "name": "Westgate",
       "lat": 40.08734,
       "lng": -74.25544,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "shul": true,
+      "aka": [
+        "Bais Medrash Of Westgate"
+      ]
     },
     {
       "name": "Whitewater Court",
@@ -8183,12 +8242,6 @@
       "name": "Wyndham Place",
       "lat": 40.06972,
       "lng": -74.22742,
-      "town": "Lakewood"
-    },
-    {
-      "name": "Yeshiva (BMG)",
-      "lat": 40.09538,
-      "lng": -74.22226,
       "town": "Lakewood"
     }
   ],
@@ -8208,11 +8261,25 @@
       "1445 14th St"
     ],
     [
-      "Albert Shul",
-      40.06257,
-      -74.19945,
+      "Anshei Sfard",
+      40.10317,
+      -74.21919,
       "Lakewood",
-      "699 Albert Ave"
+      "1250 Madison Ave"
+    ],
+    [
+      "Ateres Yeshaya",
+      40.10439,
+      -74.19876,
+      "Lakewood",
+      "908 E County Line Rd"
+    ],
+    [
+      "Aters Avrohom",
+      40.10549,
+      -74.18755,
+      "Lakewood",
+      "1019 E County Line Rd"
     ],
     [
       "Bais Elimelech",
@@ -8264,13 +8331,6 @@
       "613 Madison Ave"
     ],
     [
-      "Bais Medrash Lutzk",
-      40.08419,
-      -74.2547,
-      "Lakewood",
-      "520 New Egypt Rd"
-    ],
-    [
       "Bais Medrash Mayan HaTorah",
       40.10741,
       -74.20439,
@@ -8297,13 +8357,6 @@
       -74.18093,
       "Lakewood",
       "1 Flannery Ave"
-    ],
-    [
-      "Bais Medrash of Hearthstone",
-      40.06367,
-      -74.22675,
-      "Lakewood",
-      "911 Hearthstone Dr"
     ],
     [
       "Bais Medrash of High Street",
@@ -8334,25 +8387,11 @@
       "20 Capital Ln"
     ],
     [
-      "Bais Medrash of Sterling Forest",
-      40.06888,
-      -74.22178,
-      "Lakewood",
-      "144 Hadassah Ln"
-    ],
-    [
       "Bais Medrash of Summit Court",
       40.07097,
       -74.22211,
       "Lakewood",
       "102 Summit Ct"
-    ],
-    [
-      "Bais Medrash Of Westgate",
-      40.08793,
-      -74.25307,
-      "Lakewood",
-      "100 Ropshitz Ct"
     ],
     [
       "Bais Medrash Ohel Torah",
@@ -8523,11 +8562,25 @@
       "910 Monmouth Ave"
     ],
     [
-      "Belz - Shlav Gimel / Locust Grove",
-      40.04536,
-      -74.20059,
+      "Beit T'Filah",
+      40.09916,
+      -74.2073,
       "Lakewood",
-      "18 Prague Pl"
+      "33 E 8th St"
+    ],
+    [
+      "Belz Meadows",
+      40.04717,
+      -74.21557,
+      "Lakewood",
+      "2 Hanover Way"
+    ],
+    [
+      "Berditchev / Berditchev Kloiz",
+      40.07865,
+      -74.22067,
+      "Lakewood",
+      "75 Birch St"
     ],
     [
       "Bet Lidya Sephardic Minyan",
@@ -8544,6 +8597,20 @@
       "1235 NJ-70"
     ],
     [
+      "Birchat Eliezer Seret Viznitz",
+      40.05196,
+      -74.20842,
+      "Lakewood",
+      "284 Chestnut St"
+    ],
+    [
+      "Birkat Yaakov (\"The Clubhouse\")",
+      40.0941,
+      -74.2221,
+      "Lakewood",
+      "176 Village Path"
+    ],
+    [
       "Blue River Shul",
       40.05229,
       -74.22053,
@@ -8556,6 +8623,46 @@
       -74.19746,
       "Lakewood",
       "910 E Kennedy Blvd"
+    ],
+    [
+      "BMG - Bais Aharon (10th St)",
+      40.09971,
+      -74.21721,
+      "Lakewood",
+      "350 10th St",
+      [
+        "BMG",
+        "Beth Medrash Govoha"
+      ]
+    ],
+    [
+      "BMG - Forest Ave Campus",
+      40.10087,
+      -74.22025,
+      "Lakewood",
+      "1075 Forest Ave",
+      [
+        "BMG",
+        "Beth Medrash Govoha"
+      ]
+    ],
+    [
+      "BMG - Herzka Building (7th St)",
+      40.09646,
+      -74.2216,
+      "Lakewood",
+      "605 7th St",
+      [
+        "BMG",
+        "Beth Medrash Govoha"
+      ]
+    ],
+    [
+      "Bnai Baruch",
+      40.10474,
+      -74.20954,
+      "Lakewood",
+      "14 14th St"
     ],
     [
       "Breslov Shul",
@@ -8591,6 +8698,13 @@
       -74.23337,
       "Lakewood",
       "1303 Central Ave"
+    ],
+    [
+      "Chakal Yisroel of Koson",
+      40.06293,
+      -74.21367,
+      "Lakewood",
+      "57 Havens Ave"
     ],
     [
       "Chasidei Bobov of Lakewood",
@@ -8635,333 +8749,11 @@
       "1395 Central Ave"
     ],
     [
-      "Cong Berditchev / Berditchev Kloiz",
-      40.07865,
-      -74.22067,
-      "Lakewood",
-      "75 Birch St"
-    ],
-    [
-      "Cong County Line / Toldot Yitzchok",
+      "County Line / Toldot Yitzchok",
       40.10558,
       -74.19635,
       "Lakewood",
       "937 E County Line Rd"
-    ],
-    [
-      "Cong Maplewood Shuel",
-      40.05844,
-      -74.22073,
-      "Lakewood",
-      "65 Elmhurst Blvd"
-    ],
-    [
-      "Cong. Aters Avrohom",
-      40.10549,
-      -74.18755,
-      "Lakewood",
-      "1019 E County Line Rd"
-    ],
-    [
-      "Cong. Beit T'Filah",
-      40.09916,
-      -74.2073,
-      "Lakewood",
-      "33 E 8th St"
-    ],
-    [
-      "Cong. Belz Meadows",
-      40.04717,
-      -74.21557,
-      "Lakewood",
-      "2 Hanover Way"
-    ],
-    [
-      "Cong. Birchat Eliezer Seret Viznitz",
-      40.05196,
-      -74.20842,
-      "Lakewood",
-      "284 Chestnut St"
-    ],
-    [
-      "Cong. Chakal Yisroel of Koson",
-      40.06293,
-      -74.21367,
-      "Lakewood",
-      "57 Havens Ave"
-    ],
-    [
-      "Cong. Kehilas Belz Lakewood",
-      40.04541,
-      -74.21026,
-      "Lakewood",
-      "26 Harmony Dr"
-    ],
-    [
-      "Cong. Kol Yehuda - Brookhill Ashkenaz",
-      40.1071,
-      -74.18541,
-      "Lakewood",
-      "1009 Brook Rd"
-    ],
-    [
-      "Cong. Nivei Shaanon",
-      40.07924,
-      -74.24667,
-      "Lakewood",
-      "1 Serenity Way"
-    ],
-    [
-      "Cong. Rachmastrivka",
-      40.10464,
-      -74.20407,
-      "Lakewood",
-      "610 E County Line Rd"
-    ],
-    [
-      "Cong. Rachmistrivka Oak & Vine",
-      40.06634,
-      -74.2091,
-      "Lakewood",
-      "744 Vine Ave"
-    ],
-    [
-      "Cong. Shemen L'mincha D'Nodfola",
-      40.10766,
-      -74.19349,
-      "Lakewood",
-      "2 Milano Dr"
-    ],
-    [
-      "Cong. Stolin Karlin",
-      40.0988,
-      -74.20302,
-      "Lakewood",
-      "153 E 7th St"
-    ],
-    [
-      "Cong. Tiferes Pinchas - Rabbi Speigel",
-      40.09486,
-      -74.20363,
-      "Lakewood",
-      "187 E 4th St"
-    ],
-    [
-      "Cong. Toldos Yaakov Yosef Skver",
-      40.1069,
-      -74.22458,
-      "Lakewood",
-      "537 W County Line Rd"
-    ],
-    [
-      "Cong. Zichron Yoel",
-      40.10076,
-      -74.20763,
-      "Lakewood",
-      "1014 Lawrence Ave"
-    ],
-    [
-      "Congregation Anshei Sfard",
-      40.10317,
-      -74.21919,
-      "Lakewood",
-      "1250 Madison Ave"
-    ],
-    [
-      "Congregation Ateres Yeshaya",
-      40.10439,
-      -74.19876,
-      "Lakewood",
-      "908 E County Line Rd"
-    ],
-    [
-      "Congregation Birkat Yaakov (\"The Clubhouse\")",
-      40.0941,
-      -74.2221,
-      "Lakewood",
-      "176 Village Path"
-    ],
-    [
-      "Congregation Bnai Baruch",
-      40.10474,
-      -74.20954,
-      "Lakewood",
-      "14 14th St"
-    ],
-    [
-      "Congregation Givas Pinchas Szerencs",
-      40.0716,
-      -74.1944,
-      "Lakewood",
-      "400 Boulevard of the Americas Ste 406"
-    ],
-    [
-      "Congregation Ishay Yisroel",
-      40.09266,
-      -74.2439,
-      "Lakewood",
-      "110 Miller Rd"
-    ],
-    [
-      "Congregation Khal Bais Avrohom",
-      40.11324,
-      -74.24391,
-      "Lakewood",
-      "2 Poplar St"
-    ],
-    [
-      "Congregation Kol Aryeh",
-      40.10579,
-      -74.24251,
-      "Lakewood",
-      "521 Hope Chapel Rd"
-    ],
-    [
-      "Congregation Mesifta Atereth Mordecei",
-      40.10603,
-      -74.22343,
-      "Lakewood",
-      "1455 Heathwood Ave"
-    ],
-    [
-      "Congregation Michtav Sofer",
-      40.10847,
-      -74.23372,
-      "Lakewood",
-      "1051 W County Line Rd"
-    ],
-    [
-      "Congregation of North Albert",
-      40.0685,
-      -74.19536,
-      "Lakewood",
-      "300 Albert Ave"
-    ],
-    [
-      "Congregation Oheiv Yisroel Apta",
-      40.06247,
-      -74.20961,
-      "Lakewood",
-      "101 Havens Ave"
-    ],
-    [
-      "Congregation Ohel Ahron",
-      40.07362,
-      -74.2142,
-      "Lakewood",
-      "9 Sharon Ct"
-    ],
-    [
-      "Congregation Ohel Shulamit",
-      40.07194,
-      -74.21602,
-      "Lakewood",
-      "38 Spruce St"
-    ],
-    [
-      "Congregation Ohr Meir",
-      40.09529,
-      -74.20995,
-      "Lakewood",
-      "30 5th St"
-    ],
-    [
-      "Congregation Ohr Yaakov",
-      40.09536,
-      -74.16348,
-      "Lakewood",
-      "1517 Laguna Ln"
-    ],
-    [
-      "Congregation Ohr Yechezkel",
-      40.09784,
-      -74.20072,
-      "Lakewood",
-      "307 Ridge Ave"
-    ],
-    [
-      "Congregation Shearis Adas Yisroel",
-      40.09445,
-      -74.21815,
-      "Lakewood",
-      "418 5th St"
-    ],
-    [
-      "Congregation Shvilei Dovid",
-      40.06166,
-      -74.2123,
-      "Lakewood",
-      "74 Broadway"
-    ],
-    [
-      "Congregation Sons of Israel - Madison",
-      40.09552,
-      -74.21777,
-      "Lakewood",
-      "590 Madison Ave"
-    ],
-    [
-      "Congregation Sons Of Israel - Park Ave.",
-      40.09494,
-      -74.20727,
-      "Lakewood",
-      "400 Park Ave"
-    ],
-    [
-      "Congregation Tiferes Yisroel",
-      40.09857,
-      -74.18315,
-      "Lakewood",
-      "11 Remon Ln"
-    ],
-    [
-      "Congregation Tiferet Tzvi Yehuda Bluzev",
-      40.06297,
-      -74.21183,
-      "Lakewood",
-      "80 Bradhurst Ave"
-    ],
-    [
-      "Congregation Vayoel Moshe - Eizikovitz",
-      40.09593,
-      -74.22305,
-      "Lakewood",
-      "636 7th St"
-    ],
-    [
-      "Congregation Yeshuos Moshe Viznitz",
-      40.04292,
-      -74.19874,
-      "Lakewood",
-      "4 Belgian Hill Rd"
-    ],
-    [
-      "Congregation Zichron Chaim",
-      40.08572,
-      -74.21761,
-      "Lakewood",
-      "24 Caranetta Dr"
-    ],
-    [
-      "Congregation Zichron Chazon Ish",
-      40.07549,
-      -74.22112,
-      "Lakewood",
-      "91 Williams St"
-    ],
-    [
-      "Congregation Zichron Dovid",
-      40.08889,
-      -74.22669,
-      "Lakewood",
-      "815 Central Ave"
-    ],
-    [
-      "Congregation Zichron Yisroel",
-      40.10106,
-      -74.20191,
-      "Lakewood",
-      "121 E 9th St"
     ],
     [
       "Coventry Shul",
@@ -9006,6 +8798,13 @@
       "325 10th St"
     ],
     [
+      "Givas Pinchas Szerencs",
+      40.0716,
+      -74.1944,
+      "Lakewood",
+      "400 Boulevard of the Americas Ste 406"
+    ],
+    [
       "Hampshire Heights Shul",
       40.0784,
       -74.18161,
@@ -9025,6 +8824,13 @@
       -74.1981,
       "Lakewood",
       "501 Ocean Ave"
+    ],
+    [
+      "Ishay Yisroel",
+      40.09266,
+      -74.2439,
+      "Lakewood",
+      "110 Miller Rd"
     ],
     [
       "K'hal Bais T'fila",
@@ -9048,11 +8854,11 @@
       "51 Turin Ave"
     ],
     [
-      "Kehilas Somerset Walk",
-      40.07155,
-      -74.19947,
+      "Kehilas Belz Lakewood",
+      40.04541,
+      -74.21026,
       "Lakewood",
-      "58 Canary Dr"
+      "26 Harmony Dr"
     ],
     [
       "Kehillat Etz Hayim",
@@ -9060,6 +8866,13 @@
       -74.21496,
       "Lakewood",
       "21 Cedar St"
+    ],
+    [
+      "Khal Bais Avrohom",
+      40.11324,
+      -74.24391,
+      "Lakewood",
+      "2 Poplar St"
     ],
     [
       "Khal beacon ridge",
@@ -9181,11 +8994,18 @@
       "175 Sunset Rd"
     ],
     [
-      "Kol Shimshon",
-      40.10207,
-      -74.20766,
+      "Kol Aryeh",
+      40.10579,
+      -74.24251,
       "Lakewood",
-      "323 Squankum Rd"
+      "521 Hope Chapel Rd"
+    ],
+    [
+      "Kol Yehuda - Brookhill Ashkenaz",
+      40.1071,
+      -74.18541,
+      "Lakewood",
+      "1009 Brook Rd"
     ],
     [
       "Kollel Bnei Torah",
@@ -9237,20 +9057,6 @@
       "75 Linden Ave"
     ],
     [
-      "Lakewood Commons Shul",
-      40.06845,
-      -74.20561,
-      "Lakewood",
-      "44 Coles Way"
-    ],
-    [
-      "Lakewood Commons Shul",
-      40.06706,
-      -74.20293,
-      "Lakewood",
-      "347 Coles Way"
-    ],
-    [
       "Lakewood Courtyard Shul",
       40.0907,
       -74.21694,
@@ -9258,14 +9064,14 @@
       "52 Madison Ave"
     ],
     [
-      "Lakewood Sephardic Congregation",
+      "Lakewood Sephardic",
       40.09645,
       -74.21699,
       "Lakewood",
       "613 Madison Ave"
     ],
     [
-      "Lev Avot Congregation",
+      "Lev Avot",
       40.1002,
       -74.23424,
       "Lakewood",
@@ -9286,11 +9092,32 @@
       "309 Central Ave"
     ],
     [
+      "Maplewood Shuel",
+      40.05844,
+      -74.22073,
+      "Lakewood",
+      "65 Elmhurst Blvd"
+    ],
+    [
       "Mayer Menasha",
       40.09368,
       -74.20844,
       "Lakewood",
       "312 Park Ave"
+    ],
+    [
+      "Mesifta Atereth Mordecei",
+      40.10603,
+      -74.22343,
+      "Lakewood",
+      "1455 Heathwood Ave"
+    ],
+    [
+      "Michtav Sofer",
+      40.10847,
+      -74.23372,
+      "Lakewood",
+      "1051 W County Line Rd"
     ],
     [
       "Minyan Avreichim",
@@ -9328,6 +9155,13 @@
       "1405 Tanglewood Ln"
     ],
     [
+      "Nivei Shaanon",
+      40.07924,
+      -74.24667,
+      "Lakewood",
+      "1 Serenity Way"
+    ],
+    [
       "Noam Hatorah - Prospect Vines",
       40.07098,
       -74.23956,
@@ -9335,11 +9169,32 @@
       "2 Zinfandel Rd"
     ],
     [
-      "Ocean Pointe Shul",
-      40.08834,
-      -74.18007,
+      "North Albert",
+      40.0685,
+      -74.19536,
       "Lakewood",
-      "15 Oceanside Dr"
+      "300 Albert Ave"
+    ],
+    [
+      "Oheiv Yisroel Apta",
+      40.06247,
+      -74.20961,
+      "Lakewood",
+      "101 Havens Ave"
+    ],
+    [
+      "Ohel Ahron",
+      40.07362,
+      -74.2142,
+      "Lakewood",
+      "9 Sharon Ct"
+    ],
+    [
+      "Ohel Shulamit",
+      40.07194,
+      -74.21602,
+      "Lakewood",
+      "38 Spruce St"
     ],
     [
       "Ohr Mattisyahu",
@@ -9349,11 +9204,32 @@
       "953 E County Line Rd"
     ],
     [
+      "Ohr Meir",
+      40.09529,
+      -74.20995,
+      "Lakewood",
+      "30 5th St"
+    ],
+    [
       "Ohr Tuvia",
       40.10304,
       -74.1996,
       "Lakewood",
       "969 East End Ave"
+    ],
+    [
+      "Ohr Yaakov",
+      40.09536,
+      -74.16348,
+      "Lakewood",
+      "1517 Laguna Ln"
+    ],
+    [
+      "Ohr Yechezkel",
+      40.09784,
+      -74.20072,
+      "Lakewood",
+      "307 Ridge Ave"
     ],
     [
       "Ohr Yehoshua - Kapishnitz",
@@ -9375,6 +9251,20 @@
       -74.23063,
       "Lakewood",
       "317 Blanche St"
+    ],
+    [
+      "Rachmastrivka",
+      40.10464,
+      -74.20407,
+      "Lakewood",
+      "610 E County Line Rd"
+    ],
+    [
+      "Rachmistrivka Oak & Vine",
+      40.06634,
+      -74.2091,
+      "Lakewood",
+      "744 Vine Ave"
     ],
     [
       "Sanz klausenberg",
@@ -9433,7 +9323,14 @@
       "213 Pine St"
     ],
     [
-      "Shearis Israel Congregation",
+      "Shearis Adas Yisroel",
+      40.09445,
+      -74.21815,
+      "Lakewood",
+      "418 5th St"
+    ],
+    [
+      "Shearis Israel",
       40.10722,
       -74.19755,
       "Lakewood",
@@ -9447,11 +9344,39 @@
       "112 Chestnut St"
     ],
     [
+      "Shemen L'mincha D'Nodfola",
+      40.10766,
+      -74.19349,
+      "Lakewood",
+      "2 Milano Dr"
+    ],
+    [
+      "Shvilei Dovid",
+      40.06166,
+      -74.2123,
+      "Lakewood",
+      "74 Broadway"
+    ],
+    [
       "Slonim Lakewood",
       40.06228,
       -74.21156,
       "Lakewood",
       "82 Havens Ave"
+    ],
+    [
+      "Sons of Israel - Madison",
+      40.09552,
+      -74.21777,
+      "Lakewood",
+      "590 Madison Ave"
+    ],
+    [
+      "Sons Of Israel - Park Ave.",
+      40.09494,
+      -74.20727,
+      "Lakewood",
+      "400 Park Ave"
     ],
     [
       "Spinka",
@@ -9468,13 +9393,6 @@
       ""
     ],
     [
-      "Stamford Meadows Beis Medrash",
-      40.05353,
-      -74.2013,
-      "Lakewood",
-      "12 Golders Green Rd"
-    ],
-    [
       "Sterling Place Shul",
       40.06977,
       -74.21956,
@@ -9482,7 +9400,14 @@
       "1 Gila Pl"
     ],
     [
-      "Sunset rd sephardic cong.",
+      "Stolin Karlin",
+      40.0988,
+      -74.20302,
+      "Lakewood",
+      "153 E 7th St"
+    ],
+    [
+      "Sunset rd sephardic",
       40.08103,
       -74.22614,
       "Lakewood",
@@ -9510,6 +9435,13 @@
       "324 E 7th St"
     ],
     [
+      "Tiferes Pinchas - Rabbi Speigel",
+      40.09486,
+      -74.20363,
+      "Lakewood",
+      "187 E 4th St"
+    ],
+    [
       "Tiferes Shulom Nadvorna",
       40.09514,
       -74.21043,
@@ -9522,6 +9454,34 @@
       -74.20302,
       "Lakewood",
       "347 Coles Way"
+    ],
+    [
+      "Tiferes Yisroel",
+      40.09857,
+      -74.18315,
+      "Lakewood",
+      "11 Remon Ln"
+    ],
+    [
+      "Tiferet Tzvi Yehuda Bluzev",
+      40.06297,
+      -74.21183,
+      "Lakewood",
+      "80 Bradhurst Ave"
+    ],
+    [
+      "Toldos Yaakov Yosef Skver",
+      40.1069,
+      -74.22458,
+      "Lakewood",
+      "537 W County Line Rd"
+    ],
+    [
+      "Vayoel Moshe - Eizikovitz",
+      40.09593,
+      -74.22305,
+      "Lakewood",
+      "636 7th St"
     ],
     [
       "Villpola",
@@ -9566,6 +9526,13 @@
       "809 River Ave"
     ],
     [
+      "Yeshuos Moshe Viznitz",
+      40.04292,
+      -74.19874,
+      "Lakewood",
+      "4 Belgian Hill Rd"
+    ],
+    [
       "zichron avraham",
       40.09786,
       -74.20972,
@@ -9587,6 +9554,41 @@
       "325 10th St #108"
     ],
     [
+      "Zichron Chaim",
+      40.08572,
+      -74.21761,
+      "Lakewood",
+      "24 Caranetta Dr"
+    ],
+    [
+      "Zichron Chazon Ish",
+      40.07549,
+      -74.22112,
+      "Lakewood",
+      "91 Williams St"
+    ],
+    [
+      "Zichron Dovid",
+      40.08889,
+      -74.22669,
+      "Lakewood",
+      "815 Central Ave"
+    ],
+    [
+      "Zichron Yisroel",
+      40.10106,
+      -74.20191,
+      "Lakewood",
+      "121 E 9th St"
+    ],
+    [
+      "Zichron Yoel",
+      40.10076,
+      -74.20763,
+      "Lakewood",
+      "1014 Lawrence Ave"
+    ],
+    [
       "בית הכנסת סאדיגורה",
       40.09287,
       -74.19788,
@@ -9599,6 +9601,20 @@
       -74.2268,
       "Lakewood",
       "1012 Hearthstone Dr"
+    ],
+    [
+      "Ahavat Olam",
+      40.1686,
+      -74.22177,
+      "Howell",
+      "106 Windeler Rd"
+    ],
+    [
+      "B'nai Israel",
+      40.0014,
+      -74.2011,
+      "Toms River",
+      "1488 Old Freehold Rd"
     ],
     [
       "Bais Medrash Be'er Shmuel",
@@ -9648,20 +9664,6 @@
       -74.27552,
       "Jackson",
       "922 Hyson Rd"
-    ],
-    [
-      "Congregation Ahavat Olam",
-      40.1686,
-      -74.22177,
-      "Howell",
-      "106 Windeler Rd"
-    ],
-    [
-      "Congregation B'nai Israel",
-      40.0014,
-      -74.2011,
-      "Toms River",
-      "1488 Old Freehold Rd"
     ],
     [
       "Dover Tov",

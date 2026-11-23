@@ -406,8 +406,12 @@ var LakewoodSearch = (function () {
       });
       if (best >= 0) out.push({ s: sh, score: best });
     });
+    function whole(sh) {          // every typed word is a whole word of the name ("kol" in "Kol Aryeh", not in "Kollel")
+      var ws = shulTokens(sh.name);
+      return query.every(function (t) { return ws.indexOf(t) !== -1; }) ? 0 : 1;
+    }
     out.sort(function (a, b) {
-      return a.score - b.score || (a.s.town === "Lakewood" ? 0 : 1) - (b.s.town === "Lakewood" ? 0 : 1) ||
+      return a.score - b.score || whole(a.s) - whole(b.s) || (a.s.town === "Lakewood" ? 0 : 1) - (b.s.town === "Lakewood" ? 0 : 1) ||
         a.s.name.length - b.s.name.length || a.s.name.localeCompare(b.s.name);
     });
     if (out.length && out[0].score < 3) out = out.filter(function (o) { return o.score < 3; });
@@ -486,6 +490,16 @@ var LakewoodSearch = (function () {
       return tokens.some(function (w) { return closeWord(t, w); });
     })) return 3;
     return -1;
+  }
+
+  /** Best rankTokens over a place's name and its other spellings (-1 = no match). */
+  function bestRank(names, qt) {
+    var best = -1;
+    names.forEach(function (n) {
+      var r = rankTokens(placeTokens(n), qt);
+      if (r >= 0 && (best < 0 || r < best)) best = r;
+    });
+    return best;
   }
 
   /** Streets matching what was typed (a leading house number is ignored: "415 laurel ave" -> laurel ave). */
@@ -574,7 +588,7 @@ var LakewoodSearch = (function () {
     }
     suggestCrossings(streets, text, 2).forEach(function (c) { items.push({ kind: "cross", name: c.name, town: c.town, lat: c.lat, lng: c.lng }); });
     var qt = placeTokens(text), places = suggestPlaces(picker, text, limit);
-    places.forEach(function (p) { items.push({ kind: "place", name: p.name, town: p.town, lat: p.lat, lng: p.lng, score: 0 }); });
+    places.forEach(function (p) { items.push({ kind: "place", name: p.name, town: p.town, lat: p.lat, lng: p.lng, score: 0, shul: !!p.shul, aka: p.aka || [] }); });
     var seen = {};
     items.forEach(function (it) { seen[it.name.toLowerCase()] = true; });
     suggestStreets(streets, text, limit).forEach(function (s) {
@@ -587,7 +601,7 @@ var LakewoodSearch = (function () {
     // keep places ahead of streets only as a tie-break: re-rank everything by match quality
     if (qt.length) {
       items.forEach(function (it, i) {
-        var r = it.kind === "cross" || it.kind === "topic" ? -1 : it.kind === "shul" ? it._shulRank : rankTokens(placeTokens(it.name), qt);
+        var r = it.kind === "cross" || it.kind === "topic" ? -1 : it.kind === "shul" ? it._shulRank : bestRank([it.name].concat(it.aka || []), qt);
         it._r = it.kind === "cross" || it.kind === "topic" ? -1 : (r < 0 ? 3 : r);       // topics and intersections lead
         it._o = i;
       });

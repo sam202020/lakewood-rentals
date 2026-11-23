@@ -679,7 +679,8 @@
       // every suggestion says which town it is in; an intersection says so too
       var hint = pl.kind === "cross" ? "intersection" + (pl.town ? " \u00b7 " + pl.town : "")
         : pl.kind === "topic" ? "only 55+ listings"
-        : pl.kind === "shul" ? "shul \u00b7 " + (pl.address ? pl.address + " \u00b7 " : "") + (pl.town || "") : (pl.town || "");
+        : pl.kind === "shul" ? "shul \u00b7 " + (pl.address ? pl.address + " \u00b7 " : "") + (pl.town || "")
+        : pl.kind === "place" && pl.shul ? "area & shul \u00b7 " + (pl.town || "") : (pl.town || "");
       li.innerHTML = '<span class="sugg__name">' + esc(pl.name) + '</span>' +
         (hint ? '<span class="sugg__town">' + esc(hint) + '</span>' : "");
       // pointerdown (not click) so the box keeps focus and the list does not close first

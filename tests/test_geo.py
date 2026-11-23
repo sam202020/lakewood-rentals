@@ -592,3 +592,46 @@ class ShulTests(unittest.TestCase):
             f.write_text(json.dumps({"shuls": [{"name": "A", "lat": 40.09, "lng": -74.21, "town": "Lakewood"},
                                                {"name": "B", "lat": 40.09, "lng": -74.21, "hide": True}]}))
             self.assertEqual([s["name"] for s in geo.load_shuls(f)], ["A"])
+
+
+class ShulNameAndMergeTests(unittest.TestCase):
+    def test_nobody_says_congregation(self):
+        for raw, want in [("Congregation Kol Aryeh", "Kol Aryeh"), ("Cong. Belz Meadows", "Belz Meadows"),
+                          ("Congregation of North Albert", "North Albert"),
+                          ("Lakewood Sephardic Congregation", "Lakewood Sephardic"),
+                          ("Cong Berditchev / Berditchev Kloiz", "Berditchev / Berditchev Kloiz")]:
+            self.assertEqual(geo.spoken_shul_name(raw), want)
+        for s in geo.load_shuls():
+            self.assertNotRegex(s["name"], r"(?i)\bcong")
+
+    def test_shul_that_is_also_a_neighborhood_is_listed_once(self):
+        picker = geo.picker_entries(geo.load_places())
+        shuls, merged = geo.merge_shuls(geo.load_shuls(), picker)
+        names = {s["name"] for s in shuls}
+        self.assertNotIn("Kol Shimshon", names)           # the neighbourhood Kol Shimshon covers it
+        self.assertNotIn("Bais Medrash Lutzk", names)
+        kol = [p for p in merged if p["name"] == "Kol Shimshon"]
+        self.assertEqual(len(kol), 1)
+        self.assertTrue(kol[0]["shul"])
+        lutzk = [p for p in merged if p["name"] == "Lutzk"][0]
+        self.assertIn("Bais Medrash Lutzk", lutzk["aka"])
+        self.assertIn("Kol Aryeh", names)                  # a shul only: stays a shul
+
+    def test_a_street_is_not_merged_with_a_shul_named_after_it(self):
+        picker = [{"name": "Spruce Street", "lat": 40.0, "lng": -74.2, "town": "Lakewood"}]
+        shuls = [{"name": "Spruce Street Shul", "lat": 40.0, "lng": -74.2, "town": "Lakewood", "address": "", "aka": []}]
+        keep, merged = geo.merge_shuls(shuls, picker)
+        self.assertEqual(len(keep), 1)
+        self.assertFalse(merged[0].get("shul"))
+
+    def test_bmg_buildings_are_shuls_and_the_bmg_areas_are_merged_in(self):
+        picker = geo.picker_entries(geo.load_places())
+        shuls, merged = geo.merge_shuls(geo.load_shuls(), picker)
+        names = [s["name"] for s in shuls]
+        self.assertTrue(any(n.startswith("BMG - Bais Aharon") for n in names))
+        self.assertTrue(any(n.startswith("BMG - Herzka") for n in names))
+        main = [p for p in merged if p["name"].startswith("BMG (Main")][0]
+        self.assertTrue(main["shul"])
+        self.assertIn("BMG", main["aka"])
+        bs = [p for p in merged if p["name"] == "Bais Shalom"][0]
+        self.assertTrue(bs["shul"])

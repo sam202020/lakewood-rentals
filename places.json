@@ -1434,10 +1434,15 @@
   "note": "Google Maps: Wyndham Place, Lakewood. Replaces a wrong OSM match in Freehold."
  },
  "yeshiva": {
-  "name": "Yeshiva (BMG)",
+  "name": "BMG (Main Building, 6th St)",
   "lat": 40.09538,
   "lng": -74.22226,
   "source": "manual",
-  "note": "BMG, 617 6th St."
+  "note": "BMG, 617 6th St.",
+  "aka": [
+   "Yeshiva",
+   "Beth Medrash Govoha",
+   "BMG"
+  ]
  }
 }

@@ -97,6 +97,13 @@ Google Maps search results (coordinates are Google's own place points, so they n
 by name, with their street and town ("shul · 958 E County Line Rd · Lakewood"), Lakewood first, and sorts by distance to the shul
 (the "Within" menu goes down to ¼ mile). Spelling variants (bais/beis/beit, medrash/midrash) are folded together in
 `search-core.js` (`SHUL_SPELL`); generic words ("shul", "congregation") are ignored when something specific is typed.
+- Names are shown as people say them: "Congregation"/"Cong." is dropped (`geo.spoken_shul_name`), nobody says it.
+- A shul that is also a neighbourhood shows **once**, as the neighbourhood ("Kol Shimshon", "Lutzk", "Westgate", ...): `geo.merge_shuls`
+  folds a shul into the same-named neighbourhood within 0.3 mi (words every shul name has - Bais Medrash, Shul, of - are ignored) or the
+  `"area": "<picker name>"` field in shuls.json. The neighbourhood keeps its pin and gains the shul's name as another spelling; the drop-down
+  says "area & shul". A street is never merged (Spruce Street Shul stays a shul).
+- BMG buildings are shuls too (owner: public places used as a shul, and people say them as an area): five entries added by hand, all
+  findable by typing "BMG"; the old `bais shalom` and `yeshiva` (BMG) places are the same places and are merged in.
 - Left out on purpose: yeshiva / Beth Medrash Govoha school buildings, churches and messianic "synagogues", halls, shops.
   A `"hide": true` entry is dropped by `geo.load_shuls`; `"aka": [...]` adds other spellings.
 - To refresh: run the Google Maps searches ("synagogue", "shul", "beis medrash", "minyan") over a grid of map tiles in the built-in

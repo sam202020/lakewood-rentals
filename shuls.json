@@ -1,6 +1,73 @@
 {
- "_note": "Synagogues / shuls / batei medrash within ~9 miles of Lakewood, harvested from Google Maps search results on 2026-11-22 (coordinates are Google's place points). Yeshiva and BMG school buildings, churches, halls and shops are left out. Edit by hand: add \"hide\": true to drop one, \"aka\": [...] for other spellings. tools: see CLAUDE.md.",
+ "_note": "Synagogues / shuls / batei medrash within ~9 miles of Lakewood, harvested from Google Maps search results on 2026-11-22 (coordinates are Google's place points). Yeshiva and BMG school buildings, churches, halls and shops are left out. Edit by hand: add \"hide\": true to drop one, \"aka\": [...] for other spellings. tools: see CLAUDE.md. BMG buildings were added by hand (owner: they are public places used as a shul, and people say them as an area); \"area\" names the places.json entry that is the same place, so the drop-down shows it once.",
  "shuls": [
+  {
+   "name": "BMG - Forest Ave Campus",
+   "lat": 40.10087,
+   "lng": -74.22025,
+   "town": "Lakewood",
+   "address": "1075 Forest Ave",
+   "category": "Yeshiva (used as a shul)",
+   "source": "google-maps",
+   "aka": [
+    "BMG",
+    "Beth Medrash Govoha"
+   ]
+  },
+  {
+   "name": "BMG - Herzka Building (7th St)",
+   "lat": 40.09646,
+   "lng": -74.2216,
+   "town": "Lakewood",
+   "address": "605 7th St",
+   "category": "Yeshiva (used as a shul)",
+   "source": "google-maps",
+   "aka": [
+    "BMG",
+    "Beth Medrash Govoha"
+   ]
+  },
+  {
+   "name": "BMG - Bais Shalom (9th St)",
+   "lat": 40.09919,
+   "lng": -74.21713,
+   "town": "Lakewood",
+   "address": "345 9th St",
+   "category": "Yeshiva (used as a shul)",
+   "source": "google-maps",
+   "aka": [
+    "BMG",
+    "Beth Medrash Govoha"
+   ],
+   "area": "Bais Shalom"
+  },
+  {
+   "name": "BMG - Bais Aharon (10th St)",
+   "lat": 40.09971,
+   "lng": -74.21721,
+   "town": "Lakewood",
+   "address": "350 10th St",
+   "category": "Yeshiva (used as a shul)",
+   "source": "google-maps",
+   "aka": [
+    "BMG",
+    "Beth Medrash Govoha"
+   ]
+  },
+  {
+   "name": "BMG - Main Building (6th St)",
+   "lat": 40.09563,
+   "lng": -74.22206,
+   "town": "Lakewood",
+   "address": "617 6th St",
+   "category": "Yeshiva (used as a shul)",
+   "source": "google-maps",
+   "aka": [
+    "BMG",
+    "Beth Medrash Govoha"
+   ],
+   "area": "Yeshiva (BMG)"
+  },
   {
    "name": "Ahavas Tzedakah",
    "lat": 40.098207,

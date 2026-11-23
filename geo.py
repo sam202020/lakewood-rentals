@@ -321,10 +321,20 @@ def miles_to_street(data, street, lat, lng):
 SHULS_FILE = pathlib.Path(__file__).parent / "shuls.json"
 
 
-def load_shuls(path=SHULS_FILE):
-    """Shuls for the page's "Near" search: [[name, lat, lng, town, address, aka...]], Lakewood first.
+def spoken_shul_name(name):
+    """Nobody in Lakewood says "Congregation": "Congregation Kol Aryeh" -> "Kol Aryeh", "Cong. Belz Meadows" -> "Belz Meadows"."""
+    n = re.sub(r"\bcong(?:regation|regations)?\b\.?\s*", "", name, flags=re.I)
+    n = re.sub(r"^(?:of|the)\s+(?=\S)", "", n.strip(), flags=re.I) if n != name else n
+    n = re.sub(r"\s{2,}", " ", n).strip(" -,/")
+    n = re.sub(r"^/\s*", "", n)
+    return n or name
 
-    shuls.json is harvested from Google Maps (see CLAUDE.md); "hide": true drops an entry.
+
+def load_shuls(path=SHULS_FILE):
+    """Shuls for the page's "Near" search: dicts with name (as spoken), lat, lng, town, address, aka, area; Lakewood first.
+
+    shuls.json is harvested from Google Maps (see CLAUDE.md); "hide": true drops an entry; "area" names the
+    place (places.json display name) that is the same place, so the drop-down shows it once (merge_shuls).
     """
     try:
         data = json.loads(pathlib.Path(path).read_text())
@@ -335,7 +345,50 @@ def load_shuls(path=SHULS_FILE):
         if s.get("hide") or s.get("lat") is None or s.get("lng") is None:
             continue
         town = s.get("town") or towns.town_of(s["lat"], s["lng"])
-        out.append({"name": s["name"], "lat": round(s["lat"], 5), "lng": round(s["lng"], 5), "town": town,
-                    "address": s.get("address", ""), "aka": s.get("aka", [])})
+        out.append({"name": spoken_shul_name(s["name"]), "lat": round(s["lat"], 5), "lng": round(s["lng"], 5), "town": town,
+                    "address": s.get("address", ""), "aka": s.get("aka", []), "area": s.get("area")})
     out.sort(key=lambda s: (s["town"] != "Lakewood", s["name"].lower()))
     return out
+
+
+_SHUL_GENERIC = {"congregation", "cong", "bais", "beis", "beit", "beth", "bet", "medrash", "midrash", "medresh", "shul",
+                 "shuel", "of", "the", "khal", "khal", "hal", "kehilas", "kehillas", "and", "minyan", "k", "d"}
+
+
+def _core_tokens(name):
+    return frozenset(t for t in re.findall(r"[a-z0-9]+", name.lower().replace("'", "")) if t not in _SHUL_GENERIC)
+
+
+def merge_shuls(shuls, picker, near_miles=0.3):
+    """A shul that is the same place as a neighbourhood in the drop-down shows up once, not twice.
+
+    Same place = the shul names that neighbourhood (explicit "area" in shuls.json) or, once words every shul has
+    ("Bais Medrash", "Shul", "of") are removed, its name is the neighbourhood's name and it lies within `near_miles`
+    ("Bais Medrash Lutzk" = "Lutzk", "Kol Shimshon" shul = "Kol Shimshon"). A street is never merged: "Spruce Street Shul"
+    is a shul on a street, not the street. The neighbourhood entry stays (its pin is where its listings are) and
+    gains the shul's name as another spelling and `shul: true`. Returns (shuls still to list, new picker).
+    """
+    picker = [dict(p) for p in picker]
+    by_name = {p["name"].lower(): p for p in picker}
+    cores = [(p, _core_tokens(p["name"])) for p in picker if p["name"].split()[-1] not in _STREET_WORDS
+             and not _ORDINAL_ONLY.match(p["name"])]
+    keep = []
+    for s in shuls:
+        target = by_name.get((s.get("area") or "").lower())
+        if not target:
+            core = _core_tokens(s["name"])
+            if core:
+                for p, pc in cores:
+                    if pc == core and haversine_miles(s["lat"], s["lng"], p["lat"], p["lng"]) <= near_miles:
+                        target = p
+                        break
+        if not target:
+            keep.append(s)
+            continue
+        target["shul"] = True
+        akas = list(target.get("aka") or [])
+        for n in [s["name"]] + list(s.get("aka") or []):
+            if n.lower() != target["name"].lower() and n not in akas:
+                akas.append(n)
+        target["aka"] = akas
+    return keep, picker
