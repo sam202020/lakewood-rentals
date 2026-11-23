@@ -46,7 +46,7 @@ Rules (owner, 2026-11-22):
   property of the listing. `checks.py` warns by name and fails the build under 98%. 7-digit local numbers
   ("905-0200") are stored as `732-905-0200`.
 - Row count check: `python3 build.py` prints a `NOTE` for every ad banner it leaves out, so a missing listing
-  shows up as a missing row, not silence. Nov. 18, 2026 PDF: 244 row bands = 238 listings + 6 ad banners.
+  shows up as a missing row, not silence. Nov. 18, 2026 PDF: 244 row bands = 237 listings + 7 ad rows (6 banners + the "FREE" Hachnosas Orchim entry, which the owner says is an ad).
 - After changing the parser run it on the real PDF too:
   `RENTAL_PDF=/path/to/MasaRentals.pdf python3 -m unittest discover -s tests`
   (every listing must have a phone, a type and bedrooms; ids unique).

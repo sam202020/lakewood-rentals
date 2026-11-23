@@ -775,9 +775,13 @@
  },
  "lutzk": {
   "name": "Lutzk",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "lat": 40.08419,
+  "lng": -74.2547,
+  "source": "manual",
+  "aka": [
+   "Lutsk"
+  ],
+  "note": "Owner: Lutsk/Lutzk neighbourhood = Bais Medrash Lutzk on East Veterans. Google Maps: 520 New Egypt Rd, Lakewood."
  },
  "mackenzie toms river": {
   "name": "Mackenzie Toms River",

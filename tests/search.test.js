@@ -495,3 +495,17 @@ test("real listings: picking Clover sorts a Clover listing first, before Arlingt
 test("template: declares UTF-8 so fractions like 3\u00bd render correctly (not 3\u00c2\u00bd)", () => {
   assert.match(templateHtml.slice(0, 200), /<meta charset="utf-8">/i);
 });
+
+test("suggestPlaces: a place is found by its other spellings too (Lutsk for Lutzk)", () => {
+  const picker = [{ name: "Lutzk", aka: ["Lutsk"] }, { name: "Locust Street" }];
+  assert.deepEqual(names(S.suggestPlaces(picker, "lutsk")), ["Lutzk"]);
+  assert.deepEqual(names(S.suggestPlaces(picker, "lutz")), ["Lutzk"]);
+  assert.deepEqual(names(S.suggestPlaces(picker, "locu")), ["Locust Street"]);
+});
+
+test("real picker: typing Lutsk or Lutzk offers Lutzk", () => {
+  const picker = data.picker || [];
+  if (!picker.length) return;
+  assert.equal(names(S.suggestPlaces(picker, "lutsk"))[0], "Lutzk");
+  assert.equal(names(S.suggestPlaces(picker, "lutzk"))[0], "Lutzk");
+});

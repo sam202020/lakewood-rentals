@@ -766,8 +766,6 @@
       ? '<div class="card__price"><b class="tnum">$' + x.rent.toLocaleString() + '</b><span>per month</span></div>'
       : wk
       ? '<div class="card__price"><b class="tnum">$' + wk[1] + '</b><span>per week</span></div>'
-      : x.rent_display === "Free"
-      ? '<div class="card__price"><b>Free</b><span>no charge</span></div>'
       : '<div class="card__price callto"><b>' +
           (x.rent_display === "Call to discuss" ? "Call to<br>discuss" : "Contact<br>for rent") +
         '</b></div>';

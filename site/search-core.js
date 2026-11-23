@@ -132,13 +132,21 @@ var LakewoodSearch = (function () {
     var qt = placeTokens(text);
     if (!qt.length) return [];
     var qs = qt.join(" "), out = [];
+    function rank(names) {                      // best score over a place's name and its other spellings
+      var best = null;
+      names.forEach(function (n) {
+        var lt = placeTokens(n), label = lt.join(" "), score;
+        if (label.indexOf(qs) === 0) score = 0;
+        else if (qt.every(function (t) { return lt.some(function (w) { return w.indexOf(t) === 0; }); })) score = 1;
+        else if (label.indexOf(qs) !== -1) score = 2;
+        else return;
+        if (!best || score < best.score) best = { score: score, len: label.length };
+      });
+      return best;
+    }
     (picker || []).forEach(function (p) {
-      var lt = placeTokens(p.name), label = lt.join(" "), score;
-      if (label.indexOf(qs) === 0) score = 0;
-      else if (qt.every(function (t) { return lt.some(function (w) { return w.indexOf(t) === 0; }); })) score = 1;
-      else if (label.indexOf(qs) !== -1) score = 2;
-      else return;
-      out.push({ p: p, score: score, len: label.length });
+      var r = rank([p.name].concat(p.aka || []));
+      if (r) out.push({ p: p, score: r.score, len: r.len });
     });
     out.sort(function (a, b) { return a.score - b.score || a.len - b.len || a.p.name.localeCompare(b.p.name); });
     return out.slice(0, limit || 8).map(function (o) { return o.p; });

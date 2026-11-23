@@ -34,7 +34,7 @@ MAX_MILES_FROM_LAKEWOOD = 20
 # Misspellings / short forms in the PDF that should resolve like the real name.
 ALIASES = {"jacksn": "jackson", "jksn": "jackson", "hwl": "howell", "prospct": "prospect",
            "somerst": "somerset", "hearthstn": "hearthstone", "brookwd": "brookwood",
-           "sholom": "shalom"}
+           "sholom": "shalom", "lutsk": "lutzk"}
 
 
 def normalize(part):
@@ -96,6 +96,13 @@ def resolve(location, places):
     or None (nothing resolved). `unknown` lists the parts missing from `places`.
     """
     parts = location_parts(location)
+    # "Lutzk near Westgate" is at Lutzk; Westgate only says roughly where, so it is not averaged in.
+    pre = re.split(r"\s+near\s+", location or "", maxsplit=1, flags=re.I)
+    if len(pre) == 2 and pre[0].strip():
+        left = location_parts(pre[0])
+        if left and all(_known(places, k) for k in left):
+            parts = left
+            location = pre[0]
     # A whole-name entry wins, and an intersection matches in either order
     # ("Sunset & James" == "James & Sunset").
     cands = [normalize(location)]
@@ -195,7 +202,8 @@ def picker_entries(places, merge_miles=0.15, intersection_miles=0.25):
             continue
         cur = best.get(name.lower())
         if cur is None or (e.get("source") == "manual" and cur["source"] != "manual"):
-            best[name.lower()] = {"name": name, "lat": e["lat"], "lng": e["lng"], "source": e.get("source")}
+            best[name.lower()] = {"name": name, "lat": e["lat"], "lng": e["lng"], "source": e.get("source"),
+                                  "aka": e.get("aka")}
     for low, item in list(best.items()):
         for suffix in _STREET_WORDS:
             twin = best.get(low + " " + suffix.lower())
@@ -216,5 +224,10 @@ def picker_entries(places, merge_miles=0.15, intersection_miles=0.25):
             if twin and twin is not item and haversine_miles(item["lat"], item["lng"], twin["lat"], twin["lng"]) <= intersection_miles:
                 best.pop(low, None)
                 break
-    return sorted(({"name": v["name"], "lat": v["lat"], "lng": v["lng"]} for v in best.values()),
-                  key=lambda v: v["name"].lower())
+    out = []
+    for v in best.values():
+        item = {"name": v["name"], "lat": v["lat"], "lng": v["lng"]}
+        if v.get("aka"):
+            item["aka"] = v["aka"]          # other spellings people type ("Lutsk" for "Lutzk")
+        out.append(item)
+    return sorted(out, key=lambda v: v["name"].lower())

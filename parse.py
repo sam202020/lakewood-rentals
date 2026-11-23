@@ -375,11 +375,12 @@ def parse_row(words, page_no=0, row_no=0):
         phones = find_phones(re.sub(r"\s+", "", " ".join(w["text"] for w in cols["comments"])))
     if not (type_letters or br or baths):
         return None                                           # an ad banner, not a listing
+    if free and not rent_num:
+        return None                                           # "FREE": a charity ad (owner: not a rental)
     if not loc and not comments and not phones:
         return None
     umap = {"G": "Gas", "E": "Electric", "W": "Water", "H": "Heat"}
-    rent_display = ("Free" if free and not rent_num else
-                    f"${rent_num:,}/week" if weekly and rent_num else
+    rent_display = (f"${rent_num:,}/week" if weekly and rent_num else
                     f"${rent_num:,}/mo" if rent_num else
                     "Call to discuss" if call_to_discuss else "Contact for rent")
     return {

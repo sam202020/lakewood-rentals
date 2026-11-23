@@ -156,14 +156,18 @@ class OneListing(unittest.TestCase):
                      ("(cid:2)", 229, 284.5), ("905-0200", 333, 284.5), ("Large", 412, 284.5))
         self.assertEqual(x["phones"], ["732-905-0200"])
 
-    def test_phone_that_is_part_of_the_rent_area(self):
-        x = self.row(("A998_718:3", 85, 300.7), ("1", 100, 300.7), ("1", 119, 300.7), ("Raintree", 158, 300.7),
-                     ("FREE732-814-4648", 221, 300.7), ("Hachnosas", 316, 300.7), ("Orchim", 358, 300.7),
-                     ("Eishel", 388, 300.7), ("Elisheva", 412, 300.7), ("apartment.", 445, 300.7))
+    def test_a_free_listing_is_an_ad_and_is_left_out(self):
+        """Owner: the 'FREE' Hachnosas Orchim entry is an ad, not a rental."""
+        self.assertIsNone(self.row(
+            ("A998_718:3", 85, 300.7), ("1", 100, 300.7), ("1", 119, 300.7), ("Raintree", 158, 300.7),
+            ("FREE732-814-4648", 221, 300.7), ("Hachnosas", 316, 300.7), ("Orchim", 358, 300.7),
+            ("Eishel", 388, 300.7), ("Elisheva", 412, 300.7), ("apartment.", 445, 300.7)))
+
+    def test_phone_written_in_the_rent_area_is_still_found(self):
+        x = self.row(("1A1_9:3", 85, 300.7), ("1", 100, 300.7), ("1", 119, 300.7), ("Raintree", 158, 300.7),
+                     ("3200", 225, 300.7), ("732-814-4648", 221, 308.0), ("Nice", 388, 300.7))
         self.assertEqual(x["phones"], ["732-814-4648"])
-        self.assertEqual(x["rent_display"], "Free")
-        self.assertIsNone(x["rent"])
-        self.assertIn("Hachnosas Orchim Eishel", x["comments"])
+        self.assertEqual(x["rent"], 3200)
 
     def test_two_phone_lines_each_shattered(self):
         x = self.row(("11A54_1013:17", 84, 623.8), ("1", 100, 623.8), ("1", 119, 623.8), ("(cid:2)", 229, 623.8),

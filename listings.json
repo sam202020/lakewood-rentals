@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-23T00:22:32+00:00",
+  "generated_at": "2026-11-23T00:31:29+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
-  "count": 238,
+  "count": 237,
   "listings": [
     {
       "id": "1R090_890:12",
@@ -29,8 +29,8 @@
       ],
       "furnished": true,
       "comments": "Furnished/unfurnished rooms for single learning/earning men in house of singles.",
-      "lat": 40.08734,
-      "lng": -74.25544,
+      "lat": 40.08419,
+      "lng": -74.2547,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -6028,32 +6028,6 @@
       "geo_spread": 0
     },
     {
-      "id": "A998_718:3",
-      "type": "Apartment",
-      "utilities_included": [],
-      "bedrooms": "1",
-      "bedrooms_num": 1,
-      "baths": "1",
-      "location": "Raintree",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Free",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "732-814-4648"
-      ],
-      "furnished": false,
-      "comments": "Hachnosas Orchim Eishel Elisheva apartment. No charge, maximum week stay. Ground floor, separate entrance.",
-      "lat": 40.0968,
-      "lng": -74.16462,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
       "id": "11A53_1012:19",
       "type": "Apartment",
       "utilities_included": [
@@ -7017,6 +6991,11 @@
       "lat": 40.04684,
       "lng": -74.20966
     },
+    "lutzk": {
+      "name": "Lutzk",
+      "lat": 40.08419,
+      "lng": -74.2547
+    },
     "mackenzie toms river": {
       "name": "Mackenzie Toms River",
       "lat": 40.03247,
@@ -7758,6 +7737,14 @@
       "name": "Locust Street",
       "lat": 40.04684,
       "lng": -74.20966
+    },
+    {
+      "name": "Lutzk",
+      "lat": 40.08419,
+      "lng": -74.2547,
+      "aka": [
+        "Lutsk"
+      ]
     },
     {
       "name": "Mackenzie Toms River",

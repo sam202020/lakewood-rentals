@@ -413,6 +413,37 @@ class ShippedPicker(unittest.TestCase):
             self.assertTrue(geo.plausible(p["lat"], p["lng"]), p["name"])
 
 
+class Lutzk(unittest.TestCase):
+    """Owner: add Lutsk/Lutzk as a neighbourhood: Bais Medrash Lutzk on East Veterans (Google Maps: 520 New Egypt Rd)."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.places = geo.load_places()
+        cls.picker = geo.picker_entries(cls.places)
+
+    def test_lutzk_is_a_manual_neighbourhood_in_lakewood(self):
+        e = self.places["lutzk"]
+        self.assertEqual(e["source"], "manual")
+        self.assertLess(geo.haversine_miles(e["lat"], e["lng"], 40.08419, -74.25470), 0.05)
+
+    def test_it_is_in_the_picker_and_findable_as_lutsk(self):
+        entry = next(p for p in self.picker if p["name"] == "Lutzk")
+        self.assertEqual(entry.get("aka"), ["Lutsk"])
+
+    def test_either_spelling_in_a_listing_resolves(self):
+        for text in ("Lutzk", "Lutsk", "Lutzk Area"):
+            self.assertEqual(geo.resolve(text, self.places)["lat"], self.places["lutzk"]["lat"], text)
+
+    def test_x_near_y_is_at_x(self):
+        g = geo.resolve("Lutzk near Westgate", self.places)
+        self.assertEqual((g["lat"], g["lng"]), (self.places["lutzk"]["lat"], self.places["lutzk"]["lng"]))
+
+    def test_near_with_an_unknown_first_part_still_uses_what_it_can(self):
+        places = {"westgate": {"lat": 40.087, "lng": -74.255, "source": "manual"}}
+        g = geo.resolve("Nowhereville near Westgate", places)
+        self.assertEqual(g["lat"], 40.087)
+
+
 class AuditedPlaces(unittest.TestCase):
     def test_resolve_flags_unchecked_osm_pins(self):
         places = {"raintree": {"lat": 40.1, "lng": -74.2, "source": "osm"},
