@@ -423,6 +423,7 @@
   }
   .sugg li.on, .sugg li:hover { background: var(--accent-soft); }
   .sugg[data-mode="hints"]::before { content: "You can search by\2026"; }
+  .sugg[data-mode="kw"]::before { content: "Search the listings for\2026"; }
   .sugg::before {
     content: "Sort by distance from\2026"; display: block; padding: 6px 10px 4px;
     font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); font-weight: 600;
@@ -934,19 +935,50 @@
     { kind: "hint", name: "A shul", note: "e.g. Kol Aryeh, Chabad, BMG", fill: "Kol Aryeh" },
     { kind: "hint", name: "Any word in the listings", note: "e.g. pool, furnished, basement", fill: "pool" }
   ];
+  /** Keyword suggestions for what was typed: the word itself and related words people use, each with how many listings say it.
+   *  ("pool" -> pool, swimming pool, inground pool). Only words that some listing mentions are offered. */
+  function keywordRows(text) {
+    var t = LakewoodSearch.normalizeQuery(text).trim();
+    if (t.replace(/[^a-z0-9]/g, "").length < 2) return [];
+    var seen = {}, counts = {}, rows = [];
+    function count(term) {
+      var st = LakewoodSearch.defaultState(); st.q = term;
+      return L.filter(function (x) { return LakewoodSearch.match(x, st); }).length;
+    }
+    function add(term, note) {
+      var key = term.toLowerCase();
+      if (seen[key]) return;
+      seen[key] = true;
+      var n = count(term);
+      if (counts[n]) return;                                          // same listings as a word already offered: nothing new to pick
+      counts[n] = true;
+      if (n) rows.push({ kind: "keyword", name: term, note: (note ? note + " \u00b7 " : "") + n + (n === 1 ? " listing" : " listings"), fill: term });
+    }
+    add(t, "keyword");
+    LakewoodSearch.relatedWords(t).slice(0, 12).forEach(function (w) { if (rows.length < 4) add(w, "related"); });
+    return rows;
+  }
   function updateSugg() {
     sugg.removeAttribute("data-mode");
     if (!q.value.trim()) { items = HINTS; active = -1; sugg.setAttribute("data-mode", "hints"); paintSugg(); sugg.hidden = false; q.setAttribute("aria-expanded", "true"); return; }
     items = LakewoodSearch.suggestAll(PICKER, STREETS, q.value, 8, SHULS, PREFERRED);
     if (S.origin && S.origin.preview && items.length && items[0].kind !== "hint")
       items.push({ kind: "keyword", name: "Search the listings for the word \u201c" + q.value.trim() + "\u201d", note: "keyword", fill: q.value.trim() });
+    else if (!(S.origin && S.origin.preview) && !items.some(function (it) { return it.kind === "topic" || it.kind === "hint"; })) {
+      var kws = keywordRows(q.value);                                  // not a place: offer the word and its related words first
+      if (kws.length) {
+        // the word is in the listings: show it and its related words, and only places that really start with it (no sounds-like guesses)
+        items = kws.concat(items.filter(function (it) { return it._r < 3; })).slice(0, 8);
+        sugg.setAttribute("data-mode", "kw");
+      }
+    }
     active = -1;
     if (!items.length) return closeSugg();
     paintSugg(); sugg.hidden = false; q.setAttribute("aria-expanded", "true");
   }
   function pickPlace(pl) {
     if (pl.kind === "keyword") {                                  // the word, not the place
-      kwOnlyFor = pl.fill.toLowerCase(); applyIntent(); render(); closeSugg(); return;
+      q.value = pl.fill; kwOnlyFor = pl.fill.toLowerCase(); applyIntent(); render(); closeSugg(); return;
     }
     if (pl.kind === "hint") {                                     // an example: type it for the visitor
       q.value = pl.fill; applyIntent(); render(); updateSugg(); return;

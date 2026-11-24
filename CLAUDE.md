@@ -171,6 +171,9 @@ spot on the map; Enter or a click keeps it as the "Near" chip. Otherwise the wor
   mentioned) and `others` (every filter passes, the words are not). The page shows "N listings mention 'pool'", the matches, a divider "N other
   listings", then the others (each group in the chosen sort; the map dims the others' pins and fits to every matching pin (the "core of Lakewood" view that ignores far-out towns is only for 60+ pins), but never closer than zoom 14, about 3 miles across, so the surroundings stay in view). If nothing mentions the
   words it says so and shows the whole list. The other filters (type, beds, rent, ...) stay strict.
+- **Keyword suggestions** (owner, 2026-11-24: "pool" is not Liverpool): typed words match the start of a word in a name, never the middle. When the word is in the
+  listings the drop-down offers it first with its listing count ("pool . keyword . 15 listings") and related words that pick out different listings
+  ("heated pool . 3 listings"), then only places that really start with it. A related word with the same listings as one already offered is left out.
 - A typo only counts as a place when it is a real misspelling of the name (edit distance), not merely a similar sound (so "zzzzqq" is not Zackery Court).
 - "raintree pool" = Raintree (sort) + "pool" (filter); the place can come first or last. A last dropdown row, "Search the listings for the
   word ...", and the "search the word instead" link switch a place word back to a keyword filter.

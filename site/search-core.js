@@ -539,7 +539,7 @@ var LakewoodSearch = (function () {
     var label = tokens.join(" "), qs = qt.join(" ");
     if (label.indexOf(qs) === 0) return 0;
     if (qt.every(function (t) { return tokens.some(function (w) { return w.indexOf(t) === 0; }); })) return 1;
-    if (label.indexOf(qs) !== -1) return 2;
+    if ((" " + label).indexOf(" " + qs) !== -1) return 2;               // typed words start a word of the name (not the middle of one: "pool" is not Liverpool)
     // a small typo or another spelling ("raintre", "luzk", "clifto", "jak" for Jackson): every typed word is close
     // to a word of the name, in spelling or in sound. Numbers ("13th") are never "corrected".
     if (qt.every(function (t) {

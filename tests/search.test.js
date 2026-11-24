@@ -1188,3 +1188,11 @@ test("uncertaintyMiles: a town-only listing is as wide as the Jewish area of tha
   assert.equal(S.uncertaintyMiles(L({ geo: "town", geo_area_miles: 1.1 })), 1.1);
   assert.equal(S.uncertaintyMiles(L({ geo: "town" })), 1);
 });
+
+test("suggestions: a typed word does not match the middle of another word ('pool' is not Liverpool)", () => {
+  const data = pagePayload();
+  const streets = S.decodeStreets(data.streets);
+  const names = S.suggestAll(data.picker, streets, "pool", 8, [], data.preferred).map((i) => i.name);
+  assert.ok(!names.some((n) => /liverpool/i.test(n)), names.join(", "));
+  assert.ok(S.relatedWords("pool").includes("swimming pool"));      // the page offers these as keyword suggestions
+});
