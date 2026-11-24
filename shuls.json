@@ -1,15 +1,20 @@
 {
- "_note": "Synagogues / shuls / batei medrash within ~9 miles of Lakewood, harvested from Google Maps search results on 2026-11-22 (coordinates are Google's place points). Yeshiva and BMG school buildings, churches, halls and shops are left out. Edit by hand: add \"hide\": true to drop one, \"aka\": [...] for other spellings. tools: see CLAUDE.md. BMG buildings were added by hand (owner: they are public places used as a shul, and people say them as an area). \"BMG\" alone = the 6th-7th St campus (main + Herzka, the place 'BMG'); the others have their own names (Beis Aharon, Beis Shalom, Forest Beis Medrash); 'Princeton Beis Medrash' is not on Google Maps: placed from the owner's description at the SE corner of Princeton Ave and 7th St (approximate); \"area\" names the places.json entry that is the same place, so the drop-down shows it once.",
+ "_note": "Synagogues / shuls / batei medrash within ~9 miles of Lakewood, harvested from Google Maps search results on 2026-11-22 (coordinates are Google's place points). Yeshiva and BMG school buildings, churches, halls and shops are left out. Edit by hand: add \"hide\": true to drop one, \"aka\": [...] for other spellings. tools: see CLAUDE.md. BMG buildings were added by hand (owner: they are public places used as a shul, and people say them as an area). \"BMG\" alone = the 6th-7th St campus (main + Herzka, the place 'BMG'); the others have their own names (Beis Aharon, Beis Shalom, Forest Beis Medrash); 'Princeton Beis Medrash' is not on Google Maps: Google Maps has it as 'BMG Bais Shmuel' at Princeton Ave & 7th St; \"area\" names the places.json entry that is the same place, so the drop-down shows it once.",
  "shuls": [
   {
    "name": "Princeton Beis Medrash",
-   "lat": 40.0976,
-   "lng": -74.20887,
+   "lat": 40.09766,
+   "lng": -74.20825,
    "town": "Lakewood",
-   "address": "Princeton Ave & 7th St (southeast corner)",
+   "address": "Princeton Ave & 7th St",
    "category": "Yeshiva (BMG)",
-   "source": "owner + Google Maps intersection",
+   "source": "google-maps",
    "aka": [
+    "BMG Bais Shmuel",
+    "BMG Beis Shmuel",
+    "Bais Shmuel",
+    "Beis Shmuel",
+    "Base Shmuel",
     "BMG Princeton",
     "Princeton Yeshiva",
     "Yeshiva of Princeton",
@@ -17,7 +22,7 @@
     "BMG",
     "Beth Medrash Govoha"
    ],
-   "note": "APPROXIMATE: owner (2026-11-24) says the Yeshiva of Princeton is on the southeast corner of Princeton Ave and 7th St (\"I believe\"). Google Maps intersection point 40.09775,-74.20907, moved about 20 m south-east."
+   "note": "Google Maps: BMG Bais Shmuel (found by the owner 2026-11-24), 40.0976568,-74.2082505: the corner of Princeton Ave and 7th St. People say Princeton Beis Medrash."
   },
   {
    "name": "Forest Beis Medrash",

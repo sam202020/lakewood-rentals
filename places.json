@@ -562,10 +562,16 @@
   "note": "Checked on Google Maps: matches the OSM pin."
  },
  "heritage pt": {
-  "name": "Heritage Pt",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "name": "Heritage Point",
+  "lat": 40.14523,
+  "lng": -74.23388,
+  "source": "manual",
+  "aka": [
+   "Heritage Pt.",
+   "Heritage Drive",
+   "Heritage Dr."
+  ],
+  "note": "Owner 2026-11-24: the neighbourhood is Heritage Point or Heritage Drive in Howell (not sure of the name). Google Maps has no 'Heritage Point' listing; its Heritage Dr, Howell Township NJ 07731 is at 40.1452302,-74.2338826 (between Friendship Rd and Shady Ln), used as the pin."
  },
  "high st": {
   "name": "High St",

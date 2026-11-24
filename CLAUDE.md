@@ -75,6 +75,11 @@ moves the town-only listings there (Jackson, Toms River, Howell, Manchester, Bri
 "Near" drop-down use the same point, and the dashed circle is as wide as that area (`geo_area_miles`, 0.5 to 1.5 mi). It is recomputed every
 build, so it follows the week's listings. Verify the result against Google Maps when it looks off.
 
+## Heritage Point (Howell)
+
+"Howell / Heritage Pt." is pinned at Google Maps' Heritage Dr, Howell 07731 (place `heritage pt`, shown as "Heritage Point", also "Heritage Drive"). The owner is
+not sure whether the neighbourhood is called Heritage Point or Heritage Drive; Google has no "Heritage Point". Streets around it were added to `streets.json`.
+
 ## Not every listing location is a neighbourhood
 
 A vague phrase in a listing ("Prime Jackson Area", "55+Community", "Lakewood Area") is not a neighbourhood. It may get a
@@ -172,8 +177,7 @@ spot on the map; Enter or a click keeps it as the "Near" chip. Otherwise the wor
 - Once a "Near" chip is set, typing is a keyword filter again.
 - **"yeshiva" on its own is "BMG"** (owner, 2026-11-24): the same drop-down and the same near-BMG sort (`WORD_FOR_PLACE` in search-core.js).
 - **BMG** alone = the campus between 6th and 7th St (place "BMG", first in the list). The other buildings go by their own names: Beis Aharon
-  (10th St), Beis Shalom (9th St), Forest Beis Medrash (Forest Ave), Princeton Beis Medrash (southeast corner of Princeton Ave and 7th St;
-  the owner's description, "I believe", Google Maps has no listing, so the pin is approximate).
+  (10th St), Beis Shalom (9th St), Forest Beis Medrash (Forest Ave), Princeton Beis Medrash (Google Maps: "BMG Bais Shmuel", Princeton Ave & 7th St; also found as Bais Shmuel).
 
 ## Search box must say it finds shuls
 

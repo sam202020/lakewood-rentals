@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T19:26:45+00:00",
+  "generated_at": "2026-11-24T19:30:59+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -357,13 +357,12 @@
       ],
       "furnished": false,
       "comments": "Very well kept, upgraded kitchen, suite on lower level, close to Shuls. Available immediately.",
-      "lat": 40.1474,
-      "lng": -74.19359,
-      "geo": "town",
+      "lat": 40.14523,
+      "lng": -74.23388,
+      "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
-      "geo_spread": 0,
-      "geo_area_miles": 2.6
+      "geo_spread": 0
     },
     {
       "id": "U11TT66_1036:16",
@@ -2734,13 +2733,13 @@
       ],
       "furnished": false,
       "comments": "Beautiful move in ready. Available immediately",
-      "lat": 40.1474,
-      "lng": -74.19359,
+      "lat": 40.14696,
+      "lng": -74.20164,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 2.6
+      "geo_area_miles": 2.4
     },
     {
       "id": "UHH1172_1048:2",
@@ -4266,13 +4265,12 @@
       ],
       "furnished": false,
       "comments": "Beautiful updated house with finished basement. Available immediately.",
-      "lat": 40.1474,
-      "lng": -74.19359,
-      "geo": "town",
+      "lat": 40.14523,
+      "lng": -74.23388,
+      "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
-      "geo_spread": 0,
-      "geo_area_miles": 2.6
+      "geo_spread": 0
     },
     {
       "id": "U11TT74_1053:10",
@@ -6889,6 +6887,11 @@
       "lat": 40.0619,
       "lng": -74.22684
     },
+    "heritage pt": {
+      "name": "Heritage Point",
+      "lat": 40.14523,
+      "lng": -74.23388
+    },
     "high st": {
       "name": "High St",
       "lat": 40.07005,
@@ -6916,8 +6919,8 @@
     },
     "howell": {
       "name": "Howell",
-      "lat": 40.1474,
-      "lng": -74.19359
+      "lat": 40.14696,
+      "lng": -74.20164
     },
     "hyson": {
       "name": "Hyson",
@@ -7740,6 +7743,17 @@
       ]
     },
     {
+      "name": "Heritage Point",
+      "lat": 40.14523,
+      "lng": -74.23388,
+      "town": "Howell",
+      "aka": [
+        "Heritage Pt.",
+        "Heritage Drive",
+        "Heritage Dr."
+      ]
+    },
+    {
       "name": "High Street",
       "lat": 40.07005,
       "lng": -74.21677,
@@ -7765,8 +7779,8 @@
     },
     {
       "name": "Howell",
-      "lat": 40.1474,
-      "lng": -74.19359
+      "lat": 40.14696,
+      "lng": -74.20164
     },
     {
       "name": "Hyson",
@@ -9348,10 +9362,10 @@
     ],
     [
       "Princeton Beis Medrash",
-      40.0976,
-      -74.20887,
+      40.09766,
+      -74.20825,
       "Lakewood",
-      "Princeton Ave & 7th St (southeast corner)"
+      "Princeton Ave & 7th St"
     ],
     [
       "Prospect Park Shul",
@@ -10873,11 +10887,16 @@
     ],
     [
       "Princeton Beis Medrash",
-      40.0976,
-      -74.20887,
+      40.09766,
+      -74.20825,
       "Lakewood",
-      "Princeton Ave & 7th St (southeast corner)",
+      "Princeton Ave & 7th St",
       [
+        "BMG Bais Shmuel",
+        "BMG Beis Shmuel",
+        "Bais Shmuel",
+        "Beis Shmuel",
+        "Base Shmuel",
         "BMG Princeton",
         "Princeton Yeshiva",
         "Yeshiva of Princeton",

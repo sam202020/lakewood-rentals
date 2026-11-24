@@ -658,7 +658,8 @@ class OwnerSearchRules(unittest.TestCase):
     def test_princeton_beis_medrash_is_at_princeton_and_7th(self):
         s = [x for x in geo.load_shuls() if x["name"] == "Princeton Beis Medrash"]
         self.assertEqual(len(s), 1)
-        self.assertLess(geo.haversine_miles(s[0]["lat"], s[0]["lng"], 40.09775, -74.20907), 0.05)   # Google Maps: Princeton Ave & 7th St
+        self.assertLess(geo.haversine_miles(s[0]["lat"], s[0]["lng"], 40.0976568, -74.2082505), 0.02)   # Google Maps: BMG Bais Shmuel, Princeton Ave & 7th St
+        self.assertIn("BMG Bais Shmuel", s[0]["aka"])
         self.assertEqual(s[0]["town"], "Lakewood")
         self.assertIn("Yeshiva of Princeton", s[0]["aka"])
 
@@ -696,3 +697,16 @@ class TownCentres(unittest.TestCase):
         self.assertEqual((a["lat"], a["lng"]), (40.127, -74.29))
         self.assertEqual(a["geo_area_miles"], 2.5)
         self.assertEqual((b["lat"], b["lng"]), (40.13, -74.28))
+
+
+class HeritagePoint(unittest.TestCase):
+    def test_howell_heritage_listings_are_pinned_at_heritage_point_not_the_town_centre(self):
+        places = geo.load_places()
+        e = places["heritage pt"]
+        self.assertEqual(e["source"], "manual")
+        self.assertTrue(geo.plausible(e["lat"], e["lng"]))
+        self.assertLess(geo.haversine_miles(e["lat"], e["lng"], 40.1452302, -74.2338826), 0.05)   # Google Maps: Heritage Dr, Howell 07731
+        for loc in ("Howell / Heritage Pt.", "Heritage Pt. / Howell"):
+            g = geo.resolve(loc, places)
+            self.assertEqual(g["precision"], "place", loc)
+            self.assertAlmostEqual(g["lat"], e["lat"], places=4)
