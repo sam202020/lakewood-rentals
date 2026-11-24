@@ -647,7 +647,7 @@ var LakewoodSearch = (function () {
     }
     // "shul", "synagogue", "minyan" ... : the visitor has the right idea, tell them to type a shul's name
     if (/^(shuls?|shules?|synagogues?|minyan(im)?|beis medrash|bais medrash|beit midrash|beis midrash)$/.test(String(text || "").trim().toLowerCase())) {
-      items.push({ kind: "hint", name: "Type a shul\u2019s name", note: "e.g. Kol Aryeh, Chabad, BMG", fill: "Kol Aryeh" });
+      items.push({ kind: "hint", name: "Type a shul\u2019s name", note: "e.g. Kol Aryeh, BMG, Spruce Street", fill: "Kol Aryeh" });
     }
     suggestCrossings(streets, text, 2).forEach(function (c) { items.push({ kind: "cross", name: c.name, town: c.town, lat: c.lat, lng: c.lng }); });
     var qt = placeTokens(text), places = suggestPlaces(picker, text, limit);

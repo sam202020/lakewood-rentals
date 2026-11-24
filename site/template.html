@@ -662,6 +662,11 @@
   .kwdivider { margin-top: 6px; padding: 10px 2px 2px; border-top: 2px solid var(--rule-strong); font-weight: 600; letter-spacing: .02em; }
   .tbl tr.kwrow td { background: var(--paper); font-size: 13px; font-weight: 700; color: var(--muted); padding: 9px 10px; }
   .tbl tr.kwhead td { color: var(--ink); }
+  .sugg[data-mode="browse-nb"]::before { content: "Neighborhoods with listings\2026"; }
+  .sugg[data-mode="browse-st"]::before { content: "Streets with listings\2026"; }
+  .sugg[data-mode="browse-sh"]::before { content: "Shuls, Lakewood first\2026"; }
+  .sugg[data-mode="browse-kw"]::before { content: "Words in the listings\2026"; }
+  .sugg[data-mode^="browse"] { max-height: min(60vh, 520px); }
 </style>
 
 <header class="searchbar topbar" id="searchbar">
@@ -917,7 +922,7 @@
       // every suggestion says which town it is in; an intersection says so too
       var hint = pl.kind === "cross" ? "intersection" + (pl.town ? " \u00b7 " + pl.town : "")
         : pl.kind === "topic" ? "only 55+ listings"
-        : pl.kind === "hint" || pl.kind === "keyword" ? (pl.note || "")
+        : pl.kind === "hint" || pl.kind === "keyword" || pl.kind === "browse" ? (pl.note || "")
         : pl.kind === "shul" ? "shul \u00b7 " + (pl.address ? pl.address + " \u00b7 " : "") + (pl.town || "")
         : pl.kind === "place" && pl.shul ? "area & shul \u00b7 " + (pl.town || "") : (pl.town || "");
       li.innerHTML = '<span class="sugg__name">' + esc(pl.name) + '</span>' +
@@ -930,11 +935,58 @@
   }
   // an empty box that has focus says what can be searched
   var HINTS = [
-    { kind: "hint", name: "A neighborhood", note: "e.g. Raintree", fill: "Raintree" },
-    { kind: "hint", name: "A street or intersection", note: "e.g. Clover & Ocean", fill: "Clover & Ocean" },
-    { kind: "hint", name: "A shul", note: "e.g. Kol Aryeh, Chabad, BMG", fill: "Kol Aryeh" },
-    { kind: "hint", name: "Any word in the listings", note: "e.g. pool, furnished, basement", fill: "pool" }
+    { kind: "hint", name: "Neighborhood", note: "pick from the list", browse: "nb" },
+    { kind: "hint", name: "Street or intersection", note: "e.g. Clover & Ocean", browse: "st" },
+    { kind: "hint", name: "Shul", note: "e.g. Kol Aryeh, BMG", browse: "sh" },
+    { kind: "hint", name: "Keyword", note: "e.g. pool, furnished, basement", browse: "kw" }
   ];
+  // Clicking a kind of search opens the list to choose from (not an example typed for you).
+  var STREET_WORD = /\b(street|st|avenue|ave|drive|dr|road|rd|lane|ln|court|ct|boulevard|blvd|place|pl|way|terrace|circle|route|rt)\.?$/i;
+  var KEYWORDS = ["pool", "basement", "furnished", "washer", "dryer", "garage", "backyard", "porch", "short term", "long term", "choson", "kallah",
+                  "parking", "office", "renovated", "new", "shul", "yeshiva"];
+  var browseKinds = null;
+  function browseItems(key) {
+    function resolve(name) { var r = LakewoodSearch.placeIntent(name, PICKER, STREETS, SHULS, PREFERRED); return r && !r.rest ? r.item : null; }
+    function placeRow(e) {
+      return { kind: "browse", name: e.name, note: e.n + (e.n === 1 ? " listing" : " listings") + (e.town && e.town !== "Lakewood" ? " \u00b7 " + e.town : ""),
+               pick: function () { pickPlace(e.item); } };
+    }
+    var byName = function (a, b) { return a.name.localeCompare(b.name); };
+    if (key === "nb" || key === "st") {
+      // each place name on a listing, resolved to the place it is: names that mean the same place (Hearthstn. / Hearthstone, High St. / High Street) merge
+      if (!browseKinds) {
+        browseKinds = { nb: {}, st: {} };
+        NB.forEach(function (n) {
+          var it = resolve(n.name);
+          if (!it) return;                                                   // 55+ Community and the like are not places
+          var cls = it.kind === "street" || it.kind === "cross" || /&/.test(n.name) || STREET_WORD.test(it.name) || /^\d+(st|nd|rd|th)\b/i.test(it.name) ? "st" : it.kind === "place" ? "nb" : "";
+          if (!cls) return;
+          var k = it.name + "|" + (it.town || ""), cur = browseKinds[cls][k];
+          if (cur) cur.n += n.n; else browseKinds[cls][k] = { name: it.name, town: it.town, n: n.n, item: it };
+        });
+      }
+      return Object.keys(browseKinds[key]).map(function (k) { return browseKinds[key][k]; }).sort(byName).map(placeRow);
+    }
+    if (key === "sh") {
+      return SHULPINS.slice().sort(function (a, b) { return (a.town === "Lakewood" ? 0 : 1) - (b.town === "Lakewood" ? 0 : 1) || a.name.localeCompare(b.name); })
+        .map(function (sh) {
+          return { kind: "browse", name: sh.name, note: (sh.address ? sh.address + " \u00b7 " : "") + (sh.town || ""),
+                   pick: function () { pickPlace({ kind: "shul", name: sh.name, lat: sh.lat, lng: sh.lng, town: sh.town, address: sh.address }); } };
+        });
+    }
+    var st = LakewoodSearch.defaultState(), rows = [];
+    KEYWORDS.forEach(function (w) {
+      st.q = w;
+      var n = L.filter(function (x) { return LakewoodSearch.match(x, st); }).length;
+      if (n) rows.push({ kind: "browse", name: w, n: n, note: n + (n === 1 ? " listing" : " listings"), pick: function () { pickPlace({ kind: "keyword", fill: w }); } });
+    });
+    return rows.sort(function (a, b) { return b.n - a.n; });
+  }
+  function showBrowse(key) {
+    items = browseItems(key); active = -1;
+    sugg.setAttribute("data-mode", "browse-" + key);
+    paintSugg(); sugg.hidden = false; q.setAttribute("aria-expanded", "true"); sugg.scrollTop = 0;
+  }
   /** Keyword suggestions for what was typed: the word itself and related words people use, each with how many listings say it.
    *  ("pool" -> pool, swimming pool, inground pool). Only words that some listing mentions are offered. */
   function keywordRows(text) {
@@ -980,9 +1032,8 @@
     if (pl.kind === "keyword") {                                  // the word, not the place
       q.value = pl.fill; kwOnlyFor = pl.fill.toLowerCase(); applyIntent(); render(); closeSugg(); return;
     }
-    if (pl.kind === "hint") {                                     // an example: type it for the visitor
-      q.value = pl.fill; applyIntent(); render(); updateSugg(); return;
-    }
+    if (pl.kind === "hint") { showBrowse(pl.browse); return; }          // open the list for that kind of search
+    if (pl.kind === "browse") { pl.pick(); return; }
     q.value = ""; S.q = ""; kwOnlyFor = "";
     closeSugg(); q.blur();
     if (pl.kind === "topic") { setAge55(true); return; }          // "55+ communities": a filter, not a place
