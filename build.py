@@ -54,6 +54,10 @@ def main():
             e = places.get(geo.normalize(x["location"])) or {}
             x["geo_neighborhood"] = e.get("neighborhood")
 
+    # "Jackson" / "Toms River" alone mean the Jewish area there (the average of the places named in that town), not the township centre
+    centers = geo.town_centers(listings, places)
+    geo.apply_town_centers(listings, centers)
+
     errors, warnings = checks.check(listings, previous_count())
     for w in warnings:
         print(f"WARN: {w}")
@@ -71,11 +75,16 @@ def main():
         "count": len(listings),
         "listings": listings,
         # resolved places only, for the page's "Near" picker
-        "places": {k: {"name": e.get("name") or k.title(), "lat": e["lat"], "lng": e["lng"]}
+        "places": {k: {"name": e.get("name") or k.title(), "lat": centers[k.title()]["lat"] if k.title() in centers and k in geo.TOWNS else e["lat"],
+                       "lng": centers[k.title()]["lng"] if k.title() in centers and k in geo.TOWNS else e["lng"]}
                    for k, e in places.items() if e.get("lat") is not None},
         # tidy, de-duplicated names for the "Near" drop-down
         "picker": geo.picker_entries(places),
     }
+    for item in data["picker"]:                    # the town entries ("Jackson") sit in the Jewish area too
+        c = centers.get(item["name"])
+        if c and item["name"].lower() in geo.TOWNS:
+            item["lat"], item["lng"] = c["lat"], c["lng"]
     # every street in the area, so any street can be searched ("nearest this street")
     try:
         streets, data["picker"] = geo.streets_for_page(json.loads(STREETS.read_text()), data["picker"])

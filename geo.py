@@ -404,3 +404,45 @@ def load_preferred_streets(path=PREFERRED_STREETS_FILE):
     except (OSError, ValueError):
         return {}
     return {k.lower(): v for k, v in data.get("streets", {}).items()}
+
+
+# Towns outside Lakewood where a listing may name only the town ("Jackson", "Toms River").
+OUTSIDE_TOWNS = ("Jackson", "Toms River", "Howell", "Manchester", "Brick")
+
+
+def town_centers(listings, places, min_listings=3):
+    """Where "Jackson" (or "Toms River" ...) means on the map: the middle of the Jewish area, not the town centre.
+
+    Owner, 2026-11-24: a listing that only says "Jackson" is in the Jewish part of Jackson, and the township's own centre is a
+    long way west of it. So the middle of a town = the average of the listings that name a place inside that town; with too few
+    of those, the average of the named places (places.json) inside it. -> {"Jackson": {"lat", "lng", "area_miles", "n"}}
+    """
+    pts = {t: [] for t in OUTSIDE_TOWNS}
+    for x in listings:
+        if x.get("geo") == "place" and x.get("lat") is not None and not x.get("geo_spread"):
+            t = towns.town_of(x["lat"], x["lng"])
+            if t in pts:
+                pts[t].append((x["lat"], x["lng"]))
+    out = {}
+    for t, p in pts.items():
+        if len(p) < min_listings:
+            p = [(e["lat"], e["lng"]) for k, e in places.items()
+                 if e.get("lat") is not None and not e.get("hide") and k not in TOWNS and towns.town_of(e["lat"], e["lng"]) == t]
+        if len(p) < 2:
+            continue
+        lat = sum(a for a, _ in p) / len(p)
+        lng = sum(b for _, b in p) / len(p)
+        area = sum(haversine_miles(lat, lng, a, b) for a, b in p) / len(p)
+        out[t] = {"lat": round(lat, 5), "lng": round(lng, 5), "area_miles": round(area, 1), "n": len(p)}
+    return out
+
+
+def apply_town_centers(listings, centers):
+    """Move town-only listings ("Jackson") to that town's Jewish-area centre (see town_centers)."""
+    for x in listings:
+        if x.get("geo") != "town":
+            continue
+        t = towns.town_of(x["lat"], x["lng"]) if x.get("lat") is not None else None   # the town its (township-centre) pin is in
+        if t in centers:
+            x["lat"], x["lng"] = centers[t]["lat"], centers[t]["lng"]
+            x["geo_area_miles"] = centers[t]["area_miles"]

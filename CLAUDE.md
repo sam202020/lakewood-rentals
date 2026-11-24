@@ -67,6 +67,14 @@ sorts by distance to the street's whole line, and offers intersections ("clover 
 - It was spot-checked against Google Maps on 2026-11-22 (six streets within 0.003 mi; tests record it). These are
   street lines only; the places listings are pinned to still come from `places.json` (Google-checked).
 
+## "Jackson" / "Toms River" alone = the Jewish area there (owner, 2026-11-24)
+
+A listing that names only a town is not pinned at the township centre (Jackson's is far west of where the community is). `geo.town_centers`
+averages the listings that name a place inside that town (or, with fewer than 3, the named places in `places.json`), and `geo.apply_town_centers`
+moves the town-only listings there (Jackson, Toms River, Howell, Manchester, Brick; not Lakewood). The "Jackson", "Howell"... entries in the
+"Near" drop-down use the same point, and the dashed circle is as wide as that area (`geo_area_miles`, 0.5 to 1.5 mi). It is recomputed every
+build, so it follows the week's listings. Verify the result against Google Maps when it looks off.
+
 ## Not every listing location is a neighbourhood
 
 A vague phrase in a listing ("Prime Jackson Area", "55+Community", "Lakewood Area") is not a neighbourhood. It may get a

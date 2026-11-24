@@ -1181,3 +1181,10 @@ test("searchAll: a keyword puts the matching listings first and keeps every othe
   assert.equal(r.matches.length, 0);
   assert.equal(r.others.length, 4);
 });
+
+test("uncertaintyMiles: a town-only listing is as wide as the Jewish area of that town (0.5 to 1.5 mi)", () => {
+  assert.equal(S.uncertaintyMiles(L({ geo: "town", geo_area_miles: 0.4 })), 0.5);
+  assert.equal(S.uncertaintyMiles(L({ geo: "town", geo_area_miles: 2.5 })), 1.5);
+  assert.equal(S.uncertaintyMiles(L({ geo: "town", geo_area_miles: 1.1 })), 1.1);
+  assert.equal(S.uncertaintyMiles(L({ geo: "town" })), 1);
+});

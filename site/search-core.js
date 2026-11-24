@@ -440,7 +440,7 @@ var LakewoodSearch = (function () {
   /** How big the "somewhere around here" circle is, in miles: a listing that only names the town could be anywhere in
    *  it (1 mi); one that names two places (averaged) is somewhere between them; a neighbourhood is a few blocks. */
   function uncertaintyMiles(x) {
-    if (x.geo === "town") return 1;
+    if (x.geo === "town") return x.geo_area_miles ? Math.min(1.5, Math.max(0.5, x.geo_area_miles)) : 1;   // the Jewish area of that town, as wide as the places named there
     return Math.max(0.15, (x.geo_spread || 0) / 2 + 0.1);
   }
 

@@ -661,3 +661,38 @@ class OwnerSearchRules(unittest.TestCase):
         self.assertLess(geo.haversine_miles(s[0]["lat"], s[0]["lng"], 40.09775, -74.20907), 0.05)   # Google Maps: Princeton Ave & 7th St
         self.assertEqual(s[0]["town"], "Lakewood")
         self.assertIn("Yeshiva of Princeton", s[0]["aka"])
+
+
+class TownCentres(unittest.TestCase):
+    """Owner 2026-11-24: "Jackson" or "Toms River" alone = the Jewish area there (average of the places named), not the township centre."""
+
+    def test_jackson_alone_is_the_average_of_the_jackson_places_not_the_township_centre(self):
+        places = geo.load_places()
+        jackson_places = [e for k, e in places.items() if e.get("lat") is not None and not e.get("hide") and k not in geo.TOWNS
+                          and towns.town_of(e["lat"], e["lng"]) == "Jackson"]
+        self.assertGreaterEqual(len(jackson_places), 3)
+        centers = geo.town_centers([], places)             # no listings: falls back to the named places
+        c = centers["Jackson"]
+        self.assertAlmostEqual(c["lat"], sum(e["lat"] for e in jackson_places) / len(jackson_places), places=4)
+        township_centre = places["jackson"]
+        # the township centre is out west; the Jewish area is much closer to Lakewood
+        self.assertLess(geo.haversine_miles(c["lat"], c["lng"], *geo.LAKEWOOD), geo.haversine_miles(township_centre["lat"], township_centre["lng"], *geo.LAKEWOOD) - 2)
+        self.assertEqual(towns.town_of(c["lat"], c["lng"]), "Jackson")
+
+    def test_listings_naming_places_in_a_town_set_its_middle(self):
+        places = geo.load_places()
+        listings = [{"geo": "place", "lat": 40.13, "lng": -74.30, "geo_spread": 0}, {"geo": "place", "lat": 40.14, "lng": -74.28, "geo_spread": 0},
+                    {"geo": "place", "lat": 40.12, "lng": -74.29, "geo_spread": 0}]
+        c = geo.town_centers(listings, places)["Jackson"]
+        self.assertAlmostEqual(c["lat"], 40.13, places=3)
+        self.assertEqual(c["n"], 3)
+
+    def test_apply_moves_only_town_level_listings(self):
+        centers = {"Jackson": {"lat": 40.127, "lng": -74.29, "area_miles": 2.5, "n": 5}}
+        town_pin = geo.load_places()["jackson"]
+        a = {"geo": "town", "location": "Jackson", "lat": town_pin["lat"], "lng": town_pin["lng"]}
+        b = {"geo": "place", "location": "Harmony Hills", "lat": 40.13, "lng": -74.28}
+        geo.apply_town_centers([a, b], centers)
+        self.assertEqual((a["lat"], a["lng"]), (40.127, -74.29))
+        self.assertEqual(a["geo_area_miles"], 2.5)
+        self.assertEqual((b["lat"], b["lng"]), (40.13, -74.28))
