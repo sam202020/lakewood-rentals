@@ -1343,8 +1343,8 @@
     var use = S.origin ? groups.slice(0, 8) : (near.length ? near : groups);
     use.forEach(function (g) { pts.push([g.lat, g.lng]); });
     if (!pts.length) { MAP.setView(LAKEWOOD_CENTER, 13); return; }
-    if (pts.length === 1) { MAP.setView(pts[0], 15); return; }
-    MAP.fitBounds(LF.latLngBounds(pts), { paddingTopLeft: [36, 36], paddingBottomRight: [36, 36 + sheetCover()], maxZoom: 15 });
+    if (pts.length === 1) { MAP.setView(pts[0], 14); return; }                  // never closer than ~3 miles across: keep the surroundings in view
+    MAP.fitBounds(LF.latLngBounds(pts), { paddingTopLeft: [36, 36], paddingBottomRight: [36, 36 + sheetCover()], maxZoom: 14 });
   }
 
   function paintSelection(fly) {
