@@ -156,7 +156,7 @@ spot on the map; Enter or a click keeps it as the "Near" chip. Otherwise the wor
   the listings use (furnishd, basment) stay keywords.
 - **A keyword never hides the rest of the list** (owner, 2026-11-24): `LakewoodSearch.searchAll` returns `matches` (every filter passes and the words are
   mentioned) and `others` (every filter passes, the words are not). The page shows "N listings mention 'pool'", the matches, a divider "N other
-  listings", then the others (each group in the chosen sort; the map dims the others' pins and fits to the matches, but never closer than zoom 14, about 3 miles across, so the surroundings stay in view). If nothing mentions the
+  listings", then the others (each group in the chosen sort; the map dims the others' pins and fits to every matching pin (the "core of Lakewood" view that ignores far-out towns is only for 60+ pins), but never closer than zoom 14, about 3 miles across, so the surroundings stay in view). If nothing mentions the
   words it says so and shows the whole list. The other filters (type, beds, rent, ...) stay strict.
 - A typo only counts as a place when it is a real misspelling of the name (edit distance), not merely a similar sound (so "zzzzqq" is not Zackery Court).
 - "raintree pool" = Raintree (sort) + "pool" (filter); the place can come first or last. A last dropdown row, "Search the listings for the

@@ -1340,7 +1340,9 @@
     var hit = groups.filter(function (g) { return g.rows.some(function (r) { return r._kw !== false; }); });
     if (hit.length) groups = hit;                                                     // fit the map to the listings that match the words
     var near = groups.filter(function (g) { return LakewoodSearch.distanceMiles(g.lat, g.lng, LAKEWOOD_CENTER[0], LAKEWOOD_CENTER[1]) < 5; });
-    var use = S.origin ? groups.slice(0, 8) : (near.length ? near : groups);
+    // The core-of-Lakewood view (ignoring a few far-out towns) is only for a big spread of pins; a keyword or a filter that leaves
+    // a handful of pins must show every one of them, including the ones out in Jackson or Toms River.
+    var use = S.origin ? groups.slice(0, 8) : (groups.length >= 60 && near.length ? near : groups);
     use.forEach(function (g) { pts.push([g.lat, g.lng]); });
     if (!pts.length) { MAP.setView(LAKEWOOD_CENTER, 13); return; }
     if (pts.length === 1) { MAP.setView(pts[0], 14); return; }                  // never closer than ~3 miles across: keep the surroundings in view
