@@ -184,6 +184,8 @@ spot on the map; Enter or a click keeps it as the "Near" chip. Otherwise the wor
 
 ## Search box must say it finds shuls
 
-The placeholder reads "Neighborhood, street, shul or keyword..." ("Area or shul..." on a phone), the empty focused box lists what can be
-searched (neighborhood, street/intersection, shul, any word; picking an example types it), and typing just "shul"/"synagogue"/"minyan" shows
-"Type a shul's name". Keep this when the search box changes.
+The placeholder reads "Neighborhood, street, shul or keyword..." ("Area or shul..." on a phone). The empty focused box lists the kinds of search
+(Neighborhood, Street or intersection, Shul, Keyword; no "A", and no Chabad in the examples because nobody searches it). **Clicking one opens the list
+to choose from**, not an example typed for you: neighborhoods with listings (merged by the place they resolve to, so Hearthstn. and Hearthstone are one),
+streets and intersections with listings, all shuls (Lakewood first), or common words with their listing counts. Typing just "shul"/"synagogue"/"minyan"
+shows "Type a shul's name". Keep this when the search box changes.
