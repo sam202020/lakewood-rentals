@@ -392,3 +392,15 @@ def merge_shuls(shuls, picker, near_miles=0.3):
                 akas.append(n)
         target["aka"] = akas
     return keep, picker
+
+
+PREFERRED_STREETS_FILE = pathlib.Path(__file__).parent / "data" / "preferred_streets.json"
+
+
+def load_preferred_streets(path=PREFERRED_STREETS_FILE):
+    """{"forest": "Forest Avenue", ...}: the street people mean by a word that fits several (owner-curated)."""
+    try:
+        data = json.loads(pathlib.Path(path).read_text())
+    except (OSError, ValueError):
+        return {}
+    return {k.lower(): v for k, v in data.get("streets", {}).items()}

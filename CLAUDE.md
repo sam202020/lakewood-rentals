@@ -147,14 +147,17 @@ Design canvas with the options: https://claude.ai/artifact/Aj253LKTFAR3uJnCsaatT
 intersection (3+ letters, a real prefix match, the first dropdown suggestion), the page sorts **every listing nearest-first** from it at once
 (nothing is filtered out), shows "Nearest first to X . press Enter to keep it . search the word instead" under the search box, and puts the
 spot on the map; Enter or a click keeps it as the "Near" chip. Otherwise the words stay a keyword filter. Rules:
-- Words that mean something in a listing (pool, boy, basement, 55+), typo matches, the bare words shul / yeshiva / minyan, and single
-  words that fit several streets (forest, birch) stay keywords. An owner-defined neighbourhood or shul wins over a street.
+- Words that mean something in a listing (pool, boy, basement, 55+), typo matches, and the bare words shul / minyan stay keywords. A neighbourhood or
+  shul wins over a street. A street word that fits several equally good streets (forest, birch) stays a keyword **unless** it is in
+  `data/preferred_streets.json` (owner-curated: "forest" = Forest Avenue, "birch" = Birch Street, both Lakewood): then that street is first in the
+  drop-down and the "near" street at once; the other streets stay below it. Add a word there when the owner names the street people mean.
 - "raintree pool" = Raintree (sort) + "pool" (filter); the place can come first or last. A last dropdown row, "Search the listings for the
   word ...", and the "search the word instead" link switch a place word back to a keyword filter.
 - Once a "Near" chip is set, typing is a keyword filter again.
-- **BMG** alone = the campus between 6th and 7th St (place "BMG"). The other buildings go by their own names: Beis Aharon (10th St),
-  Beis Shalom (9th St), Forest Beis Medrash (Forest Ave); typing "yeshiva" lists all of them. "Princeton Beis Medrash" is not on Google
-  Maps and not in the data yet: ask the owner where it is.
+- **"yeshiva" on its own is "BMG"** (owner, 2026-11-24): the same drop-down and the same near-BMG sort (`WORD_FOR_PLACE` in search-core.js).
+- **BMG** alone = the campus between 6th and 7th St (place "BMG", first in the list). The other buildings go by their own names: Beis Aharon
+  (10th St), Beis Shalom (9th St), Forest Beis Medrash (Forest Ave), Princeton Beis Medrash (southeast corner of Princeton Ave and 7th St;
+  the owner's description, "I believe", Google Maps has no listing, so the pin is approximate).
 
 ## Search box must say it finds shuls
 

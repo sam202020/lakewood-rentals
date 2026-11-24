@@ -1106,7 +1106,7 @@ test("placeIntent: a place, shul or street typed in the box means 'near it'; ord
   const data = pagePayload();
   const streets = S.decodeStreets(data.streets);
   const shuls = (data.shuls || []).map((a) => ({ name: a[0], lat: a[1], lng: a[2], town: a[3], address: a[4], aka: a[5] || [] }));
-  const of = (q) => { const r = S.placeIntent(q, data.picker, streets, shuls); return r ? r.item.name + (r.rest ? " +" + r.rest : "") : null; };
+  const of = (q) => { const r = S.placeIntent(q, data.picker, streets, shuls, data.preferred); return r ? r.item.name + (r.rest ? " +" + r.rest : "") : null; };
   assert.equal(of("raintree"), "Raintree");
   assert.equal(of("Raintree "), "Raintree");
   assert.equal(of("bmg"), "BMG");                               // owner: BMG alone = the campus between 6th and 7th
@@ -1116,14 +1116,26 @@ test("placeIntent: a place, shul or street typed in the box means 'near it'; ord
   assert.equal(of("raintree pool"), "Raintree +pool");          // a place plus a keyword
   assert.equal(of("furnished raintree"), "Raintree +furnished");
   assert.match(of("clover & ocean"), /Clover/);                 // an intersection
-  for (const w of ["pool", "boy", "basement", "55+", "shul", "yeshiva", "ra", "jak", "forest"]) assert.equal(of(w), null, w);
+  assert.equal(of("yeshiva"), "BMG");                           // owner: "yeshiva" means BMG
+  assert.equal(of("forest"), "Forest Avenue");                  // owner: the street people mean by "forest"
+  assert.equal(of("birch"), "Birch Street");                    // ... and by "birch" (Lakewood, at Williams)
+  assert.equal(of("forest ave"), "Forest Avenue");              // more words single the street out
+  for (const w of ["pool", "boy", "basement", "55+", "shul", "ra", "jak"]) assert.equal(of(w), null, w);
 });
 
-test("suggestions: 'yeshiva' lists every BMG building, 'bmg' puts the 6th-7th St campus first", () => {
+test("suggestions: 'yeshiva' gives exactly the 'bmg' list, the 6th-7th St campus first; forest/birch put the usual street first", () => {
   const data = pagePayload();
   const streets = S.decodeStreets(data.streets);
   const shuls = (data.shuls || []).map((a) => ({ name: a[0], lat: a[1], lng: a[2], town: a[3], address: a[4], aka: a[5] || [] }));
-  const y = S.suggestAll(data.picker, streets, "yeshiva", 12, shuls).map((i) => i.name);
-  for (const n of ["BMG", "Beis Shalom", "Beis Aharon", "Forest Beis Medrash"]) assert.ok(y.includes(n), n + " in " + y.join(", "));
-  assert.equal(S.suggestAll(data.picker, streets, "bmg", 8, shuls)[0].name, "BMG");
+  const names = (q) => S.suggestAll(data.picker, streets, q, 8, shuls, data.preferred).map((i) => i.name);
+  assert.deepEqual(names("yeshiva"), names("bmg"));
+  assert.equal(names("yeshiva")[0], "BMG");
+  for (const n of ["Beis Shalom", "Beis Aharon", "Forest Beis Medrash", "Princeton Beis Medrash"]) assert.ok(names("yeshiva").includes(n), n);
+  const forest = S.suggestAll(data.picker, streets, "forest", 8, shuls, data.preferred);
+  assert.equal(forest[0].name, "Forest Avenue");
+  assert.equal(forest[0].town, "Lakewood");
+  assert.ok(forest.slice(1).every((i) => i.name !== "Forest Avenue" || i.town !== "Lakewood"));   // not listed twice
+  const birch = S.suggestAll(data.picker, streets, "birch", 8, shuls, data.preferred);
+  assert.equal(birch[0].name + " " + birch[0].town, "Birch Street Lakewood");
 });
+

@@ -83,6 +83,7 @@ def main():
         streets = None
     if streets:
         data["streets"] = streets
+    data["preferred"] = geo.load_preferred_streets()
     # shuls (Google Maps), so "near this shul" works. A shul that is also a neighbourhood ("Kol Shimshon",
     # "Bais Medrash Lutzk"/"Lutzk", BMG) is listed once, as the neighbourhood.
     all_shuls = geo.load_shuls()

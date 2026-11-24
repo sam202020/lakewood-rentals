@@ -614,8 +614,10 @@ var LakewoodSearch = (function () {
 
   /** The suggestion list for the search box: [{kind: "place"|"street"|"cross", ...}], best first.
    *  Neighborhoods the owner defined come before streets with an equally good match. */
-  function suggestAll(picker, streets, text, limit, shuls) {
+  function suggestAll(picker, streets, text, limit, shuls, preferred) {
     limit = limit || 8;
+    var typed = String(text || "").trim().toLowerCase();
+    text = canonicalText(text);
     var items = [];
     // "55", "55+", "55 plus", "senior", "over 55" ... offer the 55+ communities as a topic, not a place
     var norm = normalizeQuery(text).trim();
@@ -648,32 +650,51 @@ var LakewoodSearch = (function () {
       items.sort(function (a, b) { return a._r - b._r || a._o - b._o; });
       if (items.length && items[0]._r < 3) items = items.filter(function (it) { return it._r < 3; });   // typo matches only as a last resort
     }
+    // a street word that fits many streets: the one people mean goes first ("forest" -> Forest Avenue, Lakewood)
+    var want = preferred && preferred[typed];
+    if (want) {
+      var pick = null;
+      (streets || []).forEach(function (s) { if (!pick && s.n === want && s.t === "Lakewood") pick = s; });
+      if (pick) {
+        items = items.filter(function (it) { return !(it.kind === "street" && it.name === pick.n && it.town === pick.t); });
+        items.unshift({ kind: "street", name: pick.n, town: pick.t, lat: pick.lat, lng: pick.lng, paths: pick.paths, _r: 0, _pref: true });
+      }
+    }
     return items.slice(0, limit);
   }
 
     // ---- what does the typed text mean? A place (sort by distance) or a word (filter the listings) ----
-  var GENERIC_ONLY = /^(shuls?|shules?|synagogues?|minyan(im)?|beis medrash|bais medrash|beit midrash|beis midrash|yeshivas?)$/;
+  var GENERIC_ONLY = /^(shuls?|shules?|synagogues?|minyan(im)?|beis medrash|bais medrash|beit midrash|beis midrash)$/;
+
+  /** Words that people use for one place: "yeshiva" on its own means BMG (owner, 2026-11-24). */
+  var WORD_FOR_PLACE = /^yeshiv(a|ah|as|os)$/;
+  function canonicalText(text) {
+    var t = String(text || "").trim();
+    return WORD_FOR_PLACE.test(t.toLowerCase()) ? "bmg" : text;
+  }
 
   /** The best place for `text` if the text (a prefix of) names one: {item, rest} where rest is leftover keyword words
    *  ("raintree pool" -> Raintree + "pool"), else null. Needs 3+ letters. Streets, neighborhoods, shuls and intersections count;
    *  typo matches, "55+", the bare words shul/yeshiva and single words that mean something in a listing (pool, boy, basement)
    *  do not. The dropdown shows the same items, so what is sorted by is always the first suggestion. */
-  function placeIntent(text, picker, streets, shuls) {
-    var t = String(text || "").trim().toLowerCase();
+  function placeIntent(text, picker, streets, shuls, preferred) {
+    var typedRaw = String(text || "").trim().toLowerCase();
+    var t = canonicalText(text).trim().toLowerCase();
     if (t.replace(/[^a-z0-9]/g, "").length < 3 || GENERIC_ONLY.test(t)) return null;
     function best(s, exact) {
       var qt = placeTokens(s);
       if (!qt.length) return null;
-      var items = suggestAll(picker, streets, s, 8, shuls);
+      var items = suggestAll(picker, streets, s, 8, shuls, s === t ? preferred : null);
       for (var i = 0; i < items.length; i++) {
         var it = items[i];
         if (it.kind === "topic" || it.kind === "hint") return null;
         if (it.kind === "cross") return it;
+        if (it._pref) return it;                                         // the street people mean by that word
         if (it._r > 1) return null;                                      // typo / sounds-like matches are not a place
         if (it.kind === "street" || (it.kind === "shul" && !exact)) {    // "forest" could be Forest Avenue, Drive, Hills ...: a street (or a shul the street names compete with) needs words that single it out
           var names = {};
-          items.forEach(function (o) { if (o.kind === "street" && o._r <= 1) names[o.name.toLowerCase()] = true; });
-          if (Object.keys(names).length > 1 || (it.kind === "street" && Object.keys(names).length > 1)) return null;
+          items.forEach(function (o) { if (o.kind === "street" && o._r <= it._r) names[o.name.toLowerCase()] = true; });   // streets as good a match as this one
+          if (Object.keys(names).length > 1) return null;
         }
         if (exact) {
           var labels = [it.name].concat(it.aka || []).map(function (n) { return placeTokens(n).join(" "); });

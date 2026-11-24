@@ -1,0 +1,7 @@
+{
+  "_note": "Owner 2026-11-24: when a street word fits several streets, the one people almost always mean. The typed word (whole text, lower case) maps to a street name in Lakewood. It is put first in the drop-down and used as the 'near' street as soon as the word is typed. Other streets with that word stay in the list below it.",
+  "streets": {
+    "forest": "Forest Avenue",
+    "birch": "Birch Street"
+  }
+}

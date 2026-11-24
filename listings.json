@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T18:56:08+00:00",
+  "generated_at": "2026-11-24T19:02:41+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -8252,6 +8252,10 @@
       "town": "Lakewood"
     }
   ],
+  "preferred": {
+    "forest": "Forest Avenue",
+    "birch": "Birch Street"
+  },
   "shulpins": [
     [
       "Ahavas Tzedakah",
@@ -9323,6 +9327,13 @@
       -74.22239,
       "Lakewood",
       "55 Finchley Blvd"
+    ],
+    [
+      "Princeton Beis Medrash",
+      40.0976,
+      -74.20887,
+      "Lakewood",
+      "Princeton Ave & 7th St (southeast corner)"
     ],
     [
       "Prospect Park Shul",
@@ -10841,6 +10852,21 @@
       -74.22239,
       "Lakewood",
       "55 Finchley Blvd"
+    ],
+    [
+      "Princeton Beis Medrash",
+      40.0976,
+      -74.20887,
+      "Lakewood",
+      "Princeton Ave & 7th St (southeast corner)",
+      [
+        "BMG Princeton",
+        "Princeton Yeshiva",
+        "Yeshiva of Princeton",
+        "Beis Medrash Princeton",
+        "BMG",
+        "Beth Medrash Govoha"
+      ]
     ],
     [
       "Prospect Park Shul",

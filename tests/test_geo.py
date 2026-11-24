@@ -643,3 +643,21 @@ class ShulNameAndMergeTests(unittest.TestCase):
         every.update({s["name"]: s.get("aka", []) for s in shuls})
         for who in ("BMG", "Beis Shalom", "Beis Aharon", "Forest Beis Medrash"):
             self.assertIn("Yeshiva", every[who], who)
+
+
+class OwnerSearchRules(unittest.TestCase):
+    def test_preferred_streets_point_at_real_lakewood_streets(self):
+        pref = geo.load_preferred_streets()
+        self.assertEqual(pref["forest"], "Forest Avenue")
+        self.assertEqual(pref["birch"], "Birch Street")
+        import json
+        names = {(s[0], ) for s in json.loads((ROOT / "streets.json").read_text())["streets"]}
+        for street in pref.values():
+            self.assertIn((street,), names)
+
+    def test_princeton_beis_medrash_is_at_princeton_and_7th(self):
+        s = [x for x in geo.load_shuls() if x["name"] == "Princeton Beis Medrash"]
+        self.assertEqual(len(s), 1)
+        self.assertLess(geo.haversine_miles(s[0]["lat"], s[0]["lng"], 40.09775, -74.20907), 0.05)   # Google Maps: Princeton Ave & 7th St
+        self.assertEqual(s[0]["town"], "Lakewood")
+        self.assertIn("Yeshiva of Princeton", s[0]["aka"])

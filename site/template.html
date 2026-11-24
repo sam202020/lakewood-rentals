@@ -880,6 +880,7 @@
   var PLACES = DATA.places || {};
   var PICKER = DATA.picker || Object.keys(PLACES).sort().map(function (k) { return PLACES[k]; });
   var SHULS = (DATA.shuls || []).map(function (a) { return { name: a[0], lat: a[1], lng: a[2], town: a[3], address: a[4], aka: a[5] || [] }; });
+  var PREFERRED = DATA.preferred || {};                           // "forest" -> Forest Avenue ...
   var STREETS = LakewoodSearch.decodeStreets(DATA.streets);     // every street in the area, as lines
   var lastCount = 0;
   if (STREETS.length) document.getElementById("osmCredit").hidden = false;
@@ -930,7 +931,7 @@
   function updateSugg() {
     sugg.removeAttribute("data-mode");
     if (!q.value.trim()) { items = HINTS; active = -1; sugg.setAttribute("data-mode", "hints"); paintSugg(); sugg.hidden = false; q.setAttribute("aria-expanded", "true"); return; }
-    items = LakewoodSearch.suggestAll(PICKER, STREETS, q.value, 8, SHULS);
+    items = LakewoodSearch.suggestAll(PICKER, STREETS, q.value, 8, SHULS, PREFERRED);
     if (S.origin && S.origin.preview && items.length && items[0].kind !== "hint")
       items.push({ kind: "keyword", name: "Search the listings for the word \u201c" + q.value.trim() + "\u201d", note: "keyword", fill: q.value.trim() });
     active = -1;
@@ -991,7 +992,7 @@
   function applyIntent() {
     var text = q.value.trim(), it = null;
     if (text && text.toLowerCase() !== kwOnlyFor && !(S.origin && !S.origin.preview))
-      it = LakewoodSearch.placeIntent(text, PICKER, STREETS, SHULS);
+      it = LakewoodSearch.placeIntent(text, PICKER, STREETS, SHULS, PREFERRED);
     if (it) { setPreview(it.item); S.q = it.rest; }
     else { clearPreview(); S.q = text.toLowerCase(); }
   }
