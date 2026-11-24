@@ -978,13 +978,13 @@
     if (!(S.origin && S.origin.preview)) return;
     setOrigin(null, "", true);
   }
-  function setPreview(item) {
-    var o = { lat: item.lat, lng: item.lng, paths: item.kind === "street" ? item.paths : null, shul: item.kind === "shul", preview: true, key: item.kind + ":" + item.name };
+  function setPreview(item, typo) {
+    var o = { lat: item.lat, lng: item.lng, paths: item.kind === "street" ? item.paths : null, shul: item.kind === "shul", preview: true, key: item.kind + ":" + item.name + (typo ? "?" : "") };
     if (S.origin && S.origin.preview && S.origin.key === o.key) return;
     var keepWithin = S.maxMiles;
     setOrigin(o, item.name, true);
     S.maxMiles = keepWithin;
-    nearStatus.innerHTML = "Nearest first to <b>" + esc(item.name) + "</b> · press Enter to keep it · " +
+    nearStatus.innerHTML = (typo ? "Did you mean <b>" + esc(item.name) + "</b>? Nearest first" : "Nearest first to <b>" + esc(item.name) + "</b>") + " · press Enter to keep it · " +
       '<button type="button" class="linkbtn" id="kwBtn">search the word instead</button>';
     document.getElementById("kwBtn").onclick = function () { kwOnlyFor = q.value.trim().toLowerCase(); applyIntent(); render(); q.focus(); };
     syncBar();
@@ -993,7 +993,7 @@
     var text = q.value.trim(), it = null;
     if (text && text.toLowerCase() !== kwOnlyFor && !(S.origin && !S.origin.preview))
       it = LakewoodSearch.placeIntent(text, PICKER, STREETS, SHULS, PREFERRED);
-    if (it) { setPreview(it.item); S.q = it.rest; }
+    if (it) { setPreview(it.item, it.typo); S.q = it.rest; }
     else { clearPreview(); S.q = text.toLowerCase(); }
   }
 

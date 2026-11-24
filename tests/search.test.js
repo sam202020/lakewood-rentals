@@ -1120,7 +1120,14 @@ test("placeIntent: a place, shul or street typed in the box means 'near it'; ord
   assert.equal(of("forest"), "Forest Avenue");                  // owner: the street people mean by "forest"
   assert.equal(of("birch"), "Birch Street");                    // ... and by "birch" (Lakewood, at Williams)
   assert.equal(of("forest ave"), "Forest Avenue");              // more words single the street out
-  for (const w of ["pool", "boy", "basement", "55+", "shul", "ra", "jak"]) assert.equal(of(w), null, w);
+  // typos of a place are that place (owner, 2026-11-24): "foreset" is Forest Avenue, not Sterling Forest
+  for (const w of ["foreset", "forset", "forrest"]) assert.equal(of(w), "Forest Avenue", w);
+  assert.equal(of("spruse street"), "Spruce Street");
+  assert.equal(of("kol aryh"), "Kol Aryeh");
+  assert.equal(of("raintrea"), "Raintree");
+  assert.equal(of("jak"), "Jackson");
+  assert.equal(of("sterling forest"), "Sterling Forest");       // if you meant Sterling Forest you type Sterling first
+  for (const w of ["pool", "boy", "basement", "furnishd", "basment", "poool", "55+", "shul", "ra"]) assert.equal(of(w), null, w);   // keywords (and typos of keywords)
 });
 
 test("suggestions: 'yeshiva' gives exactly the 'bmg' list, the 6th-7th St campus first; forest/birch put the usual street first", () => {
@@ -1133,6 +1140,7 @@ test("suggestions: 'yeshiva' gives exactly the 'bmg' list, the 6th-7th St campus
   for (const n of ["Beis Shalom", "Beis Aharon", "Forest Beis Medrash", "Princeton Beis Medrash"]) assert.ok(names("yeshiva").includes(n), n);
   const forest = S.suggestAll(data.picker, streets, "forest", 8, shuls, data.preferred);
   assert.equal(forest[0].name, "Forest Avenue");
+  assert.equal(S.suggestAll(data.picker, streets, "foreset", 8, shuls, data.preferred)[0].name, "Forest Avenue");   // a typo, still first
   assert.equal(forest[0].town, "Lakewood");
   assert.ok(forest.slice(1).every((i) => i.name !== "Forest Avenue" || i.town !== "Lakewood"));   // not listed twice
   const birch = S.suggestAll(data.picker, streets, "birch", 8, shuls, data.preferred);

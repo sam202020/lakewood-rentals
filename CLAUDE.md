@@ -151,6 +151,9 @@ spot on the map; Enter or a click keeps it as the "Near" chip. Otherwise the wor
   shul wins over a street. A street word that fits several equally good streets (forest, birch) stays a keyword **unless** it is in
   `data/preferred_streets.json` (owner-curated: "forest" = Forest Avenue, "birch" = Birch Street, both Lakewood): then that street is first in the
   drop-down and the "near" street at once; the other streets stay below it. Add a word there when the owner names the street people mean.
+- **A typo of a place is that place** (owner, 2026-11-24): "foreset" = Forest Avenue (not Sterling Forest: a name's own first word beats a word in the
+  middle, and `preferred_streets` also catches typos), "spruse street", "kol aryh", "jak" = Jackson. The note then reads "Did you mean X?". Typos of words
+  the listings use (furnishd, basment) stay keywords.
 - "raintree pool" = Raintree (sort) + "pool" (filter); the place can come first or last. A last dropdown row, "Search the listings for the
   word ...", and the "search the word instead" link switch a place word back to a keyword filter.
 - Once a "Near" chip is set, typing is a keyword filter again.

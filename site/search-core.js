@@ -524,7 +524,7 @@ var LakewoodSearch = (function () {
     if (qt.every(function (t) {
       if (/\d/.test(t) || t.length < 3) return false;
       return tokens.some(function (w) { return closeWord(t, w); });
-    })) return 3;
+    })) return closeWord(qt[0], tokens[0]) ? 3 : 3.5;                    // the name's own first word beats a word in the middle
     return -1;
   }
 
@@ -651,13 +651,17 @@ var LakewoodSearch = (function () {
       if (items.length && items[0]._r < 3) items = items.filter(function (it) { return it._r < 3; });   // typo matches only as a last resort
     }
     // a street word that fits many streets: the one people mean goes first ("forest" -> Forest Avenue, Lakewood)
-    var want = preferred && preferred[typed];
+    var prefKey = preferred && preferred[typed] ? typed : null, fuzzyPref = false;
+    if (!prefKey && preferred && /^[a-z]{4,}$/.test(typed) && !items.some(function (it) { return it._r >= 0 && it._r < 3; })) {
+      Object.keys(preferred).forEach(function (k) { if (!prefKey && closeWord(typed, k)) { prefKey = k; fuzzyPref = true; } });   // "foreset" -> forest
+    }
+    var want = prefKey && preferred[prefKey];
     if (want) {
       var pick = null;
       (streets || []).forEach(function (s) { if (!pick && s.n === want && s.t === "Lakewood") pick = s; });
       if (pick) {
         items = items.filter(function (it) { return !(it.kind === "street" && it.name === pick.n && it.town === pick.t); });
-        items.unshift({ kind: "street", name: pick.n, town: pick.t, lat: pick.lat, lng: pick.lng, paths: pick.paths, _r: 0, _pref: true });
+        items.unshift({ kind: "street", name: pick.n, town: pick.t, lat: pick.lat, lng: pick.lng, paths: pick.paths, _r: 0, _pref: true, _fuzzy: fuzzyPref });
       }
     }
     return items.slice(0, limit);
@@ -689,7 +693,7 @@ var LakewoodSearch = (function () {
         var it = items[i];
         if (it.kind === "topic" || it.kind === "hint") return null;
         if (it.kind === "cross") return it;
-        if (it._pref) return it;                                         // the street people mean by that word
+        if (it._pref) return it;                                         // the street people mean by that word (also for a typo of it)
         if (it._r > 1) return null;                                      // typo / sounds-like matches are not a place
         if (it.kind === "street" || (it.kind === "shul" && !exact)) {    // "forest" could be Forest Avenue, Drive, Hills ...: a street (or a shul the street names compete with) needs words that single it out
           var names = {};
@@ -707,11 +711,11 @@ var LakewoodSearch = (function () {
     var words = t.split(/\s+/), it = best(t, false);
     if (it) {
       // a single word that also means something in a listing (pool, boy, basement ...) stays a keyword unless it is a place's exact name
-      if (words.length === 1 && conceptsOfTerm(words[0]).length) {
+      if (words.length === 1 && conceptsOfTerm(words[0]).length && !(words[0].length >= 6 && it._r === 0)) {
         var exact = best(t, true);
         return exact ? { item: exact, rest: "" } : null;
       }
-      return { item: it, rest: "" };
+      return { item: it, rest: "", typo: !!it._fuzzy };
     }
     for (var k = words.length - 1; k >= 1; k--) {                          // leading words that exactly name a place + keyword words
       var head = words.slice(0, k).join(" "), h = best(head, true);
@@ -720,6 +724,20 @@ var LakewoodSearch = (function () {
     for (var j = 1; j < words.length; j++) {                               // ... or keyword words + the place at the end
       var tail = words.slice(j).join(" "), g = best(tail, true);
       if (g) return { item: g, rest: words.slice(0, j).join(" ") };
+    }
+    // a typo of a place ("raintre", "spruse street", "kol aryeh" spelt oddly) is that place, unless the words are ones the listings use
+    if (words.every(function (w) { return !/\d/.test(w) && w.length >= 3 && !conceptsOfTerm(w).length; })) {
+      var items = suggestAll(picker, streets, t, 8, shuls, preferred);
+      for (var m = 0; m < items.length; m++) {
+        var ty = items[m];
+        if (ty.kind === "topic" || ty.kind === "hint" || ty.kind === "keyword" || ty.kind === "cross" || ty._r < 3) return null;
+        if (ty.kind === "street") {
+          var nm = {};
+          items.forEach(function (o) { if (o.kind === "street" && o._r <= ty._r) nm[o.name.toLowerCase()] = true; });
+          if (Object.keys(nm).length > 1) return null;
+        }
+        return { item: ty, rest: "", typo: true };
+      }
     }
     return null;
   }
