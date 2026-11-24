@@ -141,6 +141,21 @@ Design canvas with the options: https://claude.ai/artifact/Aj253LKTFAR3uJnCsaatT
 - The page script uses `L` for the listings, so Leaflet is read as `LF` (set right after the script tag). Don't rename.
 - If the map script is blocked the list takes the full width (`nomap`).
 
+## Typing a place IS a location search (owner, 2026-11-24)
+
+`LakewoodSearch.placeIntent(text, picker, streets, shuls)` decides what the typed words mean. If they name a neighbourhood, shul, street or
+intersection (3+ letters, a real prefix match, the first dropdown suggestion), the page sorts **every listing nearest-first** from it at once
+(nothing is filtered out), shows "Nearest first to X . press Enter to keep it . search the word instead" under the search box, and puts the
+spot on the map; Enter or a click keeps it as the "Near" chip. Otherwise the words stay a keyword filter. Rules:
+- Words that mean something in a listing (pool, boy, basement, 55+), typo matches, the bare words shul / yeshiva / minyan, and single
+  words that fit several streets (forest, birch) stay keywords. An owner-defined neighbourhood or shul wins over a street.
+- "raintree pool" = Raintree (sort) + "pool" (filter); the place can come first or last. A last dropdown row, "Search the listings for the
+  word ...", and the "search the word instead" link switch a place word back to a keyword filter.
+- Once a "Near" chip is set, typing is a keyword filter again.
+- **BMG** alone = the campus between 6th and 7th St (place "BMG"). The other buildings go by their own names: Beis Aharon (10th St),
+  Beis Shalom (9th St), Forest Beis Medrash (Forest Ave); typing "yeshiva" lists all of them. "Princeton Beis Medrash" is not on Google
+  Maps and not in the data yet: ask the owner where it is.
+
 ## Search box must say it finds shuls
 
 The placeholder reads "Neighborhood, street, shul or keyword..." ("Area or shul..." on a phone), the empty focused box lists what can be

@@ -654,6 +654,7 @@
   .map--close .shulpin .shul__n { display: block; }
   .legend__star { color: #5b4a8a; font-weight: 700; }
   .mpop button.mpop__near { display: block; margin-top: 8px; font: inherit; font-weight: 700; color: #16452F; background: #fff; border: 1px solid #1E5C3F; border-radius: 8px; padding: 6px 10px; cursor: pointer; }
+  .linkbtn { font: inherit; color: var(--accent-ink); background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
 </style>
 
 <header class="searchbar topbar" id="searchbar">
@@ -841,7 +842,7 @@
   });
 
   var q = document.getElementById("q");
-  q.oninput = function () { S.q = q.value.trim().toLowerCase(); render(); };
+  q.oninput = function () { applyIntent(); render(); };
   var rent = document.getElementById("rent"), rentVal = document.getElementById("rentVal"),
       rentNote = document.getElementById("rentNote");
   rent.oninput = function () {
@@ -861,7 +862,7 @@
     var keepSort = S.sort;
     S = LakewoodSearch.defaultState();
     S.sort = keepSort;
-    q.value = ""; rent.value = 7000; rentVal.textContent = "Any";
+    q.value = ""; kwOnlyFor = ""; rent.value = 7000; rentVal.textContent = "Any";
     setOrigin(null); closeSugg();
     document.getElementById("inclCall").checked = true;
     document.getElementById("furnished").checked = false;
@@ -908,7 +909,7 @@
       // every suggestion says which town it is in; an intersection says so too
       var hint = pl.kind === "cross" ? "intersection" + (pl.town ? " \u00b7 " + pl.town : "")
         : pl.kind === "topic" ? "only 55+ listings"
-        : pl.kind === "hint" ? (pl.note || "")
+        : pl.kind === "hint" || pl.kind === "keyword" ? (pl.note || "")
         : pl.kind === "shul" ? "shul \u00b7 " + (pl.address ? pl.address + " \u00b7 " : "") + (pl.town || "")
         : pl.kind === "place" && pl.shul ? "area & shul \u00b7 " + (pl.town || "") : (pl.town || "");
       li.innerHTML = '<span class="sugg__name">' + esc(pl.name) + '</span>' +
@@ -930,24 +931,29 @@
     sugg.removeAttribute("data-mode");
     if (!q.value.trim()) { items = HINTS; active = -1; sugg.setAttribute("data-mode", "hints"); paintSugg(); sugg.hidden = false; q.setAttribute("aria-expanded", "true"); return; }
     items = LakewoodSearch.suggestAll(PICKER, STREETS, q.value, 8, SHULS);
+    if (S.origin && S.origin.preview && items.length && items[0].kind !== "hint")
+      items.push({ kind: "keyword", name: "Search the listings for the word \u201c" + q.value.trim() + "\u201d", note: "keyword", fill: q.value.trim() });
     active = -1;
     if (!items.length) return closeSugg();
     paintSugg(); sugg.hidden = false; q.setAttribute("aria-expanded", "true");
   }
   function pickPlace(pl) {
-    if (pl.kind === "hint") {                                     // an example: type it for the visitor
-      q.value = pl.fill; S.q = pl.fill.toLowerCase(); render(); updateSugg(); return;
+    if (pl.kind === "keyword") {                                  // the word, not the place
+      kwOnlyFor = pl.fill.toLowerCase(); applyIntent(); render(); closeSugg(); return;
     }
-    q.value = ""; S.q = "";
+    if (pl.kind === "hint") {                                     // an example: type it for the visitor
+      q.value = pl.fill; applyIntent(); render(); updateSugg(); return;
+    }
+    q.value = ""; S.q = ""; kwOnlyFor = "";
     closeSugg(); q.blur();
     if (pl.kind === "topic") { setAge55(true); return; }          // "55+ communities": a filter, not a place
     // a street is sorted by distance to its whole line, a neighborhood or intersection by distance to its point
     setOrigin({ lat: pl.lat, lng: pl.lng, paths: pl.kind === "street" ? pl.paths : null, shul: pl.kind === "shul" }, pl.name);
   }
-  function setOrigin(origin, label) {
+  function setOrigin(origin, label, noRender) {
     S.origin = origin; if (typeof mapOrigin === "function") mapOrigin(origin, label);
     var on = !!origin;
-    nearChip.hidden = !on; nearLabel.textContent = on ? label : "";
+    nearChip.hidden = !on || !!(origin && origin.preview); nearLabel.textContent = on ? label : "";
     withinWrap.hidden = !on; distOpt.disabled = !on;
     distOpt.textContent = on ? "Distance: nearest first" : "Distance (pick a neighborhood first)";
     if (on) { S.sort = "distance"; sortSel.value = "distance"; }
@@ -958,9 +964,37 @@
                       : "Nearest first \u00b7 distances are to the middle of each neighborhood") : "";
     nearRow.hidden = !on;
     syncBar();
-    render();
+    if (!noRender) render();
   }
   function say(msg) { nearRow.hidden = false; withinWrap.hidden = !S.origin; nearStatus.textContent = msg; syncBar(); }
+
+
+  // ---- typing a place, shul or street IS a location search ----
+  // As soon as the typed words name a place the list is sorted nearest-first from it (nothing is filtered out), with a note
+  // under the search box. Enter or a click keeps it as the "Near" chip. Anything that is not a place stays a keyword filter.
+  var kwOnlyFor = "";
+  function clearPreview() {
+    if (!(S.origin && S.origin.preview)) return;
+    setOrigin(null, "", true);
+  }
+  function setPreview(item) {
+    var o = { lat: item.lat, lng: item.lng, paths: item.kind === "street" ? item.paths : null, shul: item.kind === "shul", preview: true, key: item.kind + ":" + item.name };
+    if (S.origin && S.origin.preview && S.origin.key === o.key) return;
+    var keepWithin = S.maxMiles;
+    setOrigin(o, item.name, true);
+    S.maxMiles = keepWithin;
+    nearStatus.innerHTML = "Nearest first to <b>" + esc(item.name) + "</b> · press Enter to keep it · " +
+      '<button type="button" class="linkbtn" id="kwBtn">search the word instead</button>';
+    document.getElementById("kwBtn").onclick = function () { kwOnlyFor = q.value.trim().toLowerCase(); applyIntent(); render(); q.focus(); };
+    syncBar();
+  }
+  function applyIntent() {
+    var text = q.value.trim(), it = null;
+    if (text && text.toLowerCase() !== kwOnlyFor && !(S.origin && !S.origin.preview))
+      it = LakewoodSearch.placeIntent(text, PICKER, STREETS, SHULS);
+    if (it) { setPreview(it.item); S.q = it.rest; }
+    else { clearPreview(); S.q = text.toLowerCase(); }
+  }
 
   q.addEventListener("input", function () { updateSugg(); });
   q.addEventListener("focus", function () { updateSugg(); });
@@ -977,10 +1011,10 @@
       var hit = open && active >= 0 ? items[active] : null;
       // Enter on an exact name, or when no listing mentions what was typed, takes the best suggestion
       if (!hit && open && items.length &&
-          items[0].kind !== "hint" && (items[0].name.toLowerCase() === q.value.trim().toLowerCase() || lastCount === 0)) hit = items[0];
+          items[0].kind !== "hint" && items[0].kind !== "keyword" && (items[0].name.toLowerCase() === q.value.trim().toLowerCase() || lastCount === 0 || (S.origin && S.origin.preview))) hit = items[0];
       if (hit) { e.preventDefault(); pickPlace(hit); } else closeSugg();
     } else if (e.key === "Escape") {
-      if (open) closeSugg(); else if (q.value) { q.value = ""; S.q = ""; render(); }
+      if (open) closeSugg(); else if (q.value) { q.value = ""; kwOnlyFor = ""; applyIntent(); render(); }
     } else if (e.key === "Backspace" && !q.value && S.origin) {
       setOrigin(null);          // Backspace in the empty box removes the neighborhood
     }
@@ -1420,7 +1454,7 @@
     if (!b) return;
     if (b.hasAttribute("data-nbmore")) { nbAll = !nbAll; refreshIndex(); return; }
     var name = b.getAttribute("data-nb");
-    q.value = name; S.q = name.toLowerCase(); render();
+    q.value = name; kwOnlyFor = name.toLowerCase(); applyIntent(); render();
   });
 
   // ---- price pill ----

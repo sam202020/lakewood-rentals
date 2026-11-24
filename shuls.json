@@ -1,8 +1,8 @@
 {
- "_note": "Synagogues / shuls / batei medrash within ~9 miles of Lakewood, harvested from Google Maps search results on 2026-11-22 (coordinates are Google's place points). Yeshiva and BMG school buildings, churches, halls and shops are left out. Edit by hand: add \"hide\": true to drop one, \"aka\": [...] for other spellings. tools: see CLAUDE.md. BMG buildings were added by hand (owner: they are public places used as a shul, and people say them as an area); \"area\" names the places.json entry that is the same place, so the drop-down shows it once.",
+ "_note": "Synagogues / shuls / batei medrash within ~9 miles of Lakewood, harvested from Google Maps search results on 2026-11-22 (coordinates are Google's place points). Yeshiva and BMG school buildings, churches, halls and shops are left out. Edit by hand: add \"hide\": true to drop one, \"aka\": [...] for other spellings. tools: see CLAUDE.md. BMG buildings were added by hand (owner: they are public places used as a shul, and people say them as an area). \"BMG\" alone = the 6th-7th St campus (main + Herzka, the place 'BMG'); the others have their own names (Beis Aharon, Beis Shalom, Forest Beis Medrash); 'Princeton Beis Medrash' is not on Google Maps yet: ask the owner where it is; \"area\" names the places.json entry that is the same place, so the drop-down shows it once.",
  "shuls": [
   {
-   "name": "BMG - Forest Ave Campus",
+   "name": "Forest Beis Medrash",
    "lat": 40.10087,
    "lng": -74.22025,
    "town": "Lakewood",
@@ -10,7 +10,11 @@
    "category": "Yeshiva (used as a shul)",
    "source": "google-maps",
    "aka": [
+    "BMG Forest",
+    "BMG Forest Ave",
+    "Forest Ave Beis Medrash",
     "BMG",
+    "Yeshiva",
     "Beth Medrash Govoha"
    ]
   },
@@ -23,12 +27,14 @@
    "category": "Yeshiva (used as a shul)",
    "source": "google-maps",
    "aka": [
-    "BMG",
+    "Herzka",
+    "Yeshiva",
     "Beth Medrash Govoha"
-   ]
+   ],
+   "area": "BMG"
   },
   {
-   "name": "BMG - Bais Shalom (9th St)",
+   "name": "Beis Shalom",
    "lat": 40.09919,
    "lng": -74.21713,
    "town": "Lakewood",
@@ -36,13 +42,17 @@
    "category": "Yeshiva (used as a shul)",
    "source": "google-maps",
    "aka": [
+    "Bais Shalom",
+    "BMG Beis Shalom",
+    "BMG Bais Shalom",
     "BMG",
+    "Yeshiva",
     "Beth Medrash Govoha"
    ],
-   "area": "Bais Shalom"
+   "area": "Beis Shalom"
   },
   {
-   "name": "BMG - Bais Aharon (10th St)",
+   "name": "Beis Aharon",
    "lat": 40.09971,
    "lng": -74.21721,
    "town": "Lakewood",
@@ -50,7 +60,13 @@
    "category": "Yeshiva (used as a shul)",
    "source": "google-maps",
    "aka": [
+    "Bais Aharon",
+    "Beis Aaron",
+    "Bais Aaron",
+    "BMG Beis Aharon",
+    "BMG Bais Aharon",
     "BMG",
+    "Yeshiva",
     "Beth Medrash Govoha"
    ]
   },
@@ -63,10 +79,10 @@
    "category": "Yeshiva (used as a shul)",
    "source": "google-maps",
    "aka": [
-    "BMG",
+    "Yeshiva",
     "Beth Medrash Govoha"
    ],
-   "area": "Yeshiva (BMG)"
+   "area": "BMG"
   },
   {
    "name": "Ahavas Tzedakah",

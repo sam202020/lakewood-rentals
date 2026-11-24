@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T19:34:15+00:00",
+  "generated_at": "2026-11-24T18:56:08+00:00",
   "list_date": "Wednesday, Nov. 18, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -2283,8 +2283,8 @@
       ],
       "furnished": false,
       "comments": "For Bochur. Separate entrance & bathroom. (Please leave message)",
-      "lat": 40.09538,
-      "lng": -74.22226,
+      "lat": 40.09605,
+      "lng": -74.22183,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -6222,8 +6222,8 @@
       ],
       "furnished": false,
       "comments": "Available immediately.",
-      "lat": 40.09538,
-      "lng": -74.22226,
+      "lat": 40.09605,
+      "lng": -74.22183,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -6612,7 +6612,7 @@
       "lng": -74.19965
     },
     "bais shalom": {
-      "name": "Bais Shalom",
+      "name": "Beis Shalom",
       "lat": 40.09919,
       "lng": -74.21713
     },
@@ -7377,9 +7377,9 @@
       "lng": -74.22742
     },
     "yeshiva": {
-      "name": "BMG (Main Building, 6th St)",
-      "lat": 40.09538,
-      "lng": -74.22226
+      "name": "BMG",
+      "lat": 40.09605,
+      "lng": -74.22183
     }
   },
   "picker": [
@@ -7424,22 +7424,26 @@
       "town": "Lakewood"
     },
     {
-      "name": "Bais Shalom",
-      "lat": 40.09919,
-      "lng": -74.21713,
-      "town": "Lakewood",
-      "shul": true,
-      "aka": [
-        "BMG - Bais Shalom (9th St)",
-        "BMG",
-        "Beth Medrash Govoha"
-      ]
-    },
-    {
       "name": "Beaver Crossing",
       "lat": 40.06652,
       "lng": -74.23199,
       "town": "Lakewood"
+    },
+    {
+      "name": "Beis Shalom",
+      "lat": 40.09919,
+      "lng": -74.21713,
+      "town": "Lakewood",
+      "aka": [
+        "Bais Shalom",
+        "BMG Beis Shalom",
+        "BMG Alumni",
+        "BMG Bais Shalom",
+        "BMG",
+        "Yeshiva",
+        "Beth Medrash Govoha"
+      ],
+      "shul": true
     },
     {
       "name": "Belz Shlav Aleph (The 70 Phase I)",
@@ -7476,14 +7480,17 @@
       "town": "Lakewood"
     },
     {
-      "name": "BMG (Main Building, 6th St)",
-      "lat": 40.09538,
-      "lng": -74.22226,
+      "name": "BMG",
+      "lat": 40.09605,
+      "lng": -74.22183,
       "town": "Lakewood",
       "aka": [
         "Yeshiva",
         "Beth Medrash Govoha",
+        "Beis Medrash Govoha",
         "BMG",
+        "BMG - Herzka Building (7th St)",
+        "Herzka",
         "BMG - Main Building (6th St)"
       ],
       "shul": true
@@ -8513,6 +8520,13 @@
       "215 E 5th St"
     ],
     [
+      "Beis Aharon",
+      40.09971,
+      -74.21721,
+      "Lakewood",
+      "350 10th St"
+    ],
+    [
       "Beis Dovid",
       40.09715,
       -74.20058,
@@ -8590,6 +8604,13 @@
       "1401 Cedar Row"
     ],
     [
+      "Beis Shalom",
+      40.09919,
+      -74.21713,
+      "Lakewood",
+      "345 9th St"
+    ],
+    [
       "Beit Medrash Torat Chesed",
       40.09977,
       -74.21125,
@@ -8665,27 +8686,6 @@
       -74.19746,
       "Lakewood",
       "910 E Kennedy Blvd"
-    ],
-    [
-      "BMG - Bais Aharon (10th St)",
-      40.09971,
-      -74.21721,
-      "Lakewood",
-      "350 10th St"
-    ],
-    [
-      "BMG - Bais Shalom (9th St)",
-      40.09919,
-      -74.21713,
-      "Lakewood",
-      "345 9th St"
-    ],
-    [
-      "BMG - Forest Ave Campus",
-      40.10087,
-      -74.22025,
-      "Lakewood",
-      "1075 Forest Ave"
     ],
     [
       "BMG - Herzka Building (7th St)",
@@ -8833,6 +8833,13 @@
       -74.21687,
       "Lakewood",
       "114 Madison Ave"
+    ],
+    [
+      "Forest Beis Medrash",
+      40.10087,
+      -74.22025,
+      "Lakewood",
+      "1075 Forest Ave"
     ],
     [
       "Gerrer Shteibel",
@@ -10076,6 +10083,23 @@
       "215 E 5th St"
     ],
     [
+      "Beis Aharon",
+      40.09971,
+      -74.21721,
+      "Lakewood",
+      "350 10th St",
+      [
+        "Bais Aharon",
+        "Beis Aaron",
+        "Bais Aaron",
+        "BMG Beis Aharon",
+        "BMG Bais Aharon",
+        "BMG",
+        "Yeshiva",
+        "Beth Medrash Govoha"
+      ]
+    ],
+    [
       "Beis Dovid",
       40.09715,
       -74.20058,
@@ -10223,39 +10247,6 @@
       "910 E Kennedy Blvd"
     ],
     [
-      "BMG - Bais Aharon (10th St)",
-      40.09971,
-      -74.21721,
-      "Lakewood",
-      "350 10th St",
-      [
-        "BMG",
-        "Beth Medrash Govoha"
-      ]
-    ],
-    [
-      "BMG - Forest Ave Campus",
-      40.10087,
-      -74.22025,
-      "Lakewood",
-      "1075 Forest Ave",
-      [
-        "BMG",
-        "Beth Medrash Govoha"
-      ]
-    ],
-    [
-      "BMG - Herzka Building (7th St)",
-      40.09646,
-      -74.2216,
-      "Lakewood",
-      "605 7th St",
-      [
-        "BMG",
-        "Beth Medrash Govoha"
-      ]
-    ],
-    [
       "Bnai Baruch",
       40.10474,
       -74.20954,
@@ -10387,6 +10378,21 @@
       -74.21687,
       "Lakewood",
       "114 Madison Ave"
+    ],
+    [
+      "Forest Beis Medrash",
+      40.10087,
+      -74.22025,
+      "Lakewood",
+      "1075 Forest Ave",
+      [
+        "BMG Forest",
+        "BMG Forest Ave",
+        "Forest Ave Beis Medrash",
+        "BMG",
+        "Yeshiva",
+        "Beth Medrash Govoha"
+      ]
     ],
     [
       "Gerrer Shteibel",

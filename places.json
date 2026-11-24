@@ -135,11 +135,16 @@
   "note": "Checked on Google Maps (Arlington Blvd); replaced OSM pin 40.07952,-74.20891."
  },
  "bais shalom": {
-  "name": "Bais Shalom",
+  "name": "Beis Shalom",
   "lat": 40.09919,
   "lng": -74.21713,
   "source": "manual",
-  "note": "Google Maps: BMG Bais Shalom Building."
+  "note": "Google Maps: BMG Bais Shalom Building.",
+  "aka": [
+   "Bais Shalom",
+   "BMG Beis Shalom",
+   "BMG Alumni"
+  ]
  },
  "beaver crossing": {
   "name": "Beaver Crossing",
@@ -1434,15 +1439,16 @@
   "note": "Google Maps: Wyndham Place, Lakewood. Replaces a wrong OSM match in Freehold."
  },
  "yeshiva": {
-  "name": "BMG (Main Building, 6th St)",
-  "lat": 40.09538,
-  "lng": -74.22226,
+  "name": "BMG",
+  "lat": 40.09605,
+  "lng": -74.22183,
   "source": "manual",
-  "note": "BMG, 617 6th St.",
   "aka": [
    "Yeshiva",
    "Beth Medrash Govoha",
+   "Beis Medrash Govoha",
    "BMG"
-  ]
+  ],
+  "note": "Owner 2026-11-24: BMG alone means the campus between 6th and 7th St. Midpoint of Google Maps 617 6th St (40.09563,-74.22206) and 605 7th St Herzka Building (40.09646,-74.22160). The other BMG buildings are separate shuls with their own names (Beis Aharon, Beis Shalom, Forest Beis Medrash)."
  }
 }

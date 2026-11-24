@@ -1098,3 +1098,32 @@ test("map: every shul in shuls.json is a marker on the page, with a town", () =>
   assert.ok(pins.length > 200);
   assert.ok(pins.every((p) => typeof p[1] === "number" && typeof p[2] === "number" && p[3]));
 });
+
+// ---- typing a place is a location search --------------------------------------
+const pagePayload = () => JSON.parse(fs.readFileSync(path.join(ROOT, "docs/index.html"), "utf8").match(/<script id="payload"[^>]*>([\s\S]*?)<\/script>/)[1]);
+
+test("placeIntent: a place, shul or street typed in the box means 'near it'; ordinary words stay keywords", () => {
+  const data = pagePayload();
+  const streets = S.decodeStreets(data.streets);
+  const shuls = (data.shuls || []).map((a) => ({ name: a[0], lat: a[1], lng: a[2], town: a[3], address: a[4], aka: a[5] || [] }));
+  const of = (q) => { const r = S.placeIntent(q, data.picker, streets, shuls); return r ? r.item.name + (r.rest ? " +" + r.rest : "") : null; };
+  assert.equal(of("raintree"), "Raintree");
+  assert.equal(of("Raintree "), "Raintree");
+  assert.equal(of("bmg"), "BMG");                               // owner: BMG alone = the campus between 6th and 7th
+  assert.equal(of("kol aryeh"), "Kol Aryeh");
+  assert.equal(of("beis aharon"), "Beis Aharon");
+  assert.equal(of("spruce st"), "Spruce Street");
+  assert.equal(of("raintree pool"), "Raintree +pool");          // a place plus a keyword
+  assert.equal(of("furnished raintree"), "Raintree +furnished");
+  assert.match(of("clover & ocean"), /Clover/);                 // an intersection
+  for (const w of ["pool", "boy", "basement", "55+", "shul", "yeshiva", "ra", "jak", "forest"]) assert.equal(of(w), null, w);
+});
+
+test("suggestions: 'yeshiva' lists every BMG building, 'bmg' puts the 6th-7th St campus first", () => {
+  const data = pagePayload();
+  const streets = S.decodeStreets(data.streets);
+  const shuls = (data.shuls || []).map((a) => ({ name: a[0], lat: a[1], lng: a[2], town: a[3], address: a[4], aka: a[5] || [] }));
+  const y = S.suggestAll(data.picker, streets, "yeshiva", 12, shuls).map((i) => i.name);
+  for (const n of ["BMG", "Beis Shalom", "Beis Aharon", "Forest Beis Medrash"]) assert.ok(y.includes(n), n + " in " + y.join(", "));
+  assert.equal(S.suggestAll(data.picker, streets, "bmg", 8, shuls)[0].name, "BMG");
+});

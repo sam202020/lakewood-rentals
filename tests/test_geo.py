@@ -624,14 +624,22 @@ class ShulNameAndMergeTests(unittest.TestCase):
         self.assertEqual(len(keep), 1)
         self.assertFalse(merged[0].get("shul"))
 
-    def test_bmg_buildings_are_shuls_and_the_bmg_areas_are_merged_in(self):
+    def test_bmg_alone_is_the_campus_between_6th_and_7th_and_the_other_buildings_have_their_own_names(self):
         picker = geo.picker_entries(geo.load_places())
         shuls, merged = geo.merge_shuls(geo.load_shuls(), picker)
         names = [s["name"] for s in shuls]
-        self.assertTrue(any(n.startswith("BMG - Bais Aharon") for n in names))
-        self.assertTrue(any(n.startswith("BMG - Herzka") for n in names))
-        main = [p for p in merged if p["name"].startswith("BMG (Main")][0]
-        self.assertTrue(main["shul"])
-        self.assertIn("BMG", main["aka"])
-        bs = [p for p in merged if p["name"] == "Bais Shalom"][0]
-        self.assertTrue(bs["shul"])
+        # owner 2026-11-24: "BMG" = the main campus (6th and 7th St), one place
+        bmg = [p for p in merged if p["name"] == "BMG"]
+        self.assertEqual(len(bmg), 1)
+        self.assertTrue(bmg[0]["shul"])
+        self.assertTrue(40.0955 < bmg[0]["lat"] < 40.0970 and -74.2225 < bmg[0]["lng"] < -74.2210)   # between 6th and 7th St
+        self.assertFalse(any(n.startswith("BMG - Main") or n.startswith("BMG - Herzka") for n in names))   # merged into BMG
+        # the other buildings go by their own names, and all of them come up for "yeshiva"
+        for own in ("Beis Aharon", "Forest Beis Medrash"):
+            self.assertIn(own, names)
+        bs = [p for p in merged if p["name"] == "Beis Shalom"]
+        self.assertEqual(len(bs), 1)
+        every = {p["name"]: p.get("aka", []) for p in merged}
+        every.update({s["name"]: s.get("aka", []) for s in shuls})
+        for who in ("BMG", "Beis Shalom", "Beis Aharon", "Forest Beis Medrash"):
+            self.assertIn("Yeshiva", every[who], who)

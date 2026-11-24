@@ -636,7 +636,7 @@ var LakewoodSearch = (function () {
       items.push({ kind: "street", name: s.n, town: s.t, lat: s.lat, lng: s.lng, paths: s.paths });
     });
     rankShuls(shuls, text, limit).forEach(function (o) {
-      items.push({ kind: "shul", name: o.s.name, town: o.s.town, address: o.s.address, lat: o.s.lat, lng: o.s.lng, _shulRank: o.score });
+      items.push({ kind: "shul", name: o.s.name, town: o.s.town, address: o.s.address, lat: o.s.lat, lng: o.s.lng, aka: o.s.aka || [], _shulRank: o.score });
     });
     // keep places ahead of streets only as a tie-break: re-rank everything by match quality
     if (qt.length) {
@@ -649,6 +649,58 @@ var LakewoodSearch = (function () {
       if (items.length && items[0]._r < 3) items = items.filter(function (it) { return it._r < 3; });   // typo matches only as a last resort
     }
     return items.slice(0, limit);
+  }
+
+    // ---- what does the typed text mean? A place (sort by distance) or a word (filter the listings) ----
+  var GENERIC_ONLY = /^(shuls?|shules?|synagogues?|minyan(im)?|beis medrash|bais medrash|beit midrash|beis midrash|yeshivas?)$/;
+
+  /** The best place for `text` if the text (a prefix of) names one: {item, rest} where rest is leftover keyword words
+   *  ("raintree pool" -> Raintree + "pool"), else null. Needs 3+ letters. Streets, neighborhoods, shuls and intersections count;
+   *  typo matches, "55+", the bare words shul/yeshiva and single words that mean something in a listing (pool, boy, basement)
+   *  do not. The dropdown shows the same items, so what is sorted by is always the first suggestion. */
+  function placeIntent(text, picker, streets, shuls) {
+    var t = String(text || "").trim().toLowerCase();
+    if (t.replace(/[^a-z0-9]/g, "").length < 3 || GENERIC_ONLY.test(t)) return null;
+    function best(s, exact) {
+      var qt = placeTokens(s);
+      if (!qt.length) return null;
+      var items = suggestAll(picker, streets, s, 8, shuls);
+      for (var i = 0; i < items.length; i++) {
+        var it = items[i];
+        if (it.kind === "topic" || it.kind === "hint") return null;
+        if (it.kind === "cross") return it;
+        if (it._r > 1) return null;                                      // typo / sounds-like matches are not a place
+        if (it.kind === "street" || (it.kind === "shul" && !exact)) {    // "forest" could be Forest Avenue, Drive, Hills ...: a street (or a shul the street names compete with) needs words that single it out
+          var names = {};
+          items.forEach(function (o) { if (o.kind === "street" && o._r <= 1) names[o.name.toLowerCase()] = true; });
+          if (Object.keys(names).length > 1 || (it.kind === "street" && Object.keys(names).length > 1)) return null;
+        }
+        if (exact) {
+          var labels = [it.name].concat(it.aka || []).map(function (n) { return placeTokens(n).join(" "); });
+          if (labels.indexOf(qt.join(" ")) === -1) return null;
+        }
+        return it;
+      }
+      return null;
+    }
+    var words = t.split(/\s+/), it = best(t, false);
+    if (it) {
+      // a single word that also means something in a listing (pool, boy, basement ...) stays a keyword unless it is a place's exact name
+      if (words.length === 1 && conceptsOfTerm(words[0]).length) {
+        var exact = best(t, true);
+        return exact ? { item: exact, rest: "" } : null;
+      }
+      return { item: it, rest: "" };
+    }
+    for (var k = words.length - 1; k >= 1; k--) {                          // leading words that exactly name a place + keyword words
+      var head = words.slice(0, k).join(" "), h = best(head, true);
+      if (h) return { item: h, rest: words.slice(k).join(" ") };
+    }
+    for (var j = 1; j < words.length; j++) {                               // ... or keyword words + the place at the end
+      var tail = words.slice(j).join(" "), g = best(tail, true);
+      if (g) return { item: g, rest: words.slice(0, j).join(" ") };
+    }
+    return null;
   }
 
   /** How many filter groups (not counting the search box, the distance chip or the visible 55+ chip) are switched on. */
@@ -671,6 +723,7 @@ var LakewoodSearch = (function () {
     suggestShuls: suggestShuls,
     suggestCrossings: suggestCrossings,
     suggestAll: suggestAll,
+    placeIntent: placeIntent,
     decodeStreets: decodeStreets,
     uncertaintyMiles: uncertaintyMiles,
     rentLabel: rentLabel,
