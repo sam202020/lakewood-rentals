@@ -347,6 +347,20 @@ var LakewoodSearch = (function () {
     return sortRows(listings.filter(function (x) { return match(x, S); }), S.sort);
   }
 
+  /** Keyword search that never hides the rest (owner, 2026-11-24): `matches` are the listings that pass every filter and
+   *  mention the typed words; `others` pass every filter but not the words. Each group is sorted by S.sort. With no words,
+   *  everything that passes the filters is a match. Sets `_kw` (true / false) on each listing. */
+  function searchAll(listings, S) {
+    var strict = search(listings, S), others = [];
+    if (normalizeQuery(S.q).trim()) {
+      var inStrict = new Set(strict), noWords = Object.assign({}, S, { q: "" });
+      others = sortRows(listings.filter(function (x) { return !inStrict.has(x) && match(x, noWords); }), S.sort);
+    }
+    strict.forEach(function (x) { x._kw = true; });
+    others.forEach(function (x) { x._kw = false; });
+    return { matches: strict, others: others };
+  }
+
   // ---- neighborhood suggestions for the combined search box ----------------------
 
   function placeTokens(s) {
@@ -514,6 +528,13 @@ var LakewoodSearch = (function () {
     return key.length >= 2 && soundKey(w).indexOf(key) === 0;
   }
 
+  /** Spelling only (no "sounds like"): is the typed word `t` a small typo of `w`, or of the start of `w`? */
+  function editClose(t, w) {
+    if (w.charAt(0) !== t.charAt(0)) return false;
+    var k = t.length >= 7 ? 2 : 1;
+    return editDistance(t, w.slice(0, t.length + 1), k) <= k || editDistance(t, w, k) <= k;
+  }
+
   function rankTokens(tokens, qt) {
     var label = tokens.join(" "), qs = qt.join(" ");
     if (label.indexOf(qs) === 0) return 0;
@@ -653,7 +674,7 @@ var LakewoodSearch = (function () {
     // a street word that fits many streets: the one people mean goes first ("forest" -> Forest Avenue, Lakewood)
     var prefKey = preferred && preferred[typed] ? typed : null, fuzzyPref = false;
     if (!prefKey && preferred && /^[a-z]{4,}$/.test(typed) && !items.some(function (it) { return it._r >= 0 && it._r < 3; })) {
-      Object.keys(preferred).forEach(function (k) { if (!prefKey && closeWord(typed, k)) { prefKey = k; fuzzyPref = true; } });   // "foreset" -> forest
+      Object.keys(preferred).forEach(function (k) { if (!prefKey && editClose(typed, k)) { prefKey = k; fuzzyPref = true; } });   // "foreset" -> forest
     }
     var want = prefKey && preferred[prefKey];
     if (want) {
@@ -731,6 +752,9 @@ var LakewoodSearch = (function () {
       for (var m = 0; m < items.length; m++) {
         var ty = items[m];
         if (ty.kind === "topic" || ty.kind === "hint" || ty.kind === "keyword" || ty.kind === "cross" || ty._r < 3) return null;
+        var tyWords = placeTokens([ty.name].concat(ty.aka || []).join(" "));
+        var spelt = words.every(function (w) { return tyWords.some(function (n) { return n === w || editClose(w, n); }); });   // a real misspelling, not just a similar sound
+        if (!spelt) continue;
         if (ty.kind === "street") {
           var nm = {};
           items.forEach(function (o) { if (o.kind === "street" && o._r <= ty._r) nm[o.name.toLowerCase()] = true; });
@@ -779,7 +803,8 @@ var LakewoodSearch = (function () {
     defaultState: defaultState,
     match: match,
     sortRows: sortRows,
-    search: search
+    search: search,
+    searchAll: searchAll
   };
 })();
 

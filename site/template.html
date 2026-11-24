@@ -655,6 +655,12 @@
   .legend__star { color: #5b4a8a; font-weight: 700; }
   .mpop button.mpop__near { display: block; margin-top: 8px; font: inherit; font-weight: 700; color: #16452F; background: #fff; border: 1px solid #1E5C3F; border-radius: 8px; padding: 6px 10px; cursor: pointer; }
   .linkbtn { font: inherit; color: var(--accent-ink); background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
+  .pin--dim { opacity: .4; z-index: 0 !important; }
+  .kwnote { grid-column: 1 / -1; font-size: 13px; color: var(--muted); }
+  .kwhead { font-weight: 700; color: var(--ink); font-size: 14px; padding: 2px 2px 0; }
+  .kwdivider { margin-top: 6px; padding: 10px 2px 2px; border-top: 2px solid var(--rule-strong); font-weight: 600; letter-spacing: .02em; }
+  .tbl tr.kwrow td { background: var(--paper); font-size: 13px; font-weight: 700; color: var(--muted); padding: 9px 10px; }
+  .tbl tr.kwhead td { color: var(--ink); }
 </style>
 
 <header class="searchbar topbar" id="searchbar">
@@ -1153,7 +1159,7 @@
   }
 
   function render() {
-    var rows = LakewoodSearch.search(L, S);
+    var res = LakewoodSearch.searchAll(L, S), rows = res.matches, others = res.others, all = rows.concat(others);
     var nf = LakewoodSearch.activeFilterCount(S); refreshDrops();
     fcount.textContent = nf; fcount.hidden = !nf;
     document.getElementById("reset").hidden = !(nf || S.q || S.origin || S.age55);
@@ -1170,30 +1176,37 @@
     elCount.textContent = rows.length.toLocaleString();
     elWord.textContent = rows.length === 1 ? "listing" : "listings";
     var nPriced = rows.filter(LakewoodSearch.hasPrice).length;
-    document.getElementById("pricedCount").textContent = rows.length && nPriced < rows.length ? " \u00b7 " + nPriced + " with a price" : "";
+    document.getElementById("pricedCount").textContent = (rows.length && nPriced < rows.length ? " \u00b7 " + nPriced + " with a price" : "") +
+      (others.length ? " \u00b7 " + others.length + " others below" : "");
     pricedBtn.setAttribute("aria-pressed", S.inclCall ? "false" : "true");
     document.getElementById("inclCall").checked = S.inclCall;
     var asTable = MODE === "table" && !isPhone();
     tablewrap.hidden = !asTable;
     grid.innerHTML = "";
-    if (!rows.length) {
-      var typed = (S.q || "").trim(), known = typed && LakewoodSearch.suggestAll(PICKER, STREETS, typed, 1, SHULS).length;
+    if (!all.length) {
       mapRefresh([]);
       tablewrap.hidden = true;
-      grid.innerHTML = known
-        ? '<div class="empty"><b>No listing mentions \u201c' + esc(typed) + '\u201d</b>Pick it from the suggestions (or press Enter) to sort every listing by distance from it.</div>'
-        : '<div class="empty"><b>No matches</b>Try widening the rent range or clearing a filter.</div>';
+      grid.innerHTML = '<div class="empty"><b>No matches</b>Try widening the rent range or clearing a filter.</div>';
       grid.appendChild(fine);
       return;
     }
-    lastRows = rows;
-    if (asTable) { tablewrap.innerHTML = tableHtml(rows); tablewrap.appendChild(fine); refreshIndex(); mapRefresh(rows); return; }
+    lastRows = all; lastSplit = rows.length;
+    // keyword search keeps the whole list: the listings that mention the words first, a divider, then the rest
+    var kw = (S.q || "").trim(), split = kw && others.length ? rows.length : -1;
+    var head = !kw || !others.length ? "" : rows.length ? rows.length + (rows.length === 1 ? " listing mentions " : " listings mention ") + "\u201c" + kw + "\u201d"
+      : "No listing mentions \u201c" + kw + "\u201d \u00b7 showing all " + others.length + " listings";
+    if (asTable) { lastTableArgs = [all, split, head]; tablewrap.innerHTML = tableHtml(all, split, head); tablewrap.appendChild(fine); refreshIndex(); mapRefresh(all); return; }
     var frag = document.createDocumentFragment();
-    rows.slice(0, 400).forEach(function (x) { frag.appendChild(card(x)); });
+    if (head) frag.appendChild(kwNote(head, "kwhead"));
+    all.slice(0, 400).forEach(function (x, i) {
+      if (i === split && split > 0) frag.appendChild(kwNote(others.length + (others.length === 1 ? " other listing" : " other listings"), "kwdivider"));
+      frag.appendChild(card(x));
+    });
     grid.appendChild(frag);
     grid.appendChild(fine);
-    mapRefresh(rows);
+    mapRefresh(all);
   }
+  function kwNote(text, cls) { var d = document.createElement("div"); d.className = "kwnote " + cls; d.textContent = text; return d; }
 
 
   // ---- one map for the whole page ----
@@ -1276,8 +1289,9 @@
 
   function pinIcon(g, on) {
     var n = g.rows.length, one = g.rows[0], dot = n === 1 && !LakewoodSearch.hasPrice(one);
+    var dim = !g.rows.some(function (r) { return r._kw !== false; });                 // only listings that do not mention the typed words
     var txt = n > 1 ? String(n) : LakewoodSearch.rentLabel(one);
-    return LF.divIcon({ className: "pin" + (n > 1 ? " pin--multi" : "") + (dot ? " pin--dot" : "") + (on ? " pin--on" : ""),
+    return LF.divIcon({ className: "pin" + (n > 1 ? " pin--multi" : "") + (dot ? " pin--dot" : "") + (on ? " pin--on" : "") + (dim ? " pin--dim" : ""),
                         html: "<span>" + esc(txt) + "</span>", iconSize: [0, 0] });
   }
 
@@ -1316,13 +1330,15 @@
     if (selectedId && !pinFor(selectedId)) clearSelection();
     else if (selectedId) paintSelection(false);
     // refit only when the set of listings (or the "near" spot) changed, not when a card is clicked
-    var key = rows.map(function (x) { return x.id; }).join("|") + "@" + (S.origin ? S.origin.lat + "," + S.origin.lng : "");
+    var key = rows.filter(function (x) { return x._kw !== false; }).map(function (x) { return x.id; }).join("|") + "@" + (S.origin ? S.origin.lat + "," + S.origin.lng : "");
     if (key !== lastFitKey && mapPane.offsetWidth > 0) { lastFitKey = key; touched = false; if (!selectedId) fitAll(groups); }
   }
 
   function fitAll(groups) {
     var pts = [];
     if (S.origin) pts.push([S.origin.lat, S.origin.lng]);
+    var hit = groups.filter(function (g) { return g.rows.some(function (r) { return r._kw !== false; }); });
+    if (hit.length) groups = hit;                                                     // fit the map to the listings that match the words
     var near = groups.filter(function (g) { return LakewoodSearch.distanceMiles(g.lat, g.lng, LAKEWOOD_CENTER[0], LAKEWOOD_CENTER[1]) < 5; });
     var use = S.origin ? groups.slice(0, 8) : (near.length ? near : groups);
     use.forEach(function (g) { pts.push([g.lat, g.lng]); });
@@ -1384,7 +1400,7 @@
   }
 
   // ---- view mode (computer): Cards beside the map, or a dense Table ----
-  var MODE = "cards", lastRows = [];
+  var MODE = "cards", lastRows = [], lastSplit = 0, lastTableArgs = [[], -1, ""];
   var tablewrap = document.getElementById("tablewrap"), nbindex = document.getElementById("nbindex"),
       modeToggle = document.getElementById("modeToggle"), pricedBtn = document.getElementById("pricedBtn");
   function isPhone() { return window.innerWidth <= 860; }
@@ -1398,9 +1414,11 @@
   modeToggle.addEventListener("click", function (e) { var b = e.target.closest("button"); if (b) setMode(b.getAttribute("data-mode")); });
   window.addEventListener("resize", function () { if (MODE === "table") render(); });
 
-  function tableHtml(rows) {
+  function tableHtml(rows, split, head) {
     var h = '<table class="tbl"><thead><tr><th>Where</th><th>Type</th><th>Bd</th><th>Ba</th><th>Rent</th><th>Notes</th><th>Call</th></tr></thead><tbody>';
-    rows.slice(0, 400).forEach(function (x) {
+    if (head) h += '<tr class="kwrow kwhead"><td colspan="7">' + esc(head) + "</td></tr>";
+    rows.slice(0, 400).forEach(function (x, i) {
+      if (i === split && split > 0) h += '<tr class="kwrow kwdivider"><td colspan="7">' + (rows.length - split) + " other listings</td></tr>";
       var wk = /^\$([\d,]+)\/week$/.exec(x.rent_display || ""), on = x.id === selectedId;
       var rent = x.rent != null ? "<b>$" + x.rent.toLocaleString() + "</b>" : wk ? "$" + wk[1] + "/wk" : '<span class="ask">Ask</span>';
       var phones = (x.phones || []).map(function (p) { return '<a class="call" href="' + telHref(p) + '">' + esc(p) + "</a>"; }).join("<br>") || "&ndash;";
@@ -1423,7 +1441,7 @@
     var tr = e.target.closest("tr.r");
     if (!tr) return;
     selectedId = selectedId === tr.getAttribute("data-id") ? null : tr.getAttribute("data-id");
-    tablewrap.innerHTML = tableHtml(lastRows); tablewrap.appendChild(fine);
+    tablewrap.innerHTML = tableHtml.apply(null, lastTableArgs); tablewrap.appendChild(fine);
     if (selectedId) { var el = tablewrap.querySelector("tr.r.on"); if (el) el.focus({ preventScroll: true }); }
   });
   tablewrap.addEventListener("keydown", function (e) {

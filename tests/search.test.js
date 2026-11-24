@@ -1127,7 +1127,7 @@ test("placeIntent: a place, shul or street typed in the box means 'near it'; ord
   assert.equal(of("raintrea"), "Raintree");
   assert.equal(of("jak"), "Jackson");
   assert.equal(of("sterling forest"), "Sterling Forest");       // if you meant Sterling Forest you type Sterling first
-  for (const w of ["pool", "boy", "basement", "furnishd", "basment", "poool", "55+", "shul", "ra"]) assert.equal(of(w), null, w);   // keywords (and typos of keywords)
+  for (const w of ["pool", "boy", "basement", "furnishd", "basment", "poool", "55+", "shul", "ra", "zzzzqq", "qwertyu"]) assert.equal(of(w), null, w);   // keywords (and typos of keywords)
 });
 
 test("suggestions: 'yeshiva' gives exactly the 'bmg' list, the 6th-7th St campus first; forest/birch put the usual street first", () => {
@@ -1147,3 +1147,37 @@ test("suggestions: 'yeshiva' gives exactly the 'bmg' list, the 6th-7th St campus
   assert.equal(birch[0].name + " " + birch[0].town, "Birch Street Lakewood");
 });
 
+
+
+test("searchAll: a keyword puts the matching listings first and keeps every other listing below them", () => {
+  const rows = S.enrich([
+    L({ id: "a", location: "Raintree", comments: "Has a pool and a big yard." }),
+    L({ id: "b", location: "Albert", comments: "Quiet street." }),
+    L({ id: "c", location: "Pawnee", comments: "Pool access in the community.", rent: 1500 }),
+    L({ id: "d", location: "Marc Drive", type: "Room", comments: "Furnished room." }),
+  ]);
+  const st = S.defaultState();
+  st.q = "pool";
+  let r = S.searchAll(rows, st);
+  assert.deepEqual(r.matches.map((x) => x.id), ["a", "c"]);
+  assert.deepEqual(r.others.map((x) => x.id), ["b", "d"]);
+  assert.ok(r.matches.every((x) => x._kw === true) && r.others.every((x) => x._kw === false));
+  // the other filters are still strict: a type filter removes listings from both groups
+  st.types = new Set(["Apartment"]);
+  r = S.searchAll(rows, st);
+  assert.deepEqual(r.others.map((x) => x.id), ["b"]);
+  // each group follows the sort
+  st.types = new Set(); st.sort = "price-asc";
+  r = S.searchAll(rows, st);
+  assert.deepEqual(r.matches.map((x) => x.id), ["c", "a"]);
+  // no words: everything is a match
+  st.q = "";
+  r = S.searchAll(rows, st);
+  assert.equal(r.matches.length, 4);
+  assert.equal(r.others.length, 0);
+  // words nobody uses: no matches, but the whole list is still there
+  st.q = "zzzzz";
+  r = S.searchAll(rows, st);
+  assert.equal(r.matches.length, 0);
+  assert.equal(r.others.length, 4);
+});

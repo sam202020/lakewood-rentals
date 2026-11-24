@@ -154,6 +154,11 @@ spot on the map; Enter or a click keeps it as the "Near" chip. Otherwise the wor
 - **A typo of a place is that place** (owner, 2026-11-24): "foreset" = Forest Avenue (not Sterling Forest: a name's own first word beats a word in the
   middle, and `preferred_streets` also catches typos), "spruse street", "kol aryh", "jak" = Jackson. The note then reads "Did you mean X?". Typos of words
   the listings use (furnishd, basment) stay keywords.
+- **A keyword never hides the rest of the list** (owner, 2026-11-24): `LakewoodSearch.searchAll` returns `matches` (every filter passes and the words are
+  mentioned) and `others` (every filter passes, the words are not). The page shows "N listings mention 'pool'", the matches, a divider "N other
+  listings", then the others (each group in the chosen sort; the map dims the others' pins and fits to the matches). If nothing mentions the
+  words it says so and shows the whole list. The other filters (type, beds, rent, ...) stay strict.
+- A typo only counts as a place when it is a real misspelling of the name (edit distance), not merely a similar sound (so "zzzzqq" is not Zackery Court).
 - "raintree pool" = Raintree (sort) + "pool" (filter); the place can come first or last. A last dropdown row, "Search the listings for the
   word ...", and the "search the word instead" link switch a place word back to a keyword filter.
 - Once a "Near" chip is set, typing is a keyword filter again.
