@@ -402,7 +402,7 @@ def parse_row(words, page_no=0, row_no=0):
                     "Call to discuss" if call_to_discuss else "Contact for rent")
     return {
         "id": code or f"p{page_no}r{row_no}",
-        "type": derive_type_letters(type_letters),
+        "type": derive_type_letters(type_letters) if derive_type_letters(type_letters) != "Other" else type_from_description(comments),
         "utilities_included": [umap[c] for c in "GEWH" if c in wepay],
         "bedrooms": br,
         "bedrooms_num": int(br) if br.isdigit() else None,
@@ -455,6 +455,12 @@ def derive_type_letters(letters):
         if ch in (letters or "").upper():
             return TYPE_MAP[ch]
     return "Other"
+
+
+def type_from_description(comments):
+    """When the code's type letters could not be read, a description that opens by naming a room says what it is
+    ("Private room. Fully furnished house..."); otherwise the type stays unknown ("Other")."""
+    return "Room" if re.match(r"\s*(?:private |furnished |single )?(?:private )?rooms?\b", comments or "", re.I) else "Other"
 
 
 def _parse_page_by_text(page):

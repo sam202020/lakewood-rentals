@@ -310,6 +310,16 @@ class RealPdf(unittest.TestCase):
         self.assertEqual(len(ids), len(set(ids)))
 
 
+class TypeFromDescription(unittest.TestCase):
+    """Owner 2026-11-26: a listing whose code was not read but that opens "Private room" is a room."""
+
+    def test_only_a_description_that_opens_with_room_counts(self):
+        for text in ["Private room. Fully furnished house working/learning guys.", "Furnished room in a house.", "Rooms available."]:
+            self.assertEqual(P.type_from_description(text), "Room", text)
+        for text in ["Beautiful apartment with a private room for guests.", "3 bedrooms, large dining room.", ""]:
+            self.assertEqual(P.type_from_description(text), "Other", text)
+
+
 class BrookwoodSpelledOut(unittest.TestCase):
     """Owner 2026-11-26: write Brookwood out; "outside Brookwood" belongs to Brookwood."""
 
