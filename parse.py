@@ -183,6 +183,7 @@ def clean_comment(s):
     if toks and sum(1 for t in toks if len(t) == 1) / len(toks) > 0.28:
         return ""  # too fragmented to be trustworthy
     s = re.sub(r"(?<=[a-z.,])(?=[A-Z])", " ", s)
+    s = segment.rejoin_split_words(s)                         # "P artly" -> "Partly" (a stray space after the first letter)
     s = segment.join_hyphenated(s)                            # "learn- ing" -> "learning" (a line break in the PDF)
     s = segment.fix_glued(s)                                  # "locationneareverything" -> "location near everything"
     s = re.sub(r"(?<=[A-Za-z]{2}[.,;:])(?=[A-Za-z0-9])", " ", s)   # "Av.imm." -> "Av. imm."

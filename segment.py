@@ -82,6 +82,23 @@ def fix_glued(text):
     return re.sub(r"[A-Za-z]{6,}", one, text)
 
 
+def rejoin_split_words(text):
+    """Put back a word the PDF broke after its first letter: "P artly-furnished" -> "Partly-furnished", "I nternet" ->
+    "Internet", "2 s huls" -> "2 shuls", "o r" -> "or". Only when the joined word is a real word and what follows the space
+    is not one by itself ("B upstairs" stays); the article "a" is never joined."""
+    vocab = vocabulary()
+
+    def one(m):
+        letter, rest = m.group(1), m.group(2)
+        joined = (letter + rest).lower()
+        if letter.lower() == "a" or joined not in vocab:
+            return m.group(0)
+        if (len(rest) >= 4 and rest not in vocab) or (len(rest) == 1 and joined in SHORT_OK):
+            return letter + rest
+        return m.group(0)
+    return re.sub(r"(?<![A-Za-z0-9'\u2019\-/.&])([A-Za-z]) ([a-z]+)(?![a-z])", one, text)
+
+
 def join_hyphenated(text):
     """Re-join a word the PDF broke across two lines: "environ- ment" -> "environment", "learn- ing" -> "learning".
     Left alone when both halves are real words ("well- kept")."""

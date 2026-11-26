@@ -119,5 +119,18 @@ class Gate(unittest.TestCase):
                              for w in checks.check(self.rows("Available immediately. Beautifully renovated apartment."))[1]))
 
 
+class SplitAfterFirstLetter(unittest.TestCase):
+    """Owner 2026-11-26: stray spaces in descriptions ("P artly-furnished", "o r whole house", "I nternet")."""
+
+    def test_real_rows_are_rejoined(self):
+        for raw, want in [("P artly-furnished room", "Partly-furnished room"), ("by the room, o r whole house", "by the room, or whole house"),
+                          ("I nternet included.", "Internet included."), ("Walking distance to 2 s huls.", "Walking distance to 2 shuls.")]:
+            self.assertEqual(segment.rejoin_split_words(raw), want)
+
+    def test_real_separate_words_are_left_alone(self):
+        for text in ["near R\u2019Lubin\u2019s shul.", "Apt. B upstairs.", "a room in a house", "I need it", "Unit B for rent", "2 BR & a den"]:
+            self.assertEqual(segment.rejoin_split_words(text), text)
+
+
 if __name__ == "__main__":
     unittest.main()
