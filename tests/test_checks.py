@@ -143,11 +143,17 @@ class Soft(unittest.TestCase):
         self.assertTrue(any("numeric rent" in w for w in checks.check(rows)[1]))
 
 
+class CustomDomain(unittest.TestCase):
+    def test_docs_cname_names_the_domain(self):
+        # GitHub Pages serves docs/ on this domain only while this file is there. If it is lost, the site drops off the domain.
+        self.assertEqual((ROOT / "docs" / "CNAME").read_text().strip(), "lakewoodnjrentals.com")
+
+
 class BuildGate(unittest.TestCase):
     """build.py must not write anything when a hard check fails."""
 
-    def run_build(self, listings, existing=None):
-        tmp = pathlib.Path(tempfile.mkdtemp())
+    def run_build(self, listings, existing=None, tmp=None):
+        tmp = tmp or pathlib.Path(tempfile.mkdtemp())
         data, out = tmp / "listings.json", tmp / "index.html"
         seen_file = tmp / "neighborhoods_seen.json"   # never the real data/neighborhoods_seen.json
         if existing is not None:
@@ -178,6 +184,14 @@ class BuildGate(unittest.TestCase):
         self.assertNotEqual(out.read_text(), "OLD PAGE")
         self.assertEqual(json.loads(data.read_text())["count"], 200)
         self.assertIn("Raintree 7", out.read_text())
+
+    def test_rebuild_keeps_the_custom_domain_file(self):
+        tmp = pathlib.Path(tempfile.mkdtemp())          # stands in for docs/
+        (tmp / "CNAME").write_text("lakewoodnjrentals.com")
+        code, _, out, _ = self.run_build(make(200), tmp=tmp)
+        self.assertEqual(code, 0)
+        self.assertNotEqual(out.read_text(), "OLD PAGE")
+        self.assertEqual((tmp / "CNAME").read_text(), "lakewoodnjrentals.com")
 
     def test_warnings_do_not_block_the_build(self):
         rows = make(200)

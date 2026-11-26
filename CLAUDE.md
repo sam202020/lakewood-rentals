@@ -205,3 +205,10 @@ The placeholder reads "Neighborhood, street, shul or keyword..." ("Area or shul.
 to choose from**, not an example typed for you: neighborhoods with listings (merged by the place they resolve to, so Hearthstn. and Hearthstone are one),
 streets and intersections with listings, all shuls (Lakewood first), or common words with their listing counts. Typing just "shul"/"synagogue"/"minyan"
 shows "Type a shul's name". Keep this when the search box changes.
+
+## Custom domain: keep `docs/CNAME`
+
+The public site is **https://lakewoodnjrentals.com** (owner registered it; set in the repo's Pages settings 2026-11-26). GitHub Pages
+reads the domain from `docs/CNAME`; never delete, move or rewrite that file (the build writes only `docs/index.html`; tests in
+`tests/test_checks.py` check both). DNS is at Cloudflare: four `A` records to GitHub Pages (185.199.108-111.153) and `www` CNAME to
+`sam202020.github.io`, all "DNS only". The old `sam202020.github.io/lakewood-rentals` address redirects to the domain.
