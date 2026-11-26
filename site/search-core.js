@@ -266,9 +266,30 @@ var LakewoodSearch = (function () {
   ];
 
   /** Add the derived (_-prefixed) fields the filters rely on. Mutates and returns the list. */
+  // ---- which listings are new ----
+  // A listing's code ends in "..._1057:7": the number before the colon is the Masa U'Matan issue the ad was placed in. It stays
+  // the same while the ad runs and goes up by about one a week (checked across the Aug. 26, Nov. 18 and Nov. 25 lists: 190 of
+  // 194 carried-over ads kept their number, and every ad with the Nov. 25 list's top number was new that week).
+  function issueNumber(x) {
+    var m = /(\d{3,4}):\d+$/.exec(String(x.id || ""));
+    return m ? +m[1] : null;
+  }
+  /** This week's issue number: the highest one that at least 3 listings share (a single garbled code must not count). */
+  function newestIssue(listings) {
+    var count = {}, best = null;
+    listings.forEach(function (x) { var n = issueNumber(x); if (n !== null) count[n] = (count[n] || 0) + 1; });
+    Object.keys(count).forEach(function (k) { if (count[k] >= 3 && (best === null || +k > best)) best = +k; });
+    return best;
+  }
+  /** Newest first: later issue first, then the list's own order; a listing without a code number goes last. */
+  function newestFirst(a, b) { return (b._issue || 0) - (a._issue || 0) || a._i - b._i; }
+
   function enrich(listings) {
+    var newest = newestIssue(listings);
     listings.forEach(function (x, i) {
       x._i = i;
+      x._issue = issueNumber(x);
+      x._new = newest !== null && x._issue !== null && x._issue >= newest;
       x._baths = bathNum(x.baths);
       x._text = glueSlashes([x.location, x.comments, (x.phones || []).join(" "), x.type].join(" "));
       x._words = wordsOf(x._text).filter(function (w, i, a) { return a.indexOf(w) === i; });
@@ -327,42 +348,49 @@ var LakewoodSearch = (function () {
     price: function (x) { return x.rent; },
     beds: function (x) { return x.bedrooms_num || null; },
     baths: function (x) { return bathNum(x.baths); },
-    loc: function (x) { return x.location || null; },
-    type: function (x) { return x.type || null; }
+    loc: function (x) { return x.location || null; }
   };
+  // The Type column stacks one kind of home on top, then the others in alphabetical order, wrapping round.
+  var TYPE_ORDER = ["Apartment", "House", "Room", "Townhouse / Attached"];
+  var TYPE_MODES = ["type-apartment", "type-house", "type-room", "type-townhouse"];
+  function typeRank(x, first) {
+    var i = TYPE_ORDER.indexOf(x.type), n = TYPE_ORDER.length;
+    return i < 0 ? n : (i - first + n) % n;                       // anything else ("Other") goes last
+  }
 
-  /** Sort rows in place by `mode` and return them. Modes: "default" (list order), "distance", or a column with a direction
-   *  ("price-asc", "beds-desc", "baths-desc", "loc" / "loc-desc", "type-asc" ...). Ties keep the list's order. */
+  /** Sort rows in place by `mode` and return them. Modes: "default" (newest first), "distance", a column with a direction
+   *  ("price-asc", "beds-desc", "baths-desc", "loc" / "loc-desc"), or a type on top ("type-house"). Ties are newest first. */
   function sortRows(rows, mode) {
-    var m = /^(price|beds|baths|loc|type)(?:-(asc|desc))?$/.exec(mode || "");
+    var m = /^(price|beds|baths|loc)(?:-(asc|desc))?$/.exec(mode || ""), t = TYPE_MODES.indexOf(mode);
     rows.sort(function (a, b) {
       if (mode === "distance") {
         var ad = typeof a._dist === "number", bd = typeof b._dist === "number";
         if (ad !== bd) return ad ? -1 : 1;
-        return (ad ? a._dist - b._dist : 0) || a._i - b._i;
+        return (ad ? a._dist - b._dist : 0) || (b._own ? 1 : 0) - (a._own ? 1 : 0) || newestFirst(a, b);   // same spot: the place's own listings, then newest
       }
+      if (t >= 0) return typeRank(a, t) - typeRank(b, t) || newestFirst(a, b);
       if (m) {
         var va = SORT_KEYS[m[1]](a), vb = SORT_KEYS[m[1]](b);
         var na = va === null || va === undefined, nb = vb === null || vb === undefined;
-        if (na || nb) return (na ? 1 : 0) - (nb ? 1 : 0) || a._i - b._i;
+        if (na || nb) return (na ? 1 : 0) - (nb ? 1 : 0) || newestFirst(a, b);
         var d = typeof va === "string" ? va.localeCompare(vb, undefined, { numeric: true, sensitivity: "base" }) : va - vb;
-        return (m[2] === "desc" ? -d : d) || a._i - b._i;
+        return (m[2] === "desc" ? -d : d) || newestFirst(a, b);
       }
-      return a._i - b._i;
+      return newestFirst(a, b);
     });
     return rows;
   }
 
-  // The Table view's column headers. The first click sorts the way people usually want that column (cheapest rent, most
-  // bedrooms and bathrooms, A to Z), the second reverses it, the third goes back to the normal order.
-  var COLUMN_SORTS = { loc: ["loc", "loc-desc"], type: ["type-asc", "type-desc"], beds: ["beds-desc", "beds-asc"],
+  // The Table view's column headers. Each click moves to the column's next order (the first is what people usually want:
+  // cheapest rent, most bedrooms and bathrooms, A to Z, apartments on top); after the last one it goes back to normal.
+  var COLUMN_SORTS = { loc: ["loc", "loc-desc"], type: TYPE_MODES, beds: ["beds-desc", "beds-asc"],
     baths: ["baths-desc", "baths-asc"], price: ["price-asc", "price-desc"] };
   function nextColumnSort(column, current, hasOrigin) {
-    var pair = COLUMN_SORTS[column];
-    if (!pair) return current;
-    if (current === pair[0]) return pair[1];
-    if (current === pair[1]) return hasOrigin ? "distance" : "default";
-    return pair[0];
+    var modes = COLUMN_SORTS[column];
+    if (!modes) return current;
+    var i = modes.indexOf(current);
+    if (i === modes.length - 1) return hasOrigin ? "distance" : "default";
+    return modes[i + 1];
   }
 
   /** Filter then sort. Sets `_dist` (miles from S.origin) on every listing first. */
@@ -373,8 +401,10 @@ var LakewoodSearch = (function () {
       if (/^[a-z]{3,5}$/.test(t) && !listings.some(function (x) { return termMatches(x, t, false); })) loose[t] = true;
     });
     S._loose = loose;
+    var near = String(S.origin && S.origin.name || "").toLowerCase();
     listings.forEach(function (x) {
       x._dist = S.origin && hasCoords(x) ? originMiles(S.origin, x) : null;
+      x._own = !!near && (inArea(x, near) || String(x.location || "").toLowerCase().indexOf(near) !== -1);   // it names the picked place
     });
     return sortRows(listings.filter(function (x) { return match(x, S); }), S.sort);
   }
@@ -894,6 +924,9 @@ var LakewoodSearch = (function () {
     match: match,
     sortRows: sortRows,
     nextColumnSort: nextColumnSort,
+    issueNumber: issueNumber,
+    newestIssue: newestIssue,
+    TYPE_ORDER: TYPE_ORDER,
     COLUMN_SORTS: COLUMN_SORTS,
     search: search,
     searchAll: searchAll

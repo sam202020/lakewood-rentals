@@ -76,7 +76,7 @@ def main():
 
     # the "Neighborhoods" index/browse list: every name ever seen, so one week's empty PDF slot
     # for a neighbourhood doesn't make it disappear from the list (owner, 2026-11-26)
-    seen = geo.load_neighborhoods_seen()
+    seen = sorted({P.tidy_location(n) for n in geo.load_neighborhoods_seen()})
     nb_counts = geo.neighborhood_counts(listings, seen)
     geo.NEIGHBORHOODS_SEEN_FILE.write_text(
         json.dumps(sorted(nb_counts), indent=2, ensure_ascii=False) + "\n")

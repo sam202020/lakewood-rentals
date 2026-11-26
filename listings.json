@@ -2223,7 +2223,7 @@
       "bedrooms": "5",
       "bedrooms_num": 5,
       "baths": "1½",
-      "location": "Outside Brookwd 1",
+      "location": "Brookwood 1",
       "rent": 3100,
       "rent_period": "month",
       "negotiable": false,
@@ -6624,12 +6624,8 @@
       "n": 5
     },
     {
-      "name": "Brookwd 1",
-      "n": 0
-    },
-    {
       "name": "Brookwood 1",
-      "n": 1
+      "n": 2
     },
     {
       "name": "Brookwood 3",
@@ -6985,10 +6981,6 @@
     },
     {
       "name": "Off Van Buren",
-      "n": 1
-    },
-    {
-      "name": "Outside Brookwd 1",
       "n": 1
     },
     {

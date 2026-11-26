@@ -672,6 +672,10 @@
   .thsort span { font-size: 9px; opacity: .45; letter-spacing: 0; }
   .thsort:hover, .thsort.on { color: var(--accent-ink); } .thsort.on span { opacity: 1; }
   .thsort:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .tag.newtag { background: var(--accent); color: #fff; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tag.newtag { color: #10231A; } }
+  :root[data-theme="dark"] .tag.newtag { color: #10231A; }
+  .thsort.thsort--type span { font-size: 10px; text-transform: none; letter-spacing: 0; background: var(--accent-soft); border-radius: 4px; padding: 1px 5px; }
 </style>
 
 <header class="searchbar topbar" id="searchbar">
@@ -768,7 +772,7 @@
           </div>
           <label class="sort">Sort
             <select id="sort">
-              <option value="default">List order (newest first)</option>
+              <option value="default">Newest first</option>
               <option value="price-asc">Rent: low to high</option>
               <option value="price-desc">Rent: high to low</option>
               <option value="beds-desc">Most bedrooms</option>
@@ -777,8 +781,10 @@
               <option value="baths-asc">Fewest bathrooms</option>
               <option value="loc">Location A&ndash;Z</option>
               <option value="loc-desc">Location Z&ndash;A</option>
-              <option value="type-asc">Type A&ndash;Z</option>
-              <option value="type-desc">Type Z&ndash;A</option>
+              <option value="type-apartment">Apartments on top</option>
+              <option value="type-house">Houses on top</option>
+              <option value="type-room">Rooms on top</option>
+              <option value="type-townhouse">Townhouses on top</option>
               <option value="distance" id="distOpt" disabled>Distance (pick a neighborhood first)</option>
             </select>
           </label>
@@ -1222,7 +1228,7 @@
     if (x.utilities_included && x.utilities_included.length)
       meta.push("<span><b>" + x.utilities_included.map(function (u) { return u[0]; }).join("") + "</b> included</span>");
 
-    var tags = (x._furnished ? ['<span class="tag">Furnished</span>'] : []);
+    var tags = (x._new ? ['<span class="tag newtag">New this week</span>'] : []).concat(x._furnished ? ['<span class="tag">Furnished</span>'] : []);
     if (x.negotiable) tags.push('<span class="tag">Negotiable</span>');
     x._tags.forEach(function (t) { tags.push('<span class="tag' + (t[1] ? " flag" : "") + '">' + esc(t[0]) + "</span>"); });
 
@@ -1504,10 +1510,12 @@
   function tableHtml(rows, split, head) {
     function th(label, column, title) {
       if (!column) return "<th>" + label + "</th>";
-      var pair = LakewoodSearch.COLUMN_SORTS[column], dir = S.sort === pair[0] ? 0 : S.sort === pair[1] ? 1 : -1;
-      var asc = dir >= 0 && !/-desc$/.test(pair[dir]);
-      return '<th aria-sort="' + (dir < 0 ? "none" : asc ? "ascending" : "descending") + '"><button type="button" class="thsort' + (dir < 0 ? "" : " on") +
-        '" data-sort="' + column + '" title="Sort by ' + title + '">' + label + '<span aria-hidden="true">' + (dir < 0 ? "\u2195" : asc ? "\u25b2" : "\u25bc") + "</span></button></th>";
+      var modes = LakewoodSearch.COLUMN_SORTS[column], at = modes.indexOf(S.sort), isType = column === "type";
+      var asc = at >= 0 && !/-desc$/.test(modes[at]);
+      var onTop = isType && at >= 0 ? LakewoodSearch.TYPE_ORDER[at].replace(" / Attached", "") : "";      // which type is stacked on top
+      var arrow = at < 0 ? "\u2195" : onTop ? esc(onTop) : asc ? "\u25b2" : "\u25bc";
+      return '<th aria-sort="' + (at < 0 ? "none" : isType ? "other" : asc ? "ascending" : "descending") + '"><button type="button" class="thsort' + (at < 0 ? "" : " on") +
+        (onTop ? " thsort--type" : "") + '" data-sort="' + column + '" title="Sort by ' + title + '">' + label + '<span aria-hidden="' + (onTop ? "false" : "true") + '">' + arrow + "</span></button></th>";
     }
     var h = '<table class="tbl"><thead><tr>' + th("Where", "loc", "location") + th("Type", "type", "type") + th("Bd", "beds", "bedrooms") +
       th("Ba", "baths", "bathrooms") + th("Rent", "price", "rent") + th("Notes") + th("Call") + "</tr></thead><tbody>";
@@ -1517,7 +1525,7 @@
       var wk = /^\$([\d,]+)\/week$/.exec(x.rent_display || ""), on = x.id === selectedId;
       var rent = x.rent != null ? "<b>$" + x.rent.toLocaleString() + "</b>" : wk ? "$" + wk[1] + "/wk" : '<span class="ask">Ask</span>';
       var phones = (x.phones || []).map(function (p) { return '<a class="call" href="' + telHref(p) + '">' + esc(p) + "</a>"; }).join("<br>") || "&ndash;";
-      h += '<tr class="r' + (on ? " on" : "") + '" tabindex="0" data-id="' + esc(x.id) + '"><td><b>' + esc(x.location || "") + "</b></td><td>" +
+      h += '<tr class="r' + (on ? " on" : "") + '" tabindex="0" data-id="' + esc(x.id) + '"><td><b>' + esc(x.location || "") + "</b>" + (x._new ? ' <span class="tag newtag">New</span>' : "") + "</td><td>" +
         esc(x.type.replace(" / Attached", "")) + '</td><td class="n">' + esc(x.bedrooms || "–") + '</td><td class="n">' + esc(x.baths || "–") +
         '</td><td class="n">' + rent + '</td><td class="note"><span>' + esc(x.comments) + "</span></td><td>" + phones + "</td></tr>";
       if (on) {

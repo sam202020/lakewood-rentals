@@ -310,5 +310,13 @@ class RealPdf(unittest.TestCase):
         self.assertEqual(len(ids), len(set(ids)))
 
 
+class BrookwoodSpelledOut(unittest.TestCase):
+    """Owner 2026-11-26: write Brookwood out; "outside Brookwood" belongs to Brookwood."""
+
+    def test_location_is_spelled_out(self):
+        for raw, want in [("Outside Brookwd 1", "Brookwood 1"), ("Brookwd 3", "Brookwood 3"), ("Brookwood 4 Jackson", "Brookwood 4 Jackson")]:
+            self.assertEqual(P.clean_loc(raw)[0], want, raw)
+
+
 if __name__ == "__main__":
     unittest.main()

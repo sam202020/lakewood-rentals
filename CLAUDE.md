@@ -238,10 +238,24 @@ picture `docs/og.png` is committed; redraw it with `python3 tools/build_og_image
 ## Table view: column headers sort (owner, 2026-11-26)
 
 Where, Type, Bd, Ba and Rent headers are buttons (`nextColumnSort`): the first click sorts the way people usually want (A-Z, most bedrooms/baths,
-cheapest rent), the second reverses, the third returns to the normal order (nearest first when a "Near" place is set). A listing without the value
+cheapest rent), the second reverses, the third returns to the normal order (nearest first when a "Near" place is set). **Type** has four kinds, so each
+click stacks the next one on top (Apartment, House, Room, Townhouse; the rest follow alphabetically, wrapping; "Other" last), and a fifth returns to
+normal; the header shows which type is on top. A listing without the value
 (no rent, no bath count) stays last in either direction. Notes and Call are not sortable. The Sort menu offers the same modes and stays in step.
 
 ## Names in the neighbourhood list
 
 Only real places: description words that slip into a location ("KITCHENETTE. PRIVATE") are never kept (`geo.looks_like_description`), and a variant
 such as "Outside Brookwd 1" counts under its neighbourhood (Brookwood 1, through its `aka` in places.json) - never as "outside ..." of its own.
+
+## Default order is newest first (owner, 2026-11-26)
+
+The number before the colon in a listing's code (`11TT78_1057:7` -> 1057) is the Masa U'Matan issue the ad was placed in: it stays while the ad runs and
+rises about one a week (checked on the Aug. 26, Nov. 18 and Nov. 25 lists). `issueNumber` / `newestIssue` (highest number at least 3 ads share) /
+`newestFirst` in search-core.js: newest issue first, list order within an issue, ads without a code number last; ties in every other sort are newest
+first too (in nearest-first, listings at the same spot that name the picked place come before the others, then newest). This week's ads get a "New this week" tag (cards) / "New" (table). Nothing is stored between weeks, so the weekly routine needs no change.
+If the codes ever change shape, the tags disappear and the order falls back to the list order: check this when that happens.
+
+## Location spelling
+
+`parse.tidy_location` spells out abbreviations in location names; "Brookwd" is "Brookwood" and "Outside Brookwood 1" is "Brookwood 1" (owner).

@@ -487,8 +487,8 @@ test("real listings: picking Clover sorts a Clover listing first, before Arlingt
   const pin = picker.find((p) => p.name === "Clover");
   if (!pin) return;
   const rows = S.enrich(data.listings.map((x) => Object.assign({}, x)));
-  const out = S.search(rows, Object.assign(S.defaultState(), { origin: { lat: pin.lat, lng: pin.lng }, sort: "distance" }));
-  assert.match(out[0].location, /clover/i);
+  const out = S.search(rows, Object.assign(S.defaultState(), { origin: { lat: pin.lat, lng: pin.lng, name: pin.name }, sort: "distance" }));
+  assert.match(out[0].location, /clover/i);   // at the same spot, a listing that names the place comes before one that does not
   const iClover = out.findIndex((r) => /clover/i.test(r.location));
   const iArlington = out.findIndex((r) => /^arlington/i.test(r.location));
   assert.ok(iClover < iArlington);
@@ -1277,7 +1277,9 @@ test("sortRows: every table column sorts both ways, listings without the value s
   assert.equal(ids("baths-asc"), "cab");
   assert.equal(ids("loc"), "cba");                      // numbers count as numbers: 5th before 13th
   assert.equal(ids("loc-desc"), "abc");
-  assert.equal(ids("type-asc"), "bac");
+  assert.equal(ids("type-apartment"), "bac");          // apartments on top, then House, Room ...
+  assert.equal(ids("type-house"), "acb");               // houses on top, then Room, Townhouse, wrapping to Apartment
+  assert.equal(ids("type-room"), "cba");
   assert.equal(ids("default"), "abc");
 });
 
@@ -1298,4 +1300,34 @@ test("neighbourhood list: 'Outside Brookwd 1' counts under Brookwood 1 and descr
   const place = S.placeForName("Outside Brookwd 1", data.picker, streets, shuls, data.preferred);
   assert.equal(place && place.name, "Brookwood 1");
   assert.ok(!(data.neighborhoods || []).some((n) => /KITCHENETTE/.test(n.name)));
+});
+
+test("type column: each click puts the next of the four types on top, then back to normal", () => {
+  let mode = "default";
+  const seen = [];
+  for (let i = 0; i < 5; i++) { mode = S.nextColumnSort("type", mode, false); seen.push(mode); }
+  assert.deepEqual(seen, ["type-apartment", "type-house", "type-room", "type-townhouse", "default"]);
+  const rows = S.enrich([L({ id: "1", type: "Other" }), L({ id: "2", type: "Townhouse / Attached" }), L({ id: "3", type: "Apartment" }),
+    L({ id: "4", type: "Room" }), L({ id: "5", type: "House" })]);
+  assert.equal(S.sortRows(rows, "type-townhouse").map((x) => x.id).join(""), "23541");   // "Other" always last
+});
+
+test("newest first: the default order follows the issue number in each ad's code, and this week's ads are marked new", () => {
+  assert.equal(S.issueNumber({ id: "11TT78_1057:7" }), 1057);
+  assert.equal(S.issueNumber({ id: "A998_718:3" }), 718);
+  assert.equal(S.issueNumber({ id: "p3r21" }), null);
+  const rows = S.enrich([L({ id: "a_1036:1" }), L({ id: "p3r21" }), L({ id: "b_1057:1" }), L({ id: "c_1057:2" }), L({ id: "d_1056:4" }),
+    L({ id: "e_1057:3" }), L({ id: "f_9999:1" })]);
+  assert.deepEqual(rows.filter((x) => x._new).map((x) => x.id), ["b_1057:1", "c_1057:2", "e_1057:3", "f_9999:1"]);
+  assert.equal(S.newestIssue(rows), 1057);              // one stray high number does not become "this week"
+  const order = S.sortRows(rows.filter((x) => x.id !== "f_9999:1"), "default").map((x) => x.id);
+  assert.deepEqual(order, ["b_1057:1", "c_1057:2", "e_1057:3", "d_1056:4", "a_1036:1", "p3r21"]);   // no code number: last
+});
+
+test("newest first on this week's list: about a batch of new ads, all at the top", () => {
+  const rows = S.enrich(pagePayload().listings);
+  const fresh = rows.filter((x) => x._new).length;
+  assert.ok(fresh >= 3 && fresh < rows.length / 2, String(fresh));
+  const sorted = S.sortRows(rows.slice(), "default");
+  assert.ok(sorted.slice(0, fresh).every((x) => x._new));
 });

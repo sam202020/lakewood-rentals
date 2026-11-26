@@ -111,7 +111,17 @@ ABBREVIATIONS = [
     (r"\bCentrl\.?(?=\s|/|,|$)",      "Central",    re.I),
     (r"\bCnty\.?(?=\s|/|,|$)",        "County",     re.I),
     (r"\bManch\.?(?=\s|/|,|$)",       "Manchester", re.I),
+    (r"\bBrookwd\.?(?=\s|/|,|\d|$)",   "Brookwood",  re.I),
+    # owner: a listing "outside Brookwood" belongs to Brookwood
+    (r"\bOutside\s+(?=Brookwood\b)",   "",           re.I),
 ]
+
+
+def tidy_location(s):
+    """Spell out the abbreviations in a location name ("Outside Brookwd 1" -> "Brookwood 1")."""
+    for pat, repl, flags in ABBREVIATIONS:
+        s = re.sub(pat, repl, s, flags=flags)
+    return s
 
 
 def clean_loc(s):
@@ -138,8 +148,7 @@ def clean_loc(s):
     # only become matchable once spacing has been repaired.
     for pat, name in PLACE_NAMES:
         s = re.sub(r"(?<![A-Za-z])(?:" + pat + r")(?![a-z])", name, s, flags=re.I)
-    for pat, rep, flags in ABBREVIATIONS:
-        s = re.sub(pat, rep, s, flags=flags)
+    s = tidy_location(s)
     return re.sub(r"\s+", " ", s).strip(" ,/-"), trailing_phones
 
 
