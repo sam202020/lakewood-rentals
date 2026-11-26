@@ -1456,5 +1456,110 @@
    "BMG"
   ],
   "note": "Owner 2026-11-24: BMG alone means the campus between 6th and 7th St. Midpoint of Google Maps 617 6th St (40.09563,-74.22206) and 605 7th St Herzka Building (40.09646,-74.22160). The other BMG buildings are separate shuls with their own names (Beis Aharon, Beis Shalom, Forest Beis Medrash)."
+ },
+ "harvard": {
+  "name": "Harvard Street",
+  "lat": 40.10386,
+  "lng": -74.20408,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Harvard St."
+ },
+ "harvard street": {
+  "name": "Harvard Street",
+  "lat": 40.10386,
+  "lng": -74.20408,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Harvard St."
+ },
+ "10th st": {
+  "name": "10th Street",
+  "lat": 40.10023,
+  "lng": -74.21368,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: 10th St."
+ },
+ "12th princeton": {
+  "name": "12th St & Princeton Ave",
+  "lat": 40.10327,
+  "lng": -74.21012,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: intersection."
+ },
+ "manetta ridge": {
+  "name": "Manetta Ave & Ridge Ave",
+  "lat": 40.09632,
+  "lng": -74.19815,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: intersection."
+ },
+ "laurel rt 88": {
+  "name": "Laurel Ave & Route 88",
+  "lat": 40.09066,
+  "lng": -74.20625,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: intersection NJ-88 & Laurel Ave."
+ },
+ "cov princeton": {
+  "name": "Coventry Dr & Princeton Ave",
+  "lat": 40.10844,
+  "lng": -74.2097,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: intersection; the PDF writes 'Cov.:Princeton', read as Coventry."
+ },
+ "prospect heights": {
+  "name": "Prospect Heights",
+  "lat": 40.07196,
+  "lng": -74.24132,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: place 'Prospect Heights', King Solomon Dr."
+ },
+ "tamarind park": {
+  "name": "Tamarind Park",
+  "lat": 40.09205,
+  "lng": -74.16686,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: APPROXIMATE: Google answers 'Tamarind Park' with Tamarind Rd."
+ },
+ "yesodei court": {
+  "name": "Yesodei Court",
+  "lat": 40.06676,
+  "lng": -74.20152,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Yesodei Ct."
+ },
+ "daniel drive": {
+  "name": "Daniel Drive",
+  "lat": 40.07282,
+  "lng": -74.20952,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Daniel Dr."
+ },
+ "blue river": {
+  "name": "Blue River",
+  "lat": 40.05194,
+  "lng": -74.21961,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Blue River Way."
+ },
+ "forest park": {
+  "name": "Forest Park",
+  "lat": 40.07721,
+  "lng": -74.21114,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: place 'Forest Park'."
+ },
+ "wyndham 2": {
+  "name": "Wyndham Place",
+  "lat": 40.06972,
+  "lng": -74.22742,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: 'Wyndham Place 2', the same point as Wyndham Place."
+ },
+ "glen ave": {
+  "name": "Glen Avenue",
+  "lat": 40.09307,
+  "lng": -74.2375,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: same street and point as the checked 'glen avenue' entry."
  }
 }

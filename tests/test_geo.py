@@ -751,3 +751,26 @@ class NeighborhoodHistory(unittest.TestCase):
         for name in ("Lakewood Commons", "Westgate", "Club at Jackson 21"):
             with self.subTest(name=name):
                 self.assertIn(name, seen)
+
+
+class NamesAddedNov26(unittest.TestCase):
+    """Names from the Nov. 25, 2026 list, each looked up on Google Maps."""
+
+    def test_each_location_is_on_the_map(self):
+        places = geo.load_places()
+        for location in ["Outside Brookwd 1", "Heritage Pt. / Howl.", "10th St. / Yeshiva", "Prospect Heights",
+                         "Manetta / Ridge", "Tamarind Park", "Yesodei Court", "Glen Ave.", "Harvard Street", "12th & Princeton",
+                         "Laurel / Rt.88", "Squankum / Harvard", "Cov.:Princeton", "Forest Park", "Wyndham 2",
+                         "Daniel Drive", "Blue River"]:
+            r = geo.resolve(location, places)
+            self.assertEqual(r["unknown"], [], location)
+            self.assertTrue(r["lat"] and geo.plausible(r["lat"], r["lng"]), location)
+
+    def test_same_street_same_point(self):
+        places = geo.load_places()
+        for a, b in [("harvard", "harvard street"), ("glen ave", "glen avenue"), ("wyndham 2", "wyndham")]:
+            self.assertEqual((places[a]["lat"], places[a]["lng"]), (places[b]["lat"], places[b]["lng"]), a)
+
+    def test_outside_and_howl_are_understood(self):
+        self.assertEqual(geo.location_parts("Outside Brookwd 1"), ["brookwood 1"])
+        self.assertEqual(geo.location_parts("Heritage Pt. / Howl."), ["heritage pt", "howell"])

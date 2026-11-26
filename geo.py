@@ -39,13 +39,13 @@ MAX_MILES_FROM_LAKEWOOD = 20
 # Misspellings / short forms in the PDF that should resolve like the real name.
 ALIASES = {"jacksn": "jackson", "jksn": "jackson", "hwl": "howell", "prospct": "prospect",
            "somerst": "somerset", "hearthstn": "hearthstone", "brookwd": "brookwood",
-           "sholom": "shalom", "lutsk": "lutzk"}
+           "sholom": "shalom", "lutsk": "lutzk", "howl": "howell"}
 
 
 def normalize(part):
-    """Lower-case key for a place name: punctuation, 'area', 'near', 'off' removed."""
+    """Lower-case key for a place name: punctuation, 'area', 'near', 'off', 'outside' removed."""
     s = part.lower()
-    s = re.sub(r"\b(area|near|off)\b", " ", s)
+    s = re.sub(r"\b(area|near|off|outside)\b", " ", s)
     s = re.sub(r"[^a-z0-9+ ]", " ", s)
     s = " ".join(ALIASES.get(t, t) for t in s.split())
     return s.strip()

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T05:08:43+00:00",
+  "generated_at": "2026-11-26T05:20:00+00:00",
   "list_date": "Wednesday, Nov. 25, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -300,8 +300,8 @@
       ],
       "furnished": true,
       "comments": "Beautifully redone home, furnished, close to Shuls. Brookwood/Harmony Farms area.",
-      "lat": 40.12759,
-      "lng": -74.29087,
+      "lat": 40.12721,
+      "lng": -74.2895,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -764,8 +764,8 @@
       ],
       "furnished": false,
       "comments": "Fully renovated home. Shul & Rav.",
-      "lat": 40.12759,
-      "lng": -74.29087,
+      "lat": 40.12721,
+      "lng": -74.2895,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -1892,8 +1892,8 @@
       ],
       "furnished": false,
       "comments": "Driveway, large backyard. Washer/dryer in basement. Near Sephardic & Ashkenaz shul.",
-      "lat": 40.12759,
-      "lng": -74.29087,
+      "lat": 40.12721,
+      "lng": -74.2895,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -2181,8 +2181,8 @@
       ],
       "furnished": false,
       "comments": "Near Hope Chapel & East Veterans. Near new BMG Jackson location. Available November.",
-      "lat": 40.12759,
-      "lng": -74.29087,
+      "lat": 40.12721,
+      "lng": -74.2895,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -2235,12 +2235,10 @@
       ],
       "furnished": false,
       "comments": "Bilevel. Available January 1.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
-      "geo_unknown": [
-        "outside brookwood 1"
-      ],
+      "lat": 40.11532,
+      "lng": -74.24687,
+      "geo": "place",
+      "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -2471,8 +2469,8 @@
       ],
       "furnished": false,
       "comments": "1-minute drive to GG. close minyan, 1 acre, huge high end kitchen, spacious layout.",
-      "lat": 40.12759,
-      "lng": -74.29087,
+      "lat": 40.12721,
+      "lng": -74.2895,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -4779,9 +4777,7 @@
       "lat": 40.14523,
       "lng": -74.23388,
       "geo": "place",
-      "geo_unknown": [
-        "howl"
-      ],
+      "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -5426,14 +5422,12 @@
       ],
       "furnished": false,
       "comments": "Brand new beautiful basement.",
-      "lat": 40.09605,
-      "lng": -74.22183,
+      "lat": 40.09814,
+      "lng": -74.21775,
       "geo": "place",
-      "geo_unknown": [
-        "10th st"
-      ],
+      "geo_unknown": [],
       "geo_unverified": [],
-      "geo_spread": 0
+      "geo_spread": 0.5
     },
     {
       "id": "U1AA178_1057:10",
@@ -5537,12 +5531,10 @@
       ],
       "furnished": false,
       "comments": "Beautiful apartment. Available December.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
-      "geo_unknown": [
-        "prospect heights"
-      ],
+      "lat": 40.07196,
+      "lng": -74.24132,
+      "geo": "place",
+      "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -5627,12 +5619,10 @@
       ],
       "furnished": false,
       "comments": "Upgraded apartment. Extra soundproofing. Available January 1.",
-      "lat": 40.09788,
-      "lng": -74.20131,
+      "lat": 40.09632,
+      "lng": -74.19815,
       "geo": "place",
-      "geo_unknown": [
-        "manetta"
-      ],
+      "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -5712,12 +5702,10 @@
       ],
       "furnished": false,
       "comments": "Vinyl flooring. Extra soundproofing. Available December 15.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
-      "geo_unknown": [
-        "tamarind park"
-      ],
+      "lat": 40.09205,
+      "lng": -74.16686,
+      "geo": "place",
+      "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -5740,12 +5728,10 @@
       ],
       "furnished": false,
       "comments": "",
-      "lat": null,
-      "lng": null,
-      "geo": null,
-      "geo_unknown": [
-        "yesodei court"
-      ],
+      "lat": 40.06676,
+      "lng": -74.20152,
+      "geo": "place",
+      "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -5918,14 +5904,12 @@
       ],
       "furnished": true,
       "comments": "Brand new beautiful furnished chosson/kallah apartment.",
-      "lat": 40.09605,
-      "lng": -74.22183,
+      "lat": 40.09814,
+      "lng": -74.21775,
       "geo": "place",
-      "geo_unknown": [
-        "10th st"
-      ],
+      "geo_unknown": [],
       "geo_unverified": [],
-      "geo_spread": 0
+      "geo_spread": 0.5
     },
     {
       "id": "U1A178_1057:13",
@@ -5951,12 +5935,10 @@
       ],
       "furnished": true,
       "comments": "Temporary furnished apartment, brand new, gorgeous, 2 month minimum.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
-      "geo_unknown": [
-        "glen ave"
-      ],
+      "lat": 40.09307,
+      "lng": -74.2375,
+      "geo": "place",
+      "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -6015,12 +5997,10 @@
       ],
       "furnished": true,
       "comments": "Gorgeous 1st-floor upgraded furnished, private house. XSP. Near shuls, shopping. Available immediately.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
-      "geo_unknown": [
-        "harvard street"
-      ],
+      "lat": 40.10386,
+      "lng": -74.20408,
+      "geo": "place",
+      "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -6048,12 +6028,10 @@
       ],
       "furnished": true,
       "comments": "Beautiful new furnished. Walking distance to Yeshiva. Available immediately.",
-      "lat": 40.10167,
-      "lng": -74.20981,
+      "lat": 40.10327,
+      "lng": -74.21012,
       "geo": "place",
-      "geo_unknown": [
-        "12th"
-      ],
+      "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -6076,12 +6054,10 @@
       ],
       "furnished": true,
       "comments": "Beautiful, furnished. Great location. Great for Chosson/Kallah or office. Available December 1.",
-      "lat": 40.09065,
-      "lng": -74.20406,
+      "lat": 40.09066,
+      "lng": -74.20625,
       "geo": "place",
-      "geo_unknown": [
-        "laurel"
-      ],
+      "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -6249,14 +6225,12 @@
       ],
       "furnished": false,
       "comments": "Beautiful design & layout. Excellent location near Shuls & shopping. Available mid/end December.",
-      "lat": 40.10518,
-      "lng": -74.20526,
+      "lat": 40.10452,
+      "lng": -74.20467,
       "geo": "place",
-      "geo_unknown": [
-        "harvard"
-      ],
+      "geo_unknown": [],
       "geo_unverified": [],
-      "geo_spread": 0
+      "geo_spread": 0.1
     },
     {
       "id": "11TT07_919:11",
@@ -6277,12 +6251,10 @@
       ],
       "furnished": false,
       "comments": "Newly renovated. Great location near Shul. Available December.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
-      "geo_unknown": [
-        "cov princeton"
-      ],
+      "lat": 40.10844,
+      "lng": -74.2097,
+      "geo": "place",
+      "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -6305,12 +6277,10 @@
       ],
       "furnished": false,
       "comments": "Entire house freshly painted, new floors & lighting, additional 1000 square feet basement with bath.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
-      "geo_unknown": [
-        "forest park"
-      ],
+      "lat": 40.07721,
+      "lng": -74.21114,
+      "geo": "place",
+      "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -6412,12 +6382,10 @@
       ],
       "furnished": true,
       "comments": "Stunning, custom closets, private backyard, great block. Furnished/unfurnished",
-      "lat": null,
-      "lng": null,
-      "geo": null,
-      "geo_unknown": [
-        "wyndham 2"
-      ],
+      "lat": 40.06972,
+      "lng": -74.22742,
+      "geo": "place",
+      "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -6440,12 +6408,10 @@
       ],
       "furnished": false,
       "comments": "Large 3 bedrooms duplex apartment. Beautiful, spacious handicap-equipped.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
-      "geo_unknown": [
-        "daniel drive"
-      ],
+      "lat": 40.07282,
+      "lng": -74.20952,
+      "geo": "place",
+      "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -6494,12 +6460,10 @@
       ],
       "furnished": false,
       "comments": "Beautifully upgraded duplex. Custom closets throughout. Large extended porch. Available December 5.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
-      "geo_unknown": [
-        "blue river"
-      ],
+      "lat": 40.05194,
+      "lng": -74.21961,
+      "geo": "place",
+      "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -6549,12 +6513,10 @@
       ],
       "furnished": false,
       "comments": "New upgraded town house.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
-      "geo_unknown": [
-        "yesodei court"
-      ],
+      "lat": 40.06676,
+      "lng": -74.20152,
+      "geo": "place",
+      "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     }
@@ -7628,8 +7590,8 @@
     },
     "jackson": {
       "name": "Jackson",
-      "lat": 40.12759,
-      "lng": -74.29087
+      "lat": 40.12721,
+      "lng": -74.2895
     },
     "jackson 21": {
       "name": "Jackson 21",
@@ -8095,9 +8057,90 @@
       "name": "BMG",
       "lat": 40.09605,
       "lng": -74.22183
+    },
+    "harvard": {
+      "name": "Harvard Street",
+      "lat": 40.10386,
+      "lng": -74.20408
+    },
+    "harvard street": {
+      "name": "Harvard Street",
+      "lat": 40.10386,
+      "lng": -74.20408
+    },
+    "10th st": {
+      "name": "10th Street",
+      "lat": 40.10023,
+      "lng": -74.21368
+    },
+    "12th princeton": {
+      "name": "12th St & Princeton Ave",
+      "lat": 40.10327,
+      "lng": -74.21012
+    },
+    "manetta ridge": {
+      "name": "Manetta Ave & Ridge Ave",
+      "lat": 40.09632,
+      "lng": -74.19815
+    },
+    "laurel rt 88": {
+      "name": "Laurel Ave & Route 88",
+      "lat": 40.09066,
+      "lng": -74.20625
+    },
+    "cov princeton": {
+      "name": "Coventry Dr & Princeton Ave",
+      "lat": 40.10844,
+      "lng": -74.2097
+    },
+    "prospect heights": {
+      "name": "Prospect Heights",
+      "lat": 40.07196,
+      "lng": -74.24132
+    },
+    "tamarind park": {
+      "name": "Tamarind Park",
+      "lat": 40.09205,
+      "lng": -74.16686
+    },
+    "yesodei court": {
+      "name": "Yesodei Court",
+      "lat": 40.06676,
+      "lng": -74.20152
+    },
+    "daniel drive": {
+      "name": "Daniel Drive",
+      "lat": 40.07282,
+      "lng": -74.20952
+    },
+    "blue river": {
+      "name": "Blue River",
+      "lat": 40.05194,
+      "lng": -74.21961
+    },
+    "forest park": {
+      "name": "Forest Park",
+      "lat": 40.07721,
+      "lng": -74.21114
+    },
+    "wyndham 2": {
+      "name": "Wyndham Place",
+      "lat": 40.06972,
+      "lng": -74.22742
+    },
+    "glen ave": {
+      "name": "Glen Avenue",
+      "lat": 40.09307,
+      "lng": -74.2375
     }
   },
   "picker": [
+    {
+      "name": "10th Street",
+      "lat": 40.10023,
+      "lng": -74.21368,
+      "town": "Lakewood"
+    },
     {
       "name": "13th Street",
       "lat": 40.10409,
@@ -8193,6 +8236,16 @@
       "lat": 40.09201,
       "lng": -74.20026,
       "town": "Lakewood"
+    },
+    {
+      "name": "Blue River",
+      "lat": 40.05194,
+      "lng": -74.21961,
+      "town": "Lakewood",
+      "shul": true,
+      "aka": [
+        "Blue River Shul"
+      ]
     },
     {
       "name": "BMG",
@@ -8343,6 +8396,12 @@
       "town": "Lakewood"
     },
     {
+      "name": "Coventry Drive & Princeton Avenue",
+      "lat": 40.10844,
+      "lng": -74.2097,
+      "town": "Lakewood"
+    },
+    {
       "name": "Crest Hill",
       "lat": 40.02598,
       "lng": -74.23697,
@@ -8358,6 +8417,12 @@
       "name": "Cross Street & Massachusetts Avenue",
       "lat": 40.0603,
       "lng": -74.2294,
+      "town": "Lakewood"
+    },
+    {
+      "name": "Daniel Drive",
+      "lat": 40.07282,
+      "lng": -74.20952,
       "town": "Lakewood"
     },
     {
@@ -8397,6 +8462,12 @@
       "town": "Lakewood"
     },
     {
+      "name": "Forest Park",
+      "lat": 40.07721,
+      "lng": -74.21114,
+      "town": "Lakewood"
+    },
+    {
       "name": "Glen Avenue",
       "lat": 40.09307,
       "lng": -74.2375,
@@ -8419,6 +8490,12 @@
       "lat": 40.16561,
       "lng": -74.30564,
       "town": "Jackson"
+    },
+    {
+      "name": "Harvard Street",
+      "lat": 40.10386,
+      "lng": -74.20408,
+      "town": "Lakewood"
     },
     {
       "name": "Heart of Ridge",
@@ -8490,8 +8567,8 @@
     },
     {
       "name": "Jackson",
-      "lat": 40.12759,
-      "lng": -74.29087
+      "lat": 40.12721,
+      "lng": -74.2895
     },
     {
       "name": "Jackson 21",
@@ -8735,6 +8812,16 @@
       "town": "Lakewood"
     },
     {
+      "name": "Prospect Heights",
+      "lat": 40.07196,
+      "lng": -74.24132,
+      "town": "Lakewood",
+      "shul": true,
+      "aka": [
+        "Khal Prospect Heights"
+      ]
+    },
+    {
       "name": "Prospect Vines",
       "lat": 40.07227,
       "lng": -74.23904,
@@ -8873,6 +8960,12 @@
       "town": "Lakewood"
     },
     {
+      "name": "Tamarind Park",
+      "lat": 40.09205,
+      "lng": -74.16686,
+      "town": "Lakewood"
+    },
+    {
       "name": "The 70",
       "lat": 40.04915,
       "lng": -74.19475,
@@ -8975,6 +9068,12 @@
       "name": "Wyndham Place",
       "lat": 40.06972,
       "lng": -74.22742,
+      "town": "Lakewood"
+    },
+    {
+      "name": "Yesodei Court",
+      "lat": 40.06676,
+      "lng": -74.20152,
       "town": "Lakewood"
     }
   ],
@@ -10970,13 +11069,6 @@
       "176 Village Path"
     ],
     [
-      "Blue River Shul",
-      40.05229,
-      -74.22053,
-      "Lakewood",
-      "2 Blue River Wy"
-    ],
-    [
       "BM Yagdil Torah",
       40.10612,
       -74.19746,
@@ -11277,13 +11369,6 @@
       -74.20336,
       "Lakewood",
       "615 E County Line Rd"
-    ],
-    [
-      "Khal Prospect Heights",
-      40.07127,
-      -74.23989,
-      "Lakewood",
-      "13 King David Dr"
     ],
     [
       "Khal Rizhin",
