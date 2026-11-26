@@ -132,5 +132,15 @@ class SplitAfterFirstLetter(unittest.TestCase):
             self.assertEqual(segment.rejoin_split_words(text), text)
 
 
+class RunTogetherWordsFromNov25(unittest.TestCase):
+    """Owner 2026-11-26: "Chasunanight", "Stunninggrounds", "Lowintroductoryrates"."""
+
+    def test_real_words_are_split(self):
+        for raw, want in [("Chasunanight.", "Chasuna night."), ("Stunninggrounds.", "Stunning grounds."),
+                          ("Lowintroductoryrates.", "Low introductory rates.")]:
+            self.assertEqual(segment.fix_glued(raw), want)
+        self.assertEqual(segment.fix_glued("R\u2019Jacobovits\u2019s Shul"), "R\u2019Jacobovits\u2019s Shul")
+
+
 if __name__ == "__main__":
     unittest.main()
