@@ -826,3 +826,12 @@ class SharedAreas(unittest.TestCase):
         self.assertTrue({"Albert", "Albert Run", "Sims"} <= picker)
         a, s = places["albert run"], places["sims"]
         self.assertLess(geo.haversine_miles(a["lat"], a["lng"], s["lat"], s["lng"]), 0.05)
+
+
+class DescriptionWordsAreNotNeighbourhoods(unittest.TestCase):
+    def test_all_capital_fragments_are_not_kept_as_names(self):
+        self.assertTrue(geo.looks_like_description("KITCHENETTE. PRIVATE"))
+        for real in ("BMG", "Brookwood 1", "The 70", "Rt.9 & Cross", "KOL ARY"):
+            self.assertFalse(geo.looks_like_description(real), real)
+        counts = geo.neighborhood_counts([{"location": "Raintree"}], ["KITCHENETTE. PRIVATE", "Westgate"])
+        self.assertEqual(counts, {"Raintree": 1, "Westgate": 0})

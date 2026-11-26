@@ -1260,3 +1260,42 @@ test("real data: Sims, Albert Run and Albert all include the Radiant Hill listin
     (n) => S.placeForName(n, data.picker, streets, shuls, data.preferred));
   for (const name of ["Albert", "Albert Run", "Sims"]) assert.ok(g.nb.find((e) => e.name === name).ids[x.id], name);
 });
+
+// ---- Table view: click a column header to sort --------------------------------
+test("sortRows: every table column sorts both ways, listings without the value stay last", () => {
+  const rows = () => S.enrich([
+    L({ id: "a", location: "Westgate", type: "House", rent: 3000, bedrooms_num: 4, baths: "2½" }),
+    L({ id: "b", location: "13th & Princeton", type: "Apartment", rent: null, rent_display: "Call to discuss", bedrooms_num: 2, baths: "" }),
+    L({ id: "c", location: "5th & Lexington", type: "Room", rent: 900, bedrooms_num: 1, baths: "1" }),
+  ]);
+  const ids = (mode) => S.sortRows(rows(), mode).map((x) => x.id).join("");
+  assert.equal(ids("price-asc"), "cab");
+  assert.equal(ids("price-desc"), "acb");               // no rent: still last
+  assert.equal(ids("beds-desc"), "abc");
+  assert.equal(ids("beds-asc"), "cba");
+  assert.equal(ids("baths-desc"), "acb");               // no bath count: last
+  assert.equal(ids("baths-asc"), "cab");
+  assert.equal(ids("loc"), "cba");                      // numbers count as numbers: 5th before 13th
+  assert.equal(ids("loc-desc"), "abc");
+  assert.equal(ids("type-asc"), "bac");
+  assert.equal(ids("default"), "abc");
+});
+
+test("nextColumnSort: first click is the useful direction, then reverse, then back to normal", () => {
+  assert.equal(S.nextColumnSort("price", "default", false), "price-asc");
+  assert.equal(S.nextColumnSort("price", "price-asc", false), "price-desc");
+  assert.equal(S.nextColumnSort("price", "price-desc", false), "default");
+  assert.equal(S.nextColumnSort("price", "price-desc", true), "distance");   // with a "Near" place, back to nearest first
+  assert.equal(S.nextColumnSort("beds", "default", false), "beds-desc");
+  assert.equal(S.nextColumnSort("beds", "price-asc", false), "beds-desc");
+  assert.equal(S.nextColumnSort("loc", "default", false), "loc");
+});
+
+test("neighbourhood list: 'Outside Brookwd 1' counts under Brookwood 1 and description words are not neighbourhoods", () => {
+  const data = pagePayload();
+  const streets = S.decodeStreets(data.streets);
+  const shuls = (data.shuls || []).map((a) => ({ name: a[0], lat: a[1], lng: a[2], town: a[3], address: a[4], aka: a[5] || [] }));
+  const place = S.placeForName("Outside Brookwd 1", data.picker, streets, shuls, data.preferred);
+  assert.equal(place && place.name, "Brookwood 1");
+  assert.ok(!(data.neighborhoods || []).some((n) => /KITCHENETTE/.test(n.name)));
+});

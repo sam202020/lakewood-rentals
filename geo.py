@@ -131,6 +131,13 @@ def listing_areas(location, also):
     return out
 
 
+def looks_like_description(name):
+    """Words from a listing's description that slipped into the location ("KITCHENETTE. PRIVATE"): all capitals and long.
+    Such a thing is never a neighbourhood, so it is not kept in the saved name list."""
+    letters = [c for c in name or "" if c.isalpha()]
+    return len(letters) >= 8 and all(c.isupper() for c in letters)
+
+
 def neighborhood_counts(listings, seen=None):
     """{name: how many of this week's listings are there}, including a 0 for every name in `seen`
     (earlier builds) that has none this week - so the index only ever grows, never loses a name."""
@@ -141,7 +148,7 @@ def neighborhood_counts(listings, seen=None):
             counts[k] = counts.get(k, 0) + 1
     for name in seen or ():
         counts.setdefault(name, 0)
-    return counts
+    return {k: v for k, v in counts.items() if not looks_like_description(k)}
 
 
 def _known(places, key):

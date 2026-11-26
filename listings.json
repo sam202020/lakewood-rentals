@@ -6860,10 +6860,6 @@
       "n": 0
     },
     {
-      "name": "KITCHENETTE. PRIVATE",
-      "n": 0
-    },
-    {
       "name": "Kol Shimshon",
       "n": 1
     },
@@ -8311,7 +8307,10 @@
       "name": "Brookwood 1",
       "lat": 40.11532,
       "lng": -74.24687,
-      "town": "Jackson"
+      "town": "Jackson",
+      "aka": [
+        "Brookwd 1"
+      ]
     },
     {
       "name": "Brookwood 2",

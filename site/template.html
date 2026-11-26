@@ -668,6 +668,10 @@
   .sugg[data-mode="browse-sh"]::before { content: "Shuls, Lakewood first\2026"; }
   .sugg[data-mode="browse-kw"]::before { content: "Words in the listings\2026"; }
   .sugg[data-mode^="browse"] { max-height: min(60vh, 520px); }
+  .thsort { font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; font-weight: 700; background: none; border: 0; padding: 0; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+  .thsort span { font-size: 9px; opacity: .45; letter-spacing: 0; }
+  .thsort:hover, .thsort.on { color: var(--accent-ink); } .thsort.on span { opacity: 1; }
+  .thsort:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 </style>
 
 <header class="searchbar topbar" id="searchbar">
@@ -768,7 +772,13 @@
               <option value="price-asc">Rent: low to high</option>
               <option value="price-desc">Rent: high to low</option>
               <option value="beds-desc">Most bedrooms</option>
+              <option value="beds-asc">Fewest bedrooms</option>
+              <option value="baths-desc">Most bathrooms</option>
+              <option value="baths-asc">Fewest bathrooms</option>
               <option value="loc">Location A&ndash;Z</option>
+              <option value="loc-desc">Location Z&ndash;A</option>
+              <option value="type-asc">Type A&ndash;Z</option>
+              <option value="type-desc">Type Z&ndash;A</option>
               <option value="distance" id="distOpt" disabled>Distance (pick a neighborhood first)</option>
             </select>
           </label>
@@ -1492,7 +1502,15 @@
   window.addEventListener("resize", function () { if (MODE === "table") render(); });
 
   function tableHtml(rows, split, head) {
-    var h = '<table class="tbl"><thead><tr><th>Where</th><th>Type</th><th>Bd</th><th>Ba</th><th>Rent</th><th>Notes</th><th>Call</th></tr></thead><tbody>';
+    function th(label, column, title) {
+      if (!column) return "<th>" + label + "</th>";
+      var pair = LakewoodSearch.COLUMN_SORTS[column], dir = S.sort === pair[0] ? 0 : S.sort === pair[1] ? 1 : -1;
+      var asc = dir >= 0 && !/-desc$/.test(pair[dir]);
+      return '<th aria-sort="' + (dir < 0 ? "none" : asc ? "ascending" : "descending") + '"><button type="button" class="thsort' + (dir < 0 ? "" : " on") +
+        '" data-sort="' + column + '" title="Sort by ' + title + '">' + label + '<span aria-hidden="true">' + (dir < 0 ? "\u2195" : asc ? "\u25b2" : "\u25bc") + "</span></button></th>";
+    }
+    var h = '<table class="tbl"><thead><tr>' + th("Where", "loc", "location") + th("Type", "type", "type") + th("Bd", "beds", "bedrooms") +
+      th("Ba", "baths", "bathrooms") + th("Rent", "price", "rent") + th("Notes") + th("Call") + "</tr></thead><tbody>";
     if (head) h += '<tr class="kwrow kwhead"><td colspan="7">' + esc(head) + "</td></tr>";
     rows.slice(0, 400).forEach(function (x, i) {
       if (i === split && split > 0) h += '<tr class="kwrow kwdivider"><td colspan="7">' + (rows.length - split) + " other listings</td></tr>";
@@ -1514,6 +1532,13 @@
   tablewrap.addEventListener("click", function (e) {
     var sm = e.target.closest("[data-showmap]");
     if (sm) { var id = sm.getAttribute("data-showmap"); selectedId = id; setMode("cards"); return; }
+    var hs = e.target.closest("[data-sort]");
+    if (hs) {                                                          // a column header: sort by it (again: reverse; third time: normal order)
+      var column = hs.getAttribute("data-sort");
+      S.sort = LakewoodSearch.nextColumnSort(column, S.sort, !!S.origin); sortSel.value = S.sort; render();
+      var again = tablewrap.querySelector('[data-sort="' + column + '"]'); if (again) again.focus({ preventScroll: true });
+      return;
+    }
     if (e.target.closest("a")) return;
     var tr = e.target.closest("tr.r");
     if (!tr) return;

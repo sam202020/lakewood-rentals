@@ -234,7 +234,10 @@
   "source": "manual",
   "match": "1, Brookwood Parkway, Jackson Township, Ocean County, New Jersey, 08527, United States",
   "kind": "place/house",
-  "note": "Checked on Google Maps: matches the OSM pin."
+  "note": "Checked on Google Maps: matches the OSM pin.",
+  "aka": [
+   "Brookwd 1"
+  ]
  },
  "brookwood 2": {
   "name": "Brookwood 2",

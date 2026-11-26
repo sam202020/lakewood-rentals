@@ -234,3 +234,14 @@ picture `docs/og.png` is committed; redraw it with `python3 tools/build_og_image
 - **One grouping for the neighbourhood lists** (owner, 2026-11-26): `LakewoodSearch.placeGroups` feeds both the search box's Neighborhood and
   Street lists and the Table view's side list (neighbourhoods only, biggest first). Never group the side list by the PDF's raw wording again;
   clicking a name there sorts by that neighbourhood, the same as picking it in the search box.
+
+## Table view: column headers sort (owner, 2026-11-26)
+
+Where, Type, Bd, Ba and Rent headers are buttons (`nextColumnSort`): the first click sorts the way people usually want (A-Z, most bedrooms/baths,
+cheapest rent), the second reverses, the third returns to the normal order (nearest first when a "Near" place is set). A listing without the value
+(no rent, no bath count) stays last in either direction. Notes and Call are not sortable. The Sort menu offers the same modes and stays in step.
+
+## Names in the neighbourhood list
+
+Only real places: description words that slip into a location ("KITCHENETTE. PRIVATE") are never kept (`geo.looks_like_description`), and a variant
+such as "Outside Brookwd 1" counts under its neighbourhood (Brookwood 1, through its `aka` in places.json) - never as "outside ..." of its own.

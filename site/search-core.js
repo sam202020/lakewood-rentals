@@ -322,22 +322,47 @@ var LakewoodSearch = (function () {
     return true;
   }
 
-  /** Sort rows in place by `mode` and return them. Listings with no rent (or, for
-   *  "distance", no map position) always sort last. */
+  // what each column sorts by; a listing without the value (no rent, no bath count) always goes last
+  var SORT_KEYS = {
+    price: function (x) { return x.rent; },
+    beds: function (x) { return x.bedrooms_num || null; },
+    baths: function (x) { return bathNum(x.baths); },
+    loc: function (x) { return x.location || null; },
+    type: function (x) { return x.type || null; }
+  };
+
+  /** Sort rows in place by `mode` and return them. Modes: "default" (list order), "distance", or a column with a direction
+   *  ("price-asc", "beds-desc", "baths-desc", "loc" / "loc-desc", "type-asc" ...). Ties keep the list's order. */
   function sortRows(rows, mode) {
+    var m = /^(price|beds|baths|loc|type)(?:-(asc|desc))?$/.exec(mode || "");
     rows.sort(function (a, b) {
       if (mode === "distance") {
         var ad = typeof a._dist === "number", bd = typeof b._dist === "number";
         if (ad !== bd) return ad ? -1 : 1;
         return (ad ? a._dist - b._dist : 0) || a._i - b._i;
       }
-      if (mode === "price-asc") return (a.rent == null) - (b.rent == null) || (a.rent || 0) - (b.rent || 0);
-      if (mode === "price-desc") return (a.rent == null) - (b.rent == null) || (b.rent || 0) - (a.rent || 0);
-      if (mode === "beds-desc") return (b.bedrooms_num || 0) - (a.bedrooms_num || 0) || a._i - b._i;
-      if (mode === "loc") return (a.location || "~").localeCompare(b.location || "~");
+      if (m) {
+        var va = SORT_KEYS[m[1]](a), vb = SORT_KEYS[m[1]](b);
+        var na = va === null || va === undefined, nb = vb === null || vb === undefined;
+        if (na || nb) return (na ? 1 : 0) - (nb ? 1 : 0) || a._i - b._i;
+        var d = typeof va === "string" ? va.localeCompare(vb, undefined, { numeric: true, sensitivity: "base" }) : va - vb;
+        return (m[2] === "desc" ? -d : d) || a._i - b._i;
+      }
       return a._i - b._i;
     });
     return rows;
+  }
+
+  // The Table view's column headers. The first click sorts the way people usually want that column (cheapest rent, most
+  // bedrooms and bathrooms, A to Z), the second reverses it, the third goes back to the normal order.
+  var COLUMN_SORTS = { loc: ["loc", "loc-desc"], type: ["type-asc", "type-desc"], beds: ["beds-desc", "beds-asc"],
+    baths: ["baths-desc", "baths-asc"], price: ["price-asc", "price-desc"] };
+  function nextColumnSort(column, current, hasOrigin) {
+    var pair = COLUMN_SORTS[column];
+    if (!pair) return current;
+    if (current === pair[0]) return pair[1];
+    if (current === pair[1]) return hasOrigin ? "distance" : "default";
+    return pair[0];
   }
 
   /** Filter then sort. Sets `_dist` (miles from S.origin) on every listing first. */
@@ -868,6 +893,8 @@ var LakewoodSearch = (function () {
     defaultState: defaultState,
     match: match,
     sortRows: sortRows,
+    nextColumnSort: nextColumnSort,
+    COLUMN_SORTS: COLUMN_SORTS,
     search: search,
     searchAll: searchAll
   };
