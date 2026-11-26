@@ -228,3 +228,9 @@ picture `docs/og.png` is committed; redraw it with `python3 tools/build_og_image
 - "Near Chateau" is **Chateau Park**. "Club at Jackson 21" / "Club 21 Jackson" are **Jackson 21**.
 - **Oak Meadows**: 19 Hilton Dr and its cul-de-sac, off Oak St near Route 9 and Oak & Vine. **The Vineyards**: Jackson, near 75 Tuscany Dr.
 - A place entry's `label` overrides its `name` in the drop-down: remove it when renaming.
+- **Albert Run** is at and around 1 Radiant Hill; people also call it **Sims**. Both are neighbourhoods, essentially one area. A listing in
+  either is listed under Albert Run, Sims **and** Albert: owner rule in `data/neighborhood_also.json` (`geo.listing_areas` puts `areas` on the
+  listing; `originMiles` treats such a listing as "right here" for any of them; the lists count it under each).
+- **One grouping for the neighbourhood lists** (owner, 2026-11-26): `LakewoodSearch.placeGroups` feeds both the search box's Neighborhood and
+  Street lists and the Table view's side list (neighbourhoods only, biggest first). Never group the side list by the PDF's raw wording again;
+  clicking a name there sorts by that neighbourhood, the same as picking it in the search box.

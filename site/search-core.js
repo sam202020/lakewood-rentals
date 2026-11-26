@@ -54,7 +54,14 @@ var LakewoodSearch = (function () {
   }
 
   /** Miles from where the visitor is "near" (a point, or a street's lines) to listing x. */
+  /** Does the listing belong to the neighbourhood called `name` because of a shared area (Albert Run = Sims = Albert)? */
+  function inArea(x, name) {
+    var n = String(name || "").toLowerCase();
+    return !!n && (x.areas || []).some(function (a) { return a.toLowerCase() === n; });
+  }
+
   function originMiles(origin, x) {
+    if (inArea(x, origin.name)) return 0;                       // it is in that neighbourhood, wherever its pin is
     return origin.paths && origin.paths.length
       ? pathMiles(x.lat, x.lng, origin.paths)
       : distanceMiles(origin.lat, origin.lng, x.lat, x.lng);
@@ -698,6 +705,42 @@ var LakewoodSearch = (function () {
     return WORD_FOR_PLACE.test(t.toLowerCase()) ? "bmg" : text;
   }
 
+  /** The first place a location names, "Area" dropped: what the listing is grouped under (as geo.neighborhood_display_name). */
+  function firstName(location) {
+    return String(location || "").split(/\s*\/\s*|,\s*/)[0].replace(/\s+Area$/i, "").trim();
+  }
+
+  var STREET_NAME = /\b(street|st|avenue|ave|drive|dr|road|rd|lane|ln|court|ct|boulevard|blvd|place|pl|way|terrace|circle|route|rt)\.?$/i;
+
+  /** The neighbourhood and street lists (drop-down browse lists and the Table view's side list, which must agree).
+   *  names = every location name ever listed; resolve(name) = the place it stands for, or null. Names meaning the same
+   *  place merge; a listing counts once under its first place name and under every shared area it belongs to.
+   *  -> { nb: [{name, town, item, n, ids}], st: [...] }, each sorted by name. */
+  function placeGroups(listings, names, resolve) {
+    var byName = {}, groups = { nb: {}, st: {} };
+    function groupFor(raw) {
+      if (byName.hasOwnProperty(raw)) return byName[raw];
+      var it = resolve(raw), g = null;
+      if (it) {
+        var cls = it.kind === "street" || it.kind === "cross" || /&/.test(raw) || STREET_NAME.test(it.name) || /^\d+(st|nd|rd|th)\b/i.test(it.name) ? "st" : it.kind === "place" ? "nb" : "";
+        if (cls) {
+          var key = it.name + "|" + (it.town || "");
+          g = groups[cls][key] || (groups[cls][key] = { name: it.name, town: it.town, item: it, n: 0, ids: {} });
+        }
+      }
+      return (byName[raw] = g);
+    }
+    (names || []).forEach(groupFor);                                // names with no listing this week stay, with 0
+    (listings || []).forEach(function (x) {
+      [firstName(x.location)].concat(x.areas || []).forEach(function (raw) {
+        var g = raw && groupFor(raw);
+        if (g && !g.ids[x.id]) { g.ids[x.id] = true; g.n++; }
+      });
+    });
+    function sorted(o) { return Object.keys(o).map(function (k) { return o[k]; }).sort(function (a, b) { return a.name.localeCompare(b.name); }); }
+    return { nb: sorted(groups.nb), st: sorted(groups.st) };
+  }
+
   /** The place a listing's location name stands for, for the browse lists. The PDF adds words that say where the
    *  place is, not what it is ("New Prospect Jackson", "Mackenzie Area Toms River", "Off Chestnut"): when the name as
    *  written is not a place, try it without them. A trailing town is dropped only if a name remains. */
@@ -807,6 +850,8 @@ var LakewoodSearch = (function () {
     suggestAll: suggestAll,
     placeIntent: placeIntent,
     placeForName: placeForName,
+    placeGroups: placeGroups,
+    firstName: firstName,
     decodeStreets: decodeStreets,
     uncertaintyMiles: uncertaintyMiles,
     rentLabel: rentLabel,

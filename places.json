@@ -115,9 +115,10 @@
  },
  "albert run": {
   "name": "Albert Run",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "lat": 40.06907,
+  "lng": -74.19733,
+  "source": "manual",
+  "note": "Owner 2026-11-26: Albert Run is at and around 1 Radiant Hill (off Sims); people also call it Sims. Point: Google Maps 1 Radiant Hill, Lakewood."
  },
  "appolo": {
   "name": "Appolo",
@@ -1247,7 +1248,7 @@
   "source": "manual",
   "match": "Sims Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
   "kind": "highway/residential",
-  "note": "Checked on Google Maps: matches the OSM pin."
+  "note": "Owner 2026-11-26: Sims and Albert Run are essentially the same area (Albert Run comes off Sims); two neighbourhoods, see data/neighborhood_also.json. Point: Google Maps, Sims Avenue."
  },
  "somerset": {
   "name": "Somerset Avenue",

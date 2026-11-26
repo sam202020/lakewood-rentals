@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T05:40:29+00:00",
+  "generated_at": "2026-11-26T05:48:10+00:00",
   "list_date": "Wednesday, Nov. 25, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -4322,12 +4322,17 @@
       ],
       "furnished": true,
       "comments": "Furnished, brand new, fully upgraded.",
-      "lat": 40.069,
-      "lng": -74.19716,
+      "lat": 40.06903,
+      "lng": -74.19724,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
-      "geo_spread": 0
+      "geo_spread": 0.0,
+      "areas": [
+        "Albert Run",
+        "Sims",
+        "Albert"
+      ]
     },
     {
       "id": "11A75_1054:17",
@@ -7278,6 +7283,11 @@
       "lat": 40.06373,
       "lng": -74.19895
     },
+    "albert run": {
+      "name": "Albert Run",
+      "lat": 40.06907,
+      "lng": -74.19733
+    },
     "arlington": {
       "name": "Arlington",
       "lat": 40.08448,
@@ -8184,6 +8194,12 @@
       "aka": [
         "Albert Shul"
       ]
+    },
+    {
+      "name": "Albert Run",
+      "lat": 40.06907,
+      "lng": -74.19733,
+      "town": "Lakewood"
     },
     {
       "name": "Arlington",

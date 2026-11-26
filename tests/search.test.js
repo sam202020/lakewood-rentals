@@ -1223,3 +1223,40 @@ test("browse list: owner's neighborhoods (Chestnut, Locust, Chateau, Jackson 21,
                               ["Oak Meadows", "Oak Meadows"], ["The Vineyards", "The Vineyards"], ["Chestnut Acres", "Chestnut Acres"],
                               ["Locust Grove", "Locust Grove"]]) assert.equal(of(name), "place:" + want, name);
 });
+
+// ---- one grouping for the neighbourhood lists, and shared areas ----------------
+test("lists: a listing in a shared area counts under each of its neighbourhoods, once", () => {
+  const resolve = (n) => ({ "albert run": { kind: "place", name: "Albert Run" }, sims: { kind: "place", name: "Sims" },
+    albert: { kind: "place", name: "Albert" }, "off locust st.": { kind: "place", name: "Locust" }, locust: { kind: "place", name: "Locust" },
+    "marc drive": { kind: "street", name: "Marc Drive" } })[n.toLowerCase()] || null;
+  const rows = [L({ id: "a", location: "Albert Run / Sims", areas: ["Albert Run", "Sims", "Albert"] }), L({ id: "b", location: "Albert Area" }),
+                L({ id: "c", location: "Off Locust St." }), L({ id: "d", location: "Marc Drive" })];
+  const g = S.placeGroups(rows, ["Locust", "55+Community"], resolve);
+  assert.deepEqual(g.nb.map((x) => x.name + " " + x.n), ["Albert 2", "Albert Run 1", "Locust 1", "Sims 1"]);
+  assert.deepEqual(g.st.map((x) => x.name + " " + x.n), ["Marc Drive 1"]);
+});
+
+test("search: a listing in a shared area is 'right here' for each of its neighbourhoods", () => {
+  const here = L({ id: "a", lat: 40.069, lng: -74.197, areas: ["Albert Run", "Sims", "Albert"] });
+  const near = L({ id: "b", lat: 40.064, lng: -74.199 });
+  const st = S.defaultState();
+  st.origin = { lat: 40.064, lng: -74.199, name: "Albert" }; st.sort = "distance";
+  S.search([near, here], st);
+  assert.equal(here._dist, 0);
+  st.origin = { lat: 40.064, lng: -74.199, name: "Raintree" };
+  S.search([near, here], st);
+  assert.ok(here._dist > 0.2);
+});
+
+test("real data: Sims, Albert Run and Albert all include the Radiant Hill listing, if it is still listed", () => {
+  const data = JSON.parse(fs.readFileSync(path.join(ROOT, "docs/index.html"), "utf8")
+    .match(/<script id="payload"[^>]*>([\s\S]*?)<\/script>/)[1]);
+  const x = data.listings.find((l) => /^albert run|^sims/i.test(l.location));
+  if (!x) return;                                                 // weekly list moved on
+  assert.deepEqual(x.areas.slice().sort(), ["Albert", "Albert Run", "Sims"]);
+  const streets = S.decodeStreets(data.streets);
+  const shuls = (data.shuls || []).map((a) => ({ name: a[0], lat: a[1], lng: a[2], town: a[3], address: a[4], aka: a[5] || [] }));
+  const g = S.placeGroups(data.listings, data.neighborhoods.map((n) => n.name),
+    (n) => S.placeForName(n, data.picker, streets, shuls, data.preferred));
+  for (const name of ["Albert", "Albert Run", "Sims"]) assert.ok(g.nb.find((e) => e.name === name).ids[x.id], name);
+});

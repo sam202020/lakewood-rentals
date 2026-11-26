@@ -1,0 +1,5 @@
+{
+  "_note": "Owner-defined: a listing in the neighbourhood on the left is also listed under (and counted as 'right here' for) the ones on the right. Names as in the 'Near' drop-down.",
+  "Albert Run": ["Sims", "Albert"],
+  "Sims": ["Albert Run", "Albert"]
+}

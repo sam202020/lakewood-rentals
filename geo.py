@@ -108,6 +108,29 @@ def load_neighborhoods_seen(path=None):
         return []
 
 
+NEIGHBORHOOD_ALSO_FILE = pathlib.Path(__file__).parent / "data" / "neighborhood_also.json"
+
+
+def load_neighborhood_also(path=None):
+    """{normalized name: (name, [names it is also listed under])}, from data/neighborhood_also.json (owner-defined)."""
+    try:
+        data = json.loads(pathlib.Path(path or NEIGHBORHOOD_ALSO_FILE).read_text())
+    except (OSError, ValueError):
+        return {}
+    return {normalize(k): (k, v) for k, v in data.items() if not k.startswith("_")}
+
+
+def listing_areas(location, also):
+    """Every neighbourhood a listing belongs to because of a shared area ("Albert Run" is also Sims and Albert);
+    [] for the ordinary listing, which belongs only to the place it names."""
+    out = []
+    for part in location_parts(location):
+        if part in also:
+            name, more = also[part]
+            out += [n for n in [name] + list(more) if n not in out]
+    return out
+
+
 def neighborhood_counts(listings, seen=None):
     """{name: how many of this week's listings are there}, including a 0 for every name in `seen`
     (earlier builds) that has none this week - so the index only ever grows, never loses a name."""

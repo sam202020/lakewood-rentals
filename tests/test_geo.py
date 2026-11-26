@@ -805,3 +805,24 @@ class OwnerNeighborhoodsNov26(unittest.TestCase):
     def test_near_chateau_is_chateau_park(self):
         r = geo.resolve("Near Chateau", self.places)
         self.assertEqual((r["lat"], r["lng"]), (self.places["chateau park"]["lat"], self.places["chateau park"]["lng"]))
+
+
+class SharedAreas(unittest.TestCase):
+    """Owner, 2026-11-26: Albert Run and Sims are one area (also searched with Albert), listed as two neighbourhoods."""
+
+    def test_a_listing_there_belongs_to_both_and_to_albert(self):
+        also = geo.load_neighborhood_also()
+        for location in ("Albert Run / Sims", "Albert Run", "Sims"):
+            self.assertEqual(sorted(geo.listing_areas(location, also)), ["Albert", "Albert Run", "Sims"], location)
+
+    def test_an_albert_listing_stays_in_albert_only(self):
+        also = geo.load_neighborhood_also()
+        self.assertEqual(geo.listing_areas("Albert Area", also), [])
+        self.assertEqual(geo.listing_areas("Raintree", also), [])
+
+    def test_both_are_neighborhoods_on_the_map(self):
+        places = geo.load_places()
+        picker = {p["name"] for p in geo.picker_entries(places)}
+        self.assertTrue({"Albert", "Albert Run", "Sims"} <= picker)
+        a, s = places["albert run"], places["sims"]
+        self.assertLess(geo.haversine_miles(a["lat"], a["lng"], s["lat"], s["lng"]), 0.05)

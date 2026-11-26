@@ -44,7 +44,13 @@ def main():
         print(f"NOTE: left out an ad banner on page {page_no}: {text}")
 
     places = geo.load_places()
+    also = geo.load_neighborhood_also()
     for x in listings:
+        areas = geo.listing_areas(x["location"], also)     # shared areas: listed under each of these neighbourhoods
+        if areas:
+            x["areas"] = areas
+        else:
+            x.pop("areas", None)
         g = geo.resolve(x["location"], places)
         x["lat"], x["lng"] = g["lat"], g["lng"]
         x["geo"] = g["precision"]            # "place", "town" or None
