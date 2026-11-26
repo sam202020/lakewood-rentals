@@ -698,6 +698,25 @@ var LakewoodSearch = (function () {
     return WORD_FOR_PLACE.test(t.toLowerCase()) ? "bmg" : text;
   }
 
+  /** The place a listing's location name stands for, for the browse lists. The PDF adds words that say where the
+   *  place is, not what it is ("New Prospect Jackson", "Mackenzie Area Toms River", "Off Chestnut"): when the name as
+   *  written is not a place, try it without them. A trailing town is dropped only if a name remains. */
+  var AROUND_WORDS = /\b(area|near|off|outside)\b/gi, TRAILING_TOWN = /[\s,]+(lakewood|jackson|toms river|howell|manchester|brick)\s*$/i;
+  function placeForName(name, picker, streets, shuls, preferred) {
+    function isCalled(item, words) {
+      var want = placeTokens(canonicalText(words)).join(" ");
+      return [item.name].concat(item.aka || []).some(function (n) { return placeTokens(canonicalText(n)).join(" ") === want; });
+    }
+    var bare = String(name || "").replace(AROUND_WORDS, " ").replace(/\s+/g, " ").trim();
+    var tries = [String(name || ""), bare, bare.replace(TRAILING_TOWN, "")];
+    for (var i = 0; i < tries.length; i++) {
+      if (i && tries[i] === tries[i - 1]) continue;
+      var r = placeIntent(tries[i], picker, streets, shuls, preferred);
+      if (r && !r.rest && (i === 0 || isCalled(r.item, tries[i]))) return r.item;     // trimmed names must match exactly ("Prime" is not Prime Lane)
+    }
+    return null;
+  }
+
   /** The best place for `text` if the text (a prefix of) names one: {item, rest} where rest is leftover keyword words
    *  ("raintree pool" -> Raintree + "pool"), else null. Needs 3+ letters. Streets, neighborhoods, shuls and intersections count;
    *  typo matches, "55+", the bare words shul/yeshiva and single words that mean something in a listing (pool, boy, basement)
@@ -787,6 +806,7 @@ var LakewoodSearch = (function () {
     suggestCrossings: suggestCrossings,
     suggestAll: suggestAll,
     placeIntent: placeIntent,
+    placeForName: placeForName,
     decodeStreets: decodeStreets,
     uncertaintyMiles: uncertaintyMiles,
     rentLabel: rentLabel,

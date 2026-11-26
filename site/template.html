@@ -947,7 +947,7 @@
                   "parking", "office", "renovated", "new", "shul", "yeshiva"];
   var browseKinds = null;
   function browseItems(key) {
-    function resolve(name) { var r = LakewoodSearch.placeIntent(name, PICKER, STREETS, SHULS, PREFERRED); return r && !r.rest ? r.item : null; }
+    function resolve(name) { return LakewoodSearch.placeForName(name, PICKER, STREETS, SHULS, PREFERRED); }
     function placeRow(e) {
       return { kind: "browse", name: e.name, note: e.n + (e.n === 1 ? " listing" : " listings") + (e.town && e.town !== "Lakewood" ? " \u00b7 " + e.town : ""),
                pick: function () { pickPlace(e.item); } };

@@ -1196,3 +1196,18 @@ test("suggestions: a typed word does not match the middle of another word ('pool
   assert.ok(!names.some((n) => /liverpool/i.test(n)), names.join(", "));
   assert.ok(S.relatedWords("pool").includes("swimming pool"));      // the page offers these as keyword suggestions
 });
+
+test("browse list: a neighborhood written with its town ('New Prospect Jackson') is still listed", () => {
+  const data = JSON.parse(fs.readFileSync(path.join(ROOT, "docs/index.html"), "utf8")
+    .match(/<script id="payload"[^>]*>([\s\S]*?)<\/script>/)[1]);
+  const streets = S.decodeStreets(data.streets);
+  const shuls = (data.shuls || []).map((a) => ({ name: a[0], lat: a[1], lng: a[2], town: a[3], address: a[4], aka: a[5] || [] }));
+  const of = (n) => { const it = S.placeForName(n, data.picker, streets, shuls, data.preferred); return it && it.name; };
+  assert.equal(of("New Prospect Jackson"), "New Prospect");
+  assert.equal(of("Brookwood 4 Jackson"), "Brookwood 4");
+  assert.equal(of("Harmony Hills Jackson"), "Harmony Hills");
+  assert.equal(of("Mackenzie Area Toms River"), "Mackenzie");
+  assert.equal(of("Jackson"), "Jackson");                       // a town on its own is not stripped away
+  assert.equal(of("55+Community"), null);                       // not a place
+  assert.equal(of("Prime Jackson"), null);                      // owner: not a neighborhood
+});
