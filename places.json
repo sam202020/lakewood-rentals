@@ -531,7 +531,10 @@
   "lat": 40.05747,
   "lng": -74.23451,
   "source": "manual",
-  "note": "Google Maps: Fairways at Lake Ridge; across Massachusetts Ave from the Enclave (owner)."
+  "note": "Google Maps: Fairways at Lake Ridge; across Massachusetts Ave from the Enclave (owner). Owner 2026-11-26: 'Fairways' on its own is this neighbourhood, not Fairways Boulevard.",
+  "aka": [
+   "Fairways"
+  ]
  },
  "glen avenue": {
   "name": "Glen Avenue",

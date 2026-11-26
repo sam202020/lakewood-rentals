@@ -100,6 +100,8 @@ where it belongs, add `"neighborhood": "<place key>"` and its listings are count
   listing, at the middle of Jackson's Jewish area (`"town_center": "Jackson"` on its entry). Never shown by that name.
 - **NPGS** (owner, 2026-11-26) means the little neighbourhood behind the NPGS store ("NPGS - Jackson" on Google Maps,
   2080 W County Line Rd), near Brookwood 1.
+- **"Fairways" is the neighbourhood** (owner, 2026-11-26), typed and in the lists, not the street Fairways Boulevard
+  (`"aka"` on the `fairways` place).
 - **55+** (owner, 2026-11-26): the lists have one row, "55+ Communities (Fairways / Enclave)", pinned midway between the
   two. The Fairways, the Enclave, the Enclave address and a vague "55+Community" are counted in it
   (`data/neighborhood_also.json`). It is `"list_only": true`: never a typed suggestion, where "55+" offers the 55+ filter.
@@ -316,8 +318,6 @@ Ask the owner before acting on any of these.
 - **Masa U'Matan:** talk to them before promoting the site or taking money.
 - **UI options** (D1 desktop and P1 phone recommended, nothing built; the layout above stands):
   <https://claude.ai/artifact/CEpEJsSekG2xFySqZbkjq9>
-- **Fairways in the lists:** a listing that says "Fairways" is grouped (and typing "fairways" sorts) as the street
-  Fairways Boulevard, not the Fairways neighbourhood. Ask the owner whether to change it.
 - **Pins to confirm:** "Cov.:Princeton" read as Coventry; "Tamarind Park" pinned at Tamarind Rd.
 - **Owner to-dos:** check the WhatsApp link preview; add the site to Google Search Console and submit the sitemap; open the site with
   `#nocount` on each own device; answer the monetization plan's questions.

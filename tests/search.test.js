@@ -1404,6 +1404,15 @@ test("lists: 55+ is one row (Fairways, Enclave and a vague '55+Community'), not 
   }
 });
 
+test("'Fairways' is the neighbourhood, typed and in the lists, not Fairways Boulevard", () => {
+  const { data, streets, shuls, listings, g, ids } = pageLists();
+  const hood = "The Fairways at Lake Ridge (55+)";
+  assert.equal(S.placeIntent("fairways", data.picker, streets, shuls, data.preferred).item.name, hood);
+  for (const x of listings.filter((l) => l.location === "Fairways")) assert.ok(ids("nb", hood).includes(x.id));
+  assert.ok(!g.st.some((e) => e.name === "Fairways Boulevard"));
+  assert.ok(S.suggestAll(data.picker, streets, "fairways boulevard", 8, shuls, data.preferred).some((i) => i.name === "Fairways Boulevard"));
+});
+
 test("lists: Prime Jackson is under Jackson, an address under its neighbourhood, and no sample listing is left out", () => {
   const { listings, g, ids } = pageLists();
   for (const x of listings.filter((l) => /^prime jackson/i.test(l.location))) assert.ok(ids("nb", "Jackson").includes(x.id));

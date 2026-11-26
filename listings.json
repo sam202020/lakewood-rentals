@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T08:58:41+00:00",
+  "generated_at": "2026-11-26T18:20:19+00:00",
   "list_date": "Wednesday, Nov. 25, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -9115,7 +9115,10 @@
       "name": "The Fairways at Lake Ridge (55+)",
       "lat": 40.05747,
       "lng": -74.23451,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Fairways"
+      ]
     },
     {
       "name": "The Reserve",
