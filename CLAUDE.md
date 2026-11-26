@@ -212,3 +212,11 @@ The public site is **https://lakewoodnjrentals.com** (owner registered it; set i
 reads the domain from `docs/CNAME`; never delete, move or rewrite that file (the build writes only `docs/index.html`; tests in
 `tests/test_checks.py` check both). DNS is at Cloudflare: four `A` records to GitHub Pages (185.199.108-111.153) and `www` CNAME to
 `sam202020.github.io`, all "DNS only". The old `sam202020.github.io/lakewood-rentals` address redirects to the domain.
+
+## Search engines and link previews (seo.py)
+
+`build.py` puts `seo.head_tags()` (description with the listing count and list date, canonical, Open Graph and Twitter preview) at
+`<!--__SEO__-->` in the template and writes `docs/sitemap.xml` (lastmod = the rental list's date) and `docs/robots.txt`. The preview
+picture `docs/og.png` is committed; redraw it with `python3 tools/build_og_image.py` (on a Mac) after changing its words. The domain is
+`seo.SITE_URL`, which a test ties to `docs/CNAME`. Next steps (neighbourhood and topic pages) are in
+`business/domain-hosting-seo-plan.md` §5.3.

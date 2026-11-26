@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the static Lakewood NJ Area Rentals site.
 
-  python3 build.py            # fetch live PDF, parse, write docs/index.html
+  python3 build.py            # fetch live PDF, parse, write docs/index.html (+ sitemap.xml, robots.txt)
   python3 build.py --pdf X    # use a local PDF file instead of fetching
 
 Safety: the parsed listings go through checks.py before anything is written.
@@ -15,6 +15,7 @@ import argparse, json, pathlib, sys, datetime
 import checks
 import geo
 import parse as P
+import seo
 
 ROOT = pathlib.Path(__file__).parent
 DATA = ROOT / "listings.json"
@@ -114,6 +115,8 @@ def main():
     DATA.write_text(json.dumps({k: v for k, v in data.items() if k != "streets"}, indent=2, ensure_ascii=False))
 
     html = TEMPLATE.read_text().replace(
+        "<!--__SEO__-->", seo.head_tags(len(listings), list_date)
+    ).replace(
         "/*__LEAFLET_CSS__*/", LEAFLET_CSS.read_text()
     ).replace(
         "/*__SEARCH_CORE__*/", SEARCH_CORE.read_text()
@@ -122,6 +125,9 @@ def main():
         json.dumps(data, ensure_ascii=False, separators=(",", ":")),
     )
     OUT.write_text(html)
+    # for search engines, next to the page
+    (OUT.parent / "sitemap.xml").write_text(seo.sitemap(list_date))
+    (OUT.parent / "robots.txt").write_text(seo.robots())
     print(f"built {OUT}  ({len(listings)} listings, list_date={list_date!r}, "
           f"{len(warnings)} warning{'s' if len(warnings) != 1 else ''})")
 

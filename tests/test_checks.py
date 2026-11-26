@@ -184,6 +184,8 @@ class BuildGate(unittest.TestCase):
         self.assertNotEqual(out.read_text(), "OLD PAGE")
         self.assertEqual(json.loads(data.read_text())["count"], 200)
         self.assertIn("Raintree 7", out.read_text())
+        self.assertIn("<loc>https://lakewoodnjrentals.com/</loc>", (out.parent / "sitemap.xml").read_text())
+        self.assertIn("sitemap.xml", (out.parent / "robots.txt").read_text())
 
     def test_rebuild_keeps_the_custom_domain_file(self):
         tmp = pathlib.Path(tempfile.mkdtemp())          # stands in for docs/
