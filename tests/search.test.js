@@ -10,6 +10,11 @@ const vm = require("node:vm");
 const S = require("../site/search-core.js");
 const ROOT = path.join(__dirname, "..");
 
+// Real listings come from a frozen week (tests/fixtures/week.json), built with the current code: never from listings.json
+// or docs/index.html, which change every Wednesday and would make the weekly refresh block itself.
+const WEEK = require("node:child_process").execFileSync("python3", [path.join(__dirname, "week_data.py")], { encoding: "utf8", maxBuffer: 50e6 });
+const pagePayload = () => JSON.parse(WEEK);
+
 // ---- fixtures ---------------------------------------------------------------
 function L(over) {
   return Object.assign({
@@ -242,7 +247,7 @@ test("searching does not mutate or reorder the source list", () => {
 });
 
 // ---- real data --------------------------------------------------------------
-const data = JSON.parse(fs.readFileSync(path.join(ROOT, "listings.json"), "utf8"));
+const data = pagePayload();
 
 test("real listings: sane volume and the default view shows all of them", () => {
   assert.ok(data.listings.length >= 60);
@@ -1100,7 +1105,6 @@ test("map: every shul in shuls.json is a marker on the page, with a town", () =>
 });
 
 // ---- typing a place is a location search --------------------------------------
-const pagePayload = () => JSON.parse(fs.readFileSync(path.join(ROOT, "docs/index.html"), "utf8").match(/<script id="payload"[^>]*>([\s\S]*?)<\/script>/)[1]);
 
 test("placeIntent: a place, shul or street typed in the box means 'near it'; ordinary words stay keywords", () => {
   const data = pagePayload();
@@ -1198,8 +1202,7 @@ test("suggestions: a typed word does not match the middle of another word ('pool
 });
 
 test("browse list: a neighborhood written with its town ('New Prospect Jackson') is still listed", () => {
-  const data = JSON.parse(fs.readFileSync(path.join(ROOT, "docs/index.html"), "utf8")
-    .match(/<script id="payload"[^>]*>([\s\S]*?)<\/script>/)[1]);
+  const data = pagePayload();
   const streets = S.decodeStreets(data.streets);
   const shuls = (data.shuls || []).map((a) => ({ name: a[0], lat: a[1], lng: a[2], town: a[3], address: a[4], aka: a[5] || [] }));
   const of = (n) => { const it = S.placeForName(n, data.picker, streets, shuls, data.preferred); return it && it.name; };
@@ -1213,8 +1216,7 @@ test("browse list: a neighborhood written with its town ('New Prospect Jackson')
 });
 
 test("browse list: owner's neighborhoods (Chestnut, Locust, Chateau, Jackson 21, Oak Meadows, The Vineyards)", () => {
-  const data = JSON.parse(fs.readFileSync(path.join(ROOT, "docs/index.html"), "utf8")
-    .match(/<script id="payload"[^>]*>([\s\S]*?)<\/script>/)[1]);
+  const data = pagePayload();
   const streets = S.decodeStreets(data.streets);
   const shuls = (data.shuls || []).map((a) => ({ name: a[0], lat: a[1], lng: a[2], town: a[3], address: a[4], aka: a[5] || [] }));
   const of = (n) => { const it = S.placeForName(n, data.picker, streets, shuls, data.preferred); return it && it.kind + ":" + it.name; };
@@ -1249,8 +1251,7 @@ test("search: a listing in a shared area is 'right here' for each of its neighbo
 });
 
 test("real data: Sims, Albert Run and Albert all include the Radiant Hill listing, if it is still listed", () => {
-  const data = JSON.parse(fs.readFileSync(path.join(ROOT, "docs/index.html"), "utf8")
-    .match(/<script id="payload"[^>]*>([\s\S]*?)<\/script>/)[1]);
+  const data = pagePayload();
   const x = data.listings.find((l) => /^albert run|^sims/i.test(l.location));
   if (!x) return;                                                 // weekly list moved on
   assert.deepEqual(x.areas.slice().sort(), ["Albert", "Albert Run", "Sims"]);

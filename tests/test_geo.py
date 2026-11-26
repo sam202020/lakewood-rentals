@@ -12,6 +12,7 @@ from unittest import mock
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
+sys.path.insert(0, str(ROOT / "tests"))
 import checks  # noqa: E402
 import geo  # noqa: E402
 import towns  # noqa: E402
@@ -439,7 +440,8 @@ class ShippedPicker(unittest.TestCase):
     def test_picking_clover_ranks_the_clover_listing_first(self):
         import json
         pin = next(p for p in self.picker if p["name"] == "Clover")
-        L = [x for x in json.loads((ROOT / "listings.json").read_text())["listings"] if x.get("lat")]
+        import week_data                                    # a frozen week, never this week's list
+        L = [x for x in week_data.week()["listings"] if x.get("lat")]
         nearest = min(L, key=lambda x: geo.haversine_miles(pin["lat"], pin["lng"], x["lat"], x["lng"]))
         self.assertIn("clover", nearest["location"].lower())
 

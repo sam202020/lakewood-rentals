@@ -26,9 +26,12 @@ MasaRentals.pdf  ──►  parse.py  ──►  listings.json  ──►  build
   type missing). *Soft* problems (an unexpanded abbreviation like "Westgt.",
   run-together words, many empty descriptions) print `WARN:` lines and still
   publish, so you know which rule to add to `parse.py`.
-- **`site/template.html`** — the page: client-side search, filters (type,
-  bedrooms, max rent, utilities, furnished, short-term), sort, light/dark.
-  All data is embedded; no network calls at runtime.
+- **`site/template.html`** + **`site/search-core.js`** - the page: search, filters, sort, map, light/dark. `build.py`
+  writes a complete HTML document; the listing data is embedded with `<` escaped, because listing text comes from
+  advertisers. At runtime the page loads Leaflet (cdnjs, integrity-checked), OpenStreetMap map pictures, Google Fonts
+  and, on the public domain only, the GoatCounter visit counter.
+
+The public site is <https://lakewoodnjrentals.com> (GitHub Pages serves `docs/`).
 
 ## Rebuild locally
 
@@ -56,31 +59,17 @@ Visitors can sort by distance from a neighborhood or from their browser location
 
 ```bash
 npm run test:all          # everything below
-npm run test:search       # node --test tests/search.test.js
+npm run test:search       # node --test tests/search.test.js (also runs python3 for the sample week)
 npm run test:locations    # python3 -m unittest discover -s tests
+RENTAL_PDF=/path/to/MasaRentals.pdf npm run test:all     # also checks the parser on a real PDF
 ```
 
-Location names are normalised by two tables at the top of `parse.py`
-(`PLACE_NAMES` for whole names like "Club at Jackson 21", `ABBREVIATIONS` for
-things like "TR" -> "Toms River"). Add a line there when a new abbreviation
-shows up, and a case in `tests/test_locations.py`.
-
-The search/filter logic lives in `site/search-core.js` (pure functions, no DOM),
-which `build.py` inlines into the page. `tests/search.test.js` (38 tests, Node's
-built-in runner, no dependencies) covers text search, every filter, sorting,
-the real `listings.json`, and the code actually shipped in `docs/index.html`.
-
-## Weekly auto-refresh
-
-A scheduled Claude Code cloud agent runs every Wednesday just after midnight ET.
-It checks out this repo, runs `build.py`, and republishes the Artifact.
-See [`ROUTINE.md`](ROUTINE.md) for the exact agent prompt and schedule.
-
-Published Artifact: https://claude.ai/code/artifact/b8837b56-6782-4202-b3d7-c8db84ff1014
+Tests never depend on this week's list: those that need real listings use the frozen week in `tests/fixtures/week.json`
+(`tests/week_data.py` builds the page data from it with the current code). The weekly list itself is checked by
+`checks.py` during the build. A test that reads `listings.json` would pass one week and block the next refresh.
 
 ## Notes
 
-- There are no npm dependencies: `package.json` only names the test scripts (Node's built-in test runner). The live site is the static `site/` build in `docs/`.
-- Parsing is best-effort against a PDF that is laid out for print. Occasional
-  quirks (a missing location, a run-together word) are expected; the original
-  PDF is the source of truth.
+- There are no npm dependencies: `package.json` only names the test scripts.
+- Parsing is best-effort against a PDF that is laid out for print. Occasional quirks (a missing location, a
+  run-together word) are expected; the original PDF is the source of truth.

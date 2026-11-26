@@ -274,3 +274,12 @@ page says nothing about counting. `build.py` puts it in the page (`counter`). Ru
 - Events: one "Call tap" per tap on a call link (cards, table, map pop-ups), filed as `call: <area>` (`callArea`). Never send a phone number, a
   street address, names or search text. A tap is not a completed call.
 - `count.v5.js` is pinned with an integrity hash; if GoatCounter changes the file the browser refuses it and counting stops silently.
+
+## The built page and the tests (launch review, 2026-11-26)
+
+- `build.render_page` writes a full HTML document (doctype, `lang`, favicon `docs/favicon.svg`, `h1.brand`, hidden but present on phones). The
+  template is split at `<!--__BODY__-->`; keep that mark.
+- **Advertiser text is untrusted.** `build.embed_json` writes every `<` in the data as `\u003c` so a description cannot close the data block.
+  Never embed data another way, and keep using `esc()` for anything put into `innerHTML` (`tests/test_page.py`).
+- **Tests must not depend on this week's list** (it broke the weekly refresh once). Use `week_data.week()` (Python) or `pagePayload()` (Node), which
+  build from `tests/fixtures/week.json`. Data quality of the live list belongs in `checks.py` (warn, or abort the build).

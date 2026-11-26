@@ -534,6 +534,7 @@
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .seg button[aria-pressed="true"] { color: #10231A; } }
   :root[data-theme="dark"] .seg button[aria-pressed="true"] { color: #10231A; }
   .results__priced { color: var(--muted); }
+  @media (min-width: 861px) { .results__priced:not(:empty)::before { content: " \00b7  "; } }
   .sheet__handle { display: none; }
   .nbindex { display: none; }
   .tablewrap[hidden] { display: none; }
@@ -611,9 +612,12 @@
   /* ---- phone: the map fills the screen, the listings are a sheet you drag up ---- */
   @media (max-width: 860px) {
     html, body { height: 100%; overflow: hidden; }
-    .brand, .pricedbtn { display: none; }
-    .topbar__main { flex-wrap: nowrap; padding: 9px 12px; gap: 6px; }
-    .combo { flex: 1; max-width: none; }
+    .pricedbtn { display: none; }
+    .brand { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); }   /* still the page's heading */
+    .topbar__main { position: relative; flex-wrap: nowrap; padding: 9px 12px; gap: 6px; }
+    .combo { position: static; flex: 1; max-width: none; }
+    .sugg { left: 8px; right: 8px; top: calc(100% - 4px); }     /* suggestions use the whole screen width, not just the box's */
+    .sugg__town { white-space: normal; text-align: right; }
     .srcpop { right: 8px; left: 8px; width: auto; }
     .wrap { position: fixed; left: 0; right: 0; top: var(--barh, 60px); bottom: 0; padding: 0; display: block; max-width: none; }
     .results { padding: 0; height: 100%; }
@@ -630,6 +634,11 @@
     .sheet__handle { display: flex; justify-content: center; padding: 9px 0 4px; cursor: grab; touch-action: none; flex: none; }
     .sheet__handle span { width: 40px; height: 5px; border-radius: 3px; background: var(--rule-strong); }
     .results__bar { margin: 0; padding: 0 16px 8px; flex: none; touch-action: none; flex-wrap: nowrap; align-items: center; }
+    .results__count { min-width: 0; line-height: 1.35; }
+    .results__count > b, #countWord { white-space: nowrap; }
+    .results__priced { display: block; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sort { flex: none; font-size: 0; gap: 0; }                 /* the word "Sort" gives way to the count; the menu says what it is */
+    .sort select { max-width: 46vw; font-size: 13px; }
     .seg { display: none; }
     .related { padding: 0 16px; }
     .split__list .grid { flex: 1; min-height: 0; overflow-y: auto; padding: 0 12px 16px; grid-template-columns: 1fr; overscroll-behavior: contain; }
@@ -680,9 +689,10 @@
     background: var(--ink); color: var(--paper); font-size: 14px; font-weight: 600; padding: 10px 16px; border-radius: 10px; box-shadow: var(--shadow); }
 </style>
 
+<!--__BODY__-->
 <header class="searchbar topbar" id="searchbar">
   <div class="topbar__main">
-    <div class="brand">Lakewood NJ Area Rentals</div>
+    <h1 class="brand">Lakewood NJ Area Rentals</h1>
     <div class="combo">
       <div class="search">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
@@ -773,7 +783,7 @@
             <button type="button" data-mode="table" aria-pressed="false">Table</button>
           </div>
           <label class="sort">Sort
-            <select id="sort">
+            <select id="sort" aria-label="Sort">
               <option value="default">Newest first</option>
               <option value="price-asc">Rent: low to high</option>
               <option value="price-desc">Rent: high to low</option>
@@ -1312,8 +1322,8 @@
     elCount.textContent = rows.length.toLocaleString();
     elWord.textContent = rows.length === 1 ? "listing" : "listings";
     var nPriced = rows.filter(LakewoodSearch.hasPrice).length;
-    document.getElementById("pricedCount").textContent = (rows.length && nPriced < rows.length ? " \u00b7 " + nPriced + " with a price" : "") +
-      (others.length ? " \u00b7 " + others.length + " others below" : "");
+    document.getElementById("pricedCount").textContent = [rows.length && nPriced < rows.length ? nPriced + " with a price" : "",
+      others.length ? others.length + " others below" : ""].filter(Boolean).join(" \u00b7 ");
     pricedBtn.setAttribute("aria-pressed", S.inclCall ? "false" : "true");
     document.getElementById("inclCall").checked = S.inclCall;
     var asTable = MODE === "table" && !isPhone();

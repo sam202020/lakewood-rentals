@@ -42,17 +42,8 @@ def previous_count():
         return None
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--pdf", help="local PDF path (default: fetch live)")
-    args = ap.parse_args()
-
-    src = args.pdf or P.SOURCE_URL
-    list_date, listings = P.parse(P.fetch_pdf(src))
-    for page_no, text in P.SKIPPED:
-        print(f"NOTE: left out an ad banner on page {page_no}: {text}")
-
-    places = geo.load_places()
+def locate(listings, places):
+    """Put every listing on the map (in place); returns the town centres used for "Jackson"-style listings."""
     also = geo.load_neighborhood_also()
     for x in listings:
         areas = geo.listing_areas(x["location"], also)     # shared areas: listed under each of these neighbourhoods
@@ -73,22 +64,16 @@ def main():
     # "Jackson" / "Toms River" alone mean the Jewish area there (the average of the places named in that town), not the township centre
     centers = geo.town_centers(listings, places)
     geo.apply_town_centers(listings, centers)
+    return centers
 
-    errors, warnings = checks.check(listings, previous_count())
-    for w in warnings:
-        print(f"WARN: {w}")
-    if errors:
-        for e in errors:
-            print(f"ABORT: {e}", file=sys.stderr)
-        print("Keeping existing listings.json and docs/index.html unchanged.", file=sys.stderr)
-        sys.exit(1)
 
+def make_data(listings, list_date, places, centers, seen):
+    """Everything the page needs, from located listings and the curated files. Writes nothing.
+
+    `seen` is the neighbourhood names earlier builds showed (data/neighborhoods_seen.json)."""
     # the "Neighborhoods" index/browse list: every name ever seen, so one week's empty PDF slot
     # for a neighbourhood doesn't make it disappear from the list (owner, 2026-11-26)
-    seen = sorted({P.tidy_location(n) for n in geo.load_neighborhoods_seen()})
-    nb_counts = geo.neighborhood_counts(listings, seen)
-    geo.NEIGHBORHOODS_SEEN_FILE.write_text(
-        json.dumps(sorted(nb_counts), indent=2, ensure_ascii=False) + "\n")
+    nb_counts = geo.neighborhood_counts(listings, sorted({P.tidy_location(n) for n in seen}))
 
     data = {
         "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
@@ -127,20 +112,64 @@ def main():
         data["shuls"] = [[s["name"], s["lat"], s["lng"], s["town"], s["address"]] + ([s["aka"]] if s["aka"] else [])
                          for s in shuls]
     data["counter"] = counter_code()          # anonymous visit / call-tap counts ("" = off)
+    return data
+
+
+def embed_json(data):
+    """The data block inside the page. Listing text comes from advertisers, so "<" is written as \\u003c: no text can
+    close the <script> block and become part of the page (JSON.parse reads it back as "<")."""
+    return json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+
+
+def render_page(data):
+    """The complete public page: a full HTML document (standards mode), the template split at its <!--__BODY__--> mark."""
+    head, mark, body = TEMPLATE.read_text().partition("<!--__BODY__-->")
+    if not mark:
+        raise ValueError("site/template.html lost its <!--__BODY__--> mark")
+    head = head.replace(
+        "<!--__SEO__-->", seo.head_tags(data["count"], data["list_date"])
+    ).replace(
+        "/*__LEAFLET_CSS__*/", LEAFLET_CSS.read_text()
+    )
+    body = body.replace(
+        "/*__SEARCH_CORE__*/", SEARCH_CORE.read_text()
+    ).replace(
+        "/*__DATA__*/null", embed_json(data)       # last, so nothing in the data is ever treated as a placeholder
+    )
+    return ('<!doctype html>\n<html lang="en">\n<head>\n' + head.rstrip() +
+            '\n<link rel="icon" href="favicon.svg" type="image/svg+xml">\n</head>\n<body>\n' +
+            body.strip() + "\n</body>\n</html>\n")
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--pdf", help="local PDF path (default: fetch live)")
+    args = ap.parse_args()
+
+    src = args.pdf or P.SOURCE_URL
+    list_date, listings = P.parse(P.fetch_pdf(src))
+    for page_no, text in P.SKIPPED:
+        print(f"NOTE: left out an ad banner on page {page_no}: {text}")
+
+    places = geo.load_places()
+    centers = locate(listings, places)
+
+    errors, warnings = checks.check(listings, previous_count())
+    for w in warnings:
+        print(f"WARN: {w}")
+    if errors:
+        for e in errors:
+            print(f"ABORT: {e}", file=sys.stderr)
+        print("Keeping existing listings.json and docs/index.html unchanged.", file=sys.stderr)
+        sys.exit(1)
+
+    data = make_data(listings, list_date, places, centers, geo.load_neighborhoods_seen())
+    geo.NEIGHBORHOODS_SEEN_FILE.write_text(
+        json.dumps(sorted(n["name"] for n in data["neighborhoods"]), indent=2, ensure_ascii=False) + "\n")
     # listings.json stays small and readable: the street lines live in streets.json and only go into the page
     DATA.write_text(json.dumps({k: v for k, v in data.items() if k != "streets"}, indent=2, ensure_ascii=False))
 
-    html = TEMPLATE.read_text().replace(
-        "<!--__SEO__-->", seo.head_tags(len(listings), list_date)
-    ).replace(
-        "/*__LEAFLET_CSS__*/", LEAFLET_CSS.read_text()
-    ).replace(
-        "/*__SEARCH_CORE__*/", SEARCH_CORE.read_text()
-    ).replace(
-        "/*__DATA__*/null",
-        json.dumps(data, ensure_ascii=False, separators=(",", ":")),
-    )
-    OUT.write_text(html)
+    OUT.write_text(render_page(data))
     # for search engines, next to the page
     (OUT.parent / "sitemap.xml").write_text(seo.sitemap(list_date))
     (OUT.parent / "robots.txt").write_text(seo.robots())

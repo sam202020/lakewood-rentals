@@ -19,7 +19,8 @@ this is a summary of what it does, in order:
 
 1. `python3 -m pip install -r requirements.txt`
 2. **Tests first** (`python3 -m unittest discover -s tests`, plus
-   `node --test tests/search.test.js` if Node exists). Any failure stops the run.
+   `node --test tests/search.test.js` if Node exists). Any failure stops the run. The tests check the code against a
+   frozen sample week (`tests/fixtures/week.json`), so last week's list cannot block this week's refresh.
 3. `python3 build.py` - downloads the PDF, parses it, runs the data-quality gate
    in `checks.py`.
    - `ABORT:` lines (hard failure): stop, write nothing, report them. The public
@@ -27,7 +28,7 @@ this is a summary of what it does, in order:
    - `WARN:` lines (soft): continue, and include them in the report so the
      right rules get added to `parse.py`.
 4. `git add -A && git commit && git push` - this updates the public site
-   (GitHub Pages serves `docs/`).
+   <https://lakewoodnjrentals.com> (GitHub Pages serves `docs/`).
 5. Republish the private Artifact copy.
 6. Report: list date, listing count, tests, every WARN, push result, site URL.
 
