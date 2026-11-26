@@ -1,124 +1,10 @@
 {
-  "generated_at": "2026-11-24T19:38:45+00:00",
-  "list_date": "Wednesday, Nov. 18, 2026",
+  "generated_at": "2026-11-26T04:28:33+00:00",
+  "list_date": "Wednesday, Nov. 25, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
-  "count": 237,
+  "count": 236,
   "listings": [
-    {
-      "id": "1R090_890:12",
-      "type": "Room",
-      "utilities_included": [
-        "Gas",
-        "Electric",
-        "Water",
-        "Heat"
-      ],
-      "bedrooms": "1",
-      "bedrooms_num": 1,
-      "baths": "",
-      "location": "Lutzk near Westgate",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "GEWH",
-      "accepts_hud": false,
-      "phones": [
-        "732-228-1487"
-      ],
-      "furnished": true,
-      "comments": "Furnished/unfurnished rooms for single learning/earning men in house of singles.",
-      "lat": 40.08419,
-      "lng": -74.2547,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "1HH165_1033:5",
-      "type": "House",
-      "utilities_included": [],
-      "bedrooms": "5",
-      "bedrooms_num": 5,
-      "baths": "2½",
-      "location": "Ramtown, Howell",
-      "rent": 4000,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "$4,000/mo",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "732-567-1420"
-      ],
-      "furnished": false,
-      "comments": "2384 square feet colonial. Finished basement, 2-car garage. Available immediately.",
-      "lat": 40.12095,
-      "lng": -74.14375,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "UHH1165_1034:7",
-      "type": "House",
-      "utilities_included": [],
-      "bedrooms": "3",
-      "bedrooms_num": 3,
-      "baths": "2",
-      "location": "New Central",
-      "rent": 3500,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "$3,500/mo",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "732-276-1786"
-      ],
-      "furnished": false,
-      "comments": "Freshly renovated house. Available immediately.",
-      "lat": 40.09412,
-      "lng": -74.25584,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "11A55_1016:20",
-      "type": "Apartment",
-      "utilities_included": [
-        "Gas",
-        "Electric",
-        "Water",
-        "Heat"
-      ],
-      "bedrooms": "1",
-      "bedrooms_num": 1,
-      "baths": "1",
-      "location": "Marc Drive",
-      "rent": 1800,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "$1,800/mo",
-      "landlord_pays": "GEWH",
-      "accepts_hud": false,
-      "phones": [
-        "845-641-5899"
-      ],
-      "furnished": true,
-      "comments": "Brand new upgraded furnished Choson/Kallah apartment. Available immediately.",
-      "lat": 40.07433,
-      "lng": -74.21049,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
     {
       "id": "U1AA166_1036:20",
       "type": "Apartment",
@@ -177,37 +63,6 @@
       "geo_spread": 0.7
     },
     {
-      "id": "11A66_1035:15",
-      "type": "Apartment",
-      "utilities_included": [
-        "Gas",
-        "Electric",
-        "Water",
-        "Heat"
-      ],
-      "bedrooms": "1",
-      "bedrooms_num": 1,
-      "baths": "1",
-      "location": "Albert Area",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "GEWH",
-      "accepts_hud": false,
-      "phones": [
-        "845-558-2190"
-      ],
-      "furnished": true,
-      "comments": "Beautiful spacious furnished Choson/Kallah apartment. Lots of closet space. Available immediately.",
-      "lat": 40.06373,
-      "lng": -74.19895,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
       "id": "UH1127_964:15",
       "type": "House",
       "utilities_included": [],
@@ -229,32 +84,6 @@
       "comments": "Beautiful, fully furnished home on lake with gorgeous lake view.",
       "lat": 40.00317,
       "lng": -74.25653,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "U1H166_1036:17",
-      "type": "House",
-      "utilities_included": [],
-      "bedrooms": "3",
-      "bedrooms_num": 3,
-      "baths": "2",
-      "location": "Ridge Area",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "732-551-0188"
-      ],
-      "furnished": true,
-      "comments": "Short term furnished rental available daily/weekly, etc. through December.",
-      "lat": 40.09788,
-      "lng": -74.20131,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -417,32 +246,6 @@
       "geo_spread": 0
     },
     {
-      "id": "1TT115_935:4",
-      "type": "Townhouse / Attached",
-      "utilities_included": [],
-      "bedrooms": "5",
-      "bedrooms_num": 5,
-      "baths": "2½",
-      "location": "High Street Area",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "347-756-2656"
-      ],
-      "furnished": false,
-      "comments": "Beautiful end unit. Available immediately.",
-      "lat": 40.07005,
-      "lng": -74.21677,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
       "id": "UH1166_1038:2",
       "type": "House",
       "utilities_included": [
@@ -497,13 +300,13 @@
       ],
       "furnished": true,
       "comments": "Beautifully redone home, furnished, close to Shuls. Brookwood/Harmony Farms area.",
-      "lat": 40.12701,
-      "lng": -74.29025,
+      "lat": 40.12759,
+      "lng": -74.29087,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 2.5
+      "geo_area_miles": 2.4
     },
     {
       "id": "1A151_1008:9",
@@ -566,32 +369,6 @@
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0.4
-    },
-    {
-      "id": "1A168_1040:0",
-      "type": "Apartment",
-      "utilities_included": [],
-      "bedrooms": "4",
-      "bedrooms_num": 4,
-      "baths": "3",
-      "location": "Chestnut Acres",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Contact for rent",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "443-386-2101"
-      ],
-      "furnished": false,
-      "comments": "Weekend Hotel: Fresh towels, linen. Playroom, kitchen, etc. Very large basement, full baths. Call, text or Whatsapp.",
-      "lat": 40.04981,
-      "lng": -74.20925,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
     },
     {
       "id": "1A155_1017:2",
@@ -829,7 +606,7 @@
         "347-661-7300"
       ],
       "furnished": false,
-      "comments": "Great, 55+. 2 floors. Living room/dining room, large family room & den. Patio. Appliances. All amenities included.",
+      "comments": "Great, 55+.2 floors. Living room/dining room, large family room & den. Patio. Appliances. All amenities included.",
       "lat": 40.05623,
       "lng": -74.22761,
       "geo": "place",
@@ -856,13 +633,13 @@
       ],
       "furnished": false,
       "comments": "Large spacious colonial with finished basement & stunning pool.",
-      "lat": 40.0224,
-      "lng": -74.23736,
+      "lat": 40.02177,
+      "lng": -74.23717,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 0.6
+      "geo_area_miles": 0.7
     },
     {
       "id": "11HH69_1041:16",
@@ -987,13 +764,13 @@
       ],
       "furnished": false,
       "comments": "Fully renovated home. Shul & Rav.",
-      "lat": 40.12701,
-      "lng": -74.29025,
+      "lat": 40.12759,
+      "lng": -74.29087,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 2.5
+      "geo_area_miles": 2.4
     },
     {
       "id": "1HH136_988:6",
@@ -1042,63 +819,6 @@
       "comments": "Legal apartment. 9-foot ceiling. Eat-in kitchen. Large dining room/living room. Available immediately.",
       "lat": 40.0693,
       "lng": -74.21834,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "1AA085_879:6",
-      "type": "Apartment",
-      "utilities_included": [],
-      "bedrooms": "3",
-      "bedrooms_num": 3,
-      "baths": "1½",
-      "location": "Spruce St.Area",
-      "rent": 2200,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "$2,200/mo",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "848-986-6954"
-      ],
-      "furnished": false,
-      "comments": "Beautiful apartment in single home on quiet cul de sac. Available immediately.",
-      "lat": 40.07152,
-      "lng": -74.20888,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "11A58_1022:18",
-      "type": "Apartment",
-      "utilities_included": [
-        "Gas",
-        "Electric",
-        "Water",
-        "Heat"
-      ],
-      "bedrooms": "1",
-      "bedrooms_num": 1,
-      "baths": "1",
-      "location": "Albert Area",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "GEWH",
-      "accepts_hud": false,
-      "phones": [
-        "732-833-3141"
-      ],
-      "furnished": true,
-      "comments": "New furnished Choson/Kallah studio apartment. Available immediately.",
-      "lat": 40.06373,
-      "lng": -74.19895,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -1184,32 +904,6 @@
       "geo_spread": 0
     },
     {
-      "id": "1170_1044:2",
-      "type": "House",
-      "utilities_included": [],
-      "bedrooms": "6",
-      "bedrooms_num": 6,
-      "baths": "4",
-      "location": "Bent Hook, Toms River",
-      "rent": 3600,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "$3,600/mo",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "416-676-4965"
-      ],
-      "furnished": false,
-      "comments": "3000 square feet, Large bedrooms, spacious backyard, eat-in kitchen, cul de sac, sidewalks on both sides, many kids on block, very safe environment. In Eruv, 5 minutes to shul. Available immediately.",
-      "lat": 40.02429,
-      "lng": -74.2379,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
       "id": "U1HH170_1044:13",
       "type": "House",
       "utilities_included": [],
@@ -1263,32 +957,6 @@
       "geo_unverified": [],
       "geo_spread": 0,
       "geo_neighborhood": "enclave"
-    },
-    {
-      "id": "U1HH170_1044:10",
-      "type": "House",
-      "utilities_included": [],
-      "bedrooms": "4",
-      "bedrooms_num": 4,
-      "baths": "2",
-      "location": "Brookwood 1",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "732-644-4277"
-      ],
-      "furnished": false,
-      "comments": "Beautiful mother daughter with 2nd kitchen & spacious rooms, pool. Available immediately.",
-      "lat": 40.11532,
-      "lng": -74.24687,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
     },
     {
       "id": "U1HH170_1044:15",
@@ -1566,37 +1234,6 @@
       "geo_spread": 0
     },
     {
-      "id": "11A71_1045:13",
-      "type": "Apartment",
-      "utilities_included": [
-        "Gas",
-        "Electric",
-        "Water",
-        "Heat"
-      ],
-      "bedrooms": "1",
-      "bedrooms_num": 1,
-      "baths": "1",
-      "location": "Arlington Area",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "GEWH",
-      "accepts_hud": false,
-      "phones": [
-        "347-598-0556"
-      ],
-      "furnished": true,
-      "comments": "Stunning new beautifully furnished apartment. Available immediately.",
-      "lat": 40.08448,
-      "lng": -74.19965,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
       "id": "1A136_988:5",
       "type": "Apartment",
       "utilities_included": [
@@ -1713,32 +1350,6 @@
       "geo_spread": 0
     },
     {
-      "id": "11AA72_1048:10",
-      "type": "Apartment",
-      "utilities_included": [],
-      "bedrooms": "3",
-      "bedrooms_num": 3,
-      "baths": "1½",
-      "location": "Prospect Vines",
-      "rent": 1800,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "$1,800/mo",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "917-312-1201"
-      ],
-      "furnished": false,
-      "comments": "Beautiful apartment. Smart layout. Available immediately.",
-      "lat": 40.07227,
-      "lng": -74.23904,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
       "id": "U1AA172_1047:8",
       "type": "Apartment",
       "utilities_included": [],
@@ -1790,32 +1401,6 @@
       "comments": "Small newer furnished/unfurnished. Full kitchen, 2 sinks, washer/dryer. Perfect for single/office. Available immediately.",
       "lat": 40.09183,
       "lng": -74.20638,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "11AA72_1048:12",
-      "type": "Apartment",
-      "utilities_included": [],
-      "bedrooms": "2",
-      "bedrooms_num": 2,
-      "baths": "1",
-      "location": "Brook Hill",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "732-908-0140"
-      ],
-      "furnished": false,
-      "comments": "Beautiful, newly-renovated apartment. Available immediately.",
-      "lat": 40.10773,
-      "lng": -74.1905,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -2087,37 +1672,6 @@
       "geo_spread": 0
     },
     {
-      "id": "1A172_1049:7",
-      "type": "Apartment",
-      "utilities_included": [
-        "Gas",
-        "Electric",
-        "Water",
-        "Heat"
-      ],
-      "bedrooms": "1",
-      "bedrooms_num": 1,
-      "baths": "1",
-      "location": "Shonny / Irene Court",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "GEWH",
-      "accepts_hud": false,
-      "phones": [
-        "732-278-3040"
-      ],
-      "furnished": true,
-      "comments": "Beautiful & spacious furnished Choson/Kallah apartment by the month. Available immediately.",
-      "lat": 40.09636,
-      "lng": -74.25607,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0.1
-    },
-    {
       "id": "1A172_1049:8",
       "type": "Apartment",
       "utilities_included": [],
@@ -2182,10 +1736,10 @@
       "bedrooms_num": 1,
       "baths": "1",
       "location": "Ocean Avenue",
-      "rent": 1200,
+      "rent": 1100,
       "rent_period": "month",
       "negotiable": false,
-      "rent_display": "$1,200/mo",
+      "rent_display": "$1,100/mo",
       "landlord_pays": "",
       "accepts_hud": false,
       "phones": [
@@ -2338,13 +1892,13 @@
       ],
       "furnished": false,
       "comments": "Driveway, large backyard. Washer/dryer in basement. Near Sephardic & Ashkenaz shul.",
-      "lat": 40.12701,
-      "lng": -74.29025,
+      "lat": 40.12759,
+      "lng": -74.29087,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 2.5
+      "geo_area_miles": 2.4
     },
     {
       "id": "U1HH154_1015:18",
@@ -2354,10 +1908,10 @@
       "bedrooms_num": 3,
       "baths": "2",
       "location": "Harfield, Jackson",
-      "rent": 2800,
+      "rent": 2700,
       "rent_period": "month",
       "negotiable": false,
-      "rent_display": "$2,800/mo",
+      "rent_display": "$2,700/mo",
       "landlord_pays": "",
       "accepts_hud": false,
       "phones": [
@@ -2426,7 +1980,7 @@
       "geo_spread": 0
     },
     {
-      "id": "p4r5",
+      "id": "p3r21",
       "type": "House",
       "utilities_included": [],
       "bedrooms": "5",
@@ -2444,13 +1998,13 @@
       ],
       "furnished": true,
       "comments": "Furnished/unfurnished, ultra-modern kitchen, master suite, beautiful heated pool, long term.",
-      "lat": 40.0224,
-      "lng": -74.23736,
+      "lat": 40.02177,
+      "lng": -74.23717,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 0.6
+      "geo_area_miles": 0.7
     },
     {
       "id": "UHH1172_1047:7",
@@ -2459,7 +2013,7 @@
       "bedrooms": "4",
       "bedrooms_num": 4,
       "baths": "2½",
-      "location": "Dunhill Rd, Jackson",
+      "location": "Jackson, Dunhill Rd.",
       "rent": 3900,
       "rent_period": "month",
       "negotiable": false,
@@ -2616,24 +2170,24 @@
       "bedrooms_num": 5,
       "baths": "3½",
       "location": "Jackson",
-      "rent": 4850,
+      "rent": 4600,
       "rent_period": "month",
       "negotiable": false,
-      "rent_display": "$4,850/mo",
+      "rent_display": "$4,600/mo",
       "landlord_pays": "",
       "accepts_hud": false,
       "phones": [
         "216-946-0060"
       ],
       "furnished": false,
-      "comments": "Near Hope Chapel & East Veterans. Available November.",
-      "lat": 40.12701,
-      "lng": -74.29025,
+      "comments": "Near Hope Chapel & East Veterans. Near new BMG Jackson location. Available November.",
+      "lat": 40.12759,
+      "lng": -74.29087,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 2.5
+      "geo_area_miles": 2.4
     },
     {
       "id": "11TT72_1049:10",
@@ -2643,10 +2197,10 @@
       "bedrooms_num": 3,
       "baths": "3½",
       "location": "Jackson 21",
-      "rent": 3300,
+      "rent": 3100,
       "rent_period": "month",
       "negotiable": false,
-      "rent_display": "$3,300/mo",
+      "rent_display": "$3,100/mo",
       "landlord_pays": "",
       "accepts_hud": false,
       "phones": [
@@ -2669,22 +2223,24 @@
       "bedrooms": "5",
       "bedrooms_num": 5,
       "baths": "1½",
-      "location": "Brookwd 1 / NPGS",
-      "rent": 3250,
+      "location": "Outside Brookwd 1",
+      "rent": 3100,
       "rent_period": "month",
       "negotiable": false,
-      "rent_display": "$3,250/mo",
+      "rent_display": "$3,100/mo",
       "landlord_pays": "",
       "accepts_hud": false,
       "phones": [
         "732-334-8173"
       ],
       "furnished": false,
-      "comments": "Very well maintained bilevel. Available January 1.",
-      "lat": 40.11532,
-      "lng": -74.24687,
-      "geo": "place",
-      "geo_unknown": [],
+      "comments": "Bilevel. Available January 1.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": [
+        "outside brookwood 1"
+      ],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -2713,33 +2269,6 @@
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
-    },
-    {
-      "id": "U1HH172_1047:19",
-      "type": "House",
-      "utilities_included": [],
-      "bedrooms": "4",
-      "bedrooms_num": 4,
-      "baths": "2½",
-      "location": "Howell",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "646-285-4852"
-      ],
-      "furnished": false,
-      "comments": "Beautiful move in ready. Available immediately",
-      "lat": 40.14696,
-      "lng": -74.20164,
-      "geo": "town",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0,
-      "geo_area_miles": 2.4
     },
     {
       "id": "UHH1172_1048:2",
@@ -2846,32 +2375,6 @@
       "geo_spread": 0
     },
     {
-      "id": "U1TT173_1050:3",
-      "type": "Townhouse / Attached",
-      "utilities_included": [],
-      "bedrooms": "4",
-      "bedrooms_num": 4,
-      "baths": "3½",
-      "location": "Jackson 21",
-      "rent": 3600,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "$3,600/mo",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "917-275-5248"
-      ],
-      "furnished": false,
-      "comments": "Semi attached, desirable block, down the block to all shuls.",
-      "lat": 40.13763,
-      "lng": -74.35417,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
       "id": "U1TT173_1050:1",
       "type": "Townhouse / Attached",
       "utilities_included": [],
@@ -2968,13 +2471,13 @@
       ],
       "furnished": false,
       "comments": "1-minute drive to GG. close minyan, 1 acre, huge high end kitchen, spacious layout.",
-      "lat": 40.12701,
-      "lng": -74.29025,
+      "lat": 40.12759,
+      "lng": -74.29087,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 2.5
+      "geo_area_miles": 2.4
     },
     {
       "id": "U11TT73_1050:16",
@@ -3055,32 +2558,6 @@
       "geo_spread": 0
     },
     {
-      "id": "11HH73_1049:12",
-      "type": "House",
-      "utilities_included": [],
-      "bedrooms": "3",
-      "bedrooms_num": 3,
-      "baths": "2½",
-      "location": "Harmony Farms",
-      "rent": 3400,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "$3,400/mo",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "718-536-4673"
-      ],
-      "furnished": false,
-      "comments": "Spacious, pristine, large private property, woods 2 sides. Large insulated basement. Available till summer.",
-      "lat": 40.13064,
-      "lng": -74.25709,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
       "id": "11HH73_1049:16",
       "type": "House",
       "utilities_included": [],
@@ -3101,32 +2578,6 @@
       "comments": "Newly renovated Colonial. Nice big backyard. Unfinished basement. Garage. Available November long term.",
       "lat": 40.1155,
       "lng": -74.24666,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "UHH1125_958:10",
-      "type": "House",
-      "utilities_included": [],
-      "bedrooms": "3",
-      "bedrooms_num": 3,
-      "baths": "2½",
-      "location": "Pine Lake Park, Manchester",
-      "rent": 3200,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "$3,200/mo",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "732-567-1287"
-      ],
-      "furnished": false,
-      "comments": "Long term! Beautiful colonial, finished basement, close to shul & park. Available immediately.",
-      "lat": 40.00317,
-      "lng": -74.25653,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -3238,7 +2689,7 @@
         "347-786-4671"
       ],
       "furnished": true,
-      "comments": "Partly-furnished room, single working guys apartment, quiet block. New, near shopping. Includes wifi.",
+      "comments": "P artly-furnished room, single working guys apartment, quiet block. New, near shopping. Includes wifi.",
       "lat": 40.06443,
       "lng": -74.21911,
       "geo": "place",
@@ -3367,33 +2818,6 @@
       "geo_neighborhood": "w kennedy"
     },
     {
-      "id": "1A141_995:4",
-      "type": "Apartment",
-      "utilities_included": [],
-      "bedrooms": "1",
-      "bedrooms_num": 1,
-      "baths": "1",
-      "location": "Jackson",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "347-469-3644"
-      ],
-      "furnished": true,
-      "comments": "Spacious ground-level furnished, good for single Laundry room. Gorgeous kitchen. Available immediately.",
-      "lat": 40.12701,
-      "lng": -74.29025,
-      "geo": "town",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0,
-      "geo_area_miles": 2.5
-    },
-    {
       "id": "11A50_1007:18",
       "type": "Apartment",
       "utilities_included": [],
@@ -3411,42 +2835,10 @@
         "848-389-1543"
       ],
       "furnished": true,
-      "comments": "Furnished apartment near Shul. Solar power. Private entrance. Available immediately long/short term.",
+      "comments": "Partly furnished Choson/Kallahap. near Shul. Private entrance. Available immediately.",
       "lat": 40.0941,
       "lng": -74.21499,
       "geo": "town",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "1AA138_990:9",
-      "type": "Apartment",
-      "utilities_included": [
-        "Gas",
-        "Electric",
-        "Water",
-        "Heat"
-      ],
-      "bedrooms": "1",
-      "bedrooms_num": 1,
-      "baths": "1",
-      "location": "East End Area",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "GEWH",
-      "accepts_hud": false,
-      "phones": [
-        "347-729-6060",
-        "347-385-1445"
-      ],
-      "furnished": true,
-      "comments": "New furnished, short/long term. Extra soundproofing. Washer/dryer. Separate air conditioning. Available immediately.",
-      "lat": 40.10242,
-      "lng": -74.20021,
-      "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
@@ -3624,32 +3016,6 @@
       "geo_spread": 0
     },
     {
-      "id": "11AA73_1051:14",
-      "type": "Apartment",
-      "utilities_included": [],
-      "bedrooms": "3",
-      "bedrooms_num": 3,
-      "baths": "1",
-      "location": "Sterling Forest",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "732-678-7273"
-      ],
-      "furnished": false,
-      "comments": "In duplex. New flooring and lighting. Sub-meters. Available immediately.",
-      "lat": 40.06846,
-      "lng": -74.2205,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
       "id": "11AA72_1046:14",
       "type": "Apartment",
       "utilities_included": [],
@@ -3670,32 +3036,6 @@
       "comments": "Beautiful apartment, newly renovated vinyl flooring. Available immediately.",
       "lat": 40.0798,
       "lng": -74.225,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "U1AA174_1053:11",
-      "type": "Apartment",
-      "utilities_included": [],
-      "bedrooms": "3",
-      "bedrooms_num": 3,
-      "baths": "1",
-      "location": "Central Area",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "908-783-4324"
-      ],
-      "furnished": false,
-      "comments": "Updated airy apartment. Available December 1.",
-      "lat": 40.0905,
-      "lng": -74.2377,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -3728,32 +3068,6 @@
       "geo_spread": 0
     },
     {
-      "id": "1AA174_1052:5",
-      "type": "Apartment",
-      "utilities_included": [],
-      "bedrooms": "3",
-      "bedrooms_num": 3,
-      "baths": "1",
-      "location": "Sterling Place",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "848-525-9355"
-      ],
-      "furnished": false,
-      "comments": "Beautiful apartment. New floors, eat-in kitchen, large living room/dining room. Available immediately.",
-      "lat": 40.0693,
-      "lng": -74.21834,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
       "id": "1AA117_939:18",
       "type": "Apartment",
       "utilities_included": [],
@@ -3768,10 +3082,10 @@
       "landlord_pays": "",
       "accepts_hud": false,
       "phones": [
-        "929-388-2747"
+        "718-915-9822"
       ],
       "furnished": false,
-      "comments": "Sunny, beautiful, upgraded. Tiled bathrms, fully vinyl. Full kitchen. For up to 6 months.",
+      "comments": "Sunny, beautiful, upgraded. Tiled bathrms, fully vinyl. Full kitchen. Short/long term.",
       "lat": 40.04915,
       "lng": -74.19475,
       "geo": "place",
@@ -3966,37 +3280,6 @@
       "geo_spread": 0
     },
     {
-      "id": "1A124_955:6",
-      "type": "Apartment",
-      "utilities_included": [
-        "Gas",
-        "Electric",
-        "Water",
-        "Heat"
-      ],
-      "bedrooms": "1",
-      "bedrooms_num": 1,
-      "baths": "1",
-      "location": "Jule Court",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "GEWH",
-      "accepts_hud": false,
-      "phones": [
-        "917-544-4364"
-      ],
-      "furnished": true,
-      "comments": "Furnished Choson/Kallah apartment with private entrance. By the month. Available immediately.",
-      "lat": 40.0888,
-      "lng": -74.24942,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
       "id": "UA1174_1053:6",
       "type": "Apartment",
       "utilities_included": [
@@ -4022,63 +3305,6 @@
       "comments": "Furnished, short or long term, minimum one month. Great for Choson/Kallah!",
       "lat": 40.08448,
       "lng": -74.19965,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "1A122_951:14",
-      "type": "Apartment",
-      "utilities_included": [],
-      "bedrooms": "1",
-      "bedrooms_num": 1,
-      "baths": "1",
-      "location": "Somerset Avenue",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "732-569-4998"
-      ],
-      "furnished": true,
-      "comments": "Furnished walk-in apartment. Available now through August.",
-      "lat": 40.10035,
-      "lng": -74.1955,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "1A057_828:19",
-      "type": "Apartment",
-      "utilities_included": [
-        "Gas",
-        "Electric",
-        "Water",
-        "Heat"
-      ],
-      "bedrooms": "1",
-      "bedrooms_num": 1,
-      "baths": "1",
-      "location": "Heart of Ridge",
-      "rent": 1300,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "$1,300/mo",
-      "landlord_pays": "GEWH",
-      "accepts_hud": false,
-      "phones": [
-        "732-877-3613"
-      ],
-      "furnished": true,
-      "comments": "New furnished Choson/Kallah apartment in great location. Available immediately.",
-      "lat": 40.09788,
-      "lng": -74.20131,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -4273,32 +3499,6 @@
       "geo_spread": 0
     },
     {
-      "id": "U11TT74_1053:10",
-      "type": "Townhouse / Attached",
-      "utilities_included": [],
-      "bedrooms": "3",
-      "bedrooms_num": 3,
-      "baths": "2½",
-      "location": "Wyndham / Prospct.",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "732-856-0027"
-      ],
-      "furnished": false,
-      "comments": "Updated end unit, very airy. Available immediately.",
-      "lat": 40.07137,
-      "lng": -74.22961,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0.3
-    },
-    {
       "id": "U1HH174_1053:13",
       "type": "House",
       "utilities_included": [],
@@ -4319,32 +3519,6 @@
       "comments": "Nice block. Available immediately.",
       "lat": 40.12095,
       "lng": -74.14375,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "11HH74_1051:16",
-      "type": "House",
-      "utilities_included": [],
-      "bedrooms": "5",
-      "bedrooms_num": 5,
-      "baths": "2",
-      "location": "Holly Oaks, Manchester",
-      "rent": 3000,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "$3,000/mo",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "732-534-1065"
-      ],
-      "furnished": false,
-      "comments": "Freshly redone. Brand new kitchen.",
-      "lat": 40.0357,
-      "lng": -74.26028,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -4499,7 +3673,7 @@
         "732-428-9614"
       ],
       "furnished": false,
-      "comments": "55+community. Fully renovated. Pesach kitchen. Appliances. Walking distance to 2 shuls.",
+      "comments": "55+community. Fully renovated. Pesach kitchen. Appliances. Walking distance to 2 s huls.",
       "lat": 40.05747,
       "lng": -74.23451,
       "geo": "place",
@@ -4552,13 +3726,13 @@
       ],
       "furnished": false,
       "comments": "Oakwood Hollow Lane.",
-      "lat": 40.0224,
-      "lng": -74.23736,
+      "lat": 40.02177,
+      "lng": -74.23717,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 0.6
+      "geo_area_miles": 0.7
     },
     {
       "id": "11TT74_1053:17",
@@ -4854,10 +4028,10 @@
       "bedrooms_num": 3,
       "baths": "2",
       "location": "East End",
-      "rent": 2350,
+      "rent": 2250,
       "rent_period": "month",
       "negotiable": false,
-      "rent_display": "$2,350/mo",
+      "rent_display": "$2,250/mo",
       "landlord_pays": "",
       "accepts_hud": false,
       "phones": [
@@ -4942,7 +4116,7 @@
         "732-674-9281"
       ],
       "furnished": false,
-      "comments": "Centrally located, brand new, single family home. XSP, upgrades,2 spots. Available January 15",
+      "comments": "Centrally loc. brand new single family home. Extra soundproofing, upgrades. Available January.",
       "lat": 40.09377,
       "lng": -74.17316,
       "geo": "place",
@@ -5189,69 +4363,6 @@
       "geo_spread": 0
     },
     {
-      "id": "11A75_1054:11",
-      "type": "Apartment",
-      "utilities_included": [
-        "Gas",
-        "Electric",
-        "Water",
-        "Heat"
-      ],
-      "bedrooms": "1",
-      "bedrooms_num": 1,
-      "baths": "1",
-      "location": "The 70 Phase I",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "GEWH",
-      "accepts_hud": false,
-      "phones": [
-        "732-551-4977"
-      ],
-      "furnished": true,
-      "comments": "Beautifully furnished apartment at New Hampshire & Route 70. Available immediately.",
-      "lat": 40.04915,
-      "lng": -74.19475,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "1R159_1021:1",
-      "type": "Room",
-      "utilities_included": [
-        "Gas",
-        "Electric",
-        "Water",
-        "Heat"
-      ],
-      "bedrooms": "1",
-      "bedrooms_num": 1,
-      "baths": "",
-      "location": "Jackson",
-      "rent": 1000,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "$1,000/mo",
-      "landlord_pays": "GEWH",
-      "accepts_hud": false,
-      "phones": [
-        "732-503-6729"
-      ],
-      "furnished": true,
-      "comments": "Furnished room in newly renovated house of working guys. Pool, hot tub.",
-      "lat": 40.12701,
-      "lng": -74.29025,
-      "geo": "town",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0,
-      "geo_area_miles": 2.5
-    },
-    {
       "id": "11TT75_1055:17",
       "type": "Townhouse / Attached",
       "utilities_included": [],
@@ -5269,7 +4380,7 @@
         "732-491-5003"
       ],
       "furnished": false,
-      "comments": "Stunning brand new duplex for short term one-year rental. Available February.",
+      "comments": "Stunning spacious duplex for short term rental. Available February.",
       "lat": 40.09909,
       "lng": -74.21652,
       "geo": "place",
@@ -5285,10 +4396,10 @@
       "bedrooms_num": 3,
       "baths": "1½",
       "location": "Harfield, Jackson",
-      "rent": 3200,
+      "rent": null,
       "rent_period": "month",
       "negotiable": false,
-      "rent_display": "$3,200/mo",
+      "rent_display": "Call to discuss",
       "landlord_pays": "",
       "accepts_hud": false,
       "phones": [
@@ -5374,13 +4485,13 @@
       ],
       "furnished": false,
       "comments": "Nice spacious house, very private. 5-minute walk to Chabad. Available immediately.",
-      "lat": 40.0224,
-      "lng": -74.23736,
+      "lat": 40.02177,
+      "lng": -74.23717,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 0.6
+      "geo_area_miles": 0.7
     },
     {
       "id": "11HH75_1054:16",
@@ -5505,7 +4616,7 @@
         "929-653-4583"
       ],
       "furnished": false,
-      "comments": "Brand new. Whats App-732-573-8124",
+      "comments": "Brand new. Whats App: 732-573-8124",
       "lat": 40.06652,
       "lng": -74.23199,
       "geo": "place",
@@ -5609,7 +4720,7 @@
         "845-304-1885"
       ],
       "furnished": false,
-      "comments": "Large backyard. Available immediately.",
+      "comments": "Dual kitchen, 2-bedroom separable, large backyard. Dorm OK. Available immediately.",
       "lat": 40.10952,
       "lng": -74.24706,
       "geo": "place",
@@ -5645,28 +4756,32 @@
       "geo_spread": 0
     },
     {
-      "id": "U1HH176_1055:15",
+      "id": "UHH1174_1053:1",
       "type": "House",
-      "utilities_included": [],
-      "bedrooms": "4",
-      "bedrooms_num": 4,
-      "baths": "2",
-      "location": "Candlewood / Hwl.",
+      "utilities_included": [
+        "Electric"
+      ],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2½",
+      "location": "Heritage Pt. / Howl.",
       "rent": null,
       "rent_period": "month",
       "negotiable": false,
       "rent_display": "Call to discuss",
-      "landlord_pays": "",
+      "landlord_pays": "E",
       "accepts_hud": false,
       "phones": [
-        "347-668-6565"
+        "732-814-4645"
       ],
       "furnished": false,
-      "comments": "Beautifully redone bi-level, 2 kitchens, large backyard with deck, sought after area.",
-      "lat": 40.15011,
-      "lng": -74.21348,
+      "comments": "Newly renovated, 2000 square feet right near R’Jacobovits’s Shul.",
+      "lat": 40.14523,
+      "lng": -74.23388,
       "geo": "place",
-      "geo_unknown": [],
+      "geo_unknown": [
+        "howl"
+      ],
       "geo_unverified": [],
       "geo_spread": 0
     },
@@ -5737,7 +4852,7 @@
       "landlord_pays": "",
       "accepts_hud": false,
       "phones": [
-        "848-240-5208"
+        "848-240-5204"
       ],
       "furnished": false,
       "comments": "Brand new, 3600 square feet magnificent house. Upgraded throughout. master suite etc.",
@@ -5775,33 +4890,7 @@
       "geo_spread": 0
     },
     {
-      "id": "11TT73_1049:17",
-      "type": "Townhouse / Attached",
-      "utilities_included": [],
-      "bedrooms": "4",
-      "bedrooms_num": 4,
-      "baths": "4",
-      "location": "Lakewood Commons Area",
-      "rent": 2900,
-      "rent_period": "month",
-      "negotiable": true,
-      "rent_display": "$2,900/mo",
-      "landlord_pays": "",
-      "accepts_hud": true,
-      "phones": [
-        "732-267-7500"
-      ],
-      "furnished": false,
-      "comments": "Available immediately.",
-      "lat": 40.0682,
-      "lng": -74.20488,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "CfHH1114_932:15",
+      "id": "1HH177_1056:3",
       "type": "House",
       "utilities_included": [],
       "bedrooms": "7",
@@ -5871,13 +4960,13 @@
       ],
       "furnished": false,
       "comments": "Nice private house with nice backyard.",
-      "lat": 40.0224,
-      "lng": -74.23736,
+      "lat": 40.02177,
+      "lng": -74.23717,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 0.6
+      "geo_area_miles": 0.7
     },
     {
       "id": "1HH177_1056:4",
@@ -5897,7 +4986,7 @@
         "848-251-4447"
       ],
       "furnished": false,
-      "comments": "10 Yellowstone Lane. Gorgeous, move-in condition. Private backyard. Available December.",
+      "comments": "Gorgeous, move-in condition. Private backyard. Available December.",
       "lat": 40.16928,
       "lng": -74.19737,
       "geo": "place",
@@ -5950,13 +5039,13 @@
       ],
       "furnished": false,
       "comments": "Off North Maple. Private house on one acre.",
-      "lat": 40.0224,
-      "lng": -74.23736,
+      "lat": 40.02177,
+      "lng": -74.23717,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 0.6
+      "geo_area_miles": 0.7
     },
     {
       "id": "1HH177_1056:7",
@@ -5977,13 +5066,13 @@
       ],
       "furnished": false,
       "comments": "Has pool. Available immediately.",
-      "lat": 40.00642,
-      "lng": -74.2569,
+      "lat": 40.00317,
+      "lng": -74.25653,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 0.4
+      "geo_area_miles": 0.0
     },
     {
       "id": "U11TT77_1056:12",
@@ -6100,62 +5189,26 @@
       "geo_spread": 0
     },
     {
-      "id": "1A131_978:1",
+      "id": "1A131_977:15",
       "type": "Apartment",
-      "utilities_included": [
-        "Gas",
-        "Electric",
-        "Water",
-        "Heat"
-      ],
-      "bedrooms": "11",
-      "bedrooms_num": 11,
-      "baths": "11",
-      "location": "Miller / New Central",
-      "rent": null,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "GEWH",
-      "accepts_hud": false,
-      "phones": [
-        "908-216-8995"
-      ],
-      "furnished": true,
-      "comments": "Short term furnished Choson/Kallah apartment,fully upgraded, beautiful layout.",
-      "lat": 40.09563,
-      "lng": -74.25102,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0.6
-    },
-    {
-      "id": "1A131_978:2",
-      "type": "Apartment",
-      "utilities_included": [
-        "Gas",
-        "Electric",
-        "Water",
-        "Heat"
-      ],
+      "utilities_included": [],
       "bedrooms": "1",
       "bedrooms_num": 1,
       "baths": "1",
-      "location": "13th & Princeton",
+      "location": "The Reserve, Jackson",
       "rent": null,
       "rent_period": "month",
       "negotiable": false,
-      "rent_display": "Call to discuss",
-      "landlord_pays": "GEWH",
+      "rent_display": "Contact for rent",
+      "landlord_pays": "",
       "accepts_hud": false,
       "phones": [
-        "908-514-8424"
+        "216-903-0365"
       ],
-      "furnished": true,
-      "comments": "Bright beautiful fully-furnished newer apartment for Chosson/Kallah. Washer/dryer.",
-      "lat": 40.10409,
-      "lng": -74.21028,
+      "furnished": false,
+      "comments": "Fully private upgraded Choson/Kallah suite, for Chasunanight. Stunninggrounds. Lowintroductoryrates.",
+      "lat": 40.1219,
+      "lng": -74.27709,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -6210,14 +5263,14 @@
         "732-508-0131"
       ],
       "furnished": false,
-      "comments": "4 rooms available by the room, or whole house at a better rate. Internet included. No contact.",
-      "lat": 40.0224,
-      "lng": -74.23736,
+      "comments": "4 rooms available by the room, o r whole house at a better rate. I nternet included. No contact.",
+      "lat": 40.02177,
+      "lng": -74.23717,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 0.6
+      "geo_area_miles": 0.7
     },
     {
       "id": "U1AA177_1056:8",
@@ -6240,32 +5293,6 @@
       "comments": "Available immediately.",
       "lat": 40.09605,
       "lng": -74.22183,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "1AA177_1056:9",
-      "type": "Apartment",
-      "utilities_included": [],
-      "bedrooms": "2",
-      "bedrooms_num": 2,
-      "baths": "1½",
-      "location": "Stamford Meadows",
-      "rent": 1600,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "$1,600/mo",
-      "landlord_pays": "",
-      "accepts_hud": false,
-      "phones": [
-        "848-342-9693"
-      ],
-      "furnished": false,
-      "comments": "Off Chestnut Street. No carpet. Available immediately.",
-      "lat": 40.05373,
-      "lng": -74.20184,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -6324,37 +5351,6 @@
       "geo_spread": 0
     },
     {
-      "id": "U1AA177_1056:20",
-      "type": "Apartment",
-      "utilities_included": [
-        "Gas",
-        "Electric",
-        "Water",
-        "Heat"
-      ],
-      "bedrooms": "2",
-      "bedrooms_num": 2,
-      "baths": "1",
-      "location": "Negba St. / Ridge",
-      "rent": 2100,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "$2,100/mo",
-      "landlord_pays": "GEWH",
-      "accepts_hud": false,
-      "phones": [
-        "347-416-1120"
-      ],
-      "furnished": false,
-      "comments": "Beautiful upgraded apartment in private house, parking spot. Available December.",
-      "lat": 40.09675,
-      "lng": -74.20283,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
       "id": "U1AA177_1056:13",
       "type": "Apartment",
       "utilities_included": [
@@ -6393,10 +5389,10 @@
       "bedrooms_num": 3,
       "baths": "2",
       "location": "Park Ave.",
-      "rent": 3000,
+      "rent": 2900,
       "rent_period": "month",
       "negotiable": false,
-      "rent_display": "$3,000/mo",
+      "rent_display": "$2,900/mo",
       "landlord_pays": "",
       "accepts_hud": false,
       "phones": [
@@ -6412,41 +5408,13 @@
       "geo_spread": 0
     },
     {
-      "id": "11AA75_1052:14",
-      "type": "Apartment",
-      "utilities_included": [
-        "Water"
-      ],
-      "bedrooms": "3",
-      "bedrooms_num": 3,
-      "baths": "2",
-      "location": "The 70 Phase II",
-      "rent": 2250,
-      "rent_period": "month",
-      "negotiable": false,
-      "rent_display": "$2,250/mo",
-      "landlord_pays": "W",
-      "accepts_hud": false,
-      "phones": [
-        "929-214-7900"
-      ],
-      "furnished": false,
-      "comments": "Full vinyl flooring. Includes Mezuzos. Washer/dryer, dish washer, etc. Available December 1.",
-      "lat": 40.0488,
-      "lng": -74.2031,
-      "geo": "place",
-      "geo_unknown": [],
-      "geo_unverified": [],
-      "geo_spread": 0
-    },
-    {
-      "id": "9AA52_672:11",
+      "id": "U1AA178_1057:1",
       "type": "Apartment",
       "utilities_included": [],
-      "bedrooms": "3",
-      "bedrooms_num": 3,
-      "baths": "2",
-      "location": "Somerset Walk",
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1½",
+      "location": "10th St. / Yeshiva",
       "rent": null,
       "rent_period": "month",
       "negotiable": false,
@@ -6454,47 +5422,132 @@
       "landlord_pays": "",
       "accepts_hud": false,
       "phones": [
-        "848-480-5389"
+        "347-457-4119"
       ],
       "furnished": false,
-      "comments": "In private home. Well-lit. Separate utilities. Washer/dryer. Extra parking in back. Available immediately.",
-      "lat": 40.07137,
-      "lng": -74.19811,
+      "comments": "Brand new beautiful basement.",
+      "lat": 40.09605,
+      "lng": -74.22183,
+      "geo": "place",
+      "geo_unknown": [
+        "10th st"
+      ],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "U1AA178_1057:10",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1",
+      "location": "Arlington",
+      "rent": 1800,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "$1,800/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-683-7991"
+      ],
+      "furnished": false,
+      "comments": "Available immediately.",
+      "lat": 40.08448,
+      "lng": -74.19965,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
     {
-      "id": "11AA75_1052:12",
+      "id": "U1AA178_1057:12",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Albert Area",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-367-3901"
+      ],
+      "furnished": false,
+      "comments": "Beautiful new basement.",
+      "lat": 40.06373,
+      "lng": -74.19895,
+      "geo": "place",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "U1AA178_1057:14",
       "type": "Apartment",
       "utilities_included": [
-        "Water"
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
       ],
       "bedrooms": "2",
       "bedrooms_num": 2,
       "baths": "1½",
-      "location": "Brook Hill",
-      "rent": 1850,
+      "location": "Rt.9 & Cross",
+      "rent": null,
       "rent_period": "month",
       "negotiable": false,
-      "rent_display": "$1,850/mo",
-      "landlord_pays": "W",
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
       "accepts_hud": false,
       "phones": [
-        "732-600-7022"
+        "347-303-7606"
       ],
-      "furnished": true,
-      "comments": "Very nice, large living area, newly renovated. Possibly furnished master bedroom. Available immediately.",
-      "lat": 40.10773,
-      "lng": -74.1905,
+      "furnished": false,
+      "comments": "New condition.",
+      "lat": 40.07279,
+      "lng": -74.22727,
       "geo": "place",
       "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 1.4
+    },
+    {
+      "id": "U1AA178_1057:15",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "2",
+      "location": "Prospect Heights",
+      "rent": 2000,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "$2,000/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-748-4676"
+      ],
+      "furnished": false,
+      "comments": "Beautiful apartment. Available December.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": [
+        "prospect heights"
+      ],
       "geo_unverified": [],
       "geo_spread": 0
     },
     {
-      "id": "11AA61_1025:19",
+      "id": "U11A78_1057:18",
       "type": "Apartment",
       "utilities_included": [
         "Gas",
@@ -6505,7 +5558,7 @@
       "bedrooms": "1",
       "bedrooms_num": 1,
       "baths": "1",
-      "location": "Brook / Ridge / E.7th",
+      "location": "Medina Rd.",
       "rent": null,
       "rent_period": "month",
       "negotiable": false,
@@ -6513,25 +5566,169 @@
       "landlord_pays": "GEWH",
       "accepts_hud": false,
       "phones": [
-        "347-585-5020"
+        "732-581-7406"
       ],
-      "furnished": false,
-      "comments": "Brand new fully upgraded first floor Choson/Kallah apartment.",
-      "lat": 40.09834,
-      "lng": -74.1895,
+      "furnished": true,
+      "comments": "Beautiful, spacious, brand new, full kitchen, Short or long term. Furnished/unfurnished.",
+      "lat": 40.09377,
+      "lng": -74.17316,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
     },
     {
-      "id": "U1AA176_1055:5",
+      "id": "U1AA178_1057:19",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1½",
+      "location": "Near Yeshiva",
+      "rent": 2300,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "$2,300/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-814-2652"
+      ],
+      "furnished": false,
+      "comments": "Fully upgraded, 10-foot Ceilings, oversized Living room- dining room, eat-in kitchen.",
+      "lat": 40.09605,
+      "lng": -74.22183,
+      "geo": "place",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "1AA119_945:14",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Manetta / Ridge",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "848-240-5812"
+      ],
+      "furnished": false,
+      "comments": "Upgraded apartment. Extra soundproofing. Available January 1.",
+      "lat": 40.09788,
+      "lng": -74.20131,
+      "geo": "place",
+      "geo_unknown": [
+        "manetta"
+      ],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "1AA127_963:3",
       "type": "Apartment",
       "utilities_included": [],
       "bedrooms": "3",
       "bedrooms_num": 3,
+      "baths": "2",
+      "location": "The 70",
+      "rent": 2500,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "$2,500/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "929-237-1872"
+      ],
+      "furnished": false,
+      "comments": "Upgraded apartment. Entire basement. Available immediately.",
+      "lat": 40.04915,
+      "lng": -74.19475,
+      "geo": "place",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "1AA174_1052:2",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
       "baths": "1",
-      "location": "E.7th & Nowlan",
+      "location": "13th & Lexington",
+      "rent": 1600,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "$1,600/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-691-7648"
+      ],
+      "furnished": false,
+      "comments": "Beautiful apartment. Walk to Yeshiva. 9-foot ceiling. 2 sinks, washer/dryer. Available immediately.",
+      "lat": 40.10216,
+      "lng": -74.21198,
+      "geo": "place",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0.3
+    },
+    {
+      "id": "AA943_663:9",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "1½",
+      "location": "Tamarind Park",
+      "rent": 1800,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "$1,800/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-277-2676"
+      ],
+      "furnished": false,
+      "comments": "Vinyl flooring. Extra soundproofing. Available December 15.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": [
+        "tamarind park"
+      ],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "1AA178_1057:8",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Yesodei Court",
       "rent": null,
       "rent_period": "month",
       "negotiable": false,
@@ -6539,14 +5736,825 @@
       "landlord_pays": "",
       "accepts_hud": false,
       "phones": [
-        "646-589-3993"
+        "732-800-2913"
       ],
       "furnished": false,
-      "comments": "Spacious kitchen, airy, move in condition. Excellent location. Available January 1.",
-      "lat": 40.09862,
-      "lng": -74.20141,
+      "comments": "",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": [
+        "yesodei court"
+      ],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "1A166_1035:8",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Squankum / County Ln",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-210-0227"
+      ],
+      "furnished": true,
+      "comments": "Furnished: long term, short term, or by the week. Optionally linen/towels. Fits 10–11 people.",
+      "lat": 40.10519,
+      "lng": -74.20045,
       "geo": "place",
       "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0.5
+    },
+    {
+      "id": "1A114_932:16",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Sterling Forest",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-299-2914"
+      ],
+      "furnished": true,
+      "comments": "Beautiful, spacious, furnished apartment. Available December and January.",
+      "lat": 40.06846,
+      "lng": -74.2205,
+      "geo": "place",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "1A178_1057:9",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1½",
+      "location": "Oak Meadows",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "848-221-0017"
+      ],
+      "furnished": true,
+      "comments": "Short term furnished apartment. Upgraded & newly-renovated. Available immediately.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "U1A178_1057:16",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1",
+      "location": "New Central",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "908-836-3068"
+      ],
+      "furnished": true,
+      "comments": "Furnished, short term, (or weekend) newly renovated, ground level, Near Westgate.",
+      "lat": 40.09412,
+      "lng": -74.25584,
+      "geo": "place",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "11A66_1035:15",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Albert Area",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "845-558-2190"
+      ],
+      "furnished": true,
+      "comments": "Beautiful spacious furnished Choson/Kallah apartment. Lots of closet space. Available mid-January.",
+      "lat": 40.06373,
+      "lng": -74.19895,
+      "geo": "place",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "U1A178_1057:2",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1½",
+      "location": "10th St. / Yeshiva",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "347-457-4119"
+      ],
+      "furnished": true,
+      "comments": "Brand new beautiful furnished chosson/kallah apartment.",
+      "lat": 40.09605,
+      "lng": -74.22183,
+      "geo": "place",
+      "geo_unknown": [
+        "10th st"
+      ],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "U1A178_1057:13",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Glen Ave.",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "516-474-7339"
+      ],
+      "furnished": true,
+      "comments": "Temporary furnished apartment, brand new, gorgeous, 2 month minimum.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": [
+        "glen ave"
+      ],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "1A091_895:7",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Arlington",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "908-783-3610"
+      ],
+      "furnished": true,
+      "comments": "Furnished apartment, could be long term. Available beginning of December.",
+      "lat": 40.08448,
+      "lng": -74.19965,
+      "geo": "place",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "1A097_905:1",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Harvard Street",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "917-721-5102"
+      ],
+      "furnished": true,
+      "comments": "Gorgeous 1st-floor upgraded furnished, private house. XSP. Near shuls, shopping. Available immediately.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": [
+        "harvard street"
+      ],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "1A098_906:2",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "12th & Princeton",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "848-525-2552"
+      ],
+      "furnished": true,
+      "comments": "Beautiful new furnished. Walking distance to Yeshiva. Available immediately.",
+      "lat": 40.10167,
+      "lng": -74.20981,
+      "geo": "place",
+      "geo_unknown": [
+        "12th"
+      ],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "U1A154_1016:3",
+      "type": "Apartment",
+      "utilities_included": [],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Laurel / Rt.88",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-992-0359"
+      ],
+      "furnished": true,
+      "comments": "Beautiful, furnished. Great location. Great for Chosson/Kallah or office. Available December 1.",
+      "lat": 40.09065,
+      "lng": -74.20406,
+      "geo": "place",
+      "geo_unknown": [
+        "laurel"
+      ],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "1A090_890:19",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Pawnee",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "440-477-3373"
+      ],
+      "furnished": true,
+      "comments": "Beautiful ground level furnished apartment for short term. Available immediately.",
+      "lat": 40.1147,
+      "lng": -74.2545,
+      "geo": "place",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "1A112_930:2",
+      "type": "Apartment",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Brook Hill",
+      "rent": 1150,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "$1,150/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "732-363-9290"
+      ],
+      "furnished": true,
+      "comments": "Furnished apartment perfect for Choson/Kallah, short term, minimum2months. Washer/dryer, microwave. Available immediately.",
+      "lat": 40.10773,
+      "lng": -74.1905,
+      "geo": "place",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "p8r11",
+      "type": "Other",
+      "utilities_included": [
+        "Gas",
+        "Electric",
+        "Water",
+        "Heat"
+      ],
+      "bedrooms": "1",
+      "bedrooms_num": 1,
+      "baths": "1",
+      "location": "Ridge Area",
+      "rent": 850,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "$850/mo",
+      "landlord_pays": "GEWH",
+      "accepts_hud": false,
+      "phones": [
+        "347-545-2245"
+      ],
+      "furnished": true,
+      "comments": "Private room. Fully furnished house working/learning guys. Shared kitchen, washer/dryer, etc. Available immediately.",
+      "lat": 40.09788,
+      "lng": -74.20131,
+      "geo": "place",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "1H142_996:15",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Hope / New Central",
+      "rent": 2900,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "$2,900/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "832-309-7714"
+      ],
+      "furnished": true,
+      "comments": "Fully furnished or unfurnished house. Available immediately for long term.",
+      "lat": 40.09893,
+      "lng": -74.25039,
+      "geo": "place",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0.9
+    },
+    {
+      "id": "U1HH165_1034:13",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2",
+      "location": "Albert Area",
+      "rent": 3500,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "$3,500/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-589-9548"
+      ],
+      "furnished": false,
+      "comments": "Recently renovated, beautiful block, large lot. Available December/January.",
+      "lat": 40.06373,
+      "lng": -74.19895,
+      "geo": "place",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "11TT54_1013:15",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "3½",
+      "location": "Squankum / Harvard",
+      "rent": 4300,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "$4,300/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-232-3130"
+      ],
+      "furnished": false,
+      "comments": "Beautiful design & layout. Excellent location near Shuls & shopping. Available mid/end December.",
+      "lat": 40.10518,
+      "lng": -74.20526,
+      "geo": "place",
+      "geo_unknown": [
+        "harvard"
+      ],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "11TT07_919:11",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "2",
+      "bedrooms_num": 2,
+      "baths": "1½",
+      "location": "Cov.:Princeton",
+      "rent": 2475,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "$2,475/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-814-0855"
+      ],
+      "furnished": false,
+      "comments": "Newly renovated. Great location near Shul. Available December.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": [
+        "cov princeton"
+      ],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "U11TT78_1057:11",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2½",
+      "location": "Forest Park",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "845-274-3853"
+      ],
+      "furnished": false,
+      "comments": "Entire house freshly painted, new floors & lighting, additional 1000 square feet basement with bath.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": [
+        "forest park"
+      ],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "U1HH178_1057:20",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2½",
+      "location": "Jackson / Hyson",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "718-734-8112"
+      ],
+      "furnished": false,
+      "comments": "2-minute walk to Khal Chassidim. Available January 1.",
+      "lat": 40.14095,
+      "lng": -74.26653,
+      "geo": "place",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "CfHH1115_936:20",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "",
+      "location": "Howell",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "848-224-5878"
+      ],
+      "furnished": false,
+      "comments": "Huge bilevel, over acre property, near Shuls. Easy access to shopping. Available December 1.",
+      "lat": 40.15076,
+      "lng": -74.21477,
+      "geo": "town",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0,
+      "geo_area_miles": 2.2
+    },
+    {
+      "id": "11TT61_1026:4",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "3½",
+      "location": "Monmouth Views",
+      "rent": 3400,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "$3,400/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "917-580-1167"
+      ],
+      "furnished": false,
+      "comments": "End unit. Great community. Available immediately. Serious inquiries only.",
+      "lat": 40.16382,
+      "lng": -74.25461,
+      "geo": "place",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "U11T78_1057:17",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2½",
+      "location": "Wyndham 2",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-674-9281"
+      ],
+      "furnished": true,
+      "comments": "Stunning, custom closets, private backyard, great block. Furnished/unfurnished",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": [
+        "wyndham 2"
+      ],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "11TT78_1057:3",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "3",
+      "bedrooms_num": 3,
+      "baths": "2",
+      "location": "Daniel Drive",
+      "rent": 2850,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "$2,850/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "908-216-1998"
+      ],
+      "furnished": false,
+      "comments": "Large 3 bedrooms duplex apartment. Beautiful, spacious handicap-equipped.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": [
+        "daniel drive"
+      ],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "11TT78_1057:4",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "4",
+      "bedrooms_num": 4,
+      "baths": "2½",
+      "location": "Westgate",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "516-870-8478"
+      ],
+      "furnished": false,
+      "comments": "Available February.",
+      "lat": 40.08734,
+      "lng": -74.25544,
+      "geo": "place",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "11TT78_1057:5",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "5",
+      "bedrooms_num": 5,
+      "baths": "3½",
+      "location": "Blue River",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "347-786-2126"
+      ],
+      "furnished": false,
+      "comments": "Beautifully upgraded duplex. Custom closets throughout. Large extended porch. Available December 5.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": [
+        "blue river"
+      ],
+      "geo_unverified": [],
+      "geo_spread": 0
+    },
+    {
+      "id": "1HH178_1057:6",
+      "type": "House",
+      "utilities_included": [],
+      "bedrooms": "6",
+      "bedrooms_num": 6,
+      "baths": "3",
+      "location": "Howell",
+      "rent": null,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "Call to discuss",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "516-582-3913"
+      ],
+      "furnished": false,
+      "comments": "Two-floor house on lake on cul de sac. Deck, heated garage. Available January.",
+      "lat": 40.15076,
+      "lng": -74.21477,
+      "geo": "town",
+      "geo_unknown": [],
+      "geo_unverified": [],
+      "geo_spread": 0,
+      "geo_area_miles": 2.2
+    },
+    {
+      "id": "11TT78_1057:7",
+      "type": "Townhouse / Attached",
+      "utilities_included": [],
+      "bedrooms": "7",
+      "bedrooms_num": 7,
+      "baths": "4½",
+      "location": "Yesodei Court",
+      "rent": 4500,
+      "rent_period": "month",
+      "negotiable": false,
+      "rent_display": "$4,500/mo",
+      "landlord_pays": "",
+      "accepts_hud": false,
+      "phones": [
+        "732-800-2913"
+      ],
+      "furnished": false,
+      "comments": "New upgraded town house.",
+      "lat": null,
+      "lng": null,
+      "geo": null,
+      "geo_unknown": [
+        "yesodei court"
+      ],
       "geo_unverified": [],
       "geo_spread": 0
     }
@@ -6919,8 +6927,8 @@
     },
     "howell": {
       "name": "Howell",
-      "lat": 40.14696,
-      "lng": -74.20164
+      "lat": 40.15076,
+      "lng": -74.21477
     },
     "hyson": {
       "name": "Hyson",
@@ -6934,8 +6942,8 @@
     },
     "jackson": {
       "name": "Jackson",
-      "lat": 40.12701,
-      "lng": -74.29025
+      "lat": 40.12759,
+      "lng": -74.29087
     },
     "jackson 21": {
       "name": "Jackson 21",
@@ -7024,8 +7032,8 @@
     },
     "manchester": {
       "name": "Manchester",
-      "lat": 40.00642,
-      "lng": -74.2569
+      "lat": 40.00317,
+      "lng": -74.25653
     },
     "marc drive": {
       "name": "Marc Drive",
@@ -7349,8 +7357,8 @@
     },
     "toms river": {
       "name": "Toms River",
-      "lat": 40.0224,
-      "lng": -74.23736
+      "lat": 40.02177,
+      "lng": -74.23717
     },
     "topaz": {
       "name": "Topaz",
@@ -7779,8 +7787,8 @@
     },
     {
       "name": "Howell",
-      "lat": 40.14696,
-      "lng": -74.20164
+      "lat": 40.15076,
+      "lng": -74.21477
     },
     {
       "name": "Hyson",
@@ -7796,8 +7804,8 @@
     },
     {
       "name": "Jackson",
-      "lat": 40.12701,
-      "lng": -74.29025
+      "lat": 40.12759,
+      "lng": -74.29087
     },
     {
       "name": "Jackson 21",
@@ -7895,8 +7903,8 @@
     },
     {
       "name": "Manchester",
-      "lat": 40.00642,
-      "lng": -74.2569
+      "lat": 40.00317,
+      "lng": -74.25653
     },
     {
       "name": "Marc Drive",
@@ -8228,8 +8236,8 @@
     },
     {
       "name": "Toms River",
-      "lat": 40.0224,
-      "lng": -74.23736
+      "lat": 40.02177,
+      "lng": -74.23717
     },
     {
       "name": "Topaz",
