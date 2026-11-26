@@ -4,9 +4,9 @@ The site is rebuilt weekly by a **Claude Code cloud agent** (a "routine"), not a
 local cron job. It runs in Anthropic's cloud, checks out this repo, rebuilds from
 the live PDF, and republishes the Artifact.
 
-- **Schedule:** `0 5 * * 3` (cron, UTC) = **Wednesday 05:00 UTC**
-  = 12:00 AM EST / 1:00 AM EDT. Chosen to land after Masa U'Matan's
-  "late Tuesday night" PDF update in both halves of the year.
+- **Schedule:** `CRON_TZ=America/New_York 0 0 * * 3` = **Wednesday 12:00 AM New York
+  time** (05:00 UTC in winter, 04:00 UTC in summer; a run can start some minutes later).
+  Chosen to land after Masa U'Matan's "late Tuesday night" PDF update.
 - **Model:** `claude-sonnet-5`
 - **Environment:** `Default` (`env_01FcpMNRFRziToQU1Rdh3wMo`)
 - **Tools:** `Bash`, `Read`, `Write`, `Edit`, `Glob`, `Grep`, `Artifact`
@@ -41,7 +41,7 @@ With the `schedule` skill / `RemoteTrigger` tool:
   "action": "create",
   "body": {
     "name": "Lakewood NJ Area Rentals — weekly refresh",
-    "cron_expression": "0 5 * * 3",
+    "cron_expression": "CRON_TZ=America/New_York 0 0 * * 3",
     "enabled": true,
     "job_config": {
       "ccr": {

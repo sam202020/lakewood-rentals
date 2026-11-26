@@ -3,6 +3,13 @@
 Static site built from Masa U'Matan's weekly rental PDF. See README.md and ROUTINE.md for the pipeline.
 Tests: `npm run test:all` (Node search tests + Python tests). Build: `python3 build.py`.
 
+## Working rules
+
+- `python3 build.py` writes the live files (`docs/`, `listings.json`, `data/neighborhoods_seen.json`). Before building with `--pdf`,
+  compare that PDF's date with `list_date` in `listings.json`: an older list silently overwrites newer data. Revert test rebuilds.
+- `business/` (domain, hosting, SEO and monetization plans) is local and untracked. The repo is public, so never commit it
+  (no `git add -A` in a local session). Fresh clones and the cloud routine do not have it.
+
 ## Places and map coordinates: always check Google Maps
 
 Whenever a place is added to or changed in `places.json`, **check it on Google Maps first**.
@@ -124,7 +131,7 @@ odd long words, but not on abbreviations nobody has added yet).
 
 ## Shuls ("near this shul")
 
-`shuls.json` lists the synagogues / shuls / batei medrash within ~9 miles of Lakewood (223 on 2026-11-22), harvested from
+`shuls.json` lists the synagogues / shuls / batei medrash within ~9 miles of Lakewood (229 on 2026-11-26; 18 of them show in the drop-down as their neighborhood), harvested from
 Google Maps search results (coordinates are Google's own place points, so they need no extra check). The search box suggests them
 by name, with their street and town ("shul · 958 E County Line Rd · Lakewood"), Lakewood first, and sorts by distance to the shul
 (the "Within" menu goes down to ¼ mile). Spelling variants (bais/beis/beit, medrash/midrash) are folded together in
@@ -153,7 +160,7 @@ Design canvas with the options: https://claude.ai/artifact/Aj253LKTFAR3uJnCsaatT
   light/dark switch are a small fine-print block at the end of the cards / table (`#fineprint`); there is no masthead or footer.
   Below it the map on the left (sticky) and cards on the right; a **Cards | Table** switch. Table = dense rows (where, type, bd, ba,
   rent, notes, call) with a neighbourhood list with counts on the left; clicking a row opens its full text and a "Show on map" button.
-- **Cards:** big bd/ba numbers, the rent or "Ask for price" (52% of listings give no rent: 123 of 237), neighbourhood + type, a quiet
+- **Cards:** big bd/ba numbers, the rent or "Ask for price" (about half of listings give no rent), neighbourhood + type, a quiet
   outline call button (not a green block). The selected card shows its whole description.
 - **Map pins:** a rent pill ("$1.8k") for a priced listing, a hollow dot when no rent is listed, a number where several listings share a spot
   (popup lists them); zoomed out, pills shrink to dots. Always labelled "pins are approximate"; the dashed circle (`uncertaintyMiles`:
@@ -175,12 +182,12 @@ Design canvas with the options: https://claude.ai/artifact/Aj253LKTFAR3uJnCsaatT
 
 ## Typing a place IS a location search (owner, 2026-11-24)
 
-`LakewoodSearch.placeIntent(text, picker, streets, shuls)` decides what the typed words mean. If they name a neighbourhood, shul, street or
+`LakewoodSearch.placeIntent(text, picker, streets, shuls, preferred)` decides what the typed words mean. If they name a neighbourhood, shul, street or
 intersection (3+ letters, a real prefix match, the first dropdown suggestion), the page sorts **every listing nearest-first** from it at once
 (nothing is filtered out), shows "Nearest first to X . press Enter to keep it . search the word instead" under the search box, and puts the
 spot on the map; Enter or a click keeps it as the "Near" chip. Otherwise the words stay a keyword filter. Rules:
-- Words that mean something in a listing (pool, boy, basement, 55+), typo matches, and the bare words shul / minyan stay keywords. A neighbourhood or
-  shul wins over a street. A street word that fits several equally good streets (forest, birch) stays a keyword **unless** it is in
+- Words that mean something in a listing (pool, boy, basement, 55+), typos of such words, and the bare words shul / minyan stay keywords (a mistyped
+  place name counts as that place, see below). A neighbourhood or shul wins over a street. A street word that fits several equally good streets (forest, birch) stays a keyword **unless** it is in
   `data/preferred_streets.json` (owner-curated: "forest" = Forest Avenue, "birch" = Birch Street, both Lakewood): then that street is first in the
   drop-down and the "near" street at once; the other streets stay below it. Add a word there when the owner names the street people mean.
 - **A typo of a place is that place** (owner, 2026-11-24): "foreset" = Forest Avenue (not Sterling Forest: a name's own first word beats a word in the
@@ -212,8 +219,8 @@ shows "Type a shul's name". Keep this when the search box changes.
 ## Custom domain: keep `docs/CNAME`
 
 The public site is **https://lakewoodnjrentals.com** (owner registered it; set in the repo's Pages settings 2026-11-26). GitHub Pages
-reads the domain from `docs/CNAME`; never delete, move or rewrite that file (the build writes only `docs/index.html`; tests in
-`tests/test_checks.py` check both). DNS is at Cloudflare: four `A` records to GitHub Pages (185.199.108-111.153) and `www` CNAME to
+reads the domain from `docs/CNAME`; never delete, move or rewrite that file (`build.py` writes `docs/index.html`, `docs/sitemap.xml` and
+`docs/robots.txt`; tests in `tests/test_checks.py` check that `CNAME` survives a build). DNS is at Cloudflare: four `A` records to GitHub Pages (185.199.108-111.153) and `www` CNAME to
 `sam202020.github.io`, all "DNS only". The old `sam202020.github.io/lakewood-rentals` address redirects to the domain.
 
 ## Search engines and link previews (seo.py)
@@ -265,6 +272,7 @@ If the codes ever change shape, the tags disappear and the order falls back to t
 
 ## Visit and call-tap counts (owner approved, 2026-11-26)
 
+Counting is **on** (since 2026-11-26): site code `lakewoodnjrentals`, dashboard <https://lakewoodnjrentals.goatcounter.com>.
 Cookie-free GoatCounter. The site code (the `xxxx` of `xxxx.goatcounter.com`) goes in `data/analytics.json`; empty = nothing is counted and the
 page says nothing about counting. `build.py` puts it in the page (`counter`). Rules (tests in `tests/search.test.js`, `tests/test_counter.py`):
 - Counted only on `lakewoodnjrentals.com` (`countsHere`): local copies, test browsers and the private Artifact page never count. A new
@@ -283,3 +291,23 @@ page says nothing about counting. `build.py` puts it in the page (`counter`). Ru
   Never embed data another way, and keep using `esc()` for anything put into `innerHTML` (`tests/test_page.py`).
 - **Tests must not depend on this week's list** (it broke the weekly refresh once). Use `week_data.week()` (Python) or `pagePayload()` (Node), which
   build from `tests/fixtures/week.json`. Data quality of the live list belongs in `checks.py` (warn, or abort the build).
+
+## Open items (as of 2026-11-26)
+
+Ask the owner before acting on any of these.
+- **Weekly routine:** it has not yet finished a run without help. A supervised manual run (it publishes) was proposed before the next
+  scheduled one, Wed Dec 2 just after midnight New York time.
+- **Google Maps data:** the launch review flagged that Google's terms may not allow collecting the shul list this way, shown on a
+  non-Google map. Choices: rebuild from OpenStreetMap plus owner corrections (recommended), ask a lawyer, or accept the risk.
+  Undecided; ask before harvesting shuls again.
+- **Masa U'Matan:** talk to them before promoting the site or taking money.
+- **UI options** (D1 desktop and P1 phone recommended, nothing built; the layout above stands):
+  <https://claude.ai/artifact/CEpEJsSekG2xFySqZbkjq9>
+- **Neighborhood and street browse lists:** some listings are in neither (21 on the Nov. 25 list: abbreviated names such as
+  "Medina Rd.", street addresses, ambiguous names). The owner is reviewing the fix, and wants Medina Road offered as both an area and
+  a street. The "keeps every name" section above was written before the lists were grouped by place; revise it with that fix.
+- **Pins to confirm:** "Cov.:Princeton" read as Coventry; "Tamarind Park" pinned at Tamarind Rd.
+- **Owner to-dos:** check the WhatsApp link preview; add the site to Google Search Console and submit the sitemap; open the site with
+  `#nocount` on each own device; answer the monetization plan's questions.
+- **Later:** neighborhood tags on listings (reminder 2026-12-07), paid map provider (domain plan checklist 11), neighborhood and topic
+  pages for search engines (domain plan §5.3), a "page not found" page.
