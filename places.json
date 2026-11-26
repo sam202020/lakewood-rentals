@@ -958,10 +958,11 @@
   "note": "Checked on Google Maps (Nowlan Pl)."
  },
  "npgs": {
-  "name": "Npgs",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "name": "NPGS",
+  "lat": 40.12142,
+  "lng": -74.25805,
+  "source": "manual",
+  "note": "Owner 2026-11-26: near Brookwood 1, meaning the little neighbourhood behind the NPGS store. Google Maps: 'NPGS - Jackson' (grocery), 2080 W County Line Rd."
  },
  "oak glen": {
   "name": "Oak Glen",
@@ -1063,12 +1064,13 @@
  },
  "prime jackson": {
   "name": "Prime Jackson Area",
-  "lat": 40.11913,
-  "lng": -74.24929,
+  "lat": 40.12762,
+  "lng": -74.29194,
   "source": "manual",
-  "note": "Owner's guess: north of County Line Rd, west of Lakewood; average of Brookwood 1, 2, 4 and Harmony Farms. Not a neighbourhood (owner): a vague listing phrase, never offered by name. Its listings are listed under Jackson (owner 2026-11-26) and keep this pin.",
+  "note": "Owner 2026-11-26: placed exactly like a plain 'Jackson' listing, at the middle of Jackson's Jewish area (recomputed every build; this point is only the fallback). Replaces the earlier guess near Brookwood. Never offered by name; its listings are listed under Jackson.",
   "hide": true,
-  "neighborhood": "jackson"
+  "neighborhood": "jackson",
+  "town_center": "Jackson"
  },
  "princeton": {
   "name": "Princeton Ave",

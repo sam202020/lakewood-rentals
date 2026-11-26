@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T08:51:27+00:00",
+  "generated_at": "2026-11-26T08:58:41+00:00",
   "list_date": "Wednesday, Nov. 25, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -300,8 +300,8 @@
       ],
       "furnished": true,
       "comments": "Beautifully redone home, furnished, close to Shuls. Brookwood/Harmony Farms area.",
-      "lat": 40.12762,
-      "lng": -74.29194,
+      "lat": 40.12788,
+      "lng": -74.29327,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -772,8 +772,8 @@
       ],
       "furnished": false,
       "comments": "Fully renovated home. Shul & Rav.",
-      "lat": 40.12762,
-      "lng": -74.29194,
+      "lat": 40.12788,
+      "lng": -74.29327,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -1913,8 +1913,8 @@
       ],
       "furnished": false,
       "comments": "Driveway, large backyard. Washer/dryer in basement. Near Sephardic & Ashkenaz shul.",
-      "lat": 40.12762,
-      "lng": -74.29194,
+      "lat": 40.12788,
+      "lng": -74.29327,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -2202,8 +2202,8 @@
       ],
       "furnished": false,
       "comments": "Near Hope Chapel & East Veterans. Near new BMG Jackson location. Available November.",
-      "lat": 40.12762,
-      "lng": -74.29194,
+      "lat": 40.12788,
+      "lng": -74.29327,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -2494,8 +2494,8 @@
       ],
       "furnished": false,
       "comments": "1-minute drive to GG. close minyan, 1 acre, huge high end kitchen, spacious layout.",
-      "lat": 40.12762,
-      "lng": -74.29194,
+      "lat": 40.12788,
+      "lng": -74.29327,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -3890,12 +3890,13 @@
       "areas": [
         "Jackson"
       ],
-      "lat": 40.11913,
-      "lng": -74.24929,
-      "geo": "place",
+      "lat": 40.12788,
+      "lng": -74.29327,
+      "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
-      "geo_spread": 0
+      "geo_spread": 0,
+      "geo_area_miles": 2.5
     },
     {
       "id": "UA1123_954:6",
@@ -7622,8 +7623,8 @@
     },
     "jackson": {
       "name": "Jackson",
-      "lat": 40.12762,
-      "lng": -74.29194
+      "lat": 40.12788,
+      "lng": -74.29327
     },
     "jackson 21": {
       "name": "Jackson 21",
@@ -7790,6 +7791,11 @@
       "lat": 40.09912,
       "lng": -74.20151
     },
+    "npgs": {
+      "name": "NPGS",
+      "lat": 40.12142,
+      "lng": -74.25805
+    },
     "oak glen": {
       "name": "Oak Glen",
       "lat": 40.16928,
@@ -7852,8 +7858,8 @@
     },
     "prime jackson": {
       "name": "Prime Jackson Area",
-      "lat": 40.11913,
-      "lng": -74.24929
+      "lat": 40.12762,
+      "lng": -74.29194
     },
     "princeton": {
       "name": "Princeton Ave",
@@ -8653,8 +8659,8 @@
     },
     {
       "name": "Jackson",
-      "lat": 40.12762,
-      "lng": -74.29194
+      "lat": 40.12788,
+      "lng": -74.29327
     },
     {
       "name": "Jackson 21",
@@ -8846,6 +8852,12 @@
       "lat": 40.09912,
       "lng": -74.20151,
       "town": "Lakewood"
+    },
+    {
+      "name": "NPGS",
+      "lat": 40.12142,
+      "lng": -74.25805,
+      "town": "Jackson"
     },
     {
       "name": "Oak Glen",

@@ -184,7 +184,7 @@ def resolve(location, places):
         cands += [" ".join(parts), " ".join(reversed(parts))]
     whole = next((e for e in (_known(places, c) for c in cands) if e), None)
     if whole:
-        town = normalize(location) in TOWNS
+        town = normalize(location) in TOWNS or bool(whole.get("town_center"))   # "Prime Jackson" is placed like "Jackson"
         return {"lat": whole["lat"], "lng": whole["lng"], "precision": "town" if town else "place", "unknown": [], "spread": 0,
                 "unverified": [] if town or whole.get("source") != "osm" else [normalize(location)]}
 

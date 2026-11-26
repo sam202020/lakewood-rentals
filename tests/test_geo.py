@@ -162,7 +162,7 @@ class ShippedPlaces(unittest.TestCase):
                           ("The 70", "the 70"), ("Brook Hill", "brook hill"), ("Chestnut Area", "chestnut"), ("Stamford Meadows", "stamford meadows"), ("Bais Shalom Area", "bais shalom"), ("Heart of Ridge", "ridge"), ("13th & Princeton", "13th princeton"), ("14th & Lexington", "14th lexington"),
                           ("5th & Lexington", "5th lexington"), ("7th & Princeton", "7th princeton"), ("E.7th & Nowlan", "e 7th nowlan"),
                           ("Central Area", "central"), ("Off Locust St.", "locust st"), ("Chateau Park", "chateau park"), ("Ridge / Negba St.", "ridge negba st"), ("Negba St. / Ridge", "ridge negba st"),
-                          ("Brook / Ridge / E.7th", "brook ridge e 7th"), ("Ridge / Bergen", "ridge bergen"), ("Belz Shlav Aleph", "belz shlav aleph"), ("Prime Jackson Area", "prime jackson"), ("55+Community", "55+community"), ("Ridge Area", "ridge"),
+                          ("Brook / Ridge / E.7th", "brook ridge e 7th"), ("Ridge / Bergen", "ridge bergen"), ("Belz Shlav Aleph", "belz shlav aleph"), ("55+Community", "55+community"), ("Ridge Area", "ridge"),
                           ("957 W. County Ln.", "957 w county ln"), ("Club 21 Jackson", "club 21 jackson"), ("Chestnut Gardens", "chestnut gardens"), ("Off Chestnut", "chestnut"),
                           ("Cross & Mass.", "cross mass"), ("Mass. & Cross", "cross mass"), ("Evergreen Gardens", "evergreen gardens"), ("The 70 Phase II", "the 70 phase ii")]:
             with self.subTest(text=text):
@@ -198,10 +198,6 @@ class ShippedPlaces(unittest.TestCase):
         f, e, c = pl["fairways"], pl["enclave"], pl["55+community"]
         self.assertAlmostEqual(c["lat"], (f["lat"] + e["lat"]) / 2, places=4)
         self.assertAlmostEqual(c["lng"], (f["lng"] + e["lng"]) / 2, places=4)
-        names = ["brookwood 1", "brookwood 2", "brookwood 4", "harmony farms"]
-        pj = pl["prime jackson"]
-        self.assertAlmostEqual(pj["lat"], sum(pl[n]["lat"] for n in names) / 4, delta=0.0005)
-        self.assertAlmostEqual(pj["lng"], sum(pl[n]["lng"] for n in names) / 4, delta=0.0005)
 
     def test_villas_is_on_twin_oaks(self):
         self.assertEqual((self.places["villas"]["lat"], self.places["villas"]["lng"]),
@@ -820,6 +816,23 @@ class OwnerPlacements(unittest.TestCase):
 
     def test_prime_jackson_is_listed_under_jackson(self):
         self.assertEqual(self.areas("Prime Jackson Area"), ["Jackson"])
+
+    def test_prime_jackson_is_placed_like_a_plain_jackson_listing(self):
+        places = geo.load_places()
+        rows = [{"location": loc} for loc in ("Jackson", "Prime Jackson Area", "Brookwood 1", "Brookwood 4", "Harmony Farms")]
+        for x in rows:
+            g = geo.resolve(x["location"], places)
+            x.update(lat=g["lat"], lng=g["lng"], geo=g["precision"], geo_spread=g["spread"])
+        centers = geo.town_centers(rows, places)
+        geo.apply_town_centers(rows, centers)
+        plain, prime = rows[0], rows[1]
+        self.assertEqual((prime["lat"], prime["lng"], prime["geo_area_miles"]), (plain["lat"], plain["lng"], plain["geo_area_miles"]))
+        self.assertEqual(centers["Jackson"]["n"], 3)           # the three named places only, not Prime Jackson itself
+
+    def test_npgs_is_by_brookwood_1(self):
+        places = geo.load_places()
+        n, b = places["npgs"], places["brookwood 1"]
+        self.assertLess(geo.haversine_miles(n["lat"], n["lng"], b["lat"], b["lng"]), 1)
 
     def test_addresses_are_listed_under_their_confirmed_neighbourhood(self):
         self.assertIn("Enclave", self.areas("22 Enclave Blvd."))
