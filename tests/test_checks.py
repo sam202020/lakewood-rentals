@@ -14,6 +14,7 @@ sys.path.insert(0, str(ROOT))
 
 import build  # noqa: E402
 import checks  # noqa: E402
+import geo  # noqa: E402
 
 TYPES = ["Apartment", "Apartment", "House", "Townhouse / Attached", "Room"]
 
@@ -148,10 +149,12 @@ class BuildGate(unittest.TestCase):
     def run_build(self, listings, existing=None):
         tmp = pathlib.Path(tempfile.mkdtemp())
         data, out = tmp / "listings.json", tmp / "index.html"
+        seen_file = tmp / "neighborhoods_seen.json"   # never the real data/neighborhoods_seen.json
         if existing is not None:
             data.write_text(json.dumps(existing))
         out.write_text("OLD PAGE")
         with mock.patch.object(build, "DATA", data), mock.patch.object(build, "OUT", out), \
+                mock.patch.object(geo, "NEIGHBORHOODS_SEEN_FILE", seen_file), \
                 mock.patch.object(build.P, "fetch_pdf", lambda src: src), \
                 mock.patch.object(build.P, "parse", lambda f: ("Wednesday, Test 1, 2026", listings)), \
                 mock.patch.object(sys, "argv", ["build.py"]):
@@ -160,17 +163,17 @@ class BuildGate(unittest.TestCase):
                 code = 0
             except SystemExit as e:
                 code = e.code
-        return code, data, out
+        return code, data, out, seen_file
 
     def test_bad_parse_aborts_and_leaves_files_alone(self):
         before = {"count": 231, "listings": []}
-        code, data, out = self.run_build(make(120), existing=before)   # -48%
+        code, data, out, _ = self.run_build(make(120), existing=before)   # -48%
         self.assertEqual(code, 1)
         self.assertEqual(out.read_text(), "OLD PAGE")
         self.assertEqual(json.loads(data.read_text()), before)
 
     def test_good_parse_writes_page_and_data(self):
-        code, data, out = self.run_build(make(200), existing={"count": 210, "listings": []})
+        code, data, out, _ = self.run_build(make(200), existing={"count": 210, "listings": []})
         self.assertEqual(code, 0)
         self.assertNotEqual(out.read_text(), "OLD PAGE")
         self.assertEqual(json.loads(data.read_text())["count"], 200)
@@ -179,9 +182,24 @@ class BuildGate(unittest.TestCase):
     def test_warnings_do_not_block_the_build(self):
         rows = make(200)
         rows[0]["location"] = "Westgt."
-        code, _, out = self.run_build(rows)
+        code, _, out, _ = self.run_build(rows)
         self.assertEqual(code, 0)
         self.assertNotEqual(out.read_text(), "OLD PAGE")
+
+    def test_neighborhood_history_goes_to_the_patched_file_not_the_real_one(self):
+        """Fixture listings ('Raintree 0' .. 'Raintree 199') must never land in the real
+        data/neighborhoods_seen.json - regression test for a bug where they did."""
+        real_file = geo.NEIGHBORHOODS_SEEN_FILE
+        before = real_file.read_text() if real_file.exists() else None
+        try:
+            code, _, _, seen_file = self.run_build(make(200), existing={"count": 210, "listings": []})
+            self.assertEqual(code, 0)
+            self.assertIn("Raintree 7", json.loads(seen_file.read_text()))        # the mocked file got it
+            after = real_file.read_text() if real_file.exists() else None
+            self.assertEqual(before, after)                                      # the real file did not change
+            self.assertNotIn("Raintree 7", json.loads(real_file.read_text()))
+        finally:
+            self.assertEqual(geo.NEIGHBORHOODS_SEEN_FILE, real_file)             # the patch was undone
 
 
 if __name__ == "__main__":

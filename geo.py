@@ -98,9 +98,12 @@ def neighborhood_display_name(location):
     return first.strip()
 
 
-def load_neighborhoods_seen(path=NEIGHBORHOODS_SEEN_FILE):
+def load_neighborhoods_seen(path=None):
+    """`path` defaults to NEIGHBORHOODS_SEEN_FILE looked up at call time (not as a default
+    argument), so tests can swap the module attribute and have both the read and the write side
+    of build.py follow it, instead of the read quietly falling back to the real file."""
     try:
-        return json.loads(pathlib.Path(path).read_text())
+        return json.loads(pathlib.Path(path or NEIGHBORHOODS_SEEN_FILE).read_text())
     except (OSError, ValueError):
         return []
 

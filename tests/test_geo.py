@@ -2,9 +2,12 @@
 
 Run:  python3 -m unittest discover -s tests -v
 """
+import json
 import pathlib
 import sys
+import tempfile
 import unittest
+from unittest import mock
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -731,6 +734,16 @@ class NeighborhoodHistory(unittest.TestCase):
 
     def test_load_neighborhoods_seen_tolerates_a_missing_file(self):
         self.assertEqual(geo.load_neighborhoods_seen("/no/such/file.json"), [])
+
+    def test_load_with_no_path_follows_a_patched_module_attribute(self):
+        """build.py calls load_neighborhoods_seen() with no argument, so a test that redirects
+        the real file away (e.g. BuildGate in test_checks.py, with fixture data) must do it by
+        patching geo.NEIGHBORHOODS_SEEN_FILE, and that patch must actually take effect - not get
+        ignored because the real path was already captured as a default argument."""
+        tmp = pathlib.Path(tempfile.mkdtemp()) / "seen.json"
+        tmp.write_text(json.dumps(["Fixture Only"]))
+        with mock.patch.object(geo, "NEIGHBORHOODS_SEEN_FILE", tmp):
+            self.assertEqual(geo.load_neighborhoods_seen(), ["Fixture Only"])
 
     def test_shipped_history_is_a_superset_of_a_past_weeks_names(self):
         # these were seen in a real build and must stay discoverable even on a week without one
