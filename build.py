@@ -10,7 +10,7 @@ build aborts with exit code 1 and leaves listings.json and docs/index.html
 untouched, so a PDF layout change never replaces a good site with a bad one.
 Soft problems are printed as WARN lines; the build still succeeds.
 """
-import argparse, json, pathlib, re, sys, datetime
+import argparse, json, pathlib, re, shutil, subprocess, sys, datetime
 
 import checks
 import geo
@@ -46,7 +46,7 @@ def locate(listings, places):
     """Put every listing on the map (in place); returns the town centres used for "Jackson"-style listings."""
     also = geo.load_neighborhood_also()
     for x in listings:
-        areas = geo.listing_areas(x["location"], also)     # shared areas: listed under each of these neighbourhoods
+        areas = geo.listing_areas(x["location"], also, places)   # listed under each of these neighbourhoods too
         if areas:
             x["areas"] = areas
         else:
@@ -102,6 +102,7 @@ def make_data(listings, list_date, places, centers, seen):
     if streets:
         data["streets"] = streets
     data["preferred"] = geo.load_preferred_streets()
+    data["area_streets"] = geo.load_area_streets()            # streets that are also listed as areas
     # shuls (Google Maps), so "near this shul" works. A shul that is also a neighbourhood ("Kol Shimshon",
     # "Bais Medrash Lutzk"/"Lutzk", BMG) is listed once, as the neighbourhood.
     all_shuls = geo.load_shuls()
@@ -113,6 +114,20 @@ def make_data(listings, list_date, places, centers, seen):
                          for s in shuls]
     data["counter"] = counter_code()          # anonymous visit / call-tap counts ("" = off)
     return data
+
+
+def list_warnings(data):
+    """WARN lines for listings that are in neither the Neighborhood nor the Street list. The lists are grouped by the
+    page's own script, so this runs it with Node (tools/check_lists.js)."""
+    node = shutil.which("node")
+    if not node:
+        return ["NOTE: Node is not installed, so the neighbourhood and street lists were not checked"]
+    try:
+        r = subprocess.run([node, str(ROOT / "tools" / "check_lists.js")], input=json.dumps(data), capture_output=True,
+                           text=True, timeout=120, check=True)
+    except (OSError, subprocess.SubprocessError) as e:
+        return [f"WARN: could not check the neighbourhood and street lists: {e}"]
+    return r.stdout.splitlines()
 
 
 def embed_json(data):
@@ -164,6 +179,8 @@ def main():
         sys.exit(1)
 
     data = make_data(listings, list_date, places, centers, geo.load_neighborhoods_seen())
+    for line in list_warnings(data):
+        print(line)
     geo.NEIGHBORHOODS_SEEN_FILE.write_text(
         json.dumps(sorted(n["name"] for n in data["neighborhoods"]), indent=2, ensure_ascii=False) + "\n")
     # listings.json stays small and readable: the street lines live in streets.json and only go into the page

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T07:24:09+00:00",
+  "generated_at": "2026-11-26T08:51:27+00:00",
   "list_date": "Wednesday, Nov. 25, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -503,6 +503,10 @@
       ],
       "furnished": true,
       "comments": "Beautifully remodeled, furnished/unfurnished largest model, large backyard, minyan. Available immediately.",
+      "areas": [
+        "Fairways",
+        "55+ Communities (Fairways / Enclave)"
+      ],
       "lat": 40.05747,
       "lng": -74.23451,
       "geo": "place",
@@ -607,6 +611,10 @@
       ],
       "furnished": false,
       "comments": "Great, 55+.2 floors. Living room/dining room, large family room & den. Patio. Appliances. All amenities included.",
+      "areas": [
+        "Enclave",
+        "55+ Communities (Fairways / Enclave)"
+      ],
       "lat": 40.05623,
       "lng": -74.22761,
       "geo": "place",
@@ -922,6 +930,10 @@
       ],
       "furnished": false,
       "comments": "Beautifully renovated, near several Shuls, full basement.",
+      "areas": [
+        "Fairways",
+        "55+ Communities (Fairways / Enclave)"
+      ],
       "lat": 40.05747,
       "lng": -74.23451,
       "geo": "place",
@@ -950,6 +962,11 @@
       ],
       "furnished": false,
       "comments": "One year lease. Available immediately.",
+      "areas": [
+        "Enclave at the Fairways (55+)",
+        "Enclave",
+        "55+ Communities (Fairways / Enclave)"
+      ],
       "lat": 40.05623,
       "lng": -74.22761,
       "geo": "place",
@@ -1003,6 +1020,10 @@
       ],
       "furnished": false,
       "comments": "Available immediately.",
+      "areas": [
+        "55+Community",
+        "55+ Communities (Fairways / Enclave)"
+      ],
       "lat": 40.05685,
       "lng": -74.23106,
       "geo": "place",
@@ -1576,8 +1597,8 @@
       ],
       "furnished": true,
       "comments": "Magnificent fully upgraded furnished Choson/Kallah apartment with custom closets. Available immediately.",
-      "lat": 40.10518,
-      "lng": -74.20526,
+      "lat": 40.10945,
+      "lng": -74.20135,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
@@ -2261,6 +2282,10 @@
       ],
       "furnished": false,
       "comments": "55+ neighborhood. Newly-renovated. Available immediately.",
+      "areas": [
+        "Fairways",
+        "55+ Communities (Fairways / Enclave)"
+      ],
       "lat": 40.05747,
       "lng": -74.23451,
       "geo": "place",
@@ -2807,6 +2832,9 @@
       ],
       "furnished": true,
       "comments": "Furnished Choson/Kallah apartment. Driveway parking. Shul across street. Available immediately.",
+      "areas": [
+        "W Kennedy"
+      ],
       "lat": 40.10742,
       "lng": -74.22668,
       "geo": "place",
@@ -3672,6 +3700,10 @@
       ],
       "furnished": false,
       "comments": "55+community. Fully renovated. Pesach kitchen. Appliances. Walking distance to 2 shuls.",
+      "areas": [
+        "Fairways",
+        "55+ Communities (Fairways / Enclave)"
+      ],
       "lat": 40.05747,
       "lng": -74.23451,
       "geo": "place",
@@ -3855,6 +3887,9 @@
       ],
       "furnished": true,
       "comments": "Fully-furnished luxurious. Pool, amenities. Till June. Only serious!Need income credentials.",
+      "areas": [
+        "Jackson"
+      ],
       "lat": 40.11913,
       "lng": -74.24929,
       "geo": "place",
@@ -4515,13 +4550,16 @@
       ],
       "furnished": false,
       "comments": "House on rent-stabilized program, Laurel Avenue/Ocean Avenue. Available immediately.",
+      "areas": [
+        "Clover"
+      ],
       "lat": 40.09076,
       "lng": -74.20032,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_neighborhood": "route 88 clover"
+      "geo_neighborhood": "clover"
     },
     {
       "id": "11HH75_1054:19",
@@ -6604,10 +6642,6 @@
       "n": 1
     },
     {
-      "name": "Belzshlavalef",
-      "n": 0
-    },
-    {
       "name": "Bent Hook",
       "n": 0
     },
@@ -7276,6 +7310,11 @@
       "lat": 40.06907,
       "lng": -74.19733
     },
+    "appolo": {
+      "name": "Appolo Road",
+      "lat": 40.10953,
+      "lng": -74.20356
+    },
     "arlington": {
       "name": "Arlington",
       "lat": 40.08448,
@@ -7531,11 +7570,6 @@
       "lat": 40.16561,
       "lng": -74.30564
     },
-    "heart of ridge": {
-      "name": "Heart of Ridge",
-      "lat": 40.09788,
-      "lng": -74.20131
-    },
     "hearthstone": {
       "name": "Hearthstone",
       "lat": 40.0619,
@@ -7721,6 +7755,11 @@
       "lat": 40.10582,
       "lng": -74.20266
     },
+    "negba st": {
+      "name": "Negba St",
+      "lat": 40.09589,
+      "lng": -74.20302
+    },
     "new central": {
       "name": "New Central",
       "lat": 40.09412,
@@ -7735,6 +7774,11 @@
       "name": "New England Village",
       "lat": 40.07979,
       "lng": -74.23019
+    },
+    "new hamp": {
+      "name": "New Hampshire Ave",
+      "lat": 40.05676,
+      "lng": -74.19565
     },
     "new prospect jackson": {
       "name": "New Prospect Jackson",
@@ -8140,6 +8184,11 @@
       "name": "Glen Avenue",
       "lat": 40.09307,
       "lng": -74.2375
+    },
+    "squankum appolo": {
+      "name": "Squankum Rd & Appolo Rd",
+      "lat": 40.10945,
+      "lng": -74.20135
     }
   },
   "picker": [
@@ -8160,6 +8209,17 @@
       "lat": 40.10516,
       "lng": -74.21461,
       "town": "Lakewood"
+    },
+    {
+      "name": "55+ Communities (Fairways / Enclave)",
+      "lat": 40.05685,
+      "lng": -74.23106,
+      "town": "Lakewood",
+      "aka": [
+        "55+ Community",
+        "55+Community"
+      ],
+      "list_only": true
     },
     {
       "name": "5th Street",
@@ -8187,6 +8247,12 @@
       "name": "Albert Run",
       "lat": 40.06907,
       "lng": -74.19733,
+      "town": "Lakewood"
+    },
+    {
+      "name": "Appolo Road",
+      "lat": 40.10953,
+      "lng": -74.20356,
       "town": "Lakewood"
     },
     {
@@ -8524,12 +8590,6 @@
       "town": "Lakewood"
     },
     {
-      "name": "Heart of Ridge",
-      "lat": 40.09788,
-      "lng": -74.20131,
-      "town": "Lakewood"
-    },
-    {
       "name": "Hearthstone",
       "lat": 40.0619,
       "lng": -74.22684,
@@ -8752,6 +8812,12 @@
       "town": "Lakewood"
     },
     {
+      "name": "Negba Street",
+      "lat": 40.09589,
+      "lng": -74.20302,
+      "town": "Lakewood"
+    },
+    {
       "name": "New Central Avenue",
       "lat": 40.09412,
       "lng": -74.25584,
@@ -8761,6 +8827,12 @@
       "name": "New England Village",
       "lat": 40.07979,
       "lng": -74.23019,
+      "town": "Lakewood"
+    },
+    {
+      "name": "New Hampshire Avenue",
+      "lat": 40.05676,
+      "lng": -74.19565,
       "town": "Lakewood"
     },
     {
@@ -8889,7 +8961,11 @@
       "name": "Ridge Avenue",
       "lat": 40.09788,
       "lng": -74.20131,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Heart of Ridge",
+        "Heartof Ridge"
+      ]
     },
     {
       "name": "Rose Court",
@@ -9108,7 +9184,10 @@
       "name": "Wyndham Place",
       "lat": 40.06972,
       "lng": -74.22742,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Wyndham 2"
+      ]
     },
     {
       "name": "Yesodei Court",
@@ -9119,7 +9198,13 @@
   ],
   "preferred": {
     "forest": "Forest Avenue",
-    "birch": "Birch Street"
+    "birch": "Birch Street",
+    "laurel": "Laurel Avenue",
+    "manetta": "Manetta Avenue"
+  },
+  "area_streets": {
+    "Medina Road": "Medina Road",
+    "Ridge Avenue": "Ridge"
   },
   "shulpins": [
     [

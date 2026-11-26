@@ -1,0 +1,7 @@
+{
+  "_note": "Owner 2026-11-26: streets people also mean as an area. Left: the street's name in the 'Near' drop-down (Lakewood). Right: its name in the neighbourhood lists. Such a street is listed in BOTH the Neighborhood and the Street lists. Add one only when the owner names it.",
+  "areas": {
+    "Medina Road": "Medina Road",
+    "Ridge Avenue": "Ridge"
+  }
+}

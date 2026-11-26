@@ -91,8 +91,8 @@ def load_places(path=PLACES_FILE):
 
 def neighborhood_display_name(location):
     """The name the 'Neighborhoods' index groups a listing under: its first place name, with a
-    trailing 'Area' dropped ('Ridge Area' groups with 'Ridge'). Mirrors the NB grouping in
-    site/template.html, so the same listing sorts under the same name in both places."""
+    trailing 'Area' dropped ('Ridge Area' groups with 'Ridge'). Mirrors firstName in
+    site/search-core.js, which the neighbourhood and street lists group by."""
     first = re.split(r"\s*/\s*|,\s*", location or "", maxsplit=1)[0]
     first = re.sub(r"\s+Area$", "", first, flags=re.I)
     return first.strip()
@@ -120,11 +120,16 @@ def load_neighborhood_also(path=None):
     return {normalize(k): (k, v) for k, v in data.items() if not k.startswith("_")}
 
 
-def listing_areas(location, also):
-    """Every neighbourhood a listing belongs to because of a shared area ("Albert Run" is also Sims and Albert);
-    [] for the ordinary listing, which belongs only to the place it names."""
-    out = []
-    for part in location_parts(location):
+def listing_areas(location, also, places=None):
+    """Every neighbourhood a listing belongs to besides the name it is written with: a shared area ("Albert Run" is also
+    Sims and Albert) or the neighbourhood the owner put it in (an address, or a vague phrase like "Prime Jackson", whose
+    places.json entry has "neighborhood"). [] for the ordinary listing, which belongs only to the place it names."""
+    out, names = [], location_parts(location)
+    home = ((places or {}).get(normalize(location)) or {}).get("neighborhood")
+    if home and home in places:
+        out.append(display_name(home, places[home]))
+        names.append(home)
+    for part in names:
         if part in also:
             name, more = also[part]
             out += [n for n in [name] + list(more) if n not in out]
@@ -153,6 +158,8 @@ def neighborhood_counts(listings, seen=None):
 
 def _known(places, key):
     e = places.get(key)
+    if e is None:               # another spelling saved on a place ("aka": "Heart of Ridge" is Ridge)
+        e = next((p for p in places.values() if any(normalize(a) == key for a in p.get("aka") or [])), None)
     return e if e and e.get("lat") is not None and e.get("lng") is not None else None
 
 
@@ -287,7 +294,7 @@ def picker_entries(places, merge_miles=0.15, intersection_miles=0.25):
         cur = best.get(key)
         if cur is None or (e.get("source") == "manual" and cur["source"] != "manual"):
             best[key] = {"name": name, "lat": e["lat"], "lng": e["lng"], "source": e.get("source"),
-                         "aka": e.get("aka"), "town": town}
+                         "aka": e.get("aka"), "town": town, "list_only": e.get("list_only")}
     for (low, town), item in list(best.items()):
         for suffix in _STREET_WORDS:
             twin = best.get((low + " " + suffix.lower(), town))
@@ -301,7 +308,7 @@ def picker_entries(places, merge_miles=0.15, intersection_miles=0.25):
         by_base.setdefault(_base(item["name"]), item)
     for key, item in list(best.items()):
         parts = [_base(x) for x in re.split(r"\s+[&/]\s+", item["name"])]
-        if len(parts) < 2:
+        if len(parts) < 2 or item.get("list_only"):
             continue
         for part in parts:
             twin = by_base.get(part)
@@ -318,6 +325,8 @@ def picker_entries(places, merge_miles=0.15, intersection_miles=0.25):
             item["town"] = town
         if v.get("aka"):
             item["aka"] = v["aka"]          # other spellings people type ("Lutsk" for "Lutzk")
+        if v.get("list_only"):
+            item["list_only"] = True        # a row in the neighbourhood list, not a typed suggestion
         out.append(item)
     return sorted(out, key=lambda v: (v["name"].lower(), v.get("town", "")))
 
@@ -469,6 +478,19 @@ def load_preferred_streets(path=PREFERRED_STREETS_FILE):
     except (OSError, ValueError):
         return {}
     return {k.lower(): v for k, v in data.get("streets", {}).items()}
+
+
+AREA_STREETS_FILE = pathlib.Path(__file__).parent / "data" / "area_streets.json"
+
+
+def load_area_streets(path=AREA_STREETS_FILE):
+    """{"Ridge Avenue": "Ridge", ...}: streets people also mean as an area, with the name the neighbourhood lists use
+    (owner-curated)."""
+    try:
+        data = json.loads(pathlib.Path(path).read_text())
+    except (OSError, ValueError):
+        return {}
+    return dict(data.get("areas", {}))
 
 
 # Towns outside Lakewood where a listing may name only the town ("Jackson", "Toms River").

@@ -436,7 +436,7 @@ test("activeFilterCount: counts switched-on filter groups, not search or distanc
 test("real picker: typing a few letters of any suggested place finds that place first or near first", () => {
   const picker = data.picker || [];
   if (!picker.length) return;
-  for (const p of picker) {
+  for (const p of picker.filter((x) => !x.list_only)) {           // list-only rows (55+) are not typed suggestions
     const typed = p.name.slice(0, Math.min(p.name.length, 6));
     assert.ok(names(S.suggestPlaces(picker, typed, 50)).includes(p.name), p.name);
   }
@@ -493,7 +493,8 @@ test("real listings: picking Clover sorts a Clover listing first, before Arlingt
   if (!pin) return;
   const rows = S.enrich(data.listings.map((x) => Object.assign({}, x)));
   const out = S.search(rows, Object.assign(S.defaultState(), { origin: { lat: pin.lat, lng: pin.lng, name: pin.name }, sort: "distance" }));
-  assert.match(out[0].location, /clover/i);   // at the same spot, a listing that names the place comes before one that does not
+  const inClover = (r) => /clover/i.test(r.location) || (r.areas || []).includes("Clover");   // an address placed in Clover counts
+  assert.ok(inClover(out[0]), out[0].location);   // at the same spot, a listing of the place comes before one that is not
   const iClover = out.findIndex((r) => /clover/i.test(r.location));
   const iArlington = out.findIndex((r) => /^arlington/i.test(r.location));
   assert.ok(iClover < iArlington);
@@ -1211,8 +1212,8 @@ test("browse list: a neighborhood written with its town ('New Prospect Jackson')
   assert.equal(of("Harmony Hills Jackson"), "Harmony Hills");
   assert.equal(of("Mackenzie Area Toms River"), "Mackenzie");
   assert.equal(of("Jackson"), "Jackson");                       // a town on its own is not stripped away
-  assert.equal(of("55+Community"), null);                       // not a place
-  assert.equal(of("Prime Jackson"), null);                      // owner: not a neighborhood
+  assert.equal(of("55+Community"), "55+ Communities (Fairways / Enclave)");   // the one 55+ row (owner)
+  assert.equal(of("Prime Jackson"), null);                      // owner: never its own row (listed under Jackson)
 });
 
 test("browse list: owner's neighborhoods (Chestnut, Locust, Chateau, Jackson 21, Oak Meadows, The Vineyards)", () => {
@@ -1360,4 +1361,52 @@ test("counting: the page loads the counter only through countsHere, pinned with 
   const call = templateHtml.slice(templateHtml.indexOf("window.goatcounter.count({"), templateHtml.indexOf("event: true });") + 20);
   assert.match(call, /data-area/);
   assert.doesNotMatch(call, /href|phone/i);
+});
+
+// ---- owner, 2026-11-26: abbreviations, areas that are also streets, 55+, addresses, nothing left out ----
+const pageLists = (rows) => {
+  const data = pagePayload();
+  const streets = S.decodeStreets(data.streets), shuls = S.decodeShuls(data);
+  const listings = S.enrich((rows || data.listings).map((x) => Object.assign({}, x)));
+  const g = S.listGroups(data, listings, streets, shuls);
+  const ids = (list, name) => Object.keys((g[list].find((e) => e.name === name) || { ids: {} }).ids);
+  return { data, streets, shuls, listings, g, ids };
+};
+
+test("abbreviations: Rd, Ct, Ln, Rt and County Ln are read as the street words, typed or in the list", () => {
+  const { data, streets, shuls } = pageLists();
+  const sorts = (q) => { const r = S.placeIntent(q, data.picker, streets, shuls, data.preferred); return r && r.item.name; };
+  for (const [typed, want] of [["medina rd", "Medina Road"], ["rose ct", "Rose Court"], ["shady ln", "Shady Lane"], ["rt 9", "Route 9"],
+                               ["Rt.70", "Route 70"], ["county ln", "County Line Road"], ["jackson pines rd", "Jackson Pines Road"]]) {
+    assert.equal(sorts(typed), want, typed);
+  }
+  assert.equal(S.placeForName("Spruce St.Area", data.picker, streets, shuls, data.preferred).name, "Spruce Street");
+});
+
+test("lists: Medina Road and Ridge are in both the Neighborhood and the Street list", () => {
+  const rows = [L({ id: "m", location: "Medina Rd." }), L({ id: "r", location: "Ridge Area" }), L({ id: "h", location: "Heart of Ridge" }),
+                L({ id: "s", location: "Shady Ln." })];
+  const { ids, g } = pageLists(rows);
+  assert.deepEqual(ids("nb", "Medina Road"), ["m"]);
+  assert.deepEqual(ids("st", "Medina Road"), ["m"]);
+  assert.deepEqual(ids("nb", "Ridge").sort(), ["h", "r"]);
+  assert.deepEqual(ids("st", "Ridge Avenue").sort(), ["h", "r"]);
+  assert.ok(!g.nb.some((e) => /heart of ridge|shady/i.test(e.name)));        // an ordinary street is not an area
+});
+
+test("lists: 55+ is one row (Fairways, Enclave and a vague '55+Community'), not a typed suggestion", () => {
+  const { data, streets, shuls, listings, ids } = pageLists();
+  const row = "55+ Communities (Fairways / Enclave)";
+  const expected = listings.filter((x) => /fairways|enclave|55\+/i.test(x.location)).map((x) => x.id).sort();
+  assert.deepEqual(ids("nb", row).sort(), expected);
+  for (const q of ["55", "55+", "fairways", "enclave"]) {
+    assert.ok(!S.suggestAll(data.picker, streets, q, 8, shuls, data.preferred).some((i) => i.name === row), q);
+  }
+});
+
+test("lists: Prime Jackson is under Jackson, an address under its neighbourhood, and no sample listing is left out", () => {
+  const { listings, g, ids } = pageLists();
+  for (const x of listings.filter((l) => /^prime jackson/i.test(l.location))) assert.ok(ids("nb", "Jackson").includes(x.id));
+  assert.ok(!g.nb.concat(g.st).some((e) => /prime|^\d+ \w+ (blvd|ave|ln)/i.test(e.name)));
+  assert.deepEqual(S.unlisted(listings, g).map((x) => x.location), []);
 });

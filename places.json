@@ -55,16 +55,20 @@
   "match": "415, Laurel Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
   "kind": "place/house",
   "note": "Street address, not a neighbourhood. Owner confirmed it lies in Clover & Ocean Ave (Route 88); uses that neighbourhood's coordinates. Listing text says Laurel/Ocean; Google Maps: Laurel & Ocean is 0.3 mi west of Clover & Ocean.",
-  "neighborhood": "route 88 clover"
+  "neighborhood": "clover"
  },
  "55+community": {
   "name": "55+ Community (avg of Fairways & Enclave)",
   "lat": 40.05685,
   "lng": -74.23106,
   "source": "manual",
-  "note": "Owner's guess: average of the Fairways and the Enclave, the Lakewood 55+ communities on Massachusetts Ave. Not a neighbourhood: a vague listing phrase ('55+Community'). Kept only so the listing has a guessed pin; the real neighbourhoods (Fairways, Enclave) are offered instead.",
+  "note": "Owner's guess: average of the Fairways and the Enclave, the Lakewood 55+ communities on Massachusetts Ave. Owner 2026-11-26: shown in the neighbourhood lists as one 55+ row (Fairways, Enclave and vague '55+Community' listings); not offered while typing, where '55+' offers the 55+ filter.",
   "label": "55+ Communities (Fairways / Enclave)",
-  "hide": true
+  "list_only": true,
+  "aka": [
+   "55+ Community",
+   "55+Community"
+  ]
  },
  "5th": {
   "name": "5th Street",
@@ -121,10 +125,11 @@
   "note": "Owner 2026-11-26: Albert Run is at and around 1 Radiant Hill (off Sims); people also call it Sims. Point: Google Maps 1 Radiant Hill, Lakewood."
  },
  "appolo": {
-  "name": "Appolo",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "name": "Appolo Road",
+  "lat": 40.10953,
+  "lng": -74.20356,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Appolo Rd, Lakewood."
  },
  "arlington": {
   "name": "Arlington",
@@ -183,12 +188,6 @@
   "lng": -74.20059,
   "source": "manual",
   "note": "Google Maps: Belz - Shlav Gimel / Locust Grove."
- },
- "belzshlavalef": {
-  "name": "Belzshlavalef",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
  },
  "bent hook": {
   "name": "Bent Hook",
@@ -566,13 +565,6 @@
   "source": "manual",
   "note": "Google Maps: Harmony Hill Ct, Jackson; street match, approximate."
  },
- "heart of ridge": {
-  "name": "Heart of Ridge",
-  "lat": 40.09788,
-  "lng": -74.20131,
-  "source": "manual",
-  "note": "Owner: middle of Ridge is approx Ridge Ave & Nowlan Pl (Google Maps)."
- },
  "hearthstone": {
   "name": "Hearthstone",
   "lat": 40.0619,
@@ -731,12 +723,6 @@
   "match": "Jule Court, Lakewood Township, Ocean County, New Jersey, 08701, United States",
   "kind": "highway/residential",
   "note": "Checked on Google Maps: matches the OSM pin."
- },
- "kitchenette private": {
-  "name": "Kitchenette Private",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
  },
  "kol shimshon": {
   "name": "Kol Shimshon",
@@ -918,9 +904,10 @@
  },
  "negba st": {
   "name": "Negba St",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "lat": 40.09589,
+  "lng": -74.20302,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Negba St, Lakewood."
  },
  "new central": {
   "name": "New Central",
@@ -948,10 +935,11 @@
   "note": "Google Maps place: 241 James St."
  },
  "new hamp": {
-  "name": "New Hamp",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "name": "New Hampshire Ave",
+  "lat": 40.05676,
+  "lng": -74.19565,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: New Hampshire Ave (a long road; this is Google's point for it)."
  },
  "new prospect jackson": {
   "name": "New Prospect Jackson",
@@ -1078,8 +1066,9 @@
   "lat": 40.11913,
   "lng": -74.24929,
   "source": "manual",
-  "note": "Owner's guess: north of County Line Rd, west of Lakewood; average of Brookwood 1, 2, 4 and Harmony Farms. Not a neighbourhood (owner): a vague listing phrase. Kept only so the listing has a guessed pin; never offered in the Near suggestions.",
-  "hide": true
+  "note": "Owner's guess: north of County Line Rd, west of Lakewood; average of Brookwood 1, 2, 4 and Harmony Farms. Not a neighbourhood (owner): a vague listing phrase, never offered by name. Its listings are listed under Jackson (owner 2026-11-26) and keep this pin.",
+  "hide": true,
+  "neighborhood": "jackson"
  },
  "princeton": {
   "name": "Princeton Ave",
@@ -1134,8 +1123,12 @@
   "lat": 40.09788,
   "lng": -74.20131,
   "source": "manual",
-  "note": "Owner: middle of Ridge is approx Ridge Ave & Nowlan Pl (Google Maps).",
-  "label": "Ridge Avenue"
+  "note": "Owner: middle of Ridge is approx Ridge Ave & Nowlan Pl (Google Maps). 'Heart of Ridge' is the same spot (owner 2026-11-26): another name for Ridge, not its own place.",
+  "label": "Ridge Avenue",
+  "aka": [
+   "Heart of Ridge",
+   "Heartof Ridge"
+  ]
  },
  "ridge bergen": {
   "name": "Between Ridge Ave & Bergen Ave",
@@ -1475,7 +1468,10 @@
   "lat": 40.06972,
   "lng": -74.22742,
   "source": "manual",
-  "note": "Google Maps: Wyndham Place, Lakewood. Replaces a wrong OSM match in Freehold."
+  "note": "Google Maps: Wyndham Place, Lakewood. Replaces a wrong OSM match in Freehold.",
+  "aka": [
+   "Wyndham 2"
+  ]
  },
  "yeshiva": {
   "name": "BMG",
@@ -1594,5 +1590,12 @@
   "lng": -74.2375,
   "source": "manual",
   "note": "Google Maps, checked 2026-11-26: same street and point as the checked 'glen avenue' entry."
+ },
+ "squankum appolo": {
+  "name": "Squankum Rd & Appolo Rd",
+  "lat": 40.10945,
+  "lng": -74.20135,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: intersection."
  }
 }

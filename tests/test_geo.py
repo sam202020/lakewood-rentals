@@ -148,7 +148,7 @@ class ShippedPlaces(unittest.TestCase):
                     "yeshiva", "the 70", "the 70 phase i", "the 70 phase ii", "brook hill",
                     "stamford meadows", "sterling place", "beaver crossings", "chateau park", "regency estates",
                     "clearsteam", "957 w county ln", "kol shimshon", "new england village", "bais shalom",
-                    "club 21 jackson", "harmony hills jackson", "ridge", "heart of ridge", "ridge negba st", "brook ridge e 7th", "ridge bergen",
+                    "club 21 jackson", "harmony hills jackson", "ridge", "ridge negba st", "brook ridge e 7th", "ridge bergen",
                     "belz shlav aleph", "belz shlav beis", "belz shlav gimel",
                     "prime jackson", "55+community", "fairways", "enclave", "chestnut", "chestnut gardens", "cross", "cross mass", "brook", "evergreen gardens"):
             with self.subTest(place=key):
@@ -159,7 +159,7 @@ class ShippedPlaces(unittest.TestCase):
         for text, key in [("Westgate", "westgate"), ("Sunset / James Area", "sunset james"),
                           ("Sunset & James", "sunset james"), ("James & Sunset", "sunset james"),
                           ("Oak & Vine", "oak vine"), ("Villas", "villas"), ("Yeshiva Area", "yeshiva"),
-                          ("The 70", "the 70"), ("Brook Hill", "brook hill"), ("Chestnut Area", "chestnut"), ("Stamford Meadows", "stamford meadows"), ("Bais Shalom Area", "bais shalom"), ("Heart of Ridge", "heart of ridge"), ("13th & Princeton", "13th princeton"), ("14th & Lexington", "14th lexington"),
+                          ("The 70", "the 70"), ("Brook Hill", "brook hill"), ("Chestnut Area", "chestnut"), ("Stamford Meadows", "stamford meadows"), ("Bais Shalom Area", "bais shalom"), ("Heart of Ridge", "ridge"), ("13th & Princeton", "13th princeton"), ("14th & Lexington", "14th lexington"),
                           ("5th & Lexington", "5th lexington"), ("7th & Princeton", "7th princeton"), ("E.7th & Nowlan", "e 7th nowlan"),
                           ("Central Area", "central"), ("Off Locust St.", "locust st"), ("Chateau Park", "chateau park"), ("Ridge / Negba St.", "ridge negba st"), ("Negba St. / Ridge", "ridge negba st"),
                           ("Brook / Ridge / E.7th", "brook ridge e 7th"), ("Ridge / Bergen", "ridge bergen"), ("Belz Shlav Aleph", "belz shlav aleph"), ("Prime Jackson Area", "prime jackson"), ("55+Community", "55+community"), ("Ridge Area", "ridge"),
@@ -274,7 +274,7 @@ class Addresses(unittest.TestCase):
         """Owner-confirmed: each address uses the coordinates of the neighbourhood it lies in."""
         pl = geo.load_places()
         for key, hood in (("22 enclave blvd", "enclave"), ("957 w county ln", "w kennedy"),
-                          ("415 laurel ave", "route 88 clover")):
+                          ("415 laurel ave", "clover")):                 # owner: Clover is the Clover & Route 88 corner
             self.assertTrue(geo.looks_like_address(key), key)
             self.assertEqual(pl[key]["neighborhood"], hood)
             self.assertEqual((pl[key]["lat"], pl[key]["lng"]), (pl[hood]["lat"], pl[hood]["lng"]), key)
@@ -282,7 +282,7 @@ class Addresses(unittest.TestCase):
 
     def test_resolved_address_listings_use_the_neighbourhood_point(self):
         pl = geo.load_places()
-        for text, hood in (("22 Enclave Blvd.", "enclave"), ("957 W. County Ln.", "w kennedy"), ("415 Laurel Ave.", "route 88 clover")):
+        for text, hood in (("22 Enclave Blvd.", "enclave"), ("957 W. County Ln.", "w kennedy"), ("415 Laurel Ave.", "clover")):
             g = geo.resolve(text, pl)
             self.assertEqual((g["lat"], g["lng"]), (pl[hood]["lat"], pl[hood]["lng"]), text)
 
@@ -385,12 +385,15 @@ class NotNeighbourhoods(unittest.TestCase):
         self.assertEqual([p["name"] for p in geo.picker_entries(places)], ["Raintree"])
         self.assertEqual(geo.resolve("Prime Jackson Area", places)["lat"], 40.119)      # the listing still has a pin
 
-    def test_the_shipped_vague_phrases_are_hidden_but_still_placed(self):
+    def test_the_shipped_vague_phrases_are_never_offered_but_still_placed(self):
         places = geo.load_places()
-        names = [p["name"] for p in geo.picker_entries(places)]
-        for key, shown in (("prime jackson", "Prime Jackson Area"), ("55+community", "55+ Communities (Fairways / Enclave)")):
-            self.assertTrue(places[key].get("hide"), key)
-            self.assertNotIn(shown, names)
+        picker = geo.picker_entries(places)
+        names = [p["name"] for p in picker]
+        self.assertTrue(places["prime jackson"].get("hide"))                            # never offered anywhere
+        self.assertNotIn("Prime Jackson Area", names)
+        row = next(p for p in picker if p["name"] == "55+ Communities (Fairways / Enclave)")
+        self.assertTrue(row.get("list_only"))                  # owner 2026-11-26: in the neighbourhood list, not typed
+        for key in ("prime jackson", "55+community"):
             self.assertIsNotNone(places[key]["lat"])                                   # listings keep their pin
         self.assertIn("Enclave at the Fairways (55+)", names)                          # the real neighbourhoods stay
         self.assertIn("The Fairways at Lake Ridge (55+)", names)
@@ -807,6 +810,38 @@ class OwnerNeighborhoodsNov26(unittest.TestCase):
     def test_near_chateau_is_chateau_park(self):
         r = geo.resolve("Near Chateau", self.places)
         self.assertEqual((r["lat"], r["lng"]), (self.places["chateau park"]["lat"], self.places["chateau park"]["lng"]))
+
+
+class OwnerPlacements(unittest.TestCase):
+    """Owner, 2026-11-26: addresses and vague phrases are listed under a neighbourhood; another spelling is the place."""
+
+    def areas(self, location):
+        return geo.listing_areas(location, geo.load_neighborhood_also(), geo.load_places())
+
+    def test_prime_jackson_is_listed_under_jackson(self):
+        self.assertEqual(self.areas("Prime Jackson Area"), ["Jackson"])
+
+    def test_addresses_are_listed_under_their_confirmed_neighbourhood(self):
+        self.assertIn("Enclave", self.areas("22 Enclave Blvd."))
+        self.assertIn("Clover", self.areas("415 Laurel Ave."))
+        self.assertTrue(any("Kennedy" in a for a in self.areas("957 W. County Ln.")))
+
+    def test_fairways_enclave_and_vague_55_share_the_55_row(self):
+        for location in ("Fairways", "Enclave", "22 Enclave Blvd.", "55+Community"):
+            self.assertIn("55+ Communities (Fairways / Enclave)", self.areas(location), location)
+
+    def test_heart_of_ridge_is_ridge(self):
+        places = geo.load_places()
+        self.assertNotIn("heart of ridge", places)
+        for text in ("Heart of Ridge", "Heartof Ridge"):
+            g = geo.resolve(text, places)
+            self.assertEqual((g["lat"], g["lng"], g["unknown"]), (places["ridge"]["lat"], places["ridge"]["lng"], []), text)
+
+    def test_description_leftover_is_gone_and_streets_are_placed(self):
+        places = geo.load_places()
+        self.assertNotIn("kitchenette private", places)
+        for key in ("appolo", "squankum appolo", "negba st", "new hamp"):
+            self.assertIsNotNone(places[key]["lat"], key)
 
 
 class SharedAreas(unittest.TestCase):

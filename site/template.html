@@ -922,7 +922,7 @@
   // Remove the chip with its x, or press Backspace in the empty box: no Enter needed.
   var PLACES = DATA.places || {};
   var PICKER = DATA.picker || Object.keys(PLACES).sort().map(function (k) { return PLACES[k]; });
-  var SHULS = (DATA.shuls || []).map(function (a) { return { name: a[0], lat: a[1], lng: a[2], town: a[3], address: a[4], aka: a[5] || [] }; });
+  var SHULS = LakewoodSearch.decodeShuls(DATA);
   var PREFERRED = DATA.preferred || {};                           // "forest" -> Forest Avenue ...
   var STREETS = LakewoodSearch.decodeStreets(DATA.streets);     // every street in the area, as lines
   var lastCount = 0;
@@ -977,8 +977,7 @@
   // neighbourhoods and streets with their listing counts: one grouping for the browse lists and the Table view's side list
   var groupsCache = null;
   function placeGroupsNow() {
-    if (!groupsCache) groupsCache = LakewoodSearch.placeGroups(L, (DATA.neighborhoods || []).map(function (n) { return n.name; }),
-      function (name) { return LakewoodSearch.placeForName(name, PICKER, STREETS, SHULS, PREFERRED); });
+    if (!groupsCache) groupsCache = LakewoodSearch.listGroups(DATA, L, STREETS, SHULS);
     return groupsCache;
   }
   function browseItems(key) {
@@ -1422,7 +1421,7 @@
       if (MAP.getZoom() >= 13) {
         var shown = 0;
         PICKER.forEach(function (p) {
-          if (shown > 45 || typeof p.lat !== "number" || !b.contains([p.lat, p.lng])) return;
+          if (shown > 45 || p.list_only || typeof p.lat !== "number" || !b.contains([p.lat, p.lng])) return;
           shown++;
           LF.marker([p.lat, p.lng], { interactive: false, keyboard: false,
             icon: LF.divIcon({ className: "map-label", html: "<span>" + esc(p.name) + "</span>", iconSize: [0, 0] }) }).addTo(labelLayer);

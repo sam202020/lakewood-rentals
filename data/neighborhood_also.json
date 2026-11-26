@@ -1,5 +1,8 @@
 {
-  "_note": "Owner-defined: a listing in the neighbourhood on the left is also listed under (and counted as 'right here' for) the ones on the right. Names as in the 'Near' drop-down.",
+  "_note": "Owner-defined: a listing in the neighbourhood on the left is also listed under (and counted as 'right here' for) the ones on the right. Names as in the 'Near' drop-down. 55+: the Fairways, the Enclave and a vague '55+Community' are also listed under the one 55+ row (owner 2026-11-26).",
   "Albert Run": ["Sims", "Albert"],
-  "Sims": ["Albert Run", "Albert"]
+  "Sims": ["Albert Run", "Albert"],
+  "Fairways": ["55+ Communities (Fairways / Enclave)"],
+  "Enclave": ["55+ Communities (Fairways / Enclave)"],
+  "55+Community": ["55+ Communities (Fairways / Enclave)"]
 }

@@ -425,9 +425,15 @@ var LakewoodSearch = (function () {
 
   // ---- neighborhood suggestions for the combined search box ----------------------
 
+  // Abbreviations that are not the start of the word they stand for, so matching by word start would miss them.
+  // The list writes "County Ln" for County Line Road, so that one is not "lane".
+  var PLACE_ABBR = { rd: "road", ct: "court", ln: "lane", rt: "route" };
+
   function placeTokens(s) {
     return String(s || "").toLowerCase().replace(/&/g, " ").replace(/[^a-z0-9+ ]/g, " ")
-      .split(/\s+/).filter(Boolean);
+      .replace(/\b(county|cnty)\s+ln\b/g, "county line").replace(/\brt(?=\d)/g, "route ")
+      .split(/\s+/).filter(Boolean)
+      .map(function (w) { return PLACE_ABBR.hasOwnProperty(w) ? PLACE_ABBR[w] : w; });
   }
 
   /** Up to `limit` places from `picker` ([{name, lat, lng}]) that match what the visitor has typed.
@@ -447,6 +453,7 @@ var LakewoodSearch = (function () {
       return best;
     }
     (picker || []).forEach(function (p) {
+      if (p.list_only) return;                  // a row in the neighbourhood list only (55+: typing it offers the filter)
       var r = rank([p.name].concat(p.aka || []));
       if (r) out.push({ p: p, score: r.score, len: r.len });
     });
@@ -768,32 +775,60 @@ var LakewoodSearch = (function () {
   var STREET_NAME = /\b(street|st|avenue|ave|drive|dr|road|rd|lane|ln|court|ct|boulevard|blvd|place|pl|way|terrace|circle|route|rt)\.?$/i;
 
   /** The neighbourhood and street lists (drop-down browse lists and the Table view's side list, which must agree).
-   *  names = every location name ever listed; resolve(name) = the place it stands for, or null. Names meaning the same
-   *  place merge; a listing counts once under its first place name and under every shared area it belongs to.
+   *  names = every location name ever listed; resolve(name) = the place it stands for, or null; areaStreets =
+   *  {street name: area name} for streets people also mean as an area, which go in both lists. Names meaning the same
+   *  place merge; a listing counts once under its first place name and under every area it also belongs to.
    *  -> { nb: [{name, town, item, n, ids}], st: [...] }, each sorted by name. */
-  function placeGroups(listings, names, resolve) {
+  function placeGroups(listings, names, resolve, areaStreets) {
     var byName = {}, groups = { nb: {}, st: {} };
-    function groupFor(raw) {
+    function groupsFor(raw) {
       if (byName.hasOwnProperty(raw)) return byName[raw];
-      var it = resolve(raw), g = null;
-      if (it) {
-        var cls = it.kind === "street" || it.kind === "cross" || /&/.test(raw) || STREET_NAME.test(it.name) || /^\d+(st|nd|rd|th)\b/i.test(it.name) ? "st" : it.kind === "place" ? "nb" : "";
-        if (cls) {
-          var key = it.name + "|" + (it.town || "");
-          g = groups[cls][key] || (groups[cls][key] = { name: it.name, town: it.town, item: it, n: 0, ids: {} });
-        }
+      var it = resolve(raw), found = [];
+      function add(cls, item) {
+        var key = item.name + "|" + (item.town || "");
+        found.push(groups[cls][key] || (groups[cls][key] = { name: item.name, town: item.town, item: item, n: 0, ids: {} }));
       }
-      return (byName[raw] = g);
+      if (it) {
+        var area = areaStreets && (it.town || "Lakewood") === "Lakewood" && areaStreets.hasOwnProperty(it.name) && areaStreets[it.name];
+        var cls = it.kind === "street" || it.kind === "cross" || /&/.test(raw) || STREET_NAME.test(it.name) || /^\d+(st|nd|rd|th)\b/i.test(it.name) ? "st" : it.kind === "place" ? "nb" : "";
+        if (area) {
+          var asArea = {};
+          Object.keys(it).forEach(function (k) { asArea[k] = it[k]; });
+          asArea.name = area;
+          add("st", it);
+          add("nb", asArea);
+        } else if (cls) add(cls, it);
+      }
+      return (byName[raw] = found);
     }
-    (names || []).forEach(groupFor);                                // names with no listing this week stay, with 0
+    (names || []).forEach(groupsFor);                               // names with no listing this week stay, with 0
     (listings || []).forEach(function (x) {
       [firstName(x.location)].concat(x.areas || []).forEach(function (raw) {
-        var g = raw && groupFor(raw);
-        if (g && !g.ids[x.id]) { g.ids[x.id] = true; g.n++; }
+        (raw ? groupsFor(raw) : []).forEach(function (g) {
+          if (!g.ids[x.id]) { g.ids[x.id] = true; g.n++; }
+        });
       });
     });
     function sorted(o) { return Object.keys(o).map(function (k) { return o[k]; }).sort(function (a, b) { return a.name.localeCompare(b.name); }); }
     return { nb: sorted(groups.nb), st: sorted(groups.st) };
+  }
+
+  /** The shuls embedded in the page, as objects. */
+  function decodeShuls(data) {
+    return ((data && data.shuls) || []).map(function (a) { return { name: a[0], lat: a[1], lng: a[2], town: a[3], address: a[4], aka: a[5] || [] }; });
+  }
+
+  /** The lists as the page shows them, from the page data (`streets` and `shuls` already decoded). */
+  function listGroups(data, listings, streets, shuls) {
+    return placeGroups(listings, (data.neighborhoods || []).map(function (n) { return n.name; }),
+      function (name) { return placeForName(name, data.picker, streets, shuls, data.preferred || {}); }, data.area_streets || {});
+  }
+
+  /** Listings that are in neither list (the build warns about them). */
+  function unlisted(listings, groups) {
+    var counted = {};
+    groups.nb.concat(groups.st).forEach(function (g) { Object.keys(g.ids).forEach(function (id) { counted[id] = true; }); });
+    return listings.filter(function (x) { return !counted[x.id]; });
   }
 
   /** The place a listing's location name stands for, for the browse lists. The PDF adds words that say where the
@@ -801,10 +836,15 @@ var LakewoodSearch = (function () {
    *  written is not a place, try it without them. A trailing town is dropped only if a name remains. */
   var AROUND_WORDS = /\b(area|near|off|outside)\b/gi, TRAILING_TOWN = /[\s,]+(lakewood|jackson|toms river|howell|manchester|brick)\s*$/i;
   function placeForName(name, picker, streets, shuls, preferred) {
-    function isCalled(item, words) {
-      var want = placeTokens(canonicalText(words)).join(" ");
-      return [item.name].concat(item.aka || []).some(function (n) { return placeTokens(canonicalText(n)).join(" ") === want; });
+    function full(words) {                      // "Spruce St." is Spruce Street
+      return placeTokens(canonicalText(words)).map(function (w) { return w === "st" ? "street" : w === "ave" ? "avenue" : w; }).join(" ");
     }
+    function isCalled(item, words) {
+      var want = full(words);
+      return [item.name].concat(item.aka || []).some(function (n) { return full(n) === want; });
+    }
+    var listed = (picker || []).filter(function (p) { return p.list_only && isCalled(p, name); })[0];
+    if (listed) return { kind: "place", name: listed.name, town: listed.town, lat: listed.lat, lng: listed.lng, aka: listed.aka || [] };
     var bare = String(name || "").replace(AROUND_WORDS, " ").replace(/\s+/g, " ").trim();
     var tries = [String(name || ""), bare, bare.replace(TRAILING_TOWN, "")];
     for (var i = 0; i < tries.length; i++) {
@@ -926,6 +966,9 @@ var LakewoodSearch = (function () {
     placeGroups: placeGroups,
     firstName: firstName,
     decodeStreets: decodeStreets,
+    decodeShuls: decodeShuls,
+    listGroups: listGroups,
+    unlisted: unlisted,
     uncertaintyMiles: uncertaintyMiles,
     rentLabel: rentLabel,
     hasPrice: hasPrice,

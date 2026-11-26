@@ -9,7 +9,7 @@ public Nominatim service (1 request/second, as its usage policy requires) and
 sends only place names plus "NJ" - nothing about visitors or the owner.
 Entries with "source": "manual" are never touched.
 """
-import argparse, json, pathlib, sys, time, urllib.parse, urllib.request
+import argparse, json, pathlib, re, sys, time, urllib.parse, urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -57,8 +57,10 @@ def main():
     listings = json.loads((ROOT / "listings.json").read_text())["listings"]
     todo = []
     for x in listings:
-        for k in geo.location_parts(x["location"]):
-            e = places.get(k)
+        # description words that slipped into a location ("KITCHENETTE. PRIVATE") are never places
+        parts = [p for p in re.split(r"\s*/\s*|,\s*", x["location"]) if not geo.looks_like_description(p)]
+        for k in geo.location_parts(" / ".join(parts)):
+            e = places.get(k) or geo._known(places, k)
             if k in todo or (e and e.get("source") == "manual"):
                 continue
             if e is None or (args.retry and e.get("source") == "unresolved"):

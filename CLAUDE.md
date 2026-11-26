@@ -37,7 +37,7 @@ be treated as a place. `geo.picker_entries` drops anything that `geo.looks_like_
 `WARN` for every listing whose location is an address. When one shows up: find the neighbourhood it lies in
 (nearest named neighbourhoods on the map, plus any hint in the listing text), **confirm it with the owner**, then
 give the address entry that neighbourhood's coordinates and set `"neighborhood": "<place key>"` on it (that silences the
-warning). The card still shows the address from the PDF.
+warning and counts the listing under that neighbourhood in the lists). The card still shows the address from the PDF.
 
 ## The PDF parser (parse.py)
 
@@ -92,31 +92,43 @@ not sure whether the neighbourhood is called Heritage Point or Heritage Drive; G
 
 ## Not every listing location is a neighbourhood
 
-A vague phrase in a listing ("Prime Jackson Area", "55+Community", "Lakewood Area") is not a neighbourhood. It may get a
-guessed pin in `places.json` so its listing still sorts by distance, but set `"hide": true` on that entry so it is never
-offered in the "Near" suggestions (`geo.picker_entries` skips hidden entries; listings still resolve to the pin).
+A vague phrase in a listing ("Prime Jackson Area", "Lakewood Area") is not a neighbourhood. It may get a guessed pin in
+`places.json` so its listing still sorts by distance, but set `"hide": true` on that entry so it is never offered in the
+"Near" suggestions (`geo.picker_entries` skips hidden entries; listings still resolve to the pin). When the owner says
+where it belongs, add `"neighborhood": "<place key>"` and its listings are counted there in the lists.
+- **"Prime Jackson" is Jackson** (owner, 2026-11-26): listed under Jackson, keeping its own pin (north of County Line
+  Rd, west of Lakewood). Never shown by that name.
+- **55+** (owner, 2026-11-26): the lists have one row, "55+ Communities (Fairways / Enclave)", pinned midway between the
+  two. The Fairways, the Enclave, the Enclave address and a vague "55+Community" are counted in it
+  (`data/neighborhood_also.json`). It is `"list_only": true`: never a typed suggestion, where "55+" offers the 55+ filter.
+- Description words that slip into a location ("KITCHENETTE. PRIVATE") are never places: no `places.json` entry
+  (`geo.looks_like_description`; the geocoding tool skips them).
 
-## The Neighborhoods index/browse list keeps every name it has ever shown (owner, 2026-11-26)
+## The Neighborhood and Street lists (owner, 2026-11-26)
 
-The Table view's left-hand neighbourhood list and the search box's "Neighborhoods with listings" browse list
-both come from `DATA.neighborhoods` (`var NB` in `site/template.html`), which `build.py` builds from this
-week's listings **plus** every name in `data/neighborhoods_seen.json` (a name goes in with a count of 0 if
-this week's PDF has no listing there). `build.py` writes the (only ever growing) union back to that file after
-every build, so a neighbourhood that happens to have no listing one week still shows up (with "0 listings")
-instead of silently disappearing from the list. The grouping name is `geo.neighborhood_display_name()`: a
-listing's first `/`- or comma-separated place name, with a trailing "Area" dropped ("Ridge Area" groups with
-"Ridge") - mirrors the old client-side-only grouping this replaced.
-- This is about which names the index/browse list offers, not about `places.json` coordinates or the "Near"
-  picker (`geo.picker_entries`), which already comes straight from `places.json` and was never affected by a
-  quiet week.
-- Add a name here the same way any other listing adds one: nothing to do by hand, `build.py` picks it up from
-  `listings.json` and keeps it forever after.
+`LakewoodSearch.listGroups` feeds the search box's "Neighborhoods" and "Streets" browse lists and the Table view's side
+list (neighbourhoods only). It takes every name in `DATA.neighborhoods` (this week's plus `data/neighborhoods_seen.json`)
+and each listing's first `/`- or comma-separated name and `areas`, matches each name to a place with the search
+(`placeForName`), and merges names that mean the same place.
+- **Every listing must be in at least one of the two lists.** A name that matches nothing is silently dropped, so
+  `build.py` prints a `WARN` naming such listings (`tools/check_lists.js`, needs Node). Fix them with a place, another
+  spelling or one of the rules here.
+- A neighbourhood with no listing this week stays in its list with "0 listings". `build.py` writes the (only growing) set
+  of names back to `data/neighborhoods_seen.json`.
+- A name ending in Street, Road, Court, ... goes in the Street list. **Streets people also mean as an area go in both**
+  (`data/area_streets.json`: Medina Road, and Ridge shown as "Ridge"). Add one only when the owner names it.
+- **Abbreviations** (`placeTokens`): Rd, Ct, Ln, Rt are read as Road, Court, Lane, Route, and "County Ln" as County
+  Line, both when typed and when matching list names.
+- **Another spelling is the place**: a `places.json` entry's `"aka"` is used both by the search and to put listings on
+  the map. "Heart of Ridge" is Ridge (the middle of Ridge, Ridge Ave at Nowlan Pl) and "Wyndham 2" is Wyndham; neither
+  gets its own entry in the lists.
+- "Laurel" is Laurel Avenue and "Manetta" is Manetta Avenue (`data/preferred_streets.json`, see "Typing a place").
 
 ## Search words (site/search-core.js)
 
 - `CONCEPTS` are groups of words that mean the same in these listings (boy = bochur = bachur = guys = men ...). Add a
   line to teach the search a new group; words match as whole words, and typos/spellings (6+ letters) are forgiven.
-- **55+ is a search term and a one-tap filter**, not a neighborhood: "55+", "55 plus", "over 55", "senior", "active adult"
+- **55+ is a search term and a one-tap filter** (plus one row in the neighbourhood list, see above): "55+", "55 plus", "over 55", "senior", "active adult"
   all normalise to `55+` (`normalizeQuery`); the "55+" chip in the search bar sets `S.age55`; typing a 55+ word offers
   "55+ communities" as a topic suggestion. A listing counts as 55+ if it says so or is in the Fairways / Enclave.
 
@@ -241,9 +253,8 @@ picture `docs/og.png` is committed; redraw it with `python3 tools/build_og_image
 - **Albert Run** is at and around 1 Radiant Hill; people also call it **Sims**. Both are neighbourhoods, essentially one area. A listing in
   either is listed under Albert Run, Sims **and** Albert: owner rule in `data/neighborhood_also.json` (`geo.listing_areas` puts `areas` on the
   listing; `originMiles` treats such a listing as "right here" for any of them; the lists count it under each).
-- **One grouping for the neighbourhood lists** (owner, 2026-11-26): `LakewoodSearch.placeGroups` feeds both the search box's Neighborhood and
-  Street lists and the Table view's side list (neighbourhoods only, biggest first). Never group the side list by the PDF's raw wording again;
-  clicking a name there sorts by that neighbourhood, the same as picking it in the search box.
+- **One grouping for the neighbourhood lists** (owner, 2026-11-26): see "The Neighborhood and Street lists". Never group the Table view's side
+  list (biggest first) by the PDF's raw wording again; clicking a name there sorts by that neighbourhood, the same as picking it in the search box.
 
 ## Table view: column headers sort (owner, 2026-11-26)
 
@@ -303,9 +314,9 @@ Ask the owner before acting on any of these.
 - **Masa U'Matan:** talk to them before promoting the site or taking money.
 - **UI options** (D1 desktop and P1 phone recommended, nothing built; the layout above stands):
   <https://claude.ai/artifact/CEpEJsSekG2xFySqZbkjq9>
-- **Neighborhood and street browse lists:** some listings are in neither (21 on the Nov. 25 list: abbreviated names such as
-  "Medina Rd.", street addresses, ambiguous names). The owner is reviewing the fix, and wants Medina Road offered as both an area and
-  a street. The "keeps every name" section above was written before the lists were grouped by place; revise it with that fix.
+- **Fairways in the lists:** a listing that says "Fairways" is grouped (and typing "fairways" sorts) as the street
+  Fairways Boulevard, not the Fairways neighbourhood. Ask the owner whether to change it.
+- **"npgs"** in `places.json` has no map point; it came from an older listing, "Brookwd 1 / NPGS". Ask the owner what it is.
 - **Pins to confirm:** "Cov.:Princeton" read as Coventry; "Tamarind Park" pinned at Tamarind Rd.
 - **Owner to-dos:** check the WhatsApp link preview; add the site to Google Search Console and submit the sitemap; open the site with
   `#nocount` on each own device; answer the monetization plan's questions.
