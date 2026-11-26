@@ -1211,3 +1211,15 @@ test("browse list: a neighborhood written with its town ('New Prospect Jackson')
   assert.equal(of("55+Community"), null);                       // not a place
   assert.equal(of("Prime Jackson"), null);                      // owner: not a neighborhood
 });
+
+test("browse list: owner's neighborhoods (Chestnut, Locust, Chateau, Jackson 21, Oak Meadows, The Vineyards)", () => {
+  const data = JSON.parse(fs.readFileSync(path.join(ROOT, "docs/index.html"), "utf8")
+    .match(/<script id="payload"[^>]*>([\s\S]*?)<\/script>/)[1]);
+  const streets = S.decodeStreets(data.streets);
+  const shuls = (data.shuls || []).map((a) => ({ name: a[0], lat: a[1], lng: a[2], town: a[3], address: a[4], aka: a[5] || [] }));
+  const of = (n) => { const it = S.placeForName(n, data.picker, streets, shuls, data.preferred); return it && it.kind + ":" + it.name; };
+  for (const [name, want] of [["Chestnut", "Chestnut"], ["Off Chestnut", "Chestnut"], ["Locust", "Locust"], ["Off Locust St.", "Locust"],
+                              ["Near Chateau", "Chateau Park"], ["Club at Jackson 21", "Jackson 21"], ["Club 21 Jackson", "Jackson 21"],
+                              ["Oak Meadows", "Oak Meadows"], ["The Vineyards", "The Vineyards"], ["Chestnut Acres", "Chestnut Acres"],
+                              ["Locust Grove", "Locust Grove"]]) assert.equal(of(name), "place:" + want, name);
+});

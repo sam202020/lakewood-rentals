@@ -220,3 +220,11 @@ reads the domain from `docs/CNAME`; never delete, move or rewrite that file (the
 picture `docs/og.png` is committed; redraw it with `python3 tools/build_og_image.py` (on a Mac) after changing its words. The domain is
 `seo.SITE_URL`, which a test ties to `docs/CNAME`. Next steps (neighbourhood and topic pages) are in
 `business/domain-hosting-seo-plan.md` §5.3.
+
+## Owner neighbourhood calls (2026-11-26)
+
+- **Chestnut** and **Locust** are streets, but people mean them as neighbourhoods ("near Chestnut"): each is its own neighbourhood entry,
+  never grouped under Chestnut Acres or Locust Grove.
+- "Near Chateau" is **Chateau Park**. "Club at Jackson 21" / "Club 21 Jackson" are **Jackson 21**.
+- **Oak Meadows**: 19 Hilton Dr and its cul-de-sac, off Oak St near Route 9 and Oak & Vine. **The Vineyards**: Jackson, near 75 Tuscany Dr.
+- A place entry's `label` overrides its `name` in the drop-down: remove it when renaming.

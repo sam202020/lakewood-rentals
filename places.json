@@ -319,14 +319,20 @@
   "lng": -74.21911,
   "source": "manual",
   "note": "Owner: Chateau means Chateau Park.",
-  "label": "Chateau Park"
+  "label": "Chateau Park",
+  "aka": [
+   "Chateau"
+  ]
  },
  "chateau park": {
   "name": "Chateau Park",
   "lat": 40.06443,
   "lng": -74.21911,
   "source": "manual",
-  "note": "Google Maps place (Cushman St)."
+  "note": "Google Maps place (Cushman St).",
+  "aka": [
+   "Chateau"
+  ]
  },
  "cherry st": {
   "name": "Cherry St",
@@ -338,11 +344,15 @@
   "note": "Checked on Google Maps: matches the OSM pin."
  },
  "chestnut": {
-  "name": "Chestnut St",
+  "name": "Chestnut",
   "lat": 40.0528,
   "lng": -74.2148,
   "source": "manual",
-  "note": "Owner: Chestnut is a street in south Lakewood (Chestnut Estates segment, middle of the street)."
+  "note": "Owner 2026-11-26: Chestnut is a street, but people mean it as the neighbourhood near it; its own entry, not part of Chestnut Acres / Locust Grove. Point: the Google Maps street point.",
+  "aka": [
+   "Chestnut Street",
+   "Chestnut St"
+  ]
  },
  "chestnut acres": {
   "name": "Chestnut Acres",
@@ -383,21 +393,28 @@
   "label": "Clover"
  },
  "club 21 jackson": {
-  "name": "The Club at Jackson Twenty-One",
+  "name": "Jackson 21",
   "lat": 40.1353,
   "lng": -74.34684,
   "source": "manual",
-  "note": "Google Maps place (Freehold Rd, Jackson)."
+  "note": "Owner 2026-11-26: the Club at Jackson 21 is Jackson 21 (listed under that name). Point: Google Maps, The Club at Jackson Twenty-One (Freehold Rd).",
+  "aka": [
+   "Club at Jackson 21",
+   "Club 21 Jackson"
+  ]
  },
  "club at jackson 21": {
-  "name": "Club At Jackson 21",
+  "name": "Jackson 21",
   "lat": 40.1353,
   "lng": -74.34684,
   "source": "manual",
   "match": "The Club at Jackson Twenty-One, Jackson Township, Ocean County, New Jersey, United States",
   "kind": "landuse/residential",
-  "label": "The Club at Jackson Twenty-One",
-  "note": "Checked on Google Maps (The Club at Jackson Twenty-One); replaced OSM pin 40.13838,-74.34935."
+  "note": "Owner 2026-11-26: the Club at Jackson 21 is Jackson 21 (listed under that name). Point: Google Maps, The Club at Jackson Twenty-One (Freehold Rd).",
+  "aka": [
+   "Club at Jackson 21",
+   "Club 21 Jackson"
+  ]
  },
  "congress street": {
   "name": "Congress Street",
@@ -659,7 +676,11 @@
   "source": "manual",
   "match": "County Line Road, Jackson Township, Ocean County, New Jersey, 08701, United States",
   "kind": "highway/primary",
-  "note": "Checked on Google Maps (Jackson 21, Jackson); replaced OSM pin 40.11949,-74.25708."
+  "note": "Checked on Google Maps (Jackson 21, Jackson); replaced OSM pin 40.11949,-74.25708.",
+  "aka": [
+   "Club at Jackson 21",
+   "Club 21 Jackson"
+  ]
  },
  "jackson pines rd": {
   "name": "Jackson Pines Rd",
@@ -763,12 +784,15 @@
   "note": "Checked on Google Maps (Lexington Ave)."
  },
  "locust": {
-  "name": "Locust Street",
+  "name": "Locust",
   "lat": 40.04684,
   "lng": -74.20966,
   "source": "manual",
-  "note": "Owner: Locust and Locust St are the same street (Google Maps Locust St).",
-  "label": "Locust Street"
+  "note": "Owner 2026-11-26: Locust is a street, but people mean it as the neighbourhood near it; its own entry, not part of Chestnut Acres / Locust Grove. Point: the Google Maps street point.",
+  "aka": [
+   "Locust Street",
+   "Locust St"
+  ]
  },
  "locust grove": {
   "name": "Locust Grove",
@@ -778,12 +802,15 @@
   "note": "Google Maps: Belz - Shlav Gimel / Locust Grove. Replaces a wrong OSM match ~9 mi away (Neptune area)."
  },
  "locust st": {
-  "name": "Locust Street",
+  "name": "Locust",
   "lat": 40.04684,
   "lng": -74.20966,
   "source": "manual",
-  "note": "Owner: Locust and Locust St are the same street (Google Maps Locust St).",
-  "label": "Locust Street"
+  "note": "Owner 2026-11-26: Locust is a street, but people mean it as the neighbourhood near it; its own entry, not part of Chestnut Acres / Locust Grove. Point: the Google Maps street point.",
+  "aka": [
+   "Locust Street",
+   "Locust St"
+  ]
  },
  "lutzk": {
   "name": "Lutzk",
@@ -953,9 +980,10 @@
  },
  "oak meadows": {
   "name": "Oak Meadows",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "lat": 40.06806,
+  "lng": -74.21764,
+  "source": "manual",
+  "note": "Owner 2026-11-26: 19 Hilton Dr and that cul-de-sac, off Oak St near Route 9 and Oak & Vine. Point: Google Maps 19 Hilton Dr, Lakewood."
  },
  "oak vine": {
   "name": "Oak St & Vine Ave",
@@ -1358,9 +1386,10 @@
  },
  "the vineyards": {
   "name": "The Vineyards",
-  "lat": null,
-  "lng": null,
-  "source": "unresolved"
+  "lat": 40.14079,
+  "lng": -74.3702,
+  "source": "manual",
+  "note": "Owner 2026-11-26: in Jackson near 75 Tuscany Dr. Point: Google Maps 75 Tuscany Dr, Jackson."
  },
  "toms river": {
   "name": "Toms River",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T05:24:17+00:00",
+  "generated_at": "2026-11-26T05:40:29+00:00",
   "list_date": "Wednesday, Nov. 25, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -300,13 +300,13 @@
       ],
       "furnished": true,
       "comments": "Beautifully redone home, furnished, close to Shuls. Brookwood/Harmony Farms area.",
-      "lat": 40.12721,
-      "lng": -74.2895,
+      "lat": 40.12762,
+      "lng": -74.29194,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 2.4
+      "geo_area_miles": 2.5
     },
     {
       "id": "1A151_1008:9",
@@ -764,13 +764,13 @@
       ],
       "furnished": false,
       "comments": "Fully renovated home. Shul & Rav.",
-      "lat": 40.12721,
-      "lng": -74.2895,
+      "lat": 40.12762,
+      "lng": -74.29194,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 2.4
+      "geo_area_miles": 2.5
     },
     {
       "id": "1HH136_988:6",
@@ -1892,13 +1892,13 @@
       ],
       "furnished": false,
       "comments": "Driveway, large backyard. Washer/dryer in basement. Near Sephardic & Ashkenaz shul.",
-      "lat": 40.12721,
-      "lng": -74.2895,
+      "lat": 40.12762,
+      "lng": -74.29194,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 2.4
+      "geo_area_miles": 2.5
     },
     {
       "id": "U1HH154_1015:18",
@@ -2103,9 +2103,9 @@
       ],
       "furnished": false,
       "comments": "Well kept colonial, Nice property with pool, 3 car garage. Available immediately.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.14079,
+      "lng": -74.3702,
+      "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
@@ -2181,13 +2181,13 @@
       ],
       "furnished": false,
       "comments": "Near Hope Chapel & East Veterans. Near new BMG Jackson location. Available November.",
-      "lat": 40.12721,
-      "lng": -74.2895,
+      "lat": 40.12762,
+      "lng": -74.29194,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 2.4
+      "geo_area_miles": 2.5
     },
     {
       "id": "11TT72_1049:10",
@@ -2469,13 +2469,13 @@
       ],
       "furnished": false,
       "comments": "1-minute drive to GG. close minyan, 1 acre, huge high end kitchen, spacious layout.",
-      "lat": 40.12721,
-      "lng": -74.2895,
+      "lat": 40.12762,
+      "lng": -74.29194,
       "geo": "town",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0,
-      "geo_area_miles": 2.4
+      "geo_area_miles": 2.5
     },
     {
       "id": "U11TT73_1050:16",
@@ -3239,9 +3239,9 @@
       ],
       "furnished": true,
       "comments": "Upgraded furnished. Sunny, large windows. Separate kitchen & family room. Multiple closets.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.06806,
+      "lng": -74.21764,
+      "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
@@ -5811,9 +5811,9 @@
       ],
       "furnished": true,
       "comments": "Short term furnished apartment. Upgraded & newly-renovated. Available immediately.",
-      "lat": null,
-      "lng": null,
-      "geo": null,
+      "lat": 40.06806,
+      "lng": -74.21764,
+      "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
       "geo_spread": 0
@@ -7404,7 +7404,7 @@
       "lng": -74.19226
     },
     "chestnut": {
-      "name": "Chestnut St",
+      "name": "Chestnut",
       "lat": 40.0528,
       "lng": -74.2148
     },
@@ -7434,12 +7434,12 @@
       "lng": -74.20032
     },
     "club 21 jackson": {
-      "name": "The Club at Jackson Twenty-One",
+      "name": "Jackson 21",
       "lat": 40.1353,
       "lng": -74.34684
     },
     "club at jackson 21": {
-      "name": "Club At Jackson 21",
+      "name": "Jackson 21",
       "lat": 40.1353,
       "lng": -74.34684
     },
@@ -7590,8 +7590,8 @@
     },
     "jackson": {
       "name": "Jackson",
-      "lat": 40.12721,
-      "lng": -74.2895
+      "lat": 40.12762,
+      "lng": -74.29194
     },
     "jackson 21": {
       "name": "Jackson 21",
@@ -7654,7 +7654,7 @@
       "lng": -74.21368
     },
     "locust": {
-      "name": "Locust Street",
+      "name": "Locust",
       "lat": 40.04684,
       "lng": -74.20966
     },
@@ -7664,7 +7664,7 @@
       "lng": -74.20059
     },
     "locust st": {
-      "name": "Locust Street",
+      "name": "Locust",
       "lat": 40.04684,
       "lng": -74.20966
     },
@@ -7752,6 +7752,11 @@
       "name": "Oak Glen",
       "lat": 40.16928,
       "lng": -74.19737
+    },
+    "oak meadows": {
+      "name": "Oak Meadows",
+      "lat": 40.06806,
+      "lng": -74.21764
     },
     "oak vine": {
       "name": "Oak St & Vine Ave",
@@ -8002,6 +8007,11 @@
       "name": "The Reserve",
       "lat": 40.1219,
       "lng": -74.27709
+    },
+    "the vineyards": {
+      "name": "The Vineyards",
+      "lat": 40.14079,
+      "lng": -74.3702
     },
     "toms river": {
       "name": "Toms River",
@@ -8333,13 +8343,28 @@
       "name": "Chateau Park",
       "lat": 40.06443,
       "lng": -74.21911,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Chateau"
+      ]
     },
     {
       "name": "Cherry Street",
       "lat": 40.09203,
       "lng": -74.19226,
       "town": "Lakewood"
+    },
+    {
+      "name": "Chestnut",
+      "lat": 40.0528,
+      "lng": -74.2148,
+      "town": "Lakewood",
+      "aka": [
+        "Chestnut Street",
+        "Chestnut St",
+        "Chestnut Shul"
+      ],
+      "shul": true
     },
     {
       "name": "Chestnut Acres",
@@ -8351,12 +8376,6 @@
       "name": "Chestnut Gardens",
       "lat": 40.0526,
       "lng": -74.19997,
-      "town": "Lakewood"
-    },
-    {
-      "name": "Chestnut Street",
-      "lat": 40.0528,
-      "lng": -74.2148,
       "town": "Lakewood"
     },
     {
@@ -8567,14 +8586,18 @@
     },
     {
       "name": "Jackson",
-      "lat": 40.12721,
-      "lng": -74.2895
+      "lat": 40.12762,
+      "lng": -74.29194
     },
     {
       "name": "Jackson 21",
-      "lat": 40.13763,
-      "lng": -74.35417,
-      "town": "Jackson"
+      "lat": 40.1353,
+      "lng": -74.34684,
+      "town": "Jackson",
+      "aka": [
+        "Club at Jackson 21",
+        "Club 21 Jackson"
+      ]
     },
     {
       "name": "Jackson Pines Road",
@@ -8636,15 +8659,19 @@
       "town": "Lakewood"
     },
     {
+      "name": "Locust",
+      "lat": 40.04684,
+      "lng": -74.20966,
+      "town": "Lakewood",
+      "aka": [
+        "Locust Street",
+        "Locust St"
+      ]
+    },
+    {
       "name": "Locust Grove",
       "lat": 40.04536,
       "lng": -74.20059,
-      "town": "Lakewood"
-    },
-    {
-      "name": "Locust Street",
-      "lat": 40.04684,
-      "lng": -74.20966,
       "town": "Lakewood"
     },
     {
@@ -8746,6 +8773,12 @@
       "lat": 40.16928,
       "lng": -74.19737,
       "town": "Howell"
+    },
+    {
+      "name": "Oak Meadows",
+      "lat": 40.06806,
+      "lng": -74.21764,
+      "town": "Lakewood"
     },
     {
       "name": "Oak Street & Vine Avenue",
@@ -8984,12 +9017,6 @@
       "town": "Lakewood"
     },
     {
-      "name": "The Club at Jackson Twenty-One",
-      "lat": 40.1353,
-      "lng": -74.34684,
-      "town": "Jackson"
-    },
-    {
       "name": "The Fairways at Lake Ridge (55+)",
       "lat": 40.05747,
       "lng": -74.23451,
@@ -9012,6 +9039,12 @@
       "lat": 40.10604,
       "lng": -74.19885,
       "town": "Lakewood"
+    },
+    {
+      "name": "The Vineyards",
+      "lat": 40.14079,
+      "lng": -74.3702,
+      "town": "Jackson"
     },
     {
       "name": "Toms River",
@@ -11144,13 +11177,6 @@
       -74.21693,
       "Lakewood",
       "1621 Clifton Ave"
-    ],
-    [
-      "Chestnut Shul",
-      40.05338,
-      -74.21617,
-      "Lakewood",
-      "105 Chestnut St"
     ],
     [
       "Chevra Lomdei Torah (Yukes)",

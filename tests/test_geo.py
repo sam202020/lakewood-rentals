@@ -472,7 +472,8 @@ class ShippedPicker(unittest.TestCase):
         self.assertLess(pts["7th Street"][1], pts["E 7th Street"][1])      # 7th is west of E 7th
 
     def test_same_street_spellings_are_one_entry(self):
-        for name, bare in (("Central Avenue", "Central"), ("Locust Street", "Locust"), ("Park Avenue", "Park"),
+        # Locust is not here any more: the owner (2026-11-26) wants it listed as the neighbourhood "Locust" (like "Chestnut")
+        for name, bare in (("Central Avenue", "Central"), ("Park Avenue", "Park"),
                            ("Somerset Avenue", "Somerset"), ("Chateau Park", "Chateau")):
             self.assertEqual(self.names.count(name), 1, name)
             self.assertNotIn(bare, self.names)
@@ -774,3 +775,33 @@ class NamesAddedNov26(unittest.TestCase):
     def test_outside_and_howl_are_understood(self):
         self.assertEqual(geo.location_parts("Outside Brookwd 1"), ["brookwood 1"])
         self.assertEqual(geo.location_parts("Heritage Pt. / Howl."), ["heritage pt", "howell"])
+
+
+class OwnerNeighborhoodsNov26(unittest.TestCase):
+    """Owner, 2026-11-26."""
+
+    def setUp(self):
+        self.places = geo.load_places()
+        self.picker = {p["name"]: p for p in geo.picker_entries(self.places)}
+
+    def test_chestnut_and_locust_are_their_own_neighborhoods(self):
+        for name in ("Chestnut", "Locust", "Chestnut Acres", "Locust Grove"):
+            self.assertIn(name, self.picker)
+        self.assertNotIn("Locust Street", self.picker)
+        for location, name in [("Off Chestnut", "chestnut"), ("Chestnut Area", "chestnut"), ("Off Locust St.", "locust")]:
+            r = geo.resolve(location, self.places)
+            self.assertEqual((r["lat"], r["lng"]), (self.places[name]["lat"], self.places[name]["lng"]), location)
+
+    def test_club_at_jackson_21_is_jackson_21(self):
+        self.assertIn("Club at Jackson 21", self.picker["Jackson 21"]["aka"])
+        self.assertFalse([n for n in self.picker if "Club" in n and "21" in n])
+
+    def test_oak_meadows_and_the_vineyards_are_on_the_map(self):
+        for location, town in [("Oak Meadows", "Lakewood"), ("The Vineyards", "Jackson")]:
+            r = geo.resolve(location, self.places)
+            self.assertTrue(r["lat"], location)
+            self.assertEqual(self.picker[location]["town"], town)
+
+    def test_near_chateau_is_chateau_park(self):
+        r = geo.resolve("Near Chateau", self.places)
+        self.assertEqual((r["lat"], r["lng"]), (self.places["chateau park"]["lat"], self.places["chateau park"]["lng"]))
