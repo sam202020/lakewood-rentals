@@ -23,6 +23,9 @@ import re
 import towns
 
 PLACES_FILE = pathlib.Path(__file__).parent / "places.json"
+# Every neighbourhood name the "Neighborhoods" index / browse list has ever shown, so one does not
+# vanish from it just because this week's PDF happens to have no listing there (owner, 2026-11-26).
+NEIGHBORHOODS_SEEN_FILE = pathlib.Path(__file__).parent / "data" / "neighborhoods_seen.json"
 
 # Town-level names: a poor guide to where in town a listing is, so they are
 # ignored when a more specific part of the same location resolves.
@@ -84,6 +87,35 @@ def load_places(path=PLACES_FILE):
         return json.loads(pathlib.Path(path).read_text())
     except (OSError, ValueError):
         return {}
+
+
+def neighborhood_display_name(location):
+    """The name the 'Neighborhoods' index groups a listing under: its first place name, with a
+    trailing 'Area' dropped ('Ridge Area' groups with 'Ridge'). Mirrors the NB grouping in
+    site/template.html, so the same listing sorts under the same name in both places."""
+    first = re.split(r"\s*/\s*|,\s*", location or "", maxsplit=1)[0]
+    first = re.sub(r"\s+Area$", "", first, flags=re.I)
+    return first.strip()
+
+
+def load_neighborhoods_seen(path=NEIGHBORHOODS_SEEN_FILE):
+    try:
+        return json.loads(pathlib.Path(path).read_text())
+    except (OSError, ValueError):
+        return []
+
+
+def neighborhood_counts(listings, seen=None):
+    """{name: how many of this week's listings are there}, including a 0 for every name in `seen`
+    (earlier builds) that has none this week - so the index only ever grows, never loses a name."""
+    counts = {}
+    for x in listings:
+        k = neighborhood_display_name(x.get("location"))
+        if k:
+            counts[k] = counts.get(k, 0) + 1
+    for name in seen or ():
+        counts.setdefault(name, 0)
+    return counts
 
 
 def _known(places, key):

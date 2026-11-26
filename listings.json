@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T04:28:33+00:00",
+  "generated_at": "2026-11-26T04:40:49+00:00",
   "list_date": "Wednesday, Nov. 25, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -6557,6 +6557,1492 @@
       ],
       "geo_unverified": [],
       "geo_spread": 0
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "10th St.",
+      "n": 2
+    },
+    {
+      "name": "12th & Princeton",
+      "n": 1
+    },
+    {
+      "name": "13th & Lexington",
+      "n": 1
+    },
+    {
+      "name": "13th & Princeton",
+      "n": 0
+    },
+    {
+      "name": "14th & Lexington",
+      "n": 1
+    },
+    {
+      "name": "14th Street",
+      "n": 1
+    },
+    {
+      "name": "22 Enclave Blvd.",
+      "n": 1
+    },
+    {
+      "name": "415 Laurel Ave.",
+      "n": 1
+    },
+    {
+      "name": "55+Community",
+      "n": 1
+    },
+    {
+      "name": "5th & Lexington",
+      "n": 1
+    },
+    {
+      "name": "7th & Princeton",
+      "n": 2
+    },
+    {
+      "name": "957 W. County Ln.",
+      "n": 1
+    },
+    {
+      "name": "Albert",
+      "n": 3
+    },
+    {
+      "name": "Albert Run",
+      "n": 1
+    },
+    {
+      "name": "Arlington",
+      "n": 5
+    },
+    {
+      "name": "Bais Shalom",
+      "n": 1
+    },
+    {
+      "name": "Beaver Crossing",
+      "n": 2
+    },
+    {
+      "name": "Beaver Crossings",
+      "n": 1
+    },
+    {
+      "name": "Belz Shlav Aleph",
+      "n": 1
+    },
+    {
+      "name": "Belzshlavalef",
+      "n": 0
+    },
+    {
+      "name": "Bent Hook",
+      "n": 0
+    },
+    {
+      "name": "Blue River",
+      "n": 1
+    },
+    {
+      "name": "Brook",
+      "n": 0
+    },
+    {
+      "name": "Brook Hill",
+      "n": 5
+    },
+    {
+      "name": "Brookwd 1",
+      "n": 0
+    },
+    {
+      "name": "Brookwood 1",
+      "n": 1
+    },
+    {
+      "name": "Brookwood 3",
+      "n": 2
+    },
+    {
+      "name": "Brookwood 4",
+      "n": 1
+    },
+    {
+      "name": "Brookwood 4 Jackson",
+      "n": 3
+    },
+    {
+      "name": "Candlewood",
+      "n": 0
+    },
+    {
+      "name": "Case Road",
+      "n": 1
+    },
+    {
+      "name": "Cedar Court",
+      "n": 1
+    },
+    {
+      "name": "Central",
+      "n": 1
+    },
+    {
+      "name": "Central Avenue",
+      "n": 1
+    },
+    {
+      "name": "Chateau Park",
+      "n": 1
+    },
+    {
+      "name": "Cherry St.",
+      "n": 1
+    },
+    {
+      "name": "Chestnut",
+      "n": 3
+    },
+    {
+      "name": "Chestnut Acres",
+      "n": 0
+    },
+    {
+      "name": "Chestnut Gardens",
+      "n": 1
+    },
+    {
+      "name": "Clearsteam",
+      "n": 1
+    },
+    {
+      "name": "Clifton",
+      "n": 1
+    },
+    {
+      "name": "Club 21 Jackson",
+      "n": 1
+    },
+    {
+      "name": "Club at Jackson 21",
+      "n": 2
+    },
+    {
+      "name": "Congress Street",
+      "n": 1
+    },
+    {
+      "name": "County Ln",
+      "n": 1
+    },
+    {
+      "name": "Courtney",
+      "n": 1
+    },
+    {
+      "name": "Cov.:Princeton",
+      "n": 1
+    },
+    {
+      "name": "Crest Hill",
+      "n": 1
+    },
+    {
+      "name": "Cross & Mass.",
+      "n": 1
+    },
+    {
+      "name": "Daniel Drive",
+      "n": 1
+    },
+    {
+      "name": "Dewey Ave.",
+      "n": 1
+    },
+    {
+      "name": "Dunhill Rd",
+      "n": 0
+    },
+    {
+      "name": "E.7th & Nowlan",
+      "n": 0
+    },
+    {
+      "name": "East End",
+      "n": 2
+    },
+    {
+      "name": "Enclave",
+      "n": 1
+    },
+    {
+      "name": "Evergreen Gardens",
+      "n": 2
+    },
+    {
+      "name": "Fairways",
+      "n": 4
+    },
+    {
+      "name": "Forest Park",
+      "n": 1
+    },
+    {
+      "name": "Glen Ave.",
+      "n": 1
+    },
+    {
+      "name": "Glen Avenue",
+      "n": 1
+    },
+    {
+      "name": "Harfield",
+      "n": 2
+    },
+    {
+      "name": "Harmony Farms",
+      "n": 0
+    },
+    {
+      "name": "Harmony Hills Jackson",
+      "n": 1
+    },
+    {
+      "name": "Harvard Street",
+      "n": 1
+    },
+    {
+      "name": "Heart of Ridge",
+      "n": 0
+    },
+    {
+      "name": "Hearthstn.",
+      "n": 1
+    },
+    {
+      "name": "Hearthstone",
+      "n": 1
+    },
+    {
+      "name": "Heartof Ridge",
+      "n": 0
+    },
+    {
+      "name": "Heritage Pt.",
+      "n": 2
+    },
+    {
+      "name": "High St.",
+      "n": 1
+    },
+    {
+      "name": "High Street",
+      "n": 0
+    },
+    {
+      "name": "Holly Oaks",
+      "n": 0
+    },
+    {
+      "name": "Hope",
+      "n": 1
+    },
+    {
+      "name": "Hope Chapel",
+      "n": 1
+    },
+    {
+      "name": "Howell",
+      "n": 4
+    },
+    {
+      "name": "Hyson",
+      "n": 1
+    },
+    {
+      "name": "Jackson",
+      "n": 7
+    },
+    {
+      "name": "Jackson 21",
+      "n": 6
+    },
+    {
+      "name": "Jackson Pines Rd.",
+      "n": 1
+    },
+    {
+      "name": "James",
+      "n": 1
+    },
+    {
+      "name": "James & Sunset",
+      "n": 1
+    },
+    {
+      "name": "James Street",
+      "n": 1
+    },
+    {
+      "name": "Jule Court",
+      "n": 0
+    },
+    {
+      "name": "KITCHENETTE. PRIVATE",
+      "n": 0
+    },
+    {
+      "name": "Kol Shimshon",
+      "n": 1
+    },
+    {
+      "name": "Lakewood",
+      "n": 1
+    },
+    {
+      "name": "Lakewood Commons",
+      "n": 0
+    },
+    {
+      "name": "Laurel",
+      "n": 1
+    },
+    {
+      "name": "Lawrence Avenue",
+      "n": 1
+    },
+    {
+      "name": "Locust",
+      "n": 1
+    },
+    {
+      "name": "Locust Grove",
+      "n": 1
+    },
+    {
+      "name": "Lutzk near Westgate",
+      "n": 0
+    },
+    {
+      "name": "Mackenzie Area Toms River",
+      "n": 1
+    },
+    {
+      "name": "Manchester",
+      "n": 1
+    },
+    {
+      "name": "Manetta",
+      "n": 1
+    },
+    {
+      "name": "Marc Drive",
+      "n": 2
+    },
+    {
+      "name": "Meadow Run",
+      "n": 1
+    },
+    {
+      "name": "Medina Rd.",
+      "n": 2
+    },
+    {
+      "name": "Miller",
+      "n": 0
+    },
+    {
+      "name": "Monmouth Views",
+      "n": 3
+    },
+    {
+      "name": "Near Chateau",
+      "n": 1
+    },
+    {
+      "name": "Near Yeshiva",
+      "n": 2
+    },
+    {
+      "name": "Negba St.",
+      "n": 0
+    },
+    {
+      "name": "New Central",
+      "n": 2
+    },
+    {
+      "name": "New Central Ave.",
+      "n": 1
+    },
+    {
+      "name": "New England Village",
+      "n": 1
+    },
+    {
+      "name": "New Prospect Jackson",
+      "n": 1
+    },
+    {
+      "name": "Oak & Vine",
+      "n": 3
+    },
+    {
+      "name": "Oak Glen",
+      "n": 2
+    },
+    {
+      "name": "Oak Meadows",
+      "n": 2
+    },
+    {
+      "name": "Ocean Avenue",
+      "n": 1
+    },
+    {
+      "name": "Ocean Pointe",
+      "n": 1
+    },
+    {
+      "name": "Off Chestnut",
+      "n": 1
+    },
+    {
+      "name": "Off Locust St.",
+      "n": 3
+    },
+    {
+      "name": "Off Route 88",
+      "n": 1
+    },
+    {
+      "name": "Off Van Buren",
+      "n": 1
+    },
+    {
+      "name": "Outside Brookwd 1",
+      "n": 1
+    },
+    {
+      "name": "Park",
+      "n": 1
+    },
+    {
+      "name": "Park Ave.",
+      "n": 1
+    },
+    {
+      "name": "Pawnee",
+      "n": 5
+    },
+    {
+      "name": "Pine Lake Park",
+      "n": 8
+    },
+    {
+      "name": "Pine River",
+      "n": 1
+    },
+    {
+      "name": "Prime Jackson",
+      "n": 1
+    },
+    {
+      "name": "Prospect",
+      "n": 1
+    },
+    {
+      "name": "Prospect Heights",
+      "n": 1
+    },
+    {
+      "name": "Prospect Vines",
+      "n": 0
+    },
+    {
+      "name": "Raintree",
+      "n": 4
+    },
+    {
+      "name": "Raintree 0",
+      "n": 0
+    },
+    {
+      "name": "Raintree 1",
+      "n": 0
+    },
+    {
+      "name": "Raintree 10",
+      "n": 0
+    },
+    {
+      "name": "Raintree 100",
+      "n": 0
+    },
+    {
+      "name": "Raintree 101",
+      "n": 0
+    },
+    {
+      "name": "Raintree 102",
+      "n": 0
+    },
+    {
+      "name": "Raintree 103",
+      "n": 0
+    },
+    {
+      "name": "Raintree 104",
+      "n": 0
+    },
+    {
+      "name": "Raintree 105",
+      "n": 0
+    },
+    {
+      "name": "Raintree 106",
+      "n": 0
+    },
+    {
+      "name": "Raintree 107",
+      "n": 0
+    },
+    {
+      "name": "Raintree 108",
+      "n": 0
+    },
+    {
+      "name": "Raintree 109",
+      "n": 0
+    },
+    {
+      "name": "Raintree 11",
+      "n": 0
+    },
+    {
+      "name": "Raintree 110",
+      "n": 0
+    },
+    {
+      "name": "Raintree 111",
+      "n": 0
+    },
+    {
+      "name": "Raintree 112",
+      "n": 0
+    },
+    {
+      "name": "Raintree 113",
+      "n": 0
+    },
+    {
+      "name": "Raintree 114",
+      "n": 0
+    },
+    {
+      "name": "Raintree 115",
+      "n": 0
+    },
+    {
+      "name": "Raintree 116",
+      "n": 0
+    },
+    {
+      "name": "Raintree 117",
+      "n": 0
+    },
+    {
+      "name": "Raintree 118",
+      "n": 0
+    },
+    {
+      "name": "Raintree 119",
+      "n": 0
+    },
+    {
+      "name": "Raintree 12",
+      "n": 0
+    },
+    {
+      "name": "Raintree 120",
+      "n": 0
+    },
+    {
+      "name": "Raintree 121",
+      "n": 0
+    },
+    {
+      "name": "Raintree 122",
+      "n": 0
+    },
+    {
+      "name": "Raintree 123",
+      "n": 0
+    },
+    {
+      "name": "Raintree 124",
+      "n": 0
+    },
+    {
+      "name": "Raintree 125",
+      "n": 0
+    },
+    {
+      "name": "Raintree 126",
+      "n": 0
+    },
+    {
+      "name": "Raintree 127",
+      "n": 0
+    },
+    {
+      "name": "Raintree 128",
+      "n": 0
+    },
+    {
+      "name": "Raintree 129",
+      "n": 0
+    },
+    {
+      "name": "Raintree 13",
+      "n": 0
+    },
+    {
+      "name": "Raintree 130",
+      "n": 0
+    },
+    {
+      "name": "Raintree 131",
+      "n": 0
+    },
+    {
+      "name": "Raintree 132",
+      "n": 0
+    },
+    {
+      "name": "Raintree 133",
+      "n": 0
+    },
+    {
+      "name": "Raintree 134",
+      "n": 0
+    },
+    {
+      "name": "Raintree 135",
+      "n": 0
+    },
+    {
+      "name": "Raintree 136",
+      "n": 0
+    },
+    {
+      "name": "Raintree 137",
+      "n": 0
+    },
+    {
+      "name": "Raintree 138",
+      "n": 0
+    },
+    {
+      "name": "Raintree 139",
+      "n": 0
+    },
+    {
+      "name": "Raintree 14",
+      "n": 0
+    },
+    {
+      "name": "Raintree 140",
+      "n": 0
+    },
+    {
+      "name": "Raintree 141",
+      "n": 0
+    },
+    {
+      "name": "Raintree 142",
+      "n": 0
+    },
+    {
+      "name": "Raintree 143",
+      "n": 0
+    },
+    {
+      "name": "Raintree 144",
+      "n": 0
+    },
+    {
+      "name": "Raintree 145",
+      "n": 0
+    },
+    {
+      "name": "Raintree 146",
+      "n": 0
+    },
+    {
+      "name": "Raintree 147",
+      "n": 0
+    },
+    {
+      "name": "Raintree 148",
+      "n": 0
+    },
+    {
+      "name": "Raintree 149",
+      "n": 0
+    },
+    {
+      "name": "Raintree 15",
+      "n": 0
+    },
+    {
+      "name": "Raintree 150",
+      "n": 0
+    },
+    {
+      "name": "Raintree 151",
+      "n": 0
+    },
+    {
+      "name": "Raintree 152",
+      "n": 0
+    },
+    {
+      "name": "Raintree 153",
+      "n": 0
+    },
+    {
+      "name": "Raintree 154",
+      "n": 0
+    },
+    {
+      "name": "Raintree 155",
+      "n": 0
+    },
+    {
+      "name": "Raintree 156",
+      "n": 0
+    },
+    {
+      "name": "Raintree 157",
+      "n": 0
+    },
+    {
+      "name": "Raintree 158",
+      "n": 0
+    },
+    {
+      "name": "Raintree 159",
+      "n": 0
+    },
+    {
+      "name": "Raintree 16",
+      "n": 0
+    },
+    {
+      "name": "Raintree 160",
+      "n": 0
+    },
+    {
+      "name": "Raintree 161",
+      "n": 0
+    },
+    {
+      "name": "Raintree 162",
+      "n": 0
+    },
+    {
+      "name": "Raintree 163",
+      "n": 0
+    },
+    {
+      "name": "Raintree 164",
+      "n": 0
+    },
+    {
+      "name": "Raintree 165",
+      "n": 0
+    },
+    {
+      "name": "Raintree 166",
+      "n": 0
+    },
+    {
+      "name": "Raintree 167",
+      "n": 0
+    },
+    {
+      "name": "Raintree 168",
+      "n": 0
+    },
+    {
+      "name": "Raintree 169",
+      "n": 0
+    },
+    {
+      "name": "Raintree 17",
+      "n": 0
+    },
+    {
+      "name": "Raintree 170",
+      "n": 0
+    },
+    {
+      "name": "Raintree 171",
+      "n": 0
+    },
+    {
+      "name": "Raintree 172",
+      "n": 0
+    },
+    {
+      "name": "Raintree 173",
+      "n": 0
+    },
+    {
+      "name": "Raintree 174",
+      "n": 0
+    },
+    {
+      "name": "Raintree 175",
+      "n": 0
+    },
+    {
+      "name": "Raintree 176",
+      "n": 0
+    },
+    {
+      "name": "Raintree 177",
+      "n": 0
+    },
+    {
+      "name": "Raintree 178",
+      "n": 0
+    },
+    {
+      "name": "Raintree 179",
+      "n": 0
+    },
+    {
+      "name": "Raintree 18",
+      "n": 0
+    },
+    {
+      "name": "Raintree 180",
+      "n": 0
+    },
+    {
+      "name": "Raintree 181",
+      "n": 0
+    },
+    {
+      "name": "Raintree 182",
+      "n": 0
+    },
+    {
+      "name": "Raintree 183",
+      "n": 0
+    },
+    {
+      "name": "Raintree 184",
+      "n": 0
+    },
+    {
+      "name": "Raintree 185",
+      "n": 0
+    },
+    {
+      "name": "Raintree 186",
+      "n": 0
+    },
+    {
+      "name": "Raintree 187",
+      "n": 0
+    },
+    {
+      "name": "Raintree 188",
+      "n": 0
+    },
+    {
+      "name": "Raintree 189",
+      "n": 0
+    },
+    {
+      "name": "Raintree 19",
+      "n": 0
+    },
+    {
+      "name": "Raintree 190",
+      "n": 0
+    },
+    {
+      "name": "Raintree 191",
+      "n": 0
+    },
+    {
+      "name": "Raintree 192",
+      "n": 0
+    },
+    {
+      "name": "Raintree 193",
+      "n": 0
+    },
+    {
+      "name": "Raintree 194",
+      "n": 0
+    },
+    {
+      "name": "Raintree 195",
+      "n": 0
+    },
+    {
+      "name": "Raintree 196",
+      "n": 0
+    },
+    {
+      "name": "Raintree 197",
+      "n": 0
+    },
+    {
+      "name": "Raintree 198",
+      "n": 0
+    },
+    {
+      "name": "Raintree 199",
+      "n": 0
+    },
+    {
+      "name": "Raintree 2",
+      "n": 0
+    },
+    {
+      "name": "Raintree 20",
+      "n": 0
+    },
+    {
+      "name": "Raintree 21",
+      "n": 0
+    },
+    {
+      "name": "Raintree 22",
+      "n": 0
+    },
+    {
+      "name": "Raintree 23",
+      "n": 0
+    },
+    {
+      "name": "Raintree 24",
+      "n": 0
+    },
+    {
+      "name": "Raintree 25",
+      "n": 0
+    },
+    {
+      "name": "Raintree 26",
+      "n": 0
+    },
+    {
+      "name": "Raintree 27",
+      "n": 0
+    },
+    {
+      "name": "Raintree 28",
+      "n": 0
+    },
+    {
+      "name": "Raintree 29",
+      "n": 0
+    },
+    {
+      "name": "Raintree 3",
+      "n": 0
+    },
+    {
+      "name": "Raintree 30",
+      "n": 0
+    },
+    {
+      "name": "Raintree 31",
+      "n": 0
+    },
+    {
+      "name": "Raintree 32",
+      "n": 0
+    },
+    {
+      "name": "Raintree 33",
+      "n": 0
+    },
+    {
+      "name": "Raintree 34",
+      "n": 0
+    },
+    {
+      "name": "Raintree 35",
+      "n": 0
+    },
+    {
+      "name": "Raintree 36",
+      "n": 0
+    },
+    {
+      "name": "Raintree 37",
+      "n": 0
+    },
+    {
+      "name": "Raintree 38",
+      "n": 0
+    },
+    {
+      "name": "Raintree 39",
+      "n": 0
+    },
+    {
+      "name": "Raintree 4",
+      "n": 0
+    },
+    {
+      "name": "Raintree 40",
+      "n": 0
+    },
+    {
+      "name": "Raintree 41",
+      "n": 0
+    },
+    {
+      "name": "Raintree 42",
+      "n": 0
+    },
+    {
+      "name": "Raintree 43",
+      "n": 0
+    },
+    {
+      "name": "Raintree 44",
+      "n": 0
+    },
+    {
+      "name": "Raintree 45",
+      "n": 0
+    },
+    {
+      "name": "Raintree 46",
+      "n": 0
+    },
+    {
+      "name": "Raintree 47",
+      "n": 0
+    },
+    {
+      "name": "Raintree 48",
+      "n": 0
+    },
+    {
+      "name": "Raintree 49",
+      "n": 0
+    },
+    {
+      "name": "Raintree 5",
+      "n": 0
+    },
+    {
+      "name": "Raintree 50",
+      "n": 0
+    },
+    {
+      "name": "Raintree 51",
+      "n": 0
+    },
+    {
+      "name": "Raintree 52",
+      "n": 0
+    },
+    {
+      "name": "Raintree 53",
+      "n": 0
+    },
+    {
+      "name": "Raintree 54",
+      "n": 0
+    },
+    {
+      "name": "Raintree 55",
+      "n": 0
+    },
+    {
+      "name": "Raintree 56",
+      "n": 0
+    },
+    {
+      "name": "Raintree 57",
+      "n": 0
+    },
+    {
+      "name": "Raintree 58",
+      "n": 0
+    },
+    {
+      "name": "Raintree 59",
+      "n": 0
+    },
+    {
+      "name": "Raintree 6",
+      "n": 0
+    },
+    {
+      "name": "Raintree 60",
+      "n": 0
+    },
+    {
+      "name": "Raintree 61",
+      "n": 0
+    },
+    {
+      "name": "Raintree 62",
+      "n": 0
+    },
+    {
+      "name": "Raintree 63",
+      "n": 0
+    },
+    {
+      "name": "Raintree 64",
+      "n": 0
+    },
+    {
+      "name": "Raintree 65",
+      "n": 0
+    },
+    {
+      "name": "Raintree 66",
+      "n": 0
+    },
+    {
+      "name": "Raintree 67",
+      "n": 0
+    },
+    {
+      "name": "Raintree 68",
+      "n": 0
+    },
+    {
+      "name": "Raintree 69",
+      "n": 0
+    },
+    {
+      "name": "Raintree 7",
+      "n": 0
+    },
+    {
+      "name": "Raintree 70",
+      "n": 0
+    },
+    {
+      "name": "Raintree 71",
+      "n": 0
+    },
+    {
+      "name": "Raintree 72",
+      "n": 0
+    },
+    {
+      "name": "Raintree 73",
+      "n": 0
+    },
+    {
+      "name": "Raintree 74",
+      "n": 0
+    },
+    {
+      "name": "Raintree 75",
+      "n": 0
+    },
+    {
+      "name": "Raintree 76",
+      "n": 0
+    },
+    {
+      "name": "Raintree 77",
+      "n": 0
+    },
+    {
+      "name": "Raintree 78",
+      "n": 0
+    },
+    {
+      "name": "Raintree 79",
+      "n": 0
+    },
+    {
+      "name": "Raintree 8",
+      "n": 0
+    },
+    {
+      "name": "Raintree 80",
+      "n": 0
+    },
+    {
+      "name": "Raintree 81",
+      "n": 0
+    },
+    {
+      "name": "Raintree 82",
+      "n": 0
+    },
+    {
+      "name": "Raintree 83",
+      "n": 0
+    },
+    {
+      "name": "Raintree 84",
+      "n": 0
+    },
+    {
+      "name": "Raintree 85",
+      "n": 0
+    },
+    {
+      "name": "Raintree 86",
+      "n": 0
+    },
+    {
+      "name": "Raintree 87",
+      "n": 0
+    },
+    {
+      "name": "Raintree 88",
+      "n": 0
+    },
+    {
+      "name": "Raintree 89",
+      "n": 0
+    },
+    {
+      "name": "Raintree 9",
+      "n": 0
+    },
+    {
+      "name": "Raintree 90",
+      "n": 0
+    },
+    {
+      "name": "Raintree 91",
+      "n": 0
+    },
+    {
+      "name": "Raintree 92",
+      "n": 0
+    },
+    {
+      "name": "Raintree 93",
+      "n": 0
+    },
+    {
+      "name": "Raintree 94",
+      "n": 0
+    },
+    {
+      "name": "Raintree 95",
+      "n": 0
+    },
+    {
+      "name": "Raintree 96",
+      "n": 0
+    },
+    {
+      "name": "Raintree 97",
+      "n": 0
+    },
+    {
+      "name": "Raintree 98",
+      "n": 0
+    },
+    {
+      "name": "Raintree 99",
+      "n": 0
+    },
+    {
+      "name": "Ramtown",
+      "n": 1
+    },
+    {
+      "name": "Regency Estates",
+      "n": 1
+    },
+    {
+      "name": "Ridge",
+      "n": 4
+    },
+    {
+      "name": "Rockwell",
+      "n": 1
+    },
+    {
+      "name": "Rose Ct.",
+      "n": 2
+    },
+    {
+      "name": "Route 88 & Clover",
+      "n": 1
+    },
+    {
+      "name": "Rt.70",
+      "n": 1
+    },
+    {
+      "name": "Rt.9",
+      "n": 1
+    },
+    {
+      "name": "Rt.9 & Cross",
+      "n": 1
+    },
+    {
+      "name": "Saratoga",
+      "n": 1
+    },
+    {
+      "name": "Shady Ln.",
+      "n": 1
+    },
+    {
+      "name": "Shonny",
+      "n": 0
+    },
+    {
+      "name": "Somerset Avenue",
+      "n": 0
+    },
+    {
+      "name": "Somerset Walk",
+      "n": 1
+    },
+    {
+      "name": "South Lake Dr.",
+      "n": 1
+    },
+    {
+      "name": "Spruce St.Area",
+      "n": 1
+    },
+    {
+      "name": "Squankum",
+      "n": 3
+    },
+    {
+      "name": "St. Katherine",
+      "n": 1
+    },
+    {
+      "name": "St. Nicholas",
+      "n": 1
+    },
+    {
+      "name": "Stamford Meadows",
+      "n": 1
+    },
+    {
+      "name": "Sterling Forest",
+      "n": 3
+    },
+    {
+      "name": "Sterling Place",
+      "n": 1
+    },
+    {
+      "name": "Sunset",
+      "n": 2
+    },
+    {
+      "name": "Sunset & James",
+      "n": 3
+    },
+    {
+      "name": "Tamarind Park",
+      "n": 1
+    },
+    {
+      "name": "The 70",
+      "n": 2
+    },
+    {
+      "name": "The 70 Phase I",
+      "n": 0
+    },
+    {
+      "name": "The 70 Phase II",
+      "n": 0
+    },
+    {
+      "name": "The Reserve",
+      "n": 3
+    },
+    {
+      "name": "The Vineyards",
+      "n": 1
+    },
+    {
+      "name": "Toms River",
+      "n": 7
+    },
+    {
+      "name": "Topaz",
+      "n": 1
+    },
+    {
+      "name": "Twin Oaks",
+      "n": 1
+    },
+    {
+      "name": "Van Buren",
+      "n": 1
+    },
+    {
+      "name": "Villas",
+      "n": 2
+    },
+    {
+      "name": "W. County Ln.",
+      "n": 1
+    },
+    {
+      "name": "W. Kennedy",
+      "n": 1
+    },
+    {
+      "name": "Westgate",
+      "n": 5
+    },
+    {
+      "name": "Westgt.",
+      "n": 0
+    },
+    {
+      "name": "Whitewater Ct.",
+      "n": 1
+    },
+    {
+      "name": "Wyndham",
+      "n": 0
+    },
+    {
+      "name": "Wyndham 2",
+      "n": 1
+    },
+    {
+      "name": "Yeshiva",
+      "n": 1
+    },
+    {
+      "name": "Yesodei Court",
+      "n": 2
     }
   ],
   "places": {

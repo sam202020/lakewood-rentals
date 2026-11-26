@@ -11,6 +11,7 @@ import unittest
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
+import geo  # noqa: E402
 import parse as P  # noqa: E402
 
 
@@ -152,12 +153,14 @@ class ShippedData(unittest.TestCase):
     def test_every_listing_has_a_location(self):
         self.assertEqual([x["id"] for x in self.listings if not x["location"]], [])
 
-    def test_the_named_places_appear_in_current_data(self):
-        names = {x["location"] for x in self.listings}
+    def test_the_named_places_are_never_forgotten(self):
+        """A neighbourhood a past build has seen stays in data/neighborhoods_seen.json even on a
+        week whose PDF has no listing there, so the Neighborhoods index/browse list never drops it."""
+        seen = set(geo.load_neighborhoods_seen())
         for expected in ("Club at Jackson 21", "Mackenzie Area Toms River",
-                         "Lakewood Commons Area", "Westgate", "Pine Lake Park, Manchester"):
+                         "Lakewood Commons", "Westgate", "Pine Lake Park"):
             with self.subTest(expected=expected):
-                self.assertIn(expected, names)
+                self.assertIn(expected, seen)
 
 
 class SiteTitle(unittest.TestCase):

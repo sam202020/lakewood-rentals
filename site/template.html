@@ -1533,15 +1533,9 @@
     if ((e.key === "Enter" || e.key === " ") && e.target.matches("tr.r")) { e.preventDefault(); e.target.click(); }
   });
 
-  // neighborhood list beside the table: counts of the listings' first place name; click to filter by it
-  var NB = (function () {
-    var c = {};
-    L.forEach(function (x) {
-      var k = (x.location || "").split(/\s*\/\s*|,\s*/)[0].replace(/\s+Area$/i, "").trim();
-      if (k) c[k] = (c[k] || 0) + 1;
-    });
-    return Object.keys(c).map(function (k) { return { name: k, n: c[k] }; }).sort(function (a, b) { return b.n - a.n || a.name.localeCompare(b.name); });
-  })();
+  // neighborhood list beside the table: counts of the listings' first place name, plus every name an
+  // earlier week's build has seen (0 if none this week), so a name never disappears; click to filter by it
+  var NB = (DATA.neighborhoods || []).slice().sort(function (a, b) { return b.n - a.n || a.name.localeCompare(b.name); });
   var nbAll = false;
   function refreshIndex() {
     var cur = (S.q || "").toLowerCase(), list = nbAll ? NB : NB.slice(0, 12);

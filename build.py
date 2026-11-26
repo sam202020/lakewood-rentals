@@ -67,6 +67,13 @@ def main():
         print("Keeping existing listings.json and docs/index.html unchanged.", file=sys.stderr)
         sys.exit(1)
 
+    # the "Neighborhoods" index/browse list: every name ever seen, so one week's empty PDF slot
+    # for a neighbourhood doesn't make it disappear from the list (owner, 2026-11-26)
+    seen = geo.load_neighborhoods_seen()
+    nb_counts = geo.neighborhood_counts(listings, seen)
+    geo.NEIGHBORHOODS_SEEN_FILE.write_text(
+        json.dumps(sorted(nb_counts), indent=2, ensure_ascii=False) + "\n")
+
     data = {
         "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
         "list_date": list_date,
@@ -74,6 +81,7 @@ def main():
         "source_site": "https://masaumatan.com",
         "count": len(listings),
         "listings": listings,
+        "neighborhoods": [{"name": k, "n": nb_counts[k]} for k in sorted(nb_counts)],
         # resolved places only, for the page's "Near" picker
         "places": {k: {"name": e.get("name") or k.title(), "lat": centers[k.title()]["lat"] if k.title() in centers and k in geo.TOWNS else e["lat"],
                        "lng": centers[k.title()]["lng"] if k.title() in centers and k in geo.TOWNS else e["lng"]}

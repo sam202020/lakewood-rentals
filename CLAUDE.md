@@ -86,6 +86,22 @@ A vague phrase in a listing ("Prime Jackson Area", "55+Community", "Lakewood Are
 guessed pin in `places.json` so its listing still sorts by distance, but set `"hide": true` on that entry so it is never
 offered in the "Near" suggestions (`geo.picker_entries` skips hidden entries; listings still resolve to the pin).
 
+## The Neighborhoods index/browse list keeps every name it has ever shown (owner, 2026-11-26)
+
+The Table view's left-hand neighbourhood list and the search box's "Neighborhoods with listings" browse list
+both come from `DATA.neighborhoods` (`var NB` in `site/template.html`), which `build.py` builds from this
+week's listings **plus** every name in `data/neighborhoods_seen.json` (a name goes in with a count of 0 if
+this week's PDF has no listing there). `build.py` writes the (only ever growing) union back to that file after
+every build, so a neighbourhood that happens to have no listing one week still shows up (with "0 listings")
+instead of silently disappearing from the list. The grouping name is `geo.neighborhood_display_name()`: a
+listing's first `/`- or comma-separated place name, with a trailing "Area" dropped ("Ridge Area" groups with
+"Ridge") - mirrors the old client-side-only grouping this replaced.
+- This is about which names the index/browse list offers, not about `places.json` coordinates or the "Near"
+  picker (`geo.picker_entries`), which already comes straight from `places.json` and was never affected by a
+  quiet week.
+- Add a name here the same way any other listing adds one: nothing to do by hand, `build.py` picks it up from
+  `listings.json` and keeps it forever after.
+
 ## Search words (site/search-core.js)
 
 - `CONCEPTS` are groups of words that mean the same in these listings (boy = bochur = bachur = guys = men ...). Add a

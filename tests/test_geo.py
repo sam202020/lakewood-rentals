@@ -710,3 +710,31 @@ class HeritagePoint(unittest.TestCase):
             g = geo.resolve(loc, places)
             self.assertEqual(g["precision"], "place", loc)
             self.assertAlmostEqual(g["lat"], e["lat"], places=4)
+
+
+class NeighborhoodHistory(unittest.TestCase):
+    """The 'Neighborhoods' index/browse list must never lose a name just because one week's PDF
+    happens to have no listing there (owner, 2026-11-26)."""
+
+    def test_display_name_takes_the_first_part_and_drops_a_trailing_area(self):
+        self.assertEqual(geo.neighborhood_display_name("Ridge Area"), "Ridge")
+        self.assertEqual(geo.neighborhood_display_name("Sunset / James Area"), "Sunset")
+        self.assertEqual(geo.neighborhood_display_name("Holly Oaks, Manchester"), "Holly Oaks")
+        self.assertEqual(geo.neighborhood_display_name("Club at Jackson 21"), "Club at Jackson 21")
+        self.assertEqual(geo.neighborhood_display_name(""), "")
+        self.assertEqual(geo.neighborhood_display_name(None), "")
+
+    def test_counts_include_zero_for_a_seen_name_missing_this_week(self):
+        listings = [{"location": "Raintree"}, {"location": "Raintree Area"}, {"location": "Westgate"}]
+        counts = geo.neighborhood_counts(listings, seen=["Raintree", "Lakewood Commons"])
+        self.assertEqual(counts, {"Raintree": 2, "Westgate": 1, "Lakewood Commons": 0})
+
+    def test_load_neighborhoods_seen_tolerates_a_missing_file(self):
+        self.assertEqual(geo.load_neighborhoods_seen("/no/such/file.json"), [])
+
+    def test_shipped_history_is_a_superset_of_a_past_weeks_names(self):
+        # these were seen in a real build and must stay discoverable even on a week without one
+        seen = set(geo.load_neighborhoods_seen())
+        for name in ("Lakewood Commons", "Westgate", "Club at Jackson 21"):
+            with self.subTest(name=name):
+                self.assertIn(name, seen)
