@@ -71,8 +71,8 @@ def make_data(listings, list_date, places, centers, seen):
     """Everything the page needs, from located listings and the curated files. Writes nothing.
 
     `seen` is the neighbourhood names earlier builds showed (data/neighborhoods_seen.json)."""
-    # the "Neighborhoods" index/browse list: every name ever seen, so one week's empty PDF slot
-    # for a neighbourhood doesn't make it disappear from the list (owner, 2026-11-26)
+    # the permanent record of every place name a list has used (data/neighborhoods_seen.json). The page's own
+    # Neighborhood and Street lists show only places with a current listing (owner, 2026-11-26)
     nb_counts = geo.neighborhood_counts(listings, sorted({P.tidy_location(n) for n in seen}))
 
     data = {

@@ -767,19 +767,22 @@ var LakewoodSearch = (function () {
     return WORD_FOR_PLACE.test(t.toLowerCase()) ? "bmg" : text;
   }
 
-  /** The first place a location names, "Area" dropped: what the listing is grouped under (as geo.neighborhood_display_name). */
-  function firstName(location) {
-    return String(location || "").split(/\s*\/\s*|,\s*/)[0].replace(/\s+Area$/i, "").trim();
+  /** Every place a location names, "Area" dropped: the listing is listed under each (as geo.listed_names). A town written
+   *  after a name ("Whitewater Ct. / Toms River") only says where that place is. */
+  var LATER_TOWN = /^(lakewood|jackson|toms river|howell|manchester|brick)$/i;
+  function namedPlaces(location) {
+    return String(location || "").split(/\s*\/\s*|,\s*/).map(function (p) { return p.replace(/\s+Area$/i, "").trim(); })
+      .filter(function (p, i) { return p && (i === 0 || !LATER_TOWN.test(p)); });
   }
 
   var STREET_NAME = /\b(street|st|avenue|ave|drive|dr|road|rd|lane|ln|court|ct|boulevard|blvd|place|pl|way|terrace|circle|route|rt)\.?$/i;
 
   /** The neighbourhood and street lists (drop-down browse lists and the Table view's side list, which must agree).
-   *  names = every location name ever listed; resolve(name) = the place it stands for, or null; areaStreets =
+   *  Only places with a current listing appear. resolve(name) = the place a name stands for, or null; areaStreets =
    *  {street name: area name} for streets people also mean as an area, which go in both lists. Names meaning the same
-   *  place merge; a listing counts once under its first place name and under every area it also belongs to.
+   *  place merge; a listing counts once under every place it names and every area it also belongs to.
    *  -> { nb: [{name, town, item, n, ids}], st: [...] }, each sorted by name. */
-  function placeGroups(listings, names, resolve, areaStreets) {
+  function placeGroups(listings, resolve, areaStreets) {
     var byName = {}, groups = { nb: {}, st: {} };
     function groupsFor(raw) {
       if (byName.hasOwnProperty(raw)) return byName[raw];
@@ -801,9 +804,8 @@ var LakewoodSearch = (function () {
       }
       return (byName[raw] = found);
     }
-    (names || []).forEach(groupsFor);                               // names with no listing this week stay, with 0
     (listings || []).forEach(function (x) {
-      [firstName(x.location)].concat(x.areas || []).forEach(function (raw) {
+      namedPlaces(x.location).concat(x.areas || []).forEach(function (raw) {
         (raw ? groupsFor(raw) : []).forEach(function (g) {
           if (!g.ids[x.id]) { g.ids[x.id] = true; g.n++; }
         });
@@ -820,8 +822,8 @@ var LakewoodSearch = (function () {
 
   /** The lists as the page shows them, from the page data (`streets` and `shuls` already decoded). */
   function listGroups(data, listings, streets, shuls) {
-    return placeGroups(listings, (data.neighborhoods || []).map(function (n) { return n.name; }),
-      function (name) { return placeForName(name, data.picker, streets, shuls, data.preferred || {}); }, data.area_streets || {});
+    return placeGroups(listings, function (name) { return placeForName(name, data.picker, streets, shuls, data.preferred || {}); },
+      data.area_streets || {});
   }
 
   /** Listings that are in neither list (the build warns about them). */
@@ -964,7 +966,7 @@ var LakewoodSearch = (function () {
     placeIntent: placeIntent,
     placeForName: placeForName,
     placeGroups: placeGroups,
-    firstName: firstName,
+    namedPlaces: namedPlaces,
     decodeStreets: decodeStreets,
     decodeShuls: decodeShuls,
     listGroups: listGroups,

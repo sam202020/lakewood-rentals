@@ -721,13 +721,18 @@ class NeighborhoodHistory(unittest.TestCase):
     """The 'Neighborhoods' index/browse list must never lose a name just because one week's PDF
     happens to have no listing there (owner, 2026-11-26)."""
 
-    def test_display_name_takes_the_first_part_and_drops_a_trailing_area(self):
-        self.assertEqual(geo.neighborhood_display_name("Ridge Area"), "Ridge")
-        self.assertEqual(geo.neighborhood_display_name("Sunset / James Area"), "Sunset")
-        self.assertEqual(geo.neighborhood_display_name("Holly Oaks, Manchester"), "Holly Oaks")
-        self.assertEqual(geo.neighborhood_display_name("Club at Jackson 21"), "Club at Jackson 21")
-        self.assertEqual(geo.neighborhood_display_name(""), "")
-        self.assertEqual(geo.neighborhood_display_name(None), "")
+    def test_every_named_place_is_recorded_without_a_trailing_area(self):
+        self.assertEqual(geo.listed_names("Ridge Area"), ["Ridge"])
+        self.assertEqual(geo.listed_names("Sunset / James Area"), ["Sunset", "James"])
+        self.assertEqual(geo.listed_names("Holly Oaks, Manchester"), ["Holly Oaks"])
+        self.assertEqual(geo.listed_names("Jackson, Dunhill Rd."), ["Jackson", "Dunhill Rd."])
+        self.assertEqual(geo.listed_names(None), [])
+
+    def test_every_name_a_list_has_used_has_a_saved_place(self):
+        places = geo.load_places()
+        for name in ("Emerald Hills", "Riverwood Chase", "The Concord", "Prospect Square", "Vine Park", "Aisle 9 Area",
+                     "Aumack Rd.", "Belvedere Lane", "So. Lake", "Cherry Street", "Regency", "Apollo Road", "3rd & Forest"):
+            self.assertIsNotNone(geo.resolve(name, places)["lat"], name)
 
     def test_counts_include_zero_for_a_seen_name_missing_this_week(self):
         listings = [{"location": "Raintree"}, {"location": "Raintree Area"}, {"location": "Westgate"}]

@@ -111,14 +111,14 @@ where it belongs, add `"neighborhood": "<place key>"` and its listings are count
 ## The Neighborhood and Street lists (owner, 2026-11-26)
 
 `LakewoodSearch.listGroups` feeds the search box's "Neighborhoods" and "Streets" browse lists and the Table view's side
-list (neighbourhoods only). It takes every name in `DATA.neighborhoods` (this week's plus `data/neighborhoods_seen.json`)
-and each listing's first `/`- or comma-separated name and `areas`, matches each name to a place with the search
-(`placeForName`), and merges names that mean the same place.
+list (neighbourhoods only). It takes **every** `/`- or comma-separated name in each listing's location (`namedPlaces`; a town
+written after a name does not count) plus its `areas`, matches each to a place with the search (`placeForName`), and
+merges names that mean the same place. "Ridge / Negba St." is listed under Ridge and under Negba Street.
+- **The lists show only places with a current listing** (owner, 2026-11-26). Never show "0 listings" rows.
+- **Typing still finds every saved place**, listing or not, and sorts nearest-first from it (owner, 2026-11-26).
 - **Every listing must be in at least one of the two lists.** A name that matches nothing is silently dropped, so
   `build.py` prints a `WARN` naming such listings (`tools/check_lists.js`, needs Node). Fix them with a place, another
   spelling or one of the rules here.
-- A neighbourhood with no listing this week stays in its list with "0 listings". `build.py` writes the (only growing) set
-  of names back to `data/neighborhoods_seen.json`.
 - A name ending in Street, Road, Court, ... goes in the Street list. **Streets people also mean as an area go in both**
   (`data/area_streets.json`: Medina Road, and Ridge shown as "Ridge"). Add one only when the owner names it.
 - **Abbreviations** (`placeTokens`): Rd, Ct, Ln, Rt are read as Road, Court, Lane, Route, and "County Ln" as County
@@ -127,6 +127,17 @@ and each listing's first `/`- or comma-separated name and `areas`, matches each 
   the map. "Heart of Ridge" is Ridge (the middle of Ridge, Ridge Ave at Nowlan Pl) and "Wyndham 2" is Wyndham; neither
   gets its own entry in the lists.
 - "Laurel" is Laurel Avenue and "Manetta" is Manetta Avenue (`data/preferred_streets.json`, see "Typing a place").
+
+## Every place is saved permanently (owner, 2026-11-26)
+
+Being left out of the lists is about display only. **Never delete a place because no listing names it now.**
+- Neighbourhoods live in `places.json`; every real name any list has used belongs there (checked on Google Maps), with
+  other spellings as `"aka"`. Delete only what the owner calls wrong or junk.
+- Streets live in `streets.json` (OpenStreetMap lines). A `places.json` entry for a street that `streets.json` already
+  has is `"hide": true`: it pins listings, while the search offers the street's whole line.
+- Shuls live in `shuls.json`.
+- The weekly routine cannot add places. `build.py` records every name a list uses in `data/neighborhoods_seen.json`
+  (a backup record, not shown) and warns about names missing from `places.json`: add them in a local session.
 
 ## Search words (site/search-core.js)
 
@@ -318,7 +329,13 @@ Ask the owner before acting on any of these.
 - **Masa U'Matan:** talk to them before promoting the site or taking money.
 - **UI options** (D1 desktop and P1 phone recommended, nothing built; the layout above stands):
   <https://claude.ai/artifact/CEpEJsSekG2xFySqZbkjq9>
-- **Pins to confirm:** "Cov.:Princeton" read as Coventry; "Tamarind Park" pinned at Tamarind Rd.
+- **Old names not saved yet** (from the Aug. 26 list; ask the owner where each is): Sunset Grove, Monmouth Manor, Gardens
+  at Locust, Daniella Way, Brookhill (Brook Hill, or Brookhill Drive in Howell?), Kent (as in "Ford / Kent"),
+  "Cov.:Downing", Belz (as in "Vine Park / Belz"), Satmar (as in "Rockwell / Satmar").
+- **A list row's own listings do not always sort first:** one pinned between two places ("Prospect / Mass.") can rank low
+  under either. Proposed: treat it as "right here" for each place it names. Awaiting the owner.
+- **Pins to confirm:** "Red Oak" is Red Oak Drive, 1.8 mi from the Ridge it is paired with ("Red Oak / Ridge"); "Cov.:Princeton" read as Coventry;
+  "Tamarind Park" pinned at Tamarind Rd.
 - **Owner to-dos:** check the WhatsApp link preview; add the site to Google Search Console and submit the sitemap; open the site with
   `#nocount` on each own device; answer the monetization plan's questions.
 - **Later:** neighborhood tags on listings (reminder 2026-12-07), paid map provider (domain plan checklist 11), neighborhood and topic

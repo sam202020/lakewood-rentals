@@ -1234,7 +1234,7 @@ test("lists: a listing in a shared area counts under each of its neighbourhoods,
     "marc drive": { kind: "street", name: "Marc Drive" } })[n.toLowerCase()] || null;
   const rows = [L({ id: "a", location: "Albert Run / Sims", areas: ["Albert Run", "Sims", "Albert"] }), L({ id: "b", location: "Albert Area" }),
                 L({ id: "c", location: "Off Locust St." }), L({ id: "d", location: "Marc Drive" })];
-  const g = S.placeGroups(rows, ["Locust", "55+Community"], resolve);
+  const g = S.placeGroups(rows, resolve);
   assert.deepEqual(g.nb.map((x) => x.name + " " + x.n), ["Albert 2", "Albert Run 1", "Locust 1", "Sims 1"]);
   assert.deepEqual(g.st.map((x) => x.name + " " + x.n), ["Marc Drive 1"]);
 });
@@ -1258,8 +1258,7 @@ test("real data: Sims, Albert Run and Albert all include the Radiant Hill listin
   assert.deepEqual(x.areas.slice().sort(), ["Albert", "Albert Run", "Sims"]);
   const streets = S.decodeStreets(data.streets);
   const shuls = (data.shuls || []).map((a) => ({ name: a[0], lat: a[1], lng: a[2], town: a[3], address: a[4], aka: a[5] || [] }));
-  const g = S.placeGroups(data.listings, data.neighborhoods.map((n) => n.name),
-    (n) => S.placeForName(n, data.picker, streets, shuls, data.preferred));
+  const g = S.placeGroups(data.listings, (n) => S.placeForName(n, data.picker, streets, shuls, data.preferred));
   for (const name of ["Albert", "Albert Run", "Sims"]) assert.ok(g.nb.find((e) => e.name === name).ids[x.id], name);
 });
 
@@ -1418,4 +1417,34 @@ test("lists: Prime Jackson is under Jackson, an address under its neighbourhood,
   for (const x of listings.filter((l) => /^prime jackson/i.test(l.location))) assert.ok(ids("nb", "Jackson").includes(x.id));
   assert.ok(!g.nb.concat(g.st).some((e) => /prime|^\d+ \w+ (blvd|ave|ln)/i.test(e.name)));
   assert.deepEqual(S.unlisted(listings, g).map((x) => x.location), []);
+});
+
+test("lists: only places with a current listing, and a listing counts under every place it names", () => {
+  const rows = [L({ id: "r", location: "Ridge / Negba St." }), L({ id: "m", location: "Central / Monterey" }),
+                L({ id: "t", location: "Whitewater Ct. / Toms River" })];
+  const { ids, g } = pageLists(rows);
+  assert.deepEqual(ids("nb", "Ridge"), ["r"]);
+  assert.deepEqual(ids("st", "Negba Street"), ["r"]);
+  assert.deepEqual(ids("nb", "Monterey"), ["m"]);
+  assert.ok(g.nb.concat(g.st).every((e) => e.n > 0));
+  assert.ok(!g.nb.concat(g.st).some((e) => e.name === "Toms River"));     // a town after the name is not a second place
+  assert.deepEqual(S.namedPlaces("Jackson, Dunhill Rd."), ["Jackson", "Dunhill Rd."]);
+});
+
+test("typing still finds a saved place that has no listing", () => {
+  const { data, streets, shuls, g } = pageLists([L({ id: "a", location: "Raintree" })]);
+  assert.ok(!g.nb.some((e) => e.name === "Bent Hook"));
+  for (const q of ["bent hook", "emerald hills", "the concord"]) {
+    const r = S.placeIntent(q, data.picker, streets, shuls, data.preferred);
+    assert.ok(r && r.item.name.toLowerCase().includes(q.replace("the ", "")), q);
+  }
+});
+
+test("a street word with a usual street is offered once, even when the street is also a saved place", () => {
+  const { data, streets, shuls } = pageLists();
+  for (const [q, want] of [["forest", "Forest Avenue"], ["birch", "Birch Street"], ["laurel", "Laurel Avenue"]]) {
+    const items = S.suggestAll(data.picker, streets, q, 8, shuls, data.preferred);
+    assert.equal(items[0].name, want);
+    assert.equal(items.filter((i) => i.name === want && (i.town || "Lakewood") === "Lakewood").length, 1, q);
+  }
 });

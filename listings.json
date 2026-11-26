@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T18:20:19+00:00",
+  "generated_at": "2026-11-26T18:45:56+00:00",
   "list_date": "Wednesday, Nov. 25, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -6623,11 +6623,19 @@
       "n": 1
     },
     {
+      "name": "Appolo",
+      "n": 1
+    },
+    {
       "name": "Arlington",
       "n": 5
     },
     {
       "name": "Bais Shalom",
+      "n": 1
+    },
+    {
+      "name": "Bais Sholom",
       "n": 1
     },
     {
@@ -6647,6 +6655,10 @@
       "n": 0
     },
     {
+      "name": "Bergen",
+      "n": 1
+    },
+    {
       "name": "Blue River",
       "n": 1
     },
@@ -6656,7 +6668,7 @@
     },
     {
       "name": "Brook Hill",
-      "n": 5
+      "n": 6
     },
     {
       "name": "Brookwood 1",
@@ -6688,10 +6700,14 @@
     },
     {
       "name": "Central",
-      "n": 1
+      "n": 3
     },
     {
       "name": "Central Avenue",
+      "n": 1
+    },
+    {
+      "name": "Chateau",
       "n": 1
     },
     {
@@ -6720,7 +6736,7 @@
     },
     {
       "name": "Clifton",
-      "n": 1
+      "n": 2
     },
     {
       "name": "Club 21 Jackson",
@@ -6736,7 +6752,7 @@
     },
     {
       "name": "County Ln",
-      "n": 1
+      "n": 2
     },
     {
       "name": "Courtney",
@@ -6765,6 +6781,10 @@
     {
       "name": "Dunhill Rd",
       "n": 0
+    },
+    {
+      "name": "Dunhill Rd.",
+      "n": 1
     },
     {
       "name": "E.7th & Nowlan",
@@ -6811,6 +6831,10 @@
       "n": 1
     },
     {
+      "name": "Harvard",
+      "n": 1
+    },
+    {
       "name": "Harvard Street",
       "n": 1
     },
@@ -6832,7 +6856,7 @@
     },
     {
       "name": "Heritage Pt.",
-      "n": 2
+      "n": 3
     },
     {
       "name": "High St.",
@@ -6848,7 +6872,7 @@
     },
     {
       "name": "Hope",
-      "n": 1
+      "n": 3
     },
     {
       "name": "Hope Chapel",
@@ -6859,7 +6883,15 @@
       "n": 4
     },
     {
+      "name": "Howl.",
+      "n": 1
+    },
+    {
       "name": "Hyson",
+      "n": 2
+    },
+    {
+      "name": "Jacksn",
       "n": 1
     },
     {
@@ -6876,10 +6908,14 @@
     },
     {
       "name": "James",
-      "n": 1
+      "n": 3
     },
     {
       "name": "James & Sunset",
+      "n": 1
+    },
+    {
+      "name": "James St.",
       "n": 1
     },
     {
@@ -6911,8 +6947,12 @@
       "n": 1
     },
     {
-      "name": "Locust",
+      "name": "Leonard",
       "n": 1
+    },
+    {
+      "name": "Locust",
+      "n": 2
     },
     {
       "name": "Locust Grove",
@@ -6939,6 +6979,10 @@
       "n": 2
     },
     {
+      "name": "Mass.",
+      "n": 1
+    },
+    {
       "name": "Meadow Run",
       "n": 1
     },
@@ -6955,6 +6999,14 @@
       "n": 3
     },
     {
+      "name": "Monterey",
+      "n": 1
+    },
+    {
+      "name": "N. Apple",
+      "n": 1
+    },
+    {
       "name": "Near Chateau",
       "n": 1
     },
@@ -6964,11 +7016,11 @@
     },
     {
       "name": "Negba St.",
-      "n": 0
+      "n": 1
     },
     {
       "name": "New Central",
-      "n": 2
+      "n": 3
     },
     {
       "name": "New Central Ave.",
@@ -6976,6 +7028,10 @@
     },
     {
       "name": "New England Village",
+      "n": 1
+    },
+    {
+      "name": "New Hamp.",
       "n": 1
     },
     {
@@ -7039,6 +7095,10 @@
       "n": 1
     },
     {
+      "name": "Pine St.",
+      "n": 1
+    },
+    {
       "name": "Prime Jackson",
       "n": 1
     },
@@ -7060,7 +7120,7 @@
     },
     {
       "name": "Ramtown",
-      "n": 1
+      "n": 2
     },
     {
       "name": "Regency Estates",
@@ -7068,7 +7128,7 @@
     },
     {
       "name": "Ridge",
-      "n": 4
+      "n": 5
     },
     {
       "name": "Rockwell",
@@ -7085,6 +7145,10 @@
     {
       "name": "Rt.70",
       "n": 1
+    },
+    {
+      "name": "Rt.88",
+      "n": 2
     },
     {
       "name": "Rt.9",
@@ -7107,11 +7171,19 @@
       "n": 0
     },
     {
+      "name": "Sims",
+      "n": 1
+    },
+    {
       "name": "Somerset Avenue",
       "n": 0
     },
     {
       "name": "Somerset Walk",
+      "n": 1
+    },
+    {
+      "name": "Somerst",
       "n": 1
     },
     {
@@ -7228,7 +7300,7 @@
     },
     {
       "name": "Yeshiva",
-      "n": 1
+      "n": 3
     },
     {
       "name": "Yesodei Court",
@@ -8195,6 +8267,246 @@
       "name": "Squankum Rd & Appolo Rd",
       "lat": 40.10945,
       "lng": -74.20135
+    },
+    "emerald hills": {
+      "name": "Emerald Hills",
+      "lat": 40.10374,
+      "lng": -74.1772
+    },
+    "riverwood chase": {
+      "name": "Riverwood Chase",
+      "lat": 40.033,
+      "lng": -74.22672
+    },
+    "the concord": {
+      "name": "The Concord",
+      "lat": 40.09914,
+      "lng": -74.2186
+    },
+    "prospect square": {
+      "name": "Prospect Square",
+      "lat": 40.07248,
+      "lng": -74.2322
+    },
+    "prospect park": {
+      "name": "Prospect Park",
+      "lat": 40.07289,
+      "lng": -74.22982
+    },
+    "elmwood village": {
+      "name": "Elmwood Village",
+      "lat": 40.05808,
+      "lng": -74.22252
+    },
+    "vine park": {
+      "name": "Vine Park",
+      "lat": 40.0575,
+      "lng": -74.21393
+    },
+    "aisle 9": {
+      "name": "Aisle 9",
+      "lat": 40.08469,
+      "lng": -74.26521
+    },
+    "12th": {
+      "name": "12th Street",
+      "lat": 40.10327,
+      "lng": -74.21334
+    },
+    "3rd": {
+      "name": "3rd Street",
+      "lat": 40.09311,
+      "lng": -74.21481
+    },
+    "4th": {
+      "name": "4th Street",
+      "lat": 40.09419,
+      "lng": -74.21418
+    },
+    "8th": {
+      "name": "8th Street",
+      "lat": 40.09777,
+      "lng": -74.21779
+    },
+    "apple": {
+      "name": "Apple Street",
+      "lat": 40.1043,
+      "lng": -74.20286
+    },
+    "aumack rd": {
+      "name": "Aumack Road",
+      "lat": 40.15471,
+      "lng": -74.26557
+    },
+    "belvedere lane": {
+      "name": "Belvedere Lane",
+      "lat": 40.10715,
+      "lng": -74.19648
+    },
+    "bourbon ct": {
+      "name": "Bourbon Court",
+      "lat": 40.09151,
+      "lng": -74.20135
+    },
+    "buttell avenue": {
+      "name": "Buttell Avenue",
+      "lat": 40.07694,
+      "lng": -74.21909
+    },
+    "caranetta": {
+      "name": "Caranetta Drive",
+      "lat": 40.0866,
+      "lng": -74.22094
+    },
+    "carasaljo": {
+      "name": "Carasaljo Drive",
+      "lat": 40.09396,
+      "lng": -74.24027
+    },
+    "carey": {
+      "name": "Carey Street",
+      "lat": 40.10207,
+      "lng": -74.21508
+    },
+    "coventry": {
+      "name": "Coventry Drive",
+      "lat": 40.10892,
+      "lng": -74.20916
+    },
+    "drake": {
+      "name": "Drake Road",
+      "lat": 40.08278,
+      "lng": -74.24949
+    },
+    "ford": {
+      "name": "Ford Avenue",
+      "lat": 40.06033,
+      "lng": -74.21736
+    },
+    "forest": {
+      "name": "Forest Avenue",
+      "lat": 40.09852,
+      "lng": -74.22003
+    },
+    "henry street": {
+      "name": "Henry Street",
+      "lat": 40.07762,
+      "lng": -74.21895
+    },
+    "highland dr": {
+      "name": "Highland Drive",
+      "lat": 40.13716,
+      "lng": -74.27723
+    },
+    "ivy hill rd lakewood": {
+      "name": "Ivy Hill Road",
+      "lat": 40.06019,
+      "lng": -74.23242
+    },
+    "joe parker": {
+      "name": "Joe Parker Road",
+      "lat": 40.09246,
+      "lng": -74.16635
+    },
+    "laurel avenue": {
+      "name": "Laurel Avenue",
+      "lat": 40.08986,
+      "lng": -74.20274
+    },
+    "linden": {
+      "name": "Linden Avenue",
+      "lat": 40.09208,
+      "lng": -74.19593
+    },
+    "madison": {
+      "name": "Madison Avenue",
+      "lat": 40.0968,
+      "lng": -74.2176
+    },
+    "melville": {
+      "name": "Melville Avenue",
+      "lat": 40.08175,
+      "lng": -74.20728
+    },
+    "monmouth": {
+      "name": "Monmouth Avenue",
+      "lat": 40.0985,
+      "lng": -74.21131
+    },
+    "n oakland": {
+      "name": "North Oakland Street",
+      "lat": 40.09237,
+      "lng": -74.19331
+    },
+    "red oak": {
+      "name": "Red Oak Drive",
+      "lat": 40.10085,
+      "lng": -74.16773
+    },
+    "roselle court": {
+      "name": "Roselle Court",
+      "lat": 40.1027,
+      "lng": -74.23562
+    },
+    "sea point dr": {
+      "name": "Seapoint Drive",
+      "lat": 40.08761,
+      "lng": -74.17935
+    },
+    "serenity": {
+      "name": "Serenity Way",
+      "lat": 40.08065,
+      "lng": -74.24699
+    },
+    "waterview": {
+      "name": "Waterview Drive",
+      "lat": 40.08793,
+      "lng": -74.18392
+    },
+    "west spruce street": {
+      "name": "West Spruce Street",
+      "lat": 40.07235,
+      "lng": -74.2193
+    },
+    "whispering pines": {
+      "name": "Whispering Pines Lane",
+      "lat": 40.10813,
+      "lng": -74.20168
+    },
+    "white st": {
+      "name": "White Street",
+      "lat": 40.08246,
+      "lng": -74.25204
+    },
+    "williams": {
+      "name": "Williams Street",
+      "lat": 40.07555,
+      "lng": -74.22147
+    },
+    "lakeview": {
+      "name": "Lakeview Drive",
+      "lat": 40.09142,
+      "lng": -74.22836
+    },
+    "12th lexington": {
+      "name": "12th St & Lexington Ave",
+      "lat": 40.10317,
+      "lng": -74.21424
+    },
+    "3rd forest": {
+      "name": "3rd St & Forest Ave",
+      "lat": 40.09265,
+      "lng": -74.21891
+    },
+    "7th madison": {
+      "name": "7th St & Madison Ave",
+      "lat": 40.0968,
+      "lng": -74.2176
+    },
+    "8th monmouth": {
+      "name": "8th St & Monmouth Ave",
+      "lat": 40.0985,
+      "lng": -74.21131
     }
   },
   "picker": [
@@ -8202,7 +8514,10 @@
       "name": "10th Street",
       "lat": 40.10023,
       "lng": -74.21368,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "10th"
+      ]
     },
     {
       "name": "13th Street",
@@ -8214,7 +8529,10 @@
       "name": "14th Street",
       "lat": 40.10516,
       "lng": -74.21461,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "14th St"
+      ]
     },
     {
       "name": "55+ Communities (Fairways / Enclave)",
@@ -8240,6 +8558,12 @@
       "town": "Lakewood"
     },
     {
+      "name": "Aisle 9",
+      "lat": 40.08469,
+      "lng": -74.26521,
+      "town": "Jackson"
+    },
+    {
       "name": "Albert",
       "lat": 40.06373,
       "lng": -74.19895,
@@ -8259,7 +8583,10 @@
       "name": "Appolo Road",
       "lat": 40.10953,
       "lng": -74.20356,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Apollo Road"
+      ]
     },
     {
       "name": "Arlington",
@@ -8398,7 +8725,10 @@
       "name": "Candlewood",
       "lat": 40.15011,
       "lng": -74.21348,
-      "town": "Howell"
+      "town": "Howell",
+      "aka": [
+        "Candlewd Howell"
+      ]
     },
     {
       "name": "Case Road",
@@ -8416,7 +8746,10 @@
       "name": "Central Avenue",
       "lat": 40.0905,
       "lng": -74.2377,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Cent."
+      ]
     },
     {
       "name": "Chateau Park",
@@ -8431,7 +8764,10 @@
       "name": "Cherry Street",
       "lat": 40.09203,
       "lng": -74.19226,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Cherry Street"
+      ]
     },
     {
       "name": "Chestnut",
@@ -8479,13 +8815,19 @@
       "name": "Congress Street",
       "lat": 40.09183,
       "lng": -74.20638,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Congress"
+      ]
     },
     {
       "name": "County Line Road",
       "lat": 40.10521,
       "lng": -74.19564,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "County Line"
+      ]
     },
     {
       "name": "Courtney",
@@ -8527,7 +8869,10 @@
       "name": "Dewey Avenue",
       "lat": 40.09284,
       "lng": -74.20358,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Dewey Avenue"
+      ]
     },
     {
       "name": "Dunhill Road",
@@ -8539,12 +8884,32 @@
       "name": "E 7th Street",
       "lat": 40.09862,
       "lng": -74.20141,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "East 7th St"
+      ]
     },
     {
       "name": "East End",
       "lat": 40.10242,
       "lng": -74.20021,
+      "town": "Lakewood"
+    },
+    {
+      "name": "Elmwood Village",
+      "lat": 40.05808,
+      "lng": -74.22252,
+      "town": "Lakewood",
+      "aka": [
+        "Elmwood",
+        "Elmwood Village Shul"
+      ],
+      "shul": true
+    },
+    {
+      "name": "Emerald Hills",
+      "lat": 40.10374,
+      "lng": -74.1772,
       "town": "Lakewood"
     },
     {
@@ -8593,7 +8958,10 @@
       "name": "Harvard Street",
       "lat": 40.10386,
       "lng": -74.20408,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Harvard St"
+      ]
     },
     {
       "name": "Hearthstone",
@@ -8779,7 +9147,10 @@
       "name": "Massachusetts Avenue",
       "lat": 40.05365,
       "lng": -74.23052,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Massachusts"
+      ]
     },
     {
       "name": "Meadow Run",
@@ -8797,7 +9168,10 @@
       "name": "Miller",
       "lat": 40.09714,
       "lng": -74.24621,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Miller Road"
+      ]
     },
     {
       "name": "Monmouth Views",
@@ -8881,7 +9255,10 @@
       "name": "Ocean Avenue",
       "lat": 40.08734,
       "lng": -74.18049,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Ocean"
+      ]
     },
     {
       "name": "Ocean Pointe",
@@ -8933,7 +9310,10 @@
       "name": "Prospect",
       "lat": 40.07301,
       "lng": -74.23181,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Prospect Street"
+      ]
     },
     {
       "name": "Prospect Heights",
@@ -8943,6 +9323,27 @@
       "shul": true,
       "aka": [
         "Khal Prospect Heights"
+      ]
+    },
+    {
+      "name": "Prospect Park",
+      "lat": 40.07289,
+      "lng": -74.22982,
+      "town": "Lakewood",
+      "shul": true,
+      "aka": [
+        "Bais Medrash of Prospect Park",
+        "Prospect Park Shul"
+      ]
+    },
+    {
+      "name": "Prospect Square",
+      "lat": 40.07248,
+      "lng": -74.2322,
+      "town": "Lakewood",
+      "shul": true,
+      "aka": [
+        "Prospect Square Shul"
       ]
     },
     {
@@ -8967,7 +9368,10 @@
       "name": "Regency Estates",
       "lat": 40.06667,
       "lng": -74.22197,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Regency"
+      ]
     },
     {
       "name": "Ridge Avenue",
@@ -8978,6 +9382,12 @@
         "Heart of Ridge",
         "Heartof Ridge"
       ]
+    },
+    {
+      "name": "Riverwood Chase",
+      "lat": 40.033,
+      "lng": -74.22672,
+      "town": "Toms River"
     },
     {
       "name": "Rose Court",
@@ -8995,7 +9405,10 @@
       "name": "Shady Lane",
       "lat": 40.09628,
       "lng": -74.24189,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Shady Lane"
+      ]
     },
     {
       "name": "Shonny",
@@ -9029,7 +9442,11 @@
       "name": "South Lake Drive",
       "lat": 40.09333,
       "lng": -74.23308,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "South Lake",
+        "So. Lake"
+      ]
     },
     {
       "name": "Spruce Street",
@@ -9112,6 +9529,12 @@
       "town": "Lakewood"
     },
     {
+      "name": "The Concord",
+      "lat": 40.09914,
+      "lng": -74.2186,
+      "town": "Lakewood"
+    },
+    {
       "name": "The Fairways at Lake Ridge (55+)",
       "lat": 40.05747,
       "lng": -74.23451,
@@ -9168,6 +9591,12 @@
       "town": "Lakewood"
     },
     {
+      "name": "Vine Park",
+      "lat": 40.0575,
+      "lng": -74.21393,
+      "town": "Lakewood"
+    },
+    {
       "name": "W Kennedy",
       "lat": 40.10742,
       "lng": -74.22668,
@@ -9208,7 +9637,10 @@
       "name": "Yesodei Court",
       "lat": 40.06676,
       "lng": -74.20152,
-      "town": "Lakewood"
+      "town": "Lakewood",
+      "aka": [
+        "Yesodei"
+      ]
     }
   ],
   "preferred": {
@@ -10961,13 +11393,6 @@
       "613 Dr Martin Luther King Dr"
     ],
     [
-      "Bais Medrash of Prospect Park",
-      40.07185,
-      -74.22962,
-      "Lakewood",
-      "20 Capital Ln"
-    ],
-    [
       "Bais Medrash of Summit Court",
       40.07097,
       -74.22211,
@@ -11319,13 +11744,6 @@
       -74.21803,
       "Lakewood",
       "400 8th St"
-    ],
-    [
-      "Elmwood Village Shul",
-      40.05808,
-      -74.22252,
-      "Lakewood",
-      "2 Tova Dr"
     ],
     [
       "Emek Halacha",
@@ -11816,20 +12234,6 @@
         "BMG",
         "Beth Medrash Govoha"
       ]
-    ],
-    [
-      "Prospect Park Shul",
-      40.07185,
-      -74.22962,
-      "Lakewood",
-      "20 Capital Ln"
-    ],
-    [
-      "Prospect Square Shul",
-      40.07145,
-      -74.23063,
-      "Lakewood",
-      "317 Blanche St"
     ],
     [
       "Rachmastrivka",

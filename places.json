@@ -20,7 +20,10 @@
   "lng": -74.21461,
   "source": "manual",
   "note": "Representative point: 14th St & Lexington Ave (Google Maps).",
-  "label": "14th Street"
+  "label": "14th Street",
+  "aka": [
+   "14th St"
+  ]
  },
  "14th lexington": {
   "name": "14th St & Lexington Ave",
@@ -35,7 +38,10 @@
   "lng": -74.21461,
   "source": "manual",
   "note": "Representative point: 14th St & Lexington Ave (Google Maps).",
-  "label": "14th Street"
+  "label": "14th Street",
+  "aka": [
+   "14th St"
+  ]
  },
  "22 enclave blvd": {
   "name": "22 Enclave Blvd",
@@ -129,7 +135,10 @@
   "lat": 40.10953,
   "lng": -74.20356,
   "source": "manual",
-  "note": "Google Maps, checked 2026-11-26: Appolo Rd, Lakewood."
+  "note": "Google Maps, checked 2026-11-26: Appolo Rd, Lakewood.",
+  "aka": [
+   "Apollo Road"
+  ]
  },
  "arlington": {
   "name": "Arlington",
@@ -280,7 +289,10 @@
   "source": "manual",
   "match": "Candlewood, Howell Township, Monmouth County, New Jersey, 07331, United States",
   "kind": "place/hamlet",
-  "note": "Checked on Google Maps: matches the OSM pin."
+  "note": "Checked on Google Maps: matches the OSM pin.",
+  "aka": [
+   "Candlewd Howell"
+  ]
  },
  "case road": {
   "name": "Case Road",
@@ -306,7 +318,10 @@
   "lng": -74.2377,
   "source": "manual",
   "note": "Owner: Central = Central Avenue; when unspecific, the junction of Central Ave and New Central Ave (OSM: the two meet near here).",
-  "label": "Central Avenue"
+  "label": "Central Avenue",
+  "aka": [
+   "Cent."
+  ]
  },
  "central avenue": {
   "name": "Central Avenue",
@@ -314,7 +329,10 @@
   "lng": -74.2377,
   "source": "manual",
   "note": "Owner: unspecific Central = junction of Central Ave and New Central Ave.",
-  "label": "Central Avenue"
+  "label": "Central Avenue",
+  "aka": [
+   "Cent."
+  ]
  },
  "chateau": {
   "name": "Chateau Park",
@@ -344,7 +362,10 @@
   "source": "manual",
   "match": "Cherry Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
   "kind": "highway/residential",
-  "note": "Checked on Google Maps: matches the OSM pin."
+  "note": "Checked on Google Maps: matches the OSM pin.",
+  "aka": [
+   "Cherry Street"
+  ]
  },
  "chestnut": {
   "name": "Chestnut",
@@ -426,7 +447,10 @@
   "source": "manual",
   "match": "Congress Street, Lakewood Township, Ocean County, New Jersey, 08701, United States",
   "kind": "highway/residential",
-  "note": "Checked on Google Maps: matches the OSM pin."
+  "note": "Checked on Google Maps: matches the OSM pin.",
+  "aka": [
+   "Congress"
+  ]
  },
  "county ln": {
   "name": "County Ln",
@@ -436,7 +460,10 @@
   "match": "East County Line, Lakewood Township, Ocean County, New Jersey, 08701, United States",
   "kind": "highway/primary",
   "label": "County Line Road",
-  "note": "Checked on Google Maps (E County Line Rd); replaced OSM pin 40.10551,-74.19063."
+  "note": "Checked on Google Maps (E County Line Rd); replaced OSM pin 40.10551,-74.19063.",
+  "aka": [
+   "County Line"
+  ]
  },
  "courtney": {
   "name": "Courtney",
@@ -477,7 +504,10 @@
   "source": "manual",
   "match": "Dewey Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
   "kind": "highway/residential",
-  "note": "Checked on Google Maps: matches the OSM pin."
+  "note": "Checked on Google Maps: matches the OSM pin.",
+  "aka": [
+   "Dewey Avenue"
+  ]
  },
  "dunhill rd": {
   "name": "Dunhill Rd",
@@ -494,7 +524,10 @@
   "lng": -74.20141,
   "source": "manual",
   "note": "Owner: E 7th is a short street east of Park Ave, separate from 7th St. Point: E 7th & Nowlan Pl (Google Maps).",
-  "label": "E 7th Street"
+  "label": "E 7th Street",
+  "aka": [
+   "East 7th St"
+  ]
  },
  "e 7th nowlan": {
   "name": "E 7th St & Nowlan Pl",
@@ -849,7 +882,10 @@
   "match": "Massachusetts Avenue, Fairways, Lakewood Township, Ocean County, New Jersey, 08755, United",
   "kind": "highway/tertiary",
   "label": "Massachusetts Avenue",
-  "note": "Checked on Google Maps (Massachusetts Ave); replaced OSM pin 40.05774,-74.22981."
+  "note": "Checked on Google Maps (Massachusetts Ave); replaced OSM pin 40.05774,-74.22981.",
+  "aka": [
+   "Massachusts"
+  ]
  },
  "meadow run": {
   "name": "Meadow Run",
@@ -876,7 +912,10 @@
   "source": "manual",
   "match": "Miller Road, Lakewood Township, Ocean County, New Jersey, 08701, United States",
   "kind": "highway/tertiary",
-  "note": "Checked on Google Maps: matches the OSM pin."
+  "note": "Checked on Google Maps: matches the OSM pin.",
+  "aka": [
+   "Miller Road"
+  ]
  },
  "monmouth views": {
   "name": "Monmouth Views",
@@ -995,7 +1034,10 @@
   "source": "manual",
   "match": "Ocean Avenue, Lakewood Township, Ocean County, New Jersey, 08701, United States",
   "kind": "highway/primary",
-  "note": "Checked on Google Maps (Ocean Ave); replaced OSM pin 40.08921,-74.18644."
+  "note": "Checked on Google Maps (Ocean Ave); replaced OSM pin 40.08921,-74.18644.",
+  "aka": [
+   "Ocean"
+  ]
  },
  "ocean pointe": {
   "name": "Ocean Pointe",
@@ -1089,7 +1131,10 @@
   "source": "manual",
   "match": "Prospect Vines, South Lakewood, Lakewood Township, Ocean County, New Jersey, United States",
   "kind": "landuse/residential",
-  "note": "Checked on Google Maps (Prospect St); replaced OSM pin 40.06979,-74.23873."
+  "note": "Checked on Google Maps (Prospect St); replaced OSM pin 40.06979,-74.23873.",
+  "aka": [
+   "Prospect Street"
+  ]
  },
  "prospect vines": {
   "name": "Prospect Vines",
@@ -1121,7 +1166,10 @@
   "lat": 40.06667,
   "lng": -74.22197,
   "source": "manual",
-  "note": "Google Maps: Regency Estates Playground, Hekel Rd (neighbourhood-level)."
+  "note": "Google Maps: Regency Estates Playground, Hekel Rd (neighbourhood-level).",
+  "aka": [
+   "Regency"
+  ]
  },
  "ridge": {
   "name": "Ridge Ave (middle, at Nowlan Pl)",
@@ -1231,7 +1279,10 @@
   "source": "manual",
   "match": "Shady Lane Drive, A Country Place, Lakewood Township, Ocean County, New Jersey, 08701, Uni",
   "kind": "highway/residential",
-  "note": "Checked on Google Maps: matches the OSM pin."
+  "note": "Checked on Google Maps: matches the OSM pin.",
+  "aka": [
+   "Shady Lane"
+  ]
  },
  "shonny": {
   "name": "Shonny",
@@ -1283,7 +1334,11 @@
   "source": "manual",
   "match": "South Lake Drive, A Country Place, Lakewood Township, Ocean County, New Jersey, 08701, Uni",
   "kind": "highway/residential",
-  "note": "Checked on Google Maps: matches the OSM pin."
+  "note": "Checked on Google Maps: matches the OSM pin.",
+  "aka": [
+   "South Lake",
+   "So. Lake"
+  ]
  },
  "spruce st": {
   "name": "Spruce St",
@@ -1496,21 +1551,30 @@
   "lat": 40.10386,
   "lng": -74.20408,
   "source": "manual",
-  "note": "Google Maps, checked 2026-11-26: Harvard St."
+  "note": "Google Maps, checked 2026-11-26: Harvard St.",
+  "aka": [
+   "Harvard St"
+  ]
  },
  "harvard street": {
   "name": "Harvard Street",
   "lat": 40.10386,
   "lng": -74.20408,
   "source": "manual",
-  "note": "Google Maps, checked 2026-11-26: Harvard St."
+  "note": "Google Maps, checked 2026-11-26: Harvard St.",
+  "aka": [
+   "Harvard St"
+  ]
  },
  "10th st": {
   "name": "10th Street",
   "lat": 40.10023,
   "lng": -74.21368,
   "source": "manual",
-  "note": "Google Maps, checked 2026-11-26: 10th St."
+  "note": "Google Maps, checked 2026-11-26: 10th St.",
+  "aka": [
+   "10th"
+  ]
  },
  "12th princeton": {
   "name": "12th St & Princeton Ave",
@@ -1559,7 +1623,10 @@
   "lat": 40.06676,
   "lng": -74.20152,
   "source": "manual",
-  "note": "Google Maps, checked 2026-11-26: Yesodei Ct."
+  "note": "Google Maps, checked 2026-11-26: Yesodei Ct.",
+  "aka": [
+   "Yesodei"
+  ]
  },
  "daniel drive": {
   "name": "Daniel Drive",
@@ -1602,5 +1669,477 @@
   "lng": -74.20135,
   "source": "manual",
   "note": "Google Maps, checked 2026-11-26: intersection."
+ },
+ "emerald hills": {
+  "name": "Emerald Hills",
+  "lat": 40.10374,
+  "lng": -74.1772,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: housing development 'Emerald Hills'. Saved from the Aug. 26 list (owner: every place is kept)."
+ },
+ "riverwood chase": {
+  "name": "Riverwood Chase",
+  "lat": 40.033,
+  "lng": -74.22672,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: 'Riverwood Chase Condominiums'. Saved from the Aug. 26 list (owner: every place is kept)."
+ },
+ "the concord": {
+  "name": "The Concord",
+  "lat": 40.09914,
+  "lng": -74.2186,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: condominium complex 'The Concord'. Saved from the Aug. 26 list (owner: every place is kept)."
+ },
+ "prospect square": {
+  "name": "Prospect Square",
+  "lat": 40.07248,
+  "lng": -74.2322,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: housing development 'Prospect Square'. Saved from the Aug. 26 list (owner: every place is kept)."
+ },
+ "prospect park": {
+  "name": "Prospect Park",
+  "lat": 40.07289,
+  "lng": -74.22982,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: housing development 'Prospect Park'. Saved from the Aug. 26 list (owner: every place is kept)."
+ },
+ "elmwood village": {
+  "name": "Elmwood Village",
+  "lat": 40.05808,
+  "lng": -74.22252,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: 'Elmwood Village' playground and shul. Saved from the Aug. 26 list (owner: every place is kept).",
+  "aka": [
+   "Elmwood"
+  ]
+ },
+ "vine park": {
+  "name": "Vine Park",
+  "lat": 40.0575,
+  "lng": -74.21393,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: park 'Vine Park'. Saved from the Aug. 26 list (owner: every place is kept)."
+ },
+ "aisle 9": {
+  "name": "Aisle 9",
+  "lat": 40.08469,
+  "lng": -74.26521,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: 'Aisle 9 Jackson' store, E Veterans Hwy; the area around it. Saved from the Aug. 26 list (owner: every place is kept)."
+ },
+ "12th": {
+  "name": "12th Street",
+  "lat": 40.10327,
+  "lng": -74.21334,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: 12th St. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "12th Street"
+  ],
+  "hide": true
+ },
+ "3rd": {
+  "name": "3rd Street",
+  "lat": 40.09311,
+  "lng": -74.21481,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: 3rd St. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "3rd Street"
+  ],
+  "hide": true
+ },
+ "4th": {
+  "name": "4th Street",
+  "lat": 40.09419,
+  "lng": -74.21418,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: 4th St. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "4th Street"
+  ],
+  "hide": true
+ },
+ "8th": {
+  "name": "8th Street",
+  "lat": 40.09777,
+  "lng": -74.21779,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: 8th St. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "8th Street"
+  ],
+  "hide": true
+ },
+ "apple": {
+  "name": "Apple Street",
+  "lat": 40.1043,
+  "lng": -74.20286,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Apple St. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Apple Street"
+  ],
+  "hide": true
+ },
+ "aumack rd": {
+  "name": "Aumack Road",
+  "lat": 40.15471,
+  "lng": -74.26557,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Aumack Rd, Jackson. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Aumack Road"
+  ],
+  "hide": true
+ },
+ "belvedere lane": {
+  "name": "Belvedere Lane",
+  "lat": 40.10715,
+  "lng": -74.19648,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Belvedere Ln. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "hide": true
+ },
+ "bourbon ct": {
+  "name": "Bourbon Court",
+  "lat": 40.09151,
+  "lng": -74.20135,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Bourbon Ct. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Bourbon Court"
+  ],
+  "hide": true
+ },
+ "buttell avenue": {
+  "name": "Buttell Avenue",
+  "lat": 40.07694,
+  "lng": -74.21909,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Buttell Ave. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "hide": true
+ },
+ "caranetta": {
+  "name": "Caranetta Drive",
+  "lat": 40.0866,
+  "lng": -74.22094,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Caranetta Dr. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Caranetta Drive"
+  ],
+  "hide": true
+ },
+ "carasaljo": {
+  "name": "Carasaljo Drive",
+  "lat": 40.09396,
+  "lng": -74.24027,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Carasaljo Dr. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Carasaljo Drive"
+  ],
+  "hide": true
+ },
+ "carey": {
+  "name": "Carey Street",
+  "lat": 40.10207,
+  "lng": -74.21508,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Carey St. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Carey Street"
+  ],
+  "hide": true
+ },
+ "coventry": {
+  "name": "Coventry Drive",
+  "lat": 40.10892,
+  "lng": -74.20916,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Coventry Dr. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Coventry Drive"
+  ],
+  "hide": true
+ },
+ "drake": {
+  "name": "Drake Road",
+  "lat": 40.08278,
+  "lng": -74.24949,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Drake Rd. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Drake Road"
+  ],
+  "hide": true
+ },
+ "ford": {
+  "name": "Ford Avenue",
+  "lat": 40.06033,
+  "lng": -74.21736,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Ford Ave. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Ford Avenue"
+  ],
+  "hide": true
+ },
+ "forest": {
+  "name": "Forest Avenue",
+  "lat": 40.09852,
+  "lng": -74.22003,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Forest Ave. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Forest Avenue"
+  ],
+  "hide": true
+ },
+ "henry street": {
+  "name": "Henry Street",
+  "lat": 40.07762,
+  "lng": -74.21895,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Henry St. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "hide": true
+ },
+ "highland dr": {
+  "name": "Highland Drive",
+  "lat": 40.13716,
+  "lng": -74.27723,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Highland Dr, Jackson. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Highland Drive"
+  ],
+  "hide": true
+ },
+ "ivy hill rd lakewood": {
+  "name": "Ivy Hill Road",
+  "lat": 40.06019,
+  "lng": -74.23242,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Ivy Hill Rd. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Ivy Hill Road"
+  ],
+  "hide": true
+ },
+ "joe parker": {
+  "name": "Joe Parker Road",
+  "lat": 40.09246,
+  "lng": -74.16635,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Joe Parker Rd. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Joe Parker Road"
+  ],
+  "hide": true
+ },
+ "laurel avenue": {
+  "name": "Laurel Avenue",
+  "lat": 40.08986,
+  "lng": -74.20274,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Laurel Ave (the one by Route 88; Google also lists one farther west). Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "hide": true
+ },
+ "linden": {
+  "name": "Linden Avenue",
+  "lat": 40.09208,
+  "lng": -74.19593,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Linden Ave. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Linden Avenue"
+  ],
+  "hide": true
+ },
+ "madison": {
+  "name": "Madison Avenue",
+  "lat": 40.0968,
+  "lng": -74.2176,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Madison Ave at 7th St (representative point). Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Madison Avenue"
+  ],
+  "hide": true
+ },
+ "melville": {
+  "name": "Melville Avenue",
+  "lat": 40.08175,
+  "lng": -74.20728,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Melville Ave. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Melville Avenue"
+  ],
+  "hide": true
+ },
+ "monmouth": {
+  "name": "Monmouth Avenue",
+  "lat": 40.0985,
+  "lng": -74.21131,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Monmouth Ave at 8th St (representative point). Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Monmouth Avenue"
+  ],
+  "hide": true
+ },
+ "n oakland": {
+  "name": "North Oakland Street",
+  "lat": 40.09237,
+  "lng": -74.19331,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: N Oakland St. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "N. Oakland",
+   "North Oakland Street"
+  ],
+  "hide": true
+ },
+ "red oak": {
+  "name": "Red Oak Drive",
+  "lat": 40.10085,
+  "lng": -74.16773,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Red Oak Dr. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Red Oak Drive"
+  ],
+  "hide": true
+ },
+ "roselle court": {
+  "name": "Roselle Court",
+  "lat": 40.1027,
+  "lng": -74.23562,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Roselle Ct. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "hide": true
+ },
+ "sea point dr": {
+  "name": "Seapoint Drive",
+  "lat": 40.08761,
+  "lng": -74.17935,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Seapoint Dr. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Seapoint Drive",
+   "Sea Point Drive"
+  ],
+  "hide": true
+ },
+ "serenity": {
+  "name": "Serenity Way",
+  "lat": 40.08065,
+  "lng": -74.24699,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Serenity Way. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Serenity Way"
+  ],
+  "hide": true
+ },
+ "waterview": {
+  "name": "Waterview Drive",
+  "lat": 40.08793,
+  "lng": -74.18392,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Waterview Dr. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Waterview Drive"
+  ],
+  "hide": true
+ },
+ "west spruce street": {
+  "name": "West Spruce Street",
+  "lat": 40.07235,
+  "lng": -74.2193,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: W Spruce St. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "hide": true
+ },
+ "whispering pines": {
+  "name": "Whispering Pines Lane",
+  "lat": 40.10813,
+  "lng": -74.20168,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Whispering Pines Ln. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Whispering Pines Lane"
+  ],
+  "hide": true
+ },
+ "white st": {
+  "name": "White Street",
+  "lat": 40.08246,
+  "lng": -74.25204,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: White St. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "White Street"
+  ],
+  "hide": true
+ },
+ "williams": {
+  "name": "Williams Street",
+  "lat": 40.07555,
+  "lng": -74.22147,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Williams St. Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Williams Street",
+   "Williams St"
+  ],
+  "hide": true
+ },
+ "lakeview": {
+  "name": "Lakeview Drive",
+  "lat": 40.09142,
+  "lng": -74.22836,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: Lakeview Dr (the only 'Lakeview' Google offers). Saved from the Aug. 26 list (owner: every place is kept). A street: offered from streets.json (its whole line), so this saved point is not a suggestion of its own.",
+  "aka": [
+   "Lakeview Drive"
+  ],
+  "hide": true
+ },
+ "12th lexington": {
+  "name": "12th St & Lexington Ave",
+  "lat": 40.10317,
+  "lng": -74.21424,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: intersection.",
+  "hide": true
+ },
+ "3rd forest": {
+  "name": "3rd St & Forest Ave",
+  "lat": 40.09265,
+  "lng": -74.21891,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: intersection.",
+  "hide": true
+ },
+ "7th madison": {
+  "name": "7th St & Madison Ave",
+  "lat": 40.0968,
+  "lng": -74.2176,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: intersection.",
+  "hide": true
+ },
+ "8th monmouth": {
+  "name": "8th St & Monmouth Ave",
+  "lat": 40.0985,
+  "lng": -74.21131,
+  "source": "manual",
+  "note": "Google Maps, checked 2026-11-26: intersection.",
+  "hide": true
  }
 }

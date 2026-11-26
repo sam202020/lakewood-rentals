@@ -89,13 +89,11 @@ def load_places(path=PLACES_FILE):
         return {}
 
 
-def neighborhood_display_name(location):
-    """The name the 'Neighborhoods' index groups a listing under: its first place name, with a
-    trailing 'Area' dropped ('Ridge Area' groups with 'Ridge'). Mirrors firstName in
-    site/search-core.js, which the neighbourhood and street lists group by."""
-    first = re.split(r"\s*/\s*|,\s*", location or "", maxsplit=1)[0]
-    first = re.sub(r"\s+Area$", "", first, flags=re.I)
-    return first.strip()
+def listed_names(location):
+    """Every place name a location gives, with a trailing 'Area' dropped ('Ridge Area' is 'Ridge'). A town written after a
+    name only says where that place is. Mirrors namedPlaces in site/search-core.js, which the lists group by."""
+    parts = [re.sub(r"\s+Area$", "", p, flags=re.I).strip() for p in re.split(r"\s*/\s*|,\s*", location or "")]
+    return [p for i, p in enumerate(parts) if p and (i == 0 or p.lower() not in TOWNS)]
 
 
 def load_neighborhoods_seen(path=None):
@@ -144,12 +142,11 @@ def looks_like_description(name):
 
 
 def neighborhood_counts(listings, seen=None):
-    """{name: how many of this week's listings are there}, including a 0 for every name in `seen`
-    (earlier builds) that has none this week - so the index only ever grows, never loses a name."""
+    """{name: how many of this week's listings name it}, including a 0 for every name in `seen` (earlier builds) that
+    has none this week - the permanent record of names, which only grows. The page's lists show current places only."""
     counts = {}
     for x in listings:
-        k = neighborhood_display_name(x.get("location"))
-        if k:
+        for k in listed_names(x.get("location")):
             counts[k] = counts.get(k, 0) + 1
     for name in seen or ():
         counts.setdefault(name, 0)
