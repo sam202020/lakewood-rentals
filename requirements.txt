@@ -1,1 +1,5 @@
 pdfplumber>=0.11
+# cffi: pdfplumber -> pdfminer imports the system `cryptography` package unconditionally; on some
+# images its Rust bindings panic at import time ("No module named '_cffi_backend'") unless cffi is
+# present for the active interpreter. Pin it explicitly rather than relying on it being installed already.
+cffi>=1.15
