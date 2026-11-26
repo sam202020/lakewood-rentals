@@ -1331,3 +1331,32 @@ test("newest first on this week's list: about a batch of new ads, all at the top
   const sorted = S.sortRows(rows.slice(), "default");
   assert.ok(sorted.slice(0, fresh).every((x) => x._new));
 });
+
+// ---- anonymous visit and call-tap counts ---------------------------------------
+test("counting: only the public site, never a device switched off with #nocount", () => {
+  assert.equal(S.countsHere("lakewoodnjrentals.com", null), true);
+  assert.equal(S.countsHere("www.lakewoodnjrentals.com", null), true);
+  assert.equal(S.countsHere("lakewoodnjrentals.com", "t"), false);                         // this device opted out
+  for (const host of ["localhost", "127.0.0.1", "", "claude.ai", "example.com"]) assert.equal(S.countsHere(host, null), false, host);
+  assert.equal(S.countSwitch("#nocount"), "off");
+  assert.equal(S.countSwitch("#count"), "on");
+  assert.equal(S.countSwitch("#something"), null);
+});
+
+test("counting: a call tap is filed under the area, never a phone number or a street address", () => {
+  assert.equal(S.callArea(L({ location: "Raintree", phones: ["732-555-0101"] })), "Raintree");
+  assert.equal(S.callArea(L({ location: "13th & Princeton" })), "13th & Princeton");
+  assert.equal(S.callArea(L({ location: "957 W. County Ln." })), "street address");
+  assert.equal(S.callArea(L({ location: "22 Enclave Blvd.", geo_neighborhood: "enclave" })), "enclave");
+  assert.equal(S.callArea(L({ location: "" })), "unknown");
+  assert.doesNotMatch(S.callArea(L({ location: "Raintree", phones: ["732-555-0101"] })), /555/);
+});
+
+test("counting: the page loads the counter only through countsHere, pinned with an integrity hash, and sends no number", () => {
+  assert.match(templateHtml, /if \(code && LakewoodSearch\.countsHere\(location\.hostname, flag\(\)\)\)/);
+  assert.match(templateHtml, /gc\.zgo\.at\/count\.v5\.js/);
+  assert.match(templateHtml, /sc\.integrity = "sha384-/);
+  const call = templateHtml.slice(templateHtml.indexOf("window.goatcounter.count({"), templateHtml.indexOf("event: true });") + 20);
+  assert.match(call, /data-area/);
+  assert.doesNotMatch(call, /href|phone/i);
+});

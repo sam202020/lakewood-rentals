@@ -262,3 +262,15 @@ If the codes ever change shape, the tags disappear and the order falls back to t
 ## Location spelling
 
 `parse.tidy_location` spells out abbreviations in location names; "Brookwd" is "Brookwood" and "Outside Brookwood 1" is "Brookwood 1" (owner).
+
+## Visit and call-tap counts (owner approved, 2026-11-26)
+
+Cookie-free GoatCounter. The site code (the `xxxx` of `xxxx.goatcounter.com`) goes in `data/analytics.json`; empty = nothing is counted and the
+page says nothing about counting. `build.py` puts it in the page (`counter`). Rules (tests in `tests/search.test.js`, `tests/test_counter.py`):
+- Counted only on `lakewoodnjrentals.com` (`countsHere`): local copies, test browsers and the private Artifact page never count. A new
+  domain must be added to `PUBLIC_HOSTS` in `search-core.js`.
+- **The owner does not want to be counted:** a device that opens the site with `#nocount` stores GoatCounter's `skipgc` flag and is never counted
+  (`#count` undoes it; private windows and cleared browser data forget it). Never test the live site in a way that counts.
+- Events: one "Call tap" per tap on a call link (cards, table, map pop-ups), filed as `call: <area>` (`callArea`). Never send a phone number, a
+  street address, names or search text. A tap is not a completed call.
+- `count.v5.js` is pinned with an integrity hash; if GoatCounter changes the file the browser refuses it and counting stops silently.

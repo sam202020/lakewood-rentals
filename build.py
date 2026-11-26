@@ -10,7 +10,7 @@ build aborts with exit code 1 and leaves listings.json and docs/index.html
 untouched, so a PDF layout change never replaces a good site with a bad one.
 Soft problems are printed as WARN lines; the build still succeeds.
 """
-import argparse, json, pathlib, sys, datetime
+import argparse, json, pathlib, re, sys, datetime
 
 import checks
 import geo
@@ -24,6 +24,15 @@ SEARCH_CORE = ROOT / "site" / "search-core.js"
 LEAFLET_CSS = ROOT / "site" / "leaflet.css"     # Leaflet 1.9.4 (BSD-2), inlined because artifact pages may not load stylesheets
 OUT = ROOT / "docs" / "index.html"
 STREETS = ROOT / "streets.json"      # built by tools/build_streets.py; optional
+
+
+def counter_code(path=ROOT / "data" / "analytics.json"):
+    """The GoatCounter site code from data/analytics.json, or "" (no counting) if unset or not a plain code."""
+    try:
+        code = str(json.loads(pathlib.Path(path).read_text()).get("goatcounter", "")).strip().lower()
+    except (OSError, ValueError, AttributeError):
+        return ""
+    return code if re.fullmatch(r"[a-z0-9][a-z0-9-]{0,62}", code) else ""
 
 
 def previous_count():
@@ -117,6 +126,7 @@ def main():
     if shuls:
         data["shuls"] = [[s["name"], s["lat"], s["lng"], s["town"], s["address"]] + ([s["aka"]] if s["aka"] else [])
                          for s in shuls]
+    data["counter"] = counter_code()          # anonymous visit / call-tap counts ("" = off)
     # listings.json stays small and readable: the street lines live in streets.json and only go into the page
     DATA.write_text(json.dumps({k: v for k, v in data.items() if k != "streets"}, indent=2, ensure_ascii=False))
 

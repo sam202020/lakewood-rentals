@@ -676,6 +676,8 @@
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tag.newtag { color: #10231A; } }
   :root[data-theme="dark"] .tag.newtag { color: #10231A; }
   .thsort.thsort--type span { font-size: 10px; text-transform: none; letter-spacing: 0; background: var(--accent-soft); border-radius: 4px; padding: 1px 5px; }
+  .toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 2000; max-width: calc(100vw - 32px);
+    background: var(--ink); color: var(--paper); font-size: 14px; font-weight: 600; padding: 10px 16px; border-radius: 10px; box-shadow: var(--shadow); }
 </style>
 
 <header class="searchbar topbar" id="searchbar">
@@ -802,6 +804,8 @@
           <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>.</span>
           To list your property, or once a unit is rented, contact Masa U&rsquo;Matan at 732-364-9392. Updated <span id="genAt">&mdash;</span>.
           <button class="themebtn" id="themebtn" type="button">Light / dark</button><span id="kickerDate" hidden></span></p>
+          <p><span id="countLine" hidden>Visits and call taps are counted anonymously, without cookies.</span>
+          <b id="countNote" hidden>Not counting this device (add #count to the address to count it again).</b></p>
         </div>
       </div>
       <aside class="mappane" id="mappane" aria-label="Map of the listings">
@@ -1190,6 +1194,46 @@
     try { localStorage.setItem("lr-theme", next); } catch (e) {}
   };
 
+  // ---- anonymous counts (GoatCounter, no cookies): visits and call taps on the public site only ----
+  // A device that opened the site with #nocount is never counted (the owner switches off each of theirs); #count undoes it.
+  (function () {
+    var code = DATA.counter || "";
+    function flag() { try { return localStorage.getItem("skipgc"); } catch (e) { return null; } }
+    function toast(text) {
+      var t = document.createElement("div");
+      t.className = "toast"; t.setAttribute("role", "status"); t.textContent = text;
+      document.body.appendChild(t); setTimeout(function () { t.remove(); }, 8000);
+    }
+    function paint() {
+      document.getElementById("countNote").hidden = flag() !== "t";
+      document.getElementById("countLine").hidden = !code;
+    }
+    function applySwitch() {
+      var want = LakewoodSearch.countSwitch(location.hash);
+      if (!want) return;
+      try {
+        if (want === "off") localStorage.setItem("skipgc", "t"); else localStorage.removeItem("skipgc");
+        toast(want === "off" ? "This device will not be counted." : "This device is counted again.");
+      } catch (e) { toast("This browser would not save that setting (a private window?)."); }
+      try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {}
+      paint();
+    }
+    window.addEventListener("hashchange", applySwitch); applySwitch(); paint();
+    if (code && LakewoodSearch.countsHere(location.hostname, flag())) {
+      var sc = document.createElement("script");
+      sc.async = true; sc.src = "https://gc.zgo.at/count.v5.js"; sc.crossOrigin = "anonymous";
+      sc.integrity = "sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ";
+      sc.setAttribute("data-goatcounter", "https://" + code + ".goatcounter.com/count");
+      document.head.appendChild(sc);
+    }
+    // one listener for every call link (cards, table rows, map pop-ups); capture, because the map stops clicks bubbling
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+      if (!a || flag() === "t" || !(window.goatcounter && window.goatcounter.count)) return;
+      window.goatcounter.count({ path: "call: " + (a.getAttribute("data-area") || "unknown"), title: "Call tap", event: true });
+    }, true);
+  })();
+
   // ---- filtering ----
   var grid = document.getElementById("grid");
   var elCount = document.getElementById("count"), elWord = document.getElementById("countWord");
@@ -1198,6 +1242,7 @@
     return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
   function telHref(p) { return "tel:+1" + p.replace(/\D/g, ""); }
+  function areaAttr(x) { return ' data-area="' + esc(LakewoodSearch.callArea(x)) + '"'; }
 
   function card(x) {
     var d = document.createElement("article");
@@ -1233,7 +1278,7 @@
     x._tags.forEach(function (t) { tags.push('<span class="tag' + (t[1] ? " flag" : "") + '">' + esc(t[0]) + "</span>"); });
 
     var calls = (x.phones || []).map(function (p) {
-      return '<a class="call" href="' + telHref(p) + '">' +
+      return '<a class="call" href="' + telHref(p) + '"' + areaAttr(x) + '>' +
         '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"/></svg> ' +
         esc(p) + "</a>";
     }).join("");
@@ -1391,7 +1436,7 @@
     if (g.rows.length === 1) {
       var x = g.rows[0], ph = (x.phones || [])[0];
       return '<div class="mpop"><b>' + esc(x.location || "Location in PDF") + "</b><br>" + line(x) +
-        (ph ? '<br><a class="mpop__call" href="' + telHref(ph) + '">' + esc(ph) + "</a>" : "") +
+        (ph ? '<br><a class="mpop__call" href="' + telHref(ph) + '"' + areaAttr(x) + '>' + esc(ph) + "</a>" : "") +
         "<small>Approximate area</small></div>";
     }
     return '<div class="mpop"><b>' + g.rows.length + " listings in this area</b>" +
@@ -1524,7 +1569,7 @@
       if (i === split && split > 0) h += '<tr class="kwrow kwdivider"><td colspan="7">' + (rows.length - split) + " other listings</td></tr>";
       var wk = /^\$([\d,]+)\/week$/.exec(x.rent_display || ""), on = x.id === selectedId;
       var rent = x.rent != null ? "<b>$" + x.rent.toLocaleString() + "</b>" : wk ? "$" + wk[1] + "/wk" : '<span class="ask">Ask</span>';
-      var phones = (x.phones || []).map(function (p) { return '<a class="call" href="' + telHref(p) + '">' + esc(p) + "</a>"; }).join("<br>") || "&ndash;";
+      var phones = (x.phones || []).map(function (p) { return '<a class="call" href="' + telHref(p) + '"' + areaAttr(x) + '>' + esc(p) + "</a>"; }).join("<br>") || "&ndash;";
       h += '<tr class="r' + (on ? " on" : "") + '" tabindex="0" data-id="' + esc(x.id) + '"><td><b>' + esc(x.location || "") + "</b>" + (x._new ? ' <span class="tag newtag">New</span>' : "") + "</td><td>" +
         esc(x.type.replace(" / Attached", "")) + '</td><td class="n">' + esc(x.bedrooms || "–") + '</td><td class="n">' + esc(x.baths || "–") +
         '</td><td class="n">' + rent + '</td><td class="note"><span>' + esc(x.comments) + "</span></td><td>" + phones + "</td></tr>";

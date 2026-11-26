@@ -883,6 +883,24 @@ var LakewoodSearch = (function () {
     return null;
   }
 
+  // ---- anonymous counts: visits and call taps, the public site only ----
+  var PUBLIC_HOSTS = ["lakewoodnjrentals.com", "www.lakewoodnjrentals.com"];
+
+  /** Count this visit? Only on the public site (not local copies, previews or the private page), and never on a device
+   *  that was switched off (`flag` is what localStorage "skipgc" holds: "t" means do not count). */
+  function countsHere(host, flag) { return PUBLIC_HOSTS.indexOf(String(host || "").toLowerCase()) !== -1 && flag !== "t"; }
+
+  /** "#nocount" switches this device off, "#count" back on. */
+  function countSwitch(hash) { return hash === "#nocount" ? "off" : hash === "#count" ? "on" : null; }
+
+  /** What a call tap is filed under: the listing's area. Never a phone number, and a street address is not passed on. */
+  function callArea(x) {
+    if (x.geo_neighborhood) return String(x.geo_neighborhood);
+    var loc = String(x.location || "").trim();
+    if (!loc) return "unknown";
+    return /^\d+[a-z]?\s/i.test(loc) ? "street address" : loc;
+  }
+
   /** How many filter groups (not counting the search box, the distance chip or the visible 55+ chip) are switched on. */
   function activeFilterCount(S) {
     return (S.types.size ? 1 : 0) + (S.beds ? 1 : 0) + (S.rent < NO_RENT_CAP ? 1 : 0) +
@@ -928,6 +946,9 @@ var LakewoodSearch = (function () {
     newestIssue: newestIssue,
     TYPE_ORDER: TYPE_ORDER,
     COLUMN_SORTS: COLUMN_SORTS,
+    countsHere: countsHere,
+    countSwitch: countSwitch,
+    callArea: callArea,
     search: search,
     searchAll: searchAll
   };
