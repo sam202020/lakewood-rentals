@@ -40,6 +40,9 @@ guessing listing boundaries from the code text: codes come with the type letters
 ("CfHH1114_932:15"), the bedroom digit glued on ("..._1049:103"), type letters on a separate line, phone numbers
 shattered into single characters or glued to the next word, and ad banners that carry phantom codes.
 `_parse_page_by_text` is only a fallback for a page with no cell rectangles.
+A code can also lack its underscore ("RCF916:9", `CODE_BARE`), and a few rows print only the type letter with no code at all (such a row has no
+issue number, so it cannot be dated). Typos in the list that the owner asked to correct live in `DESCRIPTION_TYPOS` (narrow, one wording each:
+"Internet included. No contact" is "No contract").
 
 Rules (owner, 2026-11-22):
 - **Every listing in the PDF has a phone number. A listing without one is always a parser bug**, never a

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T05:48:10+00:00",
+  "generated_at": "2026-11-26T06:19:34+00:00",
   "list_date": "Wednesday, Nov. 25, 2026",
   "source_url": "https://masaumatan.com/MasaRentals.pdf",
   "source_site": "https://masaumatan.com",
@@ -4322,17 +4322,17 @@
       ],
       "furnished": true,
       "comments": "Furnished, brand new, fully upgraded.",
+      "areas": [
+        "Albert Run",
+        "Sims",
+        "Albert"
+      ],
       "lat": 40.06903,
       "lng": -74.19724,
       "geo": "place",
       "geo_unknown": [],
       "geo_unverified": [],
-      "geo_spread": 0.0,
-      "areas": [
-        "Albert Run",
-        "Sims",
-        "Albert"
-      ]
+      "geo_spread": 0.0
     },
     {
       "id": "11A75_1054:17",
@@ -5264,7 +5264,7 @@
         "732-508-0131"
       ],
       "furnished": false,
-      "comments": "4 rooms available by the room, or whole house at a better rate. Internet included. No contact.",
+      "comments": "4 rooms available by the room, or whole house at a better rate. Internet included. No contract.",
       "lat": 40.02177,
       "lng": -74.23717,
       "geo": "town",
@@ -6129,7 +6129,7 @@
       "geo_spread": 0
     },
     {
-      "id": "p8r11",
+      "id": "RCF916:9",
       "type": "Room",
       "utilities_included": [
         "Gas",

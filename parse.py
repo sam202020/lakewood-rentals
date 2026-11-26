@@ -176,6 +176,12 @@ def _fix_spaced_runs(s):
     return " ".join(out)
 
 
+# Typos in the list itself that the owner asked to correct. Keep each one narrow, tied to its own wording.
+DESCRIPTION_TYPOS = [
+    (r"(?<=Internet included\. )No contact\b", "No contract"),            # owner 2026-11-26: rooms with no lease
+]
+
+
 def clean_comment(s):
     s = re.sub(r"\(cid:\d+\)", "", s)
     s = _fix_spaced_runs(s)
@@ -191,6 +197,8 @@ def clean_comment(s):
     for w in _GLUE:
         s = re.sub(r"(?<=[a-z])(" + w + r")\b", r" \1", s, flags=re.I)
     s = re.sub(r"\bun furnished\b", "unfurnished", s, flags=re.I)
+    for wrong, right in DESCRIPTION_TYPOS:
+        s = re.sub(wrong, right, s)
     s = re.sub(r"\s*&\s*", " & ", s)
     s = re.sub(r"\s+", " ", s).strip()
     s = re.sub(r"\s+([.,;:])", r"\1", s)
@@ -233,6 +241,9 @@ COMMENTS_X = 385
 CODE_LOOSE = re.compile(r"^(?P<pre>[A-Za-z]{0,2}?[Uu]?\d{0,2})(?P<type>[ATHRathr]{0,3})(?P<num>\d{0,5})"
                         r"_+(?P<a>\d+):?(?P<b>\d*)(?P<tail>.*)$")
 TYPE_ONLY = re.compile(r"^[Uu]?([ATHR]{1,3})$")
+# A code printed without its underscore ("RCF916:9" in the Nov. 25 list): type letters, a few stray letters, the issue
+# number, a colon and the line number.
+CODE_BARE = re.compile(r"^[Uu]?\d{0,2}(?P<type>[ATHR]{1,3})[A-Za-z]{0,3}(?P<a>\d{3,4}):(?P<b>\d{1,2})$")
 # 10-digit numbers, or the 7-digit local numbers some listings print without an area code.
 PHONE_ANY = re.compile(r"(?<!\d)(?:(\d{3})[-.]?)?(\d{3})[-.]?(\d{4})(?!\d)")
 LOCAL_AREA_CODE = "732"        # 7-digit numbers in this list are Ocean/Monmouth County local numbers
@@ -304,6 +315,10 @@ def parse_row(words, page_no=0, row_no=0):
             br_extra = b[2:]
             bed_tail = m.group("tail")
             type_letters = m.group("type").upper()
+            continue
+        bare = CODE_BARE.match(t) if w["x0"] < 97 and not code else None     # only in the code column
+        if bare:
+            code, type_letters = t, bare.group("type")
             continue
         mt = TYPE_ONLY.match(t) if w["x0"] < 125 else None
         if mt:

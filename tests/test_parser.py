@@ -320,6 +320,23 @@ class TypeFromDescription(unittest.TestCase):
             self.assertEqual(P.type_from_description(text), "Other", text)
 
 
+class CodeWithoutUnderscore(unittest.TestCase):
+    """Nov. 25 list: "RCF916:9" (Ridge Area) has the R but no underscore, so it came out with no code and no type."""
+
+    def test_real_row(self):
+        x = P.parse_row(words(("RCF916:9", 85.4, 315), ("1", 100.3, 315), ("1", 119.0, 315), ("Ridgearea", 153.2, 320),
+                              ("$850", 224, 320), ("347-545-2245", 325, 320), ("Privateroom.", 390, 318)), 8, 11)
+        self.assertEqual(x["id"], "RCF916:9")
+        self.assertEqual(x["type"], "Room")
+        self.assertEqual((x["bedrooms"], x["baths"]), ("1", "1"))
+
+
+class OwnerTypoCorrections(unittest.TestCase):
+    def test_no_contract(self):
+        self.assertTrue(P.clean_comment("whole house at a better rate. Internet included. No contact.").endswith("Internet included. No contract."))
+        self.assertIn("No contact after 9", P.clean_comment("Nice room. No contact after 9 PM."))
+
+
 class BrookwoodSpelledOut(unittest.TestCase):
     """Owner 2026-11-26: write Brookwood out; "outside Brookwood" belongs to Brookwood."""
 
